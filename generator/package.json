@@ -17,6 +17,7 @@
     "dotenv": "^10.0.0",
     "node-fetch": "^3.2.3",
     "pino": "^7.4.1",
+    "quicktype-core": "^6.0.71",
     "uuid": "^8.3.2"
   },
   "devDependencies": {

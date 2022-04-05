@@ -2,6 +2,13 @@ import { ApiDescription } from '../types/ApiDescription.type'
 import { FetchParams } from '../types/FetchParams.type'
 import { logger } from '../utils/Logger'
 import axios from 'axios'
+import {
+  quicktype,
+  InputData,
+  jsonInputForTargetLanguage,
+  JSONSchemaInput,
+  FetchingJSONSchemaStore,
+} from 'quicktype-core'
 
 export class ApiRequest {
   private apiDescription: ApiDescription
@@ -10,12 +17,12 @@ export class ApiRequest {
     this.apiDescription = json
   }
 
-  public async request(options: {
+  public requestConfig(options: {
     entity: string
     endpoint: string
     params: { [key: string]: any }
     auth?: { [key: string]: string }
-  }) {
+  }): FetchParams {
     // VALIDATION
     const endpointDescription =
       this.apiDescription.api[options.entity][options.endpoint]
@@ -98,12 +105,41 @@ export class ApiRequest {
         .join('&')}`
     }
 
+    return config
+  }
+
+  public getApiName() {
+    return this.apiDescription.meta.name
+  }
+
+  public static async request(params: FetchParams) {
     const axiosConfig = {
-      method: config.method,
-      url: config.url,
+      method: params.method,
+      url: params.url,
     }
 
     const response = await axios(axiosConfig)
-    return response.data
+
+    const data = response.data
+    return data
+  }
+
+  public static async quicktypeJson(typeName: string, json: string) {
+    const targetLanguage = 'ts'
+    const jsonInput = jsonInputForTargetLanguage(targetLanguage)
+    await jsonInput.addSource({
+      name: typeName,
+      samples: [json],
+    })
+
+    const inputData = new InputData()
+    inputData.addInput(jsonInput)
+
+    const generatedType = await quicktype({
+      inputData,
+      lang: targetLanguage,
+    })
+
+    return generatedType.lines.join('\n')
   }
 }
