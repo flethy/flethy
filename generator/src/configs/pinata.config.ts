@@ -1,6 +1,9 @@
 import { ApiDescription } from '../types/ApiDescription.type'
 
-export const PINATA: ApiDescription = {
+export type PinataEntity = { pinning }
+export type PinataEndpoint = { pinJSONToIPFS }
+
+export const PINATA: ApiDescription<PinataEntity, PinataEndpoint> = {
   meta: {
     name: 'Pinata',
     url: 'https://pinata.cloud',

@@ -12,7 +12,7 @@ import { FetchParams } from '../types/FetchParams.type'
 
 export interface RequestOptions {
   // api: ApiDescription<any, any>
-  api: ApiDescription
+  api: ApiDescription<any, any>
   endpoint: ApiDescriptionEndpoint
   params: { [key: string]: any }
   auth?: { [key: string]: string }

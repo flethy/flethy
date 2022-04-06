@@ -1,9 +1,9 @@
 import { ApiDescription } from '../types/ApiDescription.type'
 
-export type EtherscanEntity = 'accounts'
-export type EtherscanEndpoint = 'balanceSingleAddress'
+export type EtherscanEntity = { accounts }
+export type EtherscanEndpoint = { balanceSingleAddress }
 
-export const ETHERSCAN: ApiDescription = {
+export const ETHERSCAN: ApiDescription<EtherscanEntity, EtherscanEndpoint> = {
   meta: {
     name: 'Etherscan',
     url: 'https://etherscan.io',

@@ -1,22 +1,6 @@
 import { FetchMethod } from './FetchParams.type'
 
-// export interface ApiDescription<Entity, Endpoint> {
-//   meta: {
-//     name: string
-//     url: string
-//     docs: string
-//   }
-//   base: string
-//   auth?: { [key: string]: ApiDescriptionAuth }
-//   headers?: { [key: string]: string }
-//   api: {
-//     [entity in keyof Entity]: {
-//       [endpoint in keyof Endpoint]: ApiDescriptionEndpoint
-//     }
-//   }
-// }
-
-export interface ApiDescription {
+export interface ApiDescription<Entity, Endpoint> {
   meta: {
     name: string
     url: string
@@ -26,11 +10,27 @@ export interface ApiDescription {
   auth?: { [key: string]: ApiDescriptionAuth }
   headers?: { [key: string]: string }
   api: {
-    [entity: string]: {
-      [endpoint: string]: ApiDescriptionEndpoint
+    [entity in keyof Entity]: {
+      [endpoint in keyof Endpoint]: ApiDescriptionEndpoint
     }
   }
 }
+
+// export interface ApiDescription {
+//   meta: {
+//     name: string
+//     url: string
+//     docs: string
+//   }
+//   base: string
+//   auth?: { [key: string]: ApiDescriptionAuth }
+//   headers?: { [key: string]: string }
+//   api: {
+//     [entity: string]: {
+//       [endpoint: string]: ApiDescriptionEndpoint
+//     }
+//   }
+// }
 
 export interface ApiDescriptionPath {
   name: string
