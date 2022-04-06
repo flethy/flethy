@@ -1,53 +1,50 @@
-import { ApiDescription } from '../types/ApiDescription.type'
-import { FetchParams } from '../types/FetchParams.type'
-import { logger } from '../utils/Logger'
 import axios from 'axios'
 import {
-  quicktype,
   InputData,
   jsonInputForTargetLanguage,
-  JSONSchemaInput,
-  FetchingJSONSchemaStore,
+  quicktype,
 } from 'quicktype-core'
+import {
+  ApiDescription,
+  ApiDescriptionEndpoint,
+} from '../types/ApiDescription.type'
+import { FetchParams } from '../types/FetchParams.type'
+
+export interface RequestOptions {
+  // api: ApiDescription<any, any>
+  api: ApiDescription
+  endpoint: ApiDescriptionEndpoint
+  params: { [key: string]: any }
+  auth?: { [key: string]: string }
+}
 
 export class ApiRequest {
-  private apiDescription: ApiDescription
-
-  public init(json: ApiDescription) {
-    this.apiDescription = json
-  }
-
-  public requestConfig(options: {
-    entity: string
-    endpoint: string
-    params: { [key: string]: any }
-    auth?: { [key: string]: string }
-  }): FetchParams {
+  public static requestConfig(options: RequestOptions): FetchParams {
     // VALIDATION
-    const endpointDescription =
-      this.apiDescription.api[options.entity][options.endpoint]
-    if (!endpointDescription) {
-      throw new Error(`Endpoint ${options.endpoint} not found`)
-    }
     const config: FetchParams = {
-      method: endpointDescription.method,
-      url: this.apiDescription.base,
+      method: options.endpoint.method,
+      url: options.api.base,
+      headers: {},
+      body: {},
     }
     const queryParams: { [key: string]: string } = {}
 
     // AUTH
-    if (this.apiDescription.auth) {
+    if (options.api.auth) {
       if (!options.auth) {
         throw new Error('Auth required')
       }
-      for (const authParam of Object.keys(this.apiDescription.auth)) {
+      for (const authParam of Object.keys(options.api.auth)) {
         const inputAuthParam = options.auth[authParam]
         if (!inputAuthParam) {
           throw new Error(`Mandatory Auth Param required: ${authParam}`)
         }
-        switch (this.apiDescription.auth[authParam].type) {
+        switch (options.api.auth[authParam].type) {
           case 'query':
             queryParams[authParam] = inputAuthParam
+            break
+          case 'header':
+            config.headers[authParam] = inputAuthParam
             break
         }
       }
@@ -56,10 +53,10 @@ export class ApiRequest {
     // PARAMS
 
     for (const paramKey of Object.keys(options.params)) {
-      if (!Object.keys(endpointDescription.params).includes(paramKey)) {
+      if (!Object.keys(options.endpoint.params).includes(paramKey)) {
         throw new Error(`Param ${paramKey} not found`)
       }
-      const paramDescription = endpointDescription.params[paramKey]
+      const paramDescription = options.endpoint.params[paramKey]
       switch (paramDescription.type) {
         case 'enum':
           if (typeof options.params[paramKey] !== 'string') {
@@ -90,12 +87,17 @@ export class ApiRequest {
         case 'query':
           queryParams[paramKey] = options.params[paramKey]
           break
+        case 'body':
+          config.body[paramKey] = options.params[paramKey]
+          break
       }
     }
 
     // STATIC PARAMS
-    for (const queryParam of Object.keys(endpointDescription.query)) {
-      queryParams[queryParam] = endpointDescription.query[queryParam]
+    if (options.endpoint.query) {
+      for (const queryParam of Object.keys(options.endpoint.query)) {
+        queryParams[queryParam] = options.endpoint.query[queryParam]
+      }
     }
 
     // REQUEST
@@ -105,17 +107,31 @@ export class ApiRequest {
         .join('&')}`
     }
 
-    return config
-  }
+    // PATHS
+    if (options.endpoint.paths) {
+      const paths: string[] = []
+      for (const path of options.endpoint.paths) {
+        switch (path.type) {
+          case 'static':
+            paths.push(path.name)
+            break
+          case 'param':
+            paths.push(options.params[path.name])
+            break
+        }
+      }
+      config.url += `/${paths.join('/')}`
+    }
 
-  public getApiName() {
-    return this.apiDescription.meta.name
+    return config
   }
 
   public static async request(params: FetchParams) {
     const axiosConfig = {
       method: params.method,
       url: params.url,
+      headers: params.headers,
+      data: params.body,
     }
 
     const response = await axios(axiosConfig)
