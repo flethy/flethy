@@ -16,22 +16,6 @@ export interface ApiDescription<Entity, Endpoint> {
   }
 }
 
-// export interface ApiDescription {
-//   meta: {
-//     name: string
-//     url: string
-//     docs: string
-//   }
-//   base: string
-//   auth?: { [key: string]: ApiDescriptionAuth }
-//   headers?: { [key: string]: string }
-//   api: {
-//     [entity: string]: {
-//       [endpoint: string]: ApiDescriptionEndpoint
-//     }
-//   }
-// }
-
 export interface ApiDescriptionPath {
   name: string
   type: 'static' | 'param'

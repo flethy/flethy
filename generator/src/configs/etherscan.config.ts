@@ -2,6 +2,13 @@ import { ApiDescription } from '../types/ApiDescription.type'
 
 export type EtherscanEntity = { accounts }
 export type EtherscanEndpoint = { balanceSingleAddress }
+export type EtherscanRequestOptionsAuth = {
+  apikey
+}
+export type EtherscanRequestOptionsParams = {
+  tag
+  address
+}
 
 export const ETHERSCAN: ApiDescription<EtherscanEntity, EtherscanEndpoint> = {
   meta: {
