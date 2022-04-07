@@ -10,16 +10,16 @@ import {
 } from '../types/ApiDescription.type'
 import { FetchParams } from '../types/FetchParams.type'
 
-export interface RequestOptions {
+export interface RequestOptions<RequestOptionsParams, RequestOptionsAuth> {
   // api: ApiDescription<any, any>
   api: ApiDescription<any, any>
   endpoint: ApiDescriptionEndpoint
-  params: { [key: string]: any }
-  auth?: { [key: string]: string }
+  params: { [key in keyof RequestOptionsParams]: any }
+  auth?: { [key in keyof RequestOptionsAuth]: string }
 }
 
 export class ApiRequest {
-  public static requestConfig(options: RequestOptions): FetchParams {
+  public static requestConfig(options: RequestOptions<any, any>): FetchParams {
     // VALIDATION
     const config: FetchParams = {
       method: options.endpoint.method,

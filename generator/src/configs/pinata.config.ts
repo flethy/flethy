@@ -2,6 +2,8 @@ import { ApiDescription } from '../types/ApiDescription.type'
 
 export type PinataEntity = { pinning }
 export type PinataEndpoint = { pinJSONToIPFS }
+export type PinataRequestOptionsAuth = { pinata_api_key; pinata_secret_api_key }
+export type PinataRequestOptionsParams = { pinataContent; pinataMetadata }
 
 export const PINATA: ApiDescription<PinataEntity, PinataEndpoint> = {
   meta: {

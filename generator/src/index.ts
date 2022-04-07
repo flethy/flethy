@@ -1,10 +1,23 @@
-import { ETHERSCAN } from './configs/etherscan.config'
-import { PINATA } from './configs/pinata.config'
+import {
+  ETHERSCAN,
+  EtherscanRequestOptionsAuth,
+  EtherscanRequestOptionsParams,
+} from './configs/etherscan.config'
+import {
+  PINATA,
+  PinataRequestOptionsAuth,
+  PinataRequestOptionsParams,
+} from './configs/pinata.config'
 import { ApiRequest, RequestOptions } from './controllers/ApiRequest'
 import { logger } from './utils/Logger'
 
 async function main() {
-  const requestOptions: { [key: string]: RequestOptions } = {
+  const requestOptions: {
+    [key: string]: RequestOptions<
+      EtherscanRequestOptionsParams | PinataRequestOptionsParams,
+      EtherscanRequestOptionsAuth | PinataRequestOptionsAuth
+    >
+  } = {
     etherscan: {
       api: ETHERSCAN,
       endpoint: ETHERSCAN.api.accounts.balanceSingleAddress,
