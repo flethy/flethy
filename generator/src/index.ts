@@ -87,20 +87,19 @@ async function main() {
         Authorization: `Bearer ${process.env.MAILER_SEND_API_TOKEN}`,
       },
       params: {
-        from: {
+        'body:from': {
           email: 'adam@diypunks.xyz',
           name: 'Adam',
         },
-        // eslint-disable-next-line id-length
-        to: [
+        'body:to': [
           {
             email: 'adam.urban@gmail.com',
             name: 'Adam',
           },
         ],
-        subject: 'Welcome to diypunks!',
-        text: 'Hi there! Welcome to diypunks!',
-        html: '<h1>Hi there!</h1><p>Welcome to diypunks!</p>',
+        'body:subject': 'Welcome to diypunks!',
+        'body:text': 'Hi there! Welcome to diypunks!',
+        'body:html': '<h1>Hi there!</h1><p>Welcome to diypunks!</p>',
       },
     },
   }

@@ -6,18 +6,18 @@ export interface MailerSendRequestOptionsAuth {
   Authorization: string
 }
 export interface MailerSendRequestOptionsParams {
-  from: {
+  'body:from': {
     email: string
     name?: string
   }
-  to: Array<{
+  'body:to': Array<{
     email: string
     name?: string
   }>
-  subject: string
-  text: string
-  html: string
-  variables?: Array<{
+  'body:subject': string
+  'body:text': string
+  'body:html': string
+  'body:variables'?: Array<{
     email: string
     substitutions: Array<{
       var: string

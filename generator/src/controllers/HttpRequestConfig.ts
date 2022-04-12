@@ -50,48 +50,61 @@ export class HttpRequestConfig {
     // PARAMS
 
     for (const paramKey of Object.keys(options.params)) {
-      if (!Object.keys(options.endpoint.params).includes(paramKey)) {
-        throw new Error(`Param ${paramKey} not found`)
-      }
-      const paramDescription = options.endpoint.params[paramKey]
-      switch (paramDescription.type) {
-        case 'enum':
-          if (typeof options.params[paramKey] !== 'string') {
-            throw new Error(`Param ${paramKey} must be a string`)
-          }
-          if (!paramDescription.values?.includes(options.params[paramKey])) {
-            throw new Error(
-              `Param ${paramKey} has invalid value ${
-                options.params[paramKey]
-              }. Must be one of ${paramDescription.values.join(', ')}`
-            )
-          }
-          break
-        case 'string':
-          if (typeof options.params[paramKey] !== 'string') {
-            throw new Error(`Param ${paramKey} must be a string`)
-          }
-          break
-        case 'number':
-          if (typeof options.params[paramKey] !== 'number') {
-            throw new Error(`Param ${paramKey} must be a number`)
-          }
-          break
-      }
-
-      // add params
-      switch (paramDescription.paramType) {
+      const [type, keyname] = paramKey.split(':')
+      switch (type) {
         case 'query':
-          queryParams[paramKey] = options.params[paramKey]
+          queryParams[keyname] = options.params[paramKey]
           break
         case 'body':
-          if (paramKey === 'body') {
+          if (keyname === 'body') {
             config.body = options.params[paramKey]
           } else {
-            config.body[paramKey] = options.params[paramKey]
+            config.body[keyname] = options.params[paramKey]
           }
           break
       }
+      // if (!Object.keys(options.endpoint.params).includes(paramKey)) {
+      //   throw new Error(`Param ${paramKey} not found`)
+      // }
+      // const paramDescription = options.endpoint.params[paramKey]
+      // switch (paramDescription.type) {
+      //   case 'enum':
+      //     if (typeof options.params[paramKey] !== 'string') {
+      //       throw new Error(`Param ${paramKey} must be a string`)
+      //     }
+      //     if (!paramDescription.values?.includes(options.params[paramKey])) {
+      //       throw new Error(
+      //         `Param ${paramKey} has invalid value ${
+      //           options.params[paramKey]
+      //         }. Must be one of ${paramDescription.values.join(', ')}`
+      //       )
+      //     }
+      //     break
+      //   case 'string':
+      //     if (typeof options.params[paramKey] !== 'string') {
+      //       throw new Error(`Param ${paramKey} must be a string`)
+      //     }
+      //     break
+      //   case 'number':
+      //     if (typeof options.params[paramKey] !== 'number') {
+      //       throw new Error(`Param ${paramKey} must be a number`)
+      //     }
+      //     break
+      // }
+
+      // // add params
+      // switch (paramDescription.paramType) {
+      //   case 'query':
+      //     queryParams[paramKey] = options.params[paramKey]
+      //     break
+      //   case 'body':
+      //     if (paramKey === 'body') {
+      //       config.body = options.params[paramKey]
+      //     } else {
+      //       config.body[paramKey] = options.params[paramKey]
+      //     }
+      //     break
+      // }
     }
 
     // STATIC PARAMS
@@ -117,7 +130,7 @@ export class HttpRequestConfig {
             paths.push(path.name)
             break
           case 'param':
-            paths.push(options.params[path.name])
+            paths.push(options.params[`param:${path.name}`])
             break
           case 'auth':
             paths.push(options.auth[path.name])
