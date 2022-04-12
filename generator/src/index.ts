@@ -80,7 +80,10 @@ async function main() {
         webhookid: process.env.SLACK_WEBHOOK_ID,
       },
     },
-    mailersend: {
+    mailersend: HttpRequestConfig.requestOptions<
+      MailerSendRequestOptionsParams,
+      MailerSendRequestOptionsAuth
+    >({
       api: MAILERSEND,
       endpoint: MAILERSEND.api.email.send,
       auth: {
@@ -101,7 +104,7 @@ async function main() {
         'body:text': 'Hi there! Welcome to diypunks!',
         'body:html': '<h1>Hi there!</h1><p>Welcome to diypunks!</p>',
       },
-    },
+    }),
   }
   const currentRequestOptions = requestOptions.mailersend
 
@@ -109,8 +112,8 @@ async function main() {
     currentRequestOptions
   )
   logger.info(requestConfig)
-  const response = await HttpRequest.request(requestConfig)
-  logger.info(response)
+  // const response = await HttpRequest.request(requestConfig)
+  // logger.info(response)
 
   // const responseTypes = await HttpRequest.quicktypeJson(
   //   `${capitalizeFirstLetter(currentRequestOptions.api.meta.name)}Response`,

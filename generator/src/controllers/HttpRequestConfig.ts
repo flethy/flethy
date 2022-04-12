@@ -1,3 +1,4 @@
+import { MailerSendRequestOptionsParams } from '../configs/mailersend.config'
 import {
   ApiDescription,
   ApiDescriptionEndpoint,
@@ -12,6 +13,12 @@ export interface RequestOptions<RequestOptionsParams, RequestOptionsAuth> {
 }
 
 export class HttpRequestConfig {
+  public static requestOptions<Params, Auth>(
+    options: RequestOptions<Params, Auth>
+  ): RequestOptions<Params, Auth> {
+    return options
+  }
+
   public static requestConfig(options: RequestOptions<any, any>): FetchParams {
     // VALIDATION
     const config: FetchParams = {

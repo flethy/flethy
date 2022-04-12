@@ -2,6 +2,7 @@ import { ApiDescription } from '../types/ApiDescription.type'
 
 export type MailerSendEntity = { email }
 export type MailerSendEndpoint = { send }
+
 export interface MailerSendRequestOptionsAuth {
   Authorization: string
 }
@@ -55,39 +56,7 @@ export const MAILERSEND: ApiDescription<MailerSendEntity, MailerSendEndpoint> =
               type: 'static',
             },
           ],
-          params: {
-            from: {
-              type: 'any',
-              paramType: 'body',
-              required: true,
-            },
-            // eslint-disable-next-line id-length
-            to: {
-              type: 'any',
-              paramType: 'body',
-              required: true,
-            },
-            subject: {
-              type: 'string',
-              paramType: 'body',
-              required: true,
-            },
-            text: {
-              type: 'string',
-              paramType: 'body',
-              required: true,
-            },
-            html: {
-              type: 'string',
-              paramType: 'body',
-              required: false,
-            },
-            variables: {
-              type: 'any',
-              paramType: 'body',
-              required: false,
-            },
-          },
+          params: {},
         },
       },
     },

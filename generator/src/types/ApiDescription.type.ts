@@ -33,7 +33,7 @@ export interface ApiDescriptionEndpoint {
     docs: string
   }
   query?: { [key: string]: string }
-  params?: { [key: string]: ApiDescriptionEndpointParam }
+  params?: any
 }
 
 export interface ApiDescriptionEndpointParam {
