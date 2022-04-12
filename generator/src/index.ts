@@ -1,13 +1,10 @@
 import {
   ETHERSCAN,
+  EtherscanAccountsBalanceSingleAddress,
   EtherscanRequestOptionsAuth,
   EtherscanRequestOptionsParams,
 } from './configs/etherscan.config'
-import {
-  MAILERSEND,
-  MailerSendRequestOptionsAuth,
-  MailerSendEmailSend,
-} from './configs/mailersend.config'
+import { MAILERSEND, MailerSendEmailSend } from './configs/mailersend.config'
 import {
   PINATA,
   PinataRequestOptionsAuth,
@@ -29,17 +26,13 @@ async function main() {
   const requestOptions: {
     [key: string]: RequestOptions<any>
   } = {
-    // etherscan: {
-    //   api: ETHERSCAN,
-    //   endpoint: ETHERSCAN.api.accounts.balanceSingleAddress,
-    //   params: {
-    //     tag: 'latest',
-    //     address: process.env.ETHERSCAN_ADDRESS,
-    //   },
-    //   auth: {
-    //     apikey: process.env.ETHERSCAN_APIKEY,
-    //   },
-    // },
+    etherscan:
+      HttpRequestConfig.requestOptions<EtherscanAccountsBalanceSingleAddress>({
+        kind: 'etherscan.accounts.balanceSingleAddress',
+        'query:tag': 'latest',
+        'query:address': process.env.ETHERSCAN_ADDRESS,
+        'auth:apikey': process.env.ETHERSCAN_APIKEY,
+      }),
     // pinata: {
     //   api: PINATA,
     //   endpoint: PINATA.api.pinning.pinJSONToIPFS,
@@ -72,12 +65,6 @@ async function main() {
     //   },
     // },
     mailersend: HttpRequestConfig.requestOptions<MailerSendEmailSend>({
-      // api: MAILERSEND,
-      // endpoint: MAILERSEND.api.email.send,
-      // auth: {
-      //   Authorization: `Bearer ${process.env.MAILER_SEND_API_TOKEN}`,
-      // },
-      // params: {
       kind: 'mailersend.email.send',
       'body:from': {
         email: 'adam@diypunks.xyz',
@@ -93,10 +80,9 @@ async function main() {
       'body:text': 'Hi there! Welcome to diypunks!',
       'body:html': '<h1>Hi there!</h1><p>Welcome to diypunks!</p>',
       'auth:Authorization': `Bearer ${process.env.MAILER_SEND_API_TOKEN}`,
-      // },
     }),
   }
-  const currentRequestOptions = requestOptions.mailersend
+  const currentRequestOptions = requestOptions.etherscan
 
   const requestConfig = await HttpRequestConfig.requestConfig(
     currentRequestOptions

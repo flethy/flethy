@@ -1,3 +1,4 @@
+import { ETHERSCAN } from '../configs/etherscan.config'
 import { MAILERSEND } from '../configs/mailersend.config'
 import {
   ApiDescription,
@@ -25,6 +26,10 @@ export class HttpRequestConfig {
       case 'mailersend.email.send':
         api = MAILERSEND
         endpoint = MAILERSEND.api.email.send
+        break
+      case 'etherscan.accounts.balanceSingleAddress':
+        api = ETHERSCAN
+        endpoint = ETHERSCAN.api.accounts.balanceSingleAddress
         break
     }
     return { params, api, endpoint }

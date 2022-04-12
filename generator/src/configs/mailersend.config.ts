@@ -4,9 +4,6 @@ import { ApiDescription } from '../types/ApiDescription.type'
 export type MailerSendEntity = { email }
 export type MailerSendEndpoint = { send }
 
-export interface MailerSendRequestOptionsAuth {
-  Authorization: string
-}
 export interface MailerSendEmailSend extends RequestParams {
   kind: 'mailersend.email.send'
   'body:from': {
