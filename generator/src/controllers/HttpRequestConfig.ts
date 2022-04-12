@@ -7,8 +7,8 @@ import { FetchParams } from '../types/FetchParams.type'
 export interface RequestOptions<RequestOptionsParams, RequestOptionsAuth> {
   api: ApiDescription<any, any>
   endpoint: ApiDescriptionEndpoint
-  params: { [key in keyof RequestOptionsParams]: any }
-  auth?: { [key in keyof RequestOptionsAuth]: string }
+  params: RequestOptionsParams
+  auth?: RequestOptionsAuth
 }
 
 export class HttpRequestConfig {

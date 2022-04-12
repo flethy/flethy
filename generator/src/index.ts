@@ -80,7 +80,7 @@ async function main() {
         webhookid: process.env.SLACK_WEBHOOK_ID,
       },
     },
-    mailsend: {
+    mailersend: {
       api: MAILERSEND,
       endpoint: MAILERSEND.api.email.send,
       auth: {
@@ -92,28 +92,31 @@ async function main() {
           name: 'Adam',
         },
         // eslint-disable-next-line id-length
-        to: {
-          email: 'adam.urban@gmail.com',
-          name: 'Adam',
-        },
+        to: [
+          {
+            email: 'adam.urban@gmail.com',
+            name: 'Adam',
+          },
+        ],
         subject: 'Welcome to diypunks!',
         text: 'Hi there! Welcome to diypunks!',
+        html: '<h1>Hi there!</h1><p>Welcome to diypunks!</p>',
       },
     },
   }
-  const currentRequestOptions = requestOptions.slack
+  const currentRequestOptions = requestOptions.mailersend
 
   const requestConfig = await HttpRequestConfig.requestConfig(
     currentRequestOptions
   )
-  // logger.info(requestConfig)
+  logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)
   logger.info(response)
 
-  const responseTypes = await HttpRequest.quicktypeJson(
-    `${capitalizeFirstLetter(currentRequestOptions.api.meta.name)}Response`,
-    JSON.stringify(response)
-  )
+  // const responseTypes = await HttpRequest.quicktypeJson(
+  //   `${capitalizeFirstLetter(currentRequestOptions.api.meta.name)}Response`,
+  //   JSON.stringify(response)
+  // )
   // logger.info(responseTypes)
 }
 

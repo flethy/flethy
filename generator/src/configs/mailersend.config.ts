@@ -2,16 +2,28 @@ import { ApiDescription } from '../types/ApiDescription.type'
 
 export type MailerSendEntity = { email }
 export type MailerSendEndpoint = { send }
-export type MailerSendRequestOptionsAuth = {
-  Authorization
+export interface MailerSendRequestOptionsAuth {
+  Authorization: string
 }
-export type MailerSendRequestOptionsParams = {
-  from
-  to
-  subject
-  text
-  html
-  variables
+export interface MailerSendRequestOptionsParams {
+  from: {
+    email: string
+    name?: string
+  }
+  to: Array<{
+    email: string
+    name?: string
+  }>
+  subject: string
+  text: string
+  html: string
+  variables?: Array<{
+    email: string
+    substitutions: Array<{
+      var: string
+      value: string
+    }>
+  }>
 }
 
 export const MAILERSEND: ApiDescription<MailerSendEntity, MailerSendEndpoint> =
