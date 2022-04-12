@@ -1,3 +1,4 @@
+import { RequestParams } from '../controllers/HttpRequestConfig'
 import { ApiDescription } from '../types/ApiDescription.type'
 
 export type MailerSendEntity = { email }
@@ -6,7 +7,8 @@ export type MailerSendEndpoint = { send }
 export interface MailerSendRequestOptionsAuth {
   Authorization: string
 }
-export interface MailerSendRequestOptionsParams {
+export interface MailerSendEmailSend extends RequestParams {
+  kind: 'mailersend.email.send'
   'body:from': {
     email: string
     name?: string
@@ -25,6 +27,7 @@ export interface MailerSendRequestOptionsParams {
       value: string
     }>
   }>
+  'auth:Authorization': string
 }
 
 export const MAILERSEND: ApiDescription<MailerSendEntity, MailerSendEndpoint> =

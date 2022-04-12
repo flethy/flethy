@@ -1,25 +1,36 @@
-import { MailerSendRequestOptionsParams } from '../configs/mailersend.config'
+import { MAILERSEND } from '../configs/mailersend.config'
 import {
   ApiDescription,
   ApiDescriptionEndpoint,
 } from '../types/ApiDescription.type'
 import { FetchParams } from '../types/FetchParams.type'
 
-export interface RequestOptions<RequestOptionsParams, RequestOptionsAuth> {
+export interface RequestParams {
+  kind: string
+}
+
+export interface RequestOptions<RequestOptionsParams> {
   api: ApiDescription<any, any>
   endpoint: ApiDescriptionEndpoint
   params: RequestOptionsParams
-  auth?: RequestOptionsAuth
 }
 
 export class HttpRequestConfig {
-  public static requestOptions<Params, Auth>(
-    options: RequestOptions<Params, Auth>
-  ): RequestOptions<Params, Auth> {
-    return options
+  public static requestOptions<Params extends RequestParams>(
+    params: Params
+  ): RequestOptions<Params> {
+    let endpoint: ApiDescriptionEndpoint
+    let api: ApiDescription<any, any>
+    switch (params.kind) {
+      case 'mailersend.email.send':
+        api = MAILERSEND
+        endpoint = MAILERSEND.api.email.send
+        break
+    }
+    return { params, api, endpoint }
   }
 
-  public static requestConfig(options: RequestOptions<any, any>): FetchParams {
+  public static requestConfig(options: RequestOptions<any>): FetchParams {
     // VALIDATION
     const config: FetchParams = {
       method: options.endpoint.method,
@@ -31,27 +42,46 @@ export class HttpRequestConfig {
 
     // AUTH
     if (options.endpoint.auth || options.api.auth) {
-      if (!options.auth) {
-        throw new Error('Auth required')
-      }
-      const auth = options.endpoint.auth ?? options.api.auth
-      for (const authParam of Object.keys(auth)) {
-        const inputAuthParam = options.auth[authParam]
-        if (!inputAuthParam) {
-          throw new Error(`Mandatory Auth Param required: ${authParam}`)
-        }
-        switch (auth[authParam].type) {
-          case 'query':
-            queryParams[authParam] = inputAuthParam
-            break
-          case 'header':
-            config.headers[authParam] = inputAuthParam
-            break
-          case 'path':
-            // will be handled in path section
-            break
+      for (const paramKey of Object.keys(options.params)) {
+        const [type, keyname] = paramKey.split(':')
+        if (type === 'auth') {
+          const auth = options.endpoint.auth ?? options.api.auth
+          const authConfig = auth[keyname]
+          switch (authConfig.type) {
+            case 'query':
+              queryParams[keyname] = options.params[paramKey]
+              break
+            case 'header':
+              config.headers[keyname] = options.params[paramKey]
+              break
+            case 'path':
+              // will be handled in path section
+              break
+          }
         }
       }
+
+      // if (!options.auth) {
+      //   throw new Error('Auth required')
+      // }
+      // const auth = options.endpoint.auth ?? options.api.auth
+      // for (const authParam of Object.keys(auth)) {
+      //   const inputAuthParam = options.auth[authParam]
+      //   if (!inputAuthParam) {
+      //     throw new Error(`Mandatory Auth Param required: ${authParam}`)
+      //   }
+      //   switch (auth[authParam].type) {
+      //     case 'query':
+      //       queryParams[authParam] = inputAuthParam
+      //       break
+      //     case 'header':
+      //       config.headers[authParam] = inputAuthParam
+      //       break
+      //     case 'path':
+      //       // will be handled in path section
+      //       break
+      //   }
+      // }
     }
 
     // PARAMS
@@ -140,7 +170,7 @@ export class HttpRequestConfig {
             paths.push(options.params[`param:${path.name}`])
             break
           case 'auth':
-            paths.push(options.auth[path.name])
+            paths.push(options.params[`auth:${path.name}`])
             break
         }
       }
