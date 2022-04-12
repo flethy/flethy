@@ -1,9 +1,3 @@
-import axios from 'axios'
-import {
-  InputData,
-  jsonInputForTargetLanguage,
-  quicktype,
-} from 'quicktype-core'
 import {
   ApiDescription,
   ApiDescriptionEndpoint,
@@ -11,40 +5,43 @@ import {
 import { FetchParams } from '../types/FetchParams.type'
 
 export interface RequestOptions<RequestOptionsParams, RequestOptionsAuth> {
-  // api: ApiDescription<any, any>
   api: ApiDescription<any, any>
   endpoint: ApiDescriptionEndpoint
   params: { [key in keyof RequestOptionsParams]: any }
   auth?: { [key in keyof RequestOptionsAuth]: string }
 }
 
-export class ApiRequest {
+export class HttpRequestConfig {
   public static requestConfig(options: RequestOptions<any, any>): FetchParams {
     // VALIDATION
     const config: FetchParams = {
       method: options.endpoint.method,
-      url: options.api.base,
+      url: options.endpoint.base ?? options.api.base,
       headers: {},
       body: {},
     }
     const queryParams: { [key: string]: string } = {}
 
     // AUTH
-    if (options.api.auth) {
+    if (options.endpoint.auth || options.api.auth) {
       if (!options.auth) {
         throw new Error('Auth required')
       }
-      for (const authParam of Object.keys(options.api.auth)) {
+      const auth = options.endpoint.auth ?? options.api.auth
+      for (const authParam of Object.keys(auth)) {
         const inputAuthParam = options.auth[authParam]
         if (!inputAuthParam) {
           throw new Error(`Mandatory Auth Param required: ${authParam}`)
         }
-        switch (options.api.auth[authParam].type) {
+        switch (auth[authParam].type) {
           case 'query':
             queryParams[authParam] = inputAuthParam
             break
           case 'header':
             config.headers[authParam] = inputAuthParam
+            break
+          case 'path':
+            // will be handled in path section
             break
         }
       }
@@ -88,7 +85,11 @@ export class ApiRequest {
           queryParams[paramKey] = options.params[paramKey]
           break
         case 'body':
-          config.body[paramKey] = options.params[paramKey]
+          if (paramKey === 'body') {
+            config.body = options.params[paramKey]
+          } else {
+            config.body[paramKey] = options.params[paramKey]
+          }
           break
       }
     }
@@ -118,44 +119,14 @@ export class ApiRequest {
           case 'param':
             paths.push(options.params[path.name])
             break
+          case 'auth':
+            paths.push(options.auth[path.name])
+            break
         }
       }
       config.url += `/${paths.join('/')}`
     }
 
     return config
-  }
-
-  public static async request(params: FetchParams) {
-    const axiosConfig = {
-      method: params.method,
-      url: params.url,
-      headers: params.headers,
-      data: params.body,
-    }
-
-    const response = await axios(axiosConfig)
-
-    const data = response.data
-    return data
-  }
-
-  public static async quicktypeJson(typeName: string, json: string) {
-    const targetLanguage = 'ts'
-    const jsonInput = jsonInputForTargetLanguage(targetLanguage)
-    await jsonInput.addSource({
-      name: typeName,
-      samples: [json],
-    })
-
-    const inputData = new InputData()
-    inputData.addInput(jsonInput)
-
-    const generatedType = await quicktype({
-      inputData,
-      lang: targetLanguage,
-    })
-
-    return generatedType.lines.join('\n')
   }
 }

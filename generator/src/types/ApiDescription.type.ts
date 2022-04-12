@@ -5,6 +5,7 @@ export interface ApiDescription<Entity, Endpoint> {
     name: string
     url: string
     docs: string
+    config?: string
   }
   base: string
   auth?: { [key: string]: ApiDescriptionAuth }
@@ -18,11 +19,13 @@ export interface ApiDescription<Entity, Endpoint> {
 
 export interface ApiDescriptionPath {
   name: string
-  type: 'static' | 'param'
+  type: 'static' | 'param' | 'auth'
 }
 
 export interface ApiDescriptionEndpoint {
   method: FetchMethod
+  base?: string
+  auth?: { [key: string]: ApiDescriptionAuth }
   paths?: ApiDescriptionPath[]
   meta: {
     title: string
@@ -42,5 +45,5 @@ export interface ApiDescriptionEndpointParam {
 }
 
 export interface ApiDescriptionAuth {
-  type: 'query' | 'header'
+  type: 'query' | 'header' | 'path'
 }
