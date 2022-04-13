@@ -1,3 +1,4 @@
+import { PINATA } from '../configs/pinata.config'
 import { ETHERSCAN } from '../configs/etherscan.config'
 import { MAILERSEND } from '../configs/mailersend.config'
 import {
@@ -5,6 +6,7 @@ import {
   ApiDescriptionEndpoint,
 } from '../types/ApiDescription.type'
 import { FetchParams } from '../types/FetchParams.type'
+import { SLACK } from '../configs/slack.config'
 
 export interface RequestParams {
   kind: string
@@ -30,6 +32,14 @@ export class HttpRequestConfig {
       case 'etherscan.accounts.balanceSingleAddress':
         api = ETHERSCAN
         endpoint = ETHERSCAN.api.accounts.balanceSingleAddress
+        break
+      case 'pinata.pinning.pinJSONToIPFS':
+        api = PINATA
+        endpoint = PINATA.api.pinning.pinJSONToIPFS
+        break
+      case 'slack.incomingWebhooks.message':
+        api = SLACK
+        endpoint = SLACK.api.incomingWebhooks.message
         break
     }
     return { params, api, endpoint }
@@ -65,28 +75,6 @@ export class HttpRequestConfig {
           }
         }
       }
-
-      // if (!options.auth) {
-      //   throw new Error('Auth required')
-      // }
-      // const auth = options.endpoint.auth ?? options.api.auth
-      // for (const authParam of Object.keys(auth)) {
-      //   const inputAuthParam = options.auth[authParam]
-      //   if (!inputAuthParam) {
-      //     throw new Error(`Mandatory Auth Param required: ${authParam}`)
-      //   }
-      //   switch (auth[authParam].type) {
-      //     case 'query':
-      //       queryParams[authParam] = inputAuthParam
-      //       break
-      //     case 'header':
-      //       config.headers[authParam] = inputAuthParam
-      //       break
-      //     case 'path':
-      //       // will be handled in path section
-      //       break
-      //   }
-      // }
     }
 
     // PARAMS
@@ -105,48 +93,6 @@ export class HttpRequestConfig {
           }
           break
       }
-      // if (!Object.keys(options.endpoint.params).includes(paramKey)) {
-      //   throw new Error(`Param ${paramKey} not found`)
-      // }
-      // const paramDescription = options.endpoint.params[paramKey]
-      // switch (paramDescription.type) {
-      //   case 'enum':
-      //     if (typeof options.params[paramKey] !== 'string') {
-      //       throw new Error(`Param ${paramKey} must be a string`)
-      //     }
-      //     if (!paramDescription.values?.includes(options.params[paramKey])) {
-      //       throw new Error(
-      //         `Param ${paramKey} has invalid value ${
-      //           options.params[paramKey]
-      //         }. Must be one of ${paramDescription.values.join(', ')}`
-      //       )
-      //     }
-      //     break
-      //   case 'string':
-      //     if (typeof options.params[paramKey] !== 'string') {
-      //       throw new Error(`Param ${paramKey} must be a string`)
-      //     }
-      //     break
-      //   case 'number':
-      //     if (typeof options.params[paramKey] !== 'number') {
-      //       throw new Error(`Param ${paramKey} must be a number`)
-      //     }
-      //     break
-      // }
-
-      // // add params
-      // switch (paramDescription.paramType) {
-      //   case 'query':
-      //     queryParams[paramKey] = options.params[paramKey]
-      //     break
-      //   case 'body':
-      //     if (paramKey === 'body') {
-      //       config.body = options.params[paramKey]
-      //     } else {
-      //       config.body[paramKey] = options.params[paramKey]
-      //     }
-      //     break
-      // }
     }
 
     // STATIC PARAMS

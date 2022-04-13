@@ -1,3 +1,4 @@
+import { RequestParams } from '../controllers/HttpRequestConfig'
 import { ApiDescription } from '../types/ApiDescription.type'
 
 export type SlackEntity = { incomingWebhooks }
@@ -8,6 +9,13 @@ export type SlackRequestOptionsAuth = {
 export type SlackRequestOptionsParams = {
   text
   blocks
+}
+
+export interface SlackIncomingWebhooksMessage extends RequestParams {
+  kind: 'slack.incomingWebhooks.message'
+  'auth:webhookid': string
+  'body:text'?: string
+  'body:blocks'?: any[]
 }
 
 export const SLACK: ApiDescription<SlackEntity, SlackEndpoint> = {
@@ -38,18 +46,6 @@ export const SLACK: ApiDescription<SlackEntity, SlackEndpoint> = {
             type: 'auth',
           },
         ],
-        params: {
-          text: {
-            type: 'any',
-            paramType: 'body',
-            required: true,
-          },
-          blocks: {
-            type: 'any',
-            paramType: 'body',
-            required: false,
-          },
-        },
       },
     },
   },

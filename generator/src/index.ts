@@ -1,20 +1,7 @@
-import {
-  ETHERSCAN,
-  EtherscanAccountsBalanceSingleAddress,
-  EtherscanRequestOptionsAuth,
-  EtherscanRequestOptionsParams,
-} from './configs/etherscan.config'
-import { MAILERSEND, MailerSendEmailSend } from './configs/mailersend.config'
-import {
-  PINATA,
-  PinataRequestOptionsAuth,
-  PinataRequestOptionsParams,
-} from './configs/pinata.config'
-import {
-  SLACK,
-  SlackRequestOptionsAuth,
-  SlackRequestOptionsParams,
-} from './configs/slack.config'
+import { SlackIncomingWebhooksMessage } from './configs/slack.config'
+import { EtherscanAccountsBalanceSingleAddress } from './configs/etherscan.config'
+import { MailerSendEmailSend } from './configs/mailersend.config'
+import { PinataPinningPinJsonToIPFS } from './configs/pinata.config'
 import { HttpRequest } from './controllers/HttpRequest'
 import {
   HttpRequestConfig,
@@ -33,37 +20,27 @@ async function main() {
         'query:address': process.env.ETHERSCAN_ADDRESS,
         'auth:apikey': process.env.ETHERSCAN_APIKEY,
       }),
-    // pinata: {
-    //   api: PINATA,
-    //   endpoint: PINATA.api.pinning.pinJSONToIPFS,
-    //   params: {
-    //     pinataContent: { test: 'test' },
-    //     pinataMetadata: { name: 'asd', keyvalues: { key1: 'value1' } },
-    //   },
-    //   auth: {
-    //     pinata_api_key: process.env.PINATA_API_KEY,
-    //     pinata_secret_api_key: process.env.PINATA_SECRET_API_KEY,
-    //   },
-    // },
-    // slack: {
-    //   api: SLACK,
-    //   endpoint: SLACK.api.incomingWebhooks.message,
-    //   params: {
-    //     text: 'Hello World!',
-    //     blocks: [
-    //       {
-    //         type: 'section',
-    //         text: {
-    //           type: 'mrkdwn',
-    //           text: 'Hello **World**!',
-    //         },
-    //       },
-    //     ],
-    //   },
-    //   auth: {
-    //     webhookid: process.env.SLACK_WEBHOOK_ID,
-    //   },
-    // },
+    pinata: HttpRequestConfig.requestOptions<PinataPinningPinJsonToIPFS>({
+      kind: 'pinata.pinning.pinJSONToIPFS',
+      'auth:pinata_api_key': process.env.PINATA_API_KEY,
+      'auth:pinata_secret_api_key': process.env.PINATA_SECRET_API_KEY,
+      'body:pinataContent': { test: 'test' },
+      'body:pinataMetadata': { name: 'asd', keyvalues: { key1: 'value1' } },
+    }),
+    slack: HttpRequestConfig.requestOptions<SlackIncomingWebhooksMessage>({
+      kind: 'slack.incomingWebhooks.message',
+      'auth:webhookid': process.env.SLACK_WEBHOOK_ID,
+      'body:text': 'Hello, world!',
+      'body:blocks': [
+        {
+          type: 'section',
+          text: {
+            type: 'mrkdwn',
+            text: 'Hello, *world*!',
+          },
+        },
+      ],
+    }),
     mailersend: HttpRequestConfig.requestOptions<MailerSendEmailSend>({
       kind: 'mailersend.email.send',
       'body:from': {
@@ -82,7 +59,7 @@ async function main() {
       'auth:Authorization': `Bearer ${process.env.MAILER_SEND_API_TOKEN}`,
     }),
   }
-  const currentRequestOptions = requestOptions.etherscan
+  const currentRequestOptions = requestOptions.slack
 
   const requestConfig = await HttpRequestConfig.requestConfig(
     currentRequestOptions
