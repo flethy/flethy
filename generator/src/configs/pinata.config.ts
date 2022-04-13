@@ -1,9 +1,16 @@
+import { RequestParams } from '../controllers/HttpRequestConfig'
 import { ApiDescription } from '../types/ApiDescription.type'
 
 export type PinataEntity = { pinning }
 export type PinataEndpoint = { pinJSONToIPFS }
-export type PinataRequestOptionsAuth = { pinata_api_key; pinata_secret_api_key }
-export type PinataRequestOptionsParams = { pinataContent; pinataMetadata }
+
+export interface PinataPinningPinJsonToIPFS extends RequestParams {
+  kind: 'pinata.pinning.pinJSONToIPFS'
+  'body:pinataContent': any
+  'body:pinataMetadata': { name: string; keyvalues: { [key: string]: string } }
+  'auth:pinata_api_key': string
+  'auth:pinata_secret_api_key': string
+}
 
 export const PINATA: ApiDescription<PinataEntity, PinataEndpoint> = {
   meta: {
@@ -39,18 +46,6 @@ export const PINATA: ApiDescription<PinataEntity, PinataEndpoint> = {
             type: 'static',
           },
         ],
-        params: {
-          pinataContent: {
-            type: 'any',
-            paramType: 'body',
-            required: true,
-          },
-          pinataMetadata: {
-            type: 'any',
-            paramType: 'body',
-            required: true,
-          },
-        },
       },
     },
   },

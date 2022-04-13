@@ -1,3 +1,4 @@
+import { RequestParams } from '../controllers/HttpRequestConfig'
 import { ApiDescription } from '../types/ApiDescription.type'
 
 export type EtherscanEntity = { accounts }
@@ -8,6 +9,13 @@ export type EtherscanRequestOptionsAuth = {
 export type EtherscanRequestOptionsParams = {
   tag
   address
+}
+
+export interface EtherscanAccountsBalanceSingleAddress extends RequestParams {
+  kind: 'etherscan.accounts.balanceSingleAddress'
+  'query:tag': 'latest' | 'earliest' | 'pending'
+  'query:address': string
+  'auth:apikey': string
 }
 
 export const ETHERSCAN: ApiDescription<EtherscanEntity, EtherscanEndpoint> = {
@@ -32,20 +40,6 @@ export const ETHERSCAN: ApiDescription<EtherscanEntity, EtherscanEndpoint> = {
         query: {
           module: 'account',
           action: 'balance',
-        },
-        params: {
-          tag: {
-            type: 'enum',
-            paramType: 'query',
-            required: true,
-            values: ['latest', 'earliest', 'pending'],
-          },
-          address: {
-            type: 'string',
-            paramType: 'query',
-            required: true,
-            description: 'The address to check the balance of',
-          },
         },
       },
     },
