@@ -1,7 +1,8 @@
-import { SlackIncomingWebhooksMessage } from './configs/slack.config'
+import { AlchemyNftGetNFTs } from './configs/alchemy.config'
 import { EtherscanAccountsBalanceSingleAddress } from './configs/etherscan.config'
 import { MailerSendEmailSend } from './configs/mailersend.config'
 import { PinataPinningPinJsonToIPFS } from './configs/pinata.config'
+import { SlackIncomingWebhooksMessage } from './configs/slack.config'
 import { HttpRequest } from './controllers/HttpRequest'
 import {
   HttpRequestConfig,
@@ -58,8 +59,14 @@ async function main() {
       'body:html': '<h1>Hi there!</h1><p>Welcome to diypunks!</p>',
       'auth:Authorization': `Bearer ${process.env.MAILER_SEND_API_TOKEN}`,
     }),
+    alchemy: HttpRequestConfig.requestOptions<AlchemyNftGetNFTs>({
+      kind: 'alchemy.nft.getNFTs',
+      'auth:apikey': process.env.ALCHEMY_APIKEY,
+      'query:contractAddresses[]': process.env.ETH_DIYPUNKS_CONTRACT,
+      'query:owner': process.env.ETH_OWNER,
+    }),
   }
-  const currentRequestOptions = requestOptions.slack
+  const currentRequestOptions = requestOptions.alchemy
 
   const requestConfig = await HttpRequestConfig.requestConfig(
     currentRequestOptions

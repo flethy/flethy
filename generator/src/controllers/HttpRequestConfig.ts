@@ -1,12 +1,13 @@
-import { PINATA } from '../configs/pinata.config'
+import { ALCHEMY } from '../configs/alchemy.config'
 import { ETHERSCAN } from '../configs/etherscan.config'
 import { MAILERSEND } from '../configs/mailersend.config'
+import { PINATA } from '../configs/pinata.config'
+import { SLACK } from '../configs/slack.config'
 import {
   ApiDescription,
   ApiDescriptionEndpoint,
 } from '../types/ApiDescription.type'
 import { FetchParams } from '../types/FetchParams.type'
-import { SLACK } from '../configs/slack.config'
 
 export interface RequestParams {
   kind: string
@@ -40,6 +41,10 @@ export class HttpRequestConfig {
       case 'slack.incomingWebhooks.message':
         api = SLACK
         endpoint = SLACK.api.incomingWebhooks.message
+        break
+      case 'alchemy.nft.getNFTs':
+        api = ALCHEMY
+        endpoint = ALCHEMY.api.nft.getNFTs
         break
     }
     return { params, api, endpoint }
@@ -102,13 +107,6 @@ export class HttpRequestConfig {
       }
     }
 
-    // REQUEST
-    if (Object.keys(queryParams).length > 0) {
-      config.url += `?${Object.entries(queryParams)
-        .map(([key, value]) => `${key}=${value}`)
-        .join('&')}`
-    }
-
     // PATHS
     if (options.endpoint.paths) {
       const paths: string[] = []
@@ -126,6 +124,13 @@ export class HttpRequestConfig {
         }
       }
       config.url += `/${paths.join('/')}`
+    }
+
+    // REQUEST
+    if (Object.keys(queryParams).length > 0) {
+      config.url += `?${Object.entries(queryParams)
+        .map(([key, value]) => `${key}=${value}`)
+        .join('&')}`
     }
 
     return config
