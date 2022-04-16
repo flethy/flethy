@@ -1,6 +1,7 @@
 import { ALCHEMY } from '../configs/alchemy.config'
 import { ETHERSCAN } from '../configs/etherscan.config'
 import { MAILERSEND } from '../configs/mailersend.config'
+import { OPENSEA } from '../configs/opensea.config'
 import { PINATA } from '../configs/pinata.config'
 import { SLACK } from '../configs/slack.config'
 import {
@@ -45,6 +46,10 @@ export class HttpRequestConfig {
       case 'alchemy.nft.getNFTs':
         api = ALCHEMY
         endpoint = ALCHEMY.api.nft.getNFTs
+        break
+      case 'opensea.assets.get':
+        api = OPENSEA
+        endpoint = OPENSEA.api.assets.get
         break
     }
     return { params, api, endpoint }

@@ -1,6 +1,7 @@
 import { AlchemyNftGetNFTs } from './configs/alchemy.config'
 import { EtherscanAccountsBalanceSingleAddress } from './configs/etherscan.config'
 import { MailerSendEmailSend } from './configs/mailersend.config'
+import { OpenseaGetAssets } from './configs/opensea.config'
 import { PinataPinningPinJsonToIPFS } from './configs/pinata.config'
 import { SlackIncomingWebhooksMessage } from './configs/slack.config'
 import { HttpRequest } from './controllers/HttpRequest'
@@ -65,8 +66,17 @@ async function main() {
       'query:contractAddresses[]': process.env.ETH_DIYPUNKS_CONTRACT,
       'query:owner': process.env.ETH_OWNER,
     }),
+    opensea: HttpRequestConfig.requestOptions<OpenseaGetAssets>({
+      kind: 'opensea.assets.get',
+      'auth:X-API-KEY': process.env.OPENSEA_APIKEY,
+      'query:asset_contract_address': process.env.ETH_DIYPUNKS_CONTRACT,
+      'query:owner': process.env.ETH_OWNER,
+      'query:limit': 20,
+      'query:offset': 0,
+      'query:order_direction': 'desc',
+    }),
   }
-  const currentRequestOptions = requestOptions.alchemy
+  const currentRequestOptions = requestOptions.opensea
 
   const requestConfig = await HttpRequestConfig.requestConfig(
     currentRequestOptions
