@@ -1,7 +1,10 @@
 import { AlchemyNftGetNFTs } from './configs/alchemy.config'
 import { EtherscanAccountsBalanceSingleAddress } from './configs/etherscan.config'
 import { MailerSendEmailSend } from './configs/mailersend.config'
-import { OpenseaGetAssets } from './configs/opensea.config'
+import {
+  OpenseaGetAssets,
+  OpenseaGetCollections,
+} from './configs/opensea.config'
 import { PinataPinningPinJsonToIPFS } from './configs/pinata.config'
 import { SlackIncomingWebhooksMessage } from './configs/slack.config'
 import { HttpRequest } from './controllers/HttpRequest'
@@ -75,8 +78,17 @@ async function main() {
       'query:offset': 0,
       'query:order_direction': 'desc',
     }),
+    openseaCollections: HttpRequestConfig.requestOptions<OpenseaGetCollections>(
+      {
+        kind: 'opensea.collections.get',
+        'auth:X-API-KEY': process.env.OPENSEA_APIKEY,
+        'query:asset_owner': process.env.ETH_OWNER,
+        'query:limit': 20,
+        'query:offset': 0,
+      }
+    ),
   }
-  const currentRequestOptions = requestOptions.opensea
+  const currentRequestOptions = requestOptions.openseaCollections
 
   const requestConfig = await HttpRequestConfig.requestConfig(
     currentRequestOptions
