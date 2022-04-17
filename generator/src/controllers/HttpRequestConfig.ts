@@ -51,6 +51,10 @@ export class HttpRequestConfig {
         api = OPENSEA
         endpoint = OPENSEA.api.assets.get
         break
+      case 'opensea.collections.get':
+        api = OPENSEA
+        endpoint = OPENSEA.api.collections.get
+        break
     }
     return { params, api, endpoint }
   }
