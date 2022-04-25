@@ -1,4 +1,5 @@
 import { FetchMethod } from './FetchParams.type'
+import { CATEGORY, TAG, TYPE } from './ServiceCategory.type'
 
 export interface ApiDescription<Entity, Endpoint> {
   meta: {
@@ -31,6 +32,9 @@ export interface ApiDescriptionEndpoint {
     title: string
     description: string
     docs: string
+    tags: TAG[]
+    category: CATEGORY
+    type: TYPE
   }
   query?: { [key: string]: string }
   params?: any
