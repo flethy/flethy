@@ -4,6 +4,7 @@ import { MAILERSEND } from '../configs/mailersend.config'
 import { OPENSEA } from '../configs/opensea.config'
 import { PINATA } from '../configs/pinata.config'
 import { SLACK } from '../configs/slack.config'
+import { THE_GRAPH } from '../configs/thegraph.config'
 import { WEB3_STORAGE } from '../configs/web3storage.config'
 import {
   ApiDescription,
@@ -59,6 +60,10 @@ export class HttpRequestConfig {
       case 'web3storage.upload.content':
         api = WEB3_STORAGE
         endpoint = WEB3_STORAGE.api.upload.content
+        break
+      case 'thegraph.hostedservice.query':
+        api = THE_GRAPH
+        endpoint = THE_GRAPH.api.hostedservice.query
         break
     }
     return { params, api, endpoint }

@@ -14,6 +14,7 @@ import {
   RequestOptions,
 } from './controllers/HttpRequestConfig'
 import { logger } from './utils/Logger'
+import { TheGraphQuery } from './configs/thegraph.config'
 
 async function main() {
   const requestOptions: {
@@ -97,8 +98,31 @@ async function main() {
         testBoolean: true,
       },
     }),
+    thegraph: HttpRequestConfig.requestOptions<TheGraphQuery>({
+      kind: 'thegraph.hostedservice.query',
+      'auth:subgraphId': process.env.SUBGRAPH_ID,
+      'body:query': `{
+        tokens(first: 5) {
+          id
+          owner {
+            id
+          }
+          uri
+          transfers {
+            id
+          }
+        }
+        owners(first: 5) {
+          id
+          ownedTokens {
+            id
+          }
+          balance
+        }
+      }`,
+    }),
   }
-  const currentRequestOptions = requestOptions.web3storage
+  const currentRequestOptions = requestOptions.thegraph
 
   const requestConfig = await HttpRequestConfig.requestConfig(
     currentRequestOptions
