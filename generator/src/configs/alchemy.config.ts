@@ -27,6 +27,9 @@ export const ALCHEMY: ApiDescription<AlchemyEntity, AlchemyEndpoint> = {
           title: 'getNFTs',
           description: 'Gets all NFTs currently owned by a given address.',
           docs: 'https://docs.alchemy.com/alchemy/enhanced-apis/nft-api/getnfts',
+          tags: ['web3', 'nft'],
+          category: 'aggregation',
+          type: 'indexer',
         },
         method: 'GET',
         paths: [

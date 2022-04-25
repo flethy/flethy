@@ -34,6 +34,9 @@ export const PINATA: ApiDescription<PinataEntity, PinataEndpoint> = {
           description:
             "This endpoint allows the sender to add and pin any JSON object they wish to Pinata's IPFS nodes. This endpoint is specifically optimized to only handle JSON content.",
           docs: 'https://docs.pinata.cloud/api-pinning/pin-json',
+          tags: ['web3'],
+          category: 'storage',
+          type: 'ipfs',
         },
         method: 'POST',
         paths: [

@@ -35,6 +35,9 @@ export const ETHERSCAN: ApiDescription<EtherscanEntity, EtherscanEndpoint> = {
           title: 'Get Ether Balance for a Single Address',
           description: 'Returns the Ether balance of a given address.',
           docs: 'https://docs.etherscan.io/api-endpoints/accounts#get-ether-balance-for-a-single-address',
+          tags: ['web3'],
+          category: 'aggregation',
+          type: 'indexer',
         },
         method: 'GET',
         query: {

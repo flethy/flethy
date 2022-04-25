@@ -31,6 +31,9 @@ export const WEB3_STORAGE: ApiDescription<
           description:
             'Store files using Web3.Storage. You can upload either a single file or multiple files.',
           docs: 'https://web3.storage/docs/reference/http-api/#operation/post-upload',
+          tags: ['web3'],
+          category: 'storage',
+          type: 'ipfs',
         },
         method: 'POST',
         paths: [

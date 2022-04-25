@@ -24,6 +24,9 @@ export const THE_GRAPH: ApiDescription<TheGraphEntity, TheGraphEndpoint> = {
           title: 'query',
           description: 'Query the GraphQL API of a hosted subgraph.',
           docs: 'https://thegraph.com/docs/en/',
+          tags: ['web3'],
+          category: 'aggregation',
+          type: 'indexer',
         },
         method: 'POST',
         paths: [
