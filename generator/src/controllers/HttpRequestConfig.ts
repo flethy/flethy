@@ -4,6 +4,7 @@ import { MAILERSEND } from '../configs/mailersend.config'
 import { OPENSEA } from '../configs/opensea.config'
 import { PINATA } from '../configs/pinata.config'
 import { SLACK } from '../configs/slack.config'
+import { WEB3_STORAGE } from '../configs/web3storage.config'
 import {
   ApiDescription,
   ApiDescriptionEndpoint,
@@ -54,6 +55,10 @@ export class HttpRequestConfig {
       case 'opensea.collections.get':
         api = OPENSEA
         endpoint = OPENSEA.api.collections.get
+        break
+      case 'web3storage.upload.content':
+        api = WEB3_STORAGE
+        endpoint = WEB3_STORAGE.api.upload.content
         break
     }
     return { params, api, endpoint }

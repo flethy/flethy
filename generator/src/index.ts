@@ -1,3 +1,4 @@
+import { Web3StorageUploadContent } from './configs/web3storage.config'
 import { AlchemyNftGetNFTs } from './configs/alchemy.config'
 import { EtherscanAccountsBalanceSingleAddress } from './configs/etherscan.config'
 import { MailerSendEmailSend } from './configs/mailersend.config'
@@ -87,8 +88,17 @@ async function main() {
         'query:offset': 0,
       }
     ),
+    web3storage: HttpRequestConfig.requestOptions<Web3StorageUploadContent>({
+      kind: 'web3storage.upload.content',
+      'auth:Authorization': `Bearer ${process.env.WEB3_STORAGE_API_TOKEN}`,
+      'body:content': {
+        testString: 'testString',
+        testNumber: 1,
+        testBoolean: true,
+      },
+    }),
   }
-  const currentRequestOptions = requestOptions.openseaCollections
+  const currentRequestOptions = requestOptions.web3storage
 
   const requestConfig = await HttpRequestConfig.requestConfig(
     currentRequestOptions
