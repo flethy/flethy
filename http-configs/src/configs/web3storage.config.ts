@@ -20,7 +20,7 @@ export namespace Web3Storage {
     },
     base: 'https://api.web3.storage',
     auth: {
-      Authorization: { type: 'header' },
+      Authorization: { type: 'header:bearer' },
     },
     api: {
       upload: {

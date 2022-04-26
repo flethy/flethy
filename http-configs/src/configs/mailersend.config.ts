@@ -52,7 +52,7 @@ export namespace MailerSend {
           base: 'https://api.mailersend.com/v1',
           method: 'POST',
           auth: {
-            Authorization: { type: 'header' },
+            Authorization: { type: 'header:bearer' },
           },
           paths: [
             {

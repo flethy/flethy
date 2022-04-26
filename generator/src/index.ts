@@ -57,7 +57,7 @@ async function main() {
       'body:subject': 'Welcome to diypunks!',
       'body:text': 'Hi there! Welcome to diypunks!',
       'body:html': '<h1>Hi there!</h1><p>Welcome to diypunks!</p>',
-      'auth:Authorization': `Bearer ${process.env.MAILER_SEND_API_TOKEN}`,
+      'auth:Authorization': process.env.MAILER_SEND_API_TOKEN,
     }),
     alchemy: nao<Alchemy.NftGetNFTs>({
       kind: 'alchemy.nft.getNFTs',
@@ -83,7 +83,7 @@ async function main() {
     }),
     web3storage: nao<Web3Storage.UploadContent>({
       kind: 'web3storage.upload.content',
-      'auth:Authorization': `Bearer ${process.env.WEB3_STORAGE_API_TOKEN}`,
+      'auth:Authorization': process.env.WEB3_STORAGE_API_TOKEN,
       'body:content': {
         testString: 'testString',
         testNumber: 1,
@@ -114,7 +114,7 @@ async function main() {
       }`,
     }),
   }
-  const requestConfig = requestConfigs.alchemy
+  const requestConfig = requestConfigs.mailersend
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

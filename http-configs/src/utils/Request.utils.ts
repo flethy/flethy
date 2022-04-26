@@ -40,6 +40,9 @@ export class HttpRequestConfig {
             case 'header':
               config.headers[keyname] = options.params[paramKey]
               break
+            case 'header:bearer':
+              config.headers[keyname] = `Bearer ${options.params[paramKey]}`
+              break
             case 'path':
               // will be handled in path section
               break
