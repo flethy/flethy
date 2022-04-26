@@ -1,4 +1,4 @@
-import { RequestParams } from '../controllers/HttpRequestConfig'
+import { RequestParams } from '../types/Request.types'
 import { ApiDescription } from '../types/ApiDescription.type'
 
 export namespace Pinata {

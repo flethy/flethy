@@ -11,20 +11,17 @@ import {
   ApiDescriptionEndpoint,
 } from '../types/ApiDescription.type'
 import { FetchParams } from '../types/FetchParams.type'
+import { RequestOptions, RequestParams } from '../types/Request.types'
 
-export interface RequestParams {
-  kind: string
-}
-
-export interface RequestOptions<RequestOptionsParams> {
-  api: ApiDescription<any, any>
-  endpoint: ApiDescriptionEndpoint
-  params: RequestOptionsParams
+export function nao<Params extends RequestParams>(params: Params): FetchParams {
+  return HttpRequestConfig.requestConfig(
+    HttpRequestConfig.requestOptions<Params>(params),
+  )
 }
 
 export class HttpRequestConfig {
   public static requestOptions<Params extends RequestParams>(
-    params: Params
+    params: Params,
   ): RequestOptions<Params> {
     let endpoint: ApiDescriptionEndpoint
     let api: ApiDescription<any, any>
