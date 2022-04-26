@@ -4,7 +4,7 @@ import {
   jsonInputForTargetLanguage,
   quicktype,
 } from 'quicktype-core'
-import { FetchParams } from '../types/FetchParams.type'
+import { FetchParams } from '../../../http-configs/src/types/FetchParams.type'
 
 export class HttpRequest {
   public static async request(params: FetchParams) {

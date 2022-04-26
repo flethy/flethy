@@ -1,72 +1,19 @@
-import { ALCHEMY } from '../configs/alchemy.config'
-import { ETHERSCAN } from '../configs/etherscan.config'
-import { MAILERSEND } from '../configs/mailersend.config'
-import { OPENSEA } from '../configs/opensea.config'
-import { PINATA } from '../configs/pinata.config'
-import { SLACK } from '../configs/slack.config'
-import { THE_GRAPH } from '../configs/thegraph.config'
-import { WEB3_STORAGE } from '../configs/web3storage.config'
-import {
-  ApiDescription,
-  ApiDescriptionEndpoint,
-} from '../types/ApiDescription.type'
 import { FetchParams } from '../types/FetchParams.type'
+import { RequestOptions, RequestParams } from '../types/Request.types'
+import { ConfigUtils } from './Config.utils'
 
-export interface RequestParams {
-  kind: string
-}
-
-export interface RequestOptions<RequestOptionsParams> {
-  api: ApiDescription<any, any>
-  endpoint: ApiDescriptionEndpoint
-  params: RequestOptionsParams
+export function nao<Params extends RequestParams>(params: Params): FetchParams {
+  return HttpRequestConfig.requestConfig(
+    HttpRequestConfig.requestOptions<Params>(params),
+  )
 }
 
 export class HttpRequestConfig {
   public static requestOptions<Params extends RequestParams>(
-    params: Params
+    params: Params,
   ): RequestOptions<Params> {
-    let endpoint: ApiDescriptionEndpoint
-    let api: ApiDescription<any, any>
-    switch (params.kind) {
-      case 'mailersend.email.send':
-        api = MAILERSEND
-        endpoint = MAILERSEND.api.email.send
-        break
-      case 'etherscan.accounts.balanceSingleAddress':
-        api = ETHERSCAN
-        endpoint = ETHERSCAN.api.accounts.balanceSingleAddress
-        break
-      case 'pinata.pinning.pinJSONToIPFS':
-        api = PINATA
-        endpoint = PINATA.api.pinning.pinJSONToIPFS
-        break
-      case 'slack.incomingWebhooks.message':
-        api = SLACK
-        endpoint = SLACK.api.incomingWebhooks.message
-        break
-      case 'alchemy.nft.getNFTs':
-        api = ALCHEMY
-        endpoint = ALCHEMY.api.nft.getNFTs
-        break
-      case 'opensea.assets.get':
-        api = OPENSEA
-        endpoint = OPENSEA.api.assets.get
-        break
-      case 'opensea.collections.get':
-        api = OPENSEA
-        endpoint = OPENSEA.api.collections.get
-        break
-      case 'web3storage.upload.content':
-        api = WEB3_STORAGE
-        endpoint = WEB3_STORAGE.api.upload.content
-        break
-      case 'thegraph.hostedservice.query':
-        api = THE_GRAPH
-        endpoint = THE_GRAPH.api.hostedservice.query
-        break
-    }
-    return { params, api, endpoint }
+    const config = ConfigUtils.getConfigByKind(params.kind)
+    return { params, api: config.api, endpoint: config.endpoint }
   }
 
   public static requestConfig(options: RequestOptions<any>): FetchParams {

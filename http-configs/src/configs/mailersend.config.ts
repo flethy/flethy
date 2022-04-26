@@ -1,35 +1,36 @@
-import { RequestParams } from '../controllers/HttpRequestConfig'
+import { RequestParams } from '../types/Request.types'
 import { ApiDescription } from '../types/ApiDescription.type'
 
-export type MailerSendEntity = { email }
-export type MailerSendEndpoint = { send }
+export namespace MailerSend {
+  export type Entity = { email }
+  export type Endpoint = { send }
 
-export interface MailerSendEmailSend extends RequestParams {
-  kind: 'mailersend.email.send'
-  'body:from': {
-    email: string
-    name?: string
-  }
-  'body:to': Array<{
-    email: string
-    name?: string
-  }>
-  'body:subject': string
-  'body:text': string
-  'body:html': string
-  'body:variables'?: Array<{
-    email: string
-    substitutions: Array<{
-      var: string
-      value: string
+  export interface EmailSend extends RequestParams {
+    kind: 'mailersend.email.send'
+    'body:from': {
+      email: string
+      name?: string
+    }
+    'body:to': Array<{
+      email: string
+      name?: string
     }>
-  }>
-  'auth:Authorization': string
-}
+    'body:subject': string
+    'body:text': string
+    'body:html': string
+    'body:variables'?: Array<{
+      email: string
+      substitutions: Array<{
+        var: string
+        value: string
+      }>
+    }>
+    'auth:Authorization': string
+  }
 
-export const MAILERSEND: ApiDescription<MailerSendEntity, MailerSendEndpoint> =
-  {
+  export const API: ApiDescription<Entity, Endpoint> = {
     meta: {
+      id: 'mailersend',
       name: 'MailerSend',
       url: 'https://mailersend.com',
       docs: 'https://developers.mailersend.com/',
@@ -64,3 +65,6 @@ export const MAILERSEND: ApiDescription<MailerSendEntity, MailerSendEndpoint> =
       },
     },
   }
+}
+
+export default MailerSend
