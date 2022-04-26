@@ -59,3 +59,5 @@ export namespace Pinata {
     },
   }
 }
+
+export default Pinata

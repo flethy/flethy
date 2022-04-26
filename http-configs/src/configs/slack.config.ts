@@ -49,3 +49,5 @@ export namespace Slack {
     },
   }
 }
+
+export default Slack

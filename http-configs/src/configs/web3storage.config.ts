@@ -14,7 +14,7 @@ export namespace Web3Storage {
   export const API: ApiDescription<Entity, Endpoint> = {
     meta: {
       id: 'web3storage',
-      name: 'Web3 Storage',
+      name: 'Web3Storage',
       url: 'https://web3.storage',
       docs: 'https://web3.storage/docs',
     },
@@ -46,3 +46,5 @@ export namespace Web3Storage {
     },
   }
 }
+
+export default Web3Storage

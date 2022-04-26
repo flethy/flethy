@@ -44,3 +44,5 @@ export namespace Etherscan {
     },
   }
 }
+
+export default Etherscan

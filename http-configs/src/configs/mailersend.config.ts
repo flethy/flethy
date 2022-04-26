@@ -66,3 +66,5 @@ export namespace MailerSend {
     },
   }
 }
+
+export default MailerSend

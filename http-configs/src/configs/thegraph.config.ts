@@ -50,3 +50,5 @@ export namespace TheGraph {
     },
   }
 }
+
+export default TheGraph

@@ -1,11 +1,4 @@
-import { Alchemy } from '../configs/alchemy.config'
-import { Etherscan } from '../configs/etherscan.config'
-import { MailerSend } from '../configs/mailersend.config'
-import { OpenSea } from '../configs/opensea.config'
-import { Pinata } from '../configs/pinata.config'
-import { Slack } from '../configs/slack.config'
-import { TheGraph } from '../configs/thegraph.config'
-import { Web3Storage } from '../configs/web3storage.config'
+import { CONFIGS } from '../constants/configs.const'
 import {
   ApiDescription,
   ApiDescriptionEndpoint,
@@ -13,24 +6,7 @@ import {
 
 export class ConfigUtils {
   public static getAllConfigs(): Map<string, ApiDescription<any, any>> {
-    const apiDescriptions = [
-      Alchemy.API,
-      Etherscan.API,
-      MailerSend.API,
-      OpenSea.API,
-      Pinata.API,
-      Slack.API,
-      TheGraph.API,
-      Web3Storage.API,
-    ]
-    const map: Map<string, ApiDescription<any, any>> = new Map<
-      string,
-      ApiDescription<any, any>
-    >()
-    apiDescriptions.forEach((apiDescription) => {
-      map.set(apiDescription.meta.id, apiDescription)
-    })
-    return map
+    return CONFIGS
   }
 
   public static getConfigById(id: string): ApiDescription<any, any> {
