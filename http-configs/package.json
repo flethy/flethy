@@ -7,6 +7,9 @@
   "scripts": {
     "build": "tsc --p tsconfig.json"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "repository": "github:web3nao/web3nao",
   "author": "adam.urban@gmail.com",
   "license": "MIT",
