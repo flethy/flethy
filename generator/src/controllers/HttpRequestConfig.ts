@@ -1,11 +1,11 @@
-import { ALCHEMY } from '../configs/alchemy.config'
-import { ETHERSCAN } from '../configs/etherscan.config'
-import { MAILERSEND } from '../configs/mailersend.config'
-import { OPENSEA } from '../configs/opensea.config'
-import { PINATA } from '../configs/pinata.config'
-import { SLACK } from '../configs/slack.config'
-import { THE_GRAPH } from '../configs/thegraph.config'
-import { WEB3_STORAGE } from '../configs/web3storage.config'
+import { Alchemy } from '../configs/alchemy.config'
+import { Etherscan } from '../configs/etherscan.config'
+import { MailerSend } from '../configs/mailersend.config'
+import { OpenSea } from '../configs/opensea.config'
+import { Pinata } from '../configs/pinata.config'
+import { Slack } from '../configs/slack.config'
+import { TheGraph } from '../configs/thegraph.config'
+import { Web3Storage } from '../configs/web3storage.config'
 import {
   ApiDescription,
   ApiDescriptionEndpoint,
@@ -30,40 +30,40 @@ export class HttpRequestConfig {
     let api: ApiDescription<any, any>
     switch (params.kind) {
       case 'mailersend.email.send':
-        api = MAILERSEND
-        endpoint = MAILERSEND.api.email.send
+        api = MailerSend.API
+        endpoint = MailerSend.API.api.email.send
         break
       case 'etherscan.accounts.balanceSingleAddress':
-        api = ETHERSCAN
-        endpoint = ETHERSCAN.api.accounts.balanceSingleAddress
+        api = Etherscan.API
+        endpoint = Etherscan.API.api.accounts.balanceSingleAddress
         break
       case 'pinata.pinning.pinJSONToIPFS':
-        api = PINATA
-        endpoint = PINATA.api.pinning.pinJSONToIPFS
+        api = Pinata.API
+        endpoint = Pinata.API.api.pinning.pinJSONToIPFS
         break
       case 'slack.incomingWebhooks.message':
-        api = SLACK
-        endpoint = SLACK.api.incomingWebhooks.message
+        api = Slack.API
+        endpoint = Slack.API.api.incomingWebhooks.message
         break
       case 'alchemy.nft.getNFTs':
-        api = ALCHEMY
-        endpoint = ALCHEMY.api.nft.getNFTs
+        api = Alchemy.API
+        endpoint = Alchemy.API.api.nft.getNFTs
         break
       case 'opensea.assets.get':
-        api = OPENSEA
-        endpoint = OPENSEA.api.assets.get
+        api = OpenSea.API
+        endpoint = OpenSea.API.api.assets.get
         break
       case 'opensea.collections.get':
-        api = OPENSEA
-        endpoint = OPENSEA.api.collections.get
+        api = OpenSea.API
+        endpoint = OpenSea.API.api.collections.get
         break
       case 'web3storage.upload.content':
-        api = WEB3_STORAGE
-        endpoint = WEB3_STORAGE.api.upload.content
+        api = Web3Storage.API
+        endpoint = Web3Storage.API.api.upload.content
         break
       case 'thegraph.hostedservice.query':
-        api = THE_GRAPH
-        endpoint = THE_GRAPH.api.hostedservice.query
+        api = TheGraph.API
+        endpoint = TheGraph.API.api.hostedservice.query
         break
     }
     return { params, api, endpoint }
