@@ -50,5 +50,5 @@ export interface ApiDescriptionEndpointParam {
 }
 
 export interface ApiDescriptionAuth {
-  type: 'query' | 'header' | 'path'
+  type: 'query' | 'header' | 'header:bearer' | 'path'
 }
