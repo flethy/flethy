@@ -1,3 +1,10 @@
 tsconfig.json
 src
 assets
+.env
+.eslintrc.js
+.gitignore
+.npmignore
+.npmrc
+prettier.config.js
+yarn-error.log
