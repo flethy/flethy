@@ -14,6 +14,7 @@ export namespace Slack {
 
   export const API: ApiDescription<Entity, Endpoint> = {
     meta: {
+      id: 'slack',
       name: 'Slack',
       url: 'https://slack.com',
       docs: 'https://api.slack.com/',

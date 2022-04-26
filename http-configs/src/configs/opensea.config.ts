@@ -26,6 +26,7 @@ export namespace OpenSea {
 
   export const API: ApiDescription<Entity, Endpoint> = {
     meta: {
+      id: 'opensea',
       name: 'Opensea',
       url: 'https://opensea.io',
       docs: 'https://docs.opensea.io/',

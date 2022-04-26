@@ -13,6 +13,7 @@ export namespace TheGraph {
 
   export const API: ApiDescription<Entity, Endpoint> = {
     meta: {
+      id: 'thegraph',
       name: 'TheGraph',
       url: 'https://thegraph.com/',
       docs: 'https://thegraph.com/docs/en/',

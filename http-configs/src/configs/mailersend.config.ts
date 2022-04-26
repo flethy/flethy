@@ -30,6 +30,7 @@ export namespace MailerSend {
 
   export const API: ApiDescription<Entity, Endpoint> = {
     meta: {
+      id: 'mailersend',
       name: 'MailerSend',
       url: 'https://mailersend.com',
       docs: 'https://developers.mailersend.com/',

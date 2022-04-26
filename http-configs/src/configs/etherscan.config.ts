@@ -14,6 +14,7 @@ export namespace Etherscan {
 
   export const API: ApiDescription<Entity, Endpoint> = {
     meta: {
+      id: 'etherscan',
       name: 'Etherscan',
       url: 'https://etherscan.io',
       docs: 'https://docs.etherscan.io/',

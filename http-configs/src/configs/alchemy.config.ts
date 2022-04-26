@@ -16,6 +16,7 @@ export namespace Alchemy {
 
   export const API: ApiDescription<Entity, Endpoint> = {
     meta: {
+      id: 'alchemy',
       name: 'Alchemy',
       url: 'https://alchemy.com',
       docs: 'https://docs.alchemy.com/',

@@ -18,6 +18,7 @@ export namespace Pinata {
 
   export const API: ApiDescription<Entity, Endpoint> = {
     meta: {
+      id: 'pinata',
       name: 'Pinata',
       url: 'https://pinata.cloud',
       docs: 'https://docs.pinata.cloud/',

@@ -1,17 +1,6 @@
-import { Alchemy } from '../configs/alchemy.config'
-import { Etherscan } from '../configs/etherscan.config'
-import { MailerSend } from '../configs/mailersend.config'
-import { OpenSea } from '../configs/opensea.config'
-import { Pinata } from '../configs/pinata.config'
-import { Slack } from '../configs/slack.config'
-import { TheGraph } from '../configs/thegraph.config'
-import { Web3Storage } from '../configs/web3storage.config'
-import {
-  ApiDescription,
-  ApiDescriptionEndpoint,
-} from '../types/ApiDescription.type'
 import { FetchParams } from '../types/FetchParams.type'
 import { RequestOptions, RequestParams } from '../types/Request.types'
+import { ConfigUtils } from './Config.utils'
 
 export function nao<Params extends RequestParams>(params: Params): FetchParams {
   return HttpRequestConfig.requestConfig(
@@ -23,47 +12,8 @@ export class HttpRequestConfig {
   public static requestOptions<Params extends RequestParams>(
     params: Params,
   ): RequestOptions<Params> {
-    let endpoint: ApiDescriptionEndpoint
-    let api: ApiDescription<any, any>
-    switch (params.kind) {
-      case 'mailersend.email.send':
-        api = MailerSend.API
-        endpoint = MailerSend.API.api.email.send
-        break
-      case 'etherscan.accounts.balanceSingleAddress':
-        api = Etherscan.API
-        endpoint = Etherscan.API.api.accounts.balanceSingleAddress
-        break
-      case 'pinata.pinning.pinJSONToIPFS':
-        api = Pinata.API
-        endpoint = Pinata.API.api.pinning.pinJSONToIPFS
-        break
-      case 'slack.incomingWebhooks.message':
-        api = Slack.API
-        endpoint = Slack.API.api.incomingWebhooks.message
-        break
-      case 'alchemy.nft.getNFTs':
-        api = Alchemy.API
-        endpoint = Alchemy.API.api.nft.getNFTs
-        break
-      case 'opensea.assets.get':
-        api = OpenSea.API
-        endpoint = OpenSea.API.api.assets.get
-        break
-      case 'opensea.collections.get':
-        api = OpenSea.API
-        endpoint = OpenSea.API.api.collections.get
-        break
-      case 'web3storage.upload.content':
-        api = Web3Storage.API
-        endpoint = Web3Storage.API.api.upload.content
-        break
-      case 'thegraph.hostedservice.query':
-        api = TheGraph.API
-        endpoint = TheGraph.API.api.hostedservice.query
-        break
-    }
-    return { params, api, endpoint }
+    const config = ConfigUtils.getConfigByKind(params.kind)
+    return { params, api: config.api, endpoint: config.endpoint }
   }
 
   public static requestConfig(options: RequestOptions<any>): FetchParams {

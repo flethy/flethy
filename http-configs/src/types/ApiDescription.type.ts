@@ -3,6 +3,7 @@ import { CATEGORY, TAG, TYPE } from './ServiceCategory.type'
 
 export interface ApiDescription<Entity, Endpoint> {
   meta: {
+    id: string
     name: string
     url: string
     docs: string
