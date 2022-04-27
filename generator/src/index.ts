@@ -1,6 +1,9 @@
+import { Airtable } from '../../http-configs/src/configs/airtable.config'
 import { Alchemy } from '../../http-configs/src/configs/alchemy.config'
 import { Etherscan } from '../../http-configs/src/configs/etherscan.config'
+import { Github } from '../../http-configs/src/configs/github.config'
 import { MailerSend } from '../../http-configs/src/configs/mailersend.config'
+import { Notion } from '../../http-configs/src/configs/notion.config'
 import { OpenSea } from '../../http-configs/src/configs/opensea.config'
 import { Pinata } from '../../http-configs/src/configs/pinata.config'
 import { Slack } from '../../http-configs/src/configs/slack.config'
@@ -113,8 +116,55 @@ async function main() {
         }
       }`,
     }),
+    github: nao<Github.ListRepositoryIssues>({
+      kind: 'github.issues.listrepository',
+      'param:owner': 'web3nao',
+      'param:repo': 'web3nao',
+      'query:state': 'all',
+      // 'auth:Authorization': process.env.GITHUB_PAT,
+    }),
+    airtable: nao<Airtable.ListTableRecords>({
+      kind: 'airtable.table.listrecords',
+      'auth:Authorization': process.env.AIRTABLE_API_KEY,
+      'param:baseId': process.env.AIRTABLE_BASE,
+      'param:tableId': process.env.AIRTABLE_TABLE,
+    }),
+    notion: nao<Notion.CreateDatabase>({
+      kind: 'notion.databases.create',
+      'auth:Authorization': process.env.NOTION_API_KEY,
+      'header:Notion-Version': '2022-02-22',
+      'body:parent': {
+        type: 'page_id',
+        page_id: process.env.NOTION_PAGE_ID,
+      },
+      'body:properties': {
+        temp1: {
+          title: {},
+        },
+        temp2: {
+          checkbox: {},
+        },
+        temp3: {
+          created_by: {},
+        },
+        temp4: {
+          select: {
+            options: [
+              {
+                name: 'nice',
+                color: 'default',
+              },
+              {
+                name: 'nice2',
+                color: 'red',
+              },
+            ],
+          },
+        },
+      },
+    }),
   }
-  const requestConfig = requestConfigs.mailersend
+  const requestConfig = requestConfigs.notion
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)
