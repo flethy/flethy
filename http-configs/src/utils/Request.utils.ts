@@ -1,3 +1,4 @@
+import { AuthAws } from 'types/ApiDescription.type'
 import { FetchParams } from '../types/FetchParams.type'
 import { RequestOptions, RequestParams } from '../types/Request.types'
 import { ConfigUtils } from './Config.utils'
@@ -45,6 +46,14 @@ export class HttpRequestConfig {
               break
             case 'header:token':
               config.headers[keyname] = `Token ${options.params[paramKey]}`
+              break
+            case 'header:aws':
+              // eslint-disable-next-line no-case-declarations
+              const authValue: AuthAws = options.params[paramKey] as AuthAws
+              config.headers[
+                keyname
+              ] = `AWS4-HMAC-SHA256 Credential=${authValue.accessKey}/${authValue.region}/${authValue.service}/aws4_request, SignedHeaders=host;x-amz-content-sha256;x-amz-date, Signature=${authValue.secretKey}`
+              // AWS4-HMAC-SHA256 Credential=.../20220427/us-east-1/s3/aws4_request, SignedHeaders=host;x-amz-content-sha256;x-amz-date, Signature=...
               break
             case 'path':
               // will be handled in path section

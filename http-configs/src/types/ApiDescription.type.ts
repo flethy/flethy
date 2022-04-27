@@ -50,5 +50,18 @@ export interface ApiDescriptionEndpointParam {
 }
 
 export interface ApiDescriptionAuth {
-  type: 'query' | 'header' | 'header:bearer' | 'header:token' | 'path'
+  type:
+    | 'query'
+    | 'header'
+    | 'header:bearer'
+    | 'header:token'
+    | 'path'
+    | 'header:aws'
+}
+
+export interface AuthAws {
+  accessKey: string
+  secretKey: string
+  region: 'us-east-1' | string
+  service: 's3' | string
 }
