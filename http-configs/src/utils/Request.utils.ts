@@ -43,6 +43,9 @@ export class HttpRequestConfig {
             case 'header:bearer':
               config.headers[keyname] = `Bearer ${options.params[paramKey]}`
               break
+            case 'header:token':
+              config.headers[keyname] = `Token ${options.params[paramKey]}`
+              break
             case 'path':
               // will be handled in path section
               break
@@ -65,6 +68,9 @@ export class HttpRequestConfig {
           } else {
             config.body[keyname] = options.params[paramKey]
           }
+          break
+        case 'header':
+          config.headers[keyname] = options.params[paramKey]
           break
       }
     }
