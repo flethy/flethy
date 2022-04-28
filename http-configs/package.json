@@ -13,6 +13,13 @@
   "repository": "github:web3nao/web3nao",
   "author": "adam.urban@gmail.com",
   "license": "MIT",
+  "keywords": [
+    "web3",
+    "http",
+    "ipfs",
+    "etherscan",
+    "alchemy"
+  ],
   "dependencies": {},
   "devDependencies": {
     "@types/node": "^16.11.10",
