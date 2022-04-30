@@ -166,10 +166,10 @@ async function main() {
     }),
     mixpanel: nao<Mixpanel.TrackEvents>({
       kind: 'mixpanel.events.track',
+      'auth:token': process.env.MIXPANEL_TOKEN,
       'body:body': [
         {
           properties: {
-            token: process.env.MIXPANEL_TOKEN,
             distinct_id: 'userId',
             time: Date.now(),
           },

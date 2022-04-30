@@ -1,5 +1,6 @@
-import { RequestParams } from '../types/Request.types'
 import { ApiDescription } from '../types/ApiDescription.type'
+import { FetchParams } from '../types/FetchParams.type'
+import { RequestParams } from '../types/Request.types'
 
 export namespace Mixpanel {
   export type Entity = { events }
@@ -7,9 +8,9 @@ export namespace Mixpanel {
 
   export interface TrackEvents extends RequestParams {
     kind: 'mixpanel.events.track'
+    'auth:token': string
     'body:body': Array<{
       properties: {
-        token: string
         time: number
         distinct_id: string
         [key: string]: string | number
@@ -38,6 +39,16 @@ export namespace Mixpanel {
             type: 'webinsights',
           },
           method: 'POST',
+          auth: {
+            token: {
+              type: 'body',
+              authHandler: (fetchParams: FetchParams, authValue: string) => {
+                fetchParams.body.forEach((entry) => {
+                  entry.properties.token = authValue
+                })
+              },
+            },
+          },
           paths: [
             {
               name: 'track',

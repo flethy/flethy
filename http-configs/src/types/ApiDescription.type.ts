@@ -1,4 +1,4 @@
-import { FetchMethod } from './FetchParams.type'
+import { FetchMethod, FetchParams } from './FetchParams.type'
 import { CATEGORY, TAG, TYPE } from './ServiceCategory.type'
 
 export interface ApiDescription<Entity, Endpoint> {
@@ -50,5 +50,6 @@ export interface ApiDescriptionEndpointParam {
 }
 
 export interface ApiDescriptionAuth {
-  type: 'query' | 'header' | 'header:bearer' | 'header:token' | 'path'
+  type: 'query' | 'header' | 'header:bearer' | 'header:token' | 'path' | 'body'
+  authHandler?: (fetchParams: FetchParams, authValue: string) => void
 }

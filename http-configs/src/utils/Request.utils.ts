@@ -26,34 +26,6 @@ export class HttpRequestConfig {
     }
     const queryParams: { [key: string]: string } = {}
 
-    // AUTH
-    if (options.endpoint.auth || options.api.auth) {
-      for (const paramKey of Object.keys(options.params)) {
-        const [type, keyname] = paramKey.split(':')
-        if (type === 'auth') {
-          const auth = options.endpoint.auth ?? options.api.auth
-          const authConfig = auth[keyname]
-          switch (authConfig.type) {
-            case 'query':
-              queryParams[keyname] = options.params[paramKey]
-              break
-            case 'header':
-              config.headers[keyname] = options.params[paramKey]
-              break
-            case 'header:bearer':
-              config.headers[keyname] = `Bearer ${options.params[paramKey]}`
-              break
-            case 'header:token':
-              config.headers[keyname] = `Token ${options.params[paramKey]}`
-              break
-            case 'path':
-              // will be handled in path section
-              break
-          }
-        }
-      }
-    }
-
     // PARAMS
 
     for (const paramKey of Object.keys(options.params)) {
@@ -99,6 +71,37 @@ export class HttpRequestConfig {
         }
       }
       config.url += `/${paths.join('/')}`
+    }
+
+    // AUTH
+    if (options.endpoint.auth || options.api.auth) {
+      for (const paramKey of Object.keys(options.params)) {
+        const [type, keyname] = paramKey.split(':')
+        if (type === 'auth') {
+          const auth = options.endpoint.auth ?? options.api.auth
+          const authConfig = auth[keyname]
+          switch (authConfig.type) {
+            case 'query':
+              queryParams[keyname] = options.params[paramKey]
+              break
+            case 'header':
+              config.headers[keyname] = options.params[paramKey]
+              break
+            case 'header:bearer':
+              config.headers[keyname] = `Bearer ${options.params[paramKey]}`
+              break
+            case 'header:token':
+              config.headers[keyname] = `Token ${options.params[paramKey]}`
+              break
+            case 'body':
+              authConfig.authHandler(config, options.params[paramKey])
+              break
+            case 'path':
+              // will be handled in path section
+              break
+          }
+        }
+      }
     }
 
     // REQUEST
