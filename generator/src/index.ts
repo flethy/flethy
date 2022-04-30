@@ -3,6 +3,7 @@ import { Alchemy } from '../../http-configs/src/configs/alchemy.config'
 import { Etherscan } from '../../http-configs/src/configs/etherscan.config'
 import { Github } from '../../http-configs/src/configs/github.config'
 import { MailerSend } from '../../http-configs/src/configs/mailersend.config'
+import { Mixpanel } from '../../http-configs/src/configs/mixpanel.config'
 import { Notion } from '../../http-configs/src/configs/notion.config'
 import { OpenSea } from '../../http-configs/src/configs/opensea.config'
 import { Pinata } from '../../http-configs/src/configs/pinata.config'
@@ -163,8 +164,21 @@ async function main() {
         },
       },
     }),
+    mixpanel: nao<Mixpanel.TrackEvents>({
+      kind: 'mixpanel.events.track',
+      'auth:token': process.env.MIXPANEL_TOKEN,
+      'body:body': [
+        {
+          properties: {
+            distinct_id: 'userId',
+            time: Date.now(),
+          },
+          event: 'test',
+        },
+      ],
+    }),
   }
-  const requestConfig = requestConfigs.notion
+  const requestConfig = requestConfigs.mixpanel
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)
