@@ -4,6 +4,7 @@ import { Alchemy } from '../configs/alchemy.config'
 import { Etherscan } from '../configs/etherscan.config'
 import { Github } from '../configs/github.config'
 import { MailerSend } from '../configs/mailersend.config'
+import { Mergent } from '../configs/mergent.config'
 import { Mixpanel } from '../configs/mixpanel.config'
 import { Notion } from '../configs/notion.config'
 import { OpenSea } from '../configs/opensea.config'
@@ -18,6 +19,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['etherscan', Etherscan.API],
 ['github', Github.API],
 ['mailersend', MailerSend.API],
+['mergent', Mergent.API],
 ['mixpanel', Mixpanel.API],
 ['notion', Notion.API],
 ['opensea', OpenSea.API],

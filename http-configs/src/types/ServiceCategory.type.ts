@@ -7,6 +7,7 @@ export type CATEGORY =
   | 'versioncontrol'
   | 'collaboration'
   | 'analytics'
+  | 'tools'
 export type TYPE =
   | COMM_TYPE
   | STORAGE_TYPE
@@ -15,6 +16,7 @@ export type TYPE =
   | VERSION_CONTROL_TYPE
   | COLLAB_TYPE
   | ANALYTICS_TYPE
+  | TOOLS_TYPE
 
 export type COMM_TYPE = 'email' | 'messenger'
 export type STORAGE_TYPE = 'ipfs'
@@ -23,3 +25,4 @@ export type GATEWAY_TYPE = 'httpProvider'
 export type VERSION_CONTROL_TYPE = 'hosted'
 export type COLLAB_TYPE = 'spreadsheet' | 'notes'
 export type ANALYTICS_TYPE = 'webinsights'
+export type TOOLS_TYPE = 'cron'

@@ -3,6 +3,7 @@ import { Alchemy } from '../../http-configs/src/configs/alchemy.config'
 import { Etherscan } from '../../http-configs/src/configs/etherscan.config'
 import { Github } from '../../http-configs/src/configs/github.config'
 import { MailerSend } from '../../http-configs/src/configs/mailersend.config'
+import Mergent from '../../http-configs/src/configs/mergent.config'
 import { Mixpanel } from '../../http-configs/src/configs/mixpanel.config'
 import { Notion } from '../../http-configs/src/configs/notion.config'
 import { OpenSea } from '../../http-configs/src/configs/opensea.config'
@@ -177,8 +178,20 @@ async function main() {
         },
       ],
     }),
+    mergent: nao<Mergent.CreateTask>({
+      kind: 'mergent.tasks.create',
+      'auth:Authorization': process.env.MERGENT_API_TOKEN,
+      'body:queue': 'default',
+      'body:request': {
+        url: `https://webhook.site/78094945-f530-4050-afb0-7793e53d2969`,
+        headers: {
+          'x-web3nao': 'web3nao',
+        },
+        body: JSON.stringify({ hello: 'world!' }),
+      },
+    }),
   }
-  const requestConfig = requestConfigs.mixpanel
+  const requestConfig = requestConfigs.mergent
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)
