@@ -17,6 +17,9 @@ export namespace TheGraph {
       name: 'TheGraph',
       url: 'https://thegraph.com/',
       docs: 'https://thegraph.com/docs/en/',
+      tags: ['web3'],
+      category: 'aggregation',
+      type: 'indexer',
     },
     base: 'https://api.thegraph.com',
     api: {
@@ -26,9 +29,6 @@ export namespace TheGraph {
             title: 'query',
             description: 'Query the GraphQL API of a hosted subgraph.',
             docs: 'https://thegraph.com/docs/en/',
-            tags: ['web3'],
-            category: 'aggregation',
-            type: 'indexer',
           },
           method: 'POST',
           paths: [

@@ -25,6 +25,9 @@ export namespace Mergent {
       name: 'Mergent',
       url: 'https://mergent.co',
       docs: 'https://docs.mergent.co/',
+      tags: ['web2'],
+      category: 'tools',
+      type: 'cron',
     },
     base: 'https://api.mergent.co/v1',
     auth: {
@@ -39,9 +42,6 @@ export namespace Mergent {
             title: 'Create Task',
             description: 'Create a new Mergent Task.',
             docs: 'https://docs.mergent.co/tasks/quick-start',
-            tags: ['web2'],
-            category: 'tools',
-            type: 'cron',
           },
           method: 'POST',
           paths: [

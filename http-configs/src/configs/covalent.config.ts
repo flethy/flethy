@@ -22,6 +22,9 @@ export namespace Covalent {
       name: 'Covalent',
       url: 'https://www.covalenthq.com',
       docs: 'https://www.covalenthq.com/docs',
+      tags: ['web3'],
+      category: 'aggregation',
+      type: 'indexer',
     },
     base: 'https://api.covalenthq.com/v1',
     auth: {
@@ -37,9 +40,6 @@ export namespace Covalent {
             description:
               'Given chain_id and wallet address, return all transactions along with their decoded log events.',
             docs: 'https://www.covalenthq.com/docs/api/#/0/Get%20transactions%20for%20address/USD/1',
-            tags: ['web3'],
-            category: 'aggregation',
-            type: 'indexer',
           },
           method: 'GET',
           paths: [

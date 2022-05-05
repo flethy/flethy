@@ -35,6 +35,9 @@ export namespace MailerSend {
       url: 'https://mailersend.com',
       docs: 'https://developers.mailersend.com/',
       config: 'https://app.mailersend.com/',
+      tags: ['web2'],
+      category: 'communication',
+      type: 'email',
     },
     base: 'https://api.mailersend.com/v1',
     api: {
@@ -45,9 +48,6 @@ export namespace MailerSend {
             description:
               'This endpoint allows you to send an asynchronous email. It returns the status of the email sent with an X-Message-Id that can be used to continuously query for the status using the Email API.',
             docs: 'https://developers.mailersend.com/api/v1/email.html#send-an-email',
-            tags: ['web2'],
-            category: 'communication',
-            type: 'email',
           },
           base: 'https://api.mailersend.com/v1',
           method: 'POST',

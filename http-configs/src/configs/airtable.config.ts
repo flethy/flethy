@@ -36,6 +36,9 @@ export namespace Airtable {
       name: 'Airtable',
       url: 'https://airtable.com',
       docs: 'https://airtable.com/api',
+      tags: ['web2'],
+      category: 'collaboration',
+      type: 'spreadsheet',
     },
     base: 'https://api.airtable.com/v0',
     api: {
@@ -45,9 +48,6 @@ export namespace Airtable {
             title: 'List Table Records',
             description: 'List records of a table.',
             docs: 'https://airtable.com/api',
-            tags: ['web2'],
-            category: 'collaboration',
-            type: 'spreadsheet',
           },
           method: 'GET',
           auth: {
@@ -71,9 +71,6 @@ export namespace Airtable {
             title: 'Create Table Records',
             description: 'Create records in a table.',
             docs: 'https://airtable.com/api',
-            tags: ['web2'],
-            category: 'collaboration',
-            type: 'spreadsheet',
           },
           method: 'POST',
           auth: {

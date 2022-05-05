@@ -124,6 +124,9 @@ export namespace Notion {
       name: 'Notion',
       url: 'https://notion.so',
       docs: 'https://developers.notion.com/reference',
+      tags: ['web2'],
+      category: 'collaboration',
+      type: 'notes',
     },
     base: 'https://api.notion.com/v1',
     api: {
@@ -134,9 +137,6 @@ export namespace Notion {
             description:
               'Creates a database as a subpage in the specified parent page, with the specified properties schema.',
             docs: 'https://developers.notion.com/reference/create-a-database',
-            tags: ['web2'],
-            category: 'collaboration',
-            type: 'notes',
           },
           method: 'POST',
           auth: {
