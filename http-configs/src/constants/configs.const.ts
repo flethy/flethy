@@ -1,6 +1,7 @@
 import { ApiDescription } from '../types/ApiDescription.type'
 import { Airtable } from '../configs/airtable.config'
 import { Alchemy } from '../configs/alchemy.config'
+import { Covalent } from '../configs/covalent.config'
 import { Etherscan } from '../configs/etherscan.config'
 import { Github } from '../configs/github.config'
 import { MailerSend } from '../configs/mailersend.config'
@@ -16,6 +17,7 @@ import { Web3Storage } from '../configs/web3storage.config'
 export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, ApiDescription<any, any>>([
 ['airtable', Airtable.API],
 ['alchemy', Alchemy.API],
+['covalent', Covalent.API],
 ['etherscan', Etherscan.API],
 ['github', Github.API],
 ['mailersend', MailerSend.API],

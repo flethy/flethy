@@ -7,6 +7,9 @@ export interface ApiDescription<Entity, Endpoint> {
     name: string
     url: string
     docs: string
+    tags: TAG[]
+    category: CATEGORY
+    type: TYPE
     config?: string
   }
   base: string
@@ -33,9 +36,6 @@ export interface ApiDescriptionEndpoint {
     title: string
     description: string
     docs: string
-    tags: TAG[]
-    category: CATEGORY
-    type: TYPE
   }
   query?: { [key: string]: string }
   params?: any

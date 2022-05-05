@@ -20,6 +20,9 @@ export namespace Alchemy {
       name: 'Alchemy',
       url: 'https://alchemy.com',
       docs: 'https://docs.alchemy.com/',
+      tags: ['web3', 'nft'],
+      category: 'aggregation',
+      type: 'indexer',
     },
     base: 'https://eth-mainnet.alchemyapi.io/v2',
     api: {
@@ -29,9 +32,6 @@ export namespace Alchemy {
             title: 'getNFTs',
             description: 'Gets all NFTs currently owned by a given address.',
             docs: 'https://docs.alchemy.com/alchemy/enhanced-apis/nft-api/getnfts',
-            tags: ['web3', 'nft'],
-            category: 'aggregation',
-            type: 'indexer',
           },
           method: 'GET',
           paths: [

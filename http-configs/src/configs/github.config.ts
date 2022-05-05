@@ -29,6 +29,9 @@ export namespace Github {
       name: 'Github',
       url: 'https://github.com',
       docs: 'https://docs.github.com/en/rest',
+      tags: ['web2'],
+      category: 'versioncontrol',
+      type: 'hosted',
     },
     base: 'https://api.github.com',
     api: {
@@ -38,9 +41,6 @@ export namespace Github {
             title: 'List Repository Issues',
             description: 'List issues in a repository.',
             docs: 'https://docs.github.com/en/rest/issues/issues#list-repository-issues',
-            tags: ['web2'],
-            category: 'versioncontrol',
-            type: 'hosted',
           },
           method: 'GET',
           auth: {

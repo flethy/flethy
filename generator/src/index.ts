@@ -1,9 +1,10 @@
 import { Airtable } from '../../http-configs/src/configs/airtable.config'
 import { Alchemy } from '../../http-configs/src/configs/alchemy.config'
+import { Covalent } from '../../http-configs/src/configs/covalent.config'
 import { Etherscan } from '../../http-configs/src/configs/etherscan.config'
 import { Github } from '../../http-configs/src/configs/github.config'
 import { MailerSend } from '../../http-configs/src/configs/mailersend.config'
-import Mergent from '../../http-configs/src/configs/mergent.config'
+import { Mergent } from '../../http-configs/src/configs/mergent.config'
 import { Mixpanel } from '../../http-configs/src/configs/mixpanel.config'
 import { Notion } from '../../http-configs/src/configs/notion.config'
 import { OpenSea } from '../../http-configs/src/configs/opensea.config'
@@ -190,8 +191,15 @@ async function main() {
         body: JSON.stringify({ hello: 'world!' }),
       },
     }),
+    covalent: nao<Covalent.ClassAGetTransactionsForAddress>({
+      kind: 'covalent.classA.getTransactionsForAddress',
+      'auth:key': process.env.COVALENT_API_KEY,
+      'param:address': '0xa79E63e78Eec28741e711f89A672A4C40876Ebf3',
+      'param:chainid': 1,
+      'query:page-size': 1,
+    }),
   }
-  const requestConfig = requestConfigs.mergent
+  const requestConfig = requestConfigs.covalent
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

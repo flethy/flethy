@@ -25,6 +25,9 @@ export namespace Mixpanel {
       name: 'Mixpanel',
       url: 'https://mixpanel.com',
       docs: 'https://developer.mixpanel.com/reference/overview',
+      tags: ['web2'],
+      category: 'analytics',
+      type: 'webinsights',
     },
     base: 'https://api.mixpanel.com',
     api: {
@@ -34,9 +37,6 @@ export namespace Mixpanel {
             title: 'Track Events',
             description: 'Track events to Mixpanel from client devices.',
             docs: 'https://developer.mixpanel.com/reference/track-event',
-            tags: ['web2'],
-            category: 'analytics',
-            type: 'webinsights',
           },
           method: 'POST',
           auth: {

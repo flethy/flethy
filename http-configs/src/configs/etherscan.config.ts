@@ -18,6 +18,9 @@ export namespace Etherscan {
       name: 'Etherscan',
       url: 'https://etherscan.io',
       docs: 'https://docs.etherscan.io/',
+      tags: ['web3'],
+      category: 'aggregation',
+      type: 'indexer',
     },
     base: 'https://api.etherscan.io/api',
     auth: {
@@ -30,9 +33,6 @@ export namespace Etherscan {
             title: 'Get Ether Balance for a Single Address',
             description: 'Returns the Ether balance of a given address.',
             docs: 'https://docs.etherscan.io/api-endpoints/accounts#get-ether-balance-for-a-single-address',
-            tags: ['web3'],
-            category: 'aggregation',
-            type: 'indexer',
           },
           method: 'GET',
           query: {
