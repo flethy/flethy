@@ -23,12 +23,23 @@ const OUTPUT_DIR = path.join(
   'constants'
 )
 const CONFIG_CONST_FILENAME = 'configs.const.ts'
+// INDEX
+const INDEX_FILE = path.join(
+  __dirname,
+  '..',
+  '..',
+  '..',
+  HTTP_CONFIGS_DIR_NAME,
+  'src',
+  'index.ts'
+)
 
 export class ConfigsExporter {
   public static async export() {
     const imports: string[] = [
       `import { ApiDescription } from '../types/ApiDescription.type'`,
     ]
+    const exports: string[] = []
     const mapEntries: string[] = []
 
     const files = fs.readdirSync(CONFIGS_DIR)
@@ -42,6 +53,9 @@ export class ConfigsExporter {
         imports.push(
           `import { ${instanceOfConfig.API.meta.name} } from '../configs/${configName}'`
         )
+        exports.push(
+          `export { ${instanceOfConfig.API.meta.name} } from './configs/${configName}'`
+        )
         mapEntries.push(
           `['${instanceOfConfig.API.meta.id}', ${instanceOfConfig.API.meta.name}.API],`
         )
@@ -49,6 +63,9 @@ export class ConfigsExporter {
         logger.error(error)
       }
     }
+    exports.push(
+      `export { HttpRequestConfig, nao } from './utils/Request.utils'`
+    )
     const constantContent: string[] = [...imports, '']
     constantContent.push(
       `export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, ApiDescription<any, any>>([`
@@ -60,6 +77,8 @@ export class ConfigsExporter {
       `${OUTPUT_DIR}/${CONFIG_CONST_FILENAME}`,
       constantContent.join('\n')
     )
+    logger.info(`Writing exports...`)
+    fs.writeFileSync(INDEX_FILE, exports.join('\n'))
     logger.info(`Exported ${files.length} configs.`)
   }
 }
