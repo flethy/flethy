@@ -102,6 +102,10 @@ async function main() {
 main()
 ```
 
+## Supported Endpoints
+
+Find a list of all supported endpoints [here](../docs/README.md).
+
 ## Contribution
 
 The number of integrated APIs is severely limited so far. Services that I need on a regular basis are integrated. More integrations happen on feedback basis, because I personally need another integration, or because someone implements an API configuration.

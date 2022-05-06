@@ -1,0 +1,24 @@
+# MailerSend
+
+## Links
+
+* URL: [https://mailersend.com](https://mailersend.com)
+* Documentation: [https://developers.mailersend.com/](https://developers.mailersend.com/)
+* Tags: web2
+* Category: communication
+* Type: email
+
+## API
+
+### email
+
+#### send
+
+##### Authentication
+
+* Authorization: header:bearer
+
+##### Send an email
+
+* Description: This endpoint allows you to send an asynchronous email. It returns the status of the email sent with an X-Message-Id that can be used to continuously query for the status using the Email API.
+* Docs: [https://developers.mailersend.com/api/v1/email.html#send-an-email](https://developers.mailersend.com/api/v1/email.html#send-an-email)
