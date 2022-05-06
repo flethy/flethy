@@ -1,0 +1,20 @@
+# TheGraph
+
+## Links
+
+* URL: [https://thegraph.com/](https://thegraph.com/)
+* Documentation: [https://thegraph.com/docs/en/](https://thegraph.com/docs/en/)
+* Tags: web3
+* Category: aggregation
+* Type: indexer
+
+## API
+
+### hostedservice
+
+#### query
+
+##### query
+
+* Description: Query the GraphQL API of a hosted subgraph.
+* Docs: [https://thegraph.com/docs/en/](https://thegraph.com/docs/en/)
