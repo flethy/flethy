@@ -198,6 +198,11 @@ async function main() {
       'param:chainid': 1,
       'query:page-size': 1,
     }),
+    covalentB: nao<Covalent.ClassBGetUniswapV3Pools>({
+      kind: 'covalent.classB.getUniswapV3Pools',
+      'auth:key': process.env.COVALENT_API_KEY,
+      'param:chainid': 1,
+    }),
   }
   const requestConfig = requestConfigs.covalent
 

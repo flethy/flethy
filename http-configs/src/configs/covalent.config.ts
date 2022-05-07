@@ -2,18 +2,31 @@ import { RequestParams } from '../types/Request.types'
 import { ApiDescription } from '../types/ApiDescription.type'
 
 export namespace Covalent {
-  export type Entity = { classA }
-  export type Endpoint = { getTransactionsForAddress }
+  export type Entity = { classA; classB }
+  export type Endpoint = { getTransactionsForAddress } | { getUniswapV3Pools }
 
-  export interface ClassAGetTransactionsForAddress extends RequestParams {
+  interface CovalentBaseConfig {
+    'query:page-number'?: number
+    'query:page-size'?: number
+  }
+
+  export interface ClassAGetTransactionsForAddress
+    extends RequestParams,
+      CovalentBaseConfig {
     kind: 'covalent.classA.getTransactionsForAddress'
     'param:address': string
     'param:chainid': number
     'auth:key': string
     'query:block-signed-at-asc'?: boolean
     'query:no-logs'?: boolean
-    'query:page-number'?: number
-    'query:page-size'?: number
+  }
+
+  export interface ClassBGetUniswapV3Pools
+    extends RequestParams,
+      CovalentBaseConfig {
+    kind: 'covalent.classB.getUniswapV3Pools'
+    'param:chainid': number
+    'auth:key': string
   }
 
   export const API: ApiDescription<Entity, Endpoint> = {
@@ -57,6 +70,31 @@ export namespace Covalent {
             },
             {
               name: 'transactions_v2/',
+              type: 'static',
+            },
+          ],
+        },
+      },
+      classB: {
+        getUniswapV3Pools: {
+          meta: {
+            title: 'Get Uniswap v3 pools',
+            description:
+              'Given a chain_id , return a paginated list of Uniswap pools sorted by transaction timestamp in desc order.',
+            docs: 'https://www.covalenthq.com/docs/api/#/0/Get%20Uniswap%20v3%20pools/USD/1',
+          },
+          method: 'GET',
+          paths: [
+            {
+              name: 'chainid',
+              type: 'param',
+            },
+            {
+              name: 'uniswap_v3',
+              type: 'static',
+            },
+            {
+              name: 'pools/',
               type: 'static',
             },
           ],
