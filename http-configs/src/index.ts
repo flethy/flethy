@@ -1,5 +1,6 @@
 export { Airtable } from './configs/airtable.config'
 export { Alchemy } from './configs/alchemy.config'
+export { CoinMarketCap } from './configs/coinmarketcap.config'
 export { Covalent } from './configs/covalent.config'
 export { Etherscan } from './configs/etherscan.config'
 export { Github } from './configs/github.config'

@@ -22,7 +22,7 @@ export class HttpRequestConfig {
       method: options.endpoint.method,
       url: options.endpoint.base ?? options.api.base,
       headers: {},
-      body: {},
+      body: options.endpoint.method === 'GET' ? undefined : {},
     }
     const queryParams: { [key: string]: string } = {}
 

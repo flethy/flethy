@@ -1,5 +1,6 @@
 import { Airtable } from '../../http-configs/src/configs/airtable.config'
 import { Alchemy } from '../../http-configs/src/configs/alchemy.config'
+import CoinMarketCap from '../../http-configs/src/configs/coinmarketcap.config'
 import { Covalent } from '../../http-configs/src/configs/covalent.config'
 import { Etherscan } from '../../http-configs/src/configs/etherscan.config'
 import { Github } from '../../http-configs/src/configs/github.config'
@@ -210,8 +211,12 @@ async function main() {
       'param:quote_currency': 'USD',
       'query:contract_addresses': '0x7D1AfA7B718fb893dB30A3aBc0Cfc608AaCfeBB0',
     }),
+    coinmarketcap: nao<CoinMarketCap.CryptocurrencyListingsLatest>({
+      kind: 'coinmarketcap.cryptocurrency.listingsLatest',
+      'auth:X-CMC_PRO_API_KEY': process.env.COINMARKETCAP_API_KEY,
+    }),
   }
-  const requestConfig = requestConfigs.covalentB
+  const requestConfig = requestConfigs.coinmarketcap
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)
