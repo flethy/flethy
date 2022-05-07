@@ -198,8 +198,20 @@ async function main() {
       'param:chainid': 1,
       'query:page-size': 1,
     }),
+    covalentB: nao<Covalent.ClassBGetUniswapV3Pools>({
+      kind: 'covalent.classB.getUniswapV3Pools',
+      'auth:key': process.env.COVALENT_API_KEY,
+      'param:chainid': 1,
+    }),
+    covalentPricing: nao<Covalent.PricingGetHistoricalTokenPrices>({
+      kind: 'covalent.pricing.getHistoricalTokenPrices',
+      'auth:key': process.env.COVALENT_API_KEY,
+      'param:chainid': 1,
+      'param:quote_currency': 'USD',
+      'query:contract_addresses': '0x7D1AfA7B718fb893dB30A3aBc0Cfc608AaCfeBB0',
+    }),
   }
-  const requestConfig = requestConfigs.covalent
+  const requestConfig = requestConfigs.covalentB
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

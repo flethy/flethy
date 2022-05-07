@@ -32,6 +32,7 @@ export interface ApiDescriptionEndpoint {
   base?: string
   auth?: { [key: string]: ApiDescriptionAuth }
   paths?: ApiDescriptionPath[]
+  options?: ApiDescriptionEndpointOptions
   meta: {
     title: string
     description: string
@@ -39,6 +40,10 @@ export interface ApiDescriptionEndpoint {
   }
   query?: { [key: string]: string }
   params?: any
+}
+
+export interface ApiDescriptionEndpointOptions {
+  pathTailingSlash?: boolean
 }
 
 export interface ApiDescriptionEndpointParam {
