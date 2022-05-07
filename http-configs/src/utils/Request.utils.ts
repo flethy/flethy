@@ -71,6 +71,9 @@ export class HttpRequestConfig {
         }
       }
       config.url += `/${paths.join('/')}`
+      if (options.endpoint.options?.pathTailingSlash) {
+        config.url += '/'
+      }
     }
 
     // AUTH

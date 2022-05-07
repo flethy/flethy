@@ -203,8 +203,15 @@ async function main() {
       'auth:key': process.env.COVALENT_API_KEY,
       'param:chainid': 1,
     }),
+    covalentPricing: nao<Covalent.PricingGetHistoricalTokenPrices>({
+      kind: 'covalent.pricing.getHistoricalTokenPrices',
+      'auth:key': process.env.COVALENT_API_KEY,
+      'param:chainid': 1,
+      'param:quote_currency': 'USD',
+      'query:contract_addresses': '0x7D1AfA7B718fb893dB30A3aBc0Cfc608AaCfeBB0',
+    }),
   }
-  const requestConfig = requestConfigs.covalent
+  const requestConfig = requestConfigs.covalentB
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)
