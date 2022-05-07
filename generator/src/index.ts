@@ -1,6 +1,6 @@
 import { Airtable } from '../../http-configs/src/configs/airtable.config'
 import { Alchemy } from '../../http-configs/src/configs/alchemy.config'
-import CoinMarketCap from '../../http-configs/src/configs/coinmarketcap.config'
+import { CoinMarketCap } from '../../http-configs/src/configs/coinmarketcap.config'
 import { Covalent } from '../../http-configs/src/configs/covalent.config'
 import { Etherscan } from '../../http-configs/src/configs/etherscan.config'
 import { Github } from '../../http-configs/src/configs/github.config'
