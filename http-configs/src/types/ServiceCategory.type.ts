@@ -20,7 +20,7 @@ export type TYPE =
 
 export type COMM_TYPE = 'email' | 'messenger'
 export type STORAGE_TYPE = 'ipfs'
-export type AGGREGATION_TYPE = 'indexer' | 'transactions'
+export type AGGREGATION_TYPE = 'indexer' | 'transactions' | 'prices'
 export type GATEWAY_TYPE = 'httpProvider'
 export type VERSION_CONTROL_TYPE = 'hosted'
 export type COLLAB_TYPE = 'spreadsheet' | 'notes'
