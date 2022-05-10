@@ -12,7 +12,14 @@
 
 ### hostedservice
 
-#### query
+#### queryById
+
+##### query
+
+* Description: Query the GraphQL API of a hosted subgraph.
+* Docs: [https://thegraph.com/docs/en/](https://thegraph.com/docs/en/)
+
+#### queryByName
 
 ##### query
 

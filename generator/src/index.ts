@@ -97,8 +97,8 @@ async function main() {
         testBoolean: true,
       },
     }),
-    thegraph: nao<TheGraph.Query>({
-      kind: 'thegraph.hostedservice.query',
+    thegraph: nao<TheGraph.QueryById>({
+      kind: 'thegraph.hostedservice.queryById',
       'auth:subgraphId': process.env.SUBGRAPH_ID,
       'body:query': `{
         tokens(first: 5) {
@@ -119,6 +119,30 @@ async function main() {
           balance
         }
       }`,
+    }),
+    thegraphByName: nao<TheGraph.QueryByName>({
+      kind: 'thegraph.hostedservice.queryByName',
+      'body:query': `{
+        tokens(first: 5) {
+          id
+          owner {
+            id
+          }
+          uri
+          transfers {
+            id
+          }
+        }
+        owners(first: 5) {
+          id
+          ownedTokens {
+            id
+          }
+          balance
+        }
+      }`,
+      'param:account': process.env.SUBGRAPH_ACCOUNT,
+      'param:name': process.env.SUBGRAPH_NAME,
     }),
     github: nao<Github.ListRepositoryIssues>({
       kind: 'github.issues.listrepository',
@@ -216,7 +240,7 @@ async function main() {
       'auth:X-CMC_PRO_API_KEY': process.env.COINMARKETCAP_API_KEY,
     }),
   }
-  const requestConfig = requestConfigs.coinmarketcap
+  const requestConfig = requestConfigs.thegraphByName
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)
