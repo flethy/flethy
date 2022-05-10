@@ -3,12 +3,19 @@ import { ApiDescription } from '../types/ApiDescription.type'
 
 export namespace TheGraph {
   export type Entity = { hostedservice }
-  export type Endpoint = { query }
+  export type Endpoint = { queryById; queryByName }
 
-  export interface Query extends RequestParams {
-    kind: 'thegraph.hostedservice.query'
+  export interface QueryById extends RequestParams {
+    kind: 'thegraph.hostedservice.queryById'
     'body:query': string
     'auth:subgraphId': string
+  }
+
+  export interface QueryByName extends RequestParams {
+    kind: 'thegraph.hostedservice.queryByName'
+    'body:query': string
+    'param:account': string
+    'param:name': string
   }
 
   export const API: ApiDescription<Entity, Endpoint> = {
@@ -24,7 +31,7 @@ export namespace TheGraph {
     base: 'https://api.thegraph.com',
     api: {
       hostedservice: {
-        query: {
+        queryById: {
           meta: {
             title: 'query',
             description: 'Query the GraphQL API of a hosted subgraph.',
@@ -43,6 +50,32 @@ export namespace TheGraph {
             {
               name: 'subgraphId',
               type: 'auth',
+            },
+          ],
+        },
+        queryByName: {
+          meta: {
+            title: 'query',
+            description: 'Query the GraphQL API of a hosted subgraph.',
+            docs: 'https://thegraph.com/docs/en/',
+          },
+          method: 'POST',
+          paths: [
+            {
+              name: 'subgraphs',
+              type: 'static',
+            },
+            {
+              name: 'name',
+              type: 'static',
+            },
+            {
+              name: 'account',
+              type: 'param',
+            },
+            {
+              name: 'name',
+              type: 'param',
             },
           ],
         },
