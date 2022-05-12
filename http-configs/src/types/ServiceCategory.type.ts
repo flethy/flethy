@@ -8,6 +8,7 @@ export type CATEGORY =
   | 'collaboration'
   | 'analytics'
   | 'tools'
+  | 'marketing'
 export type TYPE =
   | COMM_TYPE
   | STORAGE_TYPE
@@ -17,6 +18,7 @@ export type TYPE =
   | COLLAB_TYPE
   | ANALYTICS_TYPE
   | TOOLS_TYPE
+  | MARKETING_TYPE
 
 export type COMM_TYPE = 'email' | 'messenger'
 export type STORAGE_TYPE = 'ipfs'
@@ -26,3 +28,4 @@ export type VERSION_CONTROL_TYPE = 'hosted'
 export type COLLAB_TYPE = 'spreadsheet' | 'notes'
 export type ANALYTICS_TYPE = 'webinsights'
 export type TOOLS_TYPE = 'cron'
+export type MARKETING_TYPE = 'inbound'

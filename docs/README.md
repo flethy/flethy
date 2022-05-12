@@ -19,6 +19,7 @@ The following Endpoints are currently supported.
 
 * [Airtable](./api/airtable.md)
 * [Github](./api/github.md)
+* [Hubspot](./api/hubspot.md)
 * [MailerSend](./api/mailersend.md)
 * [Mergent](./api/mergent.md)
 * [Mixpanel](./api/mixpanel.md)
