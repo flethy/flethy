@@ -1,6 +1,7 @@
 import { ApiDescription } from '../types/ApiDescription.type'
 import { Airtable } from '../configs/airtable.config'
 import { Alchemy } from '../configs/alchemy.config'
+import { Camunda } from '../configs/camunda.config'
 import { CoinMarketCap } from '../configs/coinmarketcap.config'
 import { Covalent } from '../configs/covalent.config'
 import { Etherscan } from '../configs/etherscan.config'
@@ -19,6 +20,7 @@ import { Web3Storage } from '../configs/web3storage.config'
 export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, ApiDescription<any, any>>([
 ['airtable', Airtable.API],
 ['alchemy', Alchemy.API],
+['camunda', Camunda.API],
 ['coinmarketcap', CoinMarketCap.API],
 ['covalent', Covalent.API],
 ['etherscan', Etherscan.API],

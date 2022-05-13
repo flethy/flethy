@@ -18,6 +18,7 @@ The following Endpoints are currently supported.
 ### Web2
 
 * [Airtable](./api/airtable.md)
+* [Camunda](./api/camunda.md)
 * [Github](./api/github.md)
 * [Hubspot](./api/hubspot.md)
 * [MailerSend](./api/mailersend.md)

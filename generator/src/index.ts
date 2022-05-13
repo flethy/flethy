@@ -13,6 +13,7 @@ import { Pinata } from '../../http-configs/src/configs/pinata.config'
 import { Slack } from '../../http-configs/src/configs/slack.config'
 import { TheGraph } from '../../http-configs/src/configs/thegraph.config'
 import { Web3Storage } from '../../http-configs/src/configs/web3storage.config'
+import { Camunda } from '../../http-configs/src/configs/camunda.config'
 import { FetchParams } from '../../http-configs/src/types/FetchParams.type'
 import { nao } from '../../http-configs/src/utils/Request.utils'
 import { HttpRequest } from './controllers/HttpRequest'
@@ -239,8 +240,62 @@ async function main() {
       kind: 'coinmarketcap.cryptocurrency.listingsLatest',
       'auth:X-CMC_PRO_API_KEY': process.env.COINMARKETCAP_API_KEY,
     }),
+    camundaConsoleToken: nao<Camunda.ConsoleToken>({
+      kind: 'camunda.console.token',
+      'body:audience': 'api.cloud.camunda.io',
+      'body:grant_type': 'client_credentials',
+      'body:client_id': process.env.CAMUNDA_CLIENT_ID,
+      'body:client_secret': process.env.CAMUNDA_CLIENT_SECRET,
+    }),
+
+    camundaConsoleGetClusters: nao<Camunda.ConsoleGetClusters>({
+      kind: 'camunda.console.getClusters',
+      'auth:Authorization': process.env.CAMUNDA_JWT,
+    }),
+    camundaConsoleGetClustersParameters:
+      nao<Camunda.ConsoleGetClustersParameters>({
+        kind: 'camunda.console.getClustersParameters',
+        'auth:Authorization': process.env.CAMUNDA_JWT,
+      }),
+    camundaConsoleDeleteCluster: nao<Camunda.ConsoleDeleteCluster>({
+      kind: 'camunda.console.deleteCluster',
+      'auth:Authorization': process.env.CAMUNDA_JWT,
+      'param:clusterId': '',
+    }),
+    camundaConsoleCreateCluster: nao<Camunda.ConsoleCreateCluster>({
+      kind: 'camunda.console.createCluster',
+      'auth:Authorization': process.env.CAMUNDA_JWT,
+      'body:name': 'nice!',
+      'body:channelId': '',
+      'body:generationId': '',
+      'body:planTypeId': '',
+      'body:regionId': '',
+    }),
+    camundaConsoleGetClients: nao<Camunda.ConsoleGetClients>({
+      kind: 'camunda.console.getClients',
+      'auth:Authorization': process.env.CAMUNDA_JWT,
+      'param:clusterId': '',
+    }),
+    camundaConsoleCreateClient: nao<Camunda.ConsoleCreateClient>({
+      kind: 'camunda.console.createClient',
+      'auth:Authorization': process.env.CAMUNDA_JWT,
+      'param:clusterId': '',
+      'body:clientName': 'nice-client',
+    }),
+    camundaConsoleGetClient: nao<Camunda.ConsoleGetClient>({
+      kind: 'camunda.console.getClient',
+      'auth:Authorization': process.env.CAMUNDA_JWT,
+      'param:clusterId': '',
+      'param:clientId': 'P7sF3Z5K246Z-jAXbuJNx_g_lBA4T7Zv',
+    }),
+    camundaConsoleDeleteClient: nao<Camunda.ConsoleDeleteClient>({
+      kind: 'camunda.console.deleteClient',
+      'auth:Authorization': process.env.CAMUNDA_JWT,
+      'param:clusterId': '',
+      'param:clientId': 'P7sF3Z5K246Z-jAXbuJNx_g_lBA4T7Zv',
+    }),
   }
-  const requestConfig = requestConfigs.thegraphByName
+  const requestConfig = requestConfigs.coinmarketcap
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

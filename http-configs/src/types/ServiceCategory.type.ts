@@ -9,6 +9,7 @@ export type CATEGORY =
   | 'analytics'
   | 'tools'
   | 'marketing'
+  | 'automation'
 export type TYPE =
   | COMM_TYPE
   | STORAGE_TYPE
@@ -19,6 +20,7 @@ export type TYPE =
   | ANALYTICS_TYPE
   | TOOLS_TYPE
   | MARKETING_TYPE
+  | AUTOMATION_TYPE
 
 export type COMM_TYPE = 'email' | 'messenger'
 export type STORAGE_TYPE = 'ipfs'
@@ -29,3 +31,4 @@ export type COLLAB_TYPE = 'spreadsheet' | 'notes'
 export type ANALYTICS_TYPE = 'webinsights'
 export type TOOLS_TYPE = 'cron'
 export type MARKETING_TYPE = 'inbound'
+export type AUTOMATION_TYPE = 'workflows' | 'decisions'
