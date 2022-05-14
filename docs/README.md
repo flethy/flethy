@@ -21,6 +21,7 @@ The following Endpoints are currently supported.
 * [Camunda](./api/camunda.md)
 * [Github](./api/github.md)
 * [Hubspot](./api/hubspot.md)
+* [MailCheckAi](./api/mailcheckai.md)
 * [MailerSend](./api/mailersend.md)
 * [Mergent](./api/mergent.md)
 * [Mixpanel](./api/mixpanel.md)
