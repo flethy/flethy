@@ -7,6 +7,7 @@ import { Covalent } from '../configs/covalent.config'
 import { Etherscan } from '../configs/etherscan.config'
 import { Github } from '../configs/github.config'
 import { Hubspot } from '../configs/hubspot.config'
+import { MailCheckAi } from '../configs/mailcheckai.config'
 import { MailerSend } from '../configs/mailersend.config'
 import { Mergent } from '../configs/mergent.config'
 import { Mixpanel } from '../configs/mixpanel.config'
@@ -26,6 +27,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['etherscan', Etherscan.API],
 ['github', Github.API],
 ['hubspot', Hubspot.API],
+['mailcheckai', MailCheckAi.API],
 ['mailersend', MailerSend.API],
 ['mergent', Mergent.API],
 ['mixpanel', Mixpanel.API],

@@ -14,6 +14,7 @@ import { Slack } from '../../http-configs/src/configs/slack.config'
 import { TheGraph } from '../../http-configs/src/configs/thegraph.config'
 import { Web3Storage } from '../../http-configs/src/configs/web3storage.config'
 import { Camunda } from '../../http-configs/src/configs/camunda.config'
+import { MailCheckAi } from '../../http-configs/src/configs/mailcheckai.config'
 import { FetchParams } from '../../http-configs/src/types/FetchParams.type'
 import { nao } from '../../http-configs/src/utils/Request.utils'
 import { HttpRequest } from './controllers/HttpRequest'
@@ -294,8 +295,12 @@ async function main() {
       'param:clusterId': '',
       'param:clientId': 'P7sF3Z5K246Z-jAXbuJNx_g_lBA4T7Zv',
     }),
+    mailcheckai: nao<MailCheckAi.CheckEmail>({
+      kind: 'mailcheckai.email.check',
+      'param:email': 'test@makerlabs.one',
+    }),
   }
-  const requestConfig = requestConfigs.coinmarketcap
+  const requestConfig = requestConfigs.mailcheckai
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)
