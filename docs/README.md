@@ -19,6 +19,7 @@ The following Endpoints are currently supported.
 
 * [Airtable](./api/airtable.md)
 * [Camunda](./api/camunda.md)
+* [Disify](./api/disify.md)
 * [Github](./api/github.md)
 * [Hubspot](./api/hubspot.md)
 * [MailCheckAi](./api/mailcheckai.md)

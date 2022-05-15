@@ -4,6 +4,7 @@ import { Alchemy } from '../configs/alchemy.config'
 import { Camunda } from '../configs/camunda.config'
 import { CoinMarketCap } from '../configs/coinmarketcap.config'
 import { Covalent } from '../configs/covalent.config'
+import { Disify } from '../configs/disify.config'
 import { Etherscan } from '../configs/etherscan.config'
 import { Github } from '../configs/github.config'
 import { Hubspot } from '../configs/hubspot.config'
@@ -24,6 +25,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['camunda', Camunda.API],
 ['coinmarketcap', CoinMarketCap.API],
 ['covalent', Covalent.API],
+['disify', Disify.API],
 ['etherscan', Etherscan.API],
 ['github', Github.API],
 ['hubspot', Hubspot.API],
