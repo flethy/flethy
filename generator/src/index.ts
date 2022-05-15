@@ -19,6 +19,7 @@ import { FetchParams } from '../../http-configs/src/types/FetchParams.type'
 import { nao } from '../../http-configs/src/utils/Request.utils'
 import { HttpRequest } from './controllers/HttpRequest'
 import { logger } from './utils/Logger'
+import Disify from '../../http-configs/src/configs/disify.config'
 
 async function main() {
   const requestConfigs: {
@@ -299,8 +300,12 @@ async function main() {
       kind: 'mailcheckai.email.check',
       'param:email': 'test@makerlabs.one',
     }),
+    disify: nao<Disify.CheckSingleEmail>({
+      kind: 'disify.email.single',
+      'param:email': 'test@makerlabs.one',
+    }),
   }
-  const requestConfig = requestConfigs.mailcheckai
+  const requestConfig = requestConfigs.disify
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)
