@@ -2,8 +2,8 @@ import { RequestParams } from '../types/Request.types'
 import { ApiDescription } from '../types/ApiDescription.type'
 
 export namespace Hubspot {
-  export type Entity = { forms }
-  export type Endpoint = { submit }
+  export type Entity = { forms; auth; contacts }
+  export type Endpoint = { submit } | { token } | { createOrUpdate }
 
   export interface FormsSubmit extends RequestParams {
     kind: 'hubspot.forms.submit'
@@ -34,6 +34,25 @@ export namespace Hubspot {
     }
   }
 
+  export interface ContactsCreateOrUpdate extends RequestParams {
+    kind: 'hubspot.contacts.createOrUpdate'
+    'auth:Authorization': string
+    'param:contact_email': string
+    'body:properties': Array<{
+      property: string
+      value: string | number | boolean
+    }>
+  }
+
+  export interface OAuthToken extends RequestParams {
+    kind: 'hubspot.auth.token'
+    'header:Content-Type': 'application/x-www-form-urlencoded'
+    'auth:grant_type': 'authorization_code' | 'refresh_token'
+    'auth:client_id': string
+    'auth:client_secret': string
+    'auth:refresh_token': string
+  }
+
   export const API: ApiDescription<Entity, Endpoint> = {
     meta: {
       id: 'hubspot',
@@ -51,6 +70,46 @@ export namespace Hubspot {
       },
     },
     api: {
+      auth: {
+        token: {
+          meta: {
+            title: 'Get OAuth 2.0 access and refresh tokens',
+            description:
+              'Use the code you get after a user authorizes your app to get an access token and refresh token. The access token will be used to authenticate requests that your app makes. Access tokens are short lived, so you can use the refresh token to get a new access token when the current access token expires.',
+            docs: 'https://legacydocs.hubspot.com/docs/methods/oauth2/get-access-and-refresh-tokens',
+          },
+          method: 'POST',
+          base: 'https://api.hubapi.com',
+          auth: {
+            grant_type: {
+              type: 'body:form',
+            },
+            client_id: {
+              type: 'body:form',
+            },
+            client_secret: {
+              type: 'body:form',
+            },
+            refresh_token: {
+              type: 'body:form',
+            },
+          },
+          paths: [
+            {
+              name: 'oauth',
+              type: 'static',
+            },
+            {
+              name: 'v1',
+              type: 'static',
+            },
+            {
+              name: 'token',
+              type: 'static',
+            },
+          ],
+        },
+      },
       forms: {
         submit: {
           meta: {
@@ -83,6 +142,44 @@ export namespace Hubspot {
             },
             {
               name: 'formId',
+              type: 'param',
+            },
+          ],
+        },
+      },
+      contacts: {
+        createOrUpdate: {
+          meta: {
+            title: 'Create or update a contact',
+            description:
+              'The create or update a contact endpoint is used to create a new HubSpot contact or update an existing one. ',
+            docs: 'https://legacydocs.hubspot.com/docs/methods/contacts/create_or_update',
+          },
+          method: 'POST',
+          base: 'https://api.hubapi.com',
+          paths: [
+            {
+              name: 'contacts',
+              type: 'static',
+            },
+            {
+              name: 'v1',
+              type: 'static',
+            },
+            {
+              name: 'contact',
+              type: 'static',
+            },
+            {
+              name: 'createOrUpdate',
+              type: 'static',
+            },
+            {
+              name: 'email',
+              type: 'static',
+            },
+            {
+              name: 'contact_email',
               type: 'param',
             },
           ],

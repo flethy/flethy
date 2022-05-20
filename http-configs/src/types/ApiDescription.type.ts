@@ -55,6 +55,13 @@ export interface ApiDescriptionEndpointParam {
 }
 
 export interface ApiDescriptionAuth {
-  type: 'query' | 'header' | 'header:bearer' | 'header:token' | 'path' | 'body'
+  type:
+    | 'query'
+    | 'header'
+    | 'header:bearer'
+    | 'header:token'
+    | 'path'
+    | 'body'
+    | 'body:form'
   authHandler?: (fetchParams: FetchParams, authValue: string) => void
 }

@@ -1,9 +1,13 @@
 import { Airtable } from '../../http-configs/src/configs/airtable.config'
 import { Alchemy } from '../../http-configs/src/configs/alchemy.config'
+import { Camunda } from '../../http-configs/src/configs/camunda.config'
 import { CoinMarketCap } from '../../http-configs/src/configs/coinmarketcap.config'
 import { Covalent } from '../../http-configs/src/configs/covalent.config'
+import { Disify } from '../../http-configs/src/configs/disify.config'
 import { Etherscan } from '../../http-configs/src/configs/etherscan.config'
 import { Github } from '../../http-configs/src/configs/github.config'
+import { Hubspot } from '../../http-configs/src/configs/hubspot.config'
+import { MailCheckAi } from '../../http-configs/src/configs/mailcheckai.config'
 import { MailerSend } from '../../http-configs/src/configs/mailersend.config'
 import { Mergent } from '../../http-configs/src/configs/mergent.config'
 import { Mixpanel } from '../../http-configs/src/configs/mixpanel.config'
@@ -13,13 +17,10 @@ import { Pinata } from '../../http-configs/src/configs/pinata.config'
 import { Slack } from '../../http-configs/src/configs/slack.config'
 import { TheGraph } from '../../http-configs/src/configs/thegraph.config'
 import { Web3Storage } from '../../http-configs/src/configs/web3storage.config'
-import { Camunda } from '../../http-configs/src/configs/camunda.config'
-import { MailCheckAi } from '../../http-configs/src/configs/mailcheckai.config'
 import { FetchParams } from '../../http-configs/src/types/FetchParams.type'
 import { nao } from '../../http-configs/src/utils/Request.utils'
 import { HttpRequest } from './controllers/HttpRequest'
 import { logger } from './utils/Logger'
-import Disify from '../../http-configs/src/configs/disify.config'
 
 async function main() {
   const requestConfigs: {
@@ -303,6 +304,25 @@ async function main() {
     disify: nao<Disify.CheckSingleEmail>({
       kind: 'disify.email.single',
       'param:email': 'test@makerlabs.one',
+    }),
+    hubspotToken: nao<Hubspot.OAuthToken>({
+      kind: 'hubspot.auth.token',
+      'header:Content-Type': 'application/x-www-form-urlencoded',
+      'auth:grant_type': 'refresh_token',
+      'auth:client_id': process.env.HUBSPOT_CLIENT_ID,
+      'auth:client_secret': process.env.HUBSPOT_CLIENT_SECRET,
+      'auth:refresh_token': process.env.HUBSPOT_REFRESH_TOKEN,
+    }),
+    hubspotContactCreateOrUpdate: nao<Hubspot.ContactsCreateOrUpdate>({
+      kind: 'hubspot.contacts.createOrUpdate',
+      'auth:Authorization': process.env.HUBSPOT_JWT,
+      'param:contact_email': '...',
+      'body:properties': [
+        {
+          property: '...',
+          value: '...',
+        },
+      ],
     }),
   }
   const requestConfig = requestConfigs.disify
