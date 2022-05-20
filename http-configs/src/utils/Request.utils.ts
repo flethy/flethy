@@ -25,6 +25,7 @@ export class HttpRequestConfig {
       body: options.endpoint.method === 'GET' ? undefined : {},
     }
     const queryParams: { [key: string]: string } = {}
+    const formData: Array<{ key: string; value: string }> = []
 
     // PARAMS
 
@@ -99,12 +100,21 @@ export class HttpRequestConfig {
             case 'body':
               authConfig.authHandler(config, options.params[paramKey])
               break
+            case 'body:form':
+              formData.push({ key: keyname, value: options.params[paramKey] })
+              break
             case 'path':
               // will be handled in path section
               break
           }
         }
       }
+    }
+
+    if (formData.length > 0) {
+      config.body = formData
+        .map((item) => `${item.key}=${item.value}`)
+        .join('&')
     }
 
     // REQUEST
