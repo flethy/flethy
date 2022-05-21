@@ -14,6 +14,7 @@ The following Endpoints are currently supported.
 * [Pinata](./api/pinata.md)
 * [TheGraph](./api/thegraph.md)
 * [Web3Storage](./api/web3storage.md)
+* [ZeroX](./api/0x.md)
 
 ### Web2
 

@@ -12,7 +12,7 @@ export interface ApiDescription<Entity, Endpoint> {
     type: TYPE
     config?: string
   }
-  base: string
+  base: string | ApiDescriptionBase[]
   auth?: { [key: string]: ApiDescriptionAuth }
   headers?: { [key: string]: string }
   api: {
@@ -29,7 +29,7 @@ export interface ApiDescriptionPath {
 
 export interface ApiDescriptionEndpoint {
   method: FetchMethod
-  base?: string
+  base?: string | ApiDescriptionBase[]
   auth?: { [key: string]: ApiDescriptionAuth }
   paths?: ApiDescriptionPath[]
   options?: ApiDescriptionEndpointOptions
@@ -64,4 +64,9 @@ export interface ApiDescriptionAuth {
     | 'body'
     | 'body:form'
   authHandler?: (fetchParams: FetchParams, authValue: string) => void
+}
+
+export interface ApiDescriptionBase {
+  id: string
+  url: string
 }

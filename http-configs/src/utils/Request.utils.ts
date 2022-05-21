@@ -18,9 +18,23 @@ export class HttpRequestConfig {
 
   public static requestConfig(options: RequestOptions<any>): FetchParams {
     // VALIDATION
+
+    let url: string
+    const base = options.endpoint.base ?? options.api.base
+    if (Array.isArray(base) && options.params.baseId) {
+      url = base.find(
+        (currentBase) => currentBase.id === options.params.baseId,
+      )?.url
+    } else if (typeof base === 'string') {
+      url = base
+    }
+    if (!url) {
+      throw new Error(`Cannot determine Base URL`)
+    }
+
     const config: FetchParams = {
       method: options.endpoint.method,
-      url: options.endpoint.base ?? options.api.base,
+      url,
       headers: {},
       body: options.endpoint.method === 'GET' ? undefined : {},
     }
