@@ -2,6 +2,7 @@ import { ApiDescription, ApiDescriptionEndpoint } from './ApiDescription.type'
 
 export interface RequestParams {
   kind: string
+  baseId?: string
 }
 
 export interface RequestOptions<RequestOptionsParams> {

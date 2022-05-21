@@ -17,6 +17,7 @@ import { Pinata } from '../../http-configs/src/configs/pinata.config'
 import { Slack } from '../../http-configs/src/configs/slack.config'
 import { TheGraph } from '../../http-configs/src/configs/thegraph.config'
 import { Web3Storage } from '../../http-configs/src/configs/web3storage.config'
+import { ZeroX } from '../../http-configs/src/configs/zerox.config'
 import { FetchParams } from '../../http-configs/src/types/FetchParams.type'
 import { nao } from '../../http-configs/src/utils/Request.utils'
 import { HttpRequest } from './controllers/HttpRequest'
@@ -323,6 +324,24 @@ async function main() {
           value: '...',
         },
       ],
+    }),
+    zeroXSwapQuote: nao<ZeroX.SwapQuote>({
+      kind: '0x.swap.quote',
+      baseId: 'mainnet',
+      'query:buyToken': 'DAI',
+      'query:sellToken': 'WETH',
+      'query:sellAmount': 100000000000000000,
+    }),
+    zeroXSwapPrice: nao<ZeroX.SwapPrice>({
+      kind: '0x.swap.price',
+      baseId: 'mainnet',
+      'query:buyToken': 'DAI',
+      'query:sellToken': 'WETH',
+      'query:sellAmount': 100000000000000000,
+    }),
+    zeroXSwapSources: nao<ZeroX.SwapSources>({
+      kind: '0x.swap.sources',
+      baseId: 'mainnet',
     }),
   }
   const requestConfig = requestConfigs.disify
