@@ -10,6 +10,7 @@ The following Endpoints are currently supported.
 * [CoinMarketCap](./api/coinmarketcap.md)
 * [Covalent](./api/covalent.md)
 * [Etherscan](./api/etherscan.md)
+* [OneInch](./api/1inch.md)
 * [OpenSea](./api/opensea.md)
 * [Pinata](./api/pinata.md)
 * [TheGraph](./api/thegraph.md)

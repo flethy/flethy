@@ -13,6 +13,7 @@ import { MailerSend } from '../configs/mailersend.config'
 import { Mergent } from '../configs/mergent.config'
 import { Mixpanel } from '../configs/mixpanel.config'
 import { Notion } from '../configs/notion.config'
+import { OneInch } from '../configs/oneinch.config'
 import { OpenSea } from '../configs/opensea.config'
 import { Pinata } from '../configs/pinata.config'
 import { Slack } from '../configs/slack.config'
@@ -35,6 +36,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['mergent', Mergent.API],
 ['mixpanel', Mixpanel.API],
 ['notion', Notion.API],
+['1inch', OneInch.API],
 ['opensea', OpenSea.API],
 ['pinata', Pinata.API],
 ['slack', Slack.API],

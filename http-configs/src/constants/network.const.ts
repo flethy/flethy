@@ -1,0 +1,8 @@
+export const NETWORK_ETHEREUM = 1
+export const NETWORK_BINANCE_SMART_CHAIN = 56
+export const NETWORK_POLYGON = 137
+export const NETWORK_OPTIMISM = 10
+export const NETWORK_ARBITRUM = 42161
+export const NETWORK_GNOSIS = 100
+export const NETWORK_AVALANCHE = 43114
+export const NETWORK_FANTOM = 250
