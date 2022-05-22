@@ -1,0 +1,34 @@
+# OneInch
+
+## Links
+
+* URL: [https://1inch.io/](https://1inch.io/)
+* Documentation: [https://docs.1inch.io/](https://docs.1inch.io/)
+* Tags: web3
+* Category: defi
+* Type: liquidity
+
+## API
+
+### aggregation
+
+#### infoTokens
+
+##### Info/Tokens
+
+* Description: List of Tokens that are available for swap in the 1inch Aggregation protocol.
+* Docs: [https://docs.1inch.io/docs/aggregation-protocol/api/swagger#](https://docs.1inch.io/docs/aggregation-protocol/api/swagger#)
+
+#### quote
+
+##### Quote
+
+* Description: Find the best quote to exchange via 1inch router.
+* Docs: [https://docs.1inch.io/docs/aggregation-protocol/api/swagger#](https://docs.1inch.io/docs/aggregation-protocol/api/swagger#)
+
+#### swap
+
+##### Swap
+
+* Description: Generate data for calling the 1inch router for exchange
+* Docs: [https://docs.1inch.io/docs/aggregation-protocol/api/swagger#](https://docs.1inch.io/docs/aggregation-protocol/api/swagger#)

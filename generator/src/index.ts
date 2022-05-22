@@ -12,6 +12,7 @@ import { MailerSend } from '../../http-configs/src/configs/mailersend.config'
 import { Mergent } from '../../http-configs/src/configs/mergent.config'
 import { Mixpanel } from '../../http-configs/src/configs/mixpanel.config'
 import { Notion } from '../../http-configs/src/configs/notion.config'
+import { OneInch } from '../../http-configs/src/configs/oneinch.config'
 import { OpenSea } from '../../http-configs/src/configs/opensea.config'
 import { Pinata } from '../../http-configs/src/configs/pinata.config'
 import { Slack } from '../../http-configs/src/configs/slack.config'
@@ -343,8 +344,28 @@ async function main() {
       kind: '0x.swap.sources',
       baseId: 'mainnet',
     }),
+    oneInchInfoTokens: nao<OneInch.AggregationInfoTokens>({
+      kind: '1inch.aggregation.infoTokens',
+      'param:chainId': 1,
+    }),
+    oneInchSwapQuote: nao<OneInch.AggregationQuote>({
+      kind: '1inch.aggregation.quote',
+      'param:chainId': 1,
+      'query:fromTokenAddress': '0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE',
+      'query:toTokenAddress': '0x111111111117dc0aa78b770fa6a738034120c302',
+      'query:amount': 10000000000000000,
+    }),
+    oneInchSwap: nao<OneInch.AggregationSwap>({
+      kind: '1inch.aggregation.swap',
+      'param:chainId': 1,
+      'query:fromTokenAddress': '0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE',
+      'query:toTokenAddress': '0x111111111117dc0aa78b770fa6a738034120c302',
+      'query:amount': 10000000000000000,
+      'query:fromAddress': '0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE',
+      'query:slippage': 1,
+    }),
   }
-  const requestConfig = requestConfigs.disify
+  const requestConfig = requestConfigs.oneInchSwap
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)
