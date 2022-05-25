@@ -1,6 +1,7 @@
 import { Airtable } from '../../http-configs/src/configs/airtable.config'
 import { Alchemy } from '../../http-configs/src/configs/alchemy.config'
 import { Camunda } from '../../http-configs/src/configs/camunda.config'
+import Coinlayer from '../../http-configs/src/configs/coinlayer.config'
 import { CoinMarketCap } from '../../http-configs/src/configs/coinmarketcap.config'
 import { Covalent } from '../../http-configs/src/configs/covalent.config'
 import { Disify } from '../../http-configs/src/configs/disify.config'
@@ -364,8 +365,21 @@ async function main() {
       'query:fromAddress': '0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE',
       'query:slippage': 1,
     }),
+    coinlayerLive: nao<Coinlayer.GetLive>({
+      kind: 'coinlayer.all.live',
+      'auth:access_key': process.env.COINLAYER_API_KEY,
+    }),
+    coinlayerList: nao<Coinlayer.GetList>({
+      kind: 'coinlayer.all.list',
+      'auth:access_key': process.env.COINLAYER_API_KEY,
+    }),
+    coinlayerHistorical: nao<Coinlayer.GetHistorical>({
+      kind: 'coinlayer.all.historical',
+      'param:yyyy-mm-dd': '2020-01-01',
+      'auth:access_key': process.env.COINLAYER_API_KEY,
+    }),
   }
-  const requestConfig = requestConfigs.oneInchSwap
+  const requestConfig = requestConfigs.coinlayerHistorical
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

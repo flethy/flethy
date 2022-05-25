@@ -2,6 +2,7 @@ import { ApiDescription } from '../types/ApiDescription.type'
 import { Airtable } from '../configs/airtable.config'
 import { Alchemy } from '../configs/alchemy.config'
 import { Camunda } from '../configs/camunda.config'
+import { Coinlayer } from '../configs/coinlayer.config'
 import { CoinMarketCap } from '../configs/coinmarketcap.config'
 import { Covalent } from '../configs/covalent.config'
 import { Disify } from '../configs/disify.config'
@@ -25,6 +26,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['airtable', Airtable.API],
 ['alchemy', Alchemy.API],
 ['camunda', Camunda.API],
+['coinlayer', Coinlayer.API],
 ['coinmarketcap', CoinMarketCap.API],
 ['covalent', Covalent.API],
 ['disify', Disify.API],
