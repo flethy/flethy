@@ -7,6 +7,7 @@ The following Endpoints are currently supported.
 ### Web3
 
 * [Alchemy](./api/alchemy.md)
+* [Coinlayer](./api/coinlayer.md)
 * [CoinMarketCap](./api/coinmarketcap.md)
 * [Covalent](./api/covalent.md)
 * [Etherscan](./api/etherscan.md)
