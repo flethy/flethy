@@ -1,6 +1,7 @@
 import { Airtable } from '../../http-configs/src/configs/airtable.config'
 import { Alchemy } from '../../http-configs/src/configs/alchemy.config'
 import { Camunda } from '../../http-configs/src/configs/camunda.config'
+import CoinCap from '../../http-configs/src/configs/coincap.config'
 import Coinlayer from '../../http-configs/src/configs/coinlayer.config'
 import { CoinMarketCap } from '../../http-configs/src/configs/coinmarketcap.config'
 import { Covalent } from '../../http-configs/src/configs/covalent.config'
@@ -378,8 +379,24 @@ async function main() {
       'param:yyyy-mm-dd': '2020-01-01',
       'auth:access_key': process.env.COINLAYER_API_KEY,
     }),
+    coincapAssets: nao<CoinCap.getAssets>({
+      kind: 'coincap.assets.get',
+    }),
+    coincapAssetBitcoin: nao<CoinCap.getAsset>({
+      kind: 'coincap.assets.getOne',
+      'param:id': 'bitcoin',
+    }),
+    coincapAssetBitcoinHistory: nao<CoinCap.getAssetHistory>({
+      kind: 'coincap.assets.history',
+      'param:id': 'bitcoin',
+      'query:interval': 'd1',
+    }),
+    coincapAssetBitcoinMarkets: nao<CoinCap.getAssetMarkets>({
+      kind: 'coincap.assets.markets',
+      'param:id': 'bitcoin',
+    }),
   }
-  const requestConfig = requestConfigs.coinlayerHistorical
+  const requestConfig = requestConfigs.coincapAssetBitcoinMarkets
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)
