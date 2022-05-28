@@ -3,7 +3,7 @@ import { ApiDescription } from '../types/ApiDescription.type'
 
 export namespace CoinCap {
   export type Entity = { assets }
-  export type Endpoint = { get; getOne }
+  export type Endpoint = { get; getOne; history; markets }
 
   export interface getAssets extends RequestParams {
     kind: 'coincap.assets.get'
@@ -12,6 +12,30 @@ export namespace CoinCap {
   export interface getAsset extends RequestParams {
     kind: 'coincap.assets.getOne'
     'param:id': string
+  }
+
+  export interface getAssetHistory extends RequestParams {
+    kind: 'coincap.assets.history'
+    'param:id': string
+    'query:interval':
+      | 'm1'
+      | 'm5'
+      | 'm15'
+      | 'm30'
+      | 'h1'
+      | 'h2'
+      | 'h6'
+      | 'h12'
+      | 'd1'
+    'query:start'?: number
+    'query:end'?: number
+  }
+
+  export interface getAssetMarkets extends RequestParams {
+    kind: 'coincap.assets.markets'
+    'param:id': string
+    'query:limit'?: number
+    'query:offset'?: number
   }
 
   export const API: ApiDescription<Entity, Endpoint> = {
@@ -57,6 +81,50 @@ export namespace CoinCap {
             {
               name: 'id',
               type: 'param',
+            },
+          ],
+        },
+        history: {
+          meta: {
+            title: 'Get Asset History',
+            description: 'Asset History',
+            docs: 'https://docs.coincap.io/#61e708a8-8876-4fb2-a418-86f12f308978',
+          },
+          method: 'GET',
+          paths: [
+            {
+              name: 'assets',
+              type: 'static',
+            },
+            {
+              name: 'id',
+              type: 'param',
+            },
+            {
+              name: 'history',
+              type: 'static',
+            },
+          ],
+        },
+        markets: {
+          meta: {
+            title: 'Get Asset Markets',
+            description: 'Asset Markets',
+            docs: 'https://docs.coincap.io/#7f727b78-5013-41ec-aa1c-351b836458d0',
+          },
+          method: 'GET',
+          paths: [
+            {
+              name: 'assets',
+              type: 'static',
+            },
+            {
+              name: 'id',
+              type: 'param',
+            },
+            {
+              name: 'markets',
+              type: 'static',
             },
           ],
         },

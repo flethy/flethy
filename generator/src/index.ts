@@ -386,8 +386,17 @@ async function main() {
       kind: 'coincap.assets.getOne',
       'param:id': 'bitcoin',
     }),
+    coincapAssetBitcoinHistory: nao<CoinCap.getAssetHistory>({
+      kind: 'coincap.assets.history',
+      'param:id': 'bitcoin',
+      'query:interval': 'd1',
+    }),
+    coincapAssetBitcoinMarkets: nao<CoinCap.getAssetMarkets>({
+      kind: 'coincap.assets.markets',
+      'param:id': 'bitcoin',
+    }),
   }
-  const requestConfig = requestConfigs.coincapAssetBitcoin
+  const requestConfig = requestConfigs.coincapAssetBitcoinMarkets
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)
