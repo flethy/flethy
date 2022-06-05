@@ -3,6 +3,7 @@ import { Alchemy } from '../../http-configs/src/configs/alchemy.config'
 import { Camunda } from '../../http-configs/src/configs/camunda.config'
 import CoinCap from '../../http-configs/src/configs/coincap.config'
 import Coinlayer from '../../http-configs/src/configs/coinlayer.config'
+import { CoinGecko } from '../../http-configs/src/configs/coingecko.config'
 import { CoinMarketCap } from '../../http-configs/src/configs/coinmarketcap.config'
 import { Covalent } from '../../http-configs/src/configs/covalent.config'
 import { Disify } from '../../http-configs/src/configs/disify.config'
@@ -395,8 +396,11 @@ async function main() {
       kind: 'coincap.assets.markets',
       'param:id': 'bitcoin',
     }),
+    coingeckoListCoins: nao<CoinGecko.ListCoins>({
+      kind: 'coingecko.coins.list',
+    }),
   }
-  const requestConfig = requestConfigs.coincapAssetBitcoinMarkets
+  const requestConfig = requestConfigs.coingeckoListCoins
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)
