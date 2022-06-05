@@ -8,6 +8,7 @@ The following Endpoints are currently supported.
 
 * [Alchemy](./api/alchemy.md)
 * [CoinCap](./api/coincap.md)
+* [CoinGecko](./api/coingecko.md)
 * [Coinlayer](./api/coinlayer.md)
 * [CoinMarketCap](./api/coinmarketcap.md)
 * [Covalent](./api/covalent.md)
