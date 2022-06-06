@@ -399,8 +399,12 @@ async function main() {
     coingeckoListCoins: nao<CoinGecko.ListCoins>({
       kind: 'coingecko.coins.list',
     }),
+    coingeckoGetSupportedVsCurrencies:
+      nao<CoinGecko.GetSimpleSupportedVsCurrencies>({
+        kind: 'coingecko.simple.supportedVsCurrencies',
+      }),
   }
-  const requestConfig = requestConfigs.coingeckoListCoins
+  const requestConfig = requestConfigs.coingeckoGetSupportedVsCurrencies
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)
