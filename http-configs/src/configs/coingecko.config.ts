@@ -3,7 +3,7 @@ import { ApiDescription } from '../types/ApiDescription.type'
 
 export namespace CoinGecko {
   export type Entity = { coins; simple }
-  export type Endpoint = { list } | { supportedVsCurrencies }
+  export type Endpoint = { list } | { supportedVsCurrencies; price; tokenPrice }
 
   export interface ListCoins extends RequestParams {
     kind: 'coingecko.coins.list'
@@ -12,6 +12,27 @@ export namespace CoinGecko {
 
   export interface GetSimpleSupportedVsCurrencies extends RequestParams {
     kind: 'coingecko.simple.supportedVsCurrencies'
+  }
+
+  export interface GetSimplePrice extends RequestParams {
+    kind: 'coingecko.simple.price'
+    'query:ids': string
+    'query:vs_currencies': string
+    'query:include_market_cap'?: boolean
+    'query:include_24hr_vol'?: boolean
+    'query:include_24hr_change'?: boolean
+    'query:include_last_updated_at'?: boolean
+  }
+
+  export interface GetSimpleTokenPrice extends RequestParams {
+    kind: 'coingecko.simple.tokenPrice'
+    'param:id': string
+    'query:contract_addresses': string
+    'query:vs_currencies': string
+    'query:include_market_cap'?: boolean
+    'query:include_24hr_vol'?: boolean
+    'query:include_24hr_change'?: boolean
+    'query:include_last_updated_at'?: boolean
   }
 
   export const API: ApiDescription<Entity, Endpoint> = {
@@ -62,6 +83,46 @@ export namespace CoinGecko {
             {
               name: 'supported_vs_currencies',
               type: 'static',
+            },
+          ],
+        },
+        price: {
+          meta: {
+            title: 'Get Simple Price',
+            description: `Get simple price`,
+            docs: 'https://www.coingecko.com/en/api/documentation',
+          },
+          method: 'GET',
+          paths: [
+            {
+              name: 'simple',
+              type: 'static',
+            },
+            {
+              name: 'price',
+              type: 'static',
+            },
+          ],
+        },
+        tokenPrice: {
+          meta: {
+            title: 'Get Simple Token Price',
+            description: `Get simple token price`,
+            docs: 'https://www.coingecko.com/en/api/documentation',
+          },
+          method: 'GET',
+          paths: [
+            {
+              name: 'simple',
+              type: 'static',
+            },
+            {
+              name: 'token_price',
+              type: 'static',
+            },
+            {
+              name: 'id',
+              type: 'param',
             },
           ],
         },
