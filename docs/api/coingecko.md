@@ -27,3 +27,17 @@
 
 * Description: Get supported vs currencies
 * Docs: [https://www.coingecko.com/en/api/documentation](https://www.coingecko.com/en/api/documentation)
+
+#### price
+
+##### Get Simple Price
+
+* Description: Get simple price
+* Docs: [https://www.coingecko.com/en/api/documentation](https://www.coingecko.com/en/api/documentation)
+
+#### tokenPrice
+
+##### Get Simple Token Price
+
+* Description: Get simple token price
+* Docs: [https://www.coingecko.com/en/api/documentation](https://www.coingecko.com/en/api/documentation)
