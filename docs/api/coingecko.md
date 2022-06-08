@@ -19,6 +19,13 @@
 * Description: Use this to obtain all the coins' id in order to make API calls
 * Docs: [https://www.coingecko.com/en/api/documentation](https://www.coingecko.com/en/api/documentation)
 
+#### markets
+
+##### Coins Markets
+
+* Description: Coins Markets
+* Docs: [https://www.coingecko.com/en/api/documentation](https://www.coingecko.com/en/api/documentation)
+
 ### simple
 
 #### supportedVsCurrencies

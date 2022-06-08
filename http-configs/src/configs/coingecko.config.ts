@@ -3,11 +3,34 @@ import { ApiDescription } from '../types/ApiDescription.type'
 
 export namespace CoinGecko {
   export type Entity = { coins; simple }
-  export type Endpoint = { list } | { supportedVsCurrencies; price; tokenPrice }
+  export type Endpoint =
+    | { list; markets }
+    | { supportedVsCurrencies; price; tokenPrice }
 
   export interface ListCoins extends RequestParams {
     kind: 'coingecko.coins.list'
     'query:include_platform'?: boolean
+  }
+
+  export interface CoinsMarkets extends RequestParams {
+    kind: 'coingecko.coins.markets'
+    'query:vs_currency': string
+    'query:ids'?: string
+    'query:category'?: string
+    'query:order'?:
+      | 'market_cap_desc'
+      | 'gecko_desc'
+      | 'gecko_asc'
+      | 'market_cap_asc'
+      | 'market_cap_desc'
+      | 'volume_asc'
+      | 'volume_desc'
+      | 'id_asc'
+      | 'id_desc'
+    'query:per_page'?: number
+    'query:page'?: number
+    'query:sparkline'?: boolean
+    'query:price_change_percentage'?: string
   }
 
   export interface GetSimpleSupportedVsCurrencies extends RequestParams {
@@ -62,6 +85,24 @@ export namespace CoinGecko {
             },
             {
               name: 'list',
+              type: 'static',
+            },
+          ],
+        },
+        markets: {
+          meta: {
+            title: 'Coins Markets',
+            description: `Coins Markets`,
+            docs: 'https://www.coingecko.com/en/api/documentation',
+          },
+          method: 'GET',
+          paths: [
+            {
+              name: 'coins',
+              type: 'static',
+            },
+            {
+              name: 'markets',
               type: 'static',
             },
           ],
