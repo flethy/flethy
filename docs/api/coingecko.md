@@ -26,6 +26,13 @@
 * Description: Coins Markets
 * Docs: [https://www.coingecko.com/en/api/documentation](https://www.coingecko.com/en/api/documentation)
 
+#### id
+
+##### Coin By Id
+
+* Description: Coin By Id
+* Docs: [https://www.coingecko.com/en/api/documentation](https://www.coingecko.com/en/api/documentation)
+
 ### simple
 
 #### supportedVsCurrencies
