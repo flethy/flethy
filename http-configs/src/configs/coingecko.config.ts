@@ -4,12 +4,23 @@ import { ApiDescription } from '../types/ApiDescription.type'
 export namespace CoinGecko {
   export type Entity = { coins; simple }
   export type Endpoint =
-    | { list; markets }
+    | { list; markets; id }
     | { supportedVsCurrencies; price; tokenPrice }
 
   export interface ListCoins extends RequestParams {
     kind: 'coingecko.coins.list'
     'query:include_platform'?: boolean
+  }
+
+  export interface CoinById extends RequestParams {
+    kind: 'coingecko.coins.id'
+    'param:id': string
+    'query:localization'?: boolean
+    'query:tickers'?: boolean
+    'query:market_data'?: boolean
+    'query:community_data'?: boolean
+    'query:developer_data'?: boolean
+    'query:sparkline'?: boolean
   }
 
   export interface CoinsMarkets extends RequestParams {
@@ -104,6 +115,24 @@ export namespace CoinGecko {
             {
               name: 'markets',
               type: 'static',
+            },
+          ],
+        },
+        id: {
+          meta: {
+            title: 'Coin By Id',
+            description: `Coin By Id`,
+            docs: 'https://www.coingecko.com/en/api/documentation',
+          },
+          method: 'GET',
+          paths: [
+            {
+              name: 'coins',
+              type: 'static',
+            },
+            {
+              name: 'id',
+              type: 'param',
             },
           ],
         },
