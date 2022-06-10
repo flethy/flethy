@@ -33,6 +33,13 @@
 * Description: Coin By Id
 * Docs: [https://www.coingecko.com/en/api/documentation](https://www.coingecko.com/en/api/documentation)
 
+#### idTickers
+
+##### Coin Tickers By Id
+
+* Description: Coin Tickers By Id
+* Docs: [https://www.coingecko.com/en/api/documentation](https://www.coingecko.com/en/api/documentation)
+
 ### simple
 
 #### supportedVsCurrencies
