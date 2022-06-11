@@ -29,6 +29,7 @@ export interface ApiDescriptionPath {
 
 export interface ApiDescriptionEndpoint {
   method: FetchMethod
+  interface: string
   base?: string | ApiDescriptionBase[]
   auth?: { [key: string]: ApiDescriptionAuth }
   paths?: ApiDescriptionPath[]
