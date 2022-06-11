@@ -4,7 +4,7 @@ import { RequestParams } from '../types/Request.types'
 export namespace CoinGecko {
   export type Entity = { coins; simple }
   export type Endpoint =
-    | { list; markets; id; idTickers }
+    | { list; markets; id; idTickers; idHistory }
     | { supportedVsCurrencies; price; tokenPrice }
 
   export interface ListCoins extends RequestParams {
@@ -31,6 +31,13 @@ export namespace CoinGecko {
     'query:page'?: number
     'query:order'?: 'trust_score_desc' | 'trust_score_asc' | 'volume_desc'
     'query:depth'?: boolean
+  }
+
+  export interface CoinHistoryById extends RequestParams {
+    kind: 'coingecko.coins.idTHistory'
+    'param:id': string
+    'query:date'?: string
+    'query:localization'?: boolean
   }
 
   export interface CoinsMarkets extends RequestParams {
@@ -164,6 +171,28 @@ export namespace CoinGecko {
             },
             {
               name: 'tickers',
+              type: 'static',
+            },
+          ],
+        },
+        idHistory: {
+          meta: {
+            title: 'Coin History By Id',
+            description: `Coin History By Id`,
+            docs: 'https://www.coingecko.com/en/api/documentation',
+          },
+          method: 'GET',
+          paths: [
+            {
+              name: 'coins',
+              type: 'static',
+            },
+            {
+              name: 'id',
+              type: 'param',
+            },
+            {
+              name: 'history',
               type: 'static',
             },
           ],
