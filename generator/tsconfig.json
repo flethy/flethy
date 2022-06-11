@@ -11,8 +11,15 @@
     "plugins": [
       {
         "name": "typescript-tslint-plugin"
+      },
+      {
+        "transform": "tst-reflect-transformer"
       }
     ]
+  },
+  "ts-node": {
+    // This can be omitted when using ts-patch
+    "compiler": "ttypescript"
   },
   "include": ["src/**/*.ts"],
   "exclude": ["node_modules", "dist"]
