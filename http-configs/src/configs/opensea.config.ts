@@ -38,6 +38,7 @@ export namespace OpenSea {
     api: {
       assets: {
         get: {
+          interface: 'GetAssets',
           meta: {
             title: 'Retrieving assets',
             description:
@@ -58,6 +59,7 @@ export namespace OpenSea {
       },
       collections: {
         get: {
+          interface: 'GetCollections',
           meta: {
             title: 'Retrieving collections',
             description: 'Use this endpoint to fetch collections on OpenSea.',

@@ -44,6 +44,7 @@ export namespace Airtable {
     api: {
       table: {
         listrecords: {
+          interface: 'ListTableRecords',
           meta: {
             title: 'List Table Records',
             description: 'List records of a table.',
@@ -67,6 +68,7 @@ export namespace Airtable {
           ],
         },
         createrecords: {
+          interface: 'CreateTableRecords',
           meta: {
             title: 'Create Table Records',
             description: 'Create records in a table.',

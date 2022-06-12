@@ -73,6 +73,7 @@ export namespace CoinMarketCap {
     api: {
       cryptocurrency: {
         listingsHistorical: {
+          interface: 'CryptocurrencyListingsHistorical',
           meta: {
             title: 'Listings Historical',
             description:
@@ -96,6 +97,7 @@ export namespace CoinMarketCap {
           ],
         },
         listingsLatest: {
+          interface: 'CryptocurrencyListingsLatest',
           meta: {
             title: 'Listings Latest',
             description: `Returns a paginated list of all active cryptocurrencies with latest market data. The default "market_cap" sort returns cryptocurrency in order of CoinMarketCap's market cap rank (as outlined in our methodology) but you may configure this call to order by another market ranking field. Use the "convert" option to return market values in multiple fiat and cryptocurrency conversions in the same call.`,

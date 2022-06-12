@@ -69,6 +69,7 @@ export namespace OneInch {
     api: {
       aggregation: {
         infoTokens: {
+          interface: 'AggregationInfoTokens',
           meta: {
             title: 'Info/Tokens',
             description:
@@ -88,6 +89,7 @@ export namespace OneInch {
           ],
         },
         quote: {
+          interface: 'AggregationQuote',
           meta: {
             title: 'Quote',
             description: 'Find the best quote to exchange via 1inch router.',
@@ -106,6 +108,7 @@ export namespace OneInch {
           ],
         },
         swap: {
+          interface: 'AggregationSwap',
           meta: {
             title: 'Swap',
             description:

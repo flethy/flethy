@@ -37,6 +37,7 @@ export namespace Pinata {
     api: {
       pinning: {
         pinJSONToIPFS: {
+          interface: 'PinningPinJsonToIPFS',
           meta: {
             title: 'pinJSONToIPFS',
             description:

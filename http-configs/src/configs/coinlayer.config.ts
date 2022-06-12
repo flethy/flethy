@@ -45,6 +45,7 @@ export namespace Coinlayer {
     api: {
       all: {
         live: {
+          interface: 'GetLive',
           meta: {
             title: 'live',
             description: 'request the most recent cryptocurrency rates',
@@ -59,6 +60,7 @@ export namespace Coinlayer {
           ],
         },
         list: {
+          interface: 'GetList',
           meta: {
             title: 'list',
             description:
@@ -74,6 +76,7 @@ export namespace Coinlayer {
           ],
         },
         historical: {
+          interface: 'GetHistorical',
           meta: {
             title: 'historical',
             description: 'request historical rates for a specific day',

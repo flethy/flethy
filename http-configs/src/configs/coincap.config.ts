@@ -52,6 +52,7 @@ export namespace CoinCap {
     api: {
       assets: {
         get: {
+          interface: 'getAssets',
           meta: {
             title: 'Get',
             description:
@@ -67,6 +68,7 @@ export namespace CoinCap {
           ],
         },
         getOne: {
+          interface: 'getAsset',
           meta: {
             title: 'Get Asset Details',
             description: 'Asset Details',
@@ -85,6 +87,7 @@ export namespace CoinCap {
           ],
         },
         history: {
+          interface: 'getAssetHistory',
           meta: {
             title: 'Get Asset History',
             description: 'Asset History',
@@ -107,6 +110,7 @@ export namespace CoinCap {
           ],
         },
         markets: {
+          interface: 'getAssetMarkets',
           meta: {
             title: 'Get Asset Markets',
             description: 'Asset Markets',

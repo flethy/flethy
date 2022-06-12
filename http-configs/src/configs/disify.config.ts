@@ -39,6 +39,7 @@ export namespace Disify {
     api: {
       domain: {
         single: {
+          interface: 'CheckSingleDomain',
           meta: {
             title: 'Check Domain',
             description: 'Check a Domain',
@@ -57,6 +58,7 @@ export namespace Disify {
           ],
         },
         mass: {
+          interface: 'CheckMassDomain',
           meta: {
             title: 'Check Domains',
             description: 'Check a Domains',
@@ -81,6 +83,7 @@ export namespace Disify {
       },
       email: {
         single: {
+          interface: 'CheckSingleEmail',
           meta: {
             title: 'Check E-Mail',
             description: 'Check an E-Mail',
@@ -99,6 +102,7 @@ export namespace Disify {
           ],
         },
         mass: {
+          interface: 'CheckMassEmail',
           meta: {
             title: 'Check Email',
             description: 'Check a Emails',

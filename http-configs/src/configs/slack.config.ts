@@ -27,6 +27,7 @@ export namespace Slack {
     api: {
       incomingWebhooks: {
         message: {
+          interface: 'IncomingWebhooksMessage',
           meta: {
             title: 'Post message to Slack Channel',
             description: 'Post message to Slack Channel',
