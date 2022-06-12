@@ -11,9 +11,13 @@ function main() {
 
   // }
 
-  const coinGecko: Type = getType<CoinGecko.INTERFACES[0]>()
+  const coinGecko: Type = getType<CoinGecko.CoinById>()
   console.log(
-    coinGecko.getProperties().map((prop) => `${prop.name}:${prop.type.name}`)
+    coinGecko
+      .getProperties()
+      .map(
+        (prop) => `${prop.name}:${prop.type.name}|${prop.optional ? '' : '*'}`
+      )
   )
 
   // const test: CoinGecko.INTERFACES[1]
