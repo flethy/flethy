@@ -7,6 +7,7 @@
   "scripts": {
     "start": "NODE_ENV=local ts-node ./src/index.ts",
     "export": "NODE_ENV=local ts-node ./src/export.ts",
+    "reflectgen": "NODE_ENV=local ts-node -P tsconfig-tt.json ./src/exporters/reflect.generator.ts",
     "build": "tsc --p tsconfig.json",
     "dist": "node dist/index.js",
     "test": "jest --config jest.config.js --runInBand true"

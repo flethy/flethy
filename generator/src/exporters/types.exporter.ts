@@ -24,7 +24,7 @@ export class TypesExporter {
     ]
     const tempImports: string[] = []
     const tempContent: string[] = [
-      `export const configTypes: Array<{type: Type; name: string}> = []`,
+      `export const configTypes: Array<{type: Type; name: string; interface: string}> = []`,
     ]
 
     const files = fs.readdirSync(CONFIGS_DIR)
@@ -45,7 +45,7 @@ export class TypesExporter {
           Object.keys(api.api[key]).forEach((subkey) => {
             const endpoint = api.api[key][subkey]
             tempContent.push(
-              `configTypes.push({type: getType<${instanceOfConfig.API.meta.name}.${endpoint.interface}>(), name: '${instanceOfConfig.API.meta.name}'})`
+              `configTypes.push({type: getType<${instanceOfConfig.API.meta.name}.${endpoint.interface}>(), name: '${instanceOfConfig.API.meta.name}', interface: '${endpoint.interface}'})`
             )
           })
         })
