@@ -29,6 +29,7 @@ export namespace Etherscan {
     api: {
       accounts: {
         balanceSingleAddress: {
+          interface: 'AccountsBalanceSingleAddress',
           meta: {
             title: 'Get Ether Balance for a Single Address',
             description: 'Returns the Ether balance of a given address.',

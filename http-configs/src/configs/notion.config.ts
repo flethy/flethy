@@ -132,6 +132,7 @@ export namespace Notion {
     api: {
       databases: {
         create: {
+          interface: 'CreateDatabase',
           meta: {
             title: 'Create a database',
             description:

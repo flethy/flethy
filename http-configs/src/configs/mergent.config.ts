@@ -38,6 +38,7 @@ export namespace Mergent {
     api: {
       tasks: {
         create: {
+          interface: 'CreateTask',
           meta: {
             title: 'Create Task',
             description: 'Create a new Mergent Task.',

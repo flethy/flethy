@@ -90,6 +90,7 @@ export namespace Camunda {
     api: {
       console: {
         token: {
+          interface: 'ConsoleToken',
           meta: {
             title: 'OAuth Token',
             description: 'Get OAuth Token for Camunda Platform',
@@ -109,6 +110,7 @@ export namespace Camunda {
           ],
         },
         getClusters: {
+          interface: 'ConsoleGetClusters',
           meta: {
             title: 'Get Clusters of Organization',
             description: 'A list of all your Camunda Cloud clusters.',
@@ -128,6 +130,7 @@ export namespace Camunda {
           ],
         },
         getClustersParameters: {
+          interface: 'ConsoleGetClustersParameters',
           meta: {
             title: 'Get Create Cluster Parameters',
             description:
@@ -152,6 +155,7 @@ export namespace Camunda {
           ],
         },
         deleteCluster: {
+          interface: 'ConsoleDeleteCluster',
           meta: {
             title: 'Delete Cluster',
             description:
@@ -176,6 +180,7 @@ export namespace Camunda {
           ],
         },
         createCluster: {
+          interface: 'ConsoleCreateCluster',
           meta: {
             title: 'Create Cluster',
             description: 'Create a new Cluster.',
@@ -195,6 +200,7 @@ export namespace Camunda {
           ],
         },
         getClients: {
+          interface: 'ConsoleGetClients',
           meta: {
             title: 'Get Cluster Clients',
             description:
@@ -223,6 +229,7 @@ export namespace Camunda {
           ],
         },
         createClient: {
+          interface: 'ConsoleCreateClient',
           meta: {
             title: 'Create Cluster Client',
             description: 'Create a new Cluster Client',
@@ -250,6 +257,7 @@ export namespace Camunda {
           ],
         },
         getClient: {
+          interface: 'ConsoleGetClient',
           meta: {
             title: 'Get Cluster Client',
             description:
@@ -282,6 +290,7 @@ export namespace Camunda {
           ],
         },
         deleteClient: {
+          interface: 'ConsoleDeleteClient',
           meta: {
             title: 'Delete Cluster Client',
             description: 'Irreversibly deletes a cluster client.',

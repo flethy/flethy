@@ -43,6 +43,7 @@ export namespace MailerSend {
     api: {
       email: {
         send: {
+          interface: 'EmailSend',
           meta: {
             title: 'Send an email',
             description:

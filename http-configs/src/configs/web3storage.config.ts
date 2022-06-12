@@ -28,6 +28,7 @@ export namespace Web3Storage {
     api: {
       upload: {
         content: {
+          interface: 'UploadContent',
           meta: {
             title: 'Upload Content',
             description:

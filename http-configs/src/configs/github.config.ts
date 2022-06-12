@@ -37,6 +37,7 @@ export namespace Github {
     api: {
       issues: {
         listrepository: {
+          interface: 'ListRepositoryIssues',
           meta: {
             title: 'List Repository Issues',
             description: 'List issues in a repository.',

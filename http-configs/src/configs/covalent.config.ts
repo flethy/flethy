@@ -64,6 +64,7 @@ export namespace Covalent {
     api: {
       classA: {
         getTransactionsForAddress: {
+          interface: 'ClassAGetTransactionsForAddress',
           meta: {
             title: 'Get transactions for address',
             description:
@@ -96,6 +97,7 @@ export namespace Covalent {
       },
       classB: {
         getUniswapV3Pools: {
+          interface: 'ClassBGetUniswapV3Pools',
           meta: {
             title: 'Get Uniswap v3 pools',
             description:
@@ -124,6 +126,7 @@ export namespace Covalent {
       },
       pricing: {
         getHistoricalTokenPrices: {
+          interface: 'PricingGetHistoricalTokenPrices',
           meta: {
             title: 'Get historical token prices',
             description:

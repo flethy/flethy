@@ -32,6 +32,7 @@ export namespace TheGraph {
     api: {
       hostedservice: {
         queryById: {
+          interface: 'QueryById',
           meta: {
             title: 'query',
             description: 'Query the GraphQL API of a hosted subgraph.',
@@ -54,6 +55,7 @@ export namespace TheGraph {
           ],
         },
         queryByName: {
+          interface: 'QueryByName',
           meta: {
             title: 'query',
             description: 'Query the GraphQL API of a hosted subgraph.',

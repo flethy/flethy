@@ -36,6 +36,7 @@ export namespace MailCheckAi {
     api: {
       domain: {
         check: {
+          interface: 'CheckDomain',
           meta: {
             title: 'Check Domain',
             description: 'Check a Domain',
@@ -56,6 +57,7 @@ export namespace MailCheckAi {
       },
       email: {
         check: {
+          interface: 'CheckEmail',
           meta: {
             title: 'Check E-Mail',
             description: 'Check an E-Mail',

@@ -94,6 +94,7 @@ export namespace ZeroX {
     api: {
       swap: {
         quote: {
+          interface: 'SwapQuote',
           meta: {
             title: 'Quote',
             description:
@@ -117,6 +118,7 @@ export namespace ZeroX {
           ],
         },
         price: {
+          interface: 'SwapPrice',
           meta: {
             title: 'Price',
             description:
@@ -140,6 +142,7 @@ export namespace ZeroX {
           ],
         },
         sources: {
+          interface: 'SwapSources',
           meta: {
             title: 'Sources',
             description: 'Returns the liquidity sources enabled for the chain.',

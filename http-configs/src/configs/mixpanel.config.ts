@@ -33,6 +33,7 @@ export namespace Mixpanel {
     api: {
       events: {
         track: {
+          interface: 'TrackEvents',
           meta: {
             title: 'Track Events',
             description: 'Track events to Mixpanel from client devices.',

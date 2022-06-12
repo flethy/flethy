@@ -100,6 +100,7 @@ export namespace CoinGecko {
     api: {
       coins: {
         list: {
+          interface: 'ListCoins',
           meta: {
             title: 'List Coins',
             description: `Use this to obtain all the coins' id in order to make API calls`,
@@ -118,6 +119,7 @@ export namespace CoinGecko {
           ],
         },
         markets: {
+          interface: 'CoinsMarkets',
           meta: {
             title: 'Coins Markets',
             description: `Coins Markets`,
@@ -136,6 +138,7 @@ export namespace CoinGecko {
           ],
         },
         id: {
+          interface: 'CoinById',
           meta: {
             title: 'Coin By Id',
             description: `Coin By Id`,
@@ -154,6 +157,7 @@ export namespace CoinGecko {
           ],
         },
         idTickers: {
+          interface: 'CoinTickersById',
           meta: {
             title: 'Coin Tickers By Id',
             description: `Coin Tickers By Id`,
@@ -176,6 +180,7 @@ export namespace CoinGecko {
           ],
         },
         idHistory: {
+          interface: 'CoinHistoryById',
           meta: {
             title: 'Coin History By Id',
             description: `Coin History By Id`,
@@ -200,6 +205,7 @@ export namespace CoinGecko {
       },
       simple: {
         supportedVsCurrencies: {
+          interface: 'GetSimpleSupportedVsCurrencies',
           meta: {
             title: 'Get supported vs currencies',
             description: `Get supported vs currencies`,
@@ -218,6 +224,7 @@ export namespace CoinGecko {
           ],
         },
         price: {
+          interface: 'GetSimplePrice',
           meta: {
             title: 'Get Simple Price',
             description: `Get simple price`,
@@ -236,6 +243,7 @@ export namespace CoinGecko {
           ],
         },
         tokenPrice: {
+          interface: 'GetSimpleTokenPrice',
           meta: {
             title: 'Get Simple Token Price',
             description: `Get simple token price`,

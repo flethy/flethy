@@ -28,6 +28,7 @@ export namespace Alchemy {
     api: {
       nft: {
         getNFTs: {
+          interface: 'NftGetNFTs',
           meta: {
             title: 'getNFTs',
             description: 'Gets all NFTs currently owned by a given address.',

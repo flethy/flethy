@@ -72,6 +72,7 @@ export namespace Hubspot {
     api: {
       auth: {
         token: {
+          interface: 'OAuthToken',
           meta: {
             title: 'Get OAuth 2.0 access and refresh tokens',
             description:
@@ -112,6 +113,7 @@ export namespace Hubspot {
       },
       forms: {
         submit: {
+          interface: 'FormsSubmit',
           meta: {
             title: 'Submit data to a form',
             description:
@@ -149,6 +151,7 @@ export namespace Hubspot {
       },
       contacts: {
         createOrUpdate: {
+          interface: 'ContactsCreateOrUpdate',
           meta: {
             title: 'Create or update a contact',
             description:
