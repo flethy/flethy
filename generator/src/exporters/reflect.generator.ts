@@ -1,18 +1,50 @@
-import { configTypes } from './reflect.exporter'
+import fs from 'fs'
+import path from 'path'
+import { ConfigType } from '../../../http-configs/src/types/ConfigType.type'
+import { configTypes as exportedConfigTypes } from './reflect.exporter'
 
-// interface ConfigType {
-//   name: string
-//   type: string
-//   optional: boolean
-// }
+const CONFIGSTYPES_DIR_NAME = 'configTypes'
+const HTTP_CONFIGS_DIR_NAME = 'http-configs'
+const CONFIGSTYPES_DIR = path.join(
+  __dirname,
+  '..',
+  '..',
+  '..',
+  HTTP_CONFIGS_DIR_NAME,
+  'src',
+  CONFIGSTYPES_DIR_NAME
+)
 
-for (const configType of configTypes) {
-  const properties = configType.type.getProperties()
-  console.log(`${configType.name}.${configType.interface}`)
-  console.log(
-    `${properties.map(
-      (prop) => `${prop.name}:${prop.type.name}|${prop.optional ? '' : '*'}`
-    )}`
-  )
-  console.log('\n')
+export class ConfigTypeGenerator {
+  public static generate() {
+    const configTypes: ConfigType[] = []
+    for (const exportedConfigType of exportedConfigTypes) {
+      let foundConfigType = configTypes.find(
+        (type) => type.name === exportedConfigType.name
+      )
+      if (!foundConfigType) {
+        foundConfigType = {
+          name: exportedConfigType.name,
+          interfaces: [],
+        }
+        configTypes.push(foundConfigType)
+      }
+      foundConfigType.interfaces.push({
+        name: exportedConfigType.interface,
+        properties: exportedConfigType.type.getProperties().map((property) => {
+          return {
+            name: property.name,
+            type: property.type.name.toLowerCase(),
+            optional: property.optional,
+          }
+        }),
+      })
+    }
+    fs.writeFileSync(
+      `${CONFIGSTYPES_DIR}/configTypes.json`,
+      JSON.stringify(configTypes)
+    )
+  }
 }
+
+ConfigTypeGenerator.generate()

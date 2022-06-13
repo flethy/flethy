@@ -8,6 +8,7 @@
     "types": [],
     "declaration": true,
     "esModuleInterop": true,
+    "resolveJsonModule": true,
     "plugins": [
       {
         "name": "typescript-tslint-plugin"
