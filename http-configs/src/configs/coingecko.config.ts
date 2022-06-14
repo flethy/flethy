@@ -4,7 +4,7 @@ import { RequestParams } from '../types/Request.types'
 export namespace CoinGecko {
   export type Entity = { coins; simple }
   export type Endpoint =
-    | { list; markets; id; idTickers; idHistory }
+    | { list; markets; id; idTickers; idHistory; idMarketChart }
     | { supportedVsCurrencies; price; tokenPrice }
 
   export interface ListCoins extends RequestParams {
@@ -34,10 +34,17 @@ export namespace CoinGecko {
   }
 
   export interface CoinHistoryById extends RequestParams {
-    kind: 'coingecko.coins.idTHistory'
+    kind: 'coingecko.coins.idHistory'
     'param:id': string
     'query:date'?: string
     'query:localization'?: boolean
+  }
+
+  export interface CoinMarketChartById extends RequestParams {
+    kind: 'coingecko.coins.idMarketChart'
+    'param:vs_currency': string
+    'query:days': number | 'max'
+    'query:interval'?: 'daily'
   }
 
   export interface CoinsMarkets extends RequestParams {
@@ -198,6 +205,29 @@ export namespace CoinGecko {
             },
             {
               name: 'history',
+              type: 'static',
+            },
+          ],
+        },
+        idMarketChart: {
+          interface: 'CoinMarketChartById',
+          meta: {
+            title: 'Coin Market Chart By Id',
+            description: `Coin Market Chart By Id`,
+            docs: 'https://www.coingecko.com/en/api/documentation',
+          },
+          method: 'GET',
+          paths: [
+            {
+              name: 'coins',
+              type: 'static',
+            },
+            {
+              name: 'id',
+              type: 'param',
+            },
+            {
+              name: 'market_chart',
               type: 'static',
             },
           ],

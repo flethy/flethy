@@ -47,6 +47,13 @@
 * Description: Coin History By Id
 * Docs: [https://www.coingecko.com/en/api/documentation](https://www.coingecko.com/en/api/documentation)
 
+#### idMarketChart
+
+##### Coin Market Chart By Id
+
+* Description: Coin Market Chart By Id
+* Docs: [https://www.coingecko.com/en/api/documentation](https://www.coingecko.com/en/api/documentation)
+
 ### simple
 
 #### supportedVsCurrencies
