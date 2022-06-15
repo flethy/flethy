@@ -54,6 +54,13 @@
 * Description: Coin Market Chart By Id
 * Docs: [https://www.coingecko.com/en/api/documentation](https://www.coingecko.com/en/api/documentation)
 
+#### idMarketChartRange
+
+##### Coin Market Chart Range By Id
+
+* Description: Coin Market Chart Range By Id
+* Docs: [https://www.coingecko.com/en/api/documentation](https://www.coingecko.com/en/api/documentation)
+
 ### simple
 
 #### supportedVsCurrencies

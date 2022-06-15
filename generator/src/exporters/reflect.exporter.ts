@@ -46,6 +46,7 @@ configTypes.push({type: getType<CoinGecko.CoinById>(), name: 'CoinGecko', interf
 configTypes.push({type: getType<CoinGecko.CoinTickersById>(), name: 'CoinGecko', interface: 'CoinTickersById'})
 configTypes.push({type: getType<CoinGecko.CoinHistoryById>(), name: 'CoinGecko', interface: 'CoinHistoryById'})
 configTypes.push({type: getType<CoinGecko.CoinMarketChartById>(), name: 'CoinGecko', interface: 'CoinMarketChartById'})
+configTypes.push({type: getType<CoinGecko.CoinMarketChartRangeById>(), name: 'CoinGecko', interface: 'CoinMarketChartRangeById'})
 configTypes.push({type: getType<CoinGecko.GetSimpleSupportedVsCurrencies>(), name: 'CoinGecko', interface: 'GetSimpleSupportedVsCurrencies'})
 configTypes.push({type: getType<CoinGecko.GetSimplePrice>(), name: 'CoinGecko', interface: 'GetSimplePrice'})
 configTypes.push({type: getType<CoinGecko.GetSimpleTokenPrice>(), name: 'CoinGecko', interface: 'GetSimpleTokenPrice'})
