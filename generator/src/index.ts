@@ -26,6 +26,7 @@ import { FetchParams } from '../../http-configs/src/types/FetchParams.type'
 import { nao } from '../../http-configs/src/utils/Request.utils'
 import { HttpRequest } from './controllers/HttpRequest'
 import { logger } from './utils/Logger'
+import Trello from '../../http-configs/src/configs/trello.config'
 
 async function main() {
   const requestConfigs: {
@@ -403,8 +404,14 @@ async function main() {
       nao<CoinGecko.GetSimpleSupportedVsCurrencies>({
         kind: 'coingecko.simple.supportedVsCurrencies',
       }),
+    trelloBoardGetLists: nao<Trello.BoardGetLists>({
+      kind: 'trello.boards.getLists',
+      'param:boardId': process.env.TRELLO_BOARD_ID,
+      'auth:key': process.env.TRELLO_KEY,
+      'auth:token': process.env.TRELLO_TOKEN,
+    }),
   }
-  const requestConfig = requestConfigs.coingeckoGetSupportedVsCurrencies
+  const requestConfig = requestConfigs.trelloBoardGetLists
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

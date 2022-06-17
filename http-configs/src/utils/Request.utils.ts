@@ -35,7 +35,7 @@ export class HttpRequestConfig {
     const config: FetchParams = {
       method: options.endpoint.method,
       url,
-      headers: {},
+      headers: options.api.headers ?? {},
       body: options.endpoint.method === 'GET' ? undefined : {},
     }
     const queryParams: { [key: string]: string } = {}

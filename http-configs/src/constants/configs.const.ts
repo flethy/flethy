@@ -21,6 +21,7 @@ import { OpenSea } from '../configs/opensea.config'
 import { Pinata } from '../configs/pinata.config'
 import { Slack } from '../configs/slack.config'
 import { TheGraph } from '../configs/thegraph.config'
+import { Trello } from '../configs/trello.config'
 import { Web3Storage } from '../configs/web3storage.config'
 import { ZeroX } from '../configs/zerox.config'
 
@@ -47,6 +48,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['pinata', Pinata.API],
 ['slack', Slack.API],
 ['thegraph', TheGraph.API],
+['trello', Trello.API],
 ['web3storage', Web3Storage.API],
 ['0x', ZeroX.API],
 ])
