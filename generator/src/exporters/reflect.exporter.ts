@@ -21,6 +21,7 @@ import { OpenSea } from '../../../http-configs/src/configs/opensea.config'
 import { Pinata } from '../../../http-configs/src/configs/pinata.config'
 import { Slack } from '../../../http-configs/src/configs/slack.config'
 import { TheGraph } from '../../../http-configs/src/configs/thegraph.config'
+import { Trello } from '../../../http-configs/src/configs/trello.config'
 import { Web3Storage } from '../../../http-configs/src/configs/web3storage.config'
 import { ZeroX } from '../../../http-configs/src/configs/zerox.config'
 export const configTypes: Array<{type: Type; name: string; interface: string}> = []
@@ -82,6 +83,7 @@ configTypes.push({type: getType<Pinata.PinningPinJsonToIPFS>(), name: 'Pinata', 
 configTypes.push({type: getType<Slack.IncomingWebhooksMessage>(), name: 'Slack', interface: 'IncomingWebhooksMessage'})
 configTypes.push({type: getType<TheGraph.QueryById>(), name: 'TheGraph', interface: 'QueryById'})
 configTypes.push({type: getType<TheGraph.QueryByName>(), name: 'TheGraph', interface: 'QueryByName'})
+configTypes.push({type: getType<Trello.BoardGetLists>(), name: 'Trello', interface: 'BoardGetLists'})
 configTypes.push({type: getType<Web3Storage.UploadContent>(), name: 'Web3Storage', interface: 'UploadContent'})
 configTypes.push({type: getType<ZeroX.SwapQuote>(), name: 'ZeroX', interface: 'SwapQuote'})
 configTypes.push({type: getType<ZeroX.SwapPrice>(), name: 'ZeroX', interface: 'SwapPrice'})
