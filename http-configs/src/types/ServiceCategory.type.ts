@@ -12,6 +12,7 @@ export type CATEGORY =
   | 'automation'
   | 'utils'
   | 'defi'
+  | 'books'
 export type TYPE =
   | COMM_TYPE
   | STORAGE_TYPE
@@ -25,6 +26,7 @@ export type TYPE =
   | AUTOMATION_TYPE
   | UTILS_TYPE
   | DEFI_TYPE
+  | BOOKS_TYPE
 
 export type COMM_TYPE = 'email' | 'messenger'
 export type STORAGE_TYPE = 'ipfs'
@@ -38,3 +40,4 @@ export type MARKETING_TYPE = 'inbound'
 export type AUTOMATION_TYPE = 'workflows' | 'decisions'
 export type UTILS_TYPE = 'emailverification'
 export type DEFI_TYPE = 'liquidity'
+export type BOOKS_TYPE = 'index'

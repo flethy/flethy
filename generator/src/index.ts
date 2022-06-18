@@ -27,6 +27,7 @@ import { nao } from '../../http-configs/src/utils/Request.utils'
 import { HttpRequest } from './controllers/HttpRequest'
 import { logger } from './utils/Logger'
 import Trello from '../../http-configs/src/configs/trello.config'
+import OpenLibrary from '../../http-configs/src/configs/openlibrary.config'
 
 async function main() {
   const requestConfigs: {
@@ -417,8 +418,14 @@ async function main() {
       'auth:key': process.env.TRELLO_KEY,
       'auth:token': process.env.TRELLO_TOKEN,
     }),
+    openLibraryBook: nao<OpenLibrary.Books>({
+      kind: 'openlibrary.core.books',
+      'query:bibkeys': 'ISBN:9780316418522',
+      'query:format': 'json',
+      'query:jscmd': 'details',
+    }),
   }
-  const requestConfig = requestConfigs.trelloCardCreate
+  const requestConfig = requestConfigs.openLibraryBook
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

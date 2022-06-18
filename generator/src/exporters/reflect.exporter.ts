@@ -17,6 +17,7 @@ import { Mergent } from '../../../http-configs/src/configs/mergent.config'
 import { Mixpanel } from '../../../http-configs/src/configs/mixpanel.config'
 import { Notion } from '../../../http-configs/src/configs/notion.config'
 import { OneInch } from '../../../http-configs/src/configs/oneinch.config'
+import { OpenLibrary } from '../../../http-configs/src/configs/openlibrary.config'
 import { OpenSea } from '../../../http-configs/src/configs/opensea.config'
 import { Pinata } from '../../../http-configs/src/configs/pinata.config'
 import { Slack } from '../../../http-configs/src/configs/slack.config'
@@ -77,6 +78,7 @@ configTypes.push({type: getType<Notion.CreateDatabase>(), name: 'Notion', interf
 configTypes.push({type: getType<OneInch.AggregationInfoTokens>(), name: 'OneInch', interface: 'AggregationInfoTokens'})
 configTypes.push({type: getType<OneInch.AggregationQuote>(), name: 'OneInch', interface: 'AggregationQuote'})
 configTypes.push({type: getType<OneInch.AggregationSwap>(), name: 'OneInch', interface: 'AggregationSwap'})
+configTypes.push({type: getType<OpenLibrary.Books>(), name: 'OpenLibrary', interface: 'Books'})
 configTypes.push({type: getType<OpenSea.GetAssets>(), name: 'OpenSea', interface: 'GetAssets'})
 configTypes.push({type: getType<OpenSea.GetCollections>(), name: 'OpenSea', interface: 'GetCollections'})
 configTypes.push({type: getType<Pinata.PinningPinJsonToIPFS>(), name: 'Pinata', interface: 'PinningPinJsonToIPFS'})

@@ -17,6 +17,7 @@ import { Mergent } from '../configs/mergent.config'
 import { Mixpanel } from '../configs/mixpanel.config'
 import { Notion } from '../configs/notion.config'
 import { OneInch } from '../configs/oneinch.config'
+import { OpenLibrary } from '../configs/openlibrary.config'
 import { OpenSea } from '../configs/opensea.config'
 import { Pinata } from '../configs/pinata.config'
 import { Slack } from '../configs/slack.config'
@@ -44,6 +45,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['mixpanel', Mixpanel.API],
 ['notion', Notion.API],
 ['1inch', OneInch.API],
+['openlibrary', OpenLibrary.API],
 ['opensea', OpenSea.API],
 ['pinata', Pinata.API],
 ['slack', Slack.API],

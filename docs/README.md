@@ -32,5 +32,6 @@ The following Endpoints are currently supported.
 * [Mergent](./api/mergent.md)
 * [Mixpanel](./api/mixpanel.md)
 * [Notion](./api/notion.md)
+* [OpenLibrary](./api/openlibrary.md)
 * [Slack](./api/slack.md)
 * [Trello](./api/trello.md)
