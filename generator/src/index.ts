@@ -410,8 +410,15 @@ async function main() {
       'auth:key': process.env.TRELLO_KEY,
       'auth:token': process.env.TRELLO_TOKEN,
     }),
+    trelloCardCreate: nao<Trello.CardsCreate>({
+      kind: 'trello.cards.create',
+      'query:idList': process.env.TRELLO_LIST_ID,
+      'query:name': 'new web3nao card',
+      'auth:key': process.env.TRELLO_KEY,
+      'auth:token': process.env.TRELLO_TOKEN,
+    }),
   }
-  const requestConfig = requestConfigs.trelloBoardGetLists
+  const requestConfig = requestConfigs.trelloCardCreate
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)
