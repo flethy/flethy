@@ -23,3 +23,12 @@
 
 * Description: Get the Lists on a Board
 * Docs: [https://developer.atlassian.com/cloud/trello/rest/api-group-boards/#api-boards-id-lists-get](https://developer.atlassian.com/cloud/trello/rest/api-group-boards/#api-boards-id-lists-get)
+
+### cards
+
+#### create
+
+##### Create a new Card
+
+* Description: Create a new Card
+* Docs: [https://developer.atlassian.com/cloud/trello/rest/api-group-cards/#api-cards-post](https://developer.atlassian.com/cloud/trello/rest/api-group-cards/#api-cards-post)

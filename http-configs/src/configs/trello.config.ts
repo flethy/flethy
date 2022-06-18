@@ -2,8 +2,8 @@ import { ApiDescription } from '../types/ApiDescription.type'
 import { RequestParams } from '../types/Request.types'
 
 export namespace Trello {
-  export type Entity = { boards }
-  export type Endpoint = { getLists }
+  export type Entity = { boards; cards }
+  export type Endpoint = { getLists } | { create }
 
   export interface TrelloAuth {
     'auth:key': string
@@ -17,6 +17,27 @@ export namespace Trello {
     'query:card_fields'?: 'all' | string
     'query:filter'?: 'all' | 'closed' | 'none' | 'open'
     'query:fields'?: 'all' | string
+  }
+
+  export interface CardsCreate extends RequestParams, TrelloAuth {
+    kind: 'trello.cards.create'
+    'query:idList': string
+    'query:name'?: string
+    'query:desc'?: string
+    'query:pos'?: 'bottom' | 'top' | number
+    'query:due'?: string
+    'query:start'?: string
+    'query:dueComplete'?: boolean
+    'query:idMembers'?: string
+    'query:idLabels'?: string
+    'query:urlSource'?: string
+    'query:fileSource'?: string
+    'query:mimeType'?: string
+    'query:idCardSource'?: string
+    'query:keepFromSource'?: 'all' | string
+    'query:address'?: string
+    'query:locationName'?: string
+    'query:coordinates'?: string
   }
 
   export const API: ApiDescription<Entity, Endpoint> = {
@@ -63,6 +84,24 @@ export namespace Trello {
             },
             {
               name: 'lists',
+              type: 'static',
+            },
+          ],
+        },
+      },
+      cards: {
+        create: {
+          interface: 'CardsCreate',
+          meta: {
+            title: 'Create a new Card',
+            description: 'Create a new Card',
+            docs: 'https://developer.atlassian.com/cloud/trello/rest/api-group-cards/#api-cards-post',
+          },
+          method: 'POST',
+
+          paths: [
+            {
+              name: 'cards',
               type: 'static',
             },
           ],
