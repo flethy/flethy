@@ -1,0 +1,20 @@
+# Clearbit
+
+## Links
+
+* URL: [https://clearbit.com](https://clearbit.com)
+* Documentation: [https://dashboard.clearbit.com/docs](https://dashboard.clearbit.com/docs)
+* Tags: web2
+* Category: aggregation
+* Type: businessdata
+
+## API
+
+### logo
+
+#### get
+
+##### Logo API
+
+* Description: If you're only interested in a Company's logo, and don't need any other data about the company, you can use our Logo API.
+* Docs: [https://dashboard.clearbit.com/docs?shell#logo-api](https://dashboard.clearbit.com/docs?shell#logo-api)
