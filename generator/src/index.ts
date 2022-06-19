@@ -28,6 +28,7 @@ import { HttpRequest } from './controllers/HttpRequest'
 import { logger } from './utils/Logger'
 import Trello from '../../http-configs/src/configs/trello.config'
 import OpenLibrary from '../../http-configs/src/configs/openlibrary.config'
+import Clearbit from '../../http-configs/src/configs/clearbit.config'
 
 async function main() {
   const requestConfigs: {
@@ -424,8 +425,14 @@ async function main() {
       'query:format': 'json',
       'query:jscmd': 'details',
     }),
+    clearbitLogo: nao<Clearbit.LogoGet>({
+      kind: 'clearbit.logo.get',
+      'param:domain': 'segment.com',
+      'query:size': 800,
+      'query:format': 'png',
+    }),
   }
-  const requestConfig = requestConfigs.openLibraryBook
+  const requestConfig = requestConfigs.clearbitLogo
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

@@ -2,6 +2,7 @@ import { getType, Type } from 'tst-reflect'
 import { Airtable } from '../../../http-configs/src/configs/airtable.config'
 import { Alchemy } from '../../../http-configs/src/configs/alchemy.config'
 import { Camunda } from '../../../http-configs/src/configs/camunda.config'
+import { Clearbit } from '../../../http-configs/src/configs/clearbit.config'
 import { CoinCap } from '../../../http-configs/src/configs/coincap.config'
 import { CoinGecko } from '../../../http-configs/src/configs/coingecko.config'
 import { Coinlayer } from '../../../http-configs/src/configs/coinlayer.config'
@@ -38,6 +39,7 @@ configTypes.push({type: getType<Camunda.ConsoleGetClients>(), name: 'Camunda', i
 configTypes.push({type: getType<Camunda.ConsoleCreateClient>(), name: 'Camunda', interface: 'ConsoleCreateClient'})
 configTypes.push({type: getType<Camunda.ConsoleGetClient>(), name: 'Camunda', interface: 'ConsoleGetClient'})
 configTypes.push({type: getType<Camunda.ConsoleDeleteClient>(), name: 'Camunda', interface: 'ConsoleDeleteClient'})
+configTypes.push({type: getType<Clearbit.LogoGet>(), name: 'Clearbit', interface: 'LogoGet'})
 configTypes.push({type: getType<CoinCap.getAssets>(), name: 'CoinCap', interface: 'getAssets'})
 configTypes.push({type: getType<CoinCap.getAsset>(), name: 'CoinCap', interface: 'getAsset'})
 configTypes.push({type: getType<CoinCap.getAssetHistory>(), name: 'CoinCap', interface: 'getAssetHistory'})

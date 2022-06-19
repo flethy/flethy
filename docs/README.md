@@ -24,6 +24,7 @@ The following Endpoints are currently supported.
 
 * [Airtable](./api/airtable.md)
 * [Camunda](./api/camunda.md)
+* [Clearbit](./api/clearbit.md)
 * [Disify](./api/disify.md)
 * [Github](./api/github.md)
 * [Hubspot](./api/hubspot.md)

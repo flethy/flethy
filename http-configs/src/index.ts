@@ -1,6 +1,7 @@
 export { Airtable } from './configs/airtable.config'
 export { Alchemy } from './configs/alchemy.config'
 export { Camunda } from './configs/camunda.config'
+export { Clearbit } from './configs/clearbit.config'
 export { CoinCap } from './configs/coincap.config'
 export { CoinGecko } from './configs/coingecko.config'
 export { Coinlayer } from './configs/coinlayer.config'
