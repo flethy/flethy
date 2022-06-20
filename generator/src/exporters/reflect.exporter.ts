@@ -10,6 +10,7 @@ import { CoinMarketCap } from '../../../http-configs/src/configs/coinmarketcap.c
 import { Covalent } from '../../../http-configs/src/configs/covalent.config'
 import { Disify } from '../../../http-configs/src/configs/disify.config'
 import { Etherscan } from '../../../http-configs/src/configs/etherscan.config'
+import { Frankfurter } from '../../../http-configs/src/configs/frankfurter.config'
 import { Github } from '../../../http-configs/src/configs/github.config'
 import { Hubspot } from '../../../http-configs/src/configs/hubspot.config'
 import { MailCheckAi } from '../../../http-configs/src/configs/mailcheckai.config'
@@ -67,6 +68,9 @@ configTypes.push({type: getType<Disify.CheckMassDomain>(), name: 'Disify', inter
 configTypes.push({type: getType<Disify.CheckSingleEmail>(), name: 'Disify', interface: 'CheckSingleEmail'})
 configTypes.push({type: getType<Disify.CheckMassEmail>(), name: 'Disify', interface: 'CheckMassEmail'})
 configTypes.push({type: getType<Etherscan.AccountsBalanceSingleAddress>(), name: 'Etherscan', interface: 'AccountsBalanceSingleAddress'})
+configTypes.push({type: getType<Frankfurter.Latest>(), name: 'Frankfurter', interface: 'Latest'})
+configTypes.push({type: getType<Frankfurter.Historical>(), name: 'Frankfurter', interface: 'Historical'})
+configTypes.push({type: getType<Frankfurter.TimeSeries>(), name: 'Frankfurter', interface: 'TimeSeries'})
 configTypes.push({type: getType<Github.ListRepositoryIssues>(), name: 'Github', interface: 'ListRepositoryIssues'})
 configTypes.push({type: getType<Hubspot.OAuthToken>(), name: 'Hubspot', interface: 'OAuthToken'})
 configTypes.push({type: getType<Hubspot.FormsSubmit>(), name: 'Hubspot', interface: 'FormsSubmit'})

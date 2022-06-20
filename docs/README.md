@@ -26,6 +26,7 @@ The following Endpoints are currently supported.
 * [Camunda](./api/camunda.md)
 * [Clearbit](./api/clearbit.md)
 * [Disify](./api/disify.md)
+* [Frankfurter](./api/frankfurter.md)
 * [Github](./api/github.md)
 * [Hubspot](./api/hubspot.md)
 * [MailCheckAi](./api/mailcheckai.md)

@@ -10,6 +10,7 @@ import { CoinMarketCap } from '../configs/coinmarketcap.config'
 import { Covalent } from '../configs/covalent.config'
 import { Disify } from '../configs/disify.config'
 import { Etherscan } from '../configs/etherscan.config'
+import { Frankfurter } from '../configs/frankfurter.config'
 import { Github } from '../configs/github.config'
 import { Hubspot } from '../configs/hubspot.config'
 import { MailCheckAi } from '../configs/mailcheckai.config'
@@ -39,6 +40,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['covalent', Covalent.API],
 ['disify', Disify.API],
 ['etherscan', Etherscan.API],
+['frankfurter', Frankfurter.API],
 ['github', Github.API],
 ['hubspot', Hubspot.API],
 ['mailcheckai', MailCheckAi.API],

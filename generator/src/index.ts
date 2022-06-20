@@ -29,6 +29,7 @@ import { logger } from './utils/Logger'
 import Trello from '../../http-configs/src/configs/trello.config'
 import OpenLibrary from '../../http-configs/src/configs/openlibrary.config'
 import Clearbit from '../../http-configs/src/configs/clearbit.config'
+import Frankfurter from '../../http-configs/src/configs/frankfurter.config'
 
 async function main() {
   const requestConfigs: {
@@ -431,8 +432,17 @@ async function main() {
       'query:size': 800,
       'query:format': 'png',
     }),
+    frankfurterLatest: nao<Frankfurter.Latest>({
+      kind: 'frankfurter.core.latest',
+    }),
+    frankfurterTimeSeries: nao<Frankfurter.TimeSeries>({
+      kind: 'frankfurter.core.timeseries',
+      'param:range': '2022-01-01..',
+      'query:from': 'EUR',
+      'query:to': 'USD',
+    }),
   }
-  const requestConfig = requestConfigs.clearbitLogo
+  const requestConfig = requestConfigs.frankfurterTimeSeries
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)
