@@ -14,6 +14,7 @@ export type CATEGORY =
   | 'defi'
   | 'books'
   | 'finance'
+  | 'data'
 export type TYPE =
   | COMM_TYPE
   | STORAGE_TYPE
@@ -29,6 +30,7 @@ export type TYPE =
   | DEFI_TYPE
   | BOOKS_TYPE
   | FINANCE_TYPE
+  | DATA_TYPE
 
 export type COMM_TYPE = 'email' | 'messenger'
 export type STORAGE_TYPE = 'ipfs'
@@ -48,3 +50,4 @@ export type UTILS_TYPE = 'emailverification'
 export type DEFI_TYPE = 'liquidity'
 export type BOOKS_TYPE = 'index'
 export type FINANCE_TYPE = 'currency'
+export type DATA_TYPE = 'validation'
