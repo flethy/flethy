@@ -30,6 +30,7 @@ import Trello from '../../http-configs/src/configs/trello.config'
 import OpenLibrary from '../../http-configs/src/configs/openlibrary.config'
 import Clearbit from '../../http-configs/src/configs/clearbit.config'
 import Frankfurter from '../../http-configs/src/configs/frankfurter.config'
+import PurgoMalum from '../../http-configs/src/configs/purgomalum.config'
 
 async function main() {
   const requestConfigs: {
@@ -441,8 +442,12 @@ async function main() {
       'query:from': 'EUR',
       'query:to': 'USD',
     }),
+    purgomalum: nao<PurgoMalum.Profanity>({
+      kind: 'purgomalum.core.profanity',
+      'query:text': 'this is some test input',
+    }),
   }
-  const requestConfig = requestConfigs.frankfurterTimeSeries
+  const requestConfig = requestConfigs.purgomalum
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

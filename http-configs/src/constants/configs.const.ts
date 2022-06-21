@@ -22,6 +22,7 @@ import { OneInch } from '../configs/oneinch.config'
 import { OpenLibrary } from '../configs/openlibrary.config'
 import { OpenSea } from '../configs/opensea.config'
 import { Pinata } from '../configs/pinata.config'
+import { PurgoMalum } from '../configs/purgomalum.config'
 import { Slack } from '../configs/slack.config'
 import { TheGraph } from '../configs/thegraph.config'
 import { Trello } from '../configs/trello.config'
@@ -52,6 +53,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['openlibrary', OpenLibrary.API],
 ['opensea', OpenSea.API],
 ['pinata', Pinata.API],
+['purgomalum', PurgoMalum.API],
 ['slack', Slack.API],
 ['thegraph', TheGraph.API],
 ['trello', Trello.API],
