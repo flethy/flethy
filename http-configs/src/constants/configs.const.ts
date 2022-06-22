@@ -1,6 +1,7 @@
 import { ApiDescription } from '../types/ApiDescription.type'
 import { Airtable } from '../configs/airtable.config'
 import { Alchemy } from '../configs/alchemy.config'
+import { ApicAgent } from '../configs/apicagent.config'
 import { Camunda } from '../configs/camunda.config'
 import { Clearbit } from '../configs/clearbit.config'
 import { CoinCap } from '../configs/coincap.config'
@@ -32,6 +33,7 @@ import { ZeroX } from '../configs/zerox.config'
 export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, ApiDescription<any, any>>([
 ['airtable', Airtable.API],
 ['alchemy', Alchemy.API],
+['apicagent', ApicAgent.API],
 ['camunda', Camunda.API],
 ['clearbit', Clearbit.API],
 ['coincap', CoinCap.API],

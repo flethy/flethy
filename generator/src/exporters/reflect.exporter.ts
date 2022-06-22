@@ -1,6 +1,7 @@
 import { getType, Type } from 'tst-reflect'
 import { Airtable } from '../../../http-configs/src/configs/airtable.config'
 import { Alchemy } from '../../../http-configs/src/configs/alchemy.config'
+import { ApicAgent } from '../../../http-configs/src/configs/apicagent.config'
 import { Camunda } from '../../../http-configs/src/configs/camunda.config'
 import { Clearbit } from '../../../http-configs/src/configs/clearbit.config'
 import { CoinCap } from '../../../http-configs/src/configs/coincap.config'
@@ -32,6 +33,8 @@ export const configTypes: Array<{type: Type; name: string; interface: string}> =
 configTypes.push({type: getType<Airtable.ListTableRecords>(), name: 'Airtable', interface: 'ListTableRecords'})
 configTypes.push({type: getType<Airtable.CreateTableRecords>(), name: 'Airtable', interface: 'CreateTableRecords'})
 configTypes.push({type: getType<Alchemy.NftGetNFTs>(), name: 'Alchemy', interface: 'NftGetNFTs'})
+configTypes.push({type: getType<ApicAgent.Get>(), name: 'ApicAgent', interface: 'Get'})
+configTypes.push({type: getType<ApicAgent.Post>(), name: 'ApicAgent', interface: 'Post'})
 configTypes.push({type: getType<Camunda.ConsoleToken>(), name: 'Camunda', interface: 'ConsoleToken'})
 configTypes.push({type: getType<Camunda.ConsoleGetClusters>(), name: 'Camunda', interface: 'ConsoleGetClusters'})
 configTypes.push({type: getType<Camunda.ConsoleGetClustersParameters>(), name: 'Camunda', interface: 'ConsoleGetClustersParameters'})
