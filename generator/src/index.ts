@@ -31,6 +31,7 @@ import OpenLibrary from '../../http-configs/src/configs/openlibrary.config'
 import Clearbit from '../../http-configs/src/configs/clearbit.config'
 import Frankfurter from '../../http-configs/src/configs/frankfurter.config'
 import PurgoMalum from '../../http-configs/src/configs/purgomalum.config'
+import ApicAgent from '../../http-configs/src/configs/apicagent.config'
 
 async function main() {
   const requestConfigs: {
@@ -446,8 +447,18 @@ async function main() {
       kind: 'purgomalum.core.profanity',
       'query:text': 'this is some test input',
     }),
+    apicAgentGet: nao<ApicAgent.Get>({
+      kind: 'apicagent.agent.get',
+      'query:ua':
+        'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.114 Safari/537.36',
+    }),
+    apicAgentPost: nao<ApicAgent.Post>({
+      kind: 'apicagent.agent.post',
+      'body:ua':
+        'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.114 Safari/537.36',
+    }),
   }
-  const requestConfig = requestConfigs.purgomalum
+  const requestConfig = requestConfigs.apicAgentPost
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

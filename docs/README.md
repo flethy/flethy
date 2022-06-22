@@ -23,6 +23,7 @@ The following Endpoints are currently supported.
 ### Web2
 
 * [Airtable](./api/airtable.md)
+* [ApicAgent](./api/apicagent.md)
 * [Camunda](./api/camunda.md)
 * [Clearbit](./api/clearbit.md)
 * [Disify](./api/disify.md)
