@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "display": "http configs",
+  "extends": "./base.json",
+  "compilerOptions": {},
+  "include": ["src"],
+  "exclude": ["node_modules"]
+}
