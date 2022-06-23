@@ -13,7 +13,7 @@
   "author": "adam.urban@gmail.com",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.26.1",
+    "axios": "^0.27.2",
     "dotenv": "^10.0.0",
     "node-fetch": "^3.2.3",
     "pino": "^7.4.1",
