@@ -13,6 +13,21 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
+      - name: Set output
+        id: vars
+        run: echo ::set-output name=tag::${GITHUB_REF#refs/*/}
+
+      - name: Change dir
+        run: cd packages/http-configs
+
+      - name: "Update Version according to Tag"
+        run: npm version "${{ env.RELEASE_VERSION }}"
+        env:
+          RELEASE_VERSION: ${{ steps.vars.outputs.tag }}
+
+      - name: Back to root
+        run: cd ../..
+
       - uses: pnpm/action-setup@v2.2.2
         name: Install pnpm
         id: pnpm-install
@@ -32,7 +47,7 @@ jobs:
       - name: Build everything
         run: pnpm run build
 
-      - name: Run Tests
-        run: pnpm publish --filter @web3nao/http-configs
+      - name: Publish
+        run: pnpm publish --filter @web3nao/http-configs --no-git-checks
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

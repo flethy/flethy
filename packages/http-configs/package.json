@@ -1,6 +1,6 @@
 {
   "name": "@web3nao/http-configs",
-  "version": "0.0.42",
+  "version": "0.0.1",
   "description": "web3nao http configs",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
