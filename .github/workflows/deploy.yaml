@@ -17,16 +17,10 @@ jobs:
         id: vars
         run: echo ::set-output name=tag::${GITHUB_REF#refs/*/}
 
-      - name: Change dir
-        run: cd packages/http-configs
-
       - name: "Update Version according to Tag"
-        run: npm version "${{ env.RELEASE_VERSION }}"
+        run: npm version "${{ env.RELEASE_VERSION }}" --prefix ./packages/http-configs
         env:
           RELEASE_VERSION: ${{ steps.vars.outputs.tag }}
-
-      - name: Back to root
-        run: cd ../..
 
       - uses: pnpm/action-setup@v2.2.2
         name: Install pnpm
