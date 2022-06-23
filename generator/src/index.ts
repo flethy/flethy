@@ -32,6 +32,7 @@ import Clearbit from '../../http-configs/src/configs/clearbit.config'
 import Frankfurter from '../../http-configs/src/configs/frankfurter.config'
 import PurgoMalum from '../../http-configs/src/configs/purgomalum.config'
 import ApicAgent from '../../http-configs/src/configs/apicagent.config'
+import CountApi from '../../http-configs/src/configs/countapi.config'
 
 async function main() {
   const requestConfigs: {
@@ -457,8 +458,13 @@ async function main() {
       'body:ua':
         'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.114 Safari/537.36',
     }),
+    countapiHit: nao<CountApi.Hit>({
+      kind: 'countapi.core.hit',
+      'param:namespace': 'web3nao.xyz',
+      'param:key': 'visits',
+    }),
   }
-  const requestConfig = requestConfigs.apicAgentPost
+  const requestConfig = requestConfigs.countapiHit
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

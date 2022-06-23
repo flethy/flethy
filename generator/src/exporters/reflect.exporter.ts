@@ -8,6 +8,7 @@ import { CoinCap } from '../../../http-configs/src/configs/coincap.config'
 import { CoinGecko } from '../../../http-configs/src/configs/coingecko.config'
 import { Coinlayer } from '../../../http-configs/src/configs/coinlayer.config'
 import { CoinMarketCap } from '../../../http-configs/src/configs/coinmarketcap.config'
+import { CountApi } from '../../../http-configs/src/configs/countapi.config'
 import { Covalent } from '../../../http-configs/src/configs/covalent.config'
 import { Disify } from '../../../http-configs/src/configs/disify.config'
 import { Etherscan } from '../../../http-configs/src/configs/etherscan.config'
@@ -64,6 +65,12 @@ configTypes.push({type: getType<Coinlayer.GetList>(), name: 'Coinlayer', interfa
 configTypes.push({type: getType<Coinlayer.GetHistorical>(), name: 'Coinlayer', interface: 'GetHistorical'})
 configTypes.push({type: getType<CoinMarketCap.CryptocurrencyListingsHistorical>(), name: 'CoinMarketCap', interface: 'CryptocurrencyListingsHistorical'})
 configTypes.push({type: getType<CoinMarketCap.CryptocurrencyListingsLatest>(), name: 'CoinMarketCap', interface: 'CryptocurrencyListingsLatest'})
+configTypes.push({type: getType<CountApi.Get>(), name: 'CountApi', interface: 'Get'})
+configTypes.push({type: getType<CountApi.Set>(), name: 'CountApi', interface: 'Set'})
+configTypes.push({type: getType<CountApi.Update>(), name: 'CountApi', interface: 'Update'})
+configTypes.push({type: getType<CountApi.Hit>(), name: 'CountApi', interface: 'Hit'})
+configTypes.push({type: getType<CountApi.Create>(), name: 'CountApi', interface: 'Create'})
+configTypes.push({type: getType<CountApi.Info>(), name: 'CountApi', interface: 'Info'})
 configTypes.push({type: getType<Covalent.ClassAGetTransactionsForAddress>(), name: 'Covalent', interface: 'ClassAGetTransactionsForAddress'})
 configTypes.push({type: getType<Covalent.ClassBGetUniswapV3Pools>(), name: 'Covalent', interface: 'ClassBGetUniswapV3Pools'})
 configTypes.push({type: getType<Covalent.PricingGetHistoricalTokenPrices>(), name: 'Covalent', interface: 'PricingGetHistoricalTokenPrices'})

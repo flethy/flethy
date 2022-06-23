@@ -26,6 +26,7 @@ The following Endpoints are currently supported.
 * [ApicAgent](./api/apicagent.md)
 * [Camunda](./api/camunda.md)
 * [Clearbit](./api/clearbit.md)
+* [CountApi](./api/countapi.md)
 * [Disify](./api/disify.md)
 * [Frankfurter](./api/frankfurter.md)
 * [Github](./api/github.md)
