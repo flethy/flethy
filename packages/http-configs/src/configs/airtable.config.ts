@@ -1,9 +1,15 @@
-import { ApiDescription } from '../types/ApiDescription.type'
+import {
+  ApiDescription,
+  ApiDescriptionEndpoint,
+} from '../types/ApiDescription.type'
 import { RequestParams } from '../types/Request.types'
 
 export namespace Airtable {
   export type Entity = { table: any }
-  export type Endpoint = { listrecords: any; createrecords: any }
+  export type Endpoint = {
+    listrecords: ApiDescriptionEndpoint
+    createrecords: ApiDescriptionEndpoint
+  }
 
   export interface ListTableRecords extends RequestParams {
     kind: 'airtable.table.listrecords'

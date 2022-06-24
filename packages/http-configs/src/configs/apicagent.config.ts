@@ -1,9 +1,15 @@
-import { ApiDescription } from '../types/ApiDescription.type'
+import {
+  ApiDescription,
+  ApiDescriptionEndpoint,
+} from '../types/ApiDescription.type'
 import { RequestParams } from '../types/Request.types'
 
 export namespace ApicAgent {
   export type Entity = { agent: any }
-  export type Endpoint = { get: any; post: any }
+  export type Endpoint = {
+    get: ApiDescriptionEndpoint
+    post: ApiDescriptionEndpoint
+  }
 
   export interface Get extends RequestParams {
     kind: 'apicagent.agent.get'

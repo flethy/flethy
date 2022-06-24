@@ -1,9 +1,12 @@
+import {
+  ApiDescription,
+  ApiDescriptionEndpoint,
+} from '../types/ApiDescription.type'
 import { RequestParams } from '../types/Request.types'
-import { ApiDescription } from '../types/ApiDescription.type'
 
 export namespace Alchemy {
   export type Entity = { nft: any }
-  export type Endpoint = { getNFTs: any }
+  export type Endpoint = { getNFTs: ApiDescriptionEndpoint }
 
   export interface NftGetNFTs extends RequestParams {
     kind: 'alchemy.nft.getNFTs'
