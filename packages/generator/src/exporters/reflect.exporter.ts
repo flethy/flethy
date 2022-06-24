@@ -18,6 +18,7 @@ import { Hubspot } from '../../../http-configs/src/configs/hubspot.config'
 import { MailCheckAi } from '../../../http-configs/src/configs/mailcheckai.config'
 import { MailerSend } from '../../../http-configs/src/configs/mailersend.config'
 import { Mergent } from '../../../http-configs/src/configs/mergent.config'
+import { MicroDev } from '../../../http-configs/src/configs/microdev.config'
 import { Mixpanel } from '../../../http-configs/src/configs/mixpanel.config'
 import { Notion } from '../../../http-configs/src/configs/notion.config'
 import { OneInch } from '../../../http-configs/src/configs/oneinch.config'
@@ -90,6 +91,10 @@ configTypes.push({type: getType<MailCheckAi.CheckDomain>(), name: 'MailCheckAi',
 configTypes.push({type: getType<MailCheckAi.CheckEmail>(), name: 'MailCheckAi', interface: 'CheckEmail'})
 configTypes.push({type: getType<MailerSend.EmailSend>(), name: 'MailerSend', interface: 'EmailSend'})
 configTypes.push({type: getType<Mergent.CreateTask>(), name: 'Mergent', interface: 'CreateTask'})
+configTypes.push({type: getType<MicroDev.StorageDbCreateRecord>(), name: 'MicroDev', interface: 'StorageDbCreateRecord'})
+configTypes.push({type: getType<MicroDev.StorageDbReadRecord>(), name: 'MicroDev', interface: 'StorageDbReadRecord'})
+configTypes.push({type: getType<MicroDev.StorageDbUpdateRecord>(), name: 'MicroDev', interface: 'StorageDbUpdateRecord'})
+configTypes.push({type: getType<MicroDev.StorageDbDeleteRecord>(), name: 'MicroDev', interface: 'StorageDbDeleteRecord'})
 configTypes.push({type: getType<Mixpanel.TrackEvents>(), name: 'Mixpanel', interface: 'TrackEvents'})
 configTypes.push({type: getType<Notion.CreateDatabase>(), name: 'Notion', interface: 'CreateDatabase'})
 configTypes.push({type: getType<OneInch.AggregationInfoTokens>(), name: 'OneInch', interface: 'AggregationInfoTokens'})
