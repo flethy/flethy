@@ -9,7 +9,7 @@
   "scripts": {
     "build": "turbo run build",
     "export": "turbo run export",
-    "play": "turbo run start --filter=@web3nao/generator",
+    "play": "turbo run start --filter=@web3nao/generator --no-cache",
     "dev": "turbo run dev --parallel",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\""

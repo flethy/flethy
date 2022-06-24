@@ -1,38 +1,39 @@
 import { Airtable } from '../../http-configs/src/configs/airtable.config'
 import { Alchemy } from '../../http-configs/src/configs/alchemy.config'
+import ApicAgent from '../../http-configs/src/configs/apicagent.config'
 import { Camunda } from '../../http-configs/src/configs/camunda.config'
+import Clearbit from '../../http-configs/src/configs/clearbit.config'
 import CoinCap from '../../http-configs/src/configs/coincap.config'
-import Coinlayer from '../../http-configs/src/configs/coinlayer.config'
 import { CoinGecko } from '../../http-configs/src/configs/coingecko.config'
+import Coinlayer from '../../http-configs/src/configs/coinlayer.config'
 import { CoinMarketCap } from '../../http-configs/src/configs/coinmarketcap.config'
+import CountApi from '../../http-configs/src/configs/countapi.config'
 import { Covalent } from '../../http-configs/src/configs/covalent.config'
 import { Disify } from '../../http-configs/src/configs/disify.config'
 import { Etherscan } from '../../http-configs/src/configs/etherscan.config'
+import Frankfurter from '../../http-configs/src/configs/frankfurter.config'
 import { Github } from '../../http-configs/src/configs/github.config'
 import { Hubspot } from '../../http-configs/src/configs/hubspot.config'
 import { MailCheckAi } from '../../http-configs/src/configs/mailcheckai.config'
 import { MailerSend } from '../../http-configs/src/configs/mailersend.config'
 import { Mergent } from '../../http-configs/src/configs/mergent.config'
+import MicroDev from '../../http-configs/src/configs/microdev.config'
 import { Mixpanel } from '../../http-configs/src/configs/mixpanel.config'
 import { Notion } from '../../http-configs/src/configs/notion.config'
 import { OneInch } from '../../http-configs/src/configs/oneinch.config'
+import OpenLibrary from '../../http-configs/src/configs/openlibrary.config'
 import { OpenSea } from '../../http-configs/src/configs/opensea.config'
 import { Pinata } from '../../http-configs/src/configs/pinata.config'
+import PurgoMalum from '../../http-configs/src/configs/purgomalum.config'
 import { Slack } from '../../http-configs/src/configs/slack.config'
 import { TheGraph } from '../../http-configs/src/configs/thegraph.config'
+import Trello from '../../http-configs/src/configs/trello.config'
 import { Web3Storage } from '../../http-configs/src/configs/web3storage.config'
 import { ZeroX } from '../../http-configs/src/configs/zerox.config'
 import { FetchParams } from '../../http-configs/src/types/FetchParams.type'
 import { nao } from '../../http-configs/src/utils/Request.utils'
 import { HttpRequest } from './controllers/HttpRequest'
 import { logger } from './utils/Logger'
-import Trello from '../../http-configs/src/configs/trello.config'
-import OpenLibrary from '../../http-configs/src/configs/openlibrary.config'
-import Clearbit from '../../http-configs/src/configs/clearbit.config'
-import Frankfurter from '../../http-configs/src/configs/frankfurter.config'
-import PurgoMalum from '../../http-configs/src/configs/purgomalum.config'
-import ApicAgent from '../../http-configs/src/configs/apicagent.config'
-import CountApi from '../../http-configs/src/configs/countapi.config'
 
 async function main() {
   const requestConfigs: {
@@ -463,8 +464,41 @@ async function main() {
       'param:namespace': 'web3nao.xyz',
       'param:key': 'visits',
     }),
+    microDevDbCreateRecord: nao<MicroDev.StorageDbCreateRecord>({
+      kind: 'microdev.storage.dbCreateRecord',
+      'auth:Authorization': process.env.MICRODEV_TOKEN,
+      'body:id': '1',
+      'body:table': 'web3nao',
+      'body:record': {
+        ts: Date.now(),
+        data: 'Hello World',
+      },
+    }),
+    microDevDbReadRecord: nao<MicroDev.StorageDbReadRecord>({
+      kind: 'microdev.storage.dbReadRecord',
+      'auth:Authorization': process.env.MICRODEV_TOKEN,
+      // 'body:query': `id == "1"`,
+      'body:id': `1`,
+      'body:table': 'web3nao',
+    }),
+    microDevDbUpdateRecord: nao<MicroDev.StorageDbUpdateRecord>({
+      kind: 'microdev.storage.dbUpdateRecord',
+      'auth:Authorization': process.env.MICRODEV_TOKEN,
+      'body:id': `1`,
+      'body:table': 'web3nao',
+      'body:record': {
+        ts: Date.now(),
+        data: 'Hello World',
+      },
+    }),
+    microDevDbDeleteRecord: nao<MicroDev.StorageDbDeleteRecord>({
+      kind: 'microdev.storage.dbDeleteRecord',
+      'auth:Authorization': process.env.MICRODEV_TOKEN,
+      'body:id': `1`,
+      'body:table': 'web3nao',
+    }),
   }
-  const requestConfig = requestConfigs.countapiHit
+  const requestConfig = requestConfigs.microDevDbReadRecord
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

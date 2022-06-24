@@ -18,6 +18,7 @@ import { Hubspot } from '../configs/hubspot.config'
 import { MailCheckAi } from '../configs/mailcheckai.config'
 import { MailerSend } from '../configs/mailersend.config'
 import { Mergent } from '../configs/mergent.config'
+import { MicroDev } from '../configs/microdev.config'
 import { Mixpanel } from '../configs/mixpanel.config'
 import { Notion } from '../configs/notion.config'
 import { OneInch } from '../configs/oneinch.config'
@@ -51,6 +52,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['mailcheckai', MailCheckAi.API],
 ['mailersend', MailerSend.API],
 ['mergent', Mergent.API],
+['microdev', MicroDev.API],
 ['mixpanel', Mixpanel.API],
 ['notion', Notion.API],
 ['1inch', OneInch.API],
