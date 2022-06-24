@@ -14,7 +14,7 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^0.27.2",
-    "dotenv": "^10.0.0",
+    "dotenv": "^16.0.1",
     "node-fetch": "^3.2.3",
     "pino": "^7.4.1",
     "quicktype-core": "^6.0.71",
