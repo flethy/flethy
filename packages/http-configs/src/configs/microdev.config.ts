@@ -11,6 +11,12 @@ export namespace MicroDev {
     dbReadRecord: ApiDescriptionEndpoint
     dbUpdateRecord: ApiDescriptionEndpoint
     dbDeleteRecord: ApiDescriptionEndpoint
+    cacheDecrement: ApiDescriptionEndpoint
+    cacheDelete: ApiDescriptionEndpoint
+    cacheGet: ApiDescriptionEndpoint
+    cacheIncrement: ApiDescriptionEndpoint
+    cacheListKeys: ApiDescriptionEndpoint
+    cacheSet: ApiDescriptionEndpoint
   }
 
   export interface MicroDevBase {
@@ -46,6 +52,39 @@ export namespace MicroDev {
     kind: 'microdev.storage.dbDeleteRecord'
     'body:table': string
     'body:id': string
+  }
+
+  export interface StorageCacheDecrement extends MicroDevBase, RequestParams {
+    kind: 'microdev.storage.cacheDecrement'
+    'body:key': string
+    'body:value': number
+  }
+
+  export interface StorageCacheDelete extends MicroDevBase, RequestParams {
+    kind: 'microdev.storage.cacheDelete'
+    'body:key': string
+  }
+
+  export interface StorageCacheGet extends MicroDevBase, RequestParams {
+    kind: 'microdev.storage.cacheGet'
+    'body:key': string
+  }
+
+  export interface StorageCacheIncrement extends MicroDevBase, RequestParams {
+    kind: 'microdev.storage.cacheIncrement'
+    'body:key': string
+    'body:value': number
+  }
+
+  export interface StorageCacheListKeys extends MicroDevBase, RequestParams {
+    kind: 'microdev.storage.cacheListKeys'
+  }
+
+  export interface StorageCacheSet extends MicroDevBase, RequestParams {
+    kind: 'microdev.storage.cacheSet'
+    'body:key': string
+    'body:value': string | number
+    'body:ttl'?: number
   }
 
   export const API: ApiDescription<Entity, Endpoint> = {
@@ -138,6 +177,120 @@ export namespace MicroDev {
             },
             {
               name: 'Delete',
+              type: 'static',
+            },
+          ],
+        },
+        cacheDecrement: {
+          interface: 'StorageCacheDecrement',
+          meta: {
+            title: 'Cache: Decrement',
+            description: `Decrement a value (if it's a number). If key not found it is equivalent to set.`,
+            docs: 'https://m3o.com/cache/api#Decrement',
+          },
+          method: 'POST',
+          paths: [
+            {
+              name: 'cache',
+              type: 'static',
+            },
+            {
+              name: 'Decrement',
+              type: 'static',
+            },
+          ],
+        },
+        cacheDelete: {
+          interface: 'StorageCacheDelete',
+          meta: {
+            title: 'Cache: Delete',
+            description: `Delete a value from the cache. If key not found a success response is returned.`,
+            docs: 'https://m3o.com/cache/api#Delete',
+          },
+          method: 'POST',
+          paths: [
+            {
+              name: 'cache',
+              type: 'static',
+            },
+            {
+              name: 'Delete',
+              type: 'static',
+            },
+          ],
+        },
+        cacheGet: {
+          interface: 'StorageCacheGet',
+          meta: {
+            title: 'Cache: Get',
+            description: `Get an item from the cache by key. If key is not found, an empty response is returned.`,
+            docs: 'https://m3o.com/cache/api#Get',
+          },
+          method: 'POST',
+          paths: [
+            {
+              name: 'cache',
+              type: 'static',
+            },
+            {
+              name: 'Get',
+              type: 'static',
+            },
+          ],
+        },
+        cacheIncrement: {
+          interface: 'StorageCacheIncrement',
+          meta: {
+            title: 'Cache: Increment',
+            description: `Increment a value (if it's a number). If key not found it is equivalent to set.`,
+            docs: 'https://m3o.com/cache/api#Increment',
+          },
+          method: 'POST',
+          paths: [
+            {
+              name: 'cache',
+              type: 'static',
+            },
+            {
+              name: 'Increment',
+              type: 'static',
+            },
+          ],
+        },
+        cacheListKeys: {
+          interface: 'StorageCacheListKeys',
+          meta: {
+            title: 'Cache: List Keys',
+            description: `List all the available keys`,
+            docs: 'https://m3o.com/cache/api#ListKeys',
+          },
+          method: 'POST',
+          paths: [
+            {
+              name: 'cache',
+              type: 'static',
+            },
+            {
+              name: 'ListKeys',
+              type: 'static',
+            },
+          ],
+        },
+        cacheSet: {
+          interface: 'StorageCacheSet',
+          meta: {
+            title: 'Cache: Set',
+            description: `Set an item in the cache. Overwrites any existing value already set.`,
+            docs: 'https://m3o.com/cache/api#Set',
+          },
+          method: 'POST',
+          paths: [
+            {
+              name: 'cache',
+              type: 'static',
+            },
+            {
+              name: 'Set',
               type: 'static',
             },
           ],

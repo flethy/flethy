@@ -43,3 +43,45 @@
 
 * Description: Delete a record in the database by id.
 * Docs: [https://m3o.com/db/api#Delete](https://m3o.com/db/api#Delete)
+
+#### cacheDecrement
+
+##### Cache: Decrement
+
+* Description: Decrement a value (if it's a number). If key not found it is equivalent to set.
+* Docs: [https://m3o.com/cache/api#Decrement](https://m3o.com/cache/api#Decrement)
+
+#### cacheDelete
+
+##### Cache: Delete
+
+* Description: Delete a value from the cache. If key not found a success response is returned.
+* Docs: [https://m3o.com/cache/api#Delete](https://m3o.com/cache/api#Delete)
+
+#### cacheGet
+
+##### Cache: Get
+
+* Description: Get an item from the cache by key. If key is not found, an empty response is returned.
+* Docs: [https://m3o.com/cache/api#Get](https://m3o.com/cache/api#Get)
+
+#### cacheIncrement
+
+##### Cache: Increment
+
+* Description: Increment a value (if it's a number). If key not found it is equivalent to set.
+* Docs: [https://m3o.com/cache/api#Increment](https://m3o.com/cache/api#Increment)
+
+#### cacheListKeys
+
+##### Cache: List Keys
+
+* Description: List all the available keys
+* Docs: [https://m3o.com/cache/api#ListKeys](https://m3o.com/cache/api#ListKeys)
+
+#### cacheSet
+
+##### Cache: Set
+
+* Description: Set an item in the cache. Overwrites any existing value already set.
+* Docs: [https://m3o.com/cache/api#Set](https://m3o.com/cache/api#Set)

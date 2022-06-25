@@ -497,8 +497,15 @@ async function main() {
       'body:id': `1`,
       'body:table': 'web3nao',
     }),
+    microDevCacheSet: nao<MicroDev.StorageCacheSet>({
+      kind: 'microdev.storage.cacheSet',
+      'auth:Authorization': process.env.MICRODEV_TOKEN,
+      'body:key': 'web3nao',
+      'body:value': 'web3nao',
+      'body:ttl': 60,
+    }),
   }
-  const requestConfig = requestConfigs.microDevDbReadRecord
+  const requestConfig = requestConfigs.microDevCacheSet
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)
