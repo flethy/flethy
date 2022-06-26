@@ -85,3 +85,38 @@
 
 * Description: Set an item in the cache. Overwrites any existing value already set.
 * Docs: [https://m3o.com/cache/api#Set](https://m3o.com/cache/api#Set)
+
+#### notesCreate
+
+##### Notes: Create
+
+* Description: Create a new note
+* Docs: [https://m3o.com/notes/api#Create](https://m3o.com/notes/api#Create)
+
+#### notesDelete
+
+##### Notes: Delete
+
+* Description: Delete a note
+* Docs: [https://m3o.com/notes/api#Delete](https://m3o.com/notes/api#Delete)
+
+#### notesList
+
+##### Notes: List
+
+* Description: List all the notes
+* Docs: [https://m3o.com/notes/api#List](https://m3o.com/notes/api#List)
+
+#### notesRead
+
+##### Notes: Read
+
+* Description: Read a note
+* Docs: [https://m3o.com/notes/api#Read](https://m3o.com/notes/api#Read)
+
+#### notesUpdate
+
+##### Notes: Update
+
+* Description: Update a note
+* Docs: [https://m3o.com/notes/api#Update](https://m3o.com/notes/api#Update)
