@@ -504,8 +504,12 @@ async function main() {
       'body:value': 'web3nao',
       'body:ttl': 60,
     }),
+    microDevNotesList: nao<MicroDev.StorageNotesList>({
+      kind: 'microdev.storage.notesList',
+      'auth:Authorization': process.env.MICRODEV_TOKEN,
+    }),
   }
-  const requestConfig = requestConfigs.microDevCacheSet
+  const requestConfig = requestConfigs.microDevNotesList
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

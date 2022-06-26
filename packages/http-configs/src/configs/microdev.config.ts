@@ -17,6 +17,11 @@ export namespace MicroDev {
     cacheIncrement: ApiDescriptionEndpoint
     cacheListKeys: ApiDescriptionEndpoint
     cacheSet: ApiDescriptionEndpoint
+    notesCreate: ApiDescriptionEndpoint
+    notesDelete: ApiDescriptionEndpoint
+    notesList: ApiDescriptionEndpoint
+    notesRead: ApiDescriptionEndpoint
+    notesUpdate: ApiDescriptionEndpoint
   }
 
   export interface MicroDevBase {
@@ -85,6 +90,35 @@ export namespace MicroDev {
     'body:key': string
     'body:value': string | number
     'body:ttl'?: number
+  }
+
+  export interface StorageNotesCreate extends MicroDevBase, RequestParams {
+    kind: 'microdev.storage.notesCreate'
+    'body:text': string
+    'body:title': string
+  }
+
+  export interface StorageNotesDelete extends MicroDevBase, RequestParams {
+    kind: 'microdev.storage.notesDelete'
+    'body:id': string
+  }
+
+  export interface StorageNotesList extends MicroDevBase, RequestParams {
+    kind: 'microdev.storage.notesList'
+  }
+
+  export interface StorageNotesRead extends MicroDevBase, RequestParams {
+    kind: 'microdev.storage.notesRead'
+    'body:id': string
+  }
+
+  export interface StorageNotesUpdate extends MicroDevBase, RequestParams {
+    kind: 'microdev.storage.notesUpdate'
+    'body:note': {
+      id: string
+      text: string
+      title: string
+    }
   }
 
   export const API: ApiDescription<Entity, Endpoint> = {
@@ -291,6 +325,101 @@ export namespace MicroDev {
             },
             {
               name: 'Set',
+              type: 'static',
+            },
+          ],
+        },
+        notesCreate: {
+          interface: 'StorageNotesCreate',
+          meta: {
+            title: 'Notes: Create',
+            description: `Create a new note`,
+            docs: 'https://m3o.com/notes/api#Create',
+          },
+          method: 'POST',
+          paths: [
+            {
+              name: 'notes',
+              type: 'static',
+            },
+            {
+              name: 'Create',
+              type: 'static',
+            },
+          ],
+        },
+        notesDelete: {
+          interface: 'StorageNotesDelete',
+          meta: {
+            title: 'Notes: Delete',
+            description: `Delete a note`,
+            docs: 'https://m3o.com/notes/api#Delete',
+          },
+          method: 'POST',
+          paths: [
+            {
+              name: 'notes',
+              type: 'static',
+            },
+            {
+              name: 'Delete',
+              type: 'static',
+            },
+          ],
+        },
+        notesList: {
+          interface: 'StorageNotesList',
+          meta: {
+            title: 'Notes: List',
+            description: `List all the notes`,
+            docs: 'https://m3o.com/notes/api#List',
+          },
+          method: 'POST',
+          paths: [
+            {
+              name: 'notes',
+              type: 'static',
+            },
+            {
+              name: 'List',
+              type: 'static',
+            },
+          ],
+        },
+        notesRead: {
+          interface: 'StorageNotesRead',
+          meta: {
+            title: 'Notes: Read',
+            description: `Read a note`,
+            docs: 'https://m3o.com/notes/api#Read',
+          },
+          method: 'POST',
+          paths: [
+            {
+              name: 'notes',
+              type: 'static',
+            },
+            {
+              name: 'Read',
+              type: 'static',
+            },
+          ],
+        },
+        notesUpdate: {
+          interface: 'StorageNotesUpdate',
+          meta: {
+            title: 'Notes: Update',
+            description: `Update a note`,
+            docs: 'https://m3o.com/notes/api#Update',
+          },
+          method: 'POST',
+          paths: [
+            {
+              name: 'notes',
+              type: 'static',
+            },
+            {
+              name: 'Update',
               type: 'static',
             },
           ],
