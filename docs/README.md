@@ -39,5 +39,6 @@ The following Endpoints are currently supported.
 * [Notion](./api/notion.md)
 * [OpenLibrary](./api/openlibrary.md)
 * [PurgoMalum](./api/purgomalum.md)
+* [SerpStack](./api/serpstack.md)
 * [Slack](./api/slack.md)
 * [Trello](./api/trello.md)
