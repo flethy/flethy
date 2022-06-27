@@ -28,6 +28,7 @@ import { Pinata } from '../configs/pinata.config'
 import { PurgoMalum } from '../configs/purgomalum.config'
 import { SerpStack } from '../configs/serpstack.config'
 import { Slack } from '../configs/slack.config'
+import { Statically } from '../configs/statically.config'
 import { TheGraph } from '../configs/thegraph.config'
 import { Trello } from '../configs/trello.config'
 import { Web3Storage } from '../configs/web3storage.config'
@@ -63,6 +64,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['purgomalum', PurgoMalum.API],
 ['serpstack', SerpStack.API],
 ['slack', Slack.API],
+['statically', Statically.API],
 ['thegraph', TheGraph.API],
 ['trello', Trello.API],
 ['web3storage', Web3Storage.API],
