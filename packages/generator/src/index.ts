@@ -25,6 +25,7 @@ import OpenLibrary from '../../http-configs/src/configs/openlibrary.config'
 import { OpenSea } from '../../http-configs/src/configs/opensea.config'
 import { Pinata } from '../../http-configs/src/configs/pinata.config'
 import PurgoMalum from '../../http-configs/src/configs/purgomalum.config'
+import SerpStack from '../../http-configs/src/configs/serpstack.config'
 import { Slack } from '../../http-configs/src/configs/slack.config'
 import { TheGraph } from '../../http-configs/src/configs/thegraph.config'
 import Trello from '../../http-configs/src/configs/trello.config'
@@ -508,8 +509,14 @@ async function main() {
       kind: 'microdev.storage.notesList',
       'auth:Authorization': process.env.MICRODEV_TOKEN,
     }),
+    serpStackSearch: nao<SerpStack.Search>({
+      kind: 'serpstack.core.search',
+      baseId: 'free',
+      'auth:access_key': process.env.SERPSTACK_ACCESS_KEY,
+      'query:query': 'web3',
+    }),
   }
-  const requestConfig = requestConfigs.microDevNotesList
+  const requestConfig = requestConfigs.serpStackSearch
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

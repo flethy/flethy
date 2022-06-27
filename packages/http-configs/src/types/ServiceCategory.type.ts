@@ -16,6 +16,7 @@ export type CATEGORY =
   | 'finance'
   | 'data'
   | 'cloud'
+  | 'search'
 export type TYPE =
   | COMM_TYPE
   | STORAGE_TYPE
@@ -33,6 +34,7 @@ export type TYPE =
   | FINANCE_TYPE
   | DATA_TYPE
   | CLOUD_TYPE
+  | SEARCH_TYPE
 
 export type COMM_TYPE = 'email' | 'messenger'
 export type STORAGE_TYPE = 'ipfs'
@@ -54,3 +56,4 @@ export type BOOKS_TYPE = 'index'
 export type FINANCE_TYPE = 'currency'
 export type DATA_TYPE = 'validation' | 'resolution'
 export type CLOUD_TYPE = 'services'
+export type SEARCH_TYPE = 'serp'
