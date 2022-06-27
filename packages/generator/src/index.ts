@@ -27,6 +27,7 @@ import { Pinata } from '../../http-configs/src/configs/pinata.config'
 import PurgoMalum from '../../http-configs/src/configs/purgomalum.config'
 import SerpStack from '../../http-configs/src/configs/serpstack.config'
 import { Slack } from '../../http-configs/src/configs/slack.config'
+import Statically from '../../http-configs/src/configs/statically.config'
 import { TheGraph } from '../../http-configs/src/configs/thegraph.config'
 import Trello from '../../http-configs/src/configs/trello.config'
 import { Web3Storage } from '../../http-configs/src/configs/web3storage.config'
@@ -515,8 +516,15 @@ async function main() {
       'auth:access_key': process.env.SERPSTACK_ACCESS_KEY,
       'query:query': 'web3',
     }),
+    staticallyZap: nao<Statically.StaticZapGithub>({
+      kind: 'statically.staticzap.github',
+      'param:user': 'web3nao',
+      'param:repo': 'web3nao',
+      'param:tag': 'main',
+      'param:file': 'packages/http-configs/package.json',
+    }),
   }
-  const requestConfig = requestConfigs.serpStackSearch
+  const requestConfig = requestConfigs.staticallyZap
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

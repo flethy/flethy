@@ -17,6 +17,7 @@ export type CATEGORY =
   | 'data'
   | 'cloud'
   | 'search'
+  | 'network'
 export type TYPE =
   | COMM_TYPE
   | STORAGE_TYPE
@@ -35,6 +36,7 @@ export type TYPE =
   | DATA_TYPE
   | CLOUD_TYPE
   | SEARCH_TYPE
+  | NETWORK_TYPE
 
 export type COMM_TYPE = 'email' | 'messenger'
 export type STORAGE_TYPE = 'ipfs'
@@ -57,3 +59,4 @@ export type FINANCE_TYPE = 'currency'
 export type DATA_TYPE = 'validation' | 'resolution'
 export type CLOUD_TYPE = 'services'
 export type SEARCH_TYPE = 'serp'
+export type NETWORK_TYPE = 'cdn'

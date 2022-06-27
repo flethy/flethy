@@ -28,6 +28,7 @@ import { Pinata } from '../../../http-configs/src/configs/pinata.config'
 import { PurgoMalum } from '../../../http-configs/src/configs/purgomalum.config'
 import { SerpStack } from '../../../http-configs/src/configs/serpstack.config'
 import { Slack } from '../../../http-configs/src/configs/slack.config'
+import { Statically } from '../../../http-configs/src/configs/statically.config'
 import { TheGraph } from '../../../http-configs/src/configs/thegraph.config'
 import { Trello } from '../../../http-configs/src/configs/trello.config'
 import { Web3Storage } from '../../../http-configs/src/configs/web3storage.config'
@@ -119,6 +120,9 @@ configTypes.push({type: getType<Pinata.PinningPinJsonToIPFS>(), name: 'Pinata', 
 configTypes.push({type: getType<PurgoMalum.Profanity>(), name: 'PurgoMalum', interface: 'Profanity'})
 configTypes.push({type: getType<SerpStack.Search>(), name: 'SerpStack', interface: 'Search'})
 configTypes.push({type: getType<Slack.IncomingWebhooksMessage>(), name: 'Slack', interface: 'IncomingWebhooksMessage'})
+configTypes.push({type: getType<Statically.StaticZapGithub>(), name: 'Statically', interface: 'StaticZapGithub'})
+configTypes.push({type: getType<Statically.StaticZapGitlab>(), name: 'Statically', interface: 'StaticZapGitlab'})
+configTypes.push({type: getType<Statically.StaticZapBitbucket>(), name: 'Statically', interface: 'StaticZapBitbucket'})
 configTypes.push({type: getType<TheGraph.QueryById>(), name: 'TheGraph', interface: 'QueryById'})
 configTypes.push({type: getType<TheGraph.QueryByName>(), name: 'TheGraph', interface: 'QueryByName'})
 configTypes.push({type: getType<Trello.BoardGetLists>(), name: 'Trello', interface: 'BoardGetLists'})

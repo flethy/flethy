@@ -41,4 +41,5 @@ The following Endpoints are currently supported.
 * [PurgoMalum](./api/purgomalum.md)
 * [SerpStack](./api/serpstack.md)
 * [Slack](./api/slack.md)
+* [Statically](./api/statically.md)
 * [Trello](./api/trello.md)
