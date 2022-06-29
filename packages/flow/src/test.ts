@@ -22,7 +22,7 @@ const JQ_TYPE_SEPARATOR = '->'
 const FLOW: naoEntry[] = [
   {
     id: '1',
-    next: ['2'],
+    next: ['2', '3'],
     kind: 'opensea.assets.get',
     'auth:X-API-KEY': process.env.OPENSEA_APIKEY!,
     'query:asset_contract_address': process.env.ETH_DIYPUNKS_CONTRACT!,
@@ -33,6 +33,7 @@ const FLOW: naoEntry[] = [
   },
   {
     id: '2',
+    next: ['4'],
     kind: 'slack.incomingWebhooks.message',
     'auth:webhookid': process.env.SLACK_WEBHOOK_ID!,
     'body:text': 'Hello, world!',
@@ -45,6 +46,28 @@ const FLOW: naoEntry[] = [
         },
       },
     ],
+  },
+  {
+    id: '3',
+    next: ['4'],
+    kind: 'opensea.assets.get',
+    'auth:X-API-KEY': process.env.OPENSEA_APIKEY!,
+    'query:asset_contract_address': process.env.ETH_DIYPUNKS_CONTRACT!,
+    'query:owner': process.env.ETH_OWNER!,
+    'query:limit': '->.context.limit->number',
+    'query:offset': 0,
+    'query:order_direction': 'desc',
+  },
+  {
+    id: '4',
+    previous: ['2', '3'],
+    kind: 'opensea.assets.get',
+    'auth:X-API-KEY': process.env.OPENSEA_APIKEY!,
+    'query:asset_contract_address': process.env.ETH_DIYPUNKS_CONTRACT!,
+    'query:owner': process.env.ETH_OWNER!,
+    'query:limit': '->.context.limit->number',
+    'query:offset': 0,
+    'query:order_direction': 'desc',
   },
 ]
 
