@@ -6,7 +6,15 @@ import * as jq from 'node-jq'
 
 interface naoEntry extends RequestParams {
   id: string
+  next?: string[]
+  previous?: string[]
   [key: string]: any
+}
+
+interface NodeLog {
+  id: string
+  type: 'in' | 'out' | 'prepared'
+  ts: number
 }
 
 const JQ_TYPE_SEPARATOR = '->'
@@ -14,6 +22,7 @@ const JQ_TYPE_SEPARATOR = '->'
 const FLOW: naoEntry[] = [
   {
     id: '1',
+    next: ['2'],
     kind: 'opensea.assets.get',
     'auth:X-API-KEY': process.env.OPENSEA_APIKEY!,
     'query:asset_contract_address': process.env.ETH_DIYPUNKS_CONTRACT!,
@@ -40,16 +49,41 @@ const FLOW: naoEntry[] = [
 ]
 
 export class Test {
-  public async flowGeneric(flow: naoEntry[], input: any) {
-    let context = input
-    for (const entry of flow) {
-      await Test.changeVars(entry, context)
-      const request = nao(entry)
-      console.log({ request })
-      const response = await Test.request(request)
-      context = Object.assign(context, response)
-      console.log({ context })
+  private context: any
+  private next: naoEntry[] = []
+  private log: NodeLog[] = []
+
+  constructor(private config: { flow: naoEntry[]; input: any }) {
+    this.context = config.input
+    if (this.config.flow.length === 0) {
+      throw new Error(`No flow nodes specified.`)
     }
+    this.next = [config.flow[0]]
+  }
+
+  public async flowGeneric() {
+    while (this.next.length > 0) {
+      await Promise.all(this.next.map((nextNode) => this.execute(nextNode)))
+    }
+    console.log(this.log)
+  }
+
+  public async execute(node: naoEntry) {
+    this.log.push({ id: node.id, ts: Date.now(), type: 'in' })
+    await Test.changeVars(node, this.context)
+    this.log.push({ id: node.id, ts: Date.now(), type: 'prepared' })
+    const request = nao(node)
+    const response = await Test.request(request)
+    this.context = Object.assign(this.context, response)
+    this.next = this.next.filter((current) => current.id !== node.id)
+    const nextNodeIds = node.next ?? []
+    if (nextNodeIds.length > 0) {
+      const nextNodes = this.config.flow.filter((current) =>
+        nextNodeIds.includes(current.id),
+      )
+      this.next.push(...nextNodes)
+    }
+    this.log.push({ id: node.id, ts: Date.now(), type: 'out' })
   }
 
   public static async request(params: FetchParams) {
@@ -100,6 +134,5 @@ export class Test {
   }
 }
 
-const controller = new Test()
-// controller.flow({ limit: 20 })
-controller.flowGeneric(FLOW, { limit: 20 })
+const controller = new Test({ flow: FLOW, input: { limit: 20 } })
+controller.flowGeneric()
