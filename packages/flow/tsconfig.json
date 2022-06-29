@@ -1,0 +1,10 @@
+{
+  "extends": "tsconfig/http-configs.json",
+  "include": ["src/**/*.ts"],
+  "exclude": ["dist", "node_modules"],
+  "compilerOptions": {
+    "outDir": "dist",
+    "resolveJsonModule": true,
+    "isolatedModules": false
+  }
+}

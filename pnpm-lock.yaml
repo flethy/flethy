@@ -20,6 +20,39 @@ importers:
       eslint: 8.18.0
       eslint-config-prettier: 8.5.0_eslint@8.18.0
 
+  packages/flow:
+    specifiers:
+      '@types/node': ^18.0.0
+      '@typescript-eslint/eslint-plugin': ^5.29.0
+      '@typescript-eslint/parser': ^5.29.0
+      '@web3nao/http-configs': workspace:*
+      axios: ^0.27.2
+      eslint: ^8.18.0
+      eslint-config-airbnb-base: ^15.0.0
+      eslint-config-prettier: ^8.5.0
+      eslint-plugin-import: ^2.26.0
+      eslint-plugin-prettier: ^4.0.0
+      prettier: 2.7.1
+      ts-node: ^10.8.1
+      tsconfig: workspace:*
+      typescript: ^4.7.4
+    dependencies:
+      axios: 0.27.2
+    devDependencies:
+      '@types/node': 18.0.0
+      '@typescript-eslint/eslint-plugin': 5.29.0_qqmbkyiaixvppdwswpytuf2hgm
+      '@typescript-eslint/parser': 5.29.0_b5e7v2qnwxfo6hmiq56u52mz3e
+      '@web3nao/http-configs': link:../http-configs
+      eslint: 8.18.0
+      eslint-config-airbnb-base: 15.0.0_srrmf5la5dmnsfe2mpg6sboreu
+      eslint-config-prettier: 8.5.0_eslint@8.18.0
+      eslint-plugin-import: 2.26.0_zgg5sxdhnxsuz2d3vdnwdtmcnu
+      eslint-plugin-prettier: 4.0.0_xu6ewijrtliw5q5lksq5uixwby
+      prettier: 2.7.1
+      ts-node: 10.8.1_qiyc72axg2v44xl4yovan2v55u
+      tsconfig: link:../tsconfig
+      typescript: 4.7.4
+
   packages/generator:
     specifiers:
       '@types/jasmine': ^4.0.3
