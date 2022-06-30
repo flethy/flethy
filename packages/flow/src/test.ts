@@ -75,6 +75,7 @@ export class Test {
   private context: any
   private next: naoEntry[] = []
   private log: NodeLog[] = []
+  private incoming: Array<{ id: string; in: string[] }> = []
 
   constructor(private config: { flow: naoEntry[]; input: any }) {
     this.context = config.input
@@ -89,24 +90,78 @@ export class Test {
       await Promise.all(this.next.map((nextNode) => this.execute(nextNode)))
     }
     console.log(this.log)
+    console.log(this.incoming)
   }
 
   public async execute(node: naoEntry) {
+    if (this.waitForIncoming(node)) {
+      // need to wait for all incoming nodes
+      return
+    }
     this.log.push({ id: node.id, ts: Date.now(), type: 'in' })
+    // replace any references
     await Test.changeVars(node, this.context)
     this.log.push({ id: node.id, ts: Date.now(), type: 'prepared' })
     const request = nao(node)
     const response = await Test.request(request)
     this.context = Object.assign(this.context, response)
+    // post cleanup (1) remove current node from next, (2) update incoming nodes
     this.next = this.next.filter((current) => current.id !== node.id)
+    if (node.previous && node.previous.length > 0) {
+      this.incoming = this.incoming.filter((current) => current.id !== node.id)
+    }
+    // add next nodes to run
+    this.addNextNodes(node)
+    this.log.push({ id: node.id, ts: Date.now(), type: 'out' })
+  }
+
+  private addNextNodes(node: naoEntry) {
     const nextNodeIds = node.next ?? []
     if (nextNodeIds.length > 0) {
       const nextNodes = this.config.flow.filter((current) =>
         nextNodeIds.includes(current.id),
       )
+      // check if next nodes need to wait for incoming nodes
+      nextNodes.forEach((nextNode) => {
+        if (nextNode.previous && nextNode.previous.length > 0) {
+          let foundIncoming = this.incoming.find(
+            (currentIncoming) => currentIncoming.id === nextNode.id,
+          )
+          if (!foundIncoming) {
+            foundIncoming = {
+              id: nextNode.id,
+              in: [node.id],
+            }
+            this.incoming.push(foundIncoming)
+          } else {
+            foundIncoming.in.push(node.id)
+          }
+        }
+      })
+      this.next = this.next.filter(
+        (currentNode) => !nextNodeIds.includes(currentNode.id),
+      )
       this.next.push(...nextNodes)
     }
-    this.log.push({ id: node.id, ts: Date.now(), type: 'out' })
+  }
+
+  private waitForIncoming(node: naoEntry) {
+    if (node.previous && node.previous.length > 0) {
+      // need to wait for all invoming nodes
+      const foundIncoming = this.incoming.find(
+        (currentIncoming) => currentIncoming.id === node.id,
+      )
+      if (!foundIncoming) {
+        // no previous node finished
+        return true
+      }
+      for (const idToWait of node.previous) {
+        if (!foundIncoming.in.includes(idToWait)) {
+          return true
+        }
+      }
+    }
+    return false
   }
 
   public static async request(params: FetchParams) {
