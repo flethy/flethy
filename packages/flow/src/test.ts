@@ -4,14 +4,22 @@ import { RequestParams } from '@web3nao/http-configs/dist/types/Request.types'
 import axios from 'axios'
 import * as jq from 'node-jq'
 
-interface naoEntry extends RequestParams {
+interface FlowNode extends RequestParams {
   id: string
   next?: string[]
   previous?: string[]
   [key: string]: any
 }
 
-interface NodeLog {
+interface FlowNodeResponse {
+  id?: string
+  error?: any
+  data: any
+  resolved: boolean
+  ts: number
+}
+
+interface FlowNodeLog {
   id: string
   type: 'in' | 'out' | 'prepared'
   ts: number
@@ -19,7 +27,7 @@ interface NodeLog {
 
 const JQ_TYPE_SEPARATOR = '->'
 
-const FLOW: naoEntry[] = [
+const FLOW: FlowNode[] = [
   {
     id: '1',
     next: ['2', '3'],
@@ -42,7 +50,7 @@ const FLOW: naoEntry[] = [
         type: 'section',
         text: {
           type: 'mrkdwn',
-          text: `->.context.assets[0].id->string`,
+          text: `->.context.assets[0].id->number`,
         },
       },
     ],
@@ -71,13 +79,14 @@ const FLOW: naoEntry[] = [
   },
 ]
 
-export class Test {
+export class FlowEngine {
   private context: any
-  private next: naoEntry[] = []
-  private log: NodeLog[] = []
+  private next: FlowNode[] = []
+  private log: FlowNodeLog[] = []
   private incoming: Array<{ id: string; in: string[] }> = []
+  private errors: FlowNodeResponse[] = []
 
-  constructor(private config: { flow: naoEntry[]; input: any }) {
+  constructor(private config: { flow: FlowNode[]; input: any }) {
     this.context = config.input
     if (this.config.flow.length === 0) {
       throw new Error(`No flow nodes specified.`)
@@ -86,25 +95,32 @@ export class Test {
   }
 
   public async flowGeneric() {
-    while (this.next.length > 0) {
+    while (
+      this.next.length > 0 &&
+      this.errors.filter((error) => !error.resolved).length === 0
+    ) {
       await Promise.all(this.next.map((nextNode) => this.execute(nextNode)))
     }
     console.log(this.log)
     console.log(this.incoming)
+    console.log(this.errors)
   }
 
-  public async execute(node: naoEntry) {
+  public async execute(node: FlowNode) {
     if (this.waitForIncoming(node)) {
       // need to wait for all incoming nodes
       return
     }
     this.log.push({ id: node.id, ts: Date.now(), type: 'in' })
     // replace any references
-    await Test.changeVars(node, this.context)
+    await FlowEngine.replaceReferencedVariables(node, this.context)
     this.log.push({ id: node.id, ts: Date.now(), type: 'prepared' })
     const request = nao(node)
-    const response = await Test.request(request)
-    this.context = Object.assign(this.context, response)
+    const response = await FlowEngine.request(request)
+    if (response.error) {
+      this.errors.push(response)
+    }
+    this.context = Object.assign(this.context, response.data)
     // post cleanup (1) remove current node from next, (2) update incoming nodes
     this.next = this.next.filter((current) => current.id !== node.id)
     if (node.previous && node.previous.length > 0) {
@@ -115,7 +131,7 @@ export class Test {
     this.log.push({ id: node.id, ts: Date.now(), type: 'out' })
   }
 
-  private addNextNodes(node: naoEntry) {
+  private addNextNodes(node: FlowNode) {
     const nextNodeIds = node.next ?? []
     if (nextNodeIds.length > 0) {
       const nextNodes = this.config.flow.filter((current) =>
@@ -145,7 +161,7 @@ export class Test {
     }
   }
 
-  private waitForIncoming(node: naoEntry) {
+  private waitForIncoming(node: FlowNode) {
     if (node.previous && node.previous.length > 0) {
       // need to wait for all invoming nodes
       const foundIncoming = this.incoming.find(
@@ -164,7 +180,7 @@ export class Test {
     return false
   }
 
-  public static async request(params: FetchParams) {
+  public static async request(params: FetchParams): Promise<FlowNodeResponse> {
     const axiosConfig = {
       method: params.method,
       url: params.url,
@@ -172,13 +188,27 @@ export class Test {
       data: params.body,
     }
 
-    const response = await axios(axiosConfig)
+    const nodeResponse: FlowNodeResponse = {
+      data: {},
+      ts: 0,
+      resolved: true,
+    }
 
-    const data = response.data
-    return data
+    try {
+      const response = await axios(axiosConfig)
+      nodeResponse.data = response.data
+    } catch (error: any) {
+      nodeResponse.error = error
+      nodeResponse.data = error.response?.data
+      nodeResponse.resolved = false
+    }
+
+    nodeResponse.ts = Date.now()
+
+    return nodeResponse
   }
 
-  public static async changeVars(object: any, context: any) {
+  public static async replaceReferencedVariables(object: any, context: any) {
     for (const key of Object.keys(object)) {
       if (typeof object[key] === 'string') {
         const stringValue: string = object[key]
@@ -202,15 +232,15 @@ export class Test {
         }
       } else if (Array.isArray(object[key])) {
         const promises = object[key].map((child: any) =>
-          Test.changeVars(child, context),
+          FlowEngine.replaceReferencedVariables(child, context),
         )
         await Promise.all(promises)
       } else if (typeof object[key] === 'object') {
-        await Test.changeVars(object[key], context)
+        await FlowEngine.replaceReferencedVariables(object[key], context)
       }
     }
   }
 }
 
-const controller = new Test({ flow: FLOW, input: { limit: 20 } })
+const controller = new FlowEngine({ flow: FLOW, input: { limit: 20 } })
 controller.flowGeneric()
