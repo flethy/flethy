@@ -14,6 +14,7 @@ interface FlowNode extends RequestParams {
 interface FlowNodeResponse {
   id?: string
   error?: any
+  type: 'prepare' | 'http'
   data: any
   resolved: boolean
   ts: number
@@ -113,12 +114,26 @@ export class FlowEngine {
     }
     this.log.push({ id: node.id, ts: Date.now(), type: 'in' })
     // replace any references
-    await FlowEngine.replaceReferencedVariables(node, this.context)
+    try {
+      await FlowEngine.replaceReferencedVariables(node, this.context)
+    } catch (error: any) {
+      this.errors.push({
+        data: 'failed to replace referenced variables',
+        resolved: false,
+        ts: Date.now(),
+        type: 'prepare',
+        error: error.message,
+        id: node.id,
+      })
+      return
+    }
     this.log.push({ id: node.id, ts: Date.now(), type: 'prepared' })
     const request = nao(node)
     const response = await FlowEngine.request(request)
     if (response.error) {
+      response.id = node.id
       this.errors.push(response)
+      return
     }
     this.context = Object.assign(this.context, response.data)
     // post cleanup (1) remove current node from next, (2) update incoming nodes
@@ -192,6 +207,7 @@ export class FlowEngine {
       data: {},
       ts: 0,
       resolved: true,
+      type: 'http',
     }
 
     try {
