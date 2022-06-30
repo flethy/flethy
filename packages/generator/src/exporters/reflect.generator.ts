@@ -35,6 +35,11 @@ export class ConfigTypeGenerator {
           return {
             name: property.name,
             type: property.type.name.toLowerCase(),
+            types:
+              property.type.literalValue ??
+              property.type.types.map(
+                (currentType) => currentType.literalValue
+              ),
             optional: property.optional,
           }
         }),

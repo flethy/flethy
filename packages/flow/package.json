@@ -1,0 +1,43 @@
+{
+  "name": "@web3nao/flow",
+  "version": "0.0.1",
+  "description": "flow",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc --p tsconfig.json",
+    "test": "ts-node ./src/test.ts"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": "github:web3nao/web3nao",
+  "author": "adam.urban@gmail.com",
+  "license": "MIT",
+  "keywords": [
+    "web3",
+    "http",
+    "ipfs",
+    "etherscan",
+    "alchemy"
+  ],
+  "dependencies": {
+    "axios": "^0.27.2",
+    "node-jq": "^2.3.3"
+  },
+  "devDependencies": {
+    "@types/node": "^18.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.29.0",
+    "@typescript-eslint/parser": "^5.29.0",
+    "@web3nao/http-configs": "workspace:*",
+    "eslint": "^8.18.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "prettier": "2.7.1",
+    "ts-node": "^10.8.1",
+    "tsconfig": "workspace:*",
+    "typescript": "^4.7.4"
+  }
+}

@@ -524,7 +524,7 @@ async function main() {
       'param:file': 'packages/http-configs/package.json',
     }),
   }
-  const requestConfig = requestConfigs.staticallyZap
+  const requestConfig = requestConfigs.slack
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)
