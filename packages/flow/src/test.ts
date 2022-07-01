@@ -95,7 +95,7 @@ export class FlowEngine {
     this.next = [config.flow[0]]
   }
 
-  public async flowGeneric() {
+  public async start() {
     while (
       this.next.length > 0 &&
       this.errors.filter((error) => !error.resolved).length === 0
@@ -259,4 +259,4 @@ export class FlowEngine {
 }
 
 const controller = new FlowEngine({ flow: FLOW, input: { limit: 20 } })
-controller.flowGeneric()
+controller.start()
