@@ -30,9 +30,11 @@ interface FlowNodeResponse {
   ts: number
 }
 
+type FlowNodeLogType = 'in' | 'out' | 'prepared'
+
 interface FlowNodeLog {
   id: string
-  type: 'in' | 'out' | 'prepared'
+  type: FlowNodeLogType
   ts: number
 }
 
@@ -98,41 +100,53 @@ const FLOW: FlowNode[] = [
   },
 ]
 
+interface FlowContext {
+  state: FlowState
+  context: any
+  next: FlowNode[]
+  log: FlowNodeLog[]
+  incoming: Array<{ id: string; in: string[] }>
+  errors: FlowNodeResponse[]
+  executingNodeIds: string[]
+}
+
 export class FlowEngine {
-  private state: FlowState = 'stopped'
-  private context: any
-  private next: FlowNode[] = []
-  private log: FlowNodeLog[] = []
-  private incoming: Array<{ id: string; in: string[] }> = []
-  private errors: FlowNodeResponse[] = []
-  private executingNodeIds: string[] = []
+  private instanceContext: FlowContext = {
+    state: 'stopped',
+    context: {},
+    next: [],
+    log: [],
+    incoming: [],
+    errors: [],
+    executingNodeIds: [],
+  }
 
   constructor(private config: { flow: FlowNode[]; input: any }) {
-    this.context = config.input
+    this.instanceContext.context = config.input
     if (this.config.flow.length === 0) {
       throw new Error(`No flow nodes specified.`)
     }
     // first node in array is automatically start node
-    this.next = [config.flow[0]]
+    this.instanceContext.next = [config.flow[0]]
   }
 
   public async start() {
-    this.state = 'started'
+    this.updateState('started')
     while (this.shouldRun()) {
       this.updateState()
-      await Promise.all(this.next.map((nextNode) => this.execute(nextNode)))
+      await Promise.all(
+        this.instanceContext.next.map((nextNode) => this.execute(nextNode)),
+      )
     }
-    console.log(this.log)
-    console.log(this.incoming)
-    console.log(this.errors)
-    console.log(this.state)
+    console.log(this.instanceContext)
   }
 
   private shouldRun(): boolean {
-    const nextNodesAvailable = this.next.length > 0
-    const errorsAvailable = this.state === 'error'
-    const executingNodesAvailable = this.executingNodeIds.length > 0
-    const instanceJustStarted = this.state === 'started'
+    const nextNodesAvailable = this.instanceContext.next.length > 0
+    const errorsAvailable = this.instanceContext.state === 'error'
+    const executingNodesAvailable =
+      this.instanceContext.executingNodeIds.length > 0
+    const instanceJustStarted = this.instanceContext.state === 'started'
     return (
       nextNodesAvailable &&
       !errorsAvailable &&
@@ -141,18 +155,26 @@ export class FlowEngine {
   }
 
   private updateState(target?: FlowState) {
-    if (this.state === 'error') {
+    if (this.instanceContext.state === 'error') {
       return
     }
     if (target) {
-      this.state = target
+      this.instanceContext.state = target
       return
     }
-    switch (this.state) {
+    switch (this.instanceContext.state) {
       case 'started':
-        this.state = 'running'
+        this.instanceContext.state = 'running'
         break
     }
+  }
+
+  private addLog(options: { id: string; type: FlowNodeLogType }) {
+    this.instanceContext.log.push({
+      id: options.id,
+      ts: Date.now(),
+      type: options.type,
+    })
   }
 
   public async execute(node: FlowNode) {
@@ -160,11 +182,14 @@ export class FlowEngine {
       // need to wait for all incoming nodes
       return
     }
-    this.log.push({ id: node.id, ts: Date.now(), type: 'in' })
-    this.executingNodeIds.push(node.id)
+    this.addLog({ id: node.id, type: 'in' })
+    this.instanceContext.executingNodeIds.push(node.id)
     // replace any references
     try {
-      await FlowEngine.replaceReferencedVariables(node, this.context)
+      await FlowEngine.replaceReferencedVariables(
+        node,
+        this.instanceContext.context,
+      )
     } catch (error: any) {
       this.addError({
         data: 'failed to replace referenced variables',
@@ -172,12 +197,13 @@ export class FlowEngine {
         error,
         id: node.id,
       })
-      this.executingNodeIds = this.executingNodeIds.filter(
-        (currentId) => currentId !== node.id,
-      )
+      this.instanceContext.executingNodeIds =
+        this.instanceContext.executingNodeIds.filter(
+          (currentId) => currentId !== node.id,
+        )
       return
     }
-    this.log.push({ id: node.id, ts: Date.now(), type: 'prepared' })
+    this.addLog({ id: node.id, type: 'prepared' })
     const request = nao(node)
     const response = await FlowEngine.request(request)
     if (response.error) {
@@ -187,23 +213,32 @@ export class FlowEngine {
         id: node.id,
         type: response.type,
       })
-      this.executingNodeIds = this.executingNodeIds.filter(
-        (currentId) => currentId !== node.id,
-      )
+      this.instanceContext.executingNodeIds =
+        this.instanceContext.executingNodeIds.filter(
+          (currentId) => currentId !== node.id,
+        )
       return
     }
-    this.context = Object.assign(this.context, response.data)
+    this.instanceContext.context = Object.assign(
+      this.instanceContext.context,
+      response.data,
+    )
     // post cleanup (1) remove current node from next, (2) update incoming nodes
-    this.next = this.next.filter((current) => current.id !== node.id)
+    this.instanceContext.next = this.instanceContext.next.filter(
+      (current) => current.id !== node.id,
+    )
     if (node.previous && node.previous.length > 0) {
-      this.incoming = this.incoming.filter((current) => current.id !== node.id)
+      this.instanceContext.incoming = this.instanceContext.incoming.filter(
+        (current) => current.id !== node.id,
+      )
     }
     // add next nodes to run
-    this.executingNodeIds = this.executingNodeIds.filter(
-      (currentId) => currentId !== node.id,
-    )
+    this.instanceContext.executingNodeIds =
+      this.instanceContext.executingNodeIds.filter(
+        (currentId) => currentId !== node.id,
+      )
     await this.addNextNodes(node)
-    this.log.push({ id: node.id, ts: Date.now(), type: 'out' })
+    this.addLog({ id: node.id, type: 'out' })
   }
 
   private addError(options: {
@@ -212,7 +247,7 @@ export class FlowEngine {
     error: any
     id: string
   }) {
-    this.errors.push({
+    this.instanceContext.errors.push({
       data: options.data,
       resolved: false,
       ts: Date.now(),
@@ -260,7 +295,7 @@ export class FlowEngine {
       // check if next nodes need to wait for incoming nodes
       nextNodes.forEach((nextNode) => {
         if (nextNode.previous && nextNode.previous.length > 0) {
-          let foundIncoming = this.incoming.find(
+          let foundIncoming = this.instanceContext.incoming.find(
             (currentIncoming) => currentIncoming.id === nextNode.id,
           )
           if (!foundIncoming) {
@@ -268,24 +303,24 @@ export class FlowEngine {
               id: nextNode.id,
               in: [node.id],
             }
-            this.incoming.push(foundIncoming)
+            this.instanceContext.incoming.push(foundIncoming)
           } else {
             foundIncoming.in.push(node.id)
           }
         }
       })
-      this.next = this.next.filter(
+      this.instanceContext.next = this.instanceContext.next.filter(
         (currentNode) =>
           !this.nextFlowNodesIncludes(nextNodeIds, currentNode.id),
       )
-      this.next.push(...nextNodes)
+      this.instanceContext.next.push(...nextNodes)
     }
   }
 
   private waitForIncoming(node: FlowNode) {
     if (node.previous && node.previous.length > 0) {
       // need to wait for all invoming nodes
-      const foundIncoming = this.incoming.find(
+      const foundIncoming = this.instanceContext.incoming.find(
         (currentIncoming) => currentIncoming.id === node.id,
       )
       if (!foundIncoming) {
@@ -336,7 +371,7 @@ export class FlowEngine {
     }
     const evaluated = await jq.run(
       next.condition.filter,
-      { context: this.context },
+      { context: this.instanceContext.context },
       { input: 'json' },
     )
     return evaluated === next.condition.toMatch
