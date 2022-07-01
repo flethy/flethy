@@ -4,6 +4,7 @@ import { RequestParams } from '@web3nao/http-configs/dist/types/Request.types'
 import axios from 'axios'
 import * as jq from 'node-jq'
 import { FLOW } from './testflow.const'
+import { TEST_INSTANCE } from './testinstance.const'
 
 export interface FlowNode extends RequestParams {
   id: string
@@ -47,7 +48,7 @@ const INTERNAL_EXCHANGE = '==>'
 export interface FlowContext {
   state: FlowState
   context: any
-  next: FlowNode[]
+  next: string[]
   log: FlowNodeLog[]
   incoming: Array<{ id: string; in: string[] }>
   errors: FlowNodeResponse[]
@@ -83,7 +84,7 @@ export class FlowEngine {
         this.instanceContext.context = config.input
       }
       // first node in array is automatically start node
-      this.instanceContext.next = [config.flow[0]]
+      this.instanceContext.next = [config.flow[0].id]
     }
   }
 
@@ -92,10 +93,23 @@ export class FlowEngine {
     while (this.shouldRun()) {
       this.updateState()
       await Promise.all(
-        this.instanceContext.next.map((nextNode) => this.execute(nextNode)),
+        this.instanceContext.next.map((nextNode) =>
+          this.execute(this.nodeById(nextNode)),
+        ),
       )
     }
     console.log(this.instanceContext)
+    // console.log(JSON.stringify(this.instanceContext))
+  }
+
+  private nodeById(id: string): FlowNode {
+    const foundNextNode = this.config.flow.find(
+      (currentNode) => currentNode.id === id,
+    )
+    if (!foundNextNode) {
+      throw new Error(`Node with id ${id} not found`)
+    }
+    return foundNextNode
   }
 
   private shouldRun(): boolean {
@@ -104,12 +118,6 @@ export class FlowEngine {
     const executingNodesAvailable =
       this.instanceContext.executingNodeIds.length > 0
     const instanceJustStarted = this.instanceContext.state === 'started'
-    console.log({
-      nextNodesAvailable,
-      errorsAvailable,
-      executingNodesAvailable,
-      instanceJustStarted,
-    })
     return (
       nextNodesAvailable &&
       !errorsAvailable &&
@@ -188,7 +196,7 @@ export class FlowEngine {
     )
     // post cleanup (1) remove current node from next, (2) update incoming nodes
     this.instanceContext.next = this.instanceContext.next.filter(
-      (current) => current.id !== node.id,
+      (currentId) => currentId !== node.id,
     )
     if (node.previous && node.previous.length > 0) {
       this.instanceContext.incoming = this.instanceContext.incoming.filter(
@@ -273,10 +281,12 @@ export class FlowEngine {
         }
       })
       this.instanceContext.next = this.instanceContext.next.filter(
-        (currentNode) =>
-          !this.nextFlowNodesIncludes(nextNodeIds, currentNode.id),
+        (currentNodeId) =>
+          !this.nextFlowNodesIncludes(nextNodeIds, currentNodeId),
       )
-      this.instanceContext.next.push(...nextNodes)
+      this.instanceContext.next.push(
+        ...nextNodes.map((nextNode) => nextNode.id),
+      )
     }
   }
 
@@ -385,6 +395,6 @@ export class FlowEngine {
 const controller = new FlowEngine({
   flow: FLOW,
   input: { limit: 20 },
-  // instanceContext: RUNNING_INSTANCE,
+  instanceContext: TEST_INSTANCE,
 })
 controller.start()
