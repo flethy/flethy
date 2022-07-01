@@ -1,6 +1,7 @@
 import { Airtable } from '../../http-configs/src/configs/airtable.config'
 import { Alchemy } from '../../http-configs/src/configs/alchemy.config'
 import ApicAgent from '../../http-configs/src/configs/apicagent.config'
+import BrowsersFyi from '../../http-configs/src/configs/browsersfyi.config'
 import { Camunda } from '../../http-configs/src/configs/camunda.config'
 import Clearbit from '../../http-configs/src/configs/clearbit.config'
 import CoinCap from '../../http-configs/src/configs/coincap.config'
@@ -32,6 +33,7 @@ import { TheGraph } from '../../http-configs/src/configs/thegraph.config'
 import Trello from '../../http-configs/src/configs/trello.config'
 import { Web3Storage } from '../../http-configs/src/configs/web3storage.config'
 import { ZeroX } from '../../http-configs/src/configs/zerox.config'
+import Zora from '../../http-configs/src/configs/zora.config'
 import { FetchParams } from '../../http-configs/src/types/FetchParams.type'
 import { nao } from '../../http-configs/src/utils/Request.utils'
 import { HttpRequest } from './controllers/HttpRequest'
@@ -523,8 +525,23 @@ async function main() {
       'param:tag': 'main',
       'param:file': 'packages/http-configs/package.json',
     }),
+    browsersfyi: nao<BrowsersFyi.Get>({
+      kind: 'browsersfyi.core.get',
+    }),
+    zoraQueryTokens: nao<Zora.Query>({
+      kind: 'zora.graphql.query',
+      'body:query': `{
+        tokens(filter: {priceFilter: {minimumChainTokenPrice: "1000"}}) {
+          nodes {
+            token {
+              name
+            }
+          }
+        }
+      }`,
+    }),
   }
-  const requestConfig = requestConfigs.slack
+  const requestConfig = requestConfigs.zoraQueryTokens
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

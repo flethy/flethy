@@ -1,0 +1,24 @@
+# Zora
+
+## Links
+
+* URL: [https://zora.co/](https://zora.co/)
+* Documentation: [https://docs.zora.co/](https://docs.zora.co/)
+* Tags: web3, nft
+* Category: aggregation
+* Type: indexer
+
+## API
+
+### Authentication
+
+* X-API-KEY: header
+
+### nft
+
+#### getNFTs
+
+##### Query
+
+* Description: GraphQL Interface
+* Docs: [https://docs.zora.co/docs/zora-api/query-formatting](https://docs.zora.co/docs/zora-api/query-formatting)

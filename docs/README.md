@@ -19,11 +19,13 @@ The following Endpoints are currently supported.
 * [TheGraph](./api/thegraph.md)
 * [Web3Storage](./api/web3storage.md)
 * [ZeroX](./api/0x.md)
+* [Zora](./api/zora.md)
 
 ### Web2
 
 * [Airtable](./api/airtable.md)
 * [ApicAgent](./api/apicagent.md)
+* [BrowsersFyi](./api/browsersfyi.md)
 * [Camunda](./api/camunda.md)
 * [Clearbit](./api/clearbit.md)
 * [CountApi](./api/countapi.md)

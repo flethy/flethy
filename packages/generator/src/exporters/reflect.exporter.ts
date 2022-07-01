@@ -2,6 +2,7 @@ import { getType, Type } from 'tst-reflect'
 import { Airtable } from '../../../http-configs/src/configs/airtable.config'
 import { Alchemy } from '../../../http-configs/src/configs/alchemy.config'
 import { ApicAgent } from '../../../http-configs/src/configs/apicagent.config'
+import { BrowsersFyi } from '../../../http-configs/src/configs/browsersfyi.config'
 import { Camunda } from '../../../http-configs/src/configs/camunda.config'
 import { Clearbit } from '../../../http-configs/src/configs/clearbit.config'
 import { CoinCap } from '../../../http-configs/src/configs/coincap.config'
@@ -33,12 +34,14 @@ import { TheGraph } from '../../../http-configs/src/configs/thegraph.config'
 import { Trello } from '../../../http-configs/src/configs/trello.config'
 import { Web3Storage } from '../../../http-configs/src/configs/web3storage.config'
 import { ZeroX } from '../../../http-configs/src/configs/zerox.config'
+import { Zora } from '../../../http-configs/src/configs/zora.config'
 export const configTypes: Array<{type: Type; name: string; interface: string}> = []
 configTypes.push({type: getType<Airtable.ListTableRecords>(), name: 'Airtable', interface: 'ListTableRecords'})
 configTypes.push({type: getType<Airtable.CreateTableRecords>(), name: 'Airtable', interface: 'CreateTableRecords'})
 configTypes.push({type: getType<Alchemy.NftGetNFTs>(), name: 'Alchemy', interface: 'NftGetNFTs'})
 configTypes.push({type: getType<ApicAgent.Get>(), name: 'ApicAgent', interface: 'Get'})
 configTypes.push({type: getType<ApicAgent.Post>(), name: 'ApicAgent', interface: 'Post'})
+configTypes.push({type: getType<BrowsersFyi.Get>(), name: 'BrowsersFyi', interface: 'Get'})
 configTypes.push({type: getType<Camunda.ConsoleToken>(), name: 'Camunda', interface: 'ConsoleToken'})
 configTypes.push({type: getType<Camunda.ConsoleGetClusters>(), name: 'Camunda', interface: 'ConsoleGetClusters'})
 configTypes.push({type: getType<Camunda.ConsoleGetClustersParameters>(), name: 'Camunda', interface: 'ConsoleGetClustersParameters'})
@@ -131,3 +134,4 @@ configTypes.push({type: getType<Web3Storage.UploadContent>(), name: 'Web3Storage
 configTypes.push({type: getType<ZeroX.SwapQuote>(), name: 'ZeroX', interface: 'SwapQuote'})
 configTypes.push({type: getType<ZeroX.SwapPrice>(), name: 'ZeroX', interface: 'SwapPrice'})
 configTypes.push({type: getType<ZeroX.SwapSources>(), name: 'ZeroX', interface: 'SwapSources'})
+configTypes.push({type: getType<Zora.Query>(), name: 'Zora', interface: 'Query'})

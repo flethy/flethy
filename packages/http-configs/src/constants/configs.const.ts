@@ -2,6 +2,7 @@ import { ApiDescription } from '../types/ApiDescription.type'
 import { Airtable } from '../configs/airtable.config'
 import { Alchemy } from '../configs/alchemy.config'
 import { ApicAgent } from '../configs/apicagent.config'
+import { BrowsersFyi } from '../configs/browsersfyi.config'
 import { Camunda } from '../configs/camunda.config'
 import { Clearbit } from '../configs/clearbit.config'
 import { CoinCap } from '../configs/coincap.config'
@@ -33,11 +34,13 @@ import { TheGraph } from '../configs/thegraph.config'
 import { Trello } from '../configs/trello.config'
 import { Web3Storage } from '../configs/web3storage.config'
 import { ZeroX } from '../configs/zerox.config'
+import { Zora } from '../configs/zora.config'
 
 export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, ApiDescription<any, any>>([
 ['airtable', Airtable.API],
 ['alchemy', Alchemy.API],
 ['apicagent', ApicAgent.API],
+['browsersfyi', BrowsersFyi.API],
 ['camunda', Camunda.API],
 ['clearbit', Clearbit.API],
 ['coincap', CoinCap.API],
@@ -69,4 +72,5 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['trello', Trello.API],
 ['web3storage', Web3Storage.API],
 ['0x', ZeroX.API],
+['zora', Zora.API],
 ])
