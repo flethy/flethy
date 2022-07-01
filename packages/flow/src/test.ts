@@ -6,15 +6,25 @@ import * as jq from 'node-jq'
 
 interface FlowNode extends RequestParams {
   id: string
-  next?: string[]
+  next?: FlowNextNode[]
   previous?: string[]
   [key: string]: any
 }
 
+interface FlowNextNode {
+  id: string
+  condition?: {
+    filter: string
+    toMatch: string
+  }
+}
+
+type FlowNodeResponseType = 'prepare' | 'http' | 'postcondition'
+
 interface FlowNodeResponse {
   id?: string
   error?: any
-  type: 'prepare' | 'http'
+  type: FlowNodeResponseType
   data: any
   resolved: boolean
   ts: number
@@ -26,12 +36,20 @@ interface FlowNodeLog {
   ts: number
 }
 
+type FlowState = 'stopped' | 'started' | 'running' | 'error'
+
 const JQ_TYPE_SEPARATOR = '->'
 
 const FLOW: FlowNode[] = [
   {
     id: '1',
-    next: ['2', '3'],
+    next: [
+      {
+        id: '2',
+        condition: { filter: '.context.assets | length', toMatch: '3' },
+      },
+      { id: '3' },
+    ],
     kind: 'opensea.assets.get',
     'auth:X-API-KEY': process.env.OPENSEA_APIKEY!,
     'query:asset_contract_address': process.env.ETH_DIYPUNKS_CONTRACT!,
@@ -42,7 +60,7 @@ const FLOW: FlowNode[] = [
   },
   {
     id: '2',
-    next: ['4'],
+    next: [{ id: '4' }],
     kind: 'slack.incomingWebhooks.message',
     'auth:webhookid': process.env.SLACK_WEBHOOK_ID!,
     'body:text': 'Hello, world!',
@@ -58,7 +76,7 @@ const FLOW: FlowNode[] = [
   },
   {
     id: '3',
-    next: ['4'],
+    next: [{ id: '4' }],
     kind: 'opensea.assets.get',
     'auth:X-API-KEY': process.env.OPENSEA_APIKEY!,
     'query:asset_contract_address': process.env.ETH_DIYPUNKS_CONTRACT!,
@@ -81,30 +99,60 @@ const FLOW: FlowNode[] = [
 ]
 
 export class FlowEngine {
+  private state: FlowState = 'stopped'
   private context: any
   private next: FlowNode[] = []
   private log: FlowNodeLog[] = []
   private incoming: Array<{ id: string; in: string[] }> = []
   private errors: FlowNodeResponse[] = []
+  private executingNodeIds: string[] = []
 
   constructor(private config: { flow: FlowNode[]; input: any }) {
     this.context = config.input
     if (this.config.flow.length === 0) {
       throw new Error(`No flow nodes specified.`)
     }
+    // first node in array is automatically start node
     this.next = [config.flow[0]]
   }
 
   public async start() {
-    while (
-      this.next.length > 0 &&
-      this.errors.filter((error) => !error.resolved).length === 0
-    ) {
+    this.state = 'started'
+    while (this.shouldRun()) {
+      this.updateState()
       await Promise.all(this.next.map((nextNode) => this.execute(nextNode)))
     }
     console.log(this.log)
     console.log(this.incoming)
     console.log(this.errors)
+    console.log(this.state)
+  }
+
+  private shouldRun(): boolean {
+    const nextNodesAvailable = this.next.length > 0
+    const errorsAvailable = this.state === 'error'
+    const executingNodesAvailable = this.executingNodeIds.length > 0
+    const instanceJustStarted = this.state === 'started'
+    return (
+      nextNodesAvailable &&
+      !errorsAvailable &&
+      (executingNodesAvailable || instanceJustStarted)
+    )
+  }
+
+  private updateState(target?: FlowState) {
+    if (this.state === 'error') {
+      return
+    }
+    if (target) {
+      this.state = target
+      return
+    }
+    switch (this.state) {
+      case 'started':
+        this.state = 'running'
+        break
+    }
   }
 
   public async execute(node: FlowNode) {
@@ -113,26 +161,35 @@ export class FlowEngine {
       return
     }
     this.log.push({ id: node.id, ts: Date.now(), type: 'in' })
+    this.executingNodeIds.push(node.id)
     // replace any references
     try {
       await FlowEngine.replaceReferencedVariables(node, this.context)
     } catch (error: any) {
-      this.errors.push({
+      this.addError({
         data: 'failed to replace referenced variables',
-        resolved: false,
-        ts: Date.now(),
         type: 'prepare',
-        error: error.message,
+        error,
         id: node.id,
       })
+      this.executingNodeIds = this.executingNodeIds.filter(
+        (currentId) => currentId !== node.id,
+      )
       return
     }
     this.log.push({ id: node.id, ts: Date.now(), type: 'prepared' })
     const request = nao(node)
     const response = await FlowEngine.request(request)
     if (response.error) {
-      response.id = node.id
-      this.errors.push(response)
+      this.addError({
+        data: response.data,
+        error: response.error,
+        id: node.id,
+        type: response.type,
+      })
+      this.executingNodeIds = this.executingNodeIds.filter(
+        (currentId) => currentId !== node.id,
+      )
       return
     }
     this.context = Object.assign(this.context, response.data)
@@ -142,15 +199,63 @@ export class FlowEngine {
       this.incoming = this.incoming.filter((current) => current.id !== node.id)
     }
     // add next nodes to run
-    this.addNextNodes(node)
+    this.executingNodeIds = this.executingNodeIds.filter(
+      (currentId) => currentId !== node.id,
+    )
+    await this.addNextNodes(node)
     this.log.push({ id: node.id, ts: Date.now(), type: 'out' })
   }
 
-  private addNextNodes(node: FlowNode) {
+  private addError(options: {
+    data: string
+    type: FlowNodeResponseType
+    error: any
+    id: string
+  }) {
+    this.errors.push({
+      data: options.data,
+      resolved: false,
+      ts: Date.now(),
+      type: options.type,
+      error: options.error.message,
+      id: options.id,
+    })
+    this.updateState('error')
+  }
+
+  private nextFlowNodesIncludes(
+    nextFlowNodes: FlowNextNode[],
+    id: string,
+  ): boolean {
+    for (const nextFlowNode of nextFlowNodes) {
+      if (nextFlowNode.id === id) {
+        return true
+      }
+    }
+    return false
+  }
+
+  private async addNextNodes(node: FlowNode) {
     const nextNodeIds = node.next ?? []
     if (nextNodeIds.length > 0) {
+      const filteredNextNodes: FlowNextNode[] = []
+      for (const nextNodeId of nextNodeIds) {
+        try {
+          const metCondition = await this.checkNextNodeCondition(nextNodeId)
+          if (metCondition) {
+            filteredNextNodes.push(nextNodeId)
+          }
+        } catch (error: any) {
+          this.addError({
+            data: 'failed to evaluate condition',
+            type: 'postcondition',
+            error: error,
+            id: node.id,
+          })
+        }
+      }
       const nextNodes = this.config.flow.filter((current) =>
-        nextNodeIds.includes(current.id),
+        this.nextFlowNodesIncludes(filteredNextNodes, current.id),
       )
       // check if next nodes need to wait for incoming nodes
       nextNodes.forEach((nextNode) => {
@@ -170,7 +275,8 @@ export class FlowEngine {
         }
       })
       this.next = this.next.filter(
-        (currentNode) => !nextNodeIds.includes(currentNode.id),
+        (currentNode) =>
+          !this.nextFlowNodesIncludes(nextNodeIds, currentNode.id),
       )
       this.next.push(...nextNodes)
     }
@@ -222,6 +328,18 @@ export class FlowEngine {
     nodeResponse.ts = Date.now()
 
     return nodeResponse
+  }
+
+  public async checkNextNodeCondition(next: FlowNextNode): Promise<boolean> {
+    if (!next.condition) {
+      return true
+    }
+    const evaluated = await jq.run(
+      next.condition.filter,
+      { context: this.context },
+      { input: 'json' },
+    )
+    return evaluated === next.condition.toMatch
   }
 
   public static async replaceReferencedVariables(object: any, context: any) {
