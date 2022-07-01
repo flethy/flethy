@@ -1,10 +1,11 @@
-import { nao, OpenSea, Slack } from '@web3nao/http-configs'
+import { nao } from '@web3nao/http-configs'
 import { FetchParams } from '@web3nao/http-configs/dist/types/FetchParams.type'
 import { RequestParams } from '@web3nao/http-configs/dist/types/Request.types'
 import axios from 'axios'
 import * as jq from 'node-jq'
+import { FLOW } from './testflow.const'
 
-interface FlowNode extends RequestParams {
+export interface FlowNode extends RequestParams {
   id: string
   next?: FlowNextNode[]
   previous?: string[]
@@ -41,66 +42,9 @@ interface FlowNodeLog {
 type FlowState = 'stopped' | 'started' | 'running' | 'error'
 
 const JQ_TYPE_SEPARATOR = '->'
+const INTERNAL_EXCHANGE = '==>'
 
-const FLOW: FlowNode[] = [
-  {
-    id: '1',
-    next: [
-      {
-        id: '2',
-        condition: { filter: '.context.assets | length', toMatch: '3' },
-      },
-      { id: '3' },
-    ],
-    kind: 'opensea.assets.get',
-    'auth:X-API-KEY': process.env.OPENSEA_APIKEY!,
-    'query:asset_contract_address': process.env.ETH_DIYPUNKS_CONTRACT!,
-    'query:owner': process.env.ETH_OWNER!,
-    'query:limit': '->.context.limit->number',
-    'query:offset': 0,
-    'query:order_direction': 'desc',
-  },
-  {
-    id: '2',
-    next: [{ id: '4' }],
-    kind: 'slack.incomingWebhooks.message',
-    'auth:webhookid': process.env.SLACK_WEBHOOK_ID!,
-    'body:text': 'Hello, world!',
-    'body:blocks': [
-      {
-        type: 'section',
-        text: {
-          type: 'mrkdwn',
-          text: `->.context.assets[0].id->number`,
-        },
-      },
-    ],
-  },
-  {
-    id: '3',
-    next: [{ id: '4' }],
-    kind: 'opensea.assets.get',
-    'auth:X-API-KEY': process.env.OPENSEA_APIKEY!,
-    'query:asset_contract_address': process.env.ETH_DIYPUNKS_CONTRACT!,
-    'query:owner': process.env.ETH_OWNER!,
-    'query:limit': '->.context.limit->number',
-    'query:offset': 0,
-    'query:order_direction': 'desc',
-  },
-  {
-    id: '4',
-    previous: ['2', '3'],
-    kind: 'opensea.assets.get',
-    'auth:X-API-KEY': process.env.OPENSEA_APIKEY!,
-    'query:asset_contract_address': process.env.ETH_DIYPUNKS_CONTRACT!,
-    'query:owner': process.env.ETH_OWNER!,
-    'query:limit': '->.context.limit->number',
-    'query:offset': 0,
-    'query:order_direction': 'desc',
-  },
-]
-
-interface FlowContext {
+export interface FlowContext {
   state: FlowState
   context: any
   next: FlowNode[]
@@ -121,13 +65,26 @@ export class FlowEngine {
     executingNodeIds: [],
   }
 
-  constructor(private config: { flow: FlowNode[]; input: any }) {
-    this.instanceContext.context = config.input
+  constructor(
+    private config: {
+      flow: FlowNode[]
+      input?: any
+      instanceContext?: FlowContext
+    },
+  ) {
     if (this.config.flow.length === 0) {
       throw new Error(`No flow nodes specified.`)
     }
-    // first node in array is automatically start node
-    this.instanceContext.next = [config.flow[0]]
+    if (config.instanceContext) {
+      // continue a running instance with context
+      this.instanceContext = config.instanceContext
+    } else {
+      if (config.input) {
+        this.instanceContext.context = config.input
+      }
+      // first node in array is automatically start node
+      this.instanceContext.next = [config.flow[0]]
+    }
   }
 
   public async start() {
@@ -147,10 +104,16 @@ export class FlowEngine {
     const executingNodesAvailable =
       this.instanceContext.executingNodeIds.length > 0
     const instanceJustStarted = this.instanceContext.state === 'started'
+    console.log({
+      nextNodesAvailable,
+      errorsAvailable,
+      executingNodesAvailable,
+      instanceJustStarted,
+    })
     return (
       nextNodesAvailable &&
       !errorsAvailable &&
-      (executingNodesAvailable || instanceJustStarted)
+      (!executingNodesAvailable || instanceJustStarted)
     )
   }
 
@@ -399,6 +362,14 @@ export class FlowEngine {
               object[key] = evaluated
           }
         }
+        if (stringValue.startsWith(INTERNAL_EXCHANGE)) {
+          const splitted = stringValue.split(INTERNAL_EXCHANGE)
+          switch (splitted[1]) {
+            case 'env':
+              object[key] = process.env[splitted[2]]!
+              break
+          }
+        }
       } else if (Array.isArray(object[key])) {
         const promises = object[key].map((child: any) =>
           FlowEngine.replaceReferencedVariables(child, context),
@@ -411,5 +382,9 @@ export class FlowEngine {
   }
 }
 
-const controller = new FlowEngine({ flow: FLOW, input: { limit: 20 } })
+const controller = new FlowEngine({
+  flow: FLOW,
+  input: { limit: 20 },
+  // instanceContext: RUNNING_INSTANCE,
+})
 controller.start()
