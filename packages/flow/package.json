@@ -5,8 +5,7 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "tsc --p tsconfig.json",
-    "test": "ts-node ./src/test.ts"
+    "play": "ts-node ./playground/play.ts"
   },
   "publishConfig": {
     "access": "public"
