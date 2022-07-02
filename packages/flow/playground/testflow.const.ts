@@ -21,6 +21,9 @@ export const FLOW: FlowNode[] = [
   {
     id: '2',
     next: [{ id: '4' }],
+    config: {
+      noUpdateContext: true,
+    },
     kind: 'slack.incomingWebhooks.message',
     'auth:webhookid': '==>env==>SLACK_WEBHOOK_ID',
     'body:text': 'Hello, world!',
@@ -29,7 +32,7 @@ export const FLOW: FlowNode[] = [
         type: 'section',
         text: {
           type: 'mrkdwn',
-          text: `->.context.assets[0].id->number`,
+          text: `->.context.assets[0].id->string`,
         },
       },
     ],

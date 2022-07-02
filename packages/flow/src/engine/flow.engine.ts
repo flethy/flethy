@@ -57,7 +57,7 @@ export class FlowEngine {
       this.utils.removeExecutingNodeId(node.id)
       return
     }
-    this.utils.updateContext(response.data)
+    this.utils.updateContext(node, response.data)
     // post cleanup (1) remove current node from next, (2) update incoming nodes
     this.utils.removeNodeIdFromNext(node.id)
     this.utils.updateIncomingFlowForNode(node)

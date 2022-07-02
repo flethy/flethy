@@ -4,6 +4,9 @@ export interface FlowNode extends RequestParams {
   id: string
   next?: FlowNextNode[]
   previous?: string[]
+  config?: {
+    noUpdateContext?: boolean
+  }
   [key: string]: any
 }
 

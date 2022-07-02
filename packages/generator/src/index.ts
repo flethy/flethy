@@ -541,7 +541,7 @@ async function main() {
       }`,
     }),
   }
-  const requestConfig = requestConfigs.zoraQueryTokens
+  const requestConfig = requestConfigs.opensea
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

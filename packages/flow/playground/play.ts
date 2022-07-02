@@ -5,6 +5,6 @@ import { TEST_INSTANCE } from './testinstance.const'
 const engine = new FlowEngine({
   flow: FLOW,
   input: { limit: 20 },
-  instanceContext: TEST_INSTANCE,
+  // instanceContext: TEST_INSTANCE,
 })
 engine.start()

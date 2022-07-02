@@ -108,7 +108,10 @@ export class FlowUtils {
     }
   }
 
-  public updateContext(data: any) {
+  public updateContext(node: FlowNode, data: any) {
+    if (!data || node.config?.noUpdateContext === true) {
+      return
+    }
     this.instanceContext.context = Object.assign(
       this.instanceContext.context,
       data,
@@ -237,9 +240,10 @@ export class FlowUtils {
         const stringValue: string = object[key]
         if (stringValue.startsWith(JQ_TYPE_SEPARATOR)) {
           const splitted = stringValue.split(JQ_TYPE_SEPARATOR)
-          const evaluated = await EvaluationUtils.evaluate(splitted[1], {
-            context: this.instanceContext.context,
-          })
+          const evaluated = await EvaluationUtils.evaluate(
+            splitted[1],
+            this.instanceContext.context,
+          )
           switch (splitted[2]) {
             case 'number':
               object[key] = Number(evaluated)
