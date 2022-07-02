@@ -22,7 +22,7 @@
   ],
   "dependencies": {
     "axios": "^0.27.2",
-    "node-jq": "^2.3.3"
+    "jsonata": "^1.8.6"
   },
   "devDependencies": {
     "@types/node": "^18.0.0",

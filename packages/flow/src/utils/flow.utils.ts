@@ -1,6 +1,7 @@
 import { JQ_TYPE_SEPARATOR, INTERNAL_EXCHANGE } from '../constants/flow.const'
 import {
   FlowContext,
+  FlowEnvironment,
   FlowInstanceStartConfig,
   FlowNextNode,
   FlowNode,
@@ -21,9 +22,11 @@ export class FlowUtils {
     executingNodeIds: [],
   }
   private flow: FlowNode[]
+  private env: FlowEnvironment
 
   constructor(config: FlowInstanceStartConfig) {
     this.flow = config.flow
+    this.env = config.env
     if (config.instanceContext) {
       this.instanceContext = config.instanceContext
     } else {
@@ -208,7 +211,7 @@ export class FlowUtils {
     if (!next.condition) {
       return true
     }
-    const evaluated = await EvaluationUtils.evaluate(
+    const evaluated = EvaluationUtils.evaluate(
       next.condition.filter,
       this.instanceContext.context,
     )
@@ -240,7 +243,7 @@ export class FlowUtils {
         const stringValue: string = object[key]
         if (stringValue.startsWith(JQ_TYPE_SEPARATOR)) {
           const splitted = stringValue.split(JQ_TYPE_SEPARATOR)
-          const evaluated = await EvaluationUtils.evaluate(
+          const evaluated = EvaluationUtils.evaluate(
             splitted[1],
             this.instanceContext.context,
           )
@@ -257,11 +260,11 @@ export class FlowUtils {
         }
         if (stringValue.startsWith(INTERNAL_EXCHANGE)) {
           const splitted = stringValue.split(INTERNAL_EXCHANGE)
-          switch (splitted[1]) {
-            case 'env':
-              object[key] = process.env[splitted[2]]!
-              break
-          }
+          object[key] = EvaluationUtils.fromEnv(
+            this.env,
+            splitted[1],
+            splitted[2],
+          )
         }
       } else if (Array.isArray(object[key])) {
         const promises = object[key].map((child: any) =>
