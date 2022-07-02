@@ -1,4 +1,4 @@
-import { FlowContext } from './test'
+import { FlowContext } from '../src/types/flow.types'
 
 export const TEST_INSTANCE: FlowContext = {
   state: 'running',

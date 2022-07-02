@@ -1,4 +1,4 @@
-import { FlowNode } from './test'
+import { FlowNode } from '../src/types/flow.types'
 
 export const FLOW: FlowNode[] = [
   {
