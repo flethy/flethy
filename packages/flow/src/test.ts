@@ -91,6 +91,7 @@ export class FlowEngine {
   public async start() {
     this.updateState('started')
     while (this.shouldRun()) {
+      // if just started: update state to running
       this.updateState()
       await Promise.all(
         this.instanceContext.next.map((nextNode) =>
