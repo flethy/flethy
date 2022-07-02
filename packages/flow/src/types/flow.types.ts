@@ -14,7 +14,7 @@ export interface FlowNextNode {
   id: string
   condition?: {
     filter: string
-    toMatch: string
+    toMatch: string | number
   }
 }
 
@@ -53,4 +53,14 @@ export interface FlowInstanceStartConfig {
   flow: FlowNode[]
   input?: any
   instanceContext?: FlowContext
+  env: FlowEnvironment
+}
+
+export interface FlowEnvironment {
+  env: {
+    [key: string]: string
+  }
+  secrets: {
+    [key: string]: string
+  }
 }
