@@ -84,16 +84,33 @@ export class FlowUtils {
   }
 
   public shouldRun(): boolean {
-    const nextNodesAvailable = this.instanceContext.next.length > 0
+    const nextNodesAvailable =
+      this.instanceContext.next.length > 0 && !this.nextNodesOnlyWaiting()
     const errorsAvailable = this.instanceContext.state === 'error'
     const executingNodesAvailable =
       this.instanceContext.executingNodeIds.length > 0
     const instanceJustStarted = this.instanceContext.state === 'started'
+
     return (
       nextNodesAvailable &&
       !errorsAvailable &&
       (!executingNodesAvailable || instanceJustStarted)
     )
+  }
+
+  private nextNodesOnlyWaiting(): boolean {
+    for (const nextNodeId of this.instanceContext.next) {
+      const foundWaiting = this.instanceContext.incoming.find(
+        (currentIncoming) => currentIncoming.id === nextNodeId,
+      )
+      if (!foundWaiting) {
+        return false
+      }
+      if (this.instanceContext.executingNodeIds.length > 0) {
+        return false
+      }
+    }
+    return true
   }
 
   public updateState(target?: FlowState) {
@@ -115,9 +132,17 @@ export class FlowUtils {
     if (!data || node.config?.noUpdateContext === true) {
       return
     }
+
+    let newData: any = {}
+    if (node.config?.namespace) {
+      newData[node.config.namespace] = data
+    } else {
+      newData = data
+    }
+
     this.instanceContext.context = Object.assign(
       this.instanceContext.context,
-      data,
+      newData,
     )
   }
 

@@ -6,6 +6,7 @@ export interface FlowNode extends RequestParams {
   previous?: string[]
   config?: {
     noUpdateContext?: boolean
+    namespace?: string
   }
   [key: string]: any
 }

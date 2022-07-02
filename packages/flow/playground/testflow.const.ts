@@ -6,10 +6,13 @@ export const FLOW: FlowNode[] = [
     next: [
       {
         id: '2',
-        condition: { filter: '$count(context.assets)', toMatch: 2 },
+        condition: { filter: '$count(context.opensea.assets)', toMatch: 1 },
       },
       { id: '3' },
     ],
+    config: {
+      namespace: 'opensea',
+    },
     kind: 'opensea.assets.get',
     'auth:X-API-KEY': '==>env==>OPENSEA_APIKEY',
     'query:asset_contract_address': '==>env==>ETH_DIYPUNKS_CONTRACT',
@@ -32,7 +35,7 @@ export const FLOW: FlowNode[] = [
         type: 'section',
         text: {
           type: 'mrkdwn',
-          text: `->context.assets[0].id->string`,
+          text: `->context.opensea.assets[0].id->string`,
         },
       },
     ],

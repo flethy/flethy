@@ -16,6 +16,7 @@ export class FlowEngine {
     while (this.utils.shouldRun()) {
       // if just started: update state to running
       this.utils.updateState()
+      Logger.info(this.utils.getInstanceContext())
       await Promise.all(
         this.utils.nextNodes().map((nextNode) => this.execute(nextNode)),
       )
