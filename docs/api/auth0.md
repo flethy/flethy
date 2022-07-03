@@ -18,3 +18,16 @@
 
 * Description: You can execute a client credentials exchange to get an access token for Auth0 Management API.
 * Docs: [https://auth0.com/docs/api/authentication](https://auth0.com/docs/api/authentication)
+
+### users
+
+#### listOrSearch
+
+##### Authentication
+
+* Authorization: header:bearer
+
+##### ListOrSearchUsers
+
+* Description: Retrieve details of users.
+* Docs: [https://auth0.com/docs/api/management/v2#!/Users/get_users](https://auth0.com/docs/api/management/v2#!/Users/get_users)
