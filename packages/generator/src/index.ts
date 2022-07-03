@@ -1,6 +1,7 @@
 import { Airtable } from '../../http-configs/src/configs/airtable.config'
 import { Alchemy } from '../../http-configs/src/configs/alchemy.config'
 import ApicAgent from '../../http-configs/src/configs/apicagent.config'
+import Auth0 from '../../http-configs/src/configs/auth0.config'
 import BrowsersFyi from '../../http-configs/src/configs/browsersfyi.config'
 import { Camunda } from '../../http-configs/src/configs/camunda.config'
 import Clearbit from '../../http-configs/src/configs/clearbit.config'
@@ -540,8 +541,16 @@ async function main() {
         }
       }`,
     }),
+    auth0Token: nao<Auth0.GetAuthAccessToken>({
+      kind: 'auth0.auth.accesstoken',
+      'body:audience': process.env.AUTH0_AUDIENCE,
+      'body:grant_type': 'client_credentials',
+      'body:client_id': process.env.AUTH0_CLIENT_ID,
+      'body:client_secret': process.env.AUTH0_CLIENT_SECRET,
+      'subdomain:tenant': process.env.AUTH0_TENANT,
+    }),
   }
-  const requestConfig = requestConfigs.opensea
+  const requestConfig = requestConfigs.auth0Token
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

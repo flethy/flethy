@@ -14,9 +14,9 @@
 
 * X-API-KEY: header
 
-### nft
+### graphql
 
-#### getNFTs
+#### query
 
 ##### Query
 

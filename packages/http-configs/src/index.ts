@@ -1,6 +1,7 @@
 export { Airtable } from './configs/airtable.config'
 export { Alchemy } from './configs/alchemy.config'
 export { ApicAgent } from './configs/apicagent.config'
+export { Auth0 } from './configs/auth0.config'
 export { BrowsersFyi } from './configs/browsersfyi.config'
 export { Camunda } from './configs/camunda.config'
 export { Clearbit } from './configs/clearbit.config'

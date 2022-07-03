@@ -2,6 +2,7 @@ import { getType, Type } from 'tst-reflect'
 import { Airtable } from '../../../http-configs/src/configs/airtable.config'
 import { Alchemy } from '../../../http-configs/src/configs/alchemy.config'
 import { ApicAgent } from '../../../http-configs/src/configs/apicagent.config'
+import { Auth0 } from '../../../http-configs/src/configs/auth0.config'
 import { BrowsersFyi } from '../../../http-configs/src/configs/browsersfyi.config'
 import { Camunda } from '../../../http-configs/src/configs/camunda.config'
 import { Clearbit } from '../../../http-configs/src/configs/clearbit.config'
@@ -41,6 +42,7 @@ configTypes.push({type: getType<Airtable.CreateTableRecords>(), name: 'Airtable'
 configTypes.push({type: getType<Alchemy.NftGetNFTs>(), name: 'Alchemy', interface: 'NftGetNFTs'})
 configTypes.push({type: getType<ApicAgent.Get>(), name: 'ApicAgent', interface: 'Get'})
 configTypes.push({type: getType<ApicAgent.Post>(), name: 'ApicAgent', interface: 'Post'})
+configTypes.push({type: getType<Auth0.GetAuthAccessToken>(), name: 'Auth0', interface: 'GetAuthAccessToken'})
 configTypes.push({type: getType<BrowsersFyi.Get>(), name: 'BrowsersFyi', interface: 'Get'})
 configTypes.push({type: getType<Camunda.ConsoleToken>(), name: 'Camunda', interface: 'ConsoleToken'})
 configTypes.push({type: getType<Camunda.ConsoleGetClusters>(), name: 'Camunda', interface: 'ConsoleGetClusters'})

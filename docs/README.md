@@ -25,6 +25,7 @@ The following Endpoints are currently supported.
 
 * [Airtable](./api/airtable.md)
 * [ApicAgent](./api/apicagent.md)
+* [Auth0](./api/auth0.md)
 * [BrowsersFyi](./api/browsersfyi.md)
 * [Camunda](./api/camunda.md)
 * [Clearbit](./api/clearbit.md)
