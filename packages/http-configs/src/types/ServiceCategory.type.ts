@@ -18,6 +18,7 @@ export type CATEGORY =
   | 'cloud'
   | 'search'
   | 'network'
+  | 'identity'
 export type TYPE =
   | COMM_TYPE
   | STORAGE_TYPE
@@ -37,6 +38,7 @@ export type TYPE =
   | CLOUD_TYPE
   | SEARCH_TYPE
   | NETWORK_TYPE
+  | IDENTITY_TYPE
 
 export type COMM_TYPE = 'email' | 'messenger'
 export type STORAGE_TYPE = 'ipfs'
@@ -60,3 +62,4 @@ export type DATA_TYPE = 'validation' | 'resolution'
 export type CLOUD_TYPE = 'services'
 export type SEARCH_TYPE = 'serp'
 export type NETWORK_TYPE = 'cdn'
+export type IDENTITY_TYPE = 'identitymanagement'

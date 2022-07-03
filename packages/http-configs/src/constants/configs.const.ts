@@ -2,6 +2,7 @@ import { ApiDescription } from '../types/ApiDescription.type'
 import { Airtable } from '../configs/airtable.config'
 import { Alchemy } from '../configs/alchemy.config'
 import { ApicAgent } from '../configs/apicagent.config'
+import { Auth0 } from '../configs/auth0.config'
 import { BrowsersFyi } from '../configs/browsersfyi.config'
 import { Camunda } from '../configs/camunda.config'
 import { Clearbit } from '../configs/clearbit.config'
@@ -40,6 +41,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['airtable', Airtable.API],
 ['alchemy', Alchemy.API],
 ['apicagent', ApicAgent.API],
+['auth0', Auth0.API],
 ['browsersfyi', BrowsersFyi.API],
 ['camunda', Camunda.API],
 ['clearbit', Clearbit.API],

@@ -1,0 +1,20 @@
+# Auth0
+
+## Links
+
+* URL: [https://auth0.com](https://auth0.com)
+* Documentation: [https://auth0.com/docs](https://auth0.com/docs)
+* Tags: web2
+* Category: identity
+* Type: identitymanagement
+
+## API
+
+### auth
+
+#### accesstoken
+
+##### GetAuthAccessToken
+
+* Description: You can execute a client credentials exchange to get an access token for Auth0 Management API.
+* Docs: [https://auth0.com/docs/api/authentication](https://auth0.com/docs/api/authentication)

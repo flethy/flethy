@@ -62,6 +62,9 @@ export class HttpRequestConfig {
           }
           config.headers[keyname] = options.params[paramKey]
           break
+        case 'subdomain':
+          config.url = config.url.replace(paramKey, options.params[paramKey])
+          break
       }
     }
 
