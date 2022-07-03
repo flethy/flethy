@@ -549,8 +549,15 @@ async function main() {
       'body:client_secret': process.env.AUTH0_CLIENT_SECRET,
       'subdomain:tenant': process.env.AUTH0_TENANT,
     }),
+    auth0SearchUsers: nao<Auth0.ListOrSearchUsers>({
+      kind: 'auth0.users.listOrSearch',
+      'auth:Authorization': process.env.AUTH0_JWT,
+      'query:search_engine': 'v3',
+      'query:q': 'email:web3nao@gmail.com',
+      'subdomain:tenant': process.env.AUTH0_TENANT,
+    }),
   }
-  const requestConfig = requestConfigs.auth0Token
+  const requestConfig = requestConfigs.auth0SearchUsers
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)
