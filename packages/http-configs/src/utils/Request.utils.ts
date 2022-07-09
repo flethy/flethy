@@ -49,6 +49,12 @@ export class HttpRequestConfig {
         case 'query':
           queryParams[keyname] = options.params[paramKey]
           break
+        case 'customQuery':
+          for (const customQueryKey of Object.keys(options.params[paramKey])) {
+            queryParams[customQueryKey] =
+              options.params[paramKey][customQueryKey]
+          }
+          break
         case 'body':
           if (keyname === 'body') {
             config.body = options.params[paramKey]

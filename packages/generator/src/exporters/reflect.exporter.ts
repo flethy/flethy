@@ -32,6 +32,7 @@ import { RedisCloud } from '../../../http-configs/src/configs/rediscloud.config'
 import { SerpStack } from '../../../http-configs/src/configs/serpstack.config'
 import { Slack } from '../../../http-configs/src/configs/slack.config'
 import { Statically } from '../../../http-configs/src/configs/statically.config'
+import { Supabase } from '../../../http-configs/src/configs/supabase.config'
 import { TheGraph } from '../../../http-configs/src/configs/thegraph.config'
 import { Trello } from '../../../http-configs/src/configs/trello.config'
 import { Web3Storage } from '../../../http-configs/src/configs/web3storage.config'
@@ -131,6 +132,8 @@ configTypes.push({type: getType<Slack.IncomingWebhooksMessage>(), name: 'Slack',
 configTypes.push({type: getType<Statically.StaticZapGithub>(), name: 'Statically', interface: 'StaticZapGithub'})
 configTypes.push({type: getType<Statically.StaticZapGitlab>(), name: 'Statically', interface: 'StaticZapGitlab'})
 configTypes.push({type: getType<Statically.StaticZapBitbucket>(), name: 'Statically', interface: 'StaticZapBitbucket'})
+configTypes.push({type: getType<Supabase.InsertRows>(), name: 'Supabase', interface: 'InsertRows'})
+configTypes.push({type: getType<Supabase.ReadRows>(), name: 'Supabase', interface: 'ReadRows'})
 configTypes.push({type: getType<TheGraph.QueryById>(), name: 'TheGraph', interface: 'QueryById'})
 configTypes.push({type: getType<TheGraph.QueryByName>(), name: 'TheGraph', interface: 'QueryByName'})
 configTypes.push({type: getType<Trello.BoardGetLists>(), name: 'Trello', interface: 'BoardGetLists'})

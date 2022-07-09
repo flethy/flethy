@@ -1,0 +1,32 @@
+# Supabase
+
+## Links
+
+* URL: [https://supabase.com/](https://supabase.com/)
+* Documentation: [https://supabase.com/docs/](https://supabase.com/docs/)
+* Tags: web2
+* Category: storage
+* Type: database
+
+## API
+
+### Authentication
+
+* apikey: header
+* Authorization: header:bearer
+
+### core
+
+#### insert
+
+##### Insert Rows
+
+* Description: Insert lets you insert into your tables
+* Docs: [https://supabase.com/docs/guides/api](https://supabase.com/docs/guides/api)
+
+#### read
+
+##### Read Rows
+
+* Description: To read rows, use the select method
+* Docs: [https://supabase.com/docs/guides/api](https://supabase.com/docs/guides/api)
