@@ -582,6 +582,9 @@ async function main() {
       'subdomain:postgres-ref': process.env.SUPABASE_POSTGRES_REF,
       'param:table': 'test',
       'query:select': '*',
+      'customQuery:filter': {
+        id: 'eq.1',
+      },
     }),
   }
   const requestConfig = requestConfigs.supabaseRead

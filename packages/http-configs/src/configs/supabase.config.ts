@@ -27,6 +27,9 @@ export namespace Supabase {
   export interface ReadRows extends SupabaseBase, RequestParams {
     kind: 'supabase.core.read'
     'query:select': string
+    'customQuery:filter'?: {
+      [key: string]: string
+    }
     'header:Range'?: '0-9' | string
   }
 
