@@ -27,6 +27,7 @@ import OpenLibrary from '../../http-configs/src/configs/openlibrary.config'
 import { OpenSea } from '../../http-configs/src/configs/opensea.config'
 import { Pinata } from '../../http-configs/src/configs/pinata.config'
 import PurgoMalum from '../../http-configs/src/configs/purgomalum.config'
+import RedisCloud from '../../http-configs/src/configs/rediscloud.config'
 import SerpStack from '../../http-configs/src/configs/serpstack.config'
 import { Slack } from '../../http-configs/src/configs/slack.config'
 import Statically from '../../http-configs/src/configs/statically.config'
@@ -556,8 +557,13 @@ async function main() {
       'query:q': 'email:web3nao@gmail.com',
       'subdomain:tenant': process.env.AUTH0_TENANT,
     }),
+    redisCloudGetAccount: nao<RedisCloud.GetCurrentAccount>({
+      kind: 'rediscloud.account.get',
+      'auth:x-api-key': process.env.REDIS_API_ACCOUNT_KEY,
+      'auth:x-api-secret-key': process.env.REDIS_API_USER_KEY,
+    }),
   }
-  const requestConfig = requestConfigs.auth0SearchUsers
+  const requestConfig = requestConfigs.redisCloudGetAccount
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

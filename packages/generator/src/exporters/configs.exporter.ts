@@ -44,6 +44,9 @@ export class ConfigsExporter {
 
     const files = fs.readdirSync(CONFIGS_DIR)
     for (const file of files) {
+      if (file.split('.')[1] !== 'config') {
+        continue
+      }
       const configName = `${file.split('.')[0]}.${file.split('.')[1]}`
       logger.info(`ConfigsExporter | Loading Config <${file}>`)
       // eslint-disable-next-line no-await-in-loop
