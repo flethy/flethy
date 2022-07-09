@@ -41,7 +41,7 @@ export type TYPE =
   | IDENTITY_TYPE
 
 export type COMM_TYPE = 'email' | 'messenger'
-export type STORAGE_TYPE = 'ipfs'
+export type STORAGE_TYPE = 'ipfs' | 'database'
 export type AGGREGATION_TYPE =
   | 'indexer'
   | 'transactions'

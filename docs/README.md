@@ -46,4 +46,5 @@ The following Endpoints are currently supported.
 * [SerpStack](./api/serpstack.md)
 * [Slack](./api/slack.md)
 * [Statically](./api/statically.md)
+* [Supabase](./api/supabase.md)
 * [Trello](./api/trello.md)

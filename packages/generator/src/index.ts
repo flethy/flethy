@@ -31,6 +31,7 @@ import RedisCloud from '../../http-configs/src/configs/rediscloud.config'
 import SerpStack from '../../http-configs/src/configs/serpstack.config'
 import { Slack } from '../../http-configs/src/configs/slack.config'
 import Statically from '../../http-configs/src/configs/statically.config'
+import Supabase from '../../http-configs/src/configs/supabase.config'
 import { TheGraph } from '../../http-configs/src/configs/thegraph.config'
 import Trello from '../../http-configs/src/configs/trello.config'
 import { Web3Storage } from '../../http-configs/src/configs/web3storage.config'
@@ -562,8 +563,28 @@ async function main() {
       'auth:x-api-key': process.env.REDIS_API_ACCOUNT_KEY,
       'auth:x-api-secret-key': process.env.REDIS_API_USER_KEY,
     }),
+    supabaseInsert: nao<Supabase.InsertRows>({
+      kind: 'supabase.core.insert',
+      'auth:apikey': process.env.SUPABASE_API_KEY,
+      'auth:Authorization': process.env.SUPABASE_API_KEY,
+      'subdomain:postgres-ref': process.env.SUPABASE_POSTGRES_REF,
+      'param:table': 'test',
+      'body:body': {
+        id: 2,
+        name: 'web3nao',
+      },
+      'header:Prefer': 'resolution=merge-duplicates',
+    }),
+    supabaseRead: nao<Supabase.ReadRows>({
+      kind: 'supabase.core.read',
+      'auth:apikey': process.env.SUPABASE_API_KEY,
+      'auth:Authorization': process.env.SUPABASE_API_KEY,
+      'subdomain:postgres-ref': process.env.SUPABASE_POSTGRES_REF,
+      'param:table': 'test',
+      'query:select': '*',
+    }),
   }
-  const requestConfig = requestConfigs.redisCloudGetAccount
+  const requestConfig = requestConfigs.supabaseRead
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

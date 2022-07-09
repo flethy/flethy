@@ -32,6 +32,7 @@ import { RedisCloud } from '../configs/rediscloud.config'
 import { SerpStack } from '../configs/serpstack.config'
 import { Slack } from '../configs/slack.config'
 import { Statically } from '../configs/statically.config'
+import { Supabase } from '../configs/supabase.config'
 import { TheGraph } from '../configs/thegraph.config'
 import { Trello } from '../configs/trello.config'
 import { Web3Storage } from '../configs/web3storage.config'
@@ -72,6 +73,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['serpstack', SerpStack.API],
 ['slack', Slack.API],
 ['statically', Statically.API],
+['supabase', Supabase.API],
 ['thegraph', TheGraph.API],
 ['trello', Trello.API],
 ['web3storage', Web3Storage.API],
