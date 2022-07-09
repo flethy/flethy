@@ -28,6 +28,7 @@ import { OpenLibrary } from '../configs/openlibrary.config'
 import { OpenSea } from '../configs/opensea.config'
 import { Pinata } from '../configs/pinata.config'
 import { PurgoMalum } from '../configs/purgomalum.config'
+import { RedisCloud } from '../configs/rediscloud.config'
 import { SerpStack } from '../configs/serpstack.config'
 import { Slack } from '../configs/slack.config'
 import { Statically } from '../configs/statically.config'
@@ -67,6 +68,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['opensea', OpenSea.API],
 ['pinata', Pinata.API],
 ['purgomalum', PurgoMalum.API],
+['rediscloud', RedisCloud.API],
 ['serpstack', SerpStack.API],
 ['slack', Slack.API],
 ['statically', Statically.API],
