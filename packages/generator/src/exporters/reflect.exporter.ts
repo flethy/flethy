@@ -11,6 +11,7 @@ import { CoinGecko } from '../../../http-configs/src/configs/coingecko.config'
 import { Coinlayer } from '../../../http-configs/src/configs/coinlayer.config'
 import { CoinMarketCap } from '../../../http-configs/src/configs/coinmarketcap.config'
 import { CountApi } from '../../../http-configs/src/configs/countapi.config'
+import { Courier } from '../../../http-configs/src/configs/courier.config'
 import { Covalent } from '../../../http-configs/src/configs/covalent.config'
 import { Disify } from '../../../http-configs/src/configs/disify.config'
 import { Etherscan } from '../../../http-configs/src/configs/etherscan.config'
@@ -82,6 +83,7 @@ configTypes.push({type: getType<CountApi.Update>(), name: 'CountApi', interface:
 configTypes.push({type: getType<CountApi.Hit>(), name: 'CountApi', interface: 'Hit'})
 configTypes.push({type: getType<CountApi.Create>(), name: 'CountApi', interface: 'Create'})
 configTypes.push({type: getType<CountApi.Info>(), name: 'CountApi', interface: 'Info'})
+configTypes.push({type: getType<Courier.Send>(), name: 'Courier', interface: 'Send'})
 configTypes.push({type: getType<Covalent.ClassAGetTransactionsForAddress>(), name: 'Covalent', interface: 'ClassAGetTransactionsForAddress'})
 configTypes.push({type: getType<Covalent.ClassBGetUniswapV3Pools>(), name: 'Covalent', interface: 'ClassBGetUniswapV3Pools'})
 configTypes.push({type: getType<Covalent.PricingGetHistoricalTokenPrices>(), name: 'Covalent', interface: 'PricingGetHistoricalTokenPrices'})
