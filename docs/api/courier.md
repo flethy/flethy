@@ -1,0 +1,24 @@
+# Courier
+
+## Links
+
+* URL: [https://www.courier.com/](https://www.courier.com/)
+* Documentation: [https://www.courier.com/docs/](https://www.courier.com/docs/)
+* Tags: web2
+* Category: communication
+* Type: email
+
+## API
+
+### Authentication
+
+* Authorization: header:bearer
+
+### send
+
+#### post
+
+##### Send API
+
+* Description: The send API lets you send a notification to a specified recipient asynchronously with a single call.
+* Docs: [https://www.courier.com/docs/reference/send/](https://www.courier.com/docs/reference/send/)

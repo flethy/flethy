@@ -11,6 +11,7 @@ import { CoinGecko } from '../configs/coingecko.config'
 import { Coinlayer } from '../configs/coinlayer.config'
 import { CoinMarketCap } from '../configs/coinmarketcap.config'
 import { CountApi } from '../configs/countapi.config'
+import { Courier } from '../configs/courier.config'
 import { Covalent } from '../configs/covalent.config'
 import { Disify } from '../configs/disify.config'
 import { Etherscan } from '../configs/etherscan.config'
@@ -52,6 +53,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['coinlayer', Coinlayer.API],
 ['coinmarketcap', CoinMarketCap.API],
 ['countapi', CountApi.API],
+['courier', Courier.API],
 ['covalent', Covalent.API],
 ['disify', Disify.API],
 ['etherscan', Etherscan.API],

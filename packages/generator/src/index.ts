@@ -10,6 +10,7 @@ import { CoinGecko } from '../../http-configs/src/configs/coingecko.config'
 import Coinlayer from '../../http-configs/src/configs/coinlayer.config'
 import { CoinMarketCap } from '../../http-configs/src/configs/coinmarketcap.config'
 import CountApi from '../../http-configs/src/configs/countapi.config'
+import Courier from '../../http-configs/src/configs/courier.config'
 import { Covalent } from '../../http-configs/src/configs/covalent.config'
 import { Disify } from '../../http-configs/src/configs/disify.config'
 import { Etherscan } from '../../http-configs/src/configs/etherscan.config'
@@ -586,8 +587,21 @@ async function main() {
         id: 'eq.1',
       },
     }),
+    courierSend: nao<Courier.Send>({
+      kind: 'courier.send.post',
+      'auth:Authorization': process.env.COURIER_API_KEY,
+      'body:message': {
+        to: {
+          email: 'i@adamurban.de',
+          data: {
+            variables: 'awesomeness',
+          },
+        },
+        template: process.env.COURIER_TEMPLATE,
+      },
+    }),
   }
-  const requestConfig = requestConfigs.supabaseRead
+  const requestConfig = requestConfigs.courierSend
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

@@ -30,6 +30,7 @@ The following Endpoints are currently supported.
 * [Camunda](./api/camunda.md)
 * [Clearbit](./api/clearbit.md)
 * [CountApi](./api/countapi.md)
+* [Courier](./api/courier.md)
 * [Disify](./api/disify.md)
 * [Frankfurter](./api/frankfurter.md)
 * [Github](./api/github.md)

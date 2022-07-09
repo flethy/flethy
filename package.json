@@ -8,7 +8,7 @@
   ],
   "scripts": {
     "build": "turbo run build",
-    "export": "turbo run export",
+    "export": "turbo run export --no-cache",
     "play": "turbo run start --filter=@web3nao/generator --no-cache",
     "dev": "turbo run dev --parallel",
     "lint": "turbo run lint",
