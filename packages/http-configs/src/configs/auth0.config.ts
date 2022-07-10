@@ -9,7 +9,7 @@ export namespace Auth0 {
   export type Entity = { auth: any; users: any }
   export type Endpoint =
     | { accesstoken: ApiDescriptionEndpoint }
-    | { listOrSearch: ApiDescriptionEndpoint }
+    | { listOrSearch: ApiDescriptionEndpoint; get: ApiDescriptionEndpoint }
 
   export interface GetAuthAccessToken extends RequestParams {
     kind: 'auth0.auth.accesstoken'
@@ -36,6 +36,13 @@ export namespace Auth0 {
     'query:connection'?: string
     'query:fields'?: string
     'query:include_fields'?: string
+  }
+
+  export interface GetUser extends ManagementApiBase, RequestParams {
+    kind: 'auth0.users.get'
+    'param:id': string
+    'query:fields'?: string
+    'query:include_fields'?: boolean
   }
 
   const ManagementApiAuth: { [key: string]: ApiDescriptionAuth } = {
@@ -100,6 +107,35 @@ export namespace Auth0 {
             {
               name: 'users',
               type: 'static',
+            },
+          ],
+        },
+        get: {
+          interface: 'GetUser',
+          meta: {
+            title: 'Get a User',
+            description:
+              'Retrieve user details. A list of fields to include or exclude may also be specified.',
+            docs: 'https://auth0.com/docs/api/management/v2/#!/Users/get_users_by_id',
+          },
+          auth: ManagementApiAuth,
+          method: 'GET',
+          paths: [
+            {
+              name: 'api',
+              type: 'static',
+            },
+            {
+              name: 'v2',
+              type: 'static',
+            },
+            {
+              name: 'users',
+              type: 'static',
+            },
+            {
+              name: 'id',
+              type: 'param',
             },
           ],
         },
