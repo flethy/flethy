@@ -559,6 +559,12 @@ async function main() {
       'query:q': 'email:web3nao@gmail.com',
       'subdomain:tenant': process.env.AUTH0_TENANT,
     }),
+    auth0GetUser: nao<Auth0.GetUser>({
+      kind: 'auth0.users.get',
+      'auth:Authorization': process.env.AUTH0_JWT,
+      'subdomain:tenant': process.env.AUTH0_TENANT,
+      'param:id': process.env.AUTH0_USER_ID,
+    }),
     redisCloudGetAccount: nao<RedisCloud.GetCurrentAccount>({
       kind: 'rediscloud.account.get',
       'auth:x-api-key': process.env.REDIS_API_ACCOUNT_KEY,
@@ -601,7 +607,7 @@ async function main() {
       },
     }),
   }
-  const requestConfig = requestConfigs.courierSend
+  const requestConfig = requestConfigs.auth0GetUser
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

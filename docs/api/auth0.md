@@ -31,3 +31,14 @@
 
 * Description: Retrieve details of users.
 * Docs: [https://auth0.com/docs/api/management/v2#!/Users/get_users](https://auth0.com/docs/api/management/v2#!/Users/get_users)
+
+#### get
+
+##### Authentication
+
+* Authorization: header:bearer
+
+##### Get a User
+
+* Description: Retrieve user details. A list of fields to include or exclude may also be specified.
+* Docs: [https://auth0.com/docs/api/management/v2/#!/Users/get_users_by_id](https://auth0.com/docs/api/management/v2/#!/Users/get_users_by_id)
