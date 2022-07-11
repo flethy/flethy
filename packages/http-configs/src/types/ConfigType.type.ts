@@ -1,6 +1,7 @@
 export interface ConfigTypeProperty {
   name: string
   type: string
+  types: any
   optional: boolean
 }
 
