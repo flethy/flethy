@@ -1,6 +1,10 @@
 import fs from 'fs'
 import path from 'path'
-import { ConfigType } from '../../../http-configs/src/types/ConfigType.type'
+import { Property } from 'tst-reflect'
+import {
+  ConfigType,
+  ConfigTypeProperty,
+} from '../../../http-configs/src/types/ConfigType.type'
 import { configTypes as exportedConfigTypes } from './reflect.exporter'
 
 const CONFIGSTYPES_DIR_NAME = 'configTypes'
@@ -31,24 +35,41 @@ export class ConfigTypeGenerator {
       }
       foundConfigType.interfaces.push({
         name: exportedConfigType.interface,
-        properties: exportedConfigType.type.getProperties().map((property) => {
-          return {
-            name: property.name,
-            type: property.type.name.toLowerCase(),
-            types:
-              property.type.literalValue ??
-              property.type.types.map(
-                (currentType) => currentType.literalValue
-              ),
-            optional: property.optional,
-          }
-        }),
+        properties: [
+          ...exportedConfigType.type.getProperties().map((property) => {
+            return ConfigTypeGenerator.generateProperties(property)
+          }),
+          ...exportedConfigType.type.baseType
+            .getProperties()
+            .map((property) => {
+              return ConfigTypeGenerator.generateProperties(property)
+            }),
+        ],
       })
     }
     fs.writeFileSync(
       `${CONFIGSTYPES_DIR}/configTypes.json`,
       JSON.stringify(configTypes)
     )
+  }
+
+  private static generateProperties(property: Property): ConfigTypeProperty {
+    return {
+      name: property.name,
+      type: property.type.name.toLowerCase(),
+      types:
+        property.type.literalValue ??
+        property.type.types.map((currentType) => currentType.literalValue),
+      optional: property.optional,
+      properties:
+        property.type.getProperties().length > 0
+          ? property.type
+              .getProperties()
+              .map((subProperty) =>
+                ConfigTypeGenerator.generateProperties(subProperty)
+              )
+          : undefined,
+    }
   }
 }
 

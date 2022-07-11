@@ -1,6 +1,7 @@
 import { CoinGecko } from '../../http-configs/src/configs/coingecko.config'
 import { getType, Type } from 'tst-reflect'
 import Clearbit from '../../http-configs/src/configs/clearbit.config'
+import Courier from '../../http-configs/src/configs/courier.config'
 
 function main() {
   // let test = eval(`CoinGecko.CoinById`)
@@ -12,12 +13,15 @@ function main() {
 
   // }
 
-  const coinGecko: Type = getType<Clearbit.LogoGet>()
+  const coinGecko: Type = getType<Courier.Send>()
+  console.log(coinGecko.baseType)
   console.log(
     coinGecko.getProperties().map((prop) => {
-      // return `${prop.name}:${prop.type.name}|${prop.optional ? '' : '*'}`
-      return prop
-    })
+      // return prop.getDecorators()
+      return `${prop.name}:${prop.type.name}|${prop.optional ? '' : '*'}`
+      // return prop.type.getProperties()
+    }),
+    { depth: 4 }
   )
 
   // const test: CoinGecko.INTERFACES[1]

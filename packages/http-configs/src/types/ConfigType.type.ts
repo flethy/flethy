@@ -3,6 +3,7 @@ export interface ConfigTypeProperty {
   type: string
   types: any
   optional: boolean
+  properties?: ConfigTypeProperty[]
 }
 
 export interface ConfigTypeInterface {
