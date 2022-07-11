@@ -18,4 +18,13 @@ const engine = new FlowEngine({
     secrets: {},
   },
 })
-engine.start()
+
+async function main() {
+  const start = Date.now()
+  await engine.start()
+  const end = Date.now()
+  console.log(end - start)
+  console.log(`-------`)
+}
+
+main()
