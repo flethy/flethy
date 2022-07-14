@@ -1,0 +1,24 @@
+# NewRelic
+
+## Links
+
+* URL: [https://newrelic.com/](https://newrelic.com/)
+* Documentation: [https://docs.newrelic.com/docs/data-apis/](https://docs.newrelic.com/docs/data-apis/)
+* Tags: web2
+* Category: analytics
+* Type: webinsights
+
+## API
+
+### Authentication
+
+* Api-Key: header
+
+### insights
+
+#### events
+
+##### Event API
+
+* Description: The Event API lets you send custom event data to New Relic. These events can then be queried and charted.
+* Docs: [https://docs.newrelic.com/docs/data-apis/ingest-apis/event-api/introduction-event-api](https://docs.newrelic.com/docs/data-apis/ingest-apis/event-api/introduction-event-api)

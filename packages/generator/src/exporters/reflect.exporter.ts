@@ -23,6 +23,7 @@ import { MailerSend } from '../../../http-configs/src/configs/mailersend.config'
 import { Mergent } from '../../../http-configs/src/configs/mergent.config'
 import { MicroDev } from '../../../http-configs/src/configs/microdev.config'
 import { Mixpanel } from '../../../http-configs/src/configs/mixpanel.config'
+import { NewRelic } from '../../../http-configs/src/configs/newrelic.config'
 import { Notion } from '../../../http-configs/src/configs/notion.config'
 import { OneInch } from '../../../http-configs/src/configs/oneinch.config'
 import { OpenLibrary } from '../../../http-configs/src/configs/openlibrary.config'
@@ -46,6 +47,7 @@ configTypes.push({type: getType<Alchemy.NftGetNFTs>(), name: 'Alchemy', interfac
 configTypes.push({type: getType<ApicAgent.Get>(), name: 'ApicAgent', interface: 'Get'})
 configTypes.push({type: getType<ApicAgent.Post>(), name: 'ApicAgent', interface: 'Post'})
 configTypes.push({type: getType<Auth0.GetAuthAccessToken>(), name: 'Auth0', interface: 'GetAuthAccessToken'})
+configTypes.push({type: getType<Auth0.GetUsersByEmail>(), name: 'Auth0', interface: 'GetUsersByEmail'})
 configTypes.push({type: getType<Auth0.ListOrSearchUsers>(), name: 'Auth0', interface: 'ListOrSearchUsers'})
 configTypes.push({type: getType<Auth0.GetUser>(), name: 'Auth0', interface: 'GetUser'})
 configTypes.push({type: getType<BrowsersFyi.Get>(), name: 'BrowsersFyi', interface: 'Get'})
@@ -120,6 +122,7 @@ configTypes.push({type: getType<MicroDev.StorageNotesList>(), name: 'MicroDev', 
 configTypes.push({type: getType<MicroDev.StorageNotesRead>(), name: 'MicroDev', interface: 'StorageNotesRead'})
 configTypes.push({type: getType<MicroDev.StorageNotesUpdate>(), name: 'MicroDev', interface: 'StorageNotesUpdate'})
 configTypes.push({type: getType<Mixpanel.TrackEvents>(), name: 'Mixpanel', interface: 'TrackEvents'})
+configTypes.push({type: getType<NewRelic.InsightsEvents>(), name: 'NewRelic', interface: 'InsightsEvents'})
 configTypes.push({type: getType<Notion.CreateDatabase>(), name: 'Notion', interface: 'CreateDatabase'})
 configTypes.push({type: getType<OneInch.AggregationInfoTokens>(), name: 'OneInch', interface: 'AggregationInfoTokens'})
 configTypes.push({type: getType<OneInch.AggregationQuote>(), name: 'OneInch', interface: 'AggregationQuote'})

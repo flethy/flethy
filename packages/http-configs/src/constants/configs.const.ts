@@ -23,6 +23,7 @@ import { MailerSend } from '../configs/mailersend.config'
 import { Mergent } from '../configs/mergent.config'
 import { MicroDev } from '../configs/microdev.config'
 import { Mixpanel } from '../configs/mixpanel.config'
+import { NewRelic } from '../configs/newrelic.config'
 import { Notion } from '../configs/notion.config'
 import { OneInch } from '../configs/oneinch.config'
 import { OpenLibrary } from '../configs/openlibrary.config'
@@ -65,6 +66,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['mergent', Mergent.API],
 ['microdev', MicroDev.API],
 ['mixpanel', Mixpanel.API],
+['newrelic', NewRelic.API],
 ['notion', Notion.API],
 ['1inch', OneInch.API],
 ['openlibrary', OpenLibrary.API],

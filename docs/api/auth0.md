@@ -19,6 +19,19 @@
 * Description: You can execute a client credentials exchange to get an access token for Auth0 Management API.
 * Docs: [https://auth0.com/docs/api/authentication](https://auth0.com/docs/api/authentication)
 
+### usersByEmail
+
+#### get
+
+##### Authentication
+
+* Authorization: header:bearer
+
+##### Search Users by Email
+
+* Description: Retrieve users by E-Mail address.
+* Docs: [https://auth0.com/docs/api/management/v2#!/Users_By_Email/get_users_by_email](https://auth0.com/docs/api/management/v2#!/Users_By_Email/get_users_by_email)
+
 ### users
 
 #### listOrSearch
