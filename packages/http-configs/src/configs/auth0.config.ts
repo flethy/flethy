@@ -6,10 +6,11 @@ import {
 import { RequestParams } from '../types/Request.types'
 
 export namespace Auth0 {
-  export type Entity = { auth: any; users: any }
+  export type Entity = { auth: any; users: any; usersByEmail: any }
   export type Endpoint =
     | { accesstoken: ApiDescriptionEndpoint }
     | { listOrSearch: ApiDescriptionEndpoint; get: ApiDescriptionEndpoint }
+    | { get: ApiDescriptionEndpoint }
 
   export interface GetAuthAccessToken extends RequestParams {
     kind: 'auth0.auth.accesstoken'
@@ -41,6 +42,13 @@ export namespace Auth0 {
   export interface GetUser extends ManagementApiBase, RequestParams {
     kind: 'auth0.users.get'
     'param:id': string
+    'query:fields'?: string
+    'query:include_fields'?: boolean
+  }
+
+  export interface GetUsersByEmail extends ManagementApiBase, RequestParams {
+    kind: 'auth0.usersByEmail.get'
+    'query:email': string
     'query:fields'?: string
     'query:include_fields'?: boolean
   }
@@ -80,6 +88,32 @@ export namespace Auth0 {
             },
             {
               name: 'token',
+              type: 'static',
+            },
+          ],
+        },
+      },
+      usersByEmail: {
+        get: {
+          interface: 'GetUsersByEmail',
+          meta: {
+            title: 'Search Users by Email',
+            description: 'Retrieve users by E-Mail address.',
+            docs: 'https://auth0.com/docs/api/management/v2#!/Users_By_Email/get_users_by_email',
+          },
+          auth: ManagementApiAuth,
+          method: 'GET',
+          paths: [
+            {
+              name: 'api',
+              type: 'static',
+            },
+            {
+              name: 'v2',
+              type: 'static',
+            },
+            {
+              name: 'users-by-email',
               type: 'static',
             },
           ],

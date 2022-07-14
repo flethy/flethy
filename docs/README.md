@@ -40,6 +40,7 @@ The following Endpoints are currently supported.
 * [Mergent](./api/mergent.md)
 * [MicroDev](./api/microdev.md)
 * [Mixpanel](./api/mixpanel.md)
+* [NewRelic](./api/newrelic.md)
 * [Notion](./api/notion.md)
 * [OpenLibrary](./api/openlibrary.md)
 * [PurgoMalum](./api/purgomalum.md)

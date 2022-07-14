@@ -22,6 +22,7 @@ import { MailerSend } from '../../http-configs/src/configs/mailersend.config'
 import { Mergent } from '../../http-configs/src/configs/mergent.config'
 import MicroDev from '../../http-configs/src/configs/microdev.config'
 import { Mixpanel } from '../../http-configs/src/configs/mixpanel.config'
+import NewRelic from '../../http-configs/src/configs/newrelic.config'
 import { Notion } from '../../http-configs/src/configs/notion.config'
 import { OneInch } from '../../http-configs/src/configs/oneinch.config'
 import OpenLibrary from '../../http-configs/src/configs/openlibrary.config'
@@ -565,6 +566,12 @@ async function main() {
       'subdomain:tenant': process.env.AUTH0_TENANT,
       'param:id': process.env.AUTH0_USER_ID,
     }),
+    auth0GetUsersByEmail: nao<Auth0.GetUsersByEmail>({
+      kind: 'auth0.usersByEmail.get',
+      'auth:Authorization': process.env.AUTH0_JWT,
+      'subdomain:tenant': process.env.AUTH0_TENANT,
+      'query:email': 'adam.urban@gmail.com',
+    }),
     redisCloudGetAccount: nao<RedisCloud.GetCurrentAccount>({
       kind: 'rediscloud.account.get',
       'auth:x-api-key': process.env.REDIS_API_ACCOUNT_KEY,
@@ -606,8 +613,20 @@ async function main() {
         template: process.env.COURIER_TEMPLATE,
       },
     }),
+    newRelicEvent: nao<NewRelic.InsightsEvents>({
+      kind: 'newrelic.insights.events',
+      baseId: 'eu',
+      'auth:Api-Key': process.env.NEWRELIC_API_KEY,
+      'param:accountId': process.env.NEWRELIC_ACCOUNT_ID,
+      'body:body': [
+        {
+          eventType: 'web3nao',
+          myType: 'tothemoon',
+        },
+      ],
+    }),
   }
-  const requestConfig = requestConfigs.auth0GetUser
+  const requestConfig = requestConfigs.newRelicEvent
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)
