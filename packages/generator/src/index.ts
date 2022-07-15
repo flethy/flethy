@@ -37,6 +37,7 @@ import Statically from '../../http-configs/src/configs/statically.config'
 import Supabase from '../../http-configs/src/configs/supabase.config'
 import { TheGraph } from '../../http-configs/src/configs/thegraph.config'
 import Trello from '../../http-configs/src/configs/trello.config'
+import Twitter from '../../http-configs/src/wip/twitter.config'
 import { Web3Storage } from '../../http-configs/src/configs/web3storage.config'
 import { ZeroX } from '../../http-configs/src/configs/zerox.config'
 import Zora from '../../http-configs/src/configs/zora.config'
@@ -681,8 +682,40 @@ async function main() {
         }
         `,
     }),
+    twitterBearerToken: nao<Twitter.AuthBearer>({
+      kind: 'twitter.auth.bearer',
+      'auth:grant_type': 'client_credentials',
+      'auth:Authorization': {
+        username: process.env.TWITTER_API_KEY,
+        password: process.env.TWITTER_API_SECRET,
+      },
+    }),
+    twitterAuthorizationCode: nao<Twitter.AuthOAuth2AuthorizationCode>({
+      kind: 'twitter.auth.oAuth2AuthorizationCode',
+      'auth:grant_type': 'refresh_token',
+      'auth:client_id': process.env.TWITTER_CLIENT_ID,
+      'auth:client_secret': process.env.TWITTER_CLIENT_SECRET,
+      'auth:refresh_token': process.env.TWITTER_REFRESH_TOKEN,
+      'header:Content-Type': 'application/x-www-form-urlencoded',
+    }),
+    twitterManagePostTweets: nao<Twitter.PostTweets>({
+      kind: 'twitter.manage.postTweets',
+      'auth:Authorization': {
+        username: process.env.TWITTER_ACCESS_TOKEN,
+        password: process.env.TWITTER_ACCESS_TOKEN_SECRET,
+      },
+      'body:text': 'nice!',
+    }),
+    twitterV1StatusUpdate: nao<Twitter.StatusUpdate>({
+      kind: 'twitter.v1status.update',
+      'auth:Authorization': {
+        username: process.env.TWITTER_ACCESS_TOKEN,
+        password: process.env.TWITTER_ACCESS_TOKEN_SECRET,
+      },
+      'query:status': 'nice!',
+    }),
   }
-  const requestConfig = requestConfigs.contentfulQueryBySpaceAndEnv
+  const requestConfig = requestConfigs.twitterV1StatusUpdate
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

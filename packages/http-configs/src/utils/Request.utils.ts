@@ -1,5 +1,6 @@
 import { FetchParams } from '../types/FetchParams.type'
 import { RequestOptions, RequestParams } from '../types/Request.types'
+import { Base64Utils } from './Base64.utils'
 import { ConfigUtils } from './Config.utils'
 
 export function nao<Params extends RequestParams>(params: Params): FetchParams {
@@ -128,6 +129,15 @@ export class HttpRequestConfig {
                 config.headers = {}
               }
               config.headers[keyname] = `Bearer ${options.params[paramKey]}`
+              break
+            case 'header:basic':
+              if (!config.headers) {
+                config.headers = {}
+              }
+              const toEncode = options.params[paramKey].password
+                ? `${options.params[paramKey].username}:${options.params[paramKey].password}`
+                : options.params[paramKey].username
+              config.headers[keyname] = `Basic ${Base64Utils.encode(toEncode)}`
               break
             case 'header:token':
               if (!config.headers) {

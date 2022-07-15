@@ -59,6 +59,7 @@ export interface ApiDescriptionAuth {
   type:
     | 'query'
     | 'header'
+    | 'header:basic'
     | 'header:bearer'
     | 'header:token'
     | 'path'
