@@ -29,6 +29,7 @@ The following Endpoints are currently supported.
 * [BrowsersFyi](./api/browsersfyi.md)
 * [Camunda](./api/camunda.md)
 * [Clearbit](./api/clearbit.md)
+* [ContentFul](./api/contentful.md)
 * [CountApi](./api/countapi.md)
 * [Courier](./api/courier.md)
 * [Disify](./api/disify.md)

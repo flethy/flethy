@@ -9,6 +9,7 @@ import CoinCap from '../../http-configs/src/configs/coincap.config'
 import { CoinGecko } from '../../http-configs/src/configs/coingecko.config'
 import Coinlayer from '../../http-configs/src/configs/coinlayer.config'
 import { CoinMarketCap } from '../../http-configs/src/configs/coinmarketcap.config'
+import ContentFul from '../../http-configs/src/configs/contentful.config'
 import CountApi from '../../http-configs/src/configs/countapi.config'
 import Courier from '../../http-configs/src/configs/courier.config'
 import { Covalent } from '../../http-configs/src/configs/covalent.config'
@@ -36,6 +37,7 @@ import Statically from '../../http-configs/src/configs/statically.config'
 import Supabase from '../../http-configs/src/configs/supabase.config'
 import { TheGraph } from '../../http-configs/src/configs/thegraph.config'
 import Trello from '../../http-configs/src/configs/trello.config'
+import Twitter from '../../http-configs/src/wip/twitter.config'
 import { Web3Storage } from '../../http-configs/src/configs/web3storage.config'
 import { ZeroX } from '../../http-configs/src/configs/zerox.config'
 import Zora from '../../http-configs/src/configs/zora.config'
@@ -625,8 +627,95 @@ async function main() {
         },
       ],
     }),
+    contentfulGetSpace: nao<ContentFul.ContentGetSpace>({
+      kind: 'contentful.content.getSpace',
+      baseId: 'cdn',
+      'auth:Authorization': process.env.CONTENTFUL_DELIVERY_API_KEY,
+      'param:spaceId': process.env.CONTENTFUL_SPACE_ID,
+    }),
+    contentfulGetSpaceContentModel: nao<ContentFul.ContentGetSpaceContentModel>(
+      {
+        kind: 'contentful.content.getSpaceContentModel',
+        baseId: 'cdn',
+        'auth:Authorization': process.env.CONTENTFUL_DELIVERY_API_KEY,
+        'param:spaceId': process.env.CONTENTFUL_SPACE_ID,
+        'param:environmentId': 'master',
+      }
+    ),
+    contentfulGetSpaceSingleContentType:
+      nao<ContentFul.ContentGetSpaceSingleContentType>({
+        kind: 'contentful.content.getSpaceSingleContentType',
+        baseId: 'cdn',
+        'auth:Authorization': process.env.CONTENTFUL_DELIVERY_API_KEY,
+        'param:spaceId': process.env.CONTENTFUL_SPACE_ID,
+        'param:environmentId': 'master',
+        'param:contentTypeId': 'product',
+      }),
+    contentfulQueryBySpace: nao<ContentFul.GraphQLbySpace>({
+      kind: 'contentful.graphql.queryBySpace',
+      baseId: 'graphql',
+      'auth:Authorization': process.env.CONTENTFUL_DELIVERY_API_KEY,
+      'param:spaceId': process.env.CONTENTFUL_SPACE_ID,
+      'body:query': `
+        {
+          productCollection {
+            items {
+              title
+            }
+          }
+        }
+        `,
+    }),
+    contentfulQueryBySpaceAndEnv: nao<ContentFul.GraphQLbySpaceAndEnvironment>({
+      kind: 'contentful.graphql.queryBySpaceAndEnvironment',
+      baseId: 'graphql',
+      'auth:Authorization': process.env.CONTENTFUL_DELIVERY_API_KEY,
+      'param:spaceId': process.env.CONTENTFUL_SPACE_ID,
+      'param:environmentId': 'master',
+      'body:query': `
+        {
+          productCollection {
+            items {
+              title
+            }
+          }
+        }
+        `,
+    }),
+    twitterBearerToken: nao<Twitter.AuthBearer>({
+      kind: 'twitter.auth.bearer',
+      'auth:grant_type': 'client_credentials',
+      'auth:Authorization': {
+        username: process.env.TWITTER_API_KEY,
+        password: process.env.TWITTER_API_SECRET,
+      },
+    }),
+    twitterAuthorizationCode: nao<Twitter.AuthOAuth2AuthorizationCode>({
+      kind: 'twitter.auth.oAuth2AuthorizationCode',
+      'auth:grant_type': 'refresh_token',
+      'auth:client_id': process.env.TWITTER_CLIENT_ID,
+      'auth:client_secret': process.env.TWITTER_CLIENT_SECRET,
+      'auth:refresh_token': process.env.TWITTER_REFRESH_TOKEN,
+      'header:Content-Type': 'application/x-www-form-urlencoded',
+    }),
+    twitterManagePostTweets: nao<Twitter.PostTweets>({
+      kind: 'twitter.manage.postTweets',
+      'auth:Authorization': {
+        username: process.env.TWITTER_ACCESS_TOKEN,
+        password: process.env.TWITTER_ACCESS_TOKEN_SECRET,
+      },
+      'body:text': 'nice!',
+    }),
+    twitterV1StatusUpdate: nao<Twitter.StatusUpdate>({
+      kind: 'twitter.v1status.update',
+      'auth:Authorization': {
+        username: process.env.TWITTER_ACCESS_TOKEN,
+        password: process.env.TWITTER_ACCESS_TOKEN_SECRET,
+      },
+      'query:status': 'nice!',
+    }),
   }
-  const requestConfig = requestConfigs.newRelicEvent
+  const requestConfig = requestConfigs.twitterV1StatusUpdate
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)
