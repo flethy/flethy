@@ -10,6 +10,7 @@ import { CoinCap } from '../../../http-configs/src/configs/coincap.config'
 import { CoinGecko } from '../../../http-configs/src/configs/coingecko.config'
 import { Coinlayer } from '../../../http-configs/src/configs/coinlayer.config'
 import { CoinMarketCap } from '../../../http-configs/src/configs/coinmarketcap.config'
+import { ContentFul } from '../../../http-configs/src/configs/contentful.config'
 import { CountApi } from '../../../http-configs/src/configs/countapi.config'
 import { Courier } from '../../../http-configs/src/configs/courier.config'
 import { Covalent } from '../../../http-configs/src/configs/covalent.config'
@@ -80,6 +81,11 @@ configTypes.push({type: getType<Coinlayer.GetList>(), name: 'Coinlayer', interfa
 configTypes.push({type: getType<Coinlayer.GetHistorical>(), name: 'Coinlayer', interface: 'GetHistorical'})
 configTypes.push({type: getType<CoinMarketCap.CryptocurrencyListingsHistorical>(), name: 'CoinMarketCap', interface: 'CryptocurrencyListingsHistorical'})
 configTypes.push({type: getType<CoinMarketCap.CryptocurrencyListingsLatest>(), name: 'CoinMarketCap', interface: 'CryptocurrencyListingsLatest'})
+configTypes.push({type: getType<ContentFul.ContentGetSpace>(), name: 'ContentFul', interface: 'ContentGetSpace'})
+configTypes.push({type: getType<ContentFul.ContentGetSpaceContentModel>(), name: 'ContentFul', interface: 'ContentGetSpaceContentModel'})
+configTypes.push({type: getType<ContentFul.ContentGetSpaceSingleContentType>(), name: 'ContentFul', interface: 'ContentGetSpaceSingleContentType'})
+configTypes.push({type: getType<ContentFul.GraphQLbySpace>(), name: 'ContentFul', interface: 'GraphQLbySpace'})
+configTypes.push({type: getType<ContentFul.GraphQLbySpaceAndEnvironment>(), name: 'ContentFul', interface: 'GraphQLbySpaceAndEnvironment'})
 configTypes.push({type: getType<CountApi.Get>(), name: 'CountApi', interface: 'Get'})
 configTypes.push({type: getType<CountApi.Set>(), name: 'CountApi', interface: 'Set'})
 configTypes.push({type: getType<CountApi.Update>(), name: 'CountApi', interface: 'Update'})

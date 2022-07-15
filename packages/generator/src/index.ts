@@ -9,6 +9,7 @@ import CoinCap from '../../http-configs/src/configs/coincap.config'
 import { CoinGecko } from '../../http-configs/src/configs/coingecko.config'
 import Coinlayer from '../../http-configs/src/configs/coinlayer.config'
 import { CoinMarketCap } from '../../http-configs/src/configs/coinmarketcap.config'
+import ContentFul from '../../http-configs/src/configs/contentful.config'
 import CountApi from '../../http-configs/src/configs/countapi.config'
 import Courier from '../../http-configs/src/configs/courier.config'
 import { Covalent } from '../../http-configs/src/configs/covalent.config'
@@ -625,8 +626,63 @@ async function main() {
         },
       ],
     }),
+    contentfulGetSpace: nao<ContentFul.ContentGetSpace>({
+      kind: 'contentful.content.getSpace',
+      baseId: 'cdn',
+      'auth:Authorization': process.env.CONTENTFUL_DELIVERY_API_KEY,
+      'param:spaceId': process.env.CONTENTFUL_SPACE_ID,
+    }),
+    contentfulGetSpaceContentModel: nao<ContentFul.ContentGetSpaceContentModel>(
+      {
+        kind: 'contentful.content.getSpaceContentModel',
+        baseId: 'cdn',
+        'auth:Authorization': process.env.CONTENTFUL_DELIVERY_API_KEY,
+        'param:spaceId': process.env.CONTENTFUL_SPACE_ID,
+        'param:environmentId': 'master',
+      }
+    ),
+    contentfulGetSpaceSingleContentType:
+      nao<ContentFul.ContentGetSpaceSingleContentType>({
+        kind: 'contentful.content.getSpaceSingleContentType',
+        baseId: 'cdn',
+        'auth:Authorization': process.env.CONTENTFUL_DELIVERY_API_KEY,
+        'param:spaceId': process.env.CONTENTFUL_SPACE_ID,
+        'param:environmentId': 'master',
+        'param:contentTypeId': 'product',
+      }),
+    contentfulQueryBySpace: nao<ContentFul.GraphQLbySpace>({
+      kind: 'contentful.graphql.queryBySpace',
+      baseId: 'graphql',
+      'auth:Authorization': process.env.CONTENTFUL_DELIVERY_API_KEY,
+      'param:spaceId': process.env.CONTENTFUL_SPACE_ID,
+      'body:query': `
+        {
+          productCollection {
+            items {
+              title
+            }
+          }
+        }
+        `,
+    }),
+    contentfulQueryBySpaceAndEnv: nao<ContentFul.GraphQLbySpaceAndEnvironment>({
+      kind: 'contentful.graphql.queryBySpaceAndEnvironment',
+      baseId: 'graphql',
+      'auth:Authorization': process.env.CONTENTFUL_DELIVERY_API_KEY,
+      'param:spaceId': process.env.CONTENTFUL_SPACE_ID,
+      'param:environmentId': 'master',
+      'body:query': `
+        {
+          productCollection {
+            items {
+              title
+            }
+          }
+        }
+        `,
+    }),
   }
-  const requestConfig = requestConfigs.newRelicEvent
+  const requestConfig = requestConfigs.contentfulQueryBySpaceAndEnv
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)
