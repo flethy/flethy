@@ -1,0 +1,53 @@
+{
+	"name": "flow-designer",
+	"version": "0.0.1",
+	"scripts": {
+		"start": "vite --mode dev",
+		"dev": "vite ",
+		"build:dev": "vite build --mode dev",
+		"build:int": "vite build --mode int",
+		"build:prod": "vite build --mode prod",
+		"serve": "vite preview --mode dev"
+	},
+	"dependencies": {
+		"@chakra-ui/icons": "^2.0.4",
+		"@chakra-ui/react": "^2.2.4",
+		"@chakra-ui/system": "^2.2.2",
+		"@emotion/react": "^11.9.3",
+		"@emotion/styled": "^11.9.3",
+		"framer-motion": "^6.5.1",
+		"i18next": "^21.8.14",
+		"mobx": "6.6.1",
+		"mobx-react": "7.5.2",
+		"mobx-react-lite": "^3.4.0",
+		"mobx-router": "1.0.0",
+		"mobx-state-tree": "5.1.5",
+		"mst-middlewares": "5.1.5",
+		"react": "18.2.0",
+		"react-dom": "18.2.0",
+		"react-i18next": "^11.18.1",
+		"react-icons": "^4.4.0",
+		"mobxtypes": "workspace:*",
+		"shared-types": "workspace:*"
+	},
+	"devDependencies": {
+		"@babel/core": "7.18.6",
+		"@types/node": "18.0.5",
+		"@types/react": "18.0.15",
+		"@types/react-dom": "18.0.6",
+		"@vitejs/plugin-react": "2.0.0",
+		"autoprefixer": "^10.4.7",
+		"eslint-config-custom": "workspace:*",
+		"postcss": "^8.4.14",
+		"prettier": "2.7.1",
+		"rollup-plugin-analyzer": "4.0.0",
+		"sass": "1.53.0",
+		"tailwindcss": "^3.1.6",
+		"tsconfig": "workspace:*",
+		"vite": "3.0.0",
+		"typescript": "^4.7.4"
+	},
+	"description": "",
+	"main": "vite.config.js",
+	"type": "module"
+}
