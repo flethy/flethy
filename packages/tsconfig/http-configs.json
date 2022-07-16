@@ -2,7 +2,15 @@
   "$schema": "https://json.schemastore.org/tsconfig",
   "display": "http configs",
   "extends": "./base.json",
-  "compilerOptions": {},
+  "compilerOptions": {
+    "sourceMap": true,
+    "module": "commonjs",
+    "target": "ESNext",
+    "types": ["node"],
+    "esModuleInterop": true,
+    "declaration": true,
+    "isolatedModules": false
+  },
   "include": ["src"],
   "exclude": ["node_modules"]
 }

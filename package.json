@@ -7,9 +7,14 @@
     "packages/*"
   ],
   "scripts": {
+    "=============== B U I L D ===============": "===============",
     "build": "turbo run build",
+    "=============== H T T P C O N F I G S ===============": "===============",
     "export": "turbo run export --no-cache",
     "play": "turbo run start --filter=@web3nao/generator --no-cache",
+    "=============== F L O W   D E S I G N E R ===============": "===============",
+    "start:flowdesigner": "pnpm --filter flow-designer start",
+    "=============== O T H E R ===============": "===============",
     "dev": "turbo run dev --parallel",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\""

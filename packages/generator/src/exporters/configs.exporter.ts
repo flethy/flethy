@@ -69,7 +69,7 @@ export class ConfigsExporter {
     exports.push(
       `export { HttpRequestConfig, nao } from './utils/Request.utils'`
     )
-    exports.push(`export { ConfigType } from './types/ConfigType.type'`)
+    exports.push(`export type { ConfigType } from './types/ConfigType.type'`)
     exports.push(
       `export { CONFIG_TYPES } from './configTypes/configTypes.const'`
     )
