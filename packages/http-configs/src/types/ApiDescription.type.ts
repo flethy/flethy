@@ -68,6 +68,11 @@ export interface ApiDescriptionAuth {
   authHandler?: (fetchParams: FetchParams, authValue: string) => void
 }
 
+export interface ApiAuthBasic {
+  username: string
+  password?: string
+}
+
 export interface ApiDescriptionBase {
   id: string
   url: string

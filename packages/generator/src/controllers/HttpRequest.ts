@@ -5,6 +5,7 @@ import {
   quicktype,
 } from 'quicktype-core'
 import { FetchParams } from '../../../http-configs/src/types/FetchParams.type'
+import { logger } from '../utils/Logger'
 
 export class HttpRequest {
   public static async request(params: FetchParams) {
@@ -15,10 +16,14 @@ export class HttpRequest {
       data: params.body,
     }
 
-    const response = await axios(axiosConfig)
+    try {
+      const response = await axios(axiosConfig)
 
-    const data = response.data
-    return data
+      const data = response.data
+      return data
+    } catch (error) {
+      logger.error(error.message)
+    }
   }
 
   public static async quicktypeJson(typeName: string, json: string) {

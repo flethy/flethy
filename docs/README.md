@@ -35,6 +35,7 @@ The following Endpoints are currently supported.
 * [Disify](./api/disify.md)
 * [Frankfurter](./api/frankfurter.md)
 * [Github](./api/github.md)
+* [HelloSign](./api/hellosign.md)
 * [Hubspot](./api/hubspot.md)
 * [MailCheckAi](./api/mailcheckai.md)
 * [MailerSend](./api/mailersend.md)

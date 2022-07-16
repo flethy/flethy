@@ -45,6 +45,7 @@ import { FetchParams } from '../../http-configs/src/types/FetchParams.type'
 import { nao } from '../../http-configs/src/utils/Request.utils'
 import { HttpRequest } from './controllers/HttpRequest'
 import { logger } from './utils/Logger'
+import HelloSign from '../../http-configs/src/configs/hellosign.config'
 
 async function main() {
   const requestConfigs: {
@@ -682,40 +683,60 @@ async function main() {
         }
         `,
     }),
-    twitterBearerToken: nao<Twitter.AuthBearer>({
-      kind: 'twitter.auth.bearer',
-      'auth:grant_type': 'client_credentials',
+    // twitterBearerToken: nao<Twitter.AuthBearer>({
+    //   kind: 'twitter.auth.bearer',
+    //   'auth:grant_type': 'client_credentials',
+    //   'auth:Authorization': {
+    //     username: process.env.TWITTER_API_KEY,
+    //     password: process.env.TWITTER_API_SECRET,
+    //   },
+    // }),
+    // twitterAuthorizationCode: nao<Twitter.AuthOAuth2AuthorizationCode>({
+    //   kind: 'twitter.auth.oAuth2AuthorizationCode',
+    //   'auth:grant_type': 'refresh_token',
+    //   'auth:client_id': process.env.TWITTER_CLIENT_ID,
+    //   'auth:client_secret': process.env.TWITTER_CLIENT_SECRET,
+    //   'auth:refresh_token': process.env.TWITTER_REFRESH_TOKEN,
+    //   'header:Content-Type': 'application/x-www-form-urlencoded',
+    // }),
+    // twitterManagePostTweets: nao<Twitter.PostTweets>({
+    //   kind: 'twitter.manage.postTweets',
+    //   'auth:Authorization': {
+    //     username: process.env.TWITTER_ACCESS_TOKEN,
+    //     password: process.env.TWITTER_ACCESS_TOKEN_SECRET,
+    //   },
+    //   'body:text': 'nice!',
+    // }),
+    // twitterV1StatusUpdate: nao<Twitter.StatusUpdate>({
+    //   kind: 'twitter.v1status.update',
+    //   'auth:Authorization': {
+    //     username: process.env.TWITTER_ACCESS_TOKEN,
+    //     password: process.env.TWITTER_ACCESS_TOKEN_SECRET,
+    //   },
+    //   'query:status': 'nice!',
+    // }),
+    helloSignGetAccount: nao<HelloSign.GetAccount>({
+      kind: 'hellosign.account.get',
       'auth:Authorization': {
-        username: process.env.TWITTER_API_KEY,
-        password: process.env.TWITTER_API_SECRET,
+        username: process.env.HELLOSIGN_API_KEY,
       },
     }),
-    twitterAuthorizationCode: nao<Twitter.AuthOAuth2AuthorizationCode>({
-      kind: 'twitter.auth.oAuth2AuthorizationCode',
-      'auth:grant_type': 'refresh_token',
-      'auth:client_id': process.env.TWITTER_CLIENT_ID,
-      'auth:client_secret': process.env.TWITTER_CLIENT_SECRET,
-      'auth:refresh_token': process.env.TWITTER_REFRESH_TOKEN,
-      'header:Content-Type': 'application/x-www-form-urlencoded',
-    }),
-    twitterManagePostTweets: nao<Twitter.PostTweets>({
-      kind: 'twitter.manage.postTweets',
+    helloSignSignatureRequest: nao<HelloSign.SendSignatureRequest>({
+      kind: 'hellosign.signatureRequest.send',
       'auth:Authorization': {
-        username: process.env.TWITTER_ACCESS_TOKEN,
-        password: process.env.TWITTER_ACCESS_TOKEN_SECRET,
+        username: process.env.HELLOSIGN_API_KEY,
       },
-      'body:text': 'nice!',
-    }),
-    twitterV1StatusUpdate: nao<Twitter.StatusUpdate>({
-      kind: 'twitter.v1status.update',
-      'auth:Authorization': {
-        username: process.env.TWITTER_ACCESS_TOKEN,
-        password: process.env.TWITTER_ACCESS_TOKEN_SECRET,
-      },
-      'query:status': 'nice!',
+      signers: [
+        {
+          name: 'Adam',
+          email_address: 'adam.urban@gmail.com',
+        },
+      ],
+      file_url: ['https://web3nao.xyz'],
+      test_mode: true,
     }),
   }
-  const requestConfig = requestConfigs.twitterV1StatusUpdate
+  const requestConfig = requestConfigs.helloSignSignatureRequest
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

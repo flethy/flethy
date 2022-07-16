@@ -136,7 +136,7 @@ export class HttpRequestConfig {
               }
               const toEncode = options.params[paramKey].password
                 ? `${options.params[paramKey].username}:${options.params[paramKey].password}`
-                : options.params[paramKey].username
+                : `${options.params[paramKey].username}:`
               config.headers[keyname] = `Basic ${Base64Utils.encode(toEncode)}`
               break
             case 'header:token':

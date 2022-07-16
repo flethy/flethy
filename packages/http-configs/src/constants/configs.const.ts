@@ -18,6 +18,7 @@ import { Disify } from '../configs/disify.config'
 import { Etherscan } from '../configs/etherscan.config'
 import { Frankfurter } from '../configs/frankfurter.config'
 import { Github } from '../configs/github.config'
+import { HelloSign } from '../configs/hellosign.config'
 import { Hubspot } from '../configs/hubspot.config'
 import { MailCheckAi } from '../configs/mailcheckai.config'
 import { MailerSend } from '../configs/mailersend.config'
@@ -62,6 +63,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['etherscan', Etherscan.API],
 ['frankfurter', Frankfurter.API],
 ['github', Github.API],
+['hellosign', HelloSign.API],
 ['hubspot', Hubspot.API],
 ['mailcheckai', MailCheckAi.API],
 ['mailersend', MailerSend.API],
