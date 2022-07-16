@@ -2,13 +2,14 @@ import { Route } from 'mobx-router'
 import { RootStore } from './models/root'
 import NotFoundPage from './pages/404/page'
 import CatsPage from './pages/cats/page'
+import FlowPage from './pages/flow/page'
 
 export default {
 	home: new Route<RootStore>({
 		path: '/',
-		component: <CatsPage />,
+		component: <FlowPage />,
 		onEnter(_route, _parameters, { root: { pages } }) {
-			pages.cats.initialisePage()
+			pages.flow.initialisePage()
 		},
 	}),
 
@@ -17,6 +18,14 @@ export default {
 		component: <CatsPage />,
 		onEnter(_route, _parameters, { root: { pages } }) {
 			pages.cats.initialisePage()
+		},
+	}),
+
+	flow: new Route<RootStore>({
+		path: '/flow',
+		component: <FlowPage />,
+		onEnter(_route, _parameters, { root: { pages } }) {
+			pages.flow.initialisePage()
 		},
 	}),
 

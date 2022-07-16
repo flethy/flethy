@@ -3,11 +3,13 @@ import { Instance, types } from 'mobx-state-tree'
 import { createContext, useContext } from 'react'
 import { NotFoundPage } from '../pages/404/model'
 import { CatsPage } from '../pages/cats/model'
+import { FlowPage } from '../pages/flow/model'
 import ApiStore, { APIType } from './api'
 
 const PagesStore = types.model('Pages', {
 	notFound: types.optional(NotFoundPage, () => NotFoundPage.create()),
 	cats: types.optional(CatsPage, () => CatsPage.create()),
+	flow: types.optional(FlowPage, () => FlowPage.create()),
 })
 
 export const RealRootModel = types.model('Root', {
