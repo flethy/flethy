@@ -1,0 +1,24 @@
+# AbstractApi
+
+## Links
+
+* URL: [https://www.abstractapi.com/](https://www.abstractapi.com/)
+* Documentation: [https://www.abstractapi.com/api](https://www.abstractapi.com/api)
+* Tags: web2
+* Category: utils
+* Type: calendar
+
+## API
+
+### publicHolidays
+
+#### get
+
+##### Authentication
+
+* api_key: query
+
+##### Holidays API
+
+* Description: The Public Holiday API allows you to gett the public, local, religious, and other holidays of a particular country.
+* Docs: [https://app.abstractapi.com/api/holidays/documentation](https://app.abstractapi.com/api/holidays/documentation)

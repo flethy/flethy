@@ -46,6 +46,8 @@ import { nao } from '../../http-configs/src/utils/Request.utils'
 import { HttpRequest } from './controllers/HttpRequest'
 import { logger } from './utils/Logger'
 import HelloSign from '../../http-configs/src/configs/hellosign.config'
+import AbstractApi from '../../http-configs/src/configs/abstractapi.config'
+import Calendarific from '../../http-configs/src/configs/calendarific.config'
 
 async function main() {
   const requestConfigs: {
@@ -735,8 +737,24 @@ async function main() {
       file_url: ['https://web3nao.xyz'],
       test_mode: true,
     }),
+    abstractHolidays: nao<AbstractApi.GetPublicHolidays>({
+      kind: 'abstractapi.publicHolidays.get',
+      'auth:api_key': process.env.ABSTRACT_HOLIDAY_API_KEY,
+      'query:country': 'DE',
+      'query:year': 2022,
+      'query:month': 10,
+      'query:day': 3,
+    }),
+    calendarificHolidays: nao<Calendarific.GetHolidays>({
+      kind: 'calendarific.core.holidays',
+      'auth:api_key': process.env.CALENDARIFIC_API_KEY,
+      'query:country': 'DE',
+      'query:year': 2022,
+      'query:month': 10,
+      'query:day': 3,
+    }),
   }
-  const requestConfig = requestConfigs.helloSignSignatureRequest
+  const requestConfig = requestConfigs.calendarificHolidays
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

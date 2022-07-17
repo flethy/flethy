@@ -1,9 +1,11 @@
 import { getType, Type } from 'tst-reflect'
+import { AbstractApi } from '../../../http-configs/src/configs/abstractapi.config'
 import { Airtable } from '../../../http-configs/src/configs/airtable.config'
 import { Alchemy } from '../../../http-configs/src/configs/alchemy.config'
 import { ApicAgent } from '../../../http-configs/src/configs/apicagent.config'
 import { Auth0 } from '../../../http-configs/src/configs/auth0.config'
 import { BrowsersFyi } from '../../../http-configs/src/configs/browsersfyi.config'
+import { Calendarific } from '../../../http-configs/src/configs/calendarific.config'
 import { Camunda } from '../../../http-configs/src/configs/camunda.config'
 import { Clearbit } from '../../../http-configs/src/configs/clearbit.config'
 import { CoinCap } from '../../../http-configs/src/configs/coincap.config'
@@ -43,6 +45,7 @@ import { Web3Storage } from '../../../http-configs/src/configs/web3storage.confi
 import { ZeroX } from '../../../http-configs/src/configs/zerox.config'
 import { Zora } from '../../../http-configs/src/configs/zora.config'
 export const configTypes: Array<{type: Type; name: string; interface: string}> = []
+configTypes.push({type: getType<AbstractApi.GetPublicHolidays>(), name: 'AbstractApi', interface: 'GetPublicHolidays'})
 configTypes.push({type: getType<Airtable.ListTableRecords>(), name: 'Airtable', interface: 'ListTableRecords'})
 configTypes.push({type: getType<Airtable.CreateTableRecords>(), name: 'Airtable', interface: 'CreateTableRecords'})
 configTypes.push({type: getType<Alchemy.NftGetNFTs>(), name: 'Alchemy', interface: 'NftGetNFTs'})
@@ -53,6 +56,9 @@ configTypes.push({type: getType<Auth0.GetUsersByEmail>(), name: 'Auth0', interfa
 configTypes.push({type: getType<Auth0.ListOrSearchUsers>(), name: 'Auth0', interface: 'ListOrSearchUsers'})
 configTypes.push({type: getType<Auth0.GetUser>(), name: 'Auth0', interface: 'GetUser'})
 configTypes.push({type: getType<BrowsersFyi.Get>(), name: 'BrowsersFyi', interface: 'Get'})
+configTypes.push({type: getType<Calendarific.GetHolidays>(), name: 'Calendarific', interface: 'GetHolidays'})
+configTypes.push({type: getType<Calendarific.GetCountries>(), name: 'Calendarific', interface: 'GetCountries'})
+configTypes.push({type: getType<Calendarific.GetLanguages>(), name: 'Calendarific', interface: 'GetLanguages'})
 configTypes.push({type: getType<Camunda.ConsoleToken>(), name: 'Camunda', interface: 'ConsoleToken'})
 configTypes.push({type: getType<Camunda.ConsoleGetClusters>(), name: 'Camunda', interface: 'ConsoleGetClusters'})
 configTypes.push({type: getType<Camunda.ConsoleGetClustersParameters>(), name: 'Camunda', interface: 'ConsoleGetClustersParameters'})

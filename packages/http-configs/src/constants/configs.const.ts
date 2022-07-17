@@ -1,9 +1,11 @@
 import { ApiDescription } from '../types/ApiDescription.type'
+import { AbstractApi } from '../configs/abstractapi.config'
 import { Airtable } from '../configs/airtable.config'
 import { Alchemy } from '../configs/alchemy.config'
 import { ApicAgent } from '../configs/apicagent.config'
 import { Auth0 } from '../configs/auth0.config'
 import { BrowsersFyi } from '../configs/browsersfyi.config'
+import { Calendarific } from '../configs/calendarific.config'
 import { Camunda } from '../configs/camunda.config'
 import { Clearbit } from '../configs/clearbit.config'
 import { CoinCap } from '../configs/coincap.config'
@@ -44,11 +46,13 @@ import { ZeroX } from '../configs/zerox.config'
 import { Zora } from '../configs/zora.config'
 
 export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, ApiDescription<any, any>>([
+['abstractapi', AbstractApi.API],
 ['airtable', Airtable.API],
 ['alchemy', Alchemy.API],
 ['apicagent', ApicAgent.API],
 ['auth0', Auth0.API],
 ['browsersfyi', BrowsersFyi.API],
+['calendarific', Calendarific.API],
 ['camunda', Camunda.API],
 ['clearbit', Clearbit.API],
 ['coincap', CoinCap.API],
