@@ -5,6 +5,7 @@ import { Alchemy } from '../configs/alchemy.config'
 import { ApicAgent } from '../configs/apicagent.config'
 import { Auth0 } from '../configs/auth0.config'
 import { BrowsersFyi } from '../configs/browsersfyi.config'
+import { Calendarific } from '../configs/calendarific.config'
 import { Camunda } from '../configs/camunda.config'
 import { Clearbit } from '../configs/clearbit.config'
 import { CoinCap } from '../configs/coincap.config'
@@ -51,6 +52,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['apicagent', ApicAgent.API],
 ['auth0', Auth0.API],
 ['browsersfyi', BrowsersFyi.API],
+['calendarific', Calendarific.API],
 ['camunda', Camunda.API],
 ['clearbit', Clearbit.API],
 ['coincap', CoinCap.API],

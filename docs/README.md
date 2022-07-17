@@ -28,6 +28,7 @@ The following Endpoints are currently supported.
 * [ApicAgent](./api/apicagent.md)
 * [Auth0](./api/auth0.md)
 * [BrowsersFyi](./api/browsersfyi.md)
+* [Calendarific](./api/calendarific.md)
 * [Camunda](./api/camunda.md)
 * [Clearbit](./api/clearbit.md)
 * [ContentFul](./api/contentful.md)

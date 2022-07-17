@@ -47,6 +47,7 @@ import { HttpRequest } from './controllers/HttpRequest'
 import { logger } from './utils/Logger'
 import HelloSign from '../../http-configs/src/configs/hellosign.config'
 import AbstractApi from '../../http-configs/src/configs/abstractapi.config'
+import Calendarific from '../../http-configs/src/configs/calendarific.config'
 
 async function main() {
   const requestConfigs: {
@@ -744,8 +745,16 @@ async function main() {
       'query:month': 10,
       'query:day': 3,
     }),
+    calendarificHolidays: nao<Calendarific.GetHolidays>({
+      kind: 'calendarific.core.holidays',
+      'auth:api_key': process.env.CALENDARIFIC_API_KEY,
+      'query:country': 'DE',
+      'query:year': 2022,
+      'query:month': 10,
+      'query:day': 3,
+    }),
   }
-  const requestConfig = requestConfigs.abstractHolidays
+  const requestConfig = requestConfigs.calendarificHolidays
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

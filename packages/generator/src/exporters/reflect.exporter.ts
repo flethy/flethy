@@ -5,6 +5,7 @@ import { Alchemy } from '../../../http-configs/src/configs/alchemy.config'
 import { ApicAgent } from '../../../http-configs/src/configs/apicagent.config'
 import { Auth0 } from '../../../http-configs/src/configs/auth0.config'
 import { BrowsersFyi } from '../../../http-configs/src/configs/browsersfyi.config'
+import { Calendarific } from '../../../http-configs/src/configs/calendarific.config'
 import { Camunda } from '../../../http-configs/src/configs/camunda.config'
 import { Clearbit } from '../../../http-configs/src/configs/clearbit.config'
 import { CoinCap } from '../../../http-configs/src/configs/coincap.config'
@@ -55,6 +56,9 @@ configTypes.push({type: getType<Auth0.GetUsersByEmail>(), name: 'Auth0', interfa
 configTypes.push({type: getType<Auth0.ListOrSearchUsers>(), name: 'Auth0', interface: 'ListOrSearchUsers'})
 configTypes.push({type: getType<Auth0.GetUser>(), name: 'Auth0', interface: 'GetUser'})
 configTypes.push({type: getType<BrowsersFyi.Get>(), name: 'BrowsersFyi', interface: 'Get'})
+configTypes.push({type: getType<Calendarific.GetHolidays>(), name: 'Calendarific', interface: 'GetHolidays'})
+configTypes.push({type: getType<Calendarific.GetCountries>(), name: 'Calendarific', interface: 'GetCountries'})
+configTypes.push({type: getType<Calendarific.GetLanguages>(), name: 'Calendarific', interface: 'GetLanguages'})
 configTypes.push({type: getType<Camunda.ConsoleToken>(), name: 'Camunda', interface: 'ConsoleToken'})
 configTypes.push({type: getType<Camunda.ConsoleGetClusters>(), name: 'Camunda', interface: 'ConsoleGetClusters'})
 configTypes.push({type: getType<Camunda.ConsoleGetClustersParameters>(), name: 'Camunda', interface: 'ConsoleGetClustersParameters'})
