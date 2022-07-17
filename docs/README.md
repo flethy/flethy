@@ -23,6 +23,7 @@ The following Endpoints are currently supported.
 
 ### Web2
 
+* [AbstractApi](./api/abstractapi.md)
 * [Airtable](./api/airtable.md)
 * [ApicAgent](./api/apicagent.md)
 * [Auth0](./api/auth0.md)

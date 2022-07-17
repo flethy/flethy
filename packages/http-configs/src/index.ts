@@ -1,3 +1,4 @@
+export { AbstractApi } from './configs/abstractapi.config'
 export { Airtable } from './configs/airtable.config'
 export { Alchemy } from './configs/alchemy.config'
 export { ApicAgent } from './configs/apicagent.config'
