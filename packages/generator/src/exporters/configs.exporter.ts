@@ -33,6 +33,8 @@ const INDEX_FILE = path.join(
   'src',
   'index.ts'
 )
+// API COUNT
+const API_COUNT_FILE = path.join(__dirname, '..', '..', 'data.json')
 
 export class ConfigsExporter {
   public static async export() {
@@ -43,6 +45,7 @@ export class ConfigsExporter {
     const mapEntries: string[] = []
 
     const files = fs.readdirSync(CONFIGS_DIR)
+    const dataJsonContent = { apicount: files.length }
     for (const file of files) {
       if (file.split('.')[1] !== 'config') {
         continue
@@ -87,5 +90,7 @@ export class ConfigsExporter {
     logger.info(`Writing exports...`)
     fs.writeFileSync(INDEX_FILE, exports.join('\n'))
     logger.info(`Exported ${files.length} configs.`)
+    logger.info(`Writing data json...`)
+    fs.writeFileSync(API_COUNT_FILE, JSON.stringify(dataJsonContent))
   }
 }

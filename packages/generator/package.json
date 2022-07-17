@@ -6,9 +6,10 @@
   "main": "index.ts",
   "scripts": {
     "start": "NODE_ENV=local ts-node ./src/index.ts",
-    "export": "npm run exportexec && npm run reflectgen",
+    "export": "npm run exportexec && npm run reflectgen && npm run updateapicount",
     "exportexec": "NODE_ENV=local ts-node ./src/export.ts",
-    "reflectgen": "NODE_ENV=local ts-node -P tsconfig-tt.json ./src/exporters/reflect.generator.ts"
+    "reflectgen": "NODE_ENV=local ts-node -P tsconfig-tt.json ./src/exporters/reflect.generator.ts",
+    "updateapicount": "mustache data.json ../http-configs/README.md.template > ../http-configs/README.md"
   },
   "author": "adam.urban@gmail.com",
   "license": "ISC",
@@ -33,10 +34,11 @@
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-prettier": "^4.0.0",
     "jest": "^28.1.1",
+    "mustache": "^4.2.0",
     "pino-pretty": "^8.1.0",
     "prettier": "2.7.1",
-    "tsconfig": "workspace:*",
     "ts-node": "^10.8.1",
+    "tsconfig": "workspace:*",
     "tst-reflect-transformer": "^0.9.10",
     "ttypescript": "^1.5.13",
     "typescript": "^4.7.4"

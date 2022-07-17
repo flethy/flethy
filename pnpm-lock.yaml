@@ -147,6 +147,7 @@ importers:
       eslint-plugin-import: ^2.26.0
       eslint-plugin-prettier: ^4.0.0
       jest: ^28.1.1
+      mustache: ^4.2.0
       node-fetch: ^3.2.6
       pino: ^8.1.0
       pino-pretty: ^8.1.0
@@ -179,6 +180,7 @@ importers:
       eslint-plugin-import: 2.26.0_zgg5sxdhnxsuz2d3vdnwdtmcnu
       eslint-plugin-prettier: 4.0.0_xu6ewijrtliw5q5lksq5uixwby
       jest: 28.1.1_jbmz3vlfopghb5mdasddsdxfzq
+      mustache: 4.2.0
       pino-pretty: 8.1.0
       prettier: 2.7.1
       ts-node: 10.8.1_qiyc72axg2v44xl4yovan2v55u
@@ -5276,6 +5278,11 @@ packages:
     dependencies:
       mobx-state-tree: 5.1.5_mobx@6.6.1
     dev: false
+
+  /mustache/4.2.0:
+    resolution: {integrity: sha512-71ippSywq5Yb7/tVYyGbkBggbU8H3u5Rz56fH60jGFgr8uHwxs+aSKeqmluIVzM0m0kB7xQjKS6qPfd0b2ZoqQ==}
+    hasBin: true
+    dev: true
 
   /nanoid/3.3.4:
     resolution: {integrity: sha512-MqBkQh/OHTS2egovRtLk45wEyNXwF+cokD+1YPf9u5VfJiRdAiRwB2froX5Co9Rh20xs4siNPm8naNotSD6RBw==}
