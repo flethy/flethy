@@ -1,26 +1,19 @@
-import { observer } from 'mobx-react-lite'
-import { useMst } from '../../models/root'
-import ReactFlow, {
-	MiniMap,
-	Controls,
-	useNodesState,
-	useEdgesState,
-	applyEdgeChanges,
-	applyNodeChanges,
-} from 'react-flow-renderer'
-import { Button } from '@chakra-ui/react'
+import {
+	Box,
+	Button,
+	Drawer,
+	DrawerBody,
+	DrawerCloseButton,
+	DrawerContent,
+	DrawerFooter,
+	DrawerHeader,
+	DrawerOverlay,
+	Input,
+} from '@chakra-ui/react'
 import { CONFIG_TYPES } from '@web3nao/http-configs'
-
-const flowKey = 'example-flow'
-
-const getNodeId = () => `randomnode_${+new Date()}`
-
-const initialNodes = [
-	{ id: '1', data: { label: 'Node 1' }, position: { x: 100, y: 100 } },
-	{ id: '2', data: { label: 'Node 2' }, position: { x: 100, y: 200 } },
-]
-
-const initialEdges = [{ id: 'e1-2', source: '1', target: '2' }]
+import { observer } from 'mobx-react-lite'
+import ReactFlow, { Controls, MiniMap } from 'react-flow-renderer'
+import { useMst } from '../../models/root'
 
 export default observer(() => {
 	const {
@@ -33,8 +26,8 @@ export default observer(() => {
 	const web3naoInterfaces = web3nao?.interfaces ?? []
 
 	return (
-		<>
-			<div>
+		<Box style={{ width: '100%', height: '100vh' }}>
+			{/* <div>
 				{web3naoInterfaces.length > 0 &&
 					web3naoInterfaces[0].properties.map((currentProp) => (
 						<div>
@@ -45,24 +38,51 @@ export default observer(() => {
 							| {currentProp.optional === true ? 'optional' : 'mandatory'}
 						</div>
 					))}
-			</div>
+			</div> */}
 			<Button onClick={() => page.addNode()}>Add Node</Button>
+			<Button
+				onClick={() => page.openConfig()}
+				disabled={page.selectedNodes.length !== 1}
+			>
+				Open Config
+			</Button>
 			<ReactFlow
 				nodes={page.getNodes()}
 				edges={page.getEdges()}
-				style={{ width: '500px', height: '500px' }}
+				style={{ width: '100%', height: '100%' }}
+				// fitView
 				onNodesChange={(event) => {
 					page.onNodesChange(event)
-					// applyNodeChanges(event, page.nodes)
 				}}
 				onEdgesChange={(event: any) => page.onEdgeChange(event)}
-				// onConnect={onConnect}
 				onConnect={(event) => page.onConnect(event)}
 			>
 				<MiniMap />
 				<Controls />
 			</ReactFlow>
-		</>
+			<Drawer
+				isOpen={page.config.isOpen}
+				placement="right"
+				onClose={() => page.closeConfig()}
+			>
+				<DrawerOverlay />
+				<DrawerContent>
+					<DrawerCloseButton />
+					<DrawerHeader>Selected: {page.config.nodeId}</DrawerHeader>
+
+					<DrawerBody>
+						<Input placeholder="Type here..." />
+					</DrawerBody>
+
+					<DrawerFooter>
+						<Button variant="outline" mr={3} onClick={() => page.closeConfig()}>
+							Cancel
+						</Button>
+						<Button colorScheme="blue">Save</Button>
+					</DrawerFooter>
+				</DrawerContent>
+			</Drawer>
+		</Box>
 	)
 })
 
