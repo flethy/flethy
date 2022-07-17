@@ -5,6 +5,7 @@ import { NotFoundPage } from '../pages/404/model'
 import { CatsPage } from '../pages/cats/model'
 import { FlowPage } from '../pages/flow/model'
 import ApiStore, { APIType } from './api'
+import { Flow } from './flow'
 
 const PagesStore = types.model('Pages', {
 	notFound: types.optional(NotFoundPage, () => NotFoundPage.create()),
@@ -15,11 +16,13 @@ const PagesStore = types.model('Pages', {
 export const RealRootModel = types.model('Root', {
 	api: types.optional(ApiStore, () => ApiStore.create()),
 	pages: types.optional(PagesStore, () => PagesStore.create()),
+	flow: types.optional(Flow, () => Flow.create()),
 })
 
 export type RealRootModelInstance = Instance<{
 	api: APIType
 	pages: Instance<typeof PagesStore>
+	flow: Instance<typeof Flow>
 }>
 
 export class RootStore {
@@ -27,6 +30,7 @@ export class RootStore {
 	public root: {
 		api: Instance<typeof ApiStore>
 		pages: Instance<typeof PagesStore>
+		flow: Instance<typeof Flow>
 	}
 
 	constructor() {
