@@ -14,14 +14,21 @@ import ReactFlow, {
 } from 'react-flow-renderer'
 
 export const FlowPage = types
-	.model('CatsPage', {
+	.model('FlowPage', {
+		config: types.optional(
+			types.model({
+				nodeId: types.string,
+				isOpen: types.boolean,
+			}),
+			{ nodeId: '-1', isOpen: false },
+		),
 		data: types.optional(
 			types.model({
 				test: types.optional(types.string, ''),
+				test2: types.optional(types.model({}), {}),
 			}),
 			{},
 		),
-		nnodes: types.frozen<Node[]>(),
 		nodes: types.array(
 			types.model({
 				id: types.string,
@@ -41,34 +48,51 @@ export const FlowPage = types
 				target: types.string,
 			}),
 		),
+		selectedNodes: types.array(types.string),
 	})
+	.actions((self) => ({
+		openConfig: (id?: string) => {
+			const selectedId = id ?? self.selectedNodes[0]
+			self.config.nodeId = selectedId
+			self.config.isOpen = true
+		},
+
+		closeConfig: () => {
+			self.config.nodeId = ''
+			self.config.isOpen = false
+		},
+	}))
 	.actions((self) => ({
 		// INITIALIZATION
 		initialisePage() {
 			self.data.test = 'test'
+			self.data.test2 = {}
 			self.nodes = cast([
 				{ id: '1', data: { label: 'Node yay' }, position: { x: 100, y: 100 } },
 				{ id: '2', data: { label: 'Node 2' }, position: { x: 100, y: 200 } },
 			])
 			self.edges = cast([{ id: 'e1-2', source: '1', target: '2' }])
-		},
-
-		updateFirstNode() {
-			self.nodes[0].position.x += 50
+			self.config = cast({
+				nodeId: '-1',
+				isOpen: false,
+			})
 		},
 
 		onNodesChange: (changes: NodeChange[]) => {
 			const updatedNodes = applyNodeChanges(changes, self.nodes)
+			self.selectedNodes.clear()
 			for (const updatedNode of updatedNodes) {
+				if (updatedNode.selected === true) {
+					console.log(updatedNode)
+					self.selectedNodes.push(updatedNode.id)
+				}
 				for (const node of self.nodes) {
 					if (updatedNode.id === node.id) {
-						// console.log(`changing node ${node.id}`)
 						node.position.x = updatedNode.position.x
 						node.position.y = updatedNode.position.y
 					}
 				}
 			}
-			// self.nodes.push(...updatedNodes)
 		},
 
 		onEdgeChange: (changes: any[]) => {
@@ -81,7 +105,6 @@ export const FlowPage = types
 		},
 
 		onConnect: (connection: Connection) => {
-			// applyEdgeChanges()
 			self.edges.push({
 				id: `${connection.source}-${connection.target}`,
 				source: String(connection.source),
@@ -103,6 +126,7 @@ export const FlowPage = types
 					y: 50,
 				},
 			})
+			self.openConfig(newId)
 		},
 
 		removeEdge: (id: string) => {
@@ -120,13 +144,10 @@ export const FlowPage = types
 		},
 
 		getNodes() {
-			// console.log(JSON.stringify(self.nodes))
-			// return self.nodes
 			return JSON.parse(JSON.stringify(self.nodes))
 		},
 
 		getEdges() {
-			// return JSON.parse(JSON.stringify(self.edges))
 			return self.edges.map((edge) => {
 				return {
 					id: edge.id,
