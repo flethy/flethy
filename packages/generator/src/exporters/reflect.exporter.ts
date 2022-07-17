@@ -21,6 +21,7 @@ import { Etherscan } from '../../../http-configs/src/configs/etherscan.config'
 import { Frankfurter } from '../../../http-configs/src/configs/frankfurter.config'
 import { Github } from '../../../http-configs/src/configs/github.config'
 import { HelloSign } from '../../../http-configs/src/configs/hellosign.config'
+import { HostIo } from '../../../http-configs/src/configs/hostio.config'
 import { Hubspot } from '../../../http-configs/src/configs/hubspot.config'
 import { MailCheckAi } from '../../../http-configs/src/configs/mailcheckai.config'
 import { MailerSend } from '../../../http-configs/src/configs/mailersend.config'
@@ -114,6 +115,11 @@ configTypes.push({type: getType<Frankfurter.TimeSeries>(), name: 'Frankfurter', 
 configTypes.push({type: getType<Github.ListRepositoryIssues>(), name: 'Github', interface: 'ListRepositoryIssues'})
 configTypes.push({type: getType<HelloSign.GetAccount>(), name: 'HelloSign', interface: 'GetAccount'})
 configTypes.push({type: getType<HelloSign.SendSignatureRequest>(), name: 'HelloSign', interface: 'SendSignatureRequest'})
+configTypes.push({type: getType<HostIo.GetDomain>(), name: 'HostIo', interface: 'GetDomain'})
+configTypes.push({type: getType<HostIo.GetDns>(), name: 'HostIo', interface: 'GetDns'})
+configTypes.push({type: getType<HostIo.GetRelated>(), name: 'HostIo', interface: 'GetRelated'})
+configTypes.push({type: getType<HostIo.GetFull>(), name: 'HostIo', interface: 'GetFull'})
+configTypes.push({type: getType<HostIo.GetByFieldValue>(), name: 'HostIo', interface: 'GetByFieldValue'})
 configTypes.push({type: getType<Hubspot.OAuthToken>(), name: 'Hubspot', interface: 'OAuthToken'})
 configTypes.push({type: getType<Hubspot.FormsSubmit>(), name: 'Hubspot', interface: 'FormsSubmit'})
 configTypes.push({type: getType<Hubspot.ContactsCreateOrUpdate>(), name: 'Hubspot', interface: 'ContactsCreateOrUpdate'})

@@ -38,6 +38,7 @@ The following Endpoints are currently supported.
 * [Frankfurter](./api/frankfurter.md)
 * [Github](./api/github.md)
 * [HelloSign](./api/hellosign.md)
+* [HostIo](./api/hostio.md)
 * [Hubspot](./api/hubspot.md)
 * [MailCheckAi](./api/mailcheckai.md)
 * [MailerSend](./api/mailersend.md)

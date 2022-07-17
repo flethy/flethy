@@ -48,6 +48,7 @@ import { logger } from './utils/Logger'
 import HelloSign from '../../http-configs/src/configs/hellosign.config'
 import AbstractApi from '../../http-configs/src/configs/abstractapi.config'
 import Calendarific from '../../http-configs/src/configs/calendarific.config'
+import HostIo from '../../http-configs/src/configs/hostio.config'
 
 async function main() {
   const requestConfigs: {
@@ -753,8 +754,18 @@ async function main() {
       'query:month': 10,
       'query:day': 3,
     }),
+    hostioDomain: nao<HostIo.GetDomain>({
+      kind: 'hostio.core.web',
+      'auth:Authorization': process.env.HOST_IO_API_TOKEN,
+      'param:domain': `urbanisierung.dev`,
+    }),
+    hostioFull: nao<HostIo.GetFull>({
+      kind: 'hostio.core.full',
+      'auth:Authorization': process.env.HOST_IO_API_TOKEN,
+      'param:domain': `urbanisierung.dev`,
+    }),
   }
-  const requestConfig = requestConfigs.calendarificHolidays
+  const requestConfig = requestConfigs.hostioFull
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)
