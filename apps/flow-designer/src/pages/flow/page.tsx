@@ -19,6 +19,7 @@ export default observer(() => {
 	const {
 		root: {
 			pages: { flow: page },
+			flow,
 		},
 	} = useMst()
 
@@ -39,18 +40,17 @@ export default observer(() => {
 						</div>
 					))}
 			</div> */}
-			<Button onClick={() => page.addNode()}>Add Node</Button>
+			<Button onClick={() => flow.addNode()}>Add Node</Button>
 			<Button
 				onClick={() => page.openConfig()}
-				disabled={page.selectedNodes.length !== 1}
+				disabled={!flow.isOneNodeSelected()}
 			>
 				Open Config
 			</Button>
 			<ReactFlow
-				nodes={page.getNodes()}
-				edges={page.getEdges()}
+				nodes={flow.getNodes()}
+				edges={flow.getEdges()}
 				style={{ width: '100%', height: '100%' }}
-				// fitView
 				onNodesChange={(event) => {
 					page.onNodesChange(event)
 				}}
