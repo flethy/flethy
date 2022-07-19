@@ -5,6 +5,7 @@ import { Alchemy } from '../configs/alchemy.config'
 import { ApicAgent } from '../configs/apicagent.config'
 import { APITemplateIo } from '../configs/apitemplateio.config'
 import { Auth0 } from '../configs/auth0.config'
+import { BaseRow } from '../configs/baserow.config'
 import { BrowsersFyi } from '../configs/browsersfyi.config'
 import { CalCom } from '../configs/calcom.config'
 import { Calendarific } from '../configs/calendarific.config'
@@ -57,6 +58,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['apicagent', ApicAgent.API],
 ['apitemplateio', APITemplateIo.API],
 ['auth0', Auth0.API],
+['baserow', BaseRow.API],
 ['browsersfyi', BrowsersFyi.API],
 ['calcom', CalCom.API],
 ['calendarific', Calendarific.API],

@@ -28,6 +28,7 @@ The following Endpoints are currently supported.
 * [ApicAgent](./api/apicagent.md)
 * [APITemplateIo](./api/apitemplateio.md)
 * [Auth0](./api/auth0.md)
+* [BaseRow](./api/baserow.md)
 * [BrowsersFyi](./api/browsersfyi.md)
 * [CalCom](./api/calcom.md)
 * [Calendarific](./api/calendarific.md)
