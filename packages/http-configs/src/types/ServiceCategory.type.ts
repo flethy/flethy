@@ -52,7 +52,12 @@ export type VERSION_CONTROL_TYPE = 'hosted'
 export type COLLAB_TYPE = 'spreadsheet' | 'notes' | 'issueticketing'
 export type ANALYTICS_TYPE = 'webinsights'
 export type TOOLS_TYPE = 'cron'
-export type MARKETING_TYPE = 'inbound' | 'content' | 'socialmedia'
+export type MARKETING_TYPE =
+  | 'inbound'
+  | 'content'
+  | 'socialmedia'
+  | 'crm'
+  | 'media'
 export type AUTOMATION_TYPE = 'workflows' | 'decisions'
 export type UTILS_TYPE =
   | 'emailverification'

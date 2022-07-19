@@ -1,0 +1,24 @@
+# APITemplateIo
+
+## Links
+
+* URL: [https://apitemplate.io/](https://apitemplate.io/)
+* Documentation: [https://apitemplate.io/apiv2/#section/Introduction](https://apitemplate.io/apiv2/#section/Introduction)
+* Tags: web2
+* Category: marketing
+* Type: media
+
+## API
+
+### Authentication
+
+* X-API-KEY: header
+
+### core
+
+#### createImage
+
+##### Create an Image
+
+* Description: This endpoint creates a JPEG file(along with PNG) with JSON data and your template
+* Docs: [https://apitemplate.io/apiv2/#tag/API-Integration/operation/create-image](https://apitemplate.io/apiv2/#tag/API-Integration/operation/create-image)

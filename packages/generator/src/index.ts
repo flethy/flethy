@@ -49,6 +49,10 @@ import HelloSign from '../../http-configs/src/configs/hellosign.config'
 import AbstractApi from '../../http-configs/src/configs/abstractapi.config'
 import Calendarific from '../../http-configs/src/configs/calendarific.config'
 import HostIo from '../../http-configs/src/configs/hostio.config'
+import HunterIo from '../../http-configs/src/configs/hunterio.config'
+import CalCom from '../../http-configs/src/configs/calcom.config'
+import Ortto from '../../http-configs/src/configs/ortto.config'
+import APITemplateIo from '../../http-configs/src/configs/apitemplateio.config'
 
 async function main() {
   const requestConfigs: {
@@ -764,8 +768,68 @@ async function main() {
       'auth:Authorization': process.env.HOST_IO_API_TOKEN,
       'param:domain': `urbanisierung.dev`,
     }),
+    hunterioDomainSearch: nao<HunterIo.DomainSearch>({
+      kind: 'hunterio.core.domainSearch',
+      'auth:api_key': process.env.HUNTER_API_KEY,
+      'query:domain': `urbanisierung.dev`,
+    }),
+    hunterioEmailFinder: nao<HunterIo.EmailFinder>({
+      kind: 'hunterio.core.emailFinder',
+      'auth:api_key': process.env.HUNTER_API_KEY,
+      'query:domain': `diypunks.xyz`,
+      'query:first_name': 'Adam',
+      'query:last_name': 'Urban',
+    }),
+    hunterioEmailVerification: nao<HunterIo.EmailVerification>({
+      kind: 'hunterio.core.emailVerification',
+      'auth:api_key': process.env.HUNTER_API_KEY,
+      'query:email': 'adam.urban@urbanisierung.dev',
+    }),
+    calComFindAllAvailabilities: nao<CalCom.FindAllAvailabilities>({
+      kind: 'calcom.availability.findAllAvailabilities',
+      'auth:apiKey': process.env.CAL_COM_API_KEY,
+    }),
+    calComFindAnAvailability: nao<CalCom.FindAnAvailability>({
+      kind: 'calcom.availability.findAnAvailability',
+      'auth:apiKey': process.env.CAL_COM_API_KEY,
+      'param:availabilityId': Number(process.env.CAL_COM_AVAILABILITY_ID),
+    }),
+    calComCreateAvailability: nao<CalCom.CreateAvailability>({
+      kind: 'calcom.availability.create',
+      'auth:apiKey': process.env.CAL_COM_API_KEY,
+      'body:startTime': new Date('2022-07-18 09:00').toISOString(),
+      'body:endTime': new Date('2022-07-18 15:00').toISOString(),
+    }),
+    calComFindAllEventTypes: nao<CalCom.FindAllEventTypes>({
+      kind: 'calcom.eventTypes.findAllEventTypes',
+      'auth:apiKey': process.env.CAL_COM_API_KEY,
+    }),
+    orttoRetrieve: nao<Ortto.RetrieveOneOrMorePeople>({
+      kind: 'ortto.person.retrieve',
+      'auth:X-Api-Key': process.env.ORTTO_API_KEY,
+      'body:sort_by_field_id': 'str::last',
+      'body:fields': ['str::first', 'str::email'],
+      'body:filter': {
+        $has_any_value: {
+          field_id: 'str::first',
+        },
+      },
+    }),
+    apiTemplateIoCreateImage: nao<APITemplateIo.CreateImage>({
+      kind: 'apitemplateio.core.createImage',
+      'auth:X-API-KEY': process.env.API_TEMPLATE_IO_API_KEY,
+      baseId: 'default',
+      'query:template_id': process.env.API_TEMPLATE_IO_TEMPLATE_ID,
+      'query:expiration': 5,
+      'body:overrides': [
+        {
+          name: 'text_content',
+          text: 'web3nao',
+        },
+      ],
+    }),
   }
-  const requestConfig = requestConfigs.hostioFull
+  const requestConfig = requestConfigs.apiTemplateIoCreateImage
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

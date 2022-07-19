@@ -3,8 +3,10 @@ import { AbstractApi } from '../../../http-configs/src/configs/abstractapi.confi
 import { Airtable } from '../../../http-configs/src/configs/airtable.config'
 import { Alchemy } from '../../../http-configs/src/configs/alchemy.config'
 import { ApicAgent } from '../../../http-configs/src/configs/apicagent.config'
+import { APITemplateIo } from '../../../http-configs/src/configs/apitemplateio.config'
 import { Auth0 } from '../../../http-configs/src/configs/auth0.config'
 import { BrowsersFyi } from '../../../http-configs/src/configs/browsersfyi.config'
+import { CalCom } from '../../../http-configs/src/configs/calcom.config'
 import { Calendarific } from '../../../http-configs/src/configs/calendarific.config'
 import { Camunda } from '../../../http-configs/src/configs/camunda.config'
 import { Clearbit } from '../../../http-configs/src/configs/clearbit.config'
@@ -23,6 +25,7 @@ import { Github } from '../../../http-configs/src/configs/github.config'
 import { HelloSign } from '../../../http-configs/src/configs/hellosign.config'
 import { HostIo } from '../../../http-configs/src/configs/hostio.config'
 import { Hubspot } from '../../../http-configs/src/configs/hubspot.config'
+import { HunterIo } from '../../../http-configs/src/configs/hunterio.config'
 import { MailCheckAi } from '../../../http-configs/src/configs/mailcheckai.config'
 import { MailerSend } from '../../../http-configs/src/configs/mailersend.config'
 import { Mergent } from '../../../http-configs/src/configs/mergent.config'
@@ -33,6 +36,7 @@ import { Notion } from '../../../http-configs/src/configs/notion.config'
 import { OneInch } from '../../../http-configs/src/configs/oneinch.config'
 import { OpenLibrary } from '../../../http-configs/src/configs/openlibrary.config'
 import { OpenSea } from '../../../http-configs/src/configs/opensea.config'
+import { Ortto } from '../../../http-configs/src/configs/ortto.config'
 import { Pinata } from '../../../http-configs/src/configs/pinata.config'
 import { PurgoMalum } from '../../../http-configs/src/configs/purgomalum.config'
 import { RedisCloud } from '../../../http-configs/src/configs/rediscloud.config'
@@ -52,11 +56,16 @@ configTypes.push({type: getType<Airtable.CreateTableRecords>(), name: 'Airtable'
 configTypes.push({type: getType<Alchemy.NftGetNFTs>(), name: 'Alchemy', interface: 'NftGetNFTs'})
 configTypes.push({type: getType<ApicAgent.Get>(), name: 'ApicAgent', interface: 'Get'})
 configTypes.push({type: getType<ApicAgent.Post>(), name: 'ApicAgent', interface: 'Post'})
+configTypes.push({type: getType<APITemplateIo.CreateImage>(), name: 'APITemplateIo', interface: 'CreateImage'})
 configTypes.push({type: getType<Auth0.GetAuthAccessToken>(), name: 'Auth0', interface: 'GetAuthAccessToken'})
 configTypes.push({type: getType<Auth0.GetUsersByEmail>(), name: 'Auth0', interface: 'GetUsersByEmail'})
 configTypes.push({type: getType<Auth0.ListOrSearchUsers>(), name: 'Auth0', interface: 'ListOrSearchUsers'})
 configTypes.push({type: getType<Auth0.GetUser>(), name: 'Auth0', interface: 'GetUser'})
 configTypes.push({type: getType<BrowsersFyi.Get>(), name: 'BrowsersFyi', interface: 'Get'})
+configTypes.push({type: getType<CalCom.FindAllAvailabilities>(), name: 'CalCom', interface: 'FindAllAvailabilities'})
+configTypes.push({type: getType<CalCom.FindAnAvailability>(), name: 'CalCom', interface: 'FindAnAvailability'})
+configTypes.push({type: getType<CalCom.CreateAvailability>(), name: 'CalCom', interface: 'CreateAvailability'})
+configTypes.push({type: getType<CalCom.FindAllEventTypes>(), name: 'CalCom', interface: 'FindAllEventTypes'})
 configTypes.push({type: getType<Calendarific.GetHolidays>(), name: 'Calendarific', interface: 'GetHolidays'})
 configTypes.push({type: getType<Calendarific.GetCountries>(), name: 'Calendarific', interface: 'GetCountries'})
 configTypes.push({type: getType<Calendarific.GetLanguages>(), name: 'Calendarific', interface: 'GetLanguages'})
@@ -123,6 +132,10 @@ configTypes.push({type: getType<HostIo.GetByFieldValue>(), name: 'HostIo', inter
 configTypes.push({type: getType<Hubspot.OAuthToken>(), name: 'Hubspot', interface: 'OAuthToken'})
 configTypes.push({type: getType<Hubspot.FormsSubmit>(), name: 'Hubspot', interface: 'FormsSubmit'})
 configTypes.push({type: getType<Hubspot.ContactsCreateOrUpdate>(), name: 'Hubspot', interface: 'ContactsCreateOrUpdate'})
+configTypes.push({type: getType<HunterIo.DomainSearch>(), name: 'HunterIo', interface: 'DomainSearch'})
+configTypes.push({type: getType<HunterIo.EmailFinder>(), name: 'HunterIo', interface: 'EmailFinder'})
+configTypes.push({type: getType<HunterIo.AuthorFinder>(), name: 'HunterIo', interface: 'AuthorFinder'})
+configTypes.push({type: getType<HunterIo.EmailVerification>(), name: 'HunterIo', interface: 'EmailVerification'})
 configTypes.push({type: getType<MailCheckAi.CheckDomain>(), name: 'MailCheckAi', interface: 'CheckDomain'})
 configTypes.push({type: getType<MailCheckAi.CheckEmail>(), name: 'MailCheckAi', interface: 'CheckEmail'})
 configTypes.push({type: getType<MailerSend.EmailSend>(), name: 'MailerSend', interface: 'EmailSend'})
@@ -151,6 +164,7 @@ configTypes.push({type: getType<OneInch.AggregationSwap>(), name: 'OneInch', int
 configTypes.push({type: getType<OpenLibrary.Books>(), name: 'OpenLibrary', interface: 'Books'})
 configTypes.push({type: getType<OpenSea.GetAssets>(), name: 'OpenSea', interface: 'GetAssets'})
 configTypes.push({type: getType<OpenSea.GetCollections>(), name: 'OpenSea', interface: 'GetCollections'})
+configTypes.push({type: getType<Ortto.RetrieveOneOrMorePeople>(), name: 'Ortto', interface: 'RetrieveOneOrMorePeople'})
 configTypes.push({type: getType<Pinata.PinningPinJsonToIPFS>(), name: 'Pinata', interface: 'PinningPinJsonToIPFS'})
 configTypes.push({type: getType<PurgoMalum.Profanity>(), name: 'PurgoMalum', interface: 'Profanity'})
 configTypes.push({type: getType<RedisCloud.GetCurrentAccount>(), name: 'RedisCloud', interface: 'GetCurrentAccount'})

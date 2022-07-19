@@ -1,0 +1,45 @@
+# HunterIo
+
+## Links
+
+* URL: [https://hunter.io/](https://hunter.io/)
+* Documentation: [https://hunter.io/](https://hunter.io/)
+* Tags: web2
+* Category: communication
+* Type: emailverification
+
+## API
+
+### Authentication
+
+* api_key: query
+
+### core
+
+#### domainSearch
+
+##### DomainSearch
+
+* Description: DomainSearch
+* Docs: [https://hunter.io/](https://hunter.io/)
+
+#### emailFinder
+
+##### EmailFinder
+
+* Description: EmailFinder
+* Docs: [https://hunter.io/](https://hunter.io/)
+
+#### authorFinder
+
+##### AuthorFinder
+
+* Description: AuthorFinder
+* Docs: [https://hunter.io/](https://hunter.io/)
+
+#### emailVerification
+
+##### EmailVerification
+
+* Description: EmailVerification
+* Docs: [https://hunter.io/](https://hunter.io/)
