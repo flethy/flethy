@@ -3,8 +3,10 @@ import { AbstractApi } from '../configs/abstractapi.config'
 import { Airtable } from '../configs/airtable.config'
 import { Alchemy } from '../configs/alchemy.config'
 import { ApicAgent } from '../configs/apicagent.config'
+import { APITemplateIo } from '../configs/apitemplateio.config'
 import { Auth0 } from '../configs/auth0.config'
 import { BrowsersFyi } from '../configs/browsersfyi.config'
+import { CalCom } from '../configs/calcom.config'
 import { Calendarific } from '../configs/calendarific.config'
 import { Camunda } from '../configs/camunda.config'
 import { Clearbit } from '../configs/clearbit.config'
@@ -23,6 +25,7 @@ import { Github } from '../configs/github.config'
 import { HelloSign } from '../configs/hellosign.config'
 import { HostIo } from '../configs/hostio.config'
 import { Hubspot } from '../configs/hubspot.config'
+import { HunterIo } from '../configs/hunterio.config'
 import { MailCheckAi } from '../configs/mailcheckai.config'
 import { MailerSend } from '../configs/mailersend.config'
 import { Mergent } from '../configs/mergent.config'
@@ -33,6 +36,7 @@ import { Notion } from '../configs/notion.config'
 import { OneInch } from '../configs/oneinch.config'
 import { OpenLibrary } from '../configs/openlibrary.config'
 import { OpenSea } from '../configs/opensea.config'
+import { Ortto } from '../configs/ortto.config'
 import { Pinata } from '../configs/pinata.config'
 import { PurgoMalum } from '../configs/purgomalum.config'
 import { RedisCloud } from '../configs/rediscloud.config'
@@ -51,8 +55,10 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['airtable', Airtable.API],
 ['alchemy', Alchemy.API],
 ['apicagent', ApicAgent.API],
+['apitemplateio', APITemplateIo.API],
 ['auth0', Auth0.API],
 ['browsersfyi', BrowsersFyi.API],
+['calcom', CalCom.API],
 ['calendarific', Calendarific.API],
 ['camunda', Camunda.API],
 ['clearbit', Clearbit.API],
@@ -71,6 +77,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['hellosign', HelloSign.API],
 ['hostio', HostIo.API],
 ['hubspot', Hubspot.API],
+['hunterio', HunterIo.API],
 ['mailcheckai', MailCheckAi.API],
 ['mailersend', MailerSend.API],
 ['mergent', Mergent.API],
@@ -81,6 +88,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['1inch', OneInch.API],
 ['openlibrary', OpenLibrary.API],
 ['opensea', OpenSea.API],
+['ortto', Ortto.API],
 ['pinata', Pinata.API],
 ['purgomalum', PurgoMalum.API],
 ['rediscloud', RedisCloud.API],
