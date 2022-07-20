@@ -55,6 +55,7 @@ The following Endpoints are currently supported.
 * [Ortto](./api/ortto.md)
 * [PurgoMalum](./api/purgomalum.md)
 * [RedisCloud](./api/rediscloud.md)
+* [RemoteOk](./api/remoteok.md)
 * [SerpStack](./api/serpstack.md)
 * [Slack](./api/slack.md)
 * [Statically](./api/statically.md)

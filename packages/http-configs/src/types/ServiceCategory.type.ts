@@ -19,6 +19,7 @@ export type CATEGORY =
   | 'search'
   | 'network'
   | 'identity'
+  | 'career'
 export type TYPE =
   | COMM_TYPE
   | STORAGE_TYPE
@@ -39,6 +40,7 @@ export type TYPE =
   | SEARCH_TYPE
   | NETWORK_TYPE
   | IDENTITY_TYPE
+  | CAREER_TYPE
 
 export type COMM_TYPE = 'email' | 'messenger'
 export type STORAGE_TYPE = 'ipfs' | 'database'
@@ -72,3 +74,4 @@ export type CLOUD_TYPE = 'services'
 export type SEARCH_TYPE = 'serp'
 export type NETWORK_TYPE = 'cdn'
 export type IDENTITY_TYPE = 'identitymanagement'
+export type CAREER_TYPE = 'job-listings'

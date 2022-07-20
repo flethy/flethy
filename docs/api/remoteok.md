@@ -1,0 +1,20 @@
+# RemoteOk
+
+## Links
+
+* URL: [https://remoteok.com](https://remoteok.com)
+* Documentation: [https://remoteok.com](https://remoteok.com)
+* Tags: web2
+* Category: career
+* Type: job-listings
+
+## API
+
+### core
+
+#### get
+
+##### Get Listings
+
+* Description: RemoteOk API
+* Docs: [https://remoteok.com](https://remoteok.com)
