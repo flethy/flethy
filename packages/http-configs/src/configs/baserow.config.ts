@@ -20,12 +20,19 @@ export namespace BaseRow {
     'param:tableId': string
     'body:body': any
     'query:user_field_names'?: boolean
+    'query:before'?: number
   }
 
   export interface GetRows extends BaseRowBase, RequestParams {
     kind: 'baserow.core.get'
     'param:tableId': string
     'query:user_field_names'?: boolean
+    'query:page'?: number
+    'query:size'?: number
+    'query:search'?: string
+    'query:orderby'?: string
+    'query:include'?: string
+    'query:exclude'?: string
   }
 
   export const API: ApiDescription<Entity, Endpoint> = {
@@ -54,6 +61,9 @@ export namespace BaseRow {
             docs: 'https://baserow.io/api-docs',
           },
           method: 'POST',
+          options: {
+            pathTailingSlash: true,
+          },
           paths: [
             {
               name: 'api',
@@ -85,6 +95,9 @@ export namespace BaseRow {
             docs: 'https://baserow.io/api-docs',
           },
           method: 'GET',
+          options: {
+            pathTailingSlash: true,
+          },
           paths: [
             {
               name: 'api',

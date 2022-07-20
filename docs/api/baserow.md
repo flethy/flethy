@@ -22,3 +22,10 @@
 
 * Description: CreateRow
 * Docs: [https://baserow.io/api-docs](https://baserow.io/api-docs)
+
+#### get
+
+##### GetRows
+
+* Description: GetRows
+* Docs: [https://baserow.io/api-docs](https://baserow.io/api-docs)

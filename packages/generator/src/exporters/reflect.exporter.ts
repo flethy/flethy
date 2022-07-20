@@ -63,6 +63,7 @@ configTypes.push({type: getType<Auth0.GetUsersByEmail>(), name: 'Auth0', interfa
 configTypes.push({type: getType<Auth0.ListOrSearchUsers>(), name: 'Auth0', interface: 'ListOrSearchUsers'})
 configTypes.push({type: getType<Auth0.GetUser>(), name: 'Auth0', interface: 'GetUser'})
 configTypes.push({type: getType<BaseRow.CreateRow>(), name: 'BaseRow', interface: 'CreateRow'})
+configTypes.push({type: getType<BaseRow.GetRows>(), name: 'BaseRow', interface: 'GetRows'})
 configTypes.push({type: getType<BrowsersFyi.Get>(), name: 'BrowsersFyi', interface: 'Get'})
 configTypes.push({type: getType<CalCom.FindAllAvailabilities>(), name: 'CalCom', interface: 'FindAllAvailabilities'})
 configTypes.push({type: getType<CalCom.FindAnAvailability>(), name: 'CalCom', interface: 'FindAnAvailability'})

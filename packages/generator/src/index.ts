@@ -848,7 +848,7 @@ async function main() {
       // 'query:user_field_names': true,
     }),
   }
-  const requestConfig = requestConfigs.baseRowGet
+  const requestConfig = requestConfigs.baseRowCreate
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)
