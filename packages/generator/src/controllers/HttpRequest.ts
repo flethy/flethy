@@ -23,6 +23,8 @@ export class HttpRequest {
       return data
     } catch (error) {
       logger.error(error.message)
+      logger.error(error.response.data)
+      // logger.error(Object.keys(error))
     }
   }
 

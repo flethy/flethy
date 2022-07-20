@@ -53,6 +53,7 @@ import HunterIo from '../../http-configs/src/configs/hunterio.config'
 import CalCom from '../../http-configs/src/configs/calcom.config'
 import Ortto from '../../http-configs/src/configs/ortto.config'
 import APITemplateIo from '../../http-configs/src/configs/apitemplateio.config'
+import BaseRow from '../../http-configs/src/configs/baserow.config'
 
 async function main() {
   const requestConfigs: {
@@ -828,8 +829,26 @@ async function main() {
         },
       ],
     }),
+    baseRowCreate: nao<BaseRow.CreateRow>({
+      kind: 'baserow.core.create',
+      'auth:Authorization': process.env.BASEROW_API_TOKEN,
+      'param:tableId': process.env.BASEROW_TABLE_ID,
+      'body:body': {
+        Name: 'web3nao',
+        'Last name': 'web3nao',
+        Notes: 'web3nao notes',
+        Active: true,
+      },
+      'query:user_field_names': true,
+    }),
+    baseRowGet: nao<BaseRow.GetRows>({
+      kind: 'baserow.core.get',
+      'auth:Authorization': process.env.BASEROW_API_TOKEN,
+      'param:tableId': process.env.BASEROW_TABLE_ID,
+      // 'query:user_field_names': true,
+    }),
   }
-  const requestConfig = requestConfigs.apiTemplateIoCreateImage
+  const requestConfig = requestConfigs.baseRowCreate
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)
