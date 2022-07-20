@@ -54,6 +54,7 @@ import CalCom from '../../http-configs/src/configs/calcom.config'
 import Ortto from '../../http-configs/src/configs/ortto.config'
 import APITemplateIo from '../../http-configs/src/configs/apitemplateio.config'
 import BaseRow from '../../http-configs/src/configs/baserow.config'
+import RemoteOk from '../../http-configs/src/configs/remoteok.config'
 
 async function main() {
   const requestConfigs: {
@@ -847,8 +848,11 @@ async function main() {
       'param:tableId': process.env.BASEROW_TABLE_ID,
       // 'query:user_field_names': true,
     }),
+    remoteOk: nao<RemoteOk.GetListings>({
+      kind: 'remoteok.core.get',
+    }),
   }
-  const requestConfig = requestConfigs.baseRowCreate
+  const requestConfig = requestConfigs.remoteOk
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

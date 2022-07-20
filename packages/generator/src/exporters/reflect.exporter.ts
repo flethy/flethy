@@ -41,6 +41,7 @@ import { Ortto } from '../../../http-configs/src/configs/ortto.config'
 import { Pinata } from '../../../http-configs/src/configs/pinata.config'
 import { PurgoMalum } from '../../../http-configs/src/configs/purgomalum.config'
 import { RedisCloud } from '../../../http-configs/src/configs/rediscloud.config'
+import { RemoteOk } from '../../../http-configs/src/configs/remoteok.config'
 import { SerpStack } from '../../../http-configs/src/configs/serpstack.config'
 import { Slack } from '../../../http-configs/src/configs/slack.config'
 import { Statically } from '../../../http-configs/src/configs/statically.config'
@@ -171,6 +172,7 @@ configTypes.push({type: getType<Ortto.RetrieveOneOrMorePeople>(), name: 'Ortto',
 configTypes.push({type: getType<Pinata.PinningPinJsonToIPFS>(), name: 'Pinata', interface: 'PinningPinJsonToIPFS'})
 configTypes.push({type: getType<PurgoMalum.Profanity>(), name: 'PurgoMalum', interface: 'Profanity'})
 configTypes.push({type: getType<RedisCloud.GetCurrentAccount>(), name: 'RedisCloud', interface: 'GetCurrentAccount'})
+configTypes.push({type: getType<RemoteOk.GetListings>(), name: 'RemoteOk', interface: 'GetListings'})
 configTypes.push({type: getType<SerpStack.Search>(), name: 'SerpStack', interface: 'Search'})
 configTypes.push({type: getType<Slack.IncomingWebhooksMessage>(), name: 'Slack', interface: 'IncomingWebhooksMessage'})
 configTypes.push({type: getType<Statically.StaticZapGithub>(), name: 'Statically', interface: 'StaticZapGithub'})
