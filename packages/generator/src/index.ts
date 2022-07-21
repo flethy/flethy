@@ -55,6 +55,7 @@ import Ortto from '../../http-configs/src/configs/ortto.config'
 import APITemplateIo from '../../http-configs/src/configs/apitemplateio.config'
 import BaseRow from '../../http-configs/src/configs/baserow.config'
 import RemoteOk from '../../http-configs/src/configs/remoteok.config'
+import Bitly from '../../http-configs/src/configs/bitly.config'
 
 async function main() {
   const requestConfigs: {
@@ -851,8 +852,15 @@ async function main() {
     remoteOk: nao<RemoteOk.GetListings>({
       kind: 'remoteok.core.get',
     }),
+    bitlyShorten: nao<Bitly.CreateShortLink>({
+      kind: 'bitly.links.shorten',
+      'auth:Authoriztion': process.env.BITLY_API_TOKEN,
+      // 'body:group_guid': process.env.BITLY_GROUP_ID,
+      'body:long_url': 'https://urbanisierung.dev',
+      // 'body:domain': 'bit.ly',
+    }),
   }
-  const requestConfig = requestConfigs.remoteOk
+  const requestConfig = requestConfigs.bitlyShorten
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

@@ -24,6 +24,7 @@ export class HttpRequest {
     } catch (error) {
       logger.error(error.message)
       logger.error(error.response.data)
+      // logger.error(error.response.data.errors)
       // logger.error(Object.keys(error))
     }
   }
