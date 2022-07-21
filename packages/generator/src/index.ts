@@ -56,6 +56,7 @@ import APITemplateIo from '../../http-configs/src/configs/apitemplateio.config'
 import BaseRow from '../../http-configs/src/configs/baserow.config'
 import RemoteOk from '../../http-configs/src/configs/remoteok.config'
 import Bitly from '../../http-configs/src/configs/bitly.config'
+import Typeform from '../../http-configs/src/configs/typeform.config'
 
 async function main() {
   const requestConfigs: {
@@ -859,8 +860,13 @@ async function main() {
       'body:long_url': 'https://urbanisierung.dev',
       // 'body:domain': 'bit.ly',
     }),
+    typeformCreateForm: nao<Typeform.CreateApiCreateForm>({
+      kind: 'typeform.create.create',
+      'auth:Authorization': process.env.TYPEFORM_API_TOKEN,
+      'body:title': 'test',
+    }),
   }
-  const requestConfig = requestConfigs.bitlyShorten
+  const requestConfig = requestConfigs.typeformCreateForm
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

@@ -49,6 +49,7 @@ import { Statically } from '../../../http-configs/src/configs/statically.config'
 import { Supabase } from '../../../http-configs/src/configs/supabase.config'
 import { TheGraph } from '../../../http-configs/src/configs/thegraph.config'
 import { Trello } from '../../../http-configs/src/configs/trello.config'
+import { Typeform } from '../../../http-configs/src/configs/typeform.config'
 import { Web3Storage } from '../../../http-configs/src/configs/web3storage.config'
 import { ZeroX } from '../../../http-configs/src/configs/zerox.config'
 import { Zora } from '../../../http-configs/src/configs/zora.config'
@@ -186,6 +187,7 @@ configTypes.push({type: getType<TheGraph.QueryById>(), name: 'TheGraph', interfa
 configTypes.push({type: getType<TheGraph.QueryByName>(), name: 'TheGraph', interface: 'QueryByName'})
 configTypes.push({type: getType<Trello.BoardGetLists>(), name: 'Trello', interface: 'BoardGetLists'})
 configTypes.push({type: getType<Trello.CardsCreate>(), name: 'Trello', interface: 'CardsCreate'})
+configTypes.push({type: getType<Typeform.CreateApiCreateForm>(), name: 'Typeform', interface: 'CreateApiCreateForm'})
 configTypes.push({type: getType<Web3Storage.UploadContent>(), name: 'Web3Storage', interface: 'UploadContent'})
 configTypes.push({type: getType<ZeroX.SwapQuote>(), name: 'ZeroX', interface: 'SwapQuote'})
 configTypes.push({type: getType<ZeroX.SwapPrice>(), name: 'ZeroX', interface: 'SwapPrice'})
