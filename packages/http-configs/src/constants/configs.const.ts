@@ -49,6 +49,7 @@ import { Statically } from '../configs/statically.config'
 import { Supabase } from '../configs/supabase.config'
 import { TheGraph } from '../configs/thegraph.config'
 import { Trello } from '../configs/trello.config'
+import { Typeform } from '../configs/typeform.config'
 import { Web3Storage } from '../configs/web3storage.config'
 import { ZeroX } from '../configs/zerox.config'
 import { Zora } from '../configs/zora.config'
@@ -104,6 +105,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['supabase', Supabase.API],
 ['thegraph', TheGraph.API],
 ['trello', Trello.API],
+['typeform', Typeform.API],
 ['web3storage', Web3Storage.API],
 ['0x', ZeroX.API],
 ['zora', Zora.API],

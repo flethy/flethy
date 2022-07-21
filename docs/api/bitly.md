@@ -21,4 +21,4 @@
 ##### Creating Bitly short links
 
 * Description: The most basic call to shorten a link is using the POST method to the /v4/shorten endpoint. There is only one customization available through this call, and that's using your custom domain. If a custom domain is not specified, the resulting short link will default to bit.ly.
-* Docs: [https://dev.bitly.com/docs/tutorials/shorten-customize-links/](https://dev.bitly.com/docs/tutorials/shorten-customize-links/)
+* Docs: [https://dev.bitly.com/api-reference/#createBitlink](https://dev.bitly.com/api-reference/#createBitlink)

@@ -67,6 +67,7 @@ export type UTILS_TYPE =
   | 'other'
   | 'calendar'
   | 'url-shortener'
+  | 'survey'
 export type DEFI_TYPE = 'liquidity'
 export type BOOKS_TYPE = 'index'
 export type FINANCE_TYPE = 'currency'

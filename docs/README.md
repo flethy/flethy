@@ -62,3 +62,4 @@ The following Endpoints are currently supported.
 * [Statically](./api/statically.md)
 * [Supabase](./api/supabase.md)
 * [Trello](./api/trello.md)
+* [Typeform](./api/typeform.md)
