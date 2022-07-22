@@ -40,6 +40,8 @@ jobs:
 
       - name: Build everything
         run: pnpm run build
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Publish
         run: pnpm publish --filter @web3nao/http-configs --no-git-checks
