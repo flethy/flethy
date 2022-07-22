@@ -57,6 +57,9 @@ import BaseRow from '../../http-configs/src/configs/baserow.config'
 import RemoteOk from '../../http-configs/src/configs/remoteok.config'
 import Bitly from '../../http-configs/src/configs/bitly.config'
 import Typeform from '../../http-configs/src/configs/typeform.config'
+import ConvertKit from '../../http-configs/src/configs/convertkit.config'
+import DeepL from '../../http-configs/src/configs/deepl.config'
+import Tribe from '../../http-configs/src/configs/tribe.config'
 
 async function main() {
   const requestConfigs: {
@@ -865,8 +868,43 @@ async function main() {
       'auth:Authorization': process.env.TYPEFORM_API_TOKEN,
       'body:title': 'test',
     }),
+    convertKitGetAccount: nao<ConvertKit.GetAccount>({
+      kind: 'convertkit.account.get',
+      'auth:api_secret': process.env.CONVERTKIT_API_SECRET,
+    }),
+    convertKitListSubscribers: nao<ConvertKit.ListSubscribers>({
+      kind: 'convertkit.subscribers.list',
+      'auth:api_secret': process.env.CONVERTKIT_API_SECRET,
+    }),
+    deeplTranslate: nao<DeepL.TranslatingRequest>({
+      kind: 'deepl.translating.request',
+      baseId: 'free',
+      'auth:Authorization': process.env.DEEPL_AUTH_KEY,
+      'query:text': `Hi web3nao, wie geht es dir?`,
+      'query:target_lang': 'EN-US',
+    }),
+    deeplListLanguagePairs: nao<DeepL.GlossaryListLanguagePairs>({
+      kind: 'deepl.glossaries.listLanguagePairs',
+      baseId: 'free',
+      'auth:Authorization': process.env.DEEPL_AUTH_KEY,
+    }),
+    tribeAppAccessToken: nao<Tribe.TribeAccessToken>({
+      kind: 'tribe.auth.appAccessToken',
+      baseId: 'app-access-token',
+      'auth:clientId': process.env.TRIBE_CLIENT_ID,
+      'auth:clientSecret': process.env.TRIBE_CLIENT_SECRET,
+      'body:query': `query {
+        limitedToken(
+          context:NETWORK, 
+          networkId: "${process.env.TRIBE_NETWORK_ID}", 
+          entityId: "${process.env.TRIBE_NETWORK_ID}", 
+        ) {
+          accessToken
+        }
+      }`,
+    }),
   }
-  const requestConfig = requestConfigs.typeformCreateForm
+  const requestConfig = requestConfigs.tribeAppAccessToken
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

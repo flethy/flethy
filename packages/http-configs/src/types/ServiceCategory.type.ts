@@ -51,7 +51,7 @@ export type AGGREGATION_TYPE =
   | 'businessdata'
 export type GATEWAY_TYPE = 'httpProvider'
 export type VERSION_CONTROL_TYPE = 'hosted'
-export type COLLAB_TYPE = 'spreadsheet' | 'notes' | 'issueticketing'
+export type COLLAB_TYPE = 'spreadsheet' | 'notes' | 'issueticketing' | 'forum'
 export type ANALYTICS_TYPE = 'webinsights'
 export type TOOLS_TYPE = 'cron'
 export type MARKETING_TYPE =
@@ -68,6 +68,7 @@ export type UTILS_TYPE =
   | 'calendar'
   | 'url-shortener'
   | 'survey'
+  | 'translation'
 export type DEFI_TYPE = 'liquidity'
 export type BOOKS_TYPE = 'index'
 export type FINANCE_TYPE = 'currency'

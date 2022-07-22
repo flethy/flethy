@@ -145,6 +145,14 @@ export class HttpRequestConfig {
               }
               config.headers[keyname] = `Token ${options.params[paramKey]}`
               break
+            case 'header:custom':
+              if (!config.headers) {
+                config.headers = {}
+              }
+              config.headers[keyname] = `${authConfig.custom?.prefix ?? ''}${
+                options.params[paramKey]
+              }${authConfig.custom?.postfix ?? ''}`
+              break
             case 'body':
               if (authConfig.authHandler) {
                 authConfig.authHandler(config, options.params[paramKey])
@@ -152,6 +160,12 @@ export class HttpRequestConfig {
               break
             case 'body:form':
               formData.push({ key: keyname, value: options.params[paramKey] })
+              break
+            case 'subdomain':
+              config.url = config.url.replace(
+                `subdomain:${keyname}`,
+                options.params[paramKey],
+              )
               break
             case 'path':
               // will be handled in path section

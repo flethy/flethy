@@ -17,9 +17,11 @@ import { CoinGecko } from '../configs/coingecko.config'
 import { Coinlayer } from '../configs/coinlayer.config'
 import { CoinMarketCap } from '../configs/coinmarketcap.config'
 import { ContentFul } from '../configs/contentful.config'
+import { ConvertKit } from '../configs/convertkit.config'
 import { CountApi } from '../configs/countapi.config'
 import { Courier } from '../configs/courier.config'
 import { Covalent } from '../configs/covalent.config'
+import { DeepL } from '../configs/deepl.config'
 import { Disify } from '../configs/disify.config'
 import { Etherscan } from '../configs/etherscan.config'
 import { Frankfurter } from '../configs/frankfurter.config'
@@ -49,6 +51,7 @@ import { Statically } from '../configs/statically.config'
 import { Supabase } from '../configs/supabase.config'
 import { TheGraph } from '../configs/thegraph.config'
 import { Trello } from '../configs/trello.config'
+import { Tribe } from '../configs/tribe.config'
 import { Typeform } from '../configs/typeform.config'
 import { Web3Storage } from '../configs/web3storage.config'
 import { ZeroX } from '../configs/zerox.config'
@@ -73,9 +76,11 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['coinlayer', Coinlayer.API],
 ['coinmarketcap', CoinMarketCap.API],
 ['contentful', ContentFul.API],
+['convertkit', ConvertKit.API],
 ['countapi', CountApi.API],
 ['courier', Courier.API],
 ['covalent', Covalent.API],
+['deepl', DeepL.API],
 ['disify', Disify.API],
 ['etherscan', Etherscan.API],
 ['frankfurter', Frankfurter.API],
@@ -105,6 +110,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['supabase', Supabase.API],
 ['thegraph', TheGraph.API],
 ['trello', Trello.API],
+['tribe', Tribe.API],
 ['typeform', Typeform.API],
 ['web3storage', Web3Storage.API],
 ['0x', ZeroX.API],
