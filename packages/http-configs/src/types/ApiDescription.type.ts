@@ -62,10 +62,16 @@ export interface ApiDescriptionAuth {
     | 'header:basic'
     | 'header:bearer'
     | 'header:token'
+    | 'header:custom'
     | 'path'
     | 'body'
     | 'body:form'
+    | 'subdomain'
   authHandler?: (fetchParams: FetchParams, authValue: string) => void
+  custom?: {
+    prefix?: string
+    postfix?: string
+  }
 }
 
 export interface ApiAuthBasic {

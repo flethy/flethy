@@ -17,9 +17,11 @@ import { CoinGecko } from '../../../http-configs/src/configs/coingecko.config'
 import { Coinlayer } from '../../../http-configs/src/configs/coinlayer.config'
 import { CoinMarketCap } from '../../../http-configs/src/configs/coinmarketcap.config'
 import { ContentFul } from '../../../http-configs/src/configs/contentful.config'
+import { ConvertKit } from '../../../http-configs/src/configs/convertkit.config'
 import { CountApi } from '../../../http-configs/src/configs/countapi.config'
 import { Courier } from '../../../http-configs/src/configs/courier.config'
 import { Covalent } from '../../../http-configs/src/configs/covalent.config'
+import { DeepL } from '../../../http-configs/src/configs/deepl.config'
 import { Disify } from '../../../http-configs/src/configs/disify.config'
 import { Etherscan } from '../../../http-configs/src/configs/etherscan.config'
 import { Frankfurter } from '../../../http-configs/src/configs/frankfurter.config'
@@ -49,6 +51,7 @@ import { Statically } from '../../../http-configs/src/configs/statically.config'
 import { Supabase } from '../../../http-configs/src/configs/supabase.config'
 import { TheGraph } from '../../../http-configs/src/configs/thegraph.config'
 import { Trello } from '../../../http-configs/src/configs/trello.config'
+import { Tribe } from '../../../http-configs/src/configs/tribe.config'
 import { Typeform } from '../../../http-configs/src/configs/typeform.config'
 import { Web3Storage } from '../../../http-configs/src/configs/web3storage.config'
 import { ZeroX } from '../../../http-configs/src/configs/zerox.config'
@@ -110,6 +113,8 @@ configTypes.push({type: getType<ContentFul.ContentGetSpaceContentModel>(), name:
 configTypes.push({type: getType<ContentFul.ContentGetSpaceSingleContentType>(), name: 'ContentFul', interface: 'ContentGetSpaceSingleContentType'})
 configTypes.push({type: getType<ContentFul.GraphQLbySpace>(), name: 'ContentFul', interface: 'GraphQLbySpace'})
 configTypes.push({type: getType<ContentFul.GraphQLbySpaceAndEnvironment>(), name: 'ContentFul', interface: 'GraphQLbySpaceAndEnvironment'})
+configTypes.push({type: getType<ConvertKit.GetAccount>(), name: 'ConvertKit', interface: 'GetAccount'})
+configTypes.push({type: getType<ConvertKit.ListSubscribers>(), name: 'ConvertKit', interface: 'ListSubscribers'})
 configTypes.push({type: getType<CountApi.Get>(), name: 'CountApi', interface: 'Get'})
 configTypes.push({type: getType<CountApi.Set>(), name: 'CountApi', interface: 'Set'})
 configTypes.push({type: getType<CountApi.Update>(), name: 'CountApi', interface: 'Update'})
@@ -120,6 +125,8 @@ configTypes.push({type: getType<Courier.Send>(), name: 'Courier', interface: 'Se
 configTypes.push({type: getType<Covalent.ClassAGetTransactionsForAddress>(), name: 'Covalent', interface: 'ClassAGetTransactionsForAddress'})
 configTypes.push({type: getType<Covalent.ClassBGetUniswapV3Pools>(), name: 'Covalent', interface: 'ClassBGetUniswapV3Pools'})
 configTypes.push({type: getType<Covalent.PricingGetHistoricalTokenPrices>(), name: 'Covalent', interface: 'PricingGetHistoricalTokenPrices'})
+configTypes.push({type: getType<DeepL.TranslatingRequest>(), name: 'DeepL', interface: 'TranslatingRequest'})
+configTypes.push({type: getType<DeepL.GlossaryListLanguagePairs>(), name: 'DeepL', interface: 'GlossaryListLanguagePairs'})
 configTypes.push({type: getType<Disify.CheckSingleDomain>(), name: 'Disify', interface: 'CheckSingleDomain'})
 configTypes.push({type: getType<Disify.CheckMassDomain>(), name: 'Disify', interface: 'CheckMassDomain'})
 configTypes.push({type: getType<Disify.CheckSingleEmail>(), name: 'Disify', interface: 'CheckSingleEmail'})
@@ -187,6 +194,7 @@ configTypes.push({type: getType<TheGraph.QueryById>(), name: 'TheGraph', interfa
 configTypes.push({type: getType<TheGraph.QueryByName>(), name: 'TheGraph', interface: 'QueryByName'})
 configTypes.push({type: getType<Trello.BoardGetLists>(), name: 'Trello', interface: 'BoardGetLists'})
 configTypes.push({type: getType<Trello.CardsCreate>(), name: 'Trello', interface: 'CardsCreate'})
+configTypes.push({type: getType<Tribe.TribeAccessToken>(), name: 'Tribe', interface: 'TribeAccessToken'})
 configTypes.push({type: getType<Typeform.CreateApiCreateForm>(), name: 'Typeform', interface: 'CreateApiCreateForm'})
 configTypes.push({type: getType<Web3Storage.UploadContent>(), name: 'Web3Storage', interface: 'UploadContent'})
 configTypes.push({type: getType<ZeroX.SwapQuote>(), name: 'ZeroX', interface: 'SwapQuote'})
