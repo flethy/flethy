@@ -61,6 +61,7 @@ import ConvertKit from '../../http-configs/src/configs/convertkit.config'
 import DeepL from '../../http-configs/src/configs/deepl.config'
 import Tribe from '../../http-configs/src/configs/tribe.config'
 import Sentry from '../../http-configs/src/configs/sentry.config'
+import WhoIsXMLApi from '../../http-configs/src/configs/whoisxmlapi.config'
 
 async function main() {
   const requestConfigs: {
@@ -914,8 +915,13 @@ async function main() {
       kind: 'sentry.projects.list',
       'auth:Authorization': process.env.SENTRY_API_TOKEN,
     }),
+    whoIsXMLApiDomainAvailability: nao<WhoIsXMLApi.DomainAvailability>({
+      kind: 'whoisxmlapi.core.domainavailability',
+      'auth:apiKey': process.env.WHOISXMLAPI_API_KEY,
+      'query:domainName': 'doitnao.xyz',
+    }),
   }
-  const requestConfig = requestConfigs.sentryQueryDiscoverEvents
+  const requestConfig = requestConfigs.whoIsXMLApiDomainAvailability
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

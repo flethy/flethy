@@ -55,6 +55,7 @@ import { Trello } from '../configs/trello.config'
 import { Tribe } from '../configs/tribe.config'
 import { Typeform } from '../configs/typeform.config'
 import { Web3Storage } from '../configs/web3storage.config'
+import { WhoIsXMLApi } from '../configs/whoisxmlapi.config'
 import { ZeroX } from '../configs/zerox.config'
 import { Zora } from '../configs/zora.config'
 
@@ -115,6 +116,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['tribe', Tribe.API],
 ['typeform', Typeform.API],
 ['web3storage', Web3Storage.API],
+['whoisxmlapi', WhoIsXMLApi.API],
 ['0x', ZeroX.API],
 ['zora', Zora.API],
 ])
