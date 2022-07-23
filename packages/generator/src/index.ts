@@ -60,6 +60,7 @@ import Typeform from '../../http-configs/src/configs/typeform.config'
 import ConvertKit from '../../http-configs/src/configs/convertkit.config'
 import DeepL from '../../http-configs/src/configs/deepl.config'
 import Tribe from '../../http-configs/src/configs/tribe.config'
+import Sentry from '../../http-configs/src/configs/sentry.config'
 
 async function main() {
   const requestConfigs: {
@@ -903,8 +904,18 @@ async function main() {
         }
       }`,
     }),
+    sentryQueryDiscoverEvents: nao<Sentry.QueryDiscoverEvents>({
+      kind: 'sentry.discover.query',
+      'auth:Authorization': process.env.SENTRY_API_TOKEN,
+      'param:organizationSlug': 'web3nao',
+      'query:field': 'transaction',
+    }),
+    sentryListProjects: nao<Sentry.ListProjects>({
+      kind: 'sentry.projects.list',
+      'auth:Authorization': process.env.SENTRY_API_TOKEN,
+    }),
   }
-  const requestConfig = requestConfigs.tribeAppAccessToken
+  const requestConfig = requestConfigs.sentryQueryDiscoverEvents
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

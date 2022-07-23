@@ -45,6 +45,7 @@ import { Pinata } from '../configs/pinata.config'
 import { PurgoMalum } from '../configs/purgomalum.config'
 import { RedisCloud } from '../configs/rediscloud.config'
 import { RemoteOk } from '../configs/remoteok.config'
+import { Sentry } from '../configs/sentry.config'
 import { SerpStack } from '../configs/serpstack.config'
 import { Slack } from '../configs/slack.config'
 import { Statically } from '../configs/statically.config'
@@ -104,6 +105,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['purgomalum', PurgoMalum.API],
 ['rediscloud', RedisCloud.API],
 ['remoteok', RemoteOk.API],
+['sentry', Sentry.API],
 ['serpstack', SerpStack.API],
 ['slack', Slack.API],
 ['statically', Statically.API],
