@@ -8,6 +8,8 @@ export const FlowPage = types
 			types.model({
 				nodeId: types.string,
 				isOpen: types.boolean,
+				selectedConfig: types.maybe(types.string),
+				selectedConfigInterface: types.maybe(types.string),
 			}),
 			{ nodeId: '-1', isOpen: false },
 		),
@@ -20,15 +22,26 @@ export const FlowPage = types
 			self.config.isOpen = true
 		},
 
+		selectConfig(name: string) {
+			self.config.selectedConfig = name
+		},
+
+		selectConfigInterface(name: string) {
+			self.config.selectedConfigInterface = name
+		},
+
 		closeConfig: () => {
 			self.config.nodeId = ''
 			self.config.isOpen = false
+			self.config.selectedConfig = undefined
+			self.config.selectedConfigInterface = undefined
 		},
 	}))
 	.actions((self) => ({
 		// INITIALIZATION
 		initialisePage() {
-			const { flow } = getRootStore(self)
+			const { flow, configs } = getRootStore(self)
+			configs.init()
 
 			flow.addNode({
 				position: {
