@@ -62,6 +62,7 @@ import DeepL from '../../http-configs/src/configs/deepl.config'
 import Tribe from '../../http-configs/src/configs/tribe.config'
 import Sentry from '../../http-configs/src/configs/sentry.config'
 import WhoIsXMLApi from '../../http-configs/src/configs/whoisxmlapi.config'
+import BambooHR from '../../http-configs/src/configs/bamboohr.config'
 
 async function main() {
   const requestConfigs: {
@@ -920,8 +921,16 @@ async function main() {
       'auth:apiKey': process.env.WHOISXMLAPI_API_KEY,
       'query:domainName': 'doitnao.xyz',
     }),
+    bamboohrEmployeesDir: nao<BambooHR.EmployeesDirectory>({
+      kind: 'bamboohr.employees.directory',
+      'auth:Authorization': {
+        username: process.env.BAMBOOHR_API_KEY,
+        password: 'x',
+      },
+      'param:companySlug': 'ethme',
+    }),
   }
-  const requestConfig = requestConfigs.whoIsXMLApiDomainAvailability
+  const requestConfig = requestConfigs.bamboohrEmployeesDir
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)
