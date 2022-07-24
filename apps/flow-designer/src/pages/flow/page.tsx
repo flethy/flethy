@@ -92,8 +92,11 @@ export default observer(() => {
 										page.config.selectedConfig,
 										page.config.selectedConfigInterface,
 									)
-									.props.map((prop) => (
-										<ListItem key={prop}>{prop}</ListItem>
+									.props.map((prop, index) => (
+										<ListItem key={`${prop.name}${index}`}>
+											{prop.name} {prop.optional ? '' : 'required'} |{' '}
+											{prop.type}
+										</ListItem>
 									))}
 							</UnorderedList>
 						)}

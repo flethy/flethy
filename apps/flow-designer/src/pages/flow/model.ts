@@ -23,6 +23,7 @@ export const FlowPage = types
 		},
 
 		selectConfig(name: string) {
+			self.config.selectedConfigInterface = undefined
 			self.config.selectedConfig = name
 		},
 
