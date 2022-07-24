@@ -1,6 +1,6 @@
 # web3nao http-configs
 
-Supporting 59 APIs. Find all APIs [here](https://github.com/web3nao/web3nao/tree/main/docs).
+Supporting 60 APIs. Find all APIs [here](https://github.com/web3nao/web3nao/tree/main/docs).
 
 ## What and Why?
 

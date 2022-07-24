@@ -5,6 +5,7 @@ import { Alchemy } from '../../../http-configs/src/configs/alchemy.config'
 import { ApicAgent } from '../../../http-configs/src/configs/apicagent.config'
 import { APITemplateIo } from '../../../http-configs/src/configs/apitemplateio.config'
 import { Auth0 } from '../../../http-configs/src/configs/auth0.config'
+import { BambooHR } from '../../../http-configs/src/configs/bamboohr.config'
 import { BaseRow } from '../../../http-configs/src/configs/baserow.config'
 import { Bitly } from '../../../http-configs/src/configs/bitly.config'
 import { BrowsersFyi } from '../../../http-configs/src/configs/browsersfyi.config'
@@ -70,6 +71,7 @@ configTypes.push({type: getType<Auth0.GetAuthAccessToken>(), name: 'Auth0', inte
 configTypes.push({type: getType<Auth0.GetUsersByEmail>(), name: 'Auth0', interface: 'GetUsersByEmail'})
 configTypes.push({type: getType<Auth0.ListOrSearchUsers>(), name: 'Auth0', interface: 'ListOrSearchUsers'})
 configTypes.push({type: getType<Auth0.GetUser>(), name: 'Auth0', interface: 'GetUser'})
+configTypes.push({type: getType<BambooHR.EmployeesDirectory>(), name: 'BambooHR', interface: 'EmployeesDirectory'})
 configTypes.push({type: getType<BaseRow.CreateRow>(), name: 'BaseRow', interface: 'CreateRow'})
 configTypes.push({type: getType<BaseRow.GetRows>(), name: 'BaseRow', interface: 'GetRows'})
 configTypes.push({type: getType<Bitly.CreateShortLink>(), name: 'Bitly', interface: 'CreateShortLink'})

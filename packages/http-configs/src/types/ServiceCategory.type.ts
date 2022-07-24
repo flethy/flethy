@@ -53,7 +53,7 @@ export type GATEWAY_TYPE = 'httpProvider'
 export type VERSION_CONTROL_TYPE = 'hosted'
 export type COLLAB_TYPE = 'spreadsheet' | 'notes' | 'issueticketing' | 'forum'
 export type ANALYTICS_TYPE = 'webinsights'
-export type TOOLS_TYPE = 'cron'
+export type TOOLS_TYPE = 'cron' | 'hr'
 export type MARKETING_TYPE =
   | 'inbound'
   | 'content'
