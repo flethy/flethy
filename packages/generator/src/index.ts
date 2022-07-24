@@ -64,6 +64,7 @@ import Sentry from '../../http-configs/src/configs/sentry.config'
 import WhoIsXMLApi from '../../http-configs/src/configs/whoisxmlapi.config'
 import BambooHR from '../../http-configs/src/configs/bamboohr.config'
 import Personio from '../../http-configs/src/configs/personio.config'
+import Up42 from '../../http-configs/src/configs/up42.config'
 
 async function main() {
   const requestConfigs: {
@@ -943,8 +944,59 @@ async function main() {
       kind: 'personio.absences.get',
       'auth:Authorization': process.env.PERSONIO_JWT,
     }),
+    up42AuthRequest: nao<Up42.AuthRequest>({
+      kind: 'up42.auth.request',
+      'auth:Authorization': {
+        username: process.env.UP42_PROJECT_ID,
+        password: process.env.UP42_PROJECT_API_KEY,
+      },
+      'auth:grant_type': 'client_credentials',
+    }),
+    up42CreditsBalance: nao<Up42.CreditsBalance>({
+      kind: 'up42.credits.balance',
+      'auth:Authorization': process.env.UP42_JWT,
+    }),
+    up42CatalogSearch: nao<Up42.CatalogSearch>({
+      kind: 'up42.catalog.search',
+      'auth:Authorization': process.env.UP42_JWT,
+      'body:datetime': '2019-03-22T00:00:00Z/2019-03-24T23:59:59Z',
+      'body:intersects': {
+        type: 'Polygon',
+        coordinates: [
+          [
+            [13.58899063, 52.72706317],
+            [13.8941314, 52.73057866],
+            [13.89381997, 52.4393652],
+            [13.58935102, 2.43718654],
+            [1.58899063, 52.72706317],
+          ],
+        ],
+      },
+      'body:limit': 1,
+      'body:collections': ['PHR'],
+      'body:query': {
+        cloudCoverage: {
+          lte: 90,
+        },
+        resolution: {
+          lte: 10,
+        },
+        'up42:usageType': {
+          in: ['DATA', 'ANALYTICS'],
+        },
+        deliveryTime: {
+          in: ['HOURS', 'MINUTES'],
+        },
+        producer: {
+          in: ['Airbus'],
+        },
+        processingLevel: {
+          in: ['ALBUM', 'SENSOR'],
+        },
+      },
+    }),
   }
-  const requestConfig = requestConfigs.personioAbsencesGet
+  const requestConfig = requestConfigs.up42CatalogSearch
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

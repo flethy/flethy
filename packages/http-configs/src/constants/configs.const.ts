@@ -56,6 +56,7 @@ import { TheGraph } from '../configs/thegraph.config'
 import { Trello } from '../configs/trello.config'
 import { Tribe } from '../configs/tribe.config'
 import { Typeform } from '../configs/typeform.config'
+import { Up42 } from '../configs/up42.config'
 import { Web3Storage } from '../configs/web3storage.config'
 import { WhoIsXMLApi } from '../configs/whoisxmlapi.config'
 import { ZeroX } from '../configs/zerox.config'
@@ -119,6 +120,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['trello', Trello.API],
 ['tribe', Tribe.API],
 ['typeform', Typeform.API],
+['up42', Up42.API],
 ['web3storage', Web3Storage.API],
 ['whoisxmlapi', WhoIsXMLApi.API],
 ['0x', ZeroX.API],

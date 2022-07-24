@@ -56,6 +56,7 @@ import { TheGraph } from '../../../http-configs/src/configs/thegraph.config'
 import { Trello } from '../../../http-configs/src/configs/trello.config'
 import { Tribe } from '../../../http-configs/src/configs/tribe.config'
 import { Typeform } from '../../../http-configs/src/configs/typeform.config'
+import { Up42 } from '../../../http-configs/src/configs/up42.config'
 import { Web3Storage } from '../../../http-configs/src/configs/web3storage.config'
 import { WhoIsXMLApi } from '../../../http-configs/src/configs/whoisxmlapi.config'
 import { ZeroX } from '../../../http-configs/src/configs/zerox.config'
@@ -206,6 +207,9 @@ configTypes.push({type: getType<Trello.BoardGetLists>(), name: 'Trello', interfa
 configTypes.push({type: getType<Trello.CardsCreate>(), name: 'Trello', interface: 'CardsCreate'})
 configTypes.push({type: getType<Tribe.TribeAccessToken>(), name: 'Tribe', interface: 'TribeAccessToken'})
 configTypes.push({type: getType<Typeform.CreateApiCreateForm>(), name: 'Typeform', interface: 'CreateApiCreateForm'})
+configTypes.push({type: getType<Up42.AuthRequest>(), name: 'Up42', interface: 'AuthRequest'})
+configTypes.push({type: getType<Up42.CreditsBalance>(), name: 'Up42', interface: 'CreditsBalance'})
+configTypes.push({type: getType<Up42.CatalogSearch>(), name: 'Up42', interface: 'CatalogSearch'})
 configTypes.push({type: getType<Web3Storage.UploadContent>(), name: 'Web3Storage', interface: 'UploadContent'})
 configTypes.push({type: getType<WhoIsXMLApi.DomainAvailability>(), name: 'WhoIsXMLApi', interface: 'DomainAvailability'})
 configTypes.push({type: getType<ZeroX.SwapQuote>(), name: 'ZeroX', interface: 'SwapQuote'})
