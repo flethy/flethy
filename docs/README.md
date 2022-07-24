@@ -69,4 +69,5 @@ The following Endpoints are currently supported.
 * [Trello](./api/trello.md)
 * [Tribe](./api/tribe.md)
 * [Typeform](./api/typeform.md)
+* [Up42](./api/up42.md)
 * [WhoIsXMLApi](./api/whoisxmlapi.md)
