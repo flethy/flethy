@@ -1,9 +1,16 @@
 import { Instance, types, cast } from 'mobx-state-tree'
 import { CONFIG_TYPES } from '@web3nao/http-configs'
 
+export const ConfigProperty = types.model({
+	name: types.string,
+	type: types.string,
+	types: types.frozen<any>(),
+	optional: types.boolean,
+})
+
 export const ConfigInterface = types.model({
 	name: types.string,
-	props: types.array(types.string),
+	props: types.array(ConfigProperty),
 })
 
 export const Configs = types
@@ -23,7 +30,16 @@ export const Configs = types
 				config.interfaces.forEach((configInterface) => {
 					configInterfaces.push({
 						name: configInterface.name,
-						props: cast(configInterface.properties.map((prop) => prop.name)),
+						props: cast(
+							configInterface.properties.map((prop) => {
+								return {
+									name: prop.name,
+									type: prop.type,
+									types: prop.types,
+									optional: prop.optional,
+								}
+							}),
+						),
 					})
 				})
 				self.configs.set(name, configInterfaces)
