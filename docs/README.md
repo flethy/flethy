@@ -58,6 +58,7 @@ The following Endpoints are currently supported.
 * [Notion](./api/notion.md)
 * [OpenLibrary](./api/openlibrary.md)
 * [Ortto](./api/ortto.md)
+* [Personio](./api/personio.md)
 * [PurgoMalum](./api/purgomalum.md)
 * [RedisCloud](./api/rediscloud.md)
 * [RemoteOk](./api/remoteok.md)

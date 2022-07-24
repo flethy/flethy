@@ -42,6 +42,7 @@ import { OneInch } from '../configs/oneinch.config'
 import { OpenLibrary } from '../configs/openlibrary.config'
 import { OpenSea } from '../configs/opensea.config'
 import { Ortto } from '../configs/ortto.config'
+import { Personio } from '../configs/personio.config'
 import { Pinata } from '../configs/pinata.config'
 import { PurgoMalum } from '../configs/purgomalum.config'
 import { RedisCloud } from '../configs/rediscloud.config'
@@ -104,6 +105,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['openlibrary', OpenLibrary.API],
 ['opensea', OpenSea.API],
 ['ortto', Ortto.API],
+['personio', Personio.API],
 ['pinata', Pinata.API],
 ['purgomalum', PurgoMalum.API],
 ['rediscloud', RedisCloud.API],

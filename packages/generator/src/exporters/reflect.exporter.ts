@@ -42,6 +42,7 @@ import { OneInch } from '../../../http-configs/src/configs/oneinch.config'
 import { OpenLibrary } from '../../../http-configs/src/configs/openlibrary.config'
 import { OpenSea } from '../../../http-configs/src/configs/opensea.config'
 import { Ortto } from '../../../http-configs/src/configs/ortto.config'
+import { Personio } from '../../../http-configs/src/configs/personio.config'
 import { Pinata } from '../../../http-configs/src/configs/pinata.config'
 import { PurgoMalum } from '../../../http-configs/src/configs/purgomalum.config'
 import { RedisCloud } from '../../../http-configs/src/configs/rediscloud.config'
@@ -183,6 +184,9 @@ configTypes.push({type: getType<OpenLibrary.Books>(), name: 'OpenLibrary', inter
 configTypes.push({type: getType<OpenSea.GetAssets>(), name: 'OpenSea', interface: 'GetAssets'})
 configTypes.push({type: getType<OpenSea.GetCollections>(), name: 'OpenSea', interface: 'GetCollections'})
 configTypes.push({type: getType<Ortto.RetrieveOneOrMorePeople>(), name: 'Ortto', interface: 'RetrieveOneOrMorePeople'})
+configTypes.push({type: getType<Personio.AuthRequest>(), name: 'Personio', interface: 'AuthRequest'})
+configTypes.push({type: getType<Personio.EmployeesGet>(), name: 'Personio', interface: 'EmployeesGet'})
+configTypes.push({type: getType<Personio.AbsencesGet>(), name: 'Personio', interface: 'AbsencesGet'})
 configTypes.push({type: getType<Pinata.PinningPinJsonToIPFS>(), name: 'Pinata', interface: 'PinningPinJsonToIPFS'})
 configTypes.push({type: getType<PurgoMalum.Profanity>(), name: 'PurgoMalum', interface: 'Profanity'})
 configTypes.push({type: getType<RedisCloud.GetCurrentAccount>(), name: 'RedisCloud', interface: 'GetCurrentAccount'})

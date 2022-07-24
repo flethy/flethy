@@ -63,6 +63,7 @@ import Tribe from '../../http-configs/src/configs/tribe.config'
 import Sentry from '../../http-configs/src/configs/sentry.config'
 import WhoIsXMLApi from '../../http-configs/src/configs/whoisxmlapi.config'
 import BambooHR from '../../http-configs/src/configs/bamboohr.config'
+import Personio from '../../http-configs/src/configs/personio.config'
 
 async function main() {
   const requestConfigs: {
@@ -929,8 +930,21 @@ async function main() {
       },
       'param:companySlug': 'ethme',
     }),
+    personioAuthRequest: nao<Personio.AuthRequest>({
+      kind: 'personio.auth.request',
+      'auth:client_id': process.env.PERSONIO_CLIENT_ID,
+      'auth:client_secret': process.env.PERSONIO_CLIENT_SECRET,
+    }),
+    personioEmployeesGet: nao<Personio.EmployeesGet>({
+      kind: 'personio.employees.get',
+      'auth:Authorization': process.env.PERSONIO_JWT,
+    }),
+    personioAbsencesGet: nao<Personio.AbsencesGet>({
+      kind: 'personio.absences.get',
+      'auth:Authorization': process.env.PERSONIO_JWT,
+    }),
   }
-  const requestConfig = requestConfigs.bamboohrEmployeesDir
+  const requestConfig = requestConfigs.personioAbsencesGet
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)
