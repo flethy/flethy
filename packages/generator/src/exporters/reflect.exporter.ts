@@ -8,11 +8,14 @@ import { Auth0 } from '../../../http-configs/src/configs/auth0.config'
 import { BambooHR } from '../../../http-configs/src/configs/bamboohr.config'
 import { BaseRow } from '../../../http-configs/src/configs/baserow.config'
 import { Bitly } from '../../../http-configs/src/configs/bitly.config'
+import { Brandfetch } from '../../../http-configs/src/configs/brandfetch.config'
 import { BrowsersFyi } from '../../../http-configs/src/configs/browsersfyi.config'
 import { CalCom } from '../../../http-configs/src/configs/calcom.config'
 import { Calendarific } from '../../../http-configs/src/configs/calendarific.config'
 import { Camunda } from '../../../http-configs/src/configs/camunda.config'
 import { Clearbit } from '../../../http-configs/src/configs/clearbit.config'
+import { ClickUp } from '../../../http-configs/src/configs/clickup.config'
+import { Clockify } from '../../../http-configs/src/configs/clockify.config'
 import { CoinCap } from '../../../http-configs/src/configs/coincap.config'
 import { CoinGecko } from '../../../http-configs/src/configs/coingecko.config'
 import { Coinlayer } from '../../../http-configs/src/configs/coinlayer.config'
@@ -23,8 +26,10 @@ import { CountApi } from '../../../http-configs/src/configs/countapi.config'
 import { Courier } from '../../../http-configs/src/configs/courier.config'
 import { Covalent } from '../../../http-configs/src/configs/covalent.config'
 import { DeepL } from '../../../http-configs/src/configs/deepl.config'
+import { Dhl } from '../../../http-configs/src/configs/dhl.config'
 import { Disify } from '../../../http-configs/src/configs/disify.config'
 import { Etherscan } from '../../../http-configs/src/configs/etherscan.config'
+import { Eventbrite } from '../../../http-configs/src/configs/eventbrite.config'
 import { Frankfurter } from '../../../http-configs/src/configs/frankfurter.config'
 import { Github } from '../../../http-configs/src/configs/github.config'
 import { HelloSign } from '../../../http-configs/src/configs/hellosign.config'
@@ -57,6 +62,7 @@ import { Trello } from '../../../http-configs/src/configs/trello.config'
 import { Tribe } from '../../../http-configs/src/configs/tribe.config'
 import { Typeform } from '../../../http-configs/src/configs/typeform.config'
 import { Up42 } from '../../../http-configs/src/configs/up42.config'
+import { UsePlunk } from '../../../http-configs/src/configs/useplunk.config'
 import { Web3Storage } from '../../../http-configs/src/configs/web3storage.config'
 import { WhoIsXMLApi } from '../../../http-configs/src/configs/whoisxmlapi.config'
 import { ZeroX } from '../../../http-configs/src/configs/zerox.config'
@@ -77,6 +83,7 @@ configTypes.push({type: getType<BambooHR.EmployeesDirectory>(), name: 'BambooHR'
 configTypes.push({type: getType<BaseRow.CreateRow>(), name: 'BaseRow', interface: 'CreateRow'})
 configTypes.push({type: getType<BaseRow.GetRows>(), name: 'BaseRow', interface: 'GetRows'})
 configTypes.push({type: getType<Bitly.CreateShortLink>(), name: 'Bitly', interface: 'CreateShortLink'})
+configTypes.push({type: getType<Brandfetch.BrandByDomainOrId>(), name: 'Brandfetch', interface: 'BrandByDomainOrId'})
 configTypes.push({type: getType<BrowsersFyi.Get>(), name: 'BrowsersFyi', interface: 'Get'})
 configTypes.push({type: getType<CalCom.FindAllAvailabilities>(), name: 'CalCom', interface: 'FindAllAvailabilities'})
 configTypes.push({type: getType<CalCom.FindAnAvailability>(), name: 'CalCom', interface: 'FindAnAvailability'})
@@ -95,6 +102,10 @@ configTypes.push({type: getType<Camunda.ConsoleCreateClient>(), name: 'Camunda',
 configTypes.push({type: getType<Camunda.ConsoleGetClient>(), name: 'Camunda', interface: 'ConsoleGetClient'})
 configTypes.push({type: getType<Camunda.ConsoleDeleteClient>(), name: 'Camunda', interface: 'ConsoleDeleteClient'})
 configTypes.push({type: getType<Clearbit.LogoGet>(), name: 'Clearbit', interface: 'LogoGet'})
+configTypes.push({type: getType<ClickUp.SpacesGetAll>(), name: 'ClickUp', interface: 'SpacesGetAll'})
+configTypes.push({type: getType<ClickUp.ListsGetAllFolderless>(), name: 'ClickUp', interface: 'ListsGetAllFolderless'})
+configTypes.push({type: getType<ClickUp.TasksGetAll>(), name: 'ClickUp', interface: 'TasksGetAll'})
+configTypes.push({type: getType<Clockify.ProjectsGetAll>(), name: 'Clockify', interface: 'ProjectsGetAll'})
 configTypes.push({type: getType<CoinCap.getAssets>(), name: 'CoinCap', interface: 'getAssets'})
 configTypes.push({type: getType<CoinCap.getAsset>(), name: 'CoinCap', interface: 'getAsset'})
 configTypes.push({type: getType<CoinCap.getAssetHistory>(), name: 'CoinCap', interface: 'getAssetHistory'})
@@ -133,11 +144,14 @@ configTypes.push({type: getType<Covalent.ClassBGetUniswapV3Pools>(), name: 'Cova
 configTypes.push({type: getType<Covalent.PricingGetHistoricalTokenPrices>(), name: 'Covalent', interface: 'PricingGetHistoricalTokenPrices'})
 configTypes.push({type: getType<DeepL.TranslatingRequest>(), name: 'DeepL', interface: 'TranslatingRequest'})
 configTypes.push({type: getType<DeepL.GlossaryListLanguagePairs>(), name: 'DeepL', interface: 'GlossaryListLanguagePairs'})
+configTypes.push({type: getType<Dhl.TrackingUnified>(), name: 'Dhl', interface: 'TrackingUnified'})
 configTypes.push({type: getType<Disify.CheckSingleDomain>(), name: 'Disify', interface: 'CheckSingleDomain'})
 configTypes.push({type: getType<Disify.CheckMassDomain>(), name: 'Disify', interface: 'CheckMassDomain'})
 configTypes.push({type: getType<Disify.CheckSingleEmail>(), name: 'Disify', interface: 'CheckSingleEmail'})
 configTypes.push({type: getType<Disify.CheckMassEmail>(), name: 'Disify', interface: 'CheckMassEmail'})
 configTypes.push({type: getType<Etherscan.AccountsBalanceSingleAddress>(), name: 'Etherscan', interface: 'AccountsBalanceSingleAddress'})
+configTypes.push({type: getType<Eventbrite.ListAttendeeByEventId>(), name: 'Eventbrite', interface: 'ListAttendeeByEventId'})
+configTypes.push({type: getType<Eventbrite.GetUserMe>(), name: 'Eventbrite', interface: 'GetUserMe'})
 configTypes.push({type: getType<Frankfurter.Latest>(), name: 'Frankfurter', interface: 'Latest'})
 configTypes.push({type: getType<Frankfurter.Historical>(), name: 'Frankfurter', interface: 'Historical'})
 configTypes.push({type: getType<Frankfurter.TimeSeries>(), name: 'Frankfurter', interface: 'TimeSeries'})
@@ -210,6 +224,7 @@ configTypes.push({type: getType<Typeform.CreateApiCreateForm>(), name: 'Typeform
 configTypes.push({type: getType<Up42.AuthRequest>(), name: 'Up42', interface: 'AuthRequest'})
 configTypes.push({type: getType<Up42.CreditsBalance>(), name: 'Up42', interface: 'CreditsBalance'})
 configTypes.push({type: getType<Up42.CatalogSearch>(), name: 'Up42', interface: 'CatalogSearch'})
+configTypes.push({type: getType<UsePlunk.PostEvent>(), name: 'UsePlunk', interface: 'PostEvent'})
 configTypes.push({type: getType<Web3Storage.UploadContent>(), name: 'Web3Storage', interface: 'UploadContent'})
 configTypes.push({type: getType<WhoIsXMLApi.DomainAvailability>(), name: 'WhoIsXMLApi', interface: 'DomainAvailability'})
 configTypes.push({type: getType<ZeroX.SwapQuote>(), name: 'ZeroX', interface: 'SwapQuote'})
