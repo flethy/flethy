@@ -65,6 +65,12 @@ import WhoIsXMLApi from '../../http-configs/src/configs/whoisxmlapi.config'
 import BambooHR from '../../http-configs/src/configs/bamboohr.config'
 import Personio from '../../http-configs/src/configs/personio.config'
 import Up42 from '../../http-configs/src/configs/up42.config'
+import Brandfetch from '../../http-configs/src/configs/brandfetch.config'
+import UsePlunk from '../../http-configs/src/configs/useplunk.config'
+import ClickUp from '../../http-configs/src/configs/clickup.config'
+import Clockify from '../../http-configs/src/configs/clockify.config'
+import Dhl from '../../http-configs/src/configs/dhl.config'
+import Eventbrite from '../../http-configs/src/configs/eventbrite.config'
 
 async function main() {
   const requestConfigs: {
@@ -995,8 +1001,54 @@ async function main() {
         },
       },
     }),
+    brandFetch: nao<Brandfetch.BrandByDomainOrId>({
+      kind: 'brandfetch.brands.byDomainOrId',
+      'auth:Authorization': process.env.BRANDFETCH_API_KEY,
+      'param:domainOrId': 'diypunks.xyz',
+    }),
+    usePlunk: nao<UsePlunk.PostEvent>({
+      kind: 'useplunk.core.event',
+      'auth:Authorization': process.env.USEPLUNK_SECRET_KEY,
+      'body:event': 'my-first-event',
+      'body:email': 'adam.urban@gmail.com',
+    }),
+    clickupGetAllSpaces: nao<ClickUp.SpacesGetAll>({
+      kind: 'clickup.spaces.getAll',
+      'auth:Authorization': process.env.CLICKUP_API_TOKEN,
+      'param:teamId': Number(process.env.CLICKUP_TEAM_ID),
+    }),
+    clickupGetAllLists: nao<ClickUp.ListsGetAllFolderless>({
+      kind: 'clickup.lists.getAllFolderless',
+      'auth:Authorization': process.env.CLICKUP_API_TOKEN,
+      'param:spaceId': Number(process.env.CLICKUP_SPACE_ID),
+    }),
+    tasksGetAll: nao<ClickUp.TasksGetAll>({
+      kind: 'clickup.tasks.getAll',
+      'auth:Authorization': process.env.CLICKUP_API_TOKEN,
+      'param:listId': Number(process.env.CLICKUP_LIST_ID),
+    }),
+    clockifyGetAllProjects: nao<Clockify.ProjectsGetAll>({
+      kind: 'clockify.projects.getAll',
+      baseId: 'base',
+      'auth:X-Api-Key': process.env.CLOCKIFY_API_KEY,
+      'param:workspaceId': process.env.CLOCKIFY_WORKSPACE_ID,
+    }),
+    dhlTracking: nao<Dhl.TrackingUnified>({
+      kind: 'dhl.tracking.unified',
+      'auth:DHL-API-Key': process.env.DHL_API_KEY,
+      'query:trackingNumber': process.env.DHL_TRACKING_NUMBER,
+    }),
+    eventbriteListAttendees: nao<Eventbrite.ListAttendeeByEventId>({
+      kind: 'eventbrite.attendee.listByEventId',
+      'auth:Authorization': process.env.EVENTBRITE_API_TOKEN,
+      'param:eventId': '83305830983',
+    }),
+    eventbriteGetUserMe: nao<Eventbrite.GetUserMe>({
+      kind: 'eventbrite.user.me',
+      'auth:Authorization': process.env.EVENTBRITE_API_TOKEN,
+    }),
   }
-  const requestConfig = requestConfigs.up42CatalogSearch
+  const requestConfig = requestConfigs.eventbriteGetUserMe
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)
