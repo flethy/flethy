@@ -1,0 +1,24 @@
+# UsePlunk
+
+## Links
+
+* URL: [https://useplunk.com](https://useplunk.com)
+* Documentation: [https://docs.useplunk.com/](https://docs.useplunk.com/)
+* Tags: web2
+* Category: automation
+* Type: email
+
+## API
+
+### Authentication
+
+* Authorization: header:bearer
+
+### core
+
+#### event
+
+##### Post Event
+
+* Description: Post Event
+* Docs: [https://docs.useplunk.com/api-docs](https://docs.useplunk.com/api-docs)
