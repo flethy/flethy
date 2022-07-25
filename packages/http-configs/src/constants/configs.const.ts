@@ -8,11 +8,14 @@ import { Auth0 } from '../configs/auth0.config'
 import { BambooHR } from '../configs/bamboohr.config'
 import { BaseRow } from '../configs/baserow.config'
 import { Bitly } from '../configs/bitly.config'
+import { Brandfetch } from '../configs/brandfetch.config'
 import { BrowsersFyi } from '../configs/browsersfyi.config'
 import { CalCom } from '../configs/calcom.config'
 import { Calendarific } from '../configs/calendarific.config'
 import { Camunda } from '../configs/camunda.config'
 import { Clearbit } from '../configs/clearbit.config'
+import { ClickUp } from '../configs/clickup.config'
+import { Clockify } from '../configs/clockify.config'
 import { CoinCap } from '../configs/coincap.config'
 import { CoinGecko } from '../configs/coingecko.config'
 import { Coinlayer } from '../configs/coinlayer.config'
@@ -23,8 +26,10 @@ import { CountApi } from '../configs/countapi.config'
 import { Courier } from '../configs/courier.config'
 import { Covalent } from '../configs/covalent.config'
 import { DeepL } from '../configs/deepl.config'
+import { Dhl } from '../configs/dhl.config'
 import { Disify } from '../configs/disify.config'
 import { Etherscan } from '../configs/etherscan.config'
+import { Eventbrite } from '../configs/eventbrite.config'
 import { Frankfurter } from '../configs/frankfurter.config'
 import { Github } from '../configs/github.config'
 import { HelloSign } from '../configs/hellosign.config'
@@ -57,6 +62,7 @@ import { Trello } from '../configs/trello.config'
 import { Tribe } from '../configs/tribe.config'
 import { Typeform } from '../configs/typeform.config'
 import { Up42 } from '../configs/up42.config'
+import { UsePlunk } from '../configs/useplunk.config'
 import { Web3Storage } from '../configs/web3storage.config'
 import { WhoIsXMLApi } from '../configs/whoisxmlapi.config'
 import { ZeroX } from '../configs/zerox.config'
@@ -72,11 +78,14 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['bamboohr', BambooHR.API],
 ['baserow', BaseRow.API],
 ['bitly', Bitly.API],
+['brandfetch', Brandfetch.API],
 ['browsersfyi', BrowsersFyi.API],
 ['calcom', CalCom.API],
 ['calendarific', Calendarific.API],
 ['camunda', Camunda.API],
 ['clearbit', Clearbit.API],
+['clickup', ClickUp.API],
+['clockify', Clockify.API],
 ['coincap', CoinCap.API],
 ['coingecko', CoinGecko.API],
 ['coinlayer', Coinlayer.API],
@@ -87,8 +96,10 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['courier', Courier.API],
 ['covalent', Covalent.API],
 ['deepl', DeepL.API],
+['dhl', Dhl.API],
 ['disify', Disify.API],
 ['etherscan', Etherscan.API],
+['eventbrite', Eventbrite.API],
 ['frankfurter', Frankfurter.API],
 ['github', Github.API],
 ['hellosign', HelloSign.API],
@@ -121,6 +132,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['tribe', Tribe.API],
 ['typeform', Typeform.API],
 ['up42', Up42.API],
+['useplunk', UsePlunk.API],
 ['web3storage', Web3Storage.API],
 ['whoisxmlapi', WhoIsXMLApi.API],
 ['0x', ZeroX.API],
