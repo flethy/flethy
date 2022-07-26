@@ -32,6 +32,7 @@ import { Etherscan } from '../../../http-configs/src/configs/etherscan.config'
 import { Eventbrite } from '../../../http-configs/src/configs/eventbrite.config'
 import { Frankfurter } from '../../../http-configs/src/configs/frankfurter.config'
 import { Github } from '../../../http-configs/src/configs/github.config'
+import { Grist } from '../../../http-configs/src/configs/grist.config'
 import { HelloSign } from '../../../http-configs/src/configs/hellosign.config'
 import { HostIo } from '../../../http-configs/src/configs/hostio.config'
 import { Hubspot } from '../../../http-configs/src/configs/hubspot.config'
@@ -52,6 +53,7 @@ import { Pinata } from '../../../http-configs/src/configs/pinata.config'
 import { PurgoMalum } from '../../../http-configs/src/configs/purgomalum.config'
 import { RedisCloud } from '../../../http-configs/src/configs/rediscloud.config'
 import { RemoteOk } from '../../../http-configs/src/configs/remoteok.config'
+import { RemoveBg } from '../../../http-configs/src/configs/removebg.config'
 import { Sentry } from '../../../http-configs/src/configs/sentry.config'
 import { SerpStack } from '../../../http-configs/src/configs/serpstack.config'
 import { Slack } from '../../../http-configs/src/configs/slack.config'
@@ -156,6 +158,9 @@ configTypes.push({type: getType<Frankfurter.Latest>(), name: 'Frankfurter', inte
 configTypes.push({type: getType<Frankfurter.Historical>(), name: 'Frankfurter', interface: 'Historical'})
 configTypes.push({type: getType<Frankfurter.TimeSeries>(), name: 'Frankfurter', interface: 'TimeSeries'})
 configTypes.push({type: getType<Github.ListRepositoryIssues>(), name: 'Github', interface: 'ListRepositoryIssues'})
+configTypes.push({type: getType<Grist.AddRecords>(), name: 'Grist', interface: 'AddRecords'})
+configTypes.push({type: getType<Grist.FetchRecords>(), name: 'Grist', interface: 'FetchRecords'})
+configTypes.push({type: getType<Grist.DescribeDocument>(), name: 'Grist', interface: 'DescribeDocument'})
 configTypes.push({type: getType<HelloSign.GetAccount>(), name: 'HelloSign', interface: 'GetAccount'})
 configTypes.push({type: getType<HelloSign.SendSignatureRequest>(), name: 'HelloSign', interface: 'SendSignatureRequest'})
 configTypes.push({type: getType<HostIo.GetDomain>(), name: 'HostIo', interface: 'GetDomain'})
@@ -206,10 +211,13 @@ configTypes.push({type: getType<Pinata.PinningPinJsonToIPFS>(), name: 'Pinata', 
 configTypes.push({type: getType<PurgoMalum.Profanity>(), name: 'PurgoMalum', interface: 'Profanity'})
 configTypes.push({type: getType<RedisCloud.GetCurrentAccount>(), name: 'RedisCloud', interface: 'GetCurrentAccount'})
 configTypes.push({type: getType<RemoteOk.GetListings>(), name: 'RemoteOk', interface: 'GetListings'})
+configTypes.push({type: getType<RemoveBg.Remove>(), name: 'RemoveBg', interface: 'Remove'})
 configTypes.push({type: getType<Sentry.QueryDiscoverEvents>(), name: 'Sentry', interface: 'QueryDiscoverEvents'})
 configTypes.push({type: getType<Sentry.ListProjects>(), name: 'Sentry', interface: 'ListProjects'})
 configTypes.push({type: getType<SerpStack.Search>(), name: 'SerpStack', interface: 'Search'})
 configTypes.push({type: getType<Slack.IncomingWebhooksMessage>(), name: 'Slack', interface: 'IncomingWebhooksMessage'})
+configTypes.push({type: getType<Slack.ChatPostMessage>(), name: 'Slack', interface: 'ChatPostMessage'})
+configTypes.push({type: getType<Slack.ConversationsList>(), name: 'Slack', interface: 'ConversationsList'})
 configTypes.push({type: getType<Statically.StaticZapGithub>(), name: 'Statically', interface: 'StaticZapGithub'})
 configTypes.push({type: getType<Statically.StaticZapGitlab>(), name: 'Statically', interface: 'StaticZapGitlab'})
 configTypes.push({type: getType<Statically.StaticZapBitbucket>(), name: 'Statically', interface: 'StaticZapBitbucket'})

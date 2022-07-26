@@ -18,3 +18,29 @@
 
 * Description: Post message to Slack Channel
 * Docs: [https://api.slack.com/messaging/webhooks](https://api.slack.com/messaging/webhooks)
+
+### chat
+
+#### postMessage
+
+##### Authentication
+
+* Authorization: header:bearer
+
+##### Publishing your message
+
+* Description: Publishing your message
+* Docs: [https://api.slack.com/messaging/sending#publishing](https://api.slack.com/messaging/sending#publishing)
+
+### conversations
+
+#### list
+
+##### Authentication
+
+* Authorization: header:bearer
+
+##### Picking the right conversation
+
+* Description: Picking the right conversation
+* Docs: [https://api.slack.com/messaging/sending#conversations](https://api.slack.com/messaging/sending#conversations)
