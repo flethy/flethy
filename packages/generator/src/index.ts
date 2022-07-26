@@ -71,6 +71,8 @@ import ClickUp from '../../http-configs/src/configs/clickup.config'
 import Clockify from '../../http-configs/src/configs/clockify.config'
 import Dhl from '../../http-configs/src/configs/dhl.config'
 import Eventbrite from '../../http-configs/src/configs/eventbrite.config'
+import RemoveBg from '../../http-configs/src/configs/removebg.config'
+import Grist from '../../http-configs/src/configs/grist.config'
 
 async function main() {
   const requestConfigs: {
@@ -102,6 +104,16 @@ async function main() {
           },
         },
       ],
+    }),
+    slackPublishMessage: nao<Slack.ChatPostMessage>({
+      kind: 'slack.chat.postMessage',
+      'auth:Authorization': process.env.SLACK_BOT_TOKEN,
+      'body:text': 'Hello, world!',
+      'body:channel': process.env.SLACK_CHANNEL_ID,
+    }),
+    slackListConversations: nao<Slack.ConversationsList>({
+      kind: 'slack.conversations.list',
+      'auth:Authorization': process.env.SLACK_BOT_TOKEN,
     }),
     mailersend: nao<MailerSend.EmailSend>({
       kind: 'mailersend.email.send',
@@ -1047,8 +1059,49 @@ async function main() {
       kind: 'eventbrite.user.me',
       'auth:Authorization': process.env.EVENTBRITE_API_TOKEN,
     }),
+    removeBg: nao<RemoveBg.Remove>({
+      kind: 'removebg.core.remove',
+      'auth:X-API-Key': process.env.REMOVEBG_API_KEY,
+      'body:image_url':
+        'https://images.unsplash.com/photo-1658801615124-e815ce5ff4a7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80',
+      'header:Content-Type': 'application/json',
+    }),
+    gristAddRecords: nao<Grist.AddRecords>({
+      kind: 'grist.records.add',
+      'auth:Authorization': process.env.GRIST_API_KEY,
+      'param:docId': process.env.GRIST_DOC_ID,
+      'param:tableId': process.env.GRIST_TABLE_ID,
+      baseId: 'docs',
+      'body:records': [
+        {
+          fields: {
+            A: 1,
+            B: 2,
+          },
+        },
+        {
+          fields: {
+            A: 11,
+            B: 22,
+          },
+        },
+      ],
+    }),
+    gristFetchRecords: nao<Grist.FetchRecords>({
+      kind: 'grist.records.fetch',
+      'auth:Authorization': process.env.GRIST_API_KEY,
+      'param:docId': process.env.GRIST_DOC_ID,
+      'param:tableId': process.env.GRIST_TABLE_ID,
+      baseId: 'docs',
+    }),
+    gristDescribeDocument: nao<Grist.DescribeDocument>({
+      kind: 'grist.docs.describe',
+      'auth:Authorization': process.env.GRIST_API_KEY,
+      'param:docId': process.env.GRIST_DOC_ID,
+      baseId: 'docs',
+    }),
   }
-  const requestConfig = requestConfigs.eventbriteGetUserMe
+  const requestConfig = requestConfigs.gristFetchRecords
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

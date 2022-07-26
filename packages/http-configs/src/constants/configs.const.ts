@@ -32,6 +32,7 @@ import { Etherscan } from '../configs/etherscan.config'
 import { Eventbrite } from '../configs/eventbrite.config'
 import { Frankfurter } from '../configs/frankfurter.config'
 import { Github } from '../configs/github.config'
+import { Grist } from '../configs/grist.config'
 import { HelloSign } from '../configs/hellosign.config'
 import { HostIo } from '../configs/hostio.config'
 import { Hubspot } from '../configs/hubspot.config'
@@ -52,6 +53,7 @@ import { Pinata } from '../configs/pinata.config'
 import { PurgoMalum } from '../configs/purgomalum.config'
 import { RedisCloud } from '../configs/rediscloud.config'
 import { RemoteOk } from '../configs/remoteok.config'
+import { RemoveBg } from '../configs/removebg.config'
 import { Sentry } from '../configs/sentry.config'
 import { SerpStack } from '../configs/serpstack.config'
 import { Slack } from '../configs/slack.config'
@@ -102,6 +104,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['eventbrite', Eventbrite.API],
 ['frankfurter', Frankfurter.API],
 ['github', Github.API],
+['grist', Grist.API],
 ['hellosign', HelloSign.API],
 ['hostio', HostIo.API],
 ['hubspot', Hubspot.API],
@@ -122,6 +125,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['purgomalum', PurgoMalum.API],
 ['rediscloud', RedisCloud.API],
 ['remoteok', RemoteOk.API],
+['removebg', RemoveBg.API],
 ['sentry', Sentry.API],
 ['serpstack', SerpStack.API],
 ['slack', Slack.API],

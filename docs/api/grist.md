@@ -1,0 +1,40 @@
+# Grist
+
+## Links
+
+* URL: [https://getgrist.com](https://getgrist.com)
+* Documentation: [https://support.getgrist.com/api](https://support.getgrist.com/api)
+* Tags: web2
+* Category: storage
+* Type: database
+
+## API
+
+### Authentication
+
+* Authorization: header:bearer
+
+### records
+
+#### add
+
+##### Add records to a table
+
+* Description: Add records to a table
+* Docs: [https://support.getgrist.com/api/#tag/records/paths/~1docs~1{docId}~1tables~1{tableId}~1records/post](https://support.getgrist.com/api/#tag/records/paths/~1docs~1{docId}~1tables~1{tableId}~1records/post)
+
+#### fetch
+
+##### Fetch records from a table
+
+* Description: Fetch records from a table
+* Docs: [https://support.getgrist.com/api/#tag/records/paths/~1docs~1{docId}~1tables~1{tableId}~1records/get](https://support.getgrist.com/api/#tag/records/paths/~1docs~1{docId}~1tables~1{tableId}~1records/get)
+
+### docs
+
+#### describe
+
+##### Describe a document
+
+* Description: Describe a document
+* Docs: [https://support.getgrist.com/api/#tag/docs/paths/~1docs~1{docId}/get](https://support.getgrist.com/api/#tag/docs/paths/~1docs~1{docId}/get)
