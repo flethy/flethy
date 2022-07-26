@@ -1,0 +1,24 @@
+# MailPace
+
+## Links
+
+* URL: [https://mailpace.com](https://mailpace.com)
+* Documentation: [https://docs.mailpace.com/](https://docs.mailpace.com/)
+* Tags: web2
+* Category: communication
+* Type: email
+
+## API
+
+### Authentication
+
+* MailPace-Server-Token: header
+
+### core
+
+#### send
+
+##### Send an email
+
+* Description: The /send endpoint is the main API endpoint for sending messages through MailPace
+* Docs: [https://docs.mailpace.com/reference/send](https://docs.mailpace.com/reference/send)

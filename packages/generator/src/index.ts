@@ -73,6 +73,7 @@ import Dhl from '../../http-configs/src/configs/dhl.config'
 import Eventbrite from '../../http-configs/src/configs/eventbrite.config'
 import RemoveBg from '../../http-configs/src/configs/removebg.config'
 import Grist from '../../http-configs/src/configs/grist.config'
+import MailPace from '../../http-configs/src/configs/mailpace.config'
 
 async function main() {
   const requestConfigs: {
@@ -1100,8 +1101,20 @@ async function main() {
       'param:docId': process.env.GRIST_DOC_ID,
       baseId: 'docs',
     }),
+    mailpaceSend: nao<MailPace.Send>({
+      kind: 'mailpace.core.send',
+      'auth:MailPace-Server-Token': process.env.MAILPACE_API_KEY,
+      'header:Accept': 'application/json',
+      'header:Content-Type': 'application/json',
+      'body:from': 'adam@web3nao.xyz',
+      'body:to': 'adam.urban@gmail.com',
+      'body:textbody': `Yo!
+      
+      Already checked web3nao? It's AWESOME!`,
+      'body:subject': 'Check! Out! web3nao!',
+    }),
   }
-  const requestConfig = requestConfigs.gristFetchRecords
+  const requestConfig = requestConfigs.mailpaceSend
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

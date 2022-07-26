@@ -57,6 +57,7 @@ The following Endpoints are currently supported.
 * [HunterIo](./api/hunterio.md)
 * [MailCheckAi](./api/mailcheckai.md)
 * [MailerSend](./api/mailersend.md)
+* [MailPace](./api/mailpace.md)
 * [Mergent](./api/mergent.md)
 * [MicroDev](./api/microdev.md)
 * [Mixpanel](./api/mixpanel.md)

@@ -39,6 +39,7 @@ import { Hubspot } from '../configs/hubspot.config'
 import { HunterIo } from '../configs/hunterio.config'
 import { MailCheckAi } from '../configs/mailcheckai.config'
 import { MailerSend } from '../configs/mailersend.config'
+import { MailPace } from '../configs/mailpace.config'
 import { Mergent } from '../configs/mergent.config'
 import { MicroDev } from '../configs/microdev.config'
 import { Mixpanel } from '../configs/mixpanel.config'
@@ -111,6 +112,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['hunterio', HunterIo.API],
 ['mailcheckai', MailCheckAi.API],
 ['mailersend', MailerSend.API],
+['mailpace', MailPace.API],
 ['mergent', Mergent.API],
 ['microdev', MicroDev.API],
 ['mixpanel', Mixpanel.API],

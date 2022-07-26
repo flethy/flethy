@@ -39,6 +39,7 @@ import { Hubspot } from '../../../http-configs/src/configs/hubspot.config'
 import { HunterIo } from '../../../http-configs/src/configs/hunterio.config'
 import { MailCheckAi } from '../../../http-configs/src/configs/mailcheckai.config'
 import { MailerSend } from '../../../http-configs/src/configs/mailersend.config'
+import { MailPace } from '../../../http-configs/src/configs/mailpace.config'
 import { Mergent } from '../../../http-configs/src/configs/mergent.config'
 import { MicroDev } from '../../../http-configs/src/configs/microdev.config'
 import { Mixpanel } from '../../../http-configs/src/configs/mixpanel.config'
@@ -178,6 +179,7 @@ configTypes.push({type: getType<HunterIo.EmailVerification>(), name: 'HunterIo',
 configTypes.push({type: getType<MailCheckAi.CheckDomain>(), name: 'MailCheckAi', interface: 'CheckDomain'})
 configTypes.push({type: getType<MailCheckAi.CheckEmail>(), name: 'MailCheckAi', interface: 'CheckEmail'})
 configTypes.push({type: getType<MailerSend.EmailSend>(), name: 'MailerSend', interface: 'EmailSend'})
+configTypes.push({type: getType<MailPace.Send>(), name: 'MailPace', interface: 'Send'})
 configTypes.push({type: getType<Mergent.CreateTask>(), name: 'Mergent', interface: 'CreateTask'})
 configTypes.push({type: getType<MicroDev.StorageDbCreateRecord>(), name: 'MicroDev', interface: 'StorageDbCreateRecord'})
 configTypes.push({type: getType<MicroDev.StorageDbReadRecord>(), name: 'MicroDev', interface: 'StorageDbReadRecord'})
