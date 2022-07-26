@@ -26,9 +26,9 @@ export namespace Dhl {
       name: 'Dhl',
       url: 'https://dhl.com/',
       docs: 'https://developer.dhl.com/',
-      tags: ['web3'],
-      category: 'aggregation',
-      type: 'indexer',
+      tags: ['web2'],
+      category: 'utils',
+      type: 'delivery-tracking',
     },
     base: 'https://api-eu.dhl.com',
     auth: {

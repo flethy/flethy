@@ -4,9 +4,9 @@
 
 * URL: [https://dhl.com/](https://dhl.com/)
 * Documentation: [https://developer.dhl.com/](https://developer.dhl.com/)
-* Tags: web3
-* Category: aggregation
-* Type: indexer
+* Tags: web2
+* Category: utils
+* Type: delivery-tracking
 
 ## API
 
