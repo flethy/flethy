@@ -33,10 +33,14 @@ import { Eventbrite } from '../../../http-configs/src/configs/eventbrite.config'
 import { Frankfurter } from '../../../http-configs/src/configs/frankfurter.config'
 import { Github } from '../../../http-configs/src/configs/github.config'
 import { Grist } from '../../../http-configs/src/configs/grist.config'
+import { HackerNews } from '../../../http-configs/src/configs/hackernews.config'
+import { Harvest } from '../../../http-configs/src/configs/harvest.config'
 import { HelloSign } from '../../../http-configs/src/configs/hellosign.config'
 import { HostIo } from '../../../http-configs/src/configs/hostio.config'
 import { Hubspot } from '../../../http-configs/src/configs/hubspot.config'
 import { HunterIo } from '../../../http-configs/src/configs/hunterio.config'
+import { Jira } from '../../../http-configs/src/configs/jira.config'
+import { Linear } from '../../../http-configs/src/configs/linear.config'
 import { MailCheckAi } from '../../../http-configs/src/configs/mailcheckai.config'
 import { MailerSend } from '../../../http-configs/src/configs/mailersend.config'
 import { MailPace } from '../../../http-configs/src/configs/mailpace.config'
@@ -162,6 +166,10 @@ configTypes.push({type: getType<Github.ListRepositoryIssues>(), name: 'Github', 
 configTypes.push({type: getType<Grist.AddRecords>(), name: 'Grist', interface: 'AddRecords'})
 configTypes.push({type: getType<Grist.FetchRecords>(), name: 'Grist', interface: 'FetchRecords'})
 configTypes.push({type: getType<Grist.DescribeDocument>(), name: 'Grist', interface: 'DescribeDocument'})
+configTypes.push({type: getType<HackerNews.GetItem>(), name: 'HackerNews', interface: 'GetItem'})
+configTypes.push({type: getType<HackerNews.GetUser>(), name: 'HackerNews', interface: 'GetUser'})
+configTypes.push({type: getType<HackerNews.GetLive>(), name: 'HackerNews', interface: 'GetLive'})
+configTypes.push({type: getType<Harvest.ListProjects>(), name: 'Harvest', interface: 'ListProjects'})
 configTypes.push({type: getType<HelloSign.GetAccount>(), name: 'HelloSign', interface: 'GetAccount'})
 configTypes.push({type: getType<HelloSign.SendSignatureRequest>(), name: 'HelloSign', interface: 'SendSignatureRequest'})
 configTypes.push({type: getType<HostIo.GetDomain>(), name: 'HostIo', interface: 'GetDomain'})
@@ -176,6 +184,10 @@ configTypes.push({type: getType<HunterIo.DomainSearch>(), name: 'HunterIo', inte
 configTypes.push({type: getType<HunterIo.EmailFinder>(), name: 'HunterIo', interface: 'EmailFinder'})
 configTypes.push({type: getType<HunterIo.AuthorFinder>(), name: 'HunterIo', interface: 'AuthorFinder'})
 configTypes.push({type: getType<HunterIo.EmailVerification>(), name: 'HunterIo', interface: 'EmailVerification'})
+configTypes.push({type: getType<Jira.GetIssue>(), name: 'Jira', interface: 'GetIssue'})
+configTypes.push({type: getType<Jira.SearchIssues>(), name: 'Jira', interface: 'SearchIssues'})
+configTypes.push({type: getType<Jira.CreateIssue>(), name: 'Jira', interface: 'CreateIssue'})
+configTypes.push({type: getType<Linear.GraphQLQuery>(), name: 'Linear', interface: 'GraphQLQuery'})
 configTypes.push({type: getType<MailCheckAi.CheckDomain>(), name: 'MailCheckAi', interface: 'CheckDomain'})
 configTypes.push({type: getType<MailCheckAi.CheckEmail>(), name: 'MailCheckAi', interface: 'CheckEmail'})
 configTypes.push({type: getType<MailerSend.EmailSend>(), name: 'MailerSend', interface: 'EmailSend'})

@@ -20,6 +20,7 @@ export type CATEGORY =
   | 'network'
   | 'identity'
   | 'career'
+  | 'news'
 export type TYPE =
   | COMM_TYPE
   | STORAGE_TYPE
@@ -41,6 +42,7 @@ export type TYPE =
   | NETWORK_TYPE
   | IDENTITY_TYPE
   | CAREER_TYPE
+  | NEWS_TYPE
 
 export type COMM_TYPE = 'email' | 'messenger'
 export type STORAGE_TYPE = 'ipfs' | 'database'
@@ -91,3 +93,4 @@ export type SEARCH_TYPE = 'serp'
 export type NETWORK_TYPE = 'cdn'
 export type IDENTITY_TYPE = 'identitymanagement'
 export type CAREER_TYPE = 'job-listings'
+export type NEWS_TYPE = 'software' | 'everything'

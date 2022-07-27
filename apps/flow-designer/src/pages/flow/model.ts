@@ -1,6 +1,8 @@
+import { nao } from '@web3nao/http-configs'
 import { cast, types } from 'mobx-state-tree'
 import { applyNodeChanges, Connection, NodeChange } from 'react-flow-renderer'
 import { getRootStore } from '../../models/helpers'
+import axios from 'axios'
 
 export const FlowPage = types
 	.model('FlowPage', {
@@ -10,6 +12,7 @@ export const FlowPage = types
 				isOpen: types.boolean,
 				selectedConfig: types.maybe(types.string),
 				selectedConfigInterface: types.maybe(types.string),
+				config: types.map(types.string),
 			}),
 			{ nodeId: '-1', isOpen: false },
 		),
@@ -31,11 +34,52 @@ export const FlowPage = types
 			self.config.selectedConfigInterface = name
 		},
 
+		updateConfigInterfaceProperty(key: string, value: string) {
+			self.config.config.set(key, value)
+		},
+
 		closeConfig: () => {
 			self.config.nodeId = ''
 			self.config.isOpen = false
 			self.config.selectedConfig = undefined
 			self.config.selectedConfigInterface = undefined
+		},
+
+		runConfig() {
+			const requestConfig: any = {}
+			const { configs } = getRootStore(self)
+			if (self.config.selectedConfig && self.config.selectedConfigInterface) {
+				const configInterface = configs.getConfigInterface(
+					self.config.selectedConfig,
+					self.config.selectedConfigInterface,
+				)
+				const kind = configInterface.props.find((prop) => prop.name === 'kind')
+				if (kind) {
+					requestConfig.kind = kind.types
+				}
+				for (const key of self.config.config.keys()) {
+					requestConfig[key] = self.config.config.get(key)
+				}
+			}
+			console.log(requestConfig)
+			const naoConfig = nao(requestConfig)
+			if (naoConfig.headers) {
+				naoConfig.headers['Content-Type'] = 'application/x-www-form-urlencoded'
+			} else {
+				naoConfig.headers = {
+					'Content-Type': 'application/x-www-form-urlencoded',
+				}
+			}
+
+			console.log(naoConfig)
+			axios({
+				method: naoConfig.method,
+				headers: naoConfig.headers,
+				url: naoConfig.url,
+				data: naoConfig.body,
+			}).then((response) => {
+				console.log(response)
+			})
 		},
 	}))
 	.actions((self) => ({
