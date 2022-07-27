@@ -33,10 +33,14 @@ import { Eventbrite } from '../configs/eventbrite.config'
 import { Frankfurter } from '../configs/frankfurter.config'
 import { Github } from '../configs/github.config'
 import { Grist } from '../configs/grist.config'
+import { HackerNews } from '../configs/hackernews.config'
+import { Harvest } from '../configs/harvest.config'
 import { HelloSign } from '../configs/hellosign.config'
 import { HostIo } from '../configs/hostio.config'
 import { Hubspot } from '../configs/hubspot.config'
 import { HunterIo } from '../configs/hunterio.config'
+import { Jira } from '../configs/jira.config'
+import { Linear } from '../configs/linear.config'
 import { MailCheckAi } from '../configs/mailcheckai.config'
 import { MailerSend } from '../configs/mailersend.config'
 import { MailPace } from '../configs/mailpace.config'
@@ -106,10 +110,14 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['frankfurter', Frankfurter.API],
 ['github', Github.API],
 ['grist', Grist.API],
+['hackernews', HackerNews.API],
+['harvest', Harvest.API],
 ['hellosign', HelloSign.API],
 ['hostio', HostIo.API],
 ['hubspot', Hubspot.API],
 ['hunterio', HunterIo.API],
+['jira', Jira.API],
+['linear', Linear.API],
 ['mailcheckai', MailCheckAi.API],
 ['mailersend', MailerSend.API],
 ['mailpace', MailPace.API],

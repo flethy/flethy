@@ -26,6 +26,7 @@ importers:
       '@vitejs/plugin-react': 2.0.0
       '@web3nao/http-configs': workspace:*
       autoprefixer: ^10.4.7
+      axios: ^0.27.2
       eslint-config-custom: workspace:*
       framer-motion: ^6.5.1
       i18next: ^21.8.14
@@ -57,6 +58,7 @@ importers:
       '@emotion/react': 11.9.3_szkdlbnthht4v3jvm76fn7u6na
       '@emotion/styled': 11.9.3_y2x62d5bbinncmisoeyv36jqse
       '@web3nao/http-configs': link:../../packages/http-configs
+      axios: 0.27.2
       framer-motion: 6.5.1_biqbaboplfbrettd7655fr4n2y
       i18next: 21.8.14
       mobx: 6.6.1

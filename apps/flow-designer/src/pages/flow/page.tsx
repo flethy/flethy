@@ -8,6 +8,7 @@ import {
 	DrawerFooter,
 	DrawerHeader,
 	DrawerOverlay,
+	Input,
 	ListItem,
 	Select,
 	UnorderedList,
@@ -92,12 +93,61 @@ export default observer(() => {
 										page.config.selectedConfig,
 										page.config.selectedConfigInterface,
 									)
-									.props.map((prop, index) => (
-										<ListItem key={`${prop.name}${index}`}>
-											{prop.name} {prop.optional ? '' : 'required'} |{' '}
-											{prop.type}
-										</ListItem>
-									))}
+									.props.map((prop, index) => {
+										if (
+											(Array.isArray(prop.types) && prop.types.length === 1) ||
+											typeof prop.types === 'string'
+										) {
+											return (
+												<p key={`${prop.name}-${index}`}>
+													<strong>{prop.name}:</strong>{' '}
+													{Array.isArray(prop.types)
+														? prop.types[0]
+														: prop.types}
+												</p>
+											)
+										} else if (
+											Array.isArray(prop.types) &&
+											prop.types.length > 1
+										) {
+											return (
+												<div key={`${prop.name}-${index}`}>
+													<p>
+														<strong>{prop.name}</strong>
+													</p>
+													<Select
+														placeholder="Select Value"
+														onChange={(event) =>
+															console.log(event.target.value)
+														}
+													>
+														{prop.types.map((propType) => (
+															<option key={propType} value={propType}>
+																{propType}
+															</option>
+														))}
+													</Select>
+												</div>
+											)
+										} else {
+											return (
+												<p key={`${prop.name}-${index}`}>
+													<strong>
+														{prop.name} ({prop.type}){prop.optional ? '' : ' *'}
+													</strong>{' '}
+													<Input
+														placeholder={`Enter ${prop.name}`}
+														onChange={(event) =>
+															page.updateConfigInterfaceProperty(
+																prop.name,
+																event.target.value,
+															)
+														}
+													/>
+												</p>
+											)
+										}
+									})}
 							</UnorderedList>
 						)}
 					</DrawerBody>
@@ -106,7 +156,12 @@ export default observer(() => {
 						<Button variant="outline" mr={3} onClick={() => page.closeConfig()}>
 							Cancel
 						</Button>
-						<Button colorScheme="blue">Save</Button>
+						<Button colorScheme="blue" mr={3}>
+							Save
+						</Button>
+						<Button colorScheme="orange" onClick={() => page.runConfig()}>
+							Run
+						</Button>
 					</DrawerFooter>
 				</DrawerContent>
 			</Drawer>

@@ -28,18 +28,16 @@ export const Configs = types
 				const name = config.name
 				const configInterfaces: Array<Instance<typeof ConfigInterface>> = []
 				config.interfaces.forEach((configInterface) => {
+					const props: Array<Instance<typeof ConfigProperty>> = []
+					for (const prop of configInterface.properties) {
+						if (!props.find((currentProp) => currentProp.name === prop.name)) {
+							props.push(prop)
+						}
+					}
+
 					configInterfaces.push({
 						name: configInterface.name,
-						props: cast(
-							configInterface.properties.map((prop) => {
-								return {
-									name: prop.name,
-									type: prop.type,
-									types: prop.types,
-									optional: prop.optional,
-								}
-							}),
-						),
+						props: cast(props),
 					})
 				})
 				self.configs.set(name, configInterfaces)

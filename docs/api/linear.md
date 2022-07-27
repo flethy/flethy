@@ -1,0 +1,24 @@
+# Linear
+
+## Links
+
+* URL: [https://linear.app](https://linear.app)
+* Documentation: [https://developers.linear.app/docs](https://developers.linear.app/docs)
+* Tags: web2
+* Category: utils
+* Type: issueticketing
+
+## API
+
+### Authentication
+
+* Authorization: header
+
+### graphql
+
+#### query
+
+##### GraphQL API
+
+* Description: GraphQL API
+* Docs: [https://developers.linear.app/docs/graphql/working-with-the-graphql-api](https://developers.linear.app/docs/graphql/working-with-the-graphql-api)

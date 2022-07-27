@@ -74,6 +74,10 @@ import Eventbrite from '../../http-configs/src/configs/eventbrite.config'
 import RemoveBg from '../../http-configs/src/configs/removebg.config'
 import Grist from '../../http-configs/src/configs/grist.config'
 import MailPace from '../../http-configs/src/configs/mailpace.config'
+import HackerNews from '../../http-configs/src/configs/hackernews.config'
+import Harvest from '../../http-configs/src/configs/harvest.config'
+import Jira from '../../http-configs/src/configs/jira.config'
+import Linear from '../../http-configs/src/configs/linear.config'
 
 async function main() {
   const requestConfigs: {
@@ -1113,8 +1117,57 @@ async function main() {
       Already checked web3nao? It's AWESOME!`,
       'body:subject': 'Check! Out! web3nao!',
     }),
+    hackerNews: nao<HackerNews.GetItem>({
+      kind: 'hackernews.core.item',
+      'param:id': '8863.json',
+    }),
+    harvestListProjects: nao<Harvest.ListProjects>({
+      kind: 'harvest.projects.list',
+      'auth:Authorization': process.env.HARVEST_API_TOKEN,
+      'auth:Harvest-Account-Id': process.env.HARVEST_ACCOUNT_ID,
+    }),
+    jiraGetIssue: nao<Jira.GetIssue>({
+      kind: 'jira.issue.get',
+      'auth:Authorization': {
+        username: process.env.JIRA_USERNAME,
+        password: process.env.JIRA_API_TOKEN,
+      },
+      'subdomain:project': process.env.JIRA_PROJECT,
+      'param:issueId': process.env.JIRA_ISSUE_ID,
+    }),
+    jiraCreateIssue: nao<Jira.CreateIssue>({
+      kind: 'jira.issue.create',
+      'auth:Authorization': {
+        username: process.env.JIRA_USERNAME,
+        password: process.env.JIRA_API_TOKEN,
+      },
+      'subdomain:project': process.env.JIRA_PROJECT,
+      'body:fields': {
+        project: {
+          id: '10000',
+        },
+        summary: 'Integrate with JIRA',
+        description: 'doit',
+        issuetype: {
+          id: '10001',
+        },
+      },
+    }),
+    jiraSearchIssues: nao<Jira.SearchIssues>({
+      kind: 'jira.issue.search',
+      'auth:Authorization': {
+        username: process.env.JIRA_USERNAME,
+        password: process.env.JIRA_API_TOKEN,
+      },
+      'subdomain:project': process.env.JIRA_PROJECT,
+    }),
+    linear: nao<Linear.GraphQLQuery>({
+      kind: 'linear.graphql.query',
+      'auth:Authorization': process.env.LINEAR_API_KEY,
+      'body:query': `{ issues { nodes { id title } } }`,
+    }),
   }
-  const requestConfig = requestConfigs.mailpaceSend
+  const requestConfig = requestConfigs.linear
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

@@ -1,0 +1,38 @@
+# Jira
+
+## Links
+
+* URL: [https://www.atlassian.com/software/jira](https://www.atlassian.com/software/jira)
+* Documentation: [https://support.atlassian.com/jira-software-cloud/resources/](https://support.atlassian.com/jira-software-cloud/resources/)
+* Tags: web2
+* Category: utils
+* Type: issueticketing
+
+## API
+
+### Authentication
+
+* Authorization: header:basic
+
+### issue
+
+#### get
+
+##### Get Issue
+
+* Description: Get Issue
+* Docs: [https://developer.atlassian.com/server/jira/platform/rest-apis/#using-the-rest-apis](https://developer.atlassian.com/server/jira/platform/rest-apis/#using-the-rest-apis)
+
+#### search
+
+##### Search Issues
+
+* Description: Search Issues
+* Docs: [https://developer.atlassian.com/server/jira/platform/rest-apis/#using-the-rest-apis](https://developer.atlassian.com/server/jira/platform/rest-apis/#using-the-rest-apis)
+
+#### create
+
+##### Create Issue
+
+* Description: Create Issue
+* Docs: [https://developer.atlassian.com/server/jira/platform/rest-apis/#using-the-rest-apis](https://developer.atlassian.com/server/jira/platform/rest-apis/#using-the-rest-apis)
