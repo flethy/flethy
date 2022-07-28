@@ -1,0 +1,24 @@
+# Mezmo
+
+## Links
+
+* URL: [https://mezmo.com](https://mezmo.com)
+* Documentation: [https://docs.mezmo.com/](https://docs.mezmo.com/)
+* Tags: web2
+* Category: infra
+* Type: logging
+
+## API
+
+### Authentication
+
+* Authorization: header:basic
+
+### logs
+
+#### ingest
+
+##### Send Log Lines
+
+* Description: Use this method to send logs to a logging instance.
+* Docs: [https://docs.mezmo.com/reference/ingest#logsingest](https://docs.mezmo.com/reference/ingest#logsingest)

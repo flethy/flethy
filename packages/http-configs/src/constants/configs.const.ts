@@ -44,7 +44,9 @@ import { Linear } from '../configs/linear.config'
 import { MailCheckAi } from '../configs/mailcheckai.config'
 import { MailerSend } from '../configs/mailersend.config'
 import { MailPace } from '../configs/mailpace.config'
+import { Medium } from '../configs/medium.config'
 import { Mergent } from '../configs/mergent.config'
+import { Mezmo } from '../configs/mezmo.config'
 import { MicroDev } from '../configs/microdev.config'
 import { Mixpanel } from '../configs/mixpanel.config'
 import { NewRelic } from '../configs/newrelic.config'
@@ -121,7 +123,9 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['mailcheckai', MailCheckAi.API],
 ['mailersend', MailerSend.API],
 ['mailpace', MailPace.API],
+['medium', Medium.API],
 ['mergent', Mergent.API],
+['mezmo', Mezmo.API],
 ['microdev', MicroDev.API],
 ['mixpanel', Mixpanel.API],
 ['newrelic', NewRelic.API],

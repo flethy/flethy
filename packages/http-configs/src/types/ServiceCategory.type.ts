@@ -21,6 +21,7 @@ export type CATEGORY =
   | 'identity'
   | 'career'
   | 'news'
+  | 'infra'
 export type TYPE =
   | COMM_TYPE
   | STORAGE_TYPE
@@ -43,6 +44,7 @@ export type TYPE =
   | IDENTITY_TYPE
   | CAREER_TYPE
   | NEWS_TYPE
+  | INFRA_TYPE
 
 export type COMM_TYPE = 'email' | 'messenger'
 export type STORAGE_TYPE = 'ipfs' | 'database'
@@ -67,6 +69,7 @@ export type MARKETING_TYPE =
   | 'socialmedia'
   | 'crm'
   | 'media'
+  | 'blogging'
 export type AUTOMATION_TYPE = 'workflows' | 'decisions'
 export type UTILS_TYPE =
   | 'emailverification'
@@ -94,3 +97,4 @@ export type NETWORK_TYPE = 'cdn'
 export type IDENTITY_TYPE = 'identitymanagement'
 export type CAREER_TYPE = 'job-listings'
 export type NEWS_TYPE = 'software' | 'everything'
+export type INFRA_TYPE = 'logging'

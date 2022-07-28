@@ -78,6 +78,8 @@ import HackerNews from '../../http-configs/src/configs/hackernews.config'
 import Harvest from '../../http-configs/src/configs/harvest.config'
 import Jira from '../../http-configs/src/configs/jira.config'
 import Linear from '../../http-configs/src/configs/linear.config'
+import Mezmo from '../../http-configs/src/configs/mezmo.config'
+import Medium from '../../http-configs/src/configs/medium.config'
 
 async function main() {
   const requestConfigs: {
@@ -1166,8 +1168,29 @@ async function main() {
       'auth:Authorization': process.env.LINEAR_API_KEY,
       'body:query': `{ issues { nodes { id title } } }`,
     }),
+    mezmoIngest: nao<Mezmo.IngestLogs>({
+      kind: 'mezmo.logs.ingest',
+      baseId: 'logs',
+      'auth:Authorization': { username: process.env.MEZMO_API_KEY },
+      'body:lines': [
+        {
+          line: 'first log',
+          app: 'web3nao',
+        },
+      ],
+      'query:hostname': 'web3nao',
+    }),
+    mediumMe: nao<Medium.Me>({
+      kind: 'medium.users.me',
+      'auth:Authorization': process.env.MEDIUM_API_KEY,
+    }),
+    mediumPublications: nao<Medium.GetPublications>({
+      kind: 'medium.users.publications',
+      'auth:Authorization': process.env.MEDIUM_API_KEY,
+      'param:userId': process.env.MEDIUM_USER_ID,
+    }),
   }
-  const requestConfig = requestConfigs.linear
+  const requestConfig = requestConfigs.mediumPublications
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

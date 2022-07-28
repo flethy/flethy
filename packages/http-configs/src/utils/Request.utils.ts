@@ -57,6 +57,9 @@ export class HttpRequestConfig {
           }
           break
         case 'body':
+          if (['GET'].includes(options.endpoint.method)) {
+            throw new Error(`Body not allowed for GET method`)
+          }
           if (keyname === 'body') {
             config.body = options.params[paramKey]
           } else {
