@@ -44,7 +44,9 @@ import { Linear } from '../../../http-configs/src/configs/linear.config'
 import { MailCheckAi } from '../../../http-configs/src/configs/mailcheckai.config'
 import { MailerSend } from '../../../http-configs/src/configs/mailersend.config'
 import { MailPace } from '../../../http-configs/src/configs/mailpace.config'
+import { Medium } from '../../../http-configs/src/configs/medium.config'
 import { Mergent } from '../../../http-configs/src/configs/mergent.config'
+import { Mezmo } from '../../../http-configs/src/configs/mezmo.config'
 import { MicroDev } from '../../../http-configs/src/configs/microdev.config'
 import { Mixpanel } from '../../../http-configs/src/configs/mixpanel.config'
 import { NewRelic } from '../../../http-configs/src/configs/newrelic.config'
@@ -192,7 +194,13 @@ configTypes.push({type: getType<MailCheckAi.CheckDomain>(), name: 'MailCheckAi',
 configTypes.push({type: getType<MailCheckAi.CheckEmail>(), name: 'MailCheckAi', interface: 'CheckEmail'})
 configTypes.push({type: getType<MailerSend.EmailSend>(), name: 'MailerSend', interface: 'EmailSend'})
 configTypes.push({type: getType<MailPace.Send>(), name: 'MailPace', interface: 'Send'})
+configTypes.push({type: getType<Medium.Me>(), name: 'Medium', interface: 'Me'})
+configTypes.push({type: getType<Medium.GetPublications>(), name: 'Medium', interface: 'GetPublications'})
+configTypes.push({type: getType<Medium.CreatePost>(), name: 'Medium', interface: 'CreatePost'})
+configTypes.push({type: getType<Medium.CreatePostUnderPublication>(), name: 'Medium', interface: 'CreatePostUnderPublication'})
+configTypes.push({type: getType<Medium.GetContributorsOfPublication>(), name: 'Medium', interface: 'GetContributorsOfPublication'})
 configTypes.push({type: getType<Mergent.CreateTask>(), name: 'Mergent', interface: 'CreateTask'})
+configTypes.push({type: getType<Mezmo.IngestLogs>(), name: 'Mezmo', interface: 'IngestLogs'})
 configTypes.push({type: getType<MicroDev.StorageDbCreateRecord>(), name: 'MicroDev', interface: 'StorageDbCreateRecord'})
 configTypes.push({type: getType<MicroDev.StorageDbReadRecord>(), name: 'MicroDev', interface: 'StorageDbReadRecord'})
 configTypes.push({type: getType<MicroDev.StorageDbUpdateRecord>(), name: 'MicroDev', interface: 'StorageDbUpdateRecord'})
