@@ -26,6 +26,7 @@ The following Endpoints are currently supported.
 * [AbstractApi](./api/abstractapi.md)
 * [Airtable](./api/airtable.md)
 * [ApicAgent](./api/apicagent.md)
+* [Apify](./api/apify.md)
 * [APITemplateIo](./api/apitemplateio.md)
 * [Auth0](./api/auth0.md)
 * [BambooHR](./api/bamboohr.md)
