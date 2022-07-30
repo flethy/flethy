@@ -3,6 +3,7 @@ import { AbstractApi } from '../configs/abstractapi.config'
 import { Airtable } from '../configs/airtable.config'
 import { Alchemy } from '../configs/alchemy.config'
 import { ApicAgent } from '../configs/apicagent.config'
+import { Apify } from '../configs/apify.config'
 import { APITemplateIo } from '../configs/apitemplateio.config'
 import { Auth0 } from '../configs/auth0.config'
 import { BambooHR } from '../configs/bamboohr.config'
@@ -87,6 +88,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['airtable', Airtable.API],
 ['alchemy', Alchemy.API],
 ['apicagent', ApicAgent.API],
+['apify', Apify.API],
 ['apitemplateio', APITemplateIo.API],
 ['auth0', Auth0.API],
 ['bamboohr', BambooHR.API],

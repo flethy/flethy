@@ -84,6 +84,7 @@ export type UTILS_TYPE =
   | 'image-processing'
   | 'delivery-tracking'
   | 'api-wrapper'
+  | 'web-scraping'
 export type DEFI_TYPE = 'liquidity'
 export type BOOKS_TYPE = 'index'
 export type FINANCE_TYPE = 'currency' | 'payment'

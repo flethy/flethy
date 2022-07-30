@@ -3,6 +3,7 @@ import { AbstractApi } from '../../../http-configs/src/configs/abstractapi.confi
 import { Airtable } from '../../../http-configs/src/configs/airtable.config'
 import { Alchemy } from '../../../http-configs/src/configs/alchemy.config'
 import { ApicAgent } from '../../../http-configs/src/configs/apicagent.config'
+import { Apify } from '../../../http-configs/src/configs/apify.config'
 import { APITemplateIo } from '../../../http-configs/src/configs/apitemplateio.config'
 import { Auth0 } from '../../../http-configs/src/configs/auth0.config'
 import { BambooHR } from '../../../http-configs/src/configs/bamboohr.config'
@@ -88,6 +89,7 @@ configTypes.push({type: getType<Airtable.CreateTableRecords>(), name: 'Airtable'
 configTypes.push({type: getType<Alchemy.NftGetNFTs>(), name: 'Alchemy', interface: 'NftGetNFTs'})
 configTypes.push({type: getType<ApicAgent.Get>(), name: 'ApicAgent', interface: 'Get'})
 configTypes.push({type: getType<ApicAgent.Post>(), name: 'ApicAgent', interface: 'Post'})
+configTypes.push({type: getType<Apify.ListActors>(), name: 'Apify', interface: 'ListActors'})
 configTypes.push({type: getType<APITemplateIo.CreateImage>(), name: 'APITemplateIo', interface: 'CreateImage'})
 configTypes.push({type: getType<Auth0.GetAuthAccessToken>(), name: 'Auth0', interface: 'GetAuthAccessToken'})
 configTypes.push({type: getType<Auth0.GetUsersByEmail>(), name: 'Auth0', interface: 'GetUsersByEmail'})

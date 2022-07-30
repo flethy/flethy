@@ -85,6 +85,7 @@ import PayPal from '../../http-configs/src/configs/paypal.config'
 import Shortcut from '../../http-configs/src/configs/shortcut.config'
 import RapidApi from '../../http-configs/src/configs/rapidapi.config'
 import SendGrid from '../../http-configs/src/configs/sendgrid.config'
+import Apify from '../../http-configs/src/configs/apify.config'
 
 async function main() {
   const requestConfigs: {
@@ -1259,8 +1260,12 @@ async function main() {
       ],
       'body:template_id': process.env.SENDGRID_TEMPLATE_ID,
     }),
+    apifyListActors: nao<Apify.ListActors>({
+      kind: 'apify.actors.list',
+      'auth:Authorization': process.env.APIFY_API_KEY,
+    }),
   }
-  const requestConfig = requestConfigs.sendgridSendMail
+  const requestConfig = requestConfigs.apifyListActors
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)
