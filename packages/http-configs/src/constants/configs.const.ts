@@ -60,11 +60,13 @@ import { PayPal } from '../configs/paypal.config'
 import { Personio } from '../configs/personio.config'
 import { Pinata } from '../configs/pinata.config'
 import { PurgoMalum } from '../configs/purgomalum.config'
+import { RapidApi } from '../configs/rapidapi.config'
 import { RedisCloud } from '../configs/rediscloud.config'
 import { RemoteOk } from '../configs/remoteok.config'
 import { RemoveBg } from '../configs/removebg.config'
 import { Sentry } from '../configs/sentry.config'
 import { SerpStack } from '../configs/serpstack.config'
+import { Shortcut } from '../configs/shortcut.config'
 import { Slack } from '../configs/slack.config'
 import { Statically } from '../configs/statically.config'
 import { Supabase } from '../configs/supabase.config'
@@ -141,11 +143,13 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['personio', Personio.API],
 ['pinata', Pinata.API],
 ['purgomalum', PurgoMalum.API],
+['rapidapi', RapidApi.API],
 ['rediscloud', RedisCloud.API],
 ['remoteok', RemoteOk.API],
 ['removebg', RemoveBg.API],
 ['sentry', Sentry.API],
 ['serpstack', SerpStack.API],
+['shortcut', Shortcut.API],
 ['slack', Slack.API],
 ['statically', Statically.API],
 ['supabase', Supabase.API],

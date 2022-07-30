@@ -83,6 +83,7 @@ export type UTILS_TYPE =
   | 'time-tracking'
   | 'image-processing'
   | 'delivery-tracking'
+  | 'api-wrapper'
 export type DEFI_TYPE = 'liquidity'
 export type BOOKS_TYPE = 'index'
 export type FINANCE_TYPE = 'currency' | 'payment'

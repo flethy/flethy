@@ -82,6 +82,8 @@ import Mezmo from '../../http-configs/src/configs/mezmo.config'
 import Medium from '../../http-configs/src/configs/medium.config'
 import Fauna from '../../http-configs/src/configs/fauna.config'
 import PayPal from '../../http-configs/src/configs/paypal.config'
+import Shortcut from '../../http-configs/src/configs/shortcut.config'
+import RapidApi from '../../http-configs/src/configs/rapidapi.config'
 
 async function main() {
   const requestConfigs: {
@@ -1212,8 +1214,31 @@ async function main() {
       'auth:grant_type': 'client_credentials',
       baseId: 'sandbox',
     }),
+    shortcutListCategories: nao<Shortcut.ListCategories>({
+      kind: 'shortcut.categories.list',
+      'auth:Shortcut-Token': process.env.SHORTCUT_API_TOKEN,
+    }),
+    shortcutCreateCategory: nao<Shortcut.CreateCategory>({
+      kind: 'shortcut.categories.create',
+      'auth:Shortcut-Token': process.env.SHORTCUT_API_TOKEN,
+      'body:name': 'web3nao',
+      'body:type': 'milestone',
+    }),
+    shortcutSearch: nao<Shortcut.Search>({
+      kind: 'shortcut.search.all',
+      'auth:Shortcut-Token': process.env.SHORTCUT_API_TOKEN,
+      'query:query': `type:feature`,
+    }),
+    rapidApiArticleExtractor: nao<RapidApi.ArticleExtractor>({
+      kind: 'rapidapi.data.articleExtractor',
+      'auth:X-RapidAPI-Key': process.env.RAPIDAPI_API_KEY,
+      'header:X-RapidAPI-Host': 'article-extractor2.p.rapidapi.com',
+      'subdomain:api': 'article-extractor2',
+      'query:url':
+        'https://dev.to/urbanisierung/cut-a-few-braids-new-npm-package-1234',
+    }),
   }
-  const requestConfig = requestConfigs.paypalAuth
+  const requestConfig = requestConfigs.rapidApiArticleExtractor
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)
