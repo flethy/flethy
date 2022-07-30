@@ -39,9 +39,9 @@ export namespace Sentry {
       name: 'Sentry',
       url: 'https://sentry.io/',
       docs: 'https://docs.sentry.io/',
-      tags: ['web3'],
-      category: 'aggregation',
-      type: 'indexer',
+      tags: ['web2'],
+      category: 'infra',
+      type: 'monitoring',
     },
     base: 'https://sentry.io/api/0',
     auth: {

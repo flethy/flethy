@@ -80,6 +80,8 @@ import Jira from '../../http-configs/src/configs/jira.config'
 import Linear from '../../http-configs/src/configs/linear.config'
 import Mezmo from '../../http-configs/src/configs/mezmo.config'
 import Medium from '../../http-configs/src/configs/medium.config'
+import Fauna from '../../http-configs/src/configs/fauna.config'
+import PayPal from '../../http-configs/src/configs/paypal.config'
 
 async function main() {
   const requestConfigs: {
@@ -1189,8 +1191,29 @@ async function main() {
       'auth:Authorization': process.env.MEDIUM_API_KEY,
       'param:userId': process.env.MEDIUM_USER_ID,
     }),
+    faunaQuery: nao<Fauna.GraphQLQuery>({
+      kind: 'fauna.graphql.query',
+      'auth:Authorization': process.env.FAUNA_API_KEY,
+      baseId: 'eu',
+      'body:query': `query {
+        allProducts {
+          data {
+            name
+          }
+        }
+      }`,
+    }),
+    paypalAuth: nao<PayPal.AuthRequest>({
+      kind: 'paypal.auth.request',
+      'auth:Authorization': {
+        username: process.env.PAYPAL_SANDBOX_CLIENT_ID,
+        password: process.env.PAYPAL_SANDBOX_CLIENT_SECRET,
+      },
+      'auth:grant_type': 'client_credentials',
+      baseId: 'sandbox',
+    }),
   }
-  const requestConfig = requestConfigs.mediumPublications
+  const requestConfig = requestConfigs.paypalAuth
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

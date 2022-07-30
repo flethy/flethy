@@ -30,6 +30,7 @@ import { Dhl } from '../configs/dhl.config'
 import { Disify } from '../configs/disify.config'
 import { Etherscan } from '../configs/etherscan.config'
 import { Eventbrite } from '../configs/eventbrite.config'
+import { Fauna } from '../configs/fauna.config'
 import { Frankfurter } from '../configs/frankfurter.config'
 import { Github } from '../configs/github.config'
 import { Grist } from '../configs/grist.config'
@@ -55,6 +56,7 @@ import { OneInch } from '../configs/oneinch.config'
 import { OpenLibrary } from '../configs/openlibrary.config'
 import { OpenSea } from '../configs/opensea.config'
 import { Ortto } from '../configs/ortto.config'
+import { PayPal } from '../configs/paypal.config'
 import { Personio } from '../configs/personio.config'
 import { Pinata } from '../configs/pinata.config'
 import { PurgoMalum } from '../configs/purgomalum.config'
@@ -109,6 +111,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['disify', Disify.API],
 ['etherscan', Etherscan.API],
 ['eventbrite', Eventbrite.API],
+['fauna', Fauna.API],
 ['frankfurter', Frankfurter.API],
 ['github', Github.API],
 ['grist', Grist.API],
@@ -134,6 +137,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['openlibrary', OpenLibrary.API],
 ['opensea', OpenSea.API],
 ['ortto', Ortto.API],
+['paypal', PayPal.API],
 ['personio', Personio.API],
 ['pinata', Pinata.API],
 ['purgomalum', PurgoMalum.API],
