@@ -4,9 +4,9 @@
 
 * URL: [https://sentry.io/](https://sentry.io/)
 * Documentation: [https://docs.sentry.io/](https://docs.sentry.io/)
-* Tags: web3
-* Category: aggregation
-* Type: indexer
+* Tags: web2
+* Category: infra
+* Type: monitoring
 
 ## API
 
