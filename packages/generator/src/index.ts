@@ -84,6 +84,7 @@ import Fauna from '../../http-configs/src/configs/fauna.config'
 import PayPal from '../../http-configs/src/configs/paypal.config'
 import Shortcut from '../../http-configs/src/configs/shortcut.config'
 import RapidApi from '../../http-configs/src/configs/rapidapi.config'
+import SendGrid from '../../http-configs/src/configs/sendgrid.config'
 
 async function main() {
   const requestConfigs: {
@@ -1237,8 +1238,29 @@ async function main() {
       'query:url':
         'https://dev.to/urbanisierung/cut-a-few-braids-new-npm-package-1234',
     }),
+    sendgridSendMail: nao<SendGrid.SendMail>({
+      kind: 'sendgrid.mail.send',
+      'auth:Authorization': process.env.SENDGRID_API_KEY,
+      'body:from': {
+        email: 'adam@web3nao.xyz',
+      },
+      'body:subject': 'Hi!',
+      'body:personalizations': [
+        {
+          to: [
+            {
+              email: 'adam.urban@gmail.com',
+            },
+          ],
+          dynamic_template_data: {
+            name: 'Adam',
+          },
+        },
+      ],
+      'body:template_id': process.env.SENDGRID_TEMPLATE_ID,
+    }),
   }
-  const requestConfig = requestConfigs.rapidApiArticleExtractor
+  const requestConfig = requestConfigs.sendgridSendMail
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)
