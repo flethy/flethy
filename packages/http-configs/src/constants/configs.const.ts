@@ -11,9 +11,11 @@ import { BaseRow } from '../configs/baserow.config'
 import { Bitly } from '../configs/bitly.config'
 import { Brandfetch } from '../configs/brandfetch.config'
 import { BrowsersFyi } from '../configs/browsersfyi.config'
+import { Bruzu } from '../configs/bruzu.config'
 import { CalCom } from '../configs/calcom.config'
 import { Calendarific } from '../configs/calendarific.config'
 import { Camunda } from '../configs/camunda.config'
+import { Carifai } from '../configs/clarifai.config'
 import { Clearbit } from '../configs/clearbit.config'
 import { ClickUp } from '../configs/clickup.config'
 import { Clockify } from '../configs/clockify.config'
@@ -96,9 +98,11 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['bitly', Bitly.API],
 ['brandfetch', Brandfetch.API],
 ['browsersfyi', BrowsersFyi.API],
+['bruzu', Bruzu.API],
 ['calcom', CalCom.API],
 ['calendarific', Calendarific.API],
 ['camunda', Camunda.API],
+['clarifai', Carifai.API],
 ['clearbit', Clearbit.API],
 ['clickup', ClickUp.API],
 ['clockify', Clockify.API],

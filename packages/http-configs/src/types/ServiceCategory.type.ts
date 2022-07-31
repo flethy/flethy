@@ -22,6 +22,7 @@ export type CATEGORY =
   | 'career'
   | 'news'
   | 'infra'
+  | 'machinelearning'
 export type TYPE =
   | COMM_TYPE
   | STORAGE_TYPE
@@ -45,6 +46,7 @@ export type TYPE =
   | CAREER_TYPE
   | NEWS_TYPE
   | INFRA_TYPE
+  | MACHINE_LEARNING_TYPE
 
 export type COMM_TYPE = 'email' | 'messenger'
 export type STORAGE_TYPE = 'ipfs' | 'database'
@@ -100,3 +102,4 @@ export type IDENTITY_TYPE = 'identitymanagement'
 export type CAREER_TYPE = 'job-listings'
 export type NEWS_TYPE = 'software' | 'everything'
 export type INFRA_TYPE = 'logging' | 'monitoring'
+export type MACHINE_LEARNING_TYPE = 'platform'

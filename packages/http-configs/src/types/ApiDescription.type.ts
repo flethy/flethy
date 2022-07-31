@@ -63,6 +63,7 @@ export interface ApiDescriptionAuth {
     | 'header:bearer'
     | 'header:token'
     | 'header:custom'
+    | 'header:key'
     | 'path'
     | 'body'
     | 'body:form'

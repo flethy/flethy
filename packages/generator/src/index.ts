@@ -86,6 +86,8 @@ import Shortcut from '../../http-configs/src/configs/shortcut.config'
 import RapidApi from '../../http-configs/src/configs/rapidapi.config'
 import SendGrid from '../../http-configs/src/configs/sendgrid.config'
 import Apify from '../../http-configs/src/configs/apify.config'
+import Bruzu from '../../http-configs/src/configs/bruzu.config'
+import Clarifai from '../../http-configs/src/configs/clarifai.config'
 
 async function main() {
   const requestConfigs: {
@@ -1264,8 +1266,33 @@ async function main() {
       kind: 'apify.actors.list',
       'auth:Authorization': process.env.APIFY_API_KEY,
     }),
+    bruzu: nao<Bruzu.CreateImage>({
+      kind: 'bruzu.image.create',
+      'auth:apiKey': process.env.BRUZU_API_KEY,
+      'query:backgroundImage':
+        'https://source.unsplash.com/U-Kty6HxcQc/600x400',
+      'query:backgroundImage.opacity': 0.7,
+      'query:height': 400,
+      'query:width': 600,
+      'query:backgroundColor': 'red',
+      'query:a.text': 'web3nao',
+    }),
+    clarifaiMakePrediction: nao<Clarifai.MakePredictions>({
+      kind: 'clarifai.predictions.make',
+      'auth:Authorization': process.env.CLARIFAI_API_KEY,
+      'param:modelId': 'general-image-recognition',
+      'body:inputs': [
+        {
+          data: {
+            image: {
+              url: 'https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80',
+            },
+          },
+        },
+      ],
+    }),
   }
-  const requestConfig = requestConfigs.apifyListActors
+  const requestConfig = requestConfigs.clarifaiMakePrediction
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)
