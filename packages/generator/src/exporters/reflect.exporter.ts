@@ -11,9 +11,11 @@ import { BaseRow } from '../../../http-configs/src/configs/baserow.config'
 import { Bitly } from '../../../http-configs/src/configs/bitly.config'
 import { Brandfetch } from '../../../http-configs/src/configs/brandfetch.config'
 import { BrowsersFyi } from '../../../http-configs/src/configs/browsersfyi.config'
+import { Bruzu } from '../../../http-configs/src/configs/bruzu.config'
 import { CalCom } from '../../../http-configs/src/configs/calcom.config'
 import { Calendarific } from '../../../http-configs/src/configs/calendarific.config'
 import { Camunda } from '../../../http-configs/src/configs/camunda.config'
+import { Carifai } from '../../../http-configs/src/configs/clarifai.config'
 import { Clearbit } from '../../../http-configs/src/configs/clearbit.config'
 import { ClickUp } from '../../../http-configs/src/configs/clickup.config'
 import { Clockify } from '../../../http-configs/src/configs/clockify.config'
@@ -101,6 +103,7 @@ configTypes.push({type: getType<BaseRow.GetRows>(), name: 'BaseRow', interface: 
 configTypes.push({type: getType<Bitly.CreateShortLink>(), name: 'Bitly', interface: 'CreateShortLink'})
 configTypes.push({type: getType<Brandfetch.BrandByDomainOrId>(), name: 'Brandfetch', interface: 'BrandByDomainOrId'})
 configTypes.push({type: getType<BrowsersFyi.Get>(), name: 'BrowsersFyi', interface: 'Get'})
+configTypes.push({type: getType<Bruzu.CreateImage>(), name: 'Bruzu', interface: 'CreateImage'})
 configTypes.push({type: getType<CalCom.FindAllAvailabilities>(), name: 'CalCom', interface: 'FindAllAvailabilities'})
 configTypes.push({type: getType<CalCom.FindAnAvailability>(), name: 'CalCom', interface: 'FindAnAvailability'})
 configTypes.push({type: getType<CalCom.CreateAvailability>(), name: 'CalCom', interface: 'CreateAvailability'})
@@ -117,6 +120,8 @@ configTypes.push({type: getType<Camunda.ConsoleGetClients>(), name: 'Camunda', i
 configTypes.push({type: getType<Camunda.ConsoleCreateClient>(), name: 'Camunda', interface: 'ConsoleCreateClient'})
 configTypes.push({type: getType<Camunda.ConsoleGetClient>(), name: 'Camunda', interface: 'ConsoleGetClient'})
 configTypes.push({type: getType<Camunda.ConsoleDeleteClient>(), name: 'Camunda', interface: 'ConsoleDeleteClient'})
+configTypes.push({type: getType<Carifai.MakePredictions>(), name: 'Carifai', interface: 'MakePredictions'})
+configTypes.push({type: getType<Carifai.MakePredictionsWithVersion>(), name: 'Carifai', interface: 'MakePredictionsWithVersion'})
 configTypes.push({type: getType<Clearbit.LogoGet>(), name: 'Clearbit', interface: 'LogoGet'})
 configTypes.push({type: getType<ClickUp.SpacesGetAll>(), name: 'ClickUp', interface: 'SpacesGetAll'})
 configTypes.push({type: getType<ClickUp.ListsGetAllFolderless>(), name: 'ClickUp', interface: 'ListsGetAllFolderless'})

@@ -133,6 +133,12 @@ export class HttpRequestConfig {
               }
               config.headers[keyname] = `Bearer ${options.params[paramKey]}`
               break
+            case 'header:key':
+              if (!config.headers) {
+                config.headers = {}
+              }
+              config.headers[keyname] = `Key ${options.params[paramKey]}`
+              break
             case 'header:basic':
               if (!config.headers) {
                 config.headers = {}
