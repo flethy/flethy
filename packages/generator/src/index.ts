@@ -88,6 +88,10 @@ import SendGrid from '../../http-configs/src/configs/sendgrid.config'
 import Apify from '../../http-configs/src/configs/apify.config'
 import Bruzu from '../../http-configs/src/configs/bruzu.config'
 import Clarifai from '../../http-configs/src/configs/clarifai.config'
+import Lokalise from '../../http-configs/src/configs/lokalise.config'
+import Klaviyo from '../../http-configs/src/configs/klaviyo.config'
+import Peekalink from '../../http-configs/src/configs/peekalink.config'
+import Stackby from '../../http-configs/src/configs/stackby.config'
 
 async function main() {
   const requestConfigs: {
@@ -1291,8 +1295,65 @@ async function main() {
         },
       ],
     }),
+    lokaliseCreateTask: nao<Lokalise.CreateTask>({
+      kind: 'lokalise.tasks.create',
+      'auth:X-Api-Token': process.env.LOKALISE_API_TOKEN,
+      'param:project_id': process.env.LOKALISE_PROJECT_ID,
+      'body:title': 'first',
+      'body:task_type': 'translation',
+      'body:source_language_iso': 'en',
+      'body:languages': [
+        {
+          language_iso: 'de_DE',
+          users: [process.env.LOKALISE_USER_ID],
+        },
+      ],
+    }),
+    lokaliseListTasks: nao<Lokalise.ListTasks>({
+      kind: 'lokalise.tasks.list',
+      'auth:X-Api-Token': process.env.LOKALISE_API_TOKEN,
+      'param:project_id': process.env.LOKALISE_PROJECT_ID,
+    }),
+    lokaliseListTeams: nao<Lokalise.ListTeams>({
+      kind: 'lokalise.teams.list',
+      'auth:X-Api-Token': process.env.LOKALISE_API_TOKEN,
+    }),
+    lokaliseListUsers: nao<Lokalise.ListUsers>({
+      kind: 'lokalise.users.list',
+      'auth:X-Api-Token': process.env.LOKALISE_API_TOKEN,
+      'param:team_id': process.env.LOKALISE_TEAM_ID,
+    }),
+    klaviyoTrack: nao<Klaviyo.TrackProfileActivity>({
+      kind: 'klaviyo.track.trackProfile',
+      'auth:token': process.env.KLAVIYO_PUBLIC_KEY,
+      'body:event': 'first',
+      'body:customer_properties': {
+        $email: 'adam.urban@gmail.com',
+      },
+    }),
+    klaviyoGetProfileId: nao<Klaviyo.GetProfileId>({
+      kind: 'klaviyo.profiles.getProfileId',
+      'auth:api_key': process.env.KLAVIYO_PRIVATE_KEY,
+      'query:email': 'adam.urban@gmail.com',
+    }),
+    klaviyoGetProfile: nao<Klaviyo.GetProfile>({
+      kind: 'klaviyo.profiles.getProfile',
+      'auth:api_key': process.env.KLAVIYO_PRIVATE_KEY,
+      'param:person_id': process.env.KLAVIYO_PERSON_ID,
+    }),
+    peekalink: nao<Peekalink.Preview>({
+      kind: 'peekalink.core.preview',
+      'auth:X-API-Key': process.env.PEEKALINK_API_KEY,
+      'body:link': 'https://diypunks.xyz',
+    }),
+    stackbyList: nao<Stackby.ListRows>({
+      kind: 'stackby.core.list',
+      'param:stackId': process.env.STACKBY_STACK_ID,
+      'param:tableId': process.env.STACKBY_TABLE_ID,
+      'auth:api-key': process.env.STACKBY_API_KEY,
+    }),
   }
-  const requestConfig = requestConfigs.clarifaiMakePrediction
+  const requestConfig = requestConfigs.stackbyList
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

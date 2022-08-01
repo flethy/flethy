@@ -63,6 +63,7 @@ export type COLLAB_TYPE =
   | 'issueticketing'
   | 'forum'
   | 'events'
+  | 'translations'
 export type ANALYTICS_TYPE = 'webinsights'
 export type TOOLS_TYPE = 'cron' | 'hr'
 export type MARKETING_TYPE =

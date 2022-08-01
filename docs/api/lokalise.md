@@ -1,0 +1,50 @@
+# Lokalise
+
+## Links
+
+* URL: [https://lokalise.com/](https://lokalise.com/)
+* Documentation: [https://developers.lokalise.com/](https://developers.lokalise.com/)
+* Tags: web2
+* Category: collaboration
+* Type: translations
+
+## API
+
+### Authentication
+
+* X-Api-Token: header
+
+### tasks
+
+#### create
+
+##### Create a task
+
+* Description: Creates a task in the project. Requires Manage tasks admin right.
+            Keep in mind, that initial_tm_leverage attribute will be empty in server response. It's being calculated after the task is created and this process may take some time.
+* Docs: [https://developers.lokalise.com/reference/create-a-task](https://developers.lokalise.com/reference/create-a-task)
+
+#### list
+
+##### List all tasks
+
+* Description: Lists all tasks in the project.
+* Docs: [https://developers.lokalise.com/reference/list-all-tasks](https://developers.lokalise.com/reference/list-all-tasks)
+
+### users
+
+#### list
+
+##### List all team users
+
+* Description: Lists all team users. Requires Admin role in the team.
+* Docs: [https://developers.lokalise.com/reference/list-all-team-users](https://developers.lokalise.com/reference/list-all-team-users)
+
+### teams
+
+#### list
+
+##### List all teams
+
+* Description: Lists all teams available to the user.
+* Docs: [https://developers.lokalise.com/reference/list-all-teams](https://developers.lokalise.com/reference/list-all-teams)
