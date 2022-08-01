@@ -44,7 +44,9 @@ import { HostIo } from '../configs/hostio.config'
 import { Hubspot } from '../configs/hubspot.config'
 import { HunterIo } from '../configs/hunterio.config'
 import { Jira } from '../configs/jira.config'
+import { Klaviyo } from '../configs/klaviyo.config'
 import { Linear } from '../configs/linear.config'
+import { Lokalise } from '../configs/lokalise.config'
 import { MailCheckAi } from '../configs/mailcheckai.config'
 import { MailerSend } from '../configs/mailersend.config'
 import { MailPace } from '../configs/mailpace.config'
@@ -60,6 +62,7 @@ import { OpenLibrary } from '../configs/openlibrary.config'
 import { OpenSea } from '../configs/opensea.config'
 import { Ortto } from '../configs/ortto.config'
 import { PayPal } from '../configs/paypal.config'
+import { Peekalink } from '../configs/peekalink.config'
 import { Personio } from '../configs/personio.config'
 import { Pinata } from '../configs/pinata.config'
 import { PurgoMalum } from '../configs/purgomalum.config'
@@ -72,6 +75,7 @@ import { Sentry } from '../configs/sentry.config'
 import { SerpStack } from '../configs/serpstack.config'
 import { Shortcut } from '../configs/shortcut.config'
 import { Slack } from '../configs/slack.config'
+import { Stackby } from '../configs/stackby.config'
 import { Statically } from '../configs/statically.config'
 import { Supabase } from '../configs/supabase.config'
 import { TheGraph } from '../configs/thegraph.config'
@@ -131,7 +135,9 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['hubspot', Hubspot.API],
 ['hunterio', HunterIo.API],
 ['jira', Jira.API],
+['klaviyo', Klaviyo.API],
 ['linear', Linear.API],
+['lokalise', Lokalise.API],
 ['mailcheckai', MailCheckAi.API],
 ['mailersend', MailerSend.API],
 ['mailpace', MailPace.API],
@@ -147,6 +153,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['opensea', OpenSea.API],
 ['ortto', Ortto.API],
 ['paypal', PayPal.API],
+['peekalink', Peekalink.API],
 ['personio', Personio.API],
 ['pinata', Pinata.API],
 ['purgomalum', PurgoMalum.API],
@@ -159,6 +166,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['serpstack', SerpStack.API],
 ['shortcut', Shortcut.API],
 ['slack', Slack.API],
+['stackby', Stackby.API],
 ['statically', Statically.API],
 ['supabase', Supabase.API],
 ['thegraph', TheGraph.API],

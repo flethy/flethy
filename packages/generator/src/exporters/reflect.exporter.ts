@@ -44,7 +44,9 @@ import { HostIo } from '../../../http-configs/src/configs/hostio.config'
 import { Hubspot } from '../../../http-configs/src/configs/hubspot.config'
 import { HunterIo } from '../../../http-configs/src/configs/hunterio.config'
 import { Jira } from '../../../http-configs/src/configs/jira.config'
+import { Klaviyo } from '../../../http-configs/src/configs/klaviyo.config'
 import { Linear } from '../../../http-configs/src/configs/linear.config'
+import { Lokalise } from '../../../http-configs/src/configs/lokalise.config'
 import { MailCheckAi } from '../../../http-configs/src/configs/mailcheckai.config'
 import { MailerSend } from '../../../http-configs/src/configs/mailersend.config'
 import { MailPace } from '../../../http-configs/src/configs/mailpace.config'
@@ -60,6 +62,7 @@ import { OpenLibrary } from '../../../http-configs/src/configs/openlibrary.confi
 import { OpenSea } from '../../../http-configs/src/configs/opensea.config'
 import { Ortto } from '../../../http-configs/src/configs/ortto.config'
 import { PayPal } from '../../../http-configs/src/configs/paypal.config'
+import { Peekalink } from '../../../http-configs/src/configs/peekalink.config'
 import { Personio } from '../../../http-configs/src/configs/personio.config'
 import { Pinata } from '../../../http-configs/src/configs/pinata.config'
 import { PurgoMalum } from '../../../http-configs/src/configs/purgomalum.config'
@@ -72,6 +75,7 @@ import { Sentry } from '../../../http-configs/src/configs/sentry.config'
 import { SerpStack } from '../../../http-configs/src/configs/serpstack.config'
 import { Shortcut } from '../../../http-configs/src/configs/shortcut.config'
 import { Slack } from '../../../http-configs/src/configs/slack.config'
+import { Stackby } from '../../../http-configs/src/configs/stackby.config'
 import { Statically } from '../../../http-configs/src/configs/statically.config'
 import { Supabase } from '../../../http-configs/src/configs/supabase.config'
 import { TheGraph } from '../../../http-configs/src/configs/thegraph.config'
@@ -202,7 +206,15 @@ configTypes.push({type: getType<HunterIo.EmailVerification>(), name: 'HunterIo',
 configTypes.push({type: getType<Jira.GetIssue>(), name: 'Jira', interface: 'GetIssue'})
 configTypes.push({type: getType<Jira.SearchIssues>(), name: 'Jira', interface: 'SearchIssues'})
 configTypes.push({type: getType<Jira.CreateIssue>(), name: 'Jira', interface: 'CreateIssue'})
+configTypes.push({type: getType<Klaviyo.TrackProfileActivity>(), name: 'Klaviyo', interface: 'TrackProfileActivity'})
+configTypes.push({type: getType<Klaviyo.IdentifyProfile>(), name: 'Klaviyo', interface: 'IdentifyProfile'})
+configTypes.push({type: getType<Klaviyo.GetProfileId>(), name: 'Klaviyo', interface: 'GetProfileId'})
+configTypes.push({type: getType<Klaviyo.GetProfile>(), name: 'Klaviyo', interface: 'GetProfile'})
 configTypes.push({type: getType<Linear.GraphQLQuery>(), name: 'Linear', interface: 'GraphQLQuery'})
+configTypes.push({type: getType<Lokalise.CreateTask>(), name: 'Lokalise', interface: 'CreateTask'})
+configTypes.push({type: getType<Lokalise.ListTasks>(), name: 'Lokalise', interface: 'ListTasks'})
+configTypes.push({type: getType<Lokalise.ListUsers>(), name: 'Lokalise', interface: 'ListUsers'})
+configTypes.push({type: getType<Lokalise.ListTeams>(), name: 'Lokalise', interface: 'ListTeams'})
 configTypes.push({type: getType<MailCheckAi.CheckDomain>(), name: 'MailCheckAi', interface: 'CheckDomain'})
 configTypes.push({type: getType<MailCheckAi.CheckEmail>(), name: 'MailCheckAi', interface: 'CheckEmail'})
 configTypes.push({type: getType<MailerSend.EmailSend>(), name: 'MailerSend', interface: 'EmailSend'})
@@ -240,6 +252,8 @@ configTypes.push({type: getType<OpenSea.GetAssets>(), name: 'OpenSea', interface
 configTypes.push({type: getType<OpenSea.GetCollections>(), name: 'OpenSea', interface: 'GetCollections'})
 configTypes.push({type: getType<Ortto.RetrieveOneOrMorePeople>(), name: 'Ortto', interface: 'RetrieveOneOrMorePeople'})
 configTypes.push({type: getType<PayPal.AuthRequest>(), name: 'PayPal', interface: 'AuthRequest'})
+configTypes.push({type: getType<Peekalink.Preview>(), name: 'Peekalink', interface: 'Preview'})
+configTypes.push({type: getType<Peekalink.IsAvailable>(), name: 'Peekalink', interface: 'IsAvailable'})
 configTypes.push({type: getType<Personio.AuthRequest>(), name: 'Personio', interface: 'AuthRequest'})
 configTypes.push({type: getType<Personio.EmployeesGet>(), name: 'Personio', interface: 'EmployeesGet'})
 configTypes.push({type: getType<Personio.AbsencesGet>(), name: 'Personio', interface: 'AbsencesGet'})
@@ -261,6 +275,7 @@ configTypes.push({type: getType<Shortcut.SearchStories>(), name: 'Shortcut', int
 configTypes.push({type: getType<Slack.IncomingWebhooksMessage>(), name: 'Slack', interface: 'IncomingWebhooksMessage'})
 configTypes.push({type: getType<Slack.ChatPostMessage>(), name: 'Slack', interface: 'ChatPostMessage'})
 configTypes.push({type: getType<Slack.ConversationsList>(), name: 'Slack', interface: 'ConversationsList'})
+configTypes.push({type: getType<Stackby.ListRows>(), name: 'Stackby', interface: 'ListRows'})
 configTypes.push({type: getType<Statically.StaticZapGithub>(), name: 'Statically', interface: 'StaticZapGithub'})
 configTypes.push({type: getType<Statically.StaticZapGitlab>(), name: 'Statically', interface: 'StaticZapGitlab'})
 configTypes.push({type: getType<Statically.StaticZapBitbucket>(), name: 'Statically', interface: 'StaticZapBitbucket'})
