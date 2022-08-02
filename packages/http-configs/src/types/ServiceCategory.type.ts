@@ -48,7 +48,7 @@ export type TYPE =
   | INFRA_TYPE
   | MACHINE_LEARNING_TYPE
 
-export type COMM_TYPE = 'email' | 'messenger'
+export type COMM_TYPE = 'email' | 'messenger' | 'multichannel'
 export type STORAGE_TYPE = 'ipfs' | 'database'
 export type AGGREGATION_TYPE =
   | 'indexer'
@@ -102,5 +102,5 @@ export type NETWORK_TYPE = 'cdn'
 export type IDENTITY_TYPE = 'identitymanagement'
 export type CAREER_TYPE = 'job-listings'
 export type NEWS_TYPE = 'software' | 'everything'
-export type INFRA_TYPE = 'logging' | 'monitoring'
+export type INFRA_TYPE = 'logging' | 'monitoring' | 'serverless'
 export type MACHINE_LEARNING_TYPE = 'platform'
