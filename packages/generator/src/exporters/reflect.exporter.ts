@@ -36,6 +36,7 @@ import { Eventbrite } from '../../../http-configs/src/configs/eventbrite.config'
 import { Fauna } from '../../../http-configs/src/configs/fauna.config'
 import { Frankfurter } from '../../../http-configs/src/configs/frankfurter.config'
 import { Github } from '../../../http-configs/src/configs/github.config'
+import { GrafBase } from '../../../http-configs/src/configs/grafbase.config'
 import { Grist } from '../../../http-configs/src/configs/grist.config'
 import { HackerNews } from '../../../http-configs/src/configs/hackernews.config'
 import { Harvest } from '../../../http-configs/src/configs/harvest.config'
@@ -81,8 +82,10 @@ import { Supabase } from '../../../http-configs/src/configs/supabase.config'
 import { TheGraph } from '../../../http-configs/src/configs/thegraph.config'
 import { Trello } from '../../../http-configs/src/configs/trello.config'
 import { Tribe } from '../../../http-configs/src/configs/tribe.config'
+import { Twilio } from '../../../http-configs/src/configs/twilio.config'
 import { Typeform } from '../../../http-configs/src/configs/typeform.config'
 import { Up42 } from '../../../http-configs/src/configs/up42.config'
+import { UptimeRobot } from '../../../http-configs/src/configs/uptimerobot.config'
 import { UsePlunk } from '../../../http-configs/src/configs/useplunk.config'
 import { Web3Storage } from '../../../http-configs/src/configs/web3storage.config'
 import { WhoIsXMLApi } from '../../../http-configs/src/configs/whoisxmlapi.config'
@@ -182,6 +185,7 @@ configTypes.push({type: getType<Frankfurter.Latest>(), name: 'Frankfurter', inte
 configTypes.push({type: getType<Frankfurter.Historical>(), name: 'Frankfurter', interface: 'Historical'})
 configTypes.push({type: getType<Frankfurter.TimeSeries>(), name: 'Frankfurter', interface: 'TimeSeries'})
 configTypes.push({type: getType<Github.ListRepositoryIssues>(), name: 'Github', interface: 'ListRepositoryIssues'})
+configTypes.push({type: getType<GrafBase.GraphQLQuery>(), name: 'GrafBase', interface: 'GraphQLQuery'})
 configTypes.push({type: getType<Grist.AddRecords>(), name: 'Grist', interface: 'AddRecords'})
 configTypes.push({type: getType<Grist.FetchRecords>(), name: 'Grist', interface: 'FetchRecords'})
 configTypes.push({type: getType<Grist.DescribeDocument>(), name: 'Grist', interface: 'DescribeDocument'})
@@ -286,10 +290,12 @@ configTypes.push({type: getType<TheGraph.QueryByName>(), name: 'TheGraph', inter
 configTypes.push({type: getType<Trello.BoardGetLists>(), name: 'Trello', interface: 'BoardGetLists'})
 configTypes.push({type: getType<Trello.CardsCreate>(), name: 'Trello', interface: 'CardsCreate'})
 configTypes.push({type: getType<Tribe.TribeAccessToken>(), name: 'Tribe', interface: 'TribeAccessToken'})
+configTypes.push({type: getType<Twilio.SendSms>(), name: 'Twilio', interface: 'SendSms'})
 configTypes.push({type: getType<Typeform.CreateApiCreateForm>(), name: 'Typeform', interface: 'CreateApiCreateForm'})
 configTypes.push({type: getType<Up42.AuthRequest>(), name: 'Up42', interface: 'AuthRequest'})
 configTypes.push({type: getType<Up42.CreditsBalance>(), name: 'Up42', interface: 'CreditsBalance'})
 configTypes.push({type: getType<Up42.CatalogSearch>(), name: 'Up42', interface: 'CatalogSearch'})
+configTypes.push({type: getType<UptimeRobot.GetMonitors>(), name: 'UptimeRobot', interface: 'GetMonitors'})
 configTypes.push({type: getType<UsePlunk.PostEvent>(), name: 'UsePlunk', interface: 'PostEvent'})
 configTypes.push({type: getType<Web3Storage.UploadContent>(), name: 'Web3Storage', interface: 'UploadContent'})
 configTypes.push({type: getType<WhoIsXMLApi.DomainAvailability>(), name: 'WhoIsXMLApi', interface: 'DomainAvailability'})

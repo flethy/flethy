@@ -1,0 +1,24 @@
+# UptimeRobot
+
+## Links
+
+* URL: [https://uptimerobot.com](https://uptimerobot.com)
+* Documentation: [https://uptimerobot.com/api/](https://uptimerobot.com/api/)
+* Tags: web2
+* Category: infra
+* Type: monitoring
+
+## API
+
+### Authentication
+
+* api_key: body
+
+### monitors
+
+#### get
+
+##### Get Monitors
+
+* Description: Get Monitors
+* Docs: [https://uptimerobot.com/api/](https://uptimerobot.com/api/)

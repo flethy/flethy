@@ -36,6 +36,7 @@ import { Eventbrite } from '../configs/eventbrite.config'
 import { Fauna } from '../configs/fauna.config'
 import { Frankfurter } from '../configs/frankfurter.config'
 import { Github } from '../configs/github.config'
+import { GrafBase } from '../configs/grafbase.config'
 import { Grist } from '../configs/grist.config'
 import { HackerNews } from '../configs/hackernews.config'
 import { Harvest } from '../configs/harvest.config'
@@ -81,8 +82,10 @@ import { Supabase } from '../configs/supabase.config'
 import { TheGraph } from '../configs/thegraph.config'
 import { Trello } from '../configs/trello.config'
 import { Tribe } from '../configs/tribe.config'
+import { Twilio } from '../configs/twilio.config'
 import { Typeform } from '../configs/typeform.config'
 import { Up42 } from '../configs/up42.config'
+import { UptimeRobot } from '../configs/uptimerobot.config'
 import { UsePlunk } from '../configs/useplunk.config'
 import { Web3Storage } from '../configs/web3storage.config'
 import { WhoIsXMLApi } from '../configs/whoisxmlapi.config'
@@ -127,6 +130,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['fauna', Fauna.API],
 ['frankfurter', Frankfurter.API],
 ['github', Github.API],
+['grafbase', GrafBase.API],
 ['grist', Grist.API],
 ['hackernews', HackerNews.API],
 ['harvest', Harvest.API],
@@ -172,8 +176,10 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['thegraph', TheGraph.API],
 ['trello', Trello.API],
 ['tribe', Tribe.API],
+['twilio', Twilio.API],
 ['typeform', Typeform.API],
 ['up42', Up42.API],
+['uptimerobot', UptimeRobot.API],
 ['useplunk', UsePlunk.API],
 ['web3storage', Web3Storage.API],
 ['whoisxmlapi', WhoIsXMLApi.API],

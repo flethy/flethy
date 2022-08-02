@@ -66,6 +66,12 @@ export class HttpRequestConfig {
             config.body[keyname] = options.params[paramKey]
           }
           break
+        case 'bodyform':
+          if (['GET'].includes(options.endpoint.method)) {
+            throw new Error(`Body not allowed for GET method`)
+          }
+          formData.push({ key: keyname, value: options.params[paramKey] })
+          break
         case 'header':
           if (!config.headers) {
             config.headers = {}

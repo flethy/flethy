@@ -6,7 +6,7 @@
 * Documentation: [https://www.courier.com/docs/](https://www.courier.com/docs/)
 * Tags: web2
 * Category: communication
-* Type: email
+* Type: multichannel
 
 ## API
 

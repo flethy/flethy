@@ -63,7 +63,7 @@ export namespace Courier {
       docs: 'https://www.courier.com/docs/',
       tags: ['web2'],
       category: 'communication',
-      type: 'email',
+      type: 'multichannel',
     },
     base: 'https://api.courier.com',
     auth: {

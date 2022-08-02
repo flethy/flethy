@@ -92,6 +92,9 @@ import Lokalise from '../../http-configs/src/configs/lokalise.config'
 import Klaviyo from '../../http-configs/src/configs/klaviyo.config'
 import Peekalink from '../../http-configs/src/configs/peekalink.config'
 import Stackby from '../../http-configs/src/configs/stackby.config'
+import GrafBase from '../../http-configs/src/configs/grafbase.config'
+import UptimeRobot from '../../http-configs/src/configs/uptimerobot.config'
+import Twilio from '../../http-configs/src/configs/twilio.config'
 
 async function main() {
   const requestConfigs: {
@@ -1352,8 +1355,70 @@ async function main() {
       'param:tableId': process.env.STACKBY_TABLE_ID,
       'auth:api-key': process.env.STACKBY_API_KEY,
     }),
+    grafbasePagination: nao<GrafBase.GraphQLQuery>({
+      kind: 'grafbase.graphql.query',
+      'auth:Authorization': process.env.GRAFBASE_API_KEY,
+      'subdomain:project': process.env.GRAFBASE_PROJECT,
+      'body:query': `{
+        userCollection(first: 5) {
+          pageInfo {
+            hasPreviousPage
+            hasNextPage
+          }
+          edges {
+            node {
+              id
+              name
+              email
+            }
+            cursor
+          }
+        }
+      }`,
+    }),
+    grafbaseCreate: nao<GrafBase.GraphQLQuery>({
+      kind: 'grafbase.graphql.query',
+      'auth:Authorization': process.env.GRAFBASE_API_KEY,
+      'subdomain:project': process.env.GRAFBASE_PROJECT,
+      'body:query': `mutation {
+        userCreate(
+          input: {name: "web3nao", email: "web3nao", posts: {create: {title: "nice!", url: "woopwoop"}}, comments: {create: {content: "Foo bar"}}}
+        ) {
+          user {
+            id
+            name
+            email
+            posts {
+              id
+              title
+              url
+            }
+            comments {
+              id
+              content
+            }
+          }
+        }
+      }`,
+    }),
+    uptimeRobotsGetMonitors: nao<UptimeRobot.GetMonitors>({
+      kind: 'uptimerobot.monitors.get',
+      'auth:api_key': process.env.UPTIMEROBOT_API_KEY,
+    }),
+    twilioSms: nao<Twilio.SendSms>({
+      kind: 'twilio.messaging.sms',
+      'auth:Authorization': {
+        username: process.env.TWILIO_ACCOUNT_SID,
+        password: process.env.TWILIO_AUTH_TOKEN,
+      },
+      'param:accountSid': process.env.TWILIO_ACCOUNT_SID,
+      'header:Content-Type': 'application/x-www-form-urlencoded',
+      'bodyform:To': process.env.TWILIO_NUMBER,
+      'bodyform:MessagingServiceSid': process.env.TWILIO_MESSAGIN_SID,
+      'bodyform:Body': 'Hi web3nao!',
+    }),
   }
-  const requestConfig = requestConfigs.stackbyList
+  const requestConfig = requestConfigs.twilioSms
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)
