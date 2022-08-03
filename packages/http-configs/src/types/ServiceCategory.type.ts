@@ -88,6 +88,7 @@ export type UTILS_TYPE =
   | 'delivery-tracking'
   | 'api-wrapper'
   | 'web-scraping'
+  | 'web-analyzer'
 export type DEFI_TYPE = 'liquidity'
 export type BOOKS_TYPE = 'index'
 export type FINANCE_TYPE = 'currency' | 'payment'

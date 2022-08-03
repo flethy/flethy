@@ -1,0 +1,52 @@
+# CurrencyScoop
+
+## Links
+
+* URL: [https://currencyscoop.com](https://currencyscoop.com)
+* Documentation: [https://currencyscoop.com/api-documentation](https://currencyscoop.com/api-documentation)
+* Tags: web2
+* Category: finance
+* Type: currency
+
+## API
+
+### Authentication
+
+* api_key: query
+
+### core
+
+#### latest
+
+##### Latest
+
+* Description: This endpoint provides real-time rates of all currencies we support.
+* Docs: [https://currencyscoop.com/api-documentation](https://currencyscoop.com/api-documentation)
+
+#### historical
+
+##### Historical
+
+* Description: This service provides historical exchange rate data for every past day all the way back to the year of 1996.
+* Docs: [https://currencyscoop.com/api-documentation](https://currencyscoop.com/api-documentation)
+
+#### timeseries
+
+##### Timeseries
+
+* Description: If you have the startup or the professional plan, then you have access to the timeframe API service, you may request historical exchange rates for a time-period of your choice.
+* Docs: [https://currencyscoop.com/api-documentation](https://currencyscoop.com/api-documentation)
+
+#### currencies
+
+##### Currencies
+
+* Description: This endpoint gives you access to all the currencies we support together with the name of the currencies and the list of countries that use that currency.
+* Docs: [https://currencyscoop.com/api-documentation](https://currencyscoop.com/api-documentation)
+
+#### convert
+
+##### Convert
+
+* Description: Using the convertcodee> endpoint, you may request our API to perform a Single currency conversion on your behalf.
+* Docs: [https://currencyscoop.com/api-documentation](https://currencyscoop.com/api-documentation)

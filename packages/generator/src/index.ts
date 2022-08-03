@@ -95,6 +95,9 @@ import Stackby from '../../http-configs/src/configs/stackby.config'
 import GrafBase from '../../http-configs/src/configs/grafbase.config'
 import UptimeRobot from '../../http-configs/src/configs/uptimerobot.config'
 import Twilio from '../../http-configs/src/configs/twilio.config'
+import UrlScan from '../../http-configs/src/configs/urlscan.config'
+import CurrencyScoop from '../../http-configs/src/configs/currencyscoop.config'
+import Geekflare from '../../http-configs/src/configs/geekflare.config'
 
 async function main() {
   const requestConfigs: {
@@ -1417,8 +1420,53 @@ async function main() {
       'bodyform:MessagingServiceSid': process.env.TWILIO_MESSAGIN_SID,
       'bodyform:Body': 'Hi web3nao!',
     }),
+    urlscanSubmission: nao<UrlScan.Submission>({
+      kind: 'urlscan.core.submission',
+      'auth:API-Key': process.env.URLSCAN_API_KEY,
+      'body:url': 'https://makeroracles.xyz',
+    }),
+    urlscanResult: nao<UrlScan.Result>({
+      kind: 'urlscan.core.result',
+      'auth:API-Key': process.env.URLSCAN_API_KEY,
+      'param:uuid': '08ebe42d-d765-4aaf-b028-b7c33a571f92',
+    }),
+    currencyScoopCurrencies: nao<CurrencyScoop.Currencies>({
+      kind: 'currencyscoop.core.currencies',
+      'auth:api_key': process.env.CURRENCYSCOOP_API_KEY,
+      'query:type': 'fiat',
+    }),
+    currencyScoopLatest: nao<CurrencyScoop.Latest>({
+      kind: 'currencyscoop.core.latest',
+      'auth:api_key': process.env.CURRENCYSCOOP_API_KEY,
+      'query:base': 'EUR',
+    }),
+    geekflareBrokenLink: nao<Geekflare.BrokenLink>({
+      kind: 'geekflare.core.brokenLink',
+      'auth:x-api-key': process.env.GEEKFLARE_API_KEY,
+      'body:url': 'https://diypunks.xyz',
+      'body:proxyCountry': 'us',
+      'body:followRedirect': false,
+    }),
+    geekflareDNSRecords: nao<Geekflare.DNSRecords>({
+      kind: 'geekflare.core.dnsRecords',
+      'auth:x-api-key': process.env.GEEKFLARE_API_KEY,
+      'body:url': 'https://diypunks.xyz',
+    }),
+    geekflareLighthouse: nao<Geekflare.Lighthouse>({
+      kind: 'geekflare.core.lighthouse',
+      'auth:x-api-key': process.env.GEEKFLARE_API_KEY,
+      'body:url': 'https://diypunks.xyz',
+      'body:proxyCountry': 'us',
+      'body:followRedirect': false,
+    }),
+    geekflareScreenshot: nao<Geekflare.Screenshot>({
+      kind: 'geekflare.core.screenshot',
+      'auth:x-api-key': process.env.GEEKFLARE_API_KEY,
+      'body:url': 'https://diypunks.xyz',
+      'body:proxyCountry': 'us',
+    }),
   }
-  const requestConfig = requestConfigs.twilioSms
+  const requestConfig = requestConfigs.geekflareScreenshot
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)
