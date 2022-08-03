@@ -1,0 +1,38 @@
+# UrlScan
+
+## Links
+
+* URL: [https://urlscan.io](https://urlscan.io)
+* Documentation: [https://urlscan.io/docs](https://urlscan.io/docs)
+* Tags: web2
+* Category: utils
+* Type: web-analyzer
+
+## API
+
+### Authentication
+
+* API-Key: header
+
+### core
+
+#### submission
+
+##### Submission API
+
+* Description: The submission API allows you to submit a URL to be scanned and set some options for the scan.
+* Docs: [https://urlscan.io/docs/api/](https://urlscan.io/docs/api/)
+
+#### result
+
+##### Result API
+
+* Description: Using the Scan ID received from the Submission API, you can use the Result API to poll for the scan. The most efficient approach would be to wait at least 10 seconds before starting to poll, and then only polling 2-second intervals with an eventual upper timeout in case the scan does not return.
+* Docs: [https://urlscan.io/docs/api/](https://urlscan.io/docs/api/)
+
+#### search
+
+##### Search API
+
+* Description: You can use the same ElasticSearch syntax to search for scans as on the Search page. Each result has high-level metadata about the scan result and a link to the API for the full scan result.
+* Docs: [https://urlscan.io/docs/api/](https://urlscan.io/docs/api/)

@@ -28,6 +28,7 @@ import { ConvertKit } from '../configs/convertkit.config'
 import { CountApi } from '../configs/countapi.config'
 import { Courier } from '../configs/courier.config'
 import { Covalent } from '../configs/covalent.config'
+import { CurrencyScoop } from '../configs/currencyscoop.config'
 import { DeepL } from '../configs/deepl.config'
 import { Dhl } from '../configs/dhl.config'
 import { Disify } from '../configs/disify.config'
@@ -35,6 +36,7 @@ import { Etherscan } from '../configs/etherscan.config'
 import { Eventbrite } from '../configs/eventbrite.config'
 import { Fauna } from '../configs/fauna.config'
 import { Frankfurter } from '../configs/frankfurter.config'
+import { Geekflare } from '../configs/geekflare.config'
 import { Github } from '../configs/github.config'
 import { GrafBase } from '../configs/grafbase.config'
 import { Grist } from '../configs/grist.config'
@@ -86,6 +88,7 @@ import { Twilio } from '../configs/twilio.config'
 import { Typeform } from '../configs/typeform.config'
 import { Up42 } from '../configs/up42.config'
 import { UptimeRobot } from '../configs/uptimerobot.config'
+import { UrlScan } from '../configs/urlscan.config'
 import { UsePlunk } from '../configs/useplunk.config'
 import { Web3Storage } from '../configs/web3storage.config'
 import { WhoIsXMLApi } from '../configs/whoisxmlapi.config'
@@ -122,6 +125,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['countapi', CountApi.API],
 ['courier', Courier.API],
 ['covalent', Covalent.API],
+['currencyscoop', CurrencyScoop.API],
 ['deepl', DeepL.API],
 ['dhl', Dhl.API],
 ['disify', Disify.API],
@@ -129,6 +133,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['eventbrite', Eventbrite.API],
 ['fauna', Fauna.API],
 ['frankfurter', Frankfurter.API],
+['geekflare', Geekflare.API],
 ['github', Github.API],
 ['grafbase', GrafBase.API],
 ['grist', Grist.API],
@@ -180,6 +185,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['typeform', Typeform.API],
 ['up42', Up42.API],
 ['uptimerobot', UptimeRobot.API],
+['urlscan', UrlScan.API],
 ['useplunk', UsePlunk.API],
 ['web3storage', Web3Storage.API],
 ['whoisxmlapi', WhoIsXMLApi.API],

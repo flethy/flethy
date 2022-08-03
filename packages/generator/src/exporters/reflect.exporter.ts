@@ -28,6 +28,7 @@ import { ConvertKit } from '../../../http-configs/src/configs/convertkit.config'
 import { CountApi } from '../../../http-configs/src/configs/countapi.config'
 import { Courier } from '../../../http-configs/src/configs/courier.config'
 import { Covalent } from '../../../http-configs/src/configs/covalent.config'
+import { CurrencyScoop } from '../../../http-configs/src/configs/currencyscoop.config'
 import { DeepL } from '../../../http-configs/src/configs/deepl.config'
 import { Dhl } from '../../../http-configs/src/configs/dhl.config'
 import { Disify } from '../../../http-configs/src/configs/disify.config'
@@ -35,6 +36,7 @@ import { Etherscan } from '../../../http-configs/src/configs/etherscan.config'
 import { Eventbrite } from '../../../http-configs/src/configs/eventbrite.config'
 import { Fauna } from '../../../http-configs/src/configs/fauna.config'
 import { Frankfurter } from '../../../http-configs/src/configs/frankfurter.config'
+import { Geekflare } from '../../../http-configs/src/configs/geekflare.config'
 import { Github } from '../../../http-configs/src/configs/github.config'
 import { GrafBase } from '../../../http-configs/src/configs/grafbase.config'
 import { Grist } from '../../../http-configs/src/configs/grist.config'
@@ -86,6 +88,7 @@ import { Twilio } from '../../../http-configs/src/configs/twilio.config'
 import { Typeform } from '../../../http-configs/src/configs/typeform.config'
 import { Up42 } from '../../../http-configs/src/configs/up42.config'
 import { UptimeRobot } from '../../../http-configs/src/configs/uptimerobot.config'
+import { UrlScan } from '../../../http-configs/src/configs/urlscan.config'
 import { UsePlunk } from '../../../http-configs/src/configs/useplunk.config'
 import { Web3Storage } from '../../../http-configs/src/configs/web3storage.config'
 import { WhoIsXMLApi } from '../../../http-configs/src/configs/whoisxmlapi.config'
@@ -170,6 +173,11 @@ configTypes.push({type: getType<Courier.Send>(), name: 'Courier', interface: 'Se
 configTypes.push({type: getType<Covalent.ClassAGetTransactionsForAddress>(), name: 'Covalent', interface: 'ClassAGetTransactionsForAddress'})
 configTypes.push({type: getType<Covalent.ClassBGetUniswapV3Pools>(), name: 'Covalent', interface: 'ClassBGetUniswapV3Pools'})
 configTypes.push({type: getType<Covalent.PricingGetHistoricalTokenPrices>(), name: 'Covalent', interface: 'PricingGetHistoricalTokenPrices'})
+configTypes.push({type: getType<CurrencyScoop.Latest>(), name: 'CurrencyScoop', interface: 'Latest'})
+configTypes.push({type: getType<CurrencyScoop.Historical>(), name: 'CurrencyScoop', interface: 'Historical'})
+configTypes.push({type: getType<CurrencyScoop.Timeseries>(), name: 'CurrencyScoop', interface: 'Timeseries'})
+configTypes.push({type: getType<CurrencyScoop.Currencies>(), name: 'CurrencyScoop', interface: 'Currencies'})
+configTypes.push({type: getType<CurrencyScoop.Convert>(), name: 'CurrencyScoop', interface: 'Convert'})
 configTypes.push({type: getType<DeepL.TranslatingRequest>(), name: 'DeepL', interface: 'TranslatingRequest'})
 configTypes.push({type: getType<DeepL.GlossaryListLanguagePairs>(), name: 'DeepL', interface: 'GlossaryListLanguagePairs'})
 configTypes.push({type: getType<Dhl.TrackingUnified>(), name: 'Dhl', interface: 'TrackingUnified'})
@@ -184,6 +192,10 @@ configTypes.push({type: getType<Fauna.GraphQLQuery>(), name: 'Fauna', interface:
 configTypes.push({type: getType<Frankfurter.Latest>(), name: 'Frankfurter', interface: 'Latest'})
 configTypes.push({type: getType<Frankfurter.Historical>(), name: 'Frankfurter', interface: 'Historical'})
 configTypes.push({type: getType<Frankfurter.TimeSeries>(), name: 'Frankfurter', interface: 'TimeSeries'})
+configTypes.push({type: getType<Geekflare.BrokenLink>(), name: 'Geekflare', interface: 'BrokenLink'})
+configTypes.push({type: getType<Geekflare.DNSRecords>(), name: 'Geekflare', interface: 'DNSRecords'})
+configTypes.push({type: getType<Geekflare.Lighthouse>(), name: 'Geekflare', interface: 'Lighthouse'})
+configTypes.push({type: getType<Geekflare.Screenshot>(), name: 'Geekflare', interface: 'Screenshot'})
 configTypes.push({type: getType<Github.ListRepositoryIssues>(), name: 'Github', interface: 'ListRepositoryIssues'})
 configTypes.push({type: getType<GrafBase.GraphQLQuery>(), name: 'GrafBase', interface: 'GraphQLQuery'})
 configTypes.push({type: getType<Grist.AddRecords>(), name: 'Grist', interface: 'AddRecords'})
@@ -296,6 +308,9 @@ configTypes.push({type: getType<Up42.AuthRequest>(), name: 'Up42', interface: 'A
 configTypes.push({type: getType<Up42.CreditsBalance>(), name: 'Up42', interface: 'CreditsBalance'})
 configTypes.push({type: getType<Up42.CatalogSearch>(), name: 'Up42', interface: 'CatalogSearch'})
 configTypes.push({type: getType<UptimeRobot.GetMonitors>(), name: 'UptimeRobot', interface: 'GetMonitors'})
+configTypes.push({type: getType<UrlScan.Submission>(), name: 'UrlScan', interface: 'Submission'})
+configTypes.push({type: getType<UrlScan.Result>(), name: 'UrlScan', interface: 'Result'})
+configTypes.push({type: getType<UrlScan.Search>(), name: 'UrlScan', interface: 'Search'})
 configTypes.push({type: getType<UsePlunk.PostEvent>(), name: 'UsePlunk', interface: 'PostEvent'})
 configTypes.push({type: getType<Web3Storage.UploadContent>(), name: 'Web3Storage', interface: 'UploadContent'})
 configTypes.push({type: getType<WhoIsXMLApi.DomainAvailability>(), name: 'WhoIsXMLApi', interface: 'DomainAvailability'})
