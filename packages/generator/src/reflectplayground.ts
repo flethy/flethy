@@ -23,6 +23,14 @@ function main() {
     }),
     { depth: 4 }
   )
+  console.log(
+    coinGecko.getProperties().map((prop) => {
+      // return prop.getDecorators()
+      return `${prop.name}:${prop.type.name}|${prop.optional ? '' : '*'}`
+      // return prop.type.getProperties()
+    }),
+    { depth: 3 }
+  )
 
   // const test: CoinGecko.INTERFACES[1]
   // console.log(CoinGecko)
