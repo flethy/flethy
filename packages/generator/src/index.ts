@@ -98,6 +98,9 @@ import Twilio from '../../http-configs/src/configs/twilio.config'
 import UrlScan from '../../http-configs/src/configs/urlscan.config'
 import CurrencyScoop from '../../http-configs/src/configs/currencyscoop.config'
 import Geekflare from '../../http-configs/src/configs/geekflare.config'
+import Canny from '../../http-configs/src/configs/canny.config'
+import ChartMogul from '../../http-configs/src/configs/chartmogul.config'
+import DynaPictures from '../../http-configs/src/configs/dynapictures.config'
 
 async function main() {
   const requestConfigs: {
@@ -1465,8 +1468,48 @@ async function main() {
       'body:url': 'https://diypunks.xyz',
       'body:proxyCountry': 'us',
     }),
+    cannyListBoards: nao<Canny.ListBoards>({
+      kind: 'canny.boards.list',
+      'auth:apiKey': process.env.CANNY_API_KEY,
+    }),
+    cannyRetrieveBoard: nao<Canny.RetrieveBoard>({
+      kind: 'canny.boards.retrieve',
+      'auth:apiKey': process.env.CANNY_API_KEY,
+      'body:id': process.env.CANNY_BOARD_ID,
+    }),
+    cannyListPosts: nao<Canny.ListPosts>({
+      kind: 'canny.posts.list',
+      'auth:apiKey': process.env.CANNY_API_KEY,
+      'body:boardID': process.env.CANNY_BOARD_ID,
+    }),
+    chartMogulTrack: nao<ChartMogul.TrackLeadAndFreeTrial>({
+      kind: 'chartmogul.tracking.user',
+      'auth:Authorization': {
+        username: process.env.CHARTMOGUL_API_KEY,
+      },
+      'body:data_source_uuid': process.env.CHARTMOGUL_DS_ID,
+      'body:external_id': 'web3nao_1',
+      'body:name': 'Adam Urban',
+      'body:email': 'adam.urban@gmail.com',
+      'body:country': 'DE',
+      'body:lead_created_at': '2022-07-10 00:00:00',
+      'body:free_trial_started_at': '2022-07-31 00:00:00',
+    }),
+    dynaPicturesGenerateImage: nao<DynaPictures.GenerateImage>({
+      kind: 'dynapictures.core.imageGeneration',
+      'auth:Authorization': process.env.DYNAPICTURES_API_KEY,
+      'param:templateId': process.env.DYNAPICTURES_TEMPLATE_ID,
+      'body:format': 'png',
+      'body:metadata': 'metadata',
+      'body:params': [
+        {
+          name: 'text',
+          text: 'web3nao rockz!',
+        },
+      ],
+    }),
   }
-  const requestConfig = requestConfigs.geekflareScreenshot
+  const requestConfig = requestConfigs.dynaPicturesGenerateImage
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

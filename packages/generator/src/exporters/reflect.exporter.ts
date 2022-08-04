@@ -15,6 +15,8 @@ import { Bruzu } from '../../../http-configs/src/configs/bruzu.config'
 import { CalCom } from '../../../http-configs/src/configs/calcom.config'
 import { Calendarific } from '../../../http-configs/src/configs/calendarific.config'
 import { Camunda } from '../../../http-configs/src/configs/camunda.config'
+import { Canny } from '../../../http-configs/src/configs/canny.config'
+import { ChartMogul } from '../../../http-configs/src/configs/chartmogul.config'
 import { Carifai } from '../../../http-configs/src/configs/clarifai.config'
 import { Clearbit } from '../../../http-configs/src/configs/clearbit.config'
 import { ClickUp } from '../../../http-configs/src/configs/clickup.config'
@@ -32,6 +34,7 @@ import { CurrencyScoop } from '../../../http-configs/src/configs/currencyscoop.c
 import { DeepL } from '../../../http-configs/src/configs/deepl.config'
 import { Dhl } from '../../../http-configs/src/configs/dhl.config'
 import { Disify } from '../../../http-configs/src/configs/disify.config'
+import { DynaPictures } from '../../../http-configs/src/configs/dynapictures.config'
 import { Etherscan } from '../../../http-configs/src/configs/etherscan.config'
 import { Eventbrite } from '../../../http-configs/src/configs/eventbrite.config'
 import { Fauna } from '../../../http-configs/src/configs/fauna.config'
@@ -130,6 +133,10 @@ configTypes.push({type: getType<Camunda.ConsoleGetClients>(), name: 'Camunda', i
 configTypes.push({type: getType<Camunda.ConsoleCreateClient>(), name: 'Camunda', interface: 'ConsoleCreateClient'})
 configTypes.push({type: getType<Camunda.ConsoleGetClient>(), name: 'Camunda', interface: 'ConsoleGetClient'})
 configTypes.push({type: getType<Camunda.ConsoleDeleteClient>(), name: 'Camunda', interface: 'ConsoleDeleteClient'})
+configTypes.push({type: getType<Canny.ListBoards>(), name: 'Canny', interface: 'ListBoards'})
+configTypes.push({type: getType<Canny.RetrieveBoard>(), name: 'Canny', interface: 'RetrieveBoard'})
+configTypes.push({type: getType<Canny.ListPosts>(), name: 'Canny', interface: 'ListPosts'})
+configTypes.push({type: getType<ChartMogul.TrackLeadAndFreeTrial>(), name: 'ChartMogul', interface: 'TrackLeadAndFreeTrial'})
 configTypes.push({type: getType<Carifai.MakePredictions>(), name: 'Carifai', interface: 'MakePredictions'})
 configTypes.push({type: getType<Carifai.MakePredictionsWithVersion>(), name: 'Carifai', interface: 'MakePredictionsWithVersion'})
 configTypes.push({type: getType<Clearbit.LogoGet>(), name: 'Clearbit', interface: 'LogoGet'})
@@ -185,6 +192,7 @@ configTypes.push({type: getType<Disify.CheckSingleDomain>(), name: 'Disify', int
 configTypes.push({type: getType<Disify.CheckMassDomain>(), name: 'Disify', interface: 'CheckMassDomain'})
 configTypes.push({type: getType<Disify.CheckSingleEmail>(), name: 'Disify', interface: 'CheckSingleEmail'})
 configTypes.push({type: getType<Disify.CheckMassEmail>(), name: 'Disify', interface: 'CheckMassEmail'})
+configTypes.push({type: getType<DynaPictures.GenerateImage>(), name: 'DynaPictures', interface: 'GenerateImage'})
 configTypes.push({type: getType<Etherscan.AccountsBalanceSingleAddress>(), name: 'Etherscan', interface: 'AccountsBalanceSingleAddress'})
 configTypes.push({type: getType<Eventbrite.ListAttendeeByEventId>(), name: 'Eventbrite', interface: 'ListAttendeeByEventId'})
 configTypes.push({type: getType<Eventbrite.GetUserMe>(), name: 'Eventbrite', interface: 'GetUserMe'})

@@ -15,6 +15,8 @@ import { Bruzu } from '../configs/bruzu.config'
 import { CalCom } from '../configs/calcom.config'
 import { Calendarific } from '../configs/calendarific.config'
 import { Camunda } from '../configs/camunda.config'
+import { Canny } from '../configs/canny.config'
+import { ChartMogul } from '../configs/chartmogul.config'
 import { Carifai } from '../configs/clarifai.config'
 import { Clearbit } from '../configs/clearbit.config'
 import { ClickUp } from '../configs/clickup.config'
@@ -32,6 +34,7 @@ import { CurrencyScoop } from '../configs/currencyscoop.config'
 import { DeepL } from '../configs/deepl.config'
 import { Dhl } from '../configs/dhl.config'
 import { Disify } from '../configs/disify.config'
+import { DynaPictures } from '../configs/dynapictures.config'
 import { Etherscan } from '../configs/etherscan.config'
 import { Eventbrite } from '../configs/eventbrite.config'
 import { Fauna } from '../configs/fauna.config'
@@ -112,6 +115,8 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['calcom', CalCom.API],
 ['calendarific', Calendarific.API],
 ['camunda', Camunda.API],
+['canny', Canny.API],
+['chartmogul', ChartMogul.API],
 ['clarifai', Carifai.API],
 ['clearbit', Clearbit.API],
 ['clickup', ClickUp.API],
@@ -129,6 +134,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['deepl', DeepL.API],
 ['dhl', Dhl.API],
 ['disify', Disify.API],
+['dynapictures', DynaPictures.API],
 ['etherscan', Etherscan.API],
 ['eventbrite', Eventbrite.API],
 ['fauna', Fauna.API],

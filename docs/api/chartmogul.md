@@ -1,0 +1,24 @@
+# ChartMogul
+
+## Links
+
+* URL: [https://chartmogul.com](https://chartmogul.com)
+* Documentation: [https://dev.chartmogul.com/docs](https://dev.chartmogul.com/docs)
+* Tags: web2
+* Category: business
+* Type: subscription-analytics
+
+## API
+
+### Authentication
+
+* Authorization: header:basic
+
+### tracking
+
+#### user
+
+##### Tracking leads and free trials
+
+* Description: Tracking leads and free trials
+* Docs: [https://dev.chartmogul.com/docs/tracking-leads-and-free-trials-using-the-api](https://dev.chartmogul.com/docs/tracking-leads-and-free-trials-using-the-api)
