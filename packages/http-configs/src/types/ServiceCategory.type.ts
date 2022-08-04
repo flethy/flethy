@@ -23,6 +23,8 @@ export type CATEGORY =
   | 'news'
   | 'infra'
   | 'machinelearning'
+  | 'community'
+  | 'business'
 export type TYPE =
   | COMM_TYPE
   | STORAGE_TYPE
@@ -47,6 +49,8 @@ export type TYPE =
   | NEWS_TYPE
   | INFRA_TYPE
   | MACHINE_LEARNING_TYPE
+  | COMMUNITY_TYPE
+  | BUSINESS_TYPE
 
 export type COMM_TYPE = 'email' | 'messenger' | 'multichannel'
 export type STORAGE_TYPE = 'ipfs' | 'database'
@@ -105,3 +109,5 @@ export type CAREER_TYPE = 'job-listings'
 export type NEWS_TYPE = 'software' | 'everything'
 export type INFRA_TYPE = 'logging' | 'monitoring' | 'serverless'
 export type MACHINE_LEARNING_TYPE = 'platform'
+export type COMMUNITY_TYPE = 'user-feedback'
+export type BUSINESS_TYPE = 'subscription-analytics'
