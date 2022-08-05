@@ -101,6 +101,9 @@ import Geekflare from '../../http-configs/src/configs/geekflare.config'
 import Canny from '../../http-configs/src/configs/canny.config'
 import ChartMogul from '../../http-configs/src/configs/chartmogul.config'
 import DynaPictures from '../../http-configs/src/configs/dynapictures.config'
+import Hybiscus from '../../http-configs/src/configs/hybiscus.config'
+import BigDataCloud from '../../http-configs/src/configs/bigdatacloud.config'
+import MailboxValidator from '../../http-configs/src/configs/mailboxvalidator.config'
 
 async function main() {
   const requestConfigs: {
@@ -1508,8 +1511,47 @@ async function main() {
         },
       ],
     }),
+    hybiscusBuildReport: nao<Hybiscus.BuildReport>({
+      kind: 'hybiscus.core.buildReport',
+      'auth:X-API-KEY': process.env.HYBISCUS_API_KEY,
+      'body:options': {
+        report_title: 'web3nao',
+        report_byline: 'yay yay yay',
+        version_number: 'v0.1.0',
+      },
+      'body:config': {
+        colour_theme: 'forest',
+        typography_theme: 'newspaper',
+      },
+      'body:components': [
+        {
+          type: 'Section',
+          options: {
+            section_title: 'Overviews and KPI metrics',
+            highlighted: true,
+            columns: 3,
+          },
+        },
+      ],
+    }),
+    hybiscusGetReport: nao<Hybiscus.GetReport>({
+      kind: 'hybiscus.core.getReport',
+      'auth:X-API-KEY': process.env.HYBISCUS_API_KEY,
+      'query:task_id': process.env.HYBISCUS_TASK_ID,
+    }),
+    bigDataCloudGeocode: nao<BigDataCloud.ReverseGeoCodeClient>({
+      kind: 'bigdatacloud.free.reverseGeoCodeClient',
+      'query:latitude': '37.421',
+      'query:longitude': '-122.083',
+    }),
+    mailboxValidatorSingleEmailValidation:
+      nao<MailboxValidator.SingleEmailValidation>({
+        kind: 'mailboxvalidator.singleEmailValidation.singleEmailValidation',
+        'auth:key': process.env.MAILBOXVALIDATOR_API_KEY,
+        'query:email': 'adam.urban@gmail.com',
+      }),
   }
-  const requestConfig = requestConfigs.dynaPicturesGenerateImage
+  const requestConfig = requestConfigs.mailboxValidatorSingleEmailValidation
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

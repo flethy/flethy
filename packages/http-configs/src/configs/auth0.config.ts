@@ -65,6 +65,11 @@ export namespace Auth0 {
       name: 'Auth0',
       url: 'https://auth0.com',
       docs: 'https://auth0.com/docs',
+      social: {
+        twitter: 'auth0',
+        github: 'auth0',
+        instagram: 'weareauth0',
+      },
       tags: ['web2'],
       category: 'identity',
       type: 'identitymanagement',

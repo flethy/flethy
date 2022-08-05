@@ -1,0 +1,31 @@
+# Hybiscus
+
+## Links
+
+* URL: [https://hybiscus.dev/](https://hybiscus.dev/)
+* Documentation: [https://api.hybiscus.dev/](https://api.hybiscus.dev/)
+* Tags: web2
+* Category: utils
+* Type: pdf-generation
+
+## API
+
+### Authentication
+
+* X-API-KEY: header
+
+### core
+
+#### buildReport
+
+##### Build Report
+
+* Description: Build Report
+* Docs: [https://api.hybiscus.dev/](https://api.hybiscus.dev/)
+
+#### getReport
+
+##### Get Report
+
+* Description: Get Report
+* Docs: [https://api.hybiscus.dev/](https://api.hybiscus.dev/)

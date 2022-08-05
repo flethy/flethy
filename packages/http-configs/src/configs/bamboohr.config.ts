@@ -26,6 +26,10 @@ export namespace BambooHR {
       name: 'BambooHR',
       url: 'https://bamboohr.com',
       docs: 'https://documentation.bamboohr.com',
+      social: {
+        twitter: 'bamboohr',
+        instagram: 'bamboohr',
+      },
       tags: ['web2'],
       category: 'tools',
       type: 'hr',

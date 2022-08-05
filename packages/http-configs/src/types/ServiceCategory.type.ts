@@ -93,6 +93,7 @@ export type UTILS_TYPE =
   | 'api-wrapper'
   | 'web-scraping'
   | 'web-analyzer'
+  | 'pdf-generation'
 export type DEFI_TYPE = 'liquidity'
 export type BOOKS_TYPE = 'index'
 export type FINANCE_TYPE = 'currency' | 'payment'

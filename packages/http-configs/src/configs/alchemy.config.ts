@@ -23,6 +23,9 @@ export namespace Alchemy {
       name: 'Alchemy',
       url: 'https://alchemy.com',
       docs: 'https://docs.alchemy.com/',
+      social: {
+        twitter: 'AlchemyPlatform',
+      },
       tags: ['web3', 'nft'],
       category: 'aggregation',
       type: 'indexer',

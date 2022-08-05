@@ -21,6 +21,7 @@ export namespace Template {
       tags: ['web3'],
       category: 'aggregation',
       type: 'indexer',
+      social: {},
     },
     base: '',
     api: {
