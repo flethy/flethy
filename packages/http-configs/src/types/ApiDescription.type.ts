@@ -7,6 +7,11 @@ export interface ApiDescription<Entity, Endpoint> {
     name: string
     url: string
     docs: string
+    social?: {
+      twitter?: string
+      github?: string
+      instagram?: string
+    }
     tags: TAG[]
     category: CATEGORY
     type: TYPE

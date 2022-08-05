@@ -41,6 +41,9 @@ export namespace BaseRow {
       name: 'BaseRow',
       url: 'https://baserow.io/',
       docs: 'https://baserow.io/api-docs/',
+      social: {
+        twitter: 'baserow',
+      },
       tags: ['web2'],
       category: 'storage',
       type: 'database',

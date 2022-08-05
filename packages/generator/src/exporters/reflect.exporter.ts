@@ -8,6 +8,7 @@ import { APITemplateIo } from '../../../http-configs/src/configs/apitemplateio.c
 import { Auth0 } from '../../../http-configs/src/configs/auth0.config'
 import { BambooHR } from '../../../http-configs/src/configs/bamboohr.config'
 import { BaseRow } from '../../../http-configs/src/configs/baserow.config'
+import { BigDataCloud } from '../../../http-configs/src/configs/bigdatacloud.config'
 import { Bitly } from '../../../http-configs/src/configs/bitly.config'
 import { Brandfetch } from '../../../http-configs/src/configs/brandfetch.config'
 import { BrowsersFyi } from '../../../http-configs/src/configs/browsersfyi.config'
@@ -49,10 +50,12 @@ import { HelloSign } from '../../../http-configs/src/configs/hellosign.config'
 import { HostIo } from '../../../http-configs/src/configs/hostio.config'
 import { Hubspot } from '../../../http-configs/src/configs/hubspot.config'
 import { HunterIo } from '../../../http-configs/src/configs/hunterio.config'
+import { Hybiscus } from '../../../http-configs/src/configs/hybiscus.config'
 import { Jira } from '../../../http-configs/src/configs/jira.config'
 import { Klaviyo } from '../../../http-configs/src/configs/klaviyo.config'
 import { Linear } from '../../../http-configs/src/configs/linear.config'
 import { Lokalise } from '../../../http-configs/src/configs/lokalise.config'
+import { MailboxValidator } from '../../../http-configs/src/configs/mailboxvalidator.config'
 import { MailCheckAi } from '../../../http-configs/src/configs/mailcheckai.config'
 import { MailerSend } from '../../../http-configs/src/configs/mailersend.config'
 import { MailPace } from '../../../http-configs/src/configs/mailpace.config'
@@ -113,6 +116,7 @@ configTypes.push({type: getType<Auth0.GetUser>(), name: 'Auth0', interface: 'Get
 configTypes.push({type: getType<BambooHR.EmployeesDirectory>(), name: 'BambooHR', interface: 'EmployeesDirectory'})
 configTypes.push({type: getType<BaseRow.CreateRow>(), name: 'BaseRow', interface: 'CreateRow'})
 configTypes.push({type: getType<BaseRow.GetRows>(), name: 'BaseRow', interface: 'GetRows'})
+configTypes.push({type: getType<BigDataCloud.ReverseGeoCodeClient>(), name: 'BigDataCloud', interface: 'ReverseGeoCodeClient'})
 configTypes.push({type: getType<Bitly.CreateShortLink>(), name: 'Bitly', interface: 'CreateShortLink'})
 configTypes.push({type: getType<Brandfetch.BrandByDomainOrId>(), name: 'Brandfetch', interface: 'BrandByDomainOrId'})
 configTypes.push({type: getType<BrowsersFyi.Get>(), name: 'BrowsersFyi', interface: 'Get'})
@@ -227,6 +231,8 @@ configTypes.push({type: getType<HunterIo.DomainSearch>(), name: 'HunterIo', inte
 configTypes.push({type: getType<HunterIo.EmailFinder>(), name: 'HunterIo', interface: 'EmailFinder'})
 configTypes.push({type: getType<HunterIo.AuthorFinder>(), name: 'HunterIo', interface: 'AuthorFinder'})
 configTypes.push({type: getType<HunterIo.EmailVerification>(), name: 'HunterIo', interface: 'EmailVerification'})
+configTypes.push({type: getType<Hybiscus.BuildReport>(), name: 'Hybiscus', interface: 'BuildReport'})
+configTypes.push({type: getType<Hybiscus.GetReport>(), name: 'Hybiscus', interface: 'GetReport'})
 configTypes.push({type: getType<Jira.GetIssue>(), name: 'Jira', interface: 'GetIssue'})
 configTypes.push({type: getType<Jira.SearchIssues>(), name: 'Jira', interface: 'SearchIssues'})
 configTypes.push({type: getType<Jira.CreateIssue>(), name: 'Jira', interface: 'CreateIssue'})
@@ -239,6 +245,9 @@ configTypes.push({type: getType<Lokalise.CreateTask>(), name: 'Lokalise', interf
 configTypes.push({type: getType<Lokalise.ListTasks>(), name: 'Lokalise', interface: 'ListTasks'})
 configTypes.push({type: getType<Lokalise.ListUsers>(), name: 'Lokalise', interface: 'ListUsers'})
 configTypes.push({type: getType<Lokalise.ListTeams>(), name: 'Lokalise', interface: 'ListTeams'})
+configTypes.push({type: getType<MailboxValidator.SingleEmailValidation>(), name: 'MailboxValidator', interface: 'SingleEmailValidation'})
+configTypes.push({type: getType<MailboxValidator.DisposableEmail>(), name: 'MailboxValidator', interface: 'DisposableEmail'})
+configTypes.push({type: getType<MailboxValidator.FreeEmail>(), name: 'MailboxValidator', interface: 'FreeEmail'})
 configTypes.push({type: getType<MailCheckAi.CheckDomain>(), name: 'MailCheckAi', interface: 'CheckDomain'})
 configTypes.push({type: getType<MailCheckAi.CheckEmail>(), name: 'MailCheckAi', interface: 'CheckEmail'})
 configTypes.push({type: getType<MailerSend.EmailSend>(), name: 'MailerSend', interface: 'EmailSend'})

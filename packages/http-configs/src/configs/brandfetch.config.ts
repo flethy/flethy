@@ -23,6 +23,9 @@ export namespace Brandfetch {
       name: 'Brandfetch',
       url: 'https://brandfetch.com',
       docs: 'https://docs.brandfetch.com',
+      social: {
+        twitter: 'brandfetch',
+      },
       tags: ['web2'],
       category: 'data',
       type: 'brands',

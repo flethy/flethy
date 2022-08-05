@@ -8,6 +8,7 @@ import { APITemplateIo } from '../configs/apitemplateio.config'
 import { Auth0 } from '../configs/auth0.config'
 import { BambooHR } from '../configs/bamboohr.config'
 import { BaseRow } from '../configs/baserow.config'
+import { BigDataCloud } from '../configs/bigdatacloud.config'
 import { Bitly } from '../configs/bitly.config'
 import { Brandfetch } from '../configs/brandfetch.config'
 import { BrowsersFyi } from '../configs/browsersfyi.config'
@@ -49,10 +50,12 @@ import { HelloSign } from '../configs/hellosign.config'
 import { HostIo } from '../configs/hostio.config'
 import { Hubspot } from '../configs/hubspot.config'
 import { HunterIo } from '../configs/hunterio.config'
+import { Hybiscus } from '../configs/hybiscus.config'
 import { Jira } from '../configs/jira.config'
 import { Klaviyo } from '../configs/klaviyo.config'
 import { Linear } from '../configs/linear.config'
 import { Lokalise } from '../configs/lokalise.config'
+import { MailboxValidator } from '../configs/mailboxvalidator.config'
 import { MailCheckAi } from '../configs/mailcheckai.config'
 import { MailerSend } from '../configs/mailersend.config'
 import { MailPace } from '../configs/mailpace.config'
@@ -108,6 +111,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['auth0', Auth0.API],
 ['bamboohr', BambooHR.API],
 ['baserow', BaseRow.API],
+['bigdatacloud', BigDataCloud.API],
 ['bitly', Bitly.API],
 ['brandfetch', Brandfetch.API],
 ['browsersfyi', BrowsersFyi.API],
@@ -149,10 +153,12 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['hostio', HostIo.API],
 ['hubspot', Hubspot.API],
 ['hunterio', HunterIo.API],
+['hybiscus', Hybiscus.API],
 ['jira', Jira.API],
 ['klaviyo', Klaviyo.API],
 ['linear', Linear.API],
 ['lokalise', Lokalise.API],
+['mailboxvalidator', MailboxValidator.API],
 ['mailcheckai', MailCheckAi.API],
 ['mailersend', MailerSend.API],
 ['mailpace', MailPace.API],

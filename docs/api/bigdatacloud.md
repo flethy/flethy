@@ -1,0 +1,20 @@
+# BigDataCloud
+
+## Links
+
+* URL: [https://www.bigdatacloud.com](https://www.bigdatacloud.com)
+* Documentation: [https://www.bigdatacloud.com/docs](https://www.bigdatacloud.com/docs)
+* Tags: web2
+* Category: utils
+* Type: other
+
+## API
+
+### free
+
+#### reverseGeoCodeClient
+
+##### Client Side Reverse Geocoding to City API
+
+* Description: Client Side Reverse Geocoding to City API
+* Docs: [https://www.bigdatacloud.com/docs/api/free-reverse-geocode-to-city-api](https://www.bigdatacloud.com/docs/api/free-reverse-geocode-to-city-api)

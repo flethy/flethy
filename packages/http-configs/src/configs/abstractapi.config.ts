@@ -23,6 +23,9 @@ export namespace AbstractApi {
       name: 'AbstractApi',
       url: 'https://www.abstractapi.com/',
       docs: 'https://www.abstractapi.com/api',
+      social: {
+        twitter: 'abstractapi',
+      },
       tags: ['web2'],
       category: 'utils',
       type: 'calendar',

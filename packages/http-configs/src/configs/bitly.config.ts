@@ -25,6 +25,10 @@ export namespace Bitly {
       name: 'Bitly',
       url: 'https://bitly.com',
       docs: 'https://dev.bitly.com/',
+      social: {
+        twitter: 'bitly',
+        instagram: 'bitly',
+      },
       tags: ['web2'],
       category: 'utils',
       type: 'url-shortener',

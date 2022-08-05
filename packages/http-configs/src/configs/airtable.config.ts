@@ -42,6 +42,10 @@ export namespace Airtable {
       name: 'Airtable',
       url: 'https://airtable.com',
       docs: 'https://airtable.com/api',
+      social: {
+        twitter: 'airtable',
+        instagram: 'airtable',
+      },
       tags: ['web2'],
       category: 'collaboration',
       type: 'spreadsheet',

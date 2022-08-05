@@ -25,6 +25,10 @@ export namespace APITemplateIo {
       name: 'APITemplateIo',
       url: 'https://apitemplate.io/',
       docs: 'https://apitemplate.io/apiv2/#section/Introduction',
+      social: {
+        twitter: 'apitemplateio',
+        instagram: 'apitemplateio',
+      },
       tags: ['web2'],
       category: 'marketing',
       type: 'media',
