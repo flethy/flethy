@@ -104,6 +104,8 @@ import DynaPictures from '../../http-configs/src/configs/dynapictures.config'
 import Hybiscus from '../../http-configs/src/configs/hybiscus.config'
 import BigDataCloud from '../../http-configs/src/configs/bigdatacloud.config'
 import MailboxValidator from '../../http-configs/src/configs/mailboxvalidator.config'
+import Microlink from '../../http-configs/src/configs/microlink.config'
+import Unavatar from '../../http-configs/src/configs/unavatar.config'
 
 async function main() {
   const requestConfigs: {
@@ -1550,8 +1552,23 @@ async function main() {
         'auth:key': process.env.MAILBOXVALIDATOR_API_KEY,
         'query:email': 'adam.urban@gmail.com',
       }),
+    microlinkUrl: nao<Microlink.Url>({
+      kind: 'microlink.core.url',
+      'query:url': 'https://diypunks.xyz',
+    }),
+    unavatarUsername: nao<Unavatar.FromUsernameEmailDomain>({
+      kind: 'unavatar.core.fromUsernameEmailDomain',
+      'param:usernameEmailDomain': 'urbanisierung',
+      'query:json': true,
+    }),
+    unavatarProvider: nao<Unavatar.FromProvider>({
+      kind: 'unavatar.core.fromProvider',
+      'param:provider': 'duckduckgo',
+      'param:input': 'diypunks.xyz',
+      'query:json': true,
+    }),
   }
-  const requestConfig = requestConfigs.mailboxValidatorSingleEmailValidation
+  const requestConfig = requestConfigs.unavatarProvider
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

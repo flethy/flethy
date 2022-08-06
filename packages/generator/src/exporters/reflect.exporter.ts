@@ -63,6 +63,7 @@ import { Medium } from '../../../http-configs/src/configs/medium.config'
 import { Mergent } from '../../../http-configs/src/configs/mergent.config'
 import { Mezmo } from '../../../http-configs/src/configs/mezmo.config'
 import { MicroDev } from '../../../http-configs/src/configs/microdev.config'
+import { Microlink } from '../../../http-configs/src/configs/microlink.config'
 import { Mixpanel } from '../../../http-configs/src/configs/mixpanel.config'
 import { NewRelic } from '../../../http-configs/src/configs/newrelic.config'
 import { Notion } from '../../../http-configs/src/configs/notion.config'
@@ -92,6 +93,7 @@ import { Trello } from '../../../http-configs/src/configs/trello.config'
 import { Tribe } from '../../../http-configs/src/configs/tribe.config'
 import { Twilio } from '../../../http-configs/src/configs/twilio.config'
 import { Typeform } from '../../../http-configs/src/configs/typeform.config'
+import { Unavatar } from '../../../http-configs/src/configs/unavatar.config'
 import { Up42 } from '../../../http-configs/src/configs/up42.config'
 import { UptimeRobot } from '../../../http-configs/src/configs/uptimerobot.config'
 import { UrlScan } from '../../../http-configs/src/configs/urlscan.config'
@@ -274,6 +276,7 @@ configTypes.push({type: getType<MicroDev.StorageNotesDelete>(), name: 'MicroDev'
 configTypes.push({type: getType<MicroDev.StorageNotesList>(), name: 'MicroDev', interface: 'StorageNotesList'})
 configTypes.push({type: getType<MicroDev.StorageNotesRead>(), name: 'MicroDev', interface: 'StorageNotesRead'})
 configTypes.push({type: getType<MicroDev.StorageNotesUpdate>(), name: 'MicroDev', interface: 'StorageNotesUpdate'})
+configTypes.push({type: getType<Microlink.Url>(), name: 'Microlink', interface: 'Url'})
 configTypes.push({type: getType<Mixpanel.TrackEvents>(), name: 'Mixpanel', interface: 'TrackEvents'})
 configTypes.push({type: getType<NewRelic.InsightsEvents>(), name: 'NewRelic', interface: 'InsightsEvents'})
 configTypes.push({type: getType<Notion.CreateDatabase>(), name: 'Notion', interface: 'CreateDatabase'})
@@ -321,6 +324,8 @@ configTypes.push({type: getType<Trello.CardsCreate>(), name: 'Trello', interface
 configTypes.push({type: getType<Tribe.TribeAccessToken>(), name: 'Tribe', interface: 'TribeAccessToken'})
 configTypes.push({type: getType<Twilio.SendSms>(), name: 'Twilio', interface: 'SendSms'})
 configTypes.push({type: getType<Typeform.CreateApiCreateForm>(), name: 'Typeform', interface: 'CreateApiCreateForm'})
+configTypes.push({type: getType<Unavatar.FromUsernameEmailDomain>(), name: 'Unavatar', interface: 'FromUsernameEmailDomain'})
+configTypes.push({type: getType<Unavatar.FromProvider>(), name: 'Unavatar', interface: 'FromProvider'})
 configTypes.push({type: getType<Up42.AuthRequest>(), name: 'Up42', interface: 'AuthRequest'})
 configTypes.push({type: getType<Up42.CreditsBalance>(), name: 'Up42', interface: 'CreditsBalance'})
 configTypes.push({type: getType<Up42.CatalogSearch>(), name: 'Up42', interface: 'CatalogSearch'})
