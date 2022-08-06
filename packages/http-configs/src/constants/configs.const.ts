@@ -63,6 +63,7 @@ import { Medium } from '../configs/medium.config'
 import { Mergent } from '../configs/mergent.config'
 import { Mezmo } from '../configs/mezmo.config'
 import { MicroDev } from '../configs/microdev.config'
+import { Microlink } from '../configs/microlink.config'
 import { Mixpanel } from '../configs/mixpanel.config'
 import { NewRelic } from '../configs/newrelic.config'
 import { Notion } from '../configs/notion.config'
@@ -92,6 +93,7 @@ import { Trello } from '../configs/trello.config'
 import { Tribe } from '../configs/tribe.config'
 import { Twilio } from '../configs/twilio.config'
 import { Typeform } from '../configs/typeform.config'
+import { Unavatar } from '../configs/unavatar.config'
 import { Up42 } from '../configs/up42.config'
 import { UptimeRobot } from '../configs/uptimerobot.config'
 import { UrlScan } from '../configs/urlscan.config'
@@ -166,6 +168,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['mergent', Mergent.API],
 ['mezmo', Mezmo.API],
 ['microdev', MicroDev.API],
+['microlink', Microlink.API],
 ['mixpanel', Mixpanel.API],
 ['newrelic', NewRelic.API],
 ['notion', Notion.API],
@@ -195,6 +198,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['tribe', Tribe.API],
 ['twilio', Twilio.API],
 ['typeform', Typeform.API],
+['unavatar', Unavatar.API],
 ['up42', Up42.API],
 ['uptimerobot', UptimeRobot.API],
 ['urlscan', UrlScan.API],

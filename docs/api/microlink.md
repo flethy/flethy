@@ -1,0 +1,24 @@
+# Microlink
+
+## Links
+
+* URL: [https://microlink.io](https://microlink.io)
+* Documentation: [https://microlink.io/docs](https://microlink.io/docs)
+* Tags: web2
+* Category: utils
+* Type: other
+
+## API
+
+### Authentication
+
+* x-api-key: header
+
+### core
+
+#### url
+
+##### url
+
+* Description: url
+* Docs: [https://microlink.io/docs/api/parameters/url](https://microlink.io/docs/api/parameters/url)
