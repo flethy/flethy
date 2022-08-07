@@ -33,6 +33,7 @@ import { Courier } from '../configs/courier.config'
 import { Covalent } from '../configs/covalent.config'
 import { CurrencyScoop } from '../configs/currencyscoop.config'
 import { DeepL } from '../configs/deepl.config'
+import { DevTo } from '../configs/devto.config'
 import { Dhl } from '../configs/dhl.config'
 import { Disify } from '../configs/disify.config'
 import { DynaPictures } from '../configs/dynapictures.config'
@@ -138,6 +139,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['covalent', Covalent.API],
 ['currencyscoop', CurrencyScoop.API],
 ['deepl', DeepL.API],
+['devto', DevTo.API],
 ['dhl', Dhl.API],
 ['disify', Disify.API],
 ['dynapictures', DynaPictures.API],
