@@ -51,6 +51,7 @@ The following Endpoints are currently supported.
 * [Courier](./api/courier.md)
 * [CurrencyScoop](./api/currencyscoop.md)
 * [DeepL](./api/deepl.md)
+* [DevTo](./api/devto.md)
 * [Dhl](./api/dhl.md)
 * [Disify](./api/disify.md)
 * [DynaPictures](./api/dynapictures.md)
