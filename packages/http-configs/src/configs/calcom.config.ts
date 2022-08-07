@@ -44,6 +44,10 @@ export namespace CalCom {
       name: 'CalCom',
       url: 'https://cal.com',
       docs: 'https://developer.cal.com/',
+      social: {
+        twitter: 'calcom',
+        github: 'calcom',
+      },
       tags: ['web2'],
       category: 'collaboration',
       type: 'calendar',

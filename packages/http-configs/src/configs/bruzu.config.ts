@@ -30,6 +30,10 @@ export namespace Bruzu {
       name: 'Bruzu',
       url: 'https://bruzu.com',
       docs: 'https://docs.bruzu.com',
+      social: {
+        twitter: 'bruzuHQ',
+        instagram: 'bruzuHQ',
+      },
       tags: ['web2'],
       category: 'utils',
       type: 'image-processing',

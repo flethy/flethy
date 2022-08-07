@@ -43,6 +43,10 @@ export namespace Calendarific {
       url: 'https://calendarific.com',
       docs: 'https://calendarific.com/api-documentation',
       tags: ['web2'],
+      social: {
+        twitter: 'calendarific',
+        github: 'calendarific',
+      },
       category: 'utils',
       type: 'calendar',
     },
