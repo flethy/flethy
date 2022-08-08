@@ -47,6 +47,7 @@ import { GrafBase } from '../../../http-configs/src/configs/grafbase.config'
 import { Grist } from '../../../http-configs/src/configs/grist.config'
 import { HackerNews } from '../../../http-configs/src/configs/hackernews.config'
 import { Harvest } from '../../../http-configs/src/configs/harvest.config'
+import { Hashnode } from '../../../http-configs/src/configs/hashnode.config'
 import { HelloSign } from '../../../http-configs/src/configs/hellosign.config'
 import { HostIo } from '../../../http-configs/src/configs/hostio.config'
 import { Hubspot } from '../../../http-configs/src/configs/hubspot.config'
@@ -221,6 +222,7 @@ configTypes.push({type: getType<HackerNews.GetItem>(), name: 'HackerNews', inter
 configTypes.push({type: getType<HackerNews.GetUser>(), name: 'HackerNews', interface: 'GetUser'})
 configTypes.push({type: getType<HackerNews.GetLive>(), name: 'HackerNews', interface: 'GetLive'})
 configTypes.push({type: getType<Harvest.ListProjects>(), name: 'Harvest', interface: 'ListProjects'})
+configTypes.push({type: getType<Hashnode.GraphQLQuery>(), name: 'Hashnode', interface: 'GraphQLQuery'})
 configTypes.push({type: getType<HelloSign.GetAccount>(), name: 'HelloSign', interface: 'GetAccount'})
 configTypes.push({type: getType<HelloSign.SendSignatureRequest>(), name: 'HelloSign', interface: 'SendSignatureRequest'})
 configTypes.push({type: getType<HostIo.GetDomain>(), name: 'HostIo', interface: 'GetDomain'})

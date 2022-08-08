@@ -47,6 +47,7 @@ import { GrafBase } from '../configs/grafbase.config'
 import { Grist } from '../configs/grist.config'
 import { HackerNews } from '../configs/hackernews.config'
 import { Harvest } from '../configs/harvest.config'
+import { Hashnode } from '../configs/hashnode.config'
 import { HelloSign } from '../configs/hellosign.config'
 import { HostIo } from '../configs/hostio.config'
 import { Hubspot } from '../configs/hubspot.config'
@@ -153,6 +154,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['grist', Grist.API],
 ['hackernews', HackerNews.API],
 ['harvest', Harvest.API],
+['hashnode', Hashnode.API],
 ['hellosign', HelloSign.API],
 ['hostio', HostIo.API],
 ['hubspot', Hubspot.API],
