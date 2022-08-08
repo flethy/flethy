@@ -64,6 +64,7 @@ The following Endpoints are currently supported.
 * [Grist](./api/grist.md)
 * [HackerNews](./api/hackernews.md)
 * [Harvest](./api/harvest.md)
+* [Hashnode](./api/hashnode.md)
 * [HelloSign](./api/hellosign.md)
 * [HostIo](./api/hostio.md)
 * [Hubspot](./api/hubspot.md)
