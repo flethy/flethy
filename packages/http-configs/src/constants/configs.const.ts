@@ -56,6 +56,7 @@ import { Hybiscus } from '../configs/hybiscus.config'
 import { Jira } from '../configs/jira.config'
 import { Klaviyo } from '../configs/klaviyo.config'
 import { Linear } from '../configs/linear.config'
+import { LinkedIn } from '../configs/linkedin.config'
 import { Lokalise } from '../configs/lokalise.config'
 import { MailboxValidator } from '../configs/mailboxvalidator.config'
 import { MailCheckAi } from '../configs/mailcheckai.config'
@@ -163,6 +164,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['jira', Jira.API],
 ['klaviyo', Klaviyo.API],
 ['linear', Linear.API],
+['linkedin', LinkedIn.API],
 ['lokalise', Lokalise.API],
 ['mailboxvalidator', MailboxValidator.API],
 ['mailcheckai', MailCheckAi.API],
