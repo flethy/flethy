@@ -63,7 +63,20 @@ export class HttpRequestConfig {
           if (keyname === 'body') {
             config.body = options.params[paramKey]
           } else {
-            config.body[keyname] = options.params[paramKey]
+            // BODY TRANSFORMATION
+            if (
+              options.endpoint.transform &&
+              options.endpoint.transform[paramKey]
+            ) {
+              switch (options.endpoint.transform[paramKey].type) {
+                case 'prefix':
+                  config.body[
+                    keyname
+                  ] = `${options.endpoint.transform[paramKey].value}${options.params[paramKey]}`
+              }
+            } else {
+              config.body[keyname] = options.params[paramKey]
+            }
           }
           break
         case 'bodyform':

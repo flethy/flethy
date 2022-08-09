@@ -46,6 +46,12 @@ export interface ApiDescriptionEndpoint {
   }
   query?: { [key: string]: string }
   params?: any
+  transform?: {
+    [key: string]: {
+      type: 'prefix'
+      value?: string
+    }
+  }
 }
 
 export interface ApiDescriptionEndpointOptions {
