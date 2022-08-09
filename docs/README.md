@@ -73,6 +73,7 @@ The following Endpoints are currently supported.
 * [Jira](./api/jira.md)
 * [Klaviyo](./api/klaviyo.md)
 * [Linear](./api/linear.md)
+* [LinkedIn](./api/linkedin.md)
 * [Lokalise](./api/lokalise.md)
 * [MailboxValidator](./api/mailboxvalidator.md)
 * [MailCheckAi](./api/mailcheckai.md)
