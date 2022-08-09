@@ -70,6 +70,12 @@ export namespace LinkedIn {
             docs: 'https://developer.linkedin.com/',
           },
           method: 'POST',
+          transform: {
+            'body:author': {
+              type: 'prefix',
+              value: 'urn:li:person:',
+            },
+          },
           paths: [
             {
               name: 'ugcPosts',
