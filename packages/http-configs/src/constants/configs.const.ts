@@ -69,6 +69,7 @@ import { MicroDev } from '../configs/microdev.config'
 import { Microlink } from '../configs/microlink.config'
 import { Mixpanel } from '../configs/mixpanel.config'
 import { NewRelic } from '../configs/newrelic.config'
+import { NewsApi } from '../configs/newsapi.config'
 import { Notion } from '../configs/notion.config'
 import { OneInch } from '../configs/oneinch.config'
 import { OpenLibrary } from '../configs/openlibrary.config'
@@ -177,6 +178,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['microlink', Microlink.API],
 ['mixpanel', Mixpanel.API],
 ['newrelic', NewRelic.API],
+['newsapi', NewsApi.API],
 ['notion', Notion.API],
 ['1inch', OneInch.API],
 ['openlibrary', OpenLibrary.API],
