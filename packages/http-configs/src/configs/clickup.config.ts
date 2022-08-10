@@ -52,6 +52,10 @@ export namespace ClickUp {
       name: 'ClickUp',
       url: 'https://clickup.com',
       docs: 'https://clickup.com/api',
+      social: {
+        twitter: 'clickup',
+        instagram: 'clickup',
+      },
       tags: ['web2'],
       category: 'collaboration',
       type: 'issueticketing',

@@ -22,6 +22,9 @@ export namespace Clearbit {
       name: 'Clearbit',
       url: 'https://clearbit.com',
       docs: 'https://dashboard.clearbit.com/docs',
+      social: {
+        twitter: 'clearbit',
+      },
       tags: ['web2'],
       category: 'aggregation',
       type: 'businessdata',

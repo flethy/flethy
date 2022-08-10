@@ -54,6 +54,9 @@ export namespace Canny {
       name: 'Canny',
       url: 'https://canny.io',
       docs: 'https://developers.canny.io',
+      social: {
+        twitter: 'cannyhq',
+      },
       tags: ['web2'],
       category: 'community',
       type: 'user-feedback',

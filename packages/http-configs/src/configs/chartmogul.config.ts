@@ -31,6 +31,9 @@ export namespace ChartMogul {
       name: 'ChartMogul',
       url: 'https://chartmogul.com',
       docs: 'https://dev.chartmogul.com/docs',
+      social: {
+        twitter: 'chartmogul',
+      },
       tags: ['web2'],
       category: 'business',
       type: 'subscription-analytics',

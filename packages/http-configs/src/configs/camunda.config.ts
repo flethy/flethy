@@ -85,6 +85,10 @@ export namespace Camunda {
       name: 'Camunda',
       url: 'https://camunda.com',
       docs: 'https://docs.camunda.io/',
+      social: {
+        twitter: 'camunda',
+        github: 'camunda',
+      },
       tags: ['web2'],
       category: 'automation',
       type: 'workflows',

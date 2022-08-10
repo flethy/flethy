@@ -53,6 +53,10 @@ export namespace Carifai {
       name: 'Carifai',
       url: 'https://clarifai.com',
       docs: 'https://docs.clarifai.com',
+      social: {
+        twitter: 'clarifai',
+        instagram: 'clarifai',
+      },
       tags: ['web2'],
       category: 'machinelearning',
       type: 'platform',
