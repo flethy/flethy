@@ -106,6 +106,7 @@ import BigDataCloud from '../../http-configs/src/configs/bigdatacloud.config'
 import MailboxValidator from '../../http-configs/src/configs/mailboxvalidator.config'
 import Microlink from '../../http-configs/src/configs/microlink.config'
 import Unavatar from '../../http-configs/src/configs/unavatar.config'
+import NewsApi from '../../http-configs/src/configs/newsapi.config'
 
 async function main() {
   const requestConfigs: {
@@ -1567,8 +1568,13 @@ async function main() {
       'param:input': 'diypunks.xyz',
       'query:json': true,
     }),
+    newsApiEverything: nao<NewsApi.SearchEverything>({
+      kind: 'newsapi.core.everything',
+      'auth:X-Api-Key': process.env.NEWSAPI_API_KEY,
+      'query:q': 'New+SaaS',
+    }),
   }
-  const requestConfig = requestConfigs.unavatarProvider
+  const requestConfig = requestConfigs.newsApiEverything
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

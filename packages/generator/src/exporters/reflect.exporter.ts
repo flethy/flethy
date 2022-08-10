@@ -69,6 +69,7 @@ import { MicroDev } from '../../../http-configs/src/configs/microdev.config'
 import { Microlink } from '../../../http-configs/src/configs/microlink.config'
 import { Mixpanel } from '../../../http-configs/src/configs/mixpanel.config'
 import { NewRelic } from '../../../http-configs/src/configs/newrelic.config'
+import { NewsApi } from '../../../http-configs/src/configs/newsapi.config'
 import { Notion } from '../../../http-configs/src/configs/notion.config'
 import { OneInch } from '../../../http-configs/src/configs/oneinch.config'
 import { OpenLibrary } from '../../../http-configs/src/configs/openlibrary.config'
@@ -285,6 +286,7 @@ configTypes.push({type: getType<MicroDev.StorageNotesUpdate>(), name: 'MicroDev'
 configTypes.push({type: getType<Microlink.Url>(), name: 'Microlink', interface: 'Url'})
 configTypes.push({type: getType<Mixpanel.TrackEvents>(), name: 'Mixpanel', interface: 'TrackEvents'})
 configTypes.push({type: getType<NewRelic.InsightsEvents>(), name: 'NewRelic', interface: 'InsightsEvents'})
+configTypes.push({type: getType<NewsApi.SearchEverything>(), name: 'NewsApi', interface: 'SearchEverything'})
 configTypes.push({type: getType<Notion.CreateDatabase>(), name: 'Notion', interface: 'CreateDatabase'})
 configTypes.push({type: getType<OneInch.AggregationInfoTokens>(), name: 'OneInch', interface: 'AggregationInfoTokens'})
 configTypes.push({type: getType<OneInch.AggregationQuote>(), name: 'OneInch', interface: 'AggregationQuote'})

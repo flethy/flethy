@@ -86,6 +86,7 @@ The following Endpoints are currently supported.
 * [Microlink](./api/microlink.md)
 * [Mixpanel](./api/mixpanel.md)
 * [NewRelic](./api/newrelic.md)
+* [NewsApi](./api/newsapi.md)
 * [Notion](./api/notion.md)
 * [OpenLibrary](./api/openlibrary.md)
 * [Ortto](./api/ortto.md)
