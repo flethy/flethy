@@ -52,6 +52,9 @@ export namespace CoinCap {
       name: 'CoinCap',
       url: 'https://coincap.io/',
       docs: 'https://docs.coincap.io/',
+      social: {
+        twitter: 'coincap_io',
+      },
       tags: ['web3'],
       category: 'defi',
       type: 'prices',

@@ -57,6 +57,10 @@ export namespace CurrencyScoop {
       name: 'CurrencyScoop',
       url: 'https://currencyscoop.com',
       docs: 'https://currencyscoop.com/api-documentation',
+      social: {
+        twitter: 'currencyscoop',
+        github: 'currencyscoop',
+      },
       tags: ['web2'],
       category: 'finance',
       type: 'currency',

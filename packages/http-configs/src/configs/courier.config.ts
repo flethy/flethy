@@ -61,6 +61,10 @@ export namespace Courier {
       name: 'Courier',
       url: 'https://www.courier.com/',
       docs: 'https://www.courier.com/docs/',
+      social: {
+        twitter: 'trycourier',
+        github: 'trycourier',
+      },
       tags: ['web2'],
       category: 'communication',
       type: 'multichannel',

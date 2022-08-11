@@ -38,6 +38,10 @@ export namespace Clockify {
       name: 'Clockify',
       url: 'https://clockify.me',
       docs: 'https://clockify.me/developers-api',
+      social: {
+        twitter: 'clockify',
+        instagram: 'clockify.me',
+      },
       tags: ['web2'],
       category: 'utils',
       type: 'time-tracking',

@@ -121,6 +121,10 @@ export namespace CoinGecko {
       name: 'CoinGecko',
       url: 'https://coingecko.com',
       docs: 'https://www.coingecko.com/en/api/documentation',
+      social: {
+        twitter: 'coingecko',
+        instagram: 'coingecko',
+      },
       tags: ['web3'],
       category: 'defi',
       type: 'prices',

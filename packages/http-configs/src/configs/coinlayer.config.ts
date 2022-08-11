@@ -39,6 +39,10 @@ export namespace Coinlayer {
       name: 'Coinlayer',
       url: 'https://coinlayer.com',
       docs: 'https://coinlayer.com/',
+      social: {
+        twitter: 'apilayer',
+        github: 'coinlayer-api',
+      },
       tags: ['web3'],
       category: 'aggregation',
       type: 'indexer',

@@ -60,6 +60,10 @@ export namespace ContentFul {
       name: 'ContentFul',
       url: 'https://www.contentful.com/',
       docs: 'https://www.contentful.com/developers/docs',
+      social: {
+        twitter: 'contentful',
+        github: 'contentful',
+      },
       tags: ['web2'],
       category: 'marketing',
       type: 'content',

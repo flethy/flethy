@@ -40,6 +40,10 @@ export namespace ConvertKit {
       name: 'ConvertKit',
       url: 'https://convertkit.com',
       docs: 'https://developers.convertkit.com',
+      social: {
+        twitter: 'convertkit',
+        instagram: 'convertkit',
+      },
       tags: ['web2'],
       category: 'marketing',
       type: 'email',
