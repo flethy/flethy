@@ -107,6 +107,7 @@ import MailboxValidator from '../../http-configs/src/configs/mailboxvalidator.co
 import Microlink from '../../http-configs/src/configs/microlink.config'
 import Unavatar from '../../http-configs/src/configs/unavatar.config'
 import NewsApi from '../../http-configs/src/configs/newsapi.config'
+import OCRSpace from '../../http-configs/src/configs/ocrspace.config'
 
 async function main() {
   const requestConfigs: {
@@ -1573,8 +1574,13 @@ async function main() {
       'auth:X-Api-Key': process.env.NEWSAPI_API_KEY,
       'query:q': 'New+SaaS',
     }),
+    ocrspaceUrl: nao<OCRSpace.ParseURL>({
+      kind: 'ocrspace.core.url',
+      'auth:apikey': process.env.OCRSPACE_API_KEY,
+      'bodyform:url': 'http://dl.a9t9.com/blog/ocr-online/screenshot.jpg',
+    }),
   }
-  const requestConfig = requestConfigs.newsApiEverything
+  const requestConfig = requestConfigs.ocrspaceUrl
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

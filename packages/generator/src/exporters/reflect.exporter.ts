@@ -71,6 +71,7 @@ import { Mixpanel } from '../../../http-configs/src/configs/mixpanel.config'
 import { NewRelic } from '../../../http-configs/src/configs/newrelic.config'
 import { NewsApi } from '../../../http-configs/src/configs/newsapi.config'
 import { Notion } from '../../../http-configs/src/configs/notion.config'
+import { OCRSpace } from '../../../http-configs/src/configs/ocrspace.config'
 import { OneInch } from '../../../http-configs/src/configs/oneinch.config'
 import { OpenLibrary } from '../../../http-configs/src/configs/openlibrary.config'
 import { OpenSea } from '../../../http-configs/src/configs/opensea.config'
@@ -288,6 +289,8 @@ configTypes.push({type: getType<Mixpanel.TrackEvents>(), name: 'Mixpanel', inter
 configTypes.push({type: getType<NewRelic.InsightsEvents>(), name: 'NewRelic', interface: 'InsightsEvents'})
 configTypes.push({type: getType<NewsApi.SearchEverything>(), name: 'NewsApi', interface: 'SearchEverything'})
 configTypes.push({type: getType<Notion.CreateDatabase>(), name: 'Notion', interface: 'CreateDatabase'})
+configTypes.push({type: getType<OCRSpace.ParseURL>(), name: 'OCRSpace', interface: 'ParseURL'})
+configTypes.push({type: getType<OCRSpace.ParseBase64>(), name: 'OCRSpace', interface: 'ParseBase64'})
 configTypes.push({type: getType<OneInch.AggregationInfoTokens>(), name: 'OneInch', interface: 'AggregationInfoTokens'})
 configTypes.push({type: getType<OneInch.AggregationQuote>(), name: 'OneInch', interface: 'AggregationQuote'})
 configTypes.push({type: getType<OneInch.AggregationSwap>(), name: 'OneInch', interface: 'AggregationSwap'})
