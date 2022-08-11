@@ -88,6 +88,7 @@ The following Endpoints are currently supported.
 * [NewRelic](./api/newrelic.md)
 * [NewsApi](./api/newsapi.md)
 * [Notion](./api/notion.md)
+* [OCRSpace](./api/ocrspace.md)
 * [OpenLibrary](./api/openlibrary.md)
 * [Ortto](./api/ortto.md)
 * [PayPal](./api/paypal.md)

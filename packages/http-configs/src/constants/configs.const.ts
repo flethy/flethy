@@ -71,6 +71,7 @@ import { Mixpanel } from '../configs/mixpanel.config'
 import { NewRelic } from '../configs/newrelic.config'
 import { NewsApi } from '../configs/newsapi.config'
 import { Notion } from '../configs/notion.config'
+import { OCRSpace } from '../configs/ocrspace.config'
 import { OneInch } from '../configs/oneinch.config'
 import { OpenLibrary } from '../configs/openlibrary.config'
 import { OpenSea } from '../configs/opensea.config'
@@ -180,6 +181,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['newrelic', NewRelic.API],
 ['newsapi', NewsApi.API],
 ['notion', Notion.API],
+['ocrspace', OCRSpace.API],
 ['1inch', OneInch.API],
 ['openlibrary', OpenLibrary.API],
 ['opensea', OpenSea.API],
