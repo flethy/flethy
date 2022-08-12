@@ -80,6 +80,7 @@ import { PayPal } from '../configs/paypal.config'
 import { Peekalink } from '../configs/peekalink.config'
 import { Personio } from '../configs/personio.config'
 import { Pinata } from '../configs/pinata.config'
+import { Pixela } from '../configs/pixela.config'
 import { PurgoMalum } from '../configs/purgomalum.config'
 import { RapidApi } from '../configs/rapidapi.config'
 import { RedisCloud } from '../configs/rediscloud.config'
@@ -190,6 +191,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['peekalink', Peekalink.API],
 ['personio', Personio.API],
 ['pinata', Pinata.API],
+['pixela', Pixela.API],
 ['purgomalum', PurgoMalum.API],
 ['rapidapi', RapidApi.API],
 ['rediscloud', RedisCloud.API],

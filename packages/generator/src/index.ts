@@ -108,6 +108,7 @@ import Microlink from '../../http-configs/src/configs/microlink.config'
 import Unavatar from '../../http-configs/src/configs/unavatar.config'
 import NewsApi from '../../http-configs/src/configs/newsapi.config'
 import OCRSpace from '../../http-configs/src/configs/ocrspace.config'
+import Pixela from '../../http-configs/src/configs/pixela.config'
 
 async function main() {
   const requestConfigs: {
@@ -1579,8 +1580,26 @@ async function main() {
       'auth:apikey': process.env.OCRSPACE_API_KEY,
       'bodyform:url': 'http://dl.a9t9.com/blog/ocr-online/screenshot.jpg',
     }),
+    pixelaCreateGraph: nao<Pixela.CreateGraph>({
+      kind: 'pixela.graph.create',
+      'auth:X-USER-TOKEN': process.env.PIXELA_TOKEN,
+      'param:username': process.env.PIXELA_USERNAME,
+      'body:id': 'first',
+      'body:name': 'first',
+      'body:color': 'kuro',
+      'body:type': 'int',
+      'body:unit': 'count',
+    }),
+    pixelaPostValue: nao<Pixela.PostValue>({
+      kind: 'pixela.pixel.postValue',
+      'auth:X-USER-TOKEN': process.env.PIXELA_TOKEN,
+      'param:username': process.env.PIXELA_USERNAME,
+      'param:graphId': 'first',
+      'body:date': '20220812',
+      'body:quantity': '5',
+    }),
   }
-  const requestConfig = requestConfigs.ocrspaceUrl
+  const requestConfig = requestConfigs.pixelaPostValue
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)
