@@ -21,6 +21,9 @@ export namespace Etherscan {
       name: 'Etherscan',
       url: 'https://etherscan.io',
       docs: 'https://docs.etherscan.io/',
+      social: {
+        twitter: 'etherscan',
+      },
       tags: ['web3'],
       category: 'aggregation',
       type: 'indexer',

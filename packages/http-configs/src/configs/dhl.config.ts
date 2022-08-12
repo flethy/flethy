@@ -26,6 +26,9 @@ export namespace Dhl {
       name: 'Dhl',
       url: 'https://dhl.com/',
       docs: 'https://developer.dhl.com/',
+      social: {
+        github: 'dhl_global',
+      },
       tags: ['web2'],
       category: 'utils',
       type: 'delivery-tracking',

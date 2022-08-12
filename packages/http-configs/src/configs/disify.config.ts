@@ -37,6 +37,9 @@ export namespace Disify {
       name: 'Disify',
       url: 'https://www.disify.com/',
       docs: 'https://docs.disify.com/',
+      social: {
+        github: 'codekj',
+      },
       tags: ['web2'],
       category: 'utils',
       type: 'emailverification',

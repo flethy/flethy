@@ -32,6 +32,9 @@ export namespace Github {
       name: 'Github',
       url: 'https://github.com',
       docs: 'https://docs.github.com/en/rest',
+      social: {
+        twitter: 'github',
+      },
       tags: ['web2'],
       category: 'versioncontrol',
       type: 'hosted',

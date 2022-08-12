@@ -44,6 +44,10 @@ export namespace DeepL {
       name: 'DeepL',
       url: 'https://deepl.com',
       docs: 'https://www.deepl.com/docs-api',
+      social: {
+        twitter: 'deeplcom',
+        github: 'deeplcom',
+      },
       tags: ['web2'],
       category: 'utils',
       type: 'translation',

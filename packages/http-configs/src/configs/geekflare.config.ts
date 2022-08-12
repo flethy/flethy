@@ -81,6 +81,9 @@ export namespace Geekflare {
       name: 'Geekflare',
       url: 'https://geekflare.com',
       docs: 'https://geekflare.com/api/docs',
+      social: {
+        twitter: 'geekflarehq',
+      },
       tags: ['web2'],
       category: 'utils',
       type: 'web-scraping',
