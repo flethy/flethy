@@ -1,0 +1,40 @@
+# Pixela
+
+## Links
+
+* URL: [https://pixe.la](https://pixe.la)
+* Documentation: [https://docs.pixe.la/](https://docs.pixe.la/)
+* Tags: web2
+* Category: utils
+* Type: other
+
+## API
+
+### Authentication
+
+* X-USER-TOKEN: header
+
+### graph
+
+#### create
+
+##### Create a new pixelation graph definition.
+
+* Description: Create a new pixelation graph definition.
+* Docs: [https://docs.pixe.la/entry/post-graph](https://docs.pixe.la/entry/post-graph)
+
+#### get
+
+##### Based on the registered information, express the graph in SVG format diagram.
+
+* Description: Based on the registered information, express the graph in SVG format diagram.
+* Docs: [https://docs.pixe.la/entry/get-svg](https://docs.pixe.la/entry/get-svg)
+
+### pixel
+
+#### postValue
+
+##### It records the quantity of the specified date as a "Pixel".
+
+* Description: It records the quantity of the specified date as a "Pixel".
+* Docs: [https://docs.pixe.la/entry/post-pixel](https://docs.pixe.la/entry/post-pixel)

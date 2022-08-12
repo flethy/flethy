@@ -94,6 +94,7 @@ The following Endpoints are currently supported.
 * [PayPal](./api/paypal.md)
 * [Peekalink](./api/peekalink.md)
 * [Personio](./api/personio.md)
+* [Pixela](./api/pixela.md)
 * [PurgoMalum](./api/purgomalum.md)
 * [RapidApi](./api/rapidapi.md)
 * [RedisCloud](./api/rediscloud.md)

@@ -80,6 +80,7 @@ import { PayPal } from '../../../http-configs/src/configs/paypal.config'
 import { Peekalink } from '../../../http-configs/src/configs/peekalink.config'
 import { Personio } from '../../../http-configs/src/configs/personio.config'
 import { Pinata } from '../../../http-configs/src/configs/pinata.config'
+import { Pixela } from '../../../http-configs/src/configs/pixela.config'
 import { PurgoMalum } from '../../../http-configs/src/configs/purgomalum.config'
 import { RapidApi } from '../../../http-configs/src/configs/rapidapi.config'
 import { RedisCloud } from '../../../http-configs/src/configs/rediscloud.config'
@@ -305,6 +306,9 @@ configTypes.push({type: getType<Personio.AuthRequest>(), name: 'Personio', inter
 configTypes.push({type: getType<Personio.EmployeesGet>(), name: 'Personio', interface: 'EmployeesGet'})
 configTypes.push({type: getType<Personio.AbsencesGet>(), name: 'Personio', interface: 'AbsencesGet'})
 configTypes.push({type: getType<Pinata.PinningPinJsonToIPFS>(), name: 'Pinata', interface: 'PinningPinJsonToIPFS'})
+configTypes.push({type: getType<Pixela.CreateGraph>(), name: 'Pixela', interface: 'CreateGraph'})
+configTypes.push({type: getType<Pixela.GetGraph>(), name: 'Pixela', interface: 'GetGraph'})
+configTypes.push({type: getType<Pixela.PostValue>(), name: 'Pixela', interface: 'PostValue'})
 configTypes.push({type: getType<PurgoMalum.Profanity>(), name: 'PurgoMalum', interface: 'Profanity'})
 configTypes.push({type: getType<RapidApi.ArticleExtractor>(), name: 'RapidApi', interface: 'ArticleExtractor'})
 configTypes.push({type: getType<RedisCloud.GetCurrentAccount>(), name: 'RedisCloud', interface: 'GetCurrentAccount'})
