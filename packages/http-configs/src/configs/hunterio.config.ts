@@ -45,6 +45,10 @@ export namespace HunterIo {
       name: 'HunterIo',
       url: 'https://hunter.io/',
       docs: 'https://hunter.io/',
+      social: {
+        twitter: 'emailhunter',
+        github: 'hunter-io',
+      },
       tags: ['web2'],
       category: 'communication',
       type: 'emailverification',

@@ -38,6 +38,9 @@ export namespace MailerSend {
       url: 'https://mailersend.com',
       docs: 'https://developers.mailersend.com/',
       config: 'https://app.mailersend.com/',
+      social: {
+        twitter: 'mailersend',
+      },
       tags: ['web2'],
       category: 'communication',
       type: 'email',

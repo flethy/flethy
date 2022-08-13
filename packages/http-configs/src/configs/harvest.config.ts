@@ -28,6 +28,10 @@ export namespace Harvest {
       name: 'Harvest',
       url: 'https://getharvest.com',
       docs: 'https://help.getharvest.com/',
+      social: {
+        twitter: 'harvest',
+        instagram: 'harvest',
+      },
       tags: ['web2'],
       category: 'utils',
       type: 'time-tracking',

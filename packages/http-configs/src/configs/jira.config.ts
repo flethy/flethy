@@ -41,6 +41,9 @@ export namespace Jira {
       name: 'Jira',
       url: 'https://www.atlassian.com/software/jira',
       docs: 'https://support.atlassian.com/jira-software-cloud/resources/',
+      social: {
+        twitter: 'atlassian',
+      },
       tags: ['web2'],
       category: 'utils',
       type: 'issueticketing',

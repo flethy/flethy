@@ -70,6 +70,11 @@ export namespace Lokalise {
       name: 'Lokalise',
       url: 'https://lokalise.com/',
       docs: 'https://developers.lokalise.com/',
+      social: {
+        twitter: 'lokalise',
+        github: 'lokalise',
+        instagram: 'lokalisehq',
+      },
       tags: ['web2'],
       category: 'collaboration',
       type: 'translations',

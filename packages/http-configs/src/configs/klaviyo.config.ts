@@ -64,6 +64,10 @@ export namespace Klaviyo {
       name: 'Klaviyo',
       url: 'https://www.klaviyo.com',
       docs: 'https://developers.klaviyo.com',
+      social: {
+        twitter: 'klaviyo',
+        instagram: 'klaviyo',
+      },
       tags: ['web2'],
       category: 'marketing',
       type: 'inbound',

@@ -23,6 +23,10 @@ export namespace Linear {
       name: 'Linear',
       url: 'https://linear.app',
       docs: 'https://developers.linear.app/docs',
+      social: {
+        twitter: 'linear',
+        github: 'linear',
+      },
       tags: ['web2'],
       category: 'utils',
       type: 'issueticketing',

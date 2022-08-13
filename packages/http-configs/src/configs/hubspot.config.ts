@@ -65,6 +65,10 @@ export namespace Hubspot {
       name: 'Hubspot',
       url: 'https://hubspot.com',
       docs: 'https://developers.hubspot.com/docs/api/overview',
+      social: {
+        twitter: 'hubspot',
+        instagram: 'hubspot',
+      },
       tags: ['web2'],
       category: 'marketing',
       type: 'inbound',

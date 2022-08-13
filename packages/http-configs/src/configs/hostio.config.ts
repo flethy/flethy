@@ -63,6 +63,9 @@ export namespace HostIo {
       name: 'HostIo',
       url: 'https://host.io',
       docs: 'https://host.io/docs',
+      social: {
+        twitter: 'host',
+      },
       tags: ['web2'],
       category: 'utils',
       type: 'indexer',

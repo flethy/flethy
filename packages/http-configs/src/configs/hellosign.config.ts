@@ -133,6 +133,9 @@ export namespace HelloSign {
       name: 'HelloSign',
       url: 'https://hellosign.com',
       docs: 'https://developers.hellosign.com/',
+      social: {
+        twitter: 'hellosign',
+      },
       tags: ['web2'],
       category: 'utils',
       type: 'documentsigning',
