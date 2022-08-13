@@ -88,8 +88,10 @@ import { RemoteOk } from '../configs/remoteok.config'
 import { RemoveBg } from '../configs/removebg.config'
 import { SendGrid } from '../configs/sendgrid.config'
 import { Sentry } from '../configs/sentry.config'
+import { SerpApi } from '../configs/serpapi.config'
 import { SerpStack } from '../configs/serpstack.config'
 import { Shortcut } from '../configs/shortcut.config'
+import { Shrtcode } from '../configs/shrtcode.config'
 import { Slack } from '../configs/slack.config'
 import { Stackby } from '../configs/stackby.config'
 import { Statically } from '../configs/statically.config'
@@ -199,8 +201,10 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['removebg', RemoveBg.API],
 ['sendgrid', SendGrid.API],
 ['sentry', Sentry.API],
+['serpapi', SerpApi.API],
 ['serpstack', SerpStack.API],
 ['shortcut', Shortcut.API],
+['shrtcode', Shrtcode.API],
 ['slack', Slack.API],
 ['stackby', Stackby.API],
 ['statically', Statically.API],

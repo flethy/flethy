@@ -1,0 +1,27 @@
+# Shrtcode
+
+## Links
+
+* URL: [https://shrtco.de/](https://shrtco.de/)
+* Documentation: [https://shrtco.de/docs/](https://shrtco.de/docs/)
+* Tags: web2
+* Category: utils
+* Type: url-shortener
+
+## API
+
+### core
+
+#### shorten
+
+##### Shortening a Link
+
+* Description: Shortening a Link
+* Docs: [https://shrtco.de/docs/](https://shrtco.de/docs/)
+
+#### info
+
+##### Getting information on a Link
+
+* Description: Getting information on a Link
+* Docs: [https://shrtco.de/docs/](https://shrtco.de/docs/)

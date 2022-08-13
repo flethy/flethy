@@ -109,6 +109,8 @@ import Unavatar from '../../http-configs/src/configs/unavatar.config'
 import NewsApi from '../../http-configs/src/configs/newsapi.config'
 import OCRSpace from '../../http-configs/src/configs/ocrspace.config'
 import Pixela from '../../http-configs/src/configs/pixela.config'
+import Shrtcode from '../../http-configs/src/configs/shrtcode.config'
+import SerpApi from '../../http-configs/src/configs/serpapi.config'
 
 async function main() {
   const requestConfigs: {
@@ -1598,8 +1600,19 @@ async function main() {
       'body:date': '20220812',
       'body:quantity': '5',
     }),
+    shrtcodeShorten: nao<Shrtcode.Shorten>({
+      kind: 'shrtcode.core.shorten',
+      'query:url':
+        'https://dev.to/urbanisierung/cut-a-few-braids-new-npm-package-1234',
+    }),
+    serpapiSearch: nao<SerpApi.Search>({
+      kind: 'serpapi.core.search',
+      'auth:api_key': process.env.SERPAPI_API_KEY,
+      'query:engine': 'google',
+      'query:q': 'diypunks',
+    }),
   }
-  const requestConfig = requestConfigs.pixelaPostValue
+  const requestConfig = requestConfigs.serpapiSearch
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)
