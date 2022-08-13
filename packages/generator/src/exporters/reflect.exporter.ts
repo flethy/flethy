@@ -88,8 +88,10 @@ import { RemoteOk } from '../../../http-configs/src/configs/remoteok.config'
 import { RemoveBg } from '../../../http-configs/src/configs/removebg.config'
 import { SendGrid } from '../../../http-configs/src/configs/sendgrid.config'
 import { Sentry } from '../../../http-configs/src/configs/sentry.config'
+import { SerpApi } from '../../../http-configs/src/configs/serpapi.config'
 import { SerpStack } from '../../../http-configs/src/configs/serpstack.config'
 import { Shortcut } from '../../../http-configs/src/configs/shortcut.config'
+import { Shrtcode } from '../../../http-configs/src/configs/shrtcode.config'
 import { Slack } from '../../../http-configs/src/configs/slack.config'
 import { Stackby } from '../../../http-configs/src/configs/stackby.config'
 import { Statically } from '../../../http-configs/src/configs/statically.config'
@@ -317,12 +319,15 @@ configTypes.push({type: getType<RemoveBg.Remove>(), name: 'RemoveBg', interface:
 configTypes.push({type: getType<SendGrid.SendMail>(), name: 'SendGrid', interface: 'SendMail'})
 configTypes.push({type: getType<Sentry.QueryDiscoverEvents>(), name: 'Sentry', interface: 'QueryDiscoverEvents'})
 configTypes.push({type: getType<Sentry.ListProjects>(), name: 'Sentry', interface: 'ListProjects'})
+configTypes.push({type: getType<SerpApi.Search>(), name: 'SerpApi', interface: 'Search'})
 configTypes.push({type: getType<SerpStack.Search>(), name: 'SerpStack', interface: 'Search'})
 configTypes.push({type: getType<Shortcut.ListCategories>(), name: 'Shortcut', interface: 'ListCategories'})
 configTypes.push({type: getType<Shortcut.CreateCategory>(), name: 'Shortcut', interface: 'CreateCategory'})
 configTypes.push({type: getType<Shortcut.Search>(), name: 'Shortcut', interface: 'Search'})
 configTypes.push({type: getType<Shortcut.SearchEpics>(), name: 'Shortcut', interface: 'SearchEpics'})
 configTypes.push({type: getType<Shortcut.SearchStories>(), name: 'Shortcut', interface: 'SearchStories'})
+configTypes.push({type: getType<Shrtcode.Shorten>(), name: 'Shrtcode', interface: 'Shorten'})
+configTypes.push({type: getType<Shrtcode.Info>(), name: 'Shrtcode', interface: 'Info'})
 configTypes.push({type: getType<Slack.IncomingWebhooksMessage>(), name: 'Slack', interface: 'IncomingWebhooksMessage'})
 configTypes.push({type: getType<Slack.ChatPostMessage>(), name: 'Slack', interface: 'ChatPostMessage'})
 configTypes.push({type: getType<Slack.ConversationsList>(), name: 'Slack', interface: 'ConversationsList'})
