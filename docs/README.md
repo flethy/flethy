@@ -13,6 +13,7 @@ The following Endpoints are currently supported.
 * [CoinMarketCap](./api/coinmarketcap.md)
 * [Covalent](./api/covalent.md)
 * [Etherscan](./api/etherscan.md)
+* [MicroDev](./api/microdev.md)
 * [OneInch](./api/1inch.md)
 * [OpenSea](./api/opensea.md)
 * [Pinata](./api/pinata.md)
@@ -121,3 +122,4 @@ The following Endpoints are currently supported.
 * [UrlScan](./api/urlscan.md)
 * [UsePlunk](./api/useplunk.md)
 * [WhoIsXMLApi](./api/whoisxmlapi.md)
+* [WordSimi](./api/wordsimi.md)

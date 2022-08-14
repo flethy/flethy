@@ -109,6 +109,7 @@ import { UrlScan } from '../../../http-configs/src/configs/urlscan.config'
 import { UsePlunk } from '../../../http-configs/src/configs/useplunk.config'
 import { Web3Storage } from '../../../http-configs/src/configs/web3storage.config'
 import { WhoIsXMLApi } from '../../../http-configs/src/configs/whoisxmlapi.config'
+import { WordSimi } from '../../../http-configs/src/configs/wordsimi.config'
 import { ZeroX } from '../../../http-configs/src/configs/zerox.config'
 import { Zora } from '../../../http-configs/src/configs/zora.config'
 export const configTypes: Array<{type: Type; name: string; interface: string}> = []
@@ -358,6 +359,7 @@ configTypes.push({type: getType<UrlScan.Search>(), name: 'UrlScan', interface: '
 configTypes.push({type: getType<UsePlunk.PostEvent>(), name: 'UsePlunk', interface: 'PostEvent'})
 configTypes.push({type: getType<Web3Storage.UploadContent>(), name: 'Web3Storage', interface: 'UploadContent'})
 configTypes.push({type: getType<WhoIsXMLApi.DomainAvailability>(), name: 'WhoIsXMLApi', interface: 'DomainAvailability'})
+configTypes.push({type: getType<WordSimi.MostSimilarWords>(), name: 'WordSimi', interface: 'MostSimilarWords'})
 configTypes.push({type: getType<ZeroX.SwapQuote>(), name: 'ZeroX', interface: 'SwapQuote'})
 configTypes.push({type: getType<ZeroX.SwapPrice>(), name: 'ZeroX', interface: 'SwapPrice'})
 configTypes.push({type: getType<ZeroX.SwapSources>(), name: 'ZeroX', interface: 'SwapSources'})

@@ -4,7 +4,7 @@
 
 * URL: [https://m3o.com](https://m3o.com)
 * Documentation: [https://m3o.com/](https://m3o.com/)
-* Tags: web2, web2
+* Tags: web2, web3
 * Category: cloud
 * Type: services
 

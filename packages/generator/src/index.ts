@@ -112,6 +112,7 @@ import Pixela from '../../http-configs/src/configs/pixela.config'
 import Shrtcode from '../../http-configs/src/configs/shrtcode.config'
 import SerpApi from '../../http-configs/src/configs/serpapi.config'
 import Nasa from '../../http-configs/src/configs/nasa.config'
+import WordSimi from '../../http-configs/src/configs/wordsimi.config'
 
 async function main() {
   const requestConfigs: {
@@ -1616,8 +1617,13 @@ async function main() {
       kind: 'nasa.planetary.apod',
       'auth:api_key': process.env.NASA_API_KEY,
     }),
+    wordSimi: nao<WordSimi.MostSimilarWords>({
+      kind: 'wordsimi.core.get',
+      'param:word': 'automation',
+      'query:count': 20,
+    }),
   }
-  const requestConfig = requestConfigs.nasaApod
+  const requestConfig = requestConfigs.wordSimi
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)
