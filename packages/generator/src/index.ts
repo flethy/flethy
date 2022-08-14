@@ -111,6 +111,7 @@ import OCRSpace from '../../http-configs/src/configs/ocrspace.config'
 import Pixela from '../../http-configs/src/configs/pixela.config'
 import Shrtcode from '../../http-configs/src/configs/shrtcode.config'
 import SerpApi from '../../http-configs/src/configs/serpapi.config'
+import Nasa from '../../http-configs/src/configs/nasa.config'
 
 async function main() {
   const requestConfigs: {
@@ -1611,8 +1612,12 @@ async function main() {
       'query:engine': 'google',
       'query:q': 'diypunks',
     }),
+    nasaApod: nao<Nasa.AstronomyPictureOfTheDay>({
+      kind: 'nasa.planetary.apod',
+      'auth:api_key': process.env.NASA_API_KEY,
+    }),
   }
-  const requestConfig = requestConfigs.serpapiSearch
+  const requestConfig = requestConfigs.nasaApod
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

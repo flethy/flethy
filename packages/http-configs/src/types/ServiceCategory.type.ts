@@ -25,6 +25,7 @@ export type CATEGORY =
   | 'machinelearning'
   | 'community'
   | 'business'
+  | 'science'
 export type TYPE =
   | COMM_TYPE
   | STORAGE_TYPE
@@ -51,6 +52,7 @@ export type TYPE =
   | MACHINE_LEARNING_TYPE
   | COMMUNITY_TYPE
   | BUSINESS_TYPE
+  | SCIENCE_TYPE
 
 export type COMM_TYPE = 'email' | 'messenger' | 'multichannel'
 export type STORAGE_TYPE = 'ipfs' | 'database'
@@ -114,3 +116,4 @@ export type INFRA_TYPE = 'logging' | 'monitoring' | 'serverless'
 export type MACHINE_LEARNING_TYPE = 'platform'
 export type COMMUNITY_TYPE = 'user-feedback'
 export type BUSINESS_TYPE = 'subscription-analytics'
+export type SCIENCE_TYPE = 'astronomy'
