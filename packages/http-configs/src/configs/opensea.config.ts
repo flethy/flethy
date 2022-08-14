@@ -33,6 +33,10 @@ export namespace OpenSea {
       name: 'OpenSea',
       url: 'https://opensea.io',
       docs: 'https://docs.opensea.io/',
+      social: {
+        twitter: 'opensea',
+        instagram: 'opensea',
+      },
       tags: ['web3', 'nft'],
       category: 'aggregation',
       type: 'indexer',

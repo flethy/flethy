@@ -51,6 +51,10 @@ export namespace Ortto {
       name: 'Ortto',
       url: 'https://ortto.app',
       docs: 'https://help.ortto.com/developer/',
+      social: {
+        twitter: 'orttohq',
+        instagram: 'ortto_hq',
+      },
       tags: ['web2'],
       category: 'marketing',
       type: 'crm',

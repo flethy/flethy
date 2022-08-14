@@ -127,7 +127,11 @@ export namespace MicroDev {
       name: 'MicroDev',
       url: 'https://m3o.com',
       docs: 'https://m3o.com/',
-      tags: ['web2', 'web2'],
+      social: {
+        twitter: 'm3oservices',
+        instagram: 'm3oservices',
+      },
+      tags: ['web2', 'web3'],
       category: 'cloud',
       type: 'services',
     },

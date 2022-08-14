@@ -127,6 +127,9 @@ export namespace Notion {
       name: 'Notion',
       url: 'https://notion.so',
       docs: 'https://developers.notion.com/reference',
+      social: {
+        twitter: 'notionhq',
+      },
       tags: ['web2'],
       category: 'collaboration',
       type: 'notes',

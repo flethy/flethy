@@ -68,6 +68,10 @@ export namespace OneInch {
       name: 'OneInch',
       url: 'https://1inch.io/',
       docs: 'https://docs.1inch.io/',
+      social: {
+        twitter: '1inch',
+        github: '1inch',
+      },
       tags: ['web3'],
       category: 'defi',
       type: 'liquidity',

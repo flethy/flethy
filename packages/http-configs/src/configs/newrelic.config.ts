@@ -28,6 +28,11 @@ export namespace NewRelic {
       name: 'NewRelic',
       url: 'https://newrelic.com/',
       docs: 'https://docs.newrelic.com/docs/data-apis/',
+      social: {
+        twitter: 'newrelic',
+        github: 'newrelic',
+        instagram: 'newrelic',
+      },
       tags: ['web2'],
       category: 'analytics',
       type: 'webinsights',

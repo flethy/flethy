@@ -28,6 +28,9 @@ export namespace Mergent {
       name: 'Mergent',
       url: 'https://mergent.co',
       docs: 'https://docs.mergent.co/',
+      social: {
+        twitter: 'mergentlabs',
+      },
       tags: ['web2'],
       category: 'tools',
       type: 'cron',

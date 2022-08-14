@@ -40,6 +40,10 @@ export namespace MailPace {
       name: 'MailPace',
       url: 'https://mailpace.com',
       docs: 'https://docs.mailpace.com/',
+      social: {
+        twitter: 'mailpace',
+        github: 'mailpace',
+      },
       tags: ['web2'],
       category: 'communication',
       type: 'email',

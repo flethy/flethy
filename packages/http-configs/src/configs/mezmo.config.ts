@@ -37,6 +37,11 @@ export namespace Mezmo {
       name: 'Mezmo',
       url: 'https://mezmo.com',
       docs: 'https://docs.mezmo.com/',
+      social: {
+        twitter: 'mezmodata',
+        github: 'logdna',
+        instagram: 'mezmodata',
+      },
       tags: ['web2'],
       category: 'infra',
       type: 'logging',

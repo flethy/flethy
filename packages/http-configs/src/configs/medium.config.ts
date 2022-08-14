@@ -79,6 +79,9 @@ export namespace Medium {
       name: 'Medium',
       url: 'https://medium.com',
       docs: 'https://developers.medium.com/',
+      social: {
+        twitter: 'medium',
+      },
       tags: ['web2'],
       category: 'marketing',
       type: 'blogging',

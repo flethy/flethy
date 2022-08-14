@@ -28,6 +28,10 @@ export namespace Mixpanel {
       name: 'Mixpanel',
       url: 'https://mixpanel.com',
       docs: 'https://developer.mixpanel.com/reference/overview',
+      social: {
+        twitter: 'mixpanel',
+        instagram: 'mixpanel',
+      },
       tags: ['web2'],
       category: 'analytics',
       type: 'webinsights',
