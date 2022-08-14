@@ -1,0 +1,24 @@
+# Nasa
+
+## Links
+
+* URL: [https://api.nasa.gov/](https://api.nasa.gov/)
+* Documentation: [https://api.nasa.gov/](https://api.nasa.gov/)
+* Tags: web2
+* Category: science
+* Type: astronomy
+
+## API
+
+### Authentication
+
+* api_key: query
+
+### planetary
+
+#### apod
+
+##### APOD
+
+* Description: Astronomy Picture Of The Day
+* Docs: [https://api.nasa.gov/](https://api.nasa.gov/)
