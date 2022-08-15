@@ -25,6 +25,9 @@ export namespace UsePlunk {
       name: 'UsePlunk',
       url: 'https://useplunk.com',
       docs: 'https://docs.useplunk.com/',
+      social: {
+        twitter: 'useplunk',
+      },
       tags: ['web2'],
       category: 'automation',
       type: 'email',

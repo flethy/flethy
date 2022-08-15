@@ -39,6 +39,10 @@ export namespace Supabase {
       name: 'Supabase',
       url: 'https://supabase.com/',
       docs: 'https://supabase.com/docs/',
+      social: {
+        twitter: 'supabase',
+        github: 'supabase',
+      },
       tags: ['web2'],
       category: 'storage',
       type: 'database',

@@ -45,6 +45,10 @@ export namespace Personio {
       name: 'Personio',
       url: 'https://personio.de',
       docs: 'https://developer.personio.de',
+      social: {
+        twitter: 'personiohr',
+        instagram: 'personio_hr',
+      },
       tags: ['web2'],
       category: 'tools',
       type: 'hr',

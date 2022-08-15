@@ -25,6 +25,9 @@ export namespace RapidApi {
       name: 'RapidApi',
       url: 'https://rapidapi.com',
       docs: 'https://rapidapi.com',
+      social: {
+        twitter: 'rapid_api',
+      },
       tags: ['web2'],
       category: 'utils',
       type: 'api-wrapper',

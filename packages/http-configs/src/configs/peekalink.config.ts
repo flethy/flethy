@@ -31,6 +31,9 @@ export namespace Peekalink {
       name: 'Peekalink',
       url: 'https://peekalink.io',
       docs: 'https://docs.peekalink.io',
+      social: {
+        twitter: 'lifenautjoe',
+      },
       tags: ['web2'],
       category: 'aggregation',
       type: 'indexer',

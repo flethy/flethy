@@ -37,6 +37,10 @@ export namespace Statically {
       name: 'Statically',
       url: 'https://statically.io/',
       docs: 'https://statically.io/',
+      social: {
+        twitter: 'staticallyio',
+        github: 'staticallyio',
+      },
       tags: ['web2'],
       category: 'network',
       type: 'cdn',

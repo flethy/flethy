@@ -22,6 +22,10 @@ export namespace Tribe {
       name: 'Tribe',
       url: 'https://tribeplatform.com',
       docs: 'https://partners.tribe.so/docs',
+      social: {
+        twitter: 'tribeplatform',
+        instagram: 'tribeplatform',
+      },
       tags: ['web2'],
       category: 'collaboration',
       type: 'forum',

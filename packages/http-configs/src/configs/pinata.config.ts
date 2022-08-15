@@ -25,6 +25,10 @@ export namespace Pinata {
       name: 'Pinata',
       url: 'https://pinata.cloud',
       docs: 'https://docs.pinata.cloud/',
+      social: {
+        twitter: 'pinatacloud',
+        instagram: 'pinata.cloud',
+      },
       tags: ['web3'],
       category: 'storage',
       type: 'ipfs',

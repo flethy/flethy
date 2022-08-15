@@ -24,6 +24,10 @@ export namespace PayPal {
       name: 'PayPal',
       url: 'https://paypal.com',
       docs: 'https://developer.paypal.com',
+      social: {
+        twitter: 'paypal',
+        instagram: 'paypal',
+      },
       tags: ['web2'],
       category: 'finance',
       type: 'payment',

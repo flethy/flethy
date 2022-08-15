@@ -32,6 +32,7 @@ import { CountApi } from '../configs/countapi.config'
 import { Courier } from '../configs/courier.config'
 import { Covalent } from '../configs/covalent.config'
 import { CurrencyScoop } from '../configs/currencyscoop.config'
+import { DatoCMS } from '../configs/datocms.config'
 import { DeepL } from '../configs/deepl.config'
 import { DevTo } from '../configs/devto.config'
 import { Dhl } from '../configs/dhl.config'
@@ -147,6 +148,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['courier', Courier.API],
 ['covalent', Covalent.API],
 ['currencyscoop', CurrencyScoop.API],
+['datocms', DatoCMS.API],
 ['deepl', DeepL.API],
 ['devto', DevTo.API],
 ['dhl', Dhl.API],

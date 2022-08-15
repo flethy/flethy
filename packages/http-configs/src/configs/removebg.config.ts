@@ -41,6 +41,10 @@ export namespace RemoveBg {
       name: 'RemoveBg',
       url: 'https://www.remove.bg',
       docs: 'https://www.remove.bg/en/api',
+      social: {
+        twitter: 'remove_bg',
+        instagram: 'removebg.official',
+      },
       tags: ['web2'],
       category: 'utils',
       type: 'image-processing',

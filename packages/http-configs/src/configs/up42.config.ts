@@ -65,6 +65,10 @@ export namespace Up42 {
       name: 'Up42',
       url: 'https://up42.com',
       docs: 'https://docs.up42.com/',
+      social: {
+        twitter: 'up42_',
+        instagram: 'up42official',
+      },
       tags: ['web2'],
       category: 'data',
       type: 'image-provider',

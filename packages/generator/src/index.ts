@@ -113,6 +113,7 @@ import Shrtcode from '../../http-configs/src/configs/shrtcode.config'
 import SerpApi from '../../http-configs/src/configs/serpapi.config'
 import Nasa from '../../http-configs/src/configs/nasa.config'
 import WordSimi from '../../http-configs/src/configs/wordsimi.config'
+import DatoCMS from '../../http-configs/src/configs/datocms.config'
 
 async function main() {
   const requestConfigs: {
@@ -1622,8 +1623,19 @@ async function main() {
       'param:word': 'automation',
       'query:count': 20,
     }),
+    datocmsQuery: nao<DatoCMS.Query>({
+      kind: 'datocms.graphql.query',
+      'auth:Authorization': process.env.DATOCMS_API_KEY,
+      'body:query': `{
+        allBlogs {
+          test
+          createdAt
+          id
+        }
+      }`,
+    }),
   }
-  const requestConfig = requestConfigs.wordSimi
+  const requestConfig = requestConfigs.datocmsQuery
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

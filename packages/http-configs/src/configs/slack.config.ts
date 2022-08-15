@@ -39,6 +39,9 @@ export namespace Slack {
       url: 'https://slack.com',
       docs: 'https://api.slack.com/',
       config: 'https://api.slack.com/apps',
+      social: {
+        twitter: 'slackhq',
+      },
       tags: ['web2'],
       category: 'communication',
       type: 'messenger',

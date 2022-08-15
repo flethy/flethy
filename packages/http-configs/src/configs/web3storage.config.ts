@@ -20,6 +20,9 @@ export namespace Web3Storage {
       name: 'Web3Storage',
       url: 'https://web3.storage',
       docs: 'https://web3.storage/docs',
+      social: {
+        twitter: 'filecoin',
+      },
       tags: ['web3'],
       category: 'storage',
       type: 'ipfs',

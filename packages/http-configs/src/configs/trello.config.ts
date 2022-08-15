@@ -51,6 +51,10 @@ export namespace Trello {
       name: 'Trello',
       url: 'https://trello.com',
       docs: 'https://developer.atlassian.com/cloud/trello/rest/api-group-actions/',
+      social: {
+        twitter: 'trello',
+        instagram: 'trelloapp',
+      },
       tags: ['web2'],
       category: 'collaboration',
       type: 'issueticketing',
