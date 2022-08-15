@@ -32,6 +32,7 @@ import { CountApi } from '../../../http-configs/src/configs/countapi.config'
 import { Courier } from '../../../http-configs/src/configs/courier.config'
 import { Covalent } from '../../../http-configs/src/configs/covalent.config'
 import { CurrencyScoop } from '../../../http-configs/src/configs/currencyscoop.config'
+import { DatoCMS } from '../../../http-configs/src/configs/datocms.config'
 import { DeepL } from '../../../http-configs/src/configs/deepl.config'
 import { DevTo } from '../../../http-configs/src/configs/devto.config'
 import { Dhl } from '../../../http-configs/src/configs/dhl.config'
@@ -201,6 +202,7 @@ configTypes.push({type: getType<CurrencyScoop.Historical>(), name: 'CurrencyScoo
 configTypes.push({type: getType<CurrencyScoop.Timeseries>(), name: 'CurrencyScoop', interface: 'Timeseries'})
 configTypes.push({type: getType<CurrencyScoop.Currencies>(), name: 'CurrencyScoop', interface: 'Currencies'})
 configTypes.push({type: getType<CurrencyScoop.Convert>(), name: 'CurrencyScoop', interface: 'Convert'})
+configTypes.push({type: getType<DatoCMS.Query>(), name: 'DatoCMS', interface: 'Query'})
 configTypes.push({type: getType<DeepL.TranslatingRequest>(), name: 'DeepL', interface: 'TranslatingRequest'})
 configTypes.push({type: getType<DeepL.GlossaryListLanguagePairs>(), name: 'DeepL', interface: 'GlossaryListLanguagePairs'})
 configTypes.push({type: getType<DevTo.PostArticle>(), name: 'DevTo', interface: 'PostArticle'})

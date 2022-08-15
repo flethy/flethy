@@ -23,6 +23,9 @@ export namespace RedisCloud {
       name: 'RedisCloud',
       url: 'https://redis.com/',
       docs: 'https://docs.redis.com/',
+      social: {
+        twitter: 'redisinc',
+      },
       tags: ['web2'],
       category: 'aggregation',
       type: 'indexer',

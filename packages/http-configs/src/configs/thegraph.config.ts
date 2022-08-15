@@ -30,6 +30,10 @@ export namespace TheGraph {
       name: 'TheGraph',
       url: 'https://thegraph.com/',
       docs: 'https://thegraph.com/docs/en/',
+      social: {
+        twitter: 'graphprotocol',
+        github: 'graphprotocol',
+      },
       tags: ['web3'],
       category: 'aggregation',
       type: 'indexer',

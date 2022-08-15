@@ -51,6 +51,7 @@ The following Endpoints are currently supported.
 * [CountApi](./api/countapi.md)
 * [Courier](./api/courier.md)
 * [CurrencyScoop](./api/currencyscoop.md)
+* [DatoCMS](./api/datocms.md)
 * [DeepL](./api/deepl.md)
 * [DevTo](./api/devto.md)
 * [Dhl](./api/dhl.md)

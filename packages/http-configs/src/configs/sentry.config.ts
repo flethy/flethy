@@ -39,6 +39,10 @@ export namespace Sentry {
       name: 'Sentry',
       url: 'https://sentry.io/',
       docs: 'https://docs.sentry.io/',
+      social: {
+        twitter: 'getsentry',
+        github: 'getsentry',
+      },
       tags: ['web2'],
       category: 'infra',
       type: 'monitoring',

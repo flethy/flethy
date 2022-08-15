@@ -23,6 +23,9 @@ export namespace UptimeRobot {
       name: 'UptimeRobot',
       url: 'https://uptimerobot.com',
       docs: 'https://uptimerobot.com/api/',
+      social: {
+        twitter: 'uptimerobot',
+      },
       tags: ['web2'],
       category: 'infra',
       type: 'monitoring',

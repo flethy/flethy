@@ -20,6 +20,10 @@ export namespace Zora {
       name: 'Zora',
       url: 'https://zora.co/',
       docs: 'https://docs.zora.co/',
+      social: {
+        twitter: 'ourzora',
+        instagram: 'our.zora',
+      },
       tags: ['web3', 'nft'],
       category: 'aggregation',
       type: 'indexer',

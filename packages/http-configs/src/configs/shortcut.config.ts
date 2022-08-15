@@ -57,6 +57,10 @@ export namespace Shortcut {
       name: 'Shortcut',
       url: 'https://shortcut.com',
       docs: 'https://shortcut.com/api/rest/v3',
+      social: {
+        twitter: 'useshortcut',
+        github: 'useshortcut',
+      },
       tags: ['web2'],
       category: 'utils',
       type: 'issueticketing',

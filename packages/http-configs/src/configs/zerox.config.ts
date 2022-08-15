@@ -60,6 +60,9 @@ export namespace ZeroX {
       name: 'ZeroX',
       url: 'https://www.0x.org/',
       docs: 'https://docs.0x.org/',
+      social: {
+        twitter: '0xproject',
+      },
       tags: ['web3'],
       category: 'defi',
       type: 'liquidity',

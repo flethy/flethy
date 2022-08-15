@@ -18,6 +18,9 @@ export namespace RemoteOk {
       name: 'RemoteOk',
       url: 'https://remoteok.com',
       docs: 'https://remoteok.com',
+      social: {
+        twitter: 'remoteok',
+      },
       tags: ['web2'],
       category: 'career',
       type: 'job-listings',

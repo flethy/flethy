@@ -45,6 +45,9 @@ export namespace UrlScan {
       name: 'UrlScan',
       url: 'https://urlscan.io',
       docs: 'https://urlscan.io/docs',
+      social: {
+        twitter: 'urlscanio',
+      },
       tags: ['web2'],
       category: 'utils',
       type: 'web-analyzer',

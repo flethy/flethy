@@ -64,6 +64,10 @@ export namespace SerpStack {
       name: 'SerpStack',
       url: 'https://serpstack.com',
       docs: 'https://serpstack.com/documentation',
+      social: {
+        twitter: 'apilayer',
+        github: 'serpstack',
+      },
       tags: ['web2'],
       category: 'search',
       type: 'serp',

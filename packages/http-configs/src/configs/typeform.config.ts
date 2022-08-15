@@ -250,6 +250,10 @@ export namespace Typeform {
       name: 'Typeform',
       url: 'https://typeform.com/',
       docs: 'https://developer.typeform.com/',
+      social: {
+        twitter: 'typeform',
+        instagram: 'typeform',
+      },
       tags: ['web2'],
       category: 'utils',
       type: 'survey',

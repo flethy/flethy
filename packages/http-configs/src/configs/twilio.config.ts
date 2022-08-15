@@ -30,6 +30,9 @@ export namespace Twilio {
       name: 'Twilio',
       url: 'https://twilio.com',
       docs: 'https://www.twilio.com/docs',
+      social: {
+        twitter: 'twilio',
+      },
       tags: ['web2'],
       category: 'communication',
       type: 'multichannel',

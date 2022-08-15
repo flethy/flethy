@@ -26,6 +26,10 @@ export namespace WhoIsXMLApi {
       name: 'WhoIsXMLApi',
       url: 'https://whoisxmlapi.com',
       docs: 'https://whoisxmlapi.com',
+      social: {
+        twitter: 'whoisxmlapi',
+        github: 'whois-api-llc',
+      },
       tags: ['web2'],
       category: 'utils',
       type: 'domains',

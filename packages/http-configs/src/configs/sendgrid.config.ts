@@ -131,6 +131,10 @@ export namespace SendGrid {
       name: 'SendGrid',
       url: 'https://sendgrid.com',
       docs: 'https://docs.sendgrid.com',
+      social: {
+        twitter: 'sendgrid',
+        github: 'sendgrid',
+      },
       tags: ['web2'],
       category: 'communication',
       type: 'email',
