@@ -114,6 +114,9 @@ import SerpApi from '../../http-configs/src/configs/serpapi.config'
 import Nasa from '../../http-configs/src/configs/nasa.config'
 import WordSimi from '../../http-configs/src/configs/wordsimi.config'
 import DatoCMS from '../../http-configs/src/configs/datocms.config'
+import Unsplash from '../../http-configs/src/configs/unsplash.config'
+import PostHog from '../../http-configs/src/configs/posthog.config'
+import Doppler from '../../http-configs/src/configs/doppler.config'
 
 async function main() {
   const requestConfigs: {
@@ -1634,8 +1637,31 @@ async function main() {
         }
       }`,
     }),
+    unsplashListPhotos: nao<Unsplash.ListPhotos>({
+      kind: 'unsplash.photos.list',
+      'auth:Authorization': process.env.UNSPLASH_ACCESS_KEY,
+    }),
+    unsplashSearchPhotos: nao<Unsplash.SearchPhotos>({
+      kind: 'unsplash.search.photos',
+      'auth:Authorization': process.env.UNSPLASH_ACCESS_KEY,
+      'query:query': 'automation',
+    }),
+    posthogSendEvent: nao<PostHog.SendEvent>({
+      kind: 'posthog.post.sendEvent',
+      'auth:api_key': process.env.POSTHOG_API_KEY,
+      'body:event': 'web3nao',
+      'body:properties': {
+        distinct_id: 'first',
+        testkey: 'testvalue',
+      },
+    }),
+    dopplerDownloadSecrets: nao<Doppler.DownloadSecrets>({
+      kind: 'doppler.secrets.download',
+      'auth:token': process.env.DOPPLER_SERVICE_TOKEN,
+      'query:format': 'json',
+    }),
   }
-  const requestConfig = requestConfigs.datocmsQuery
+  const requestConfig = requestConfigs.dopplerDownloadSecrets
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

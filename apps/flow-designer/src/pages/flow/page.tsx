@@ -118,7 +118,11 @@ export default observer(() => {
 													<Select
 														placeholder="Select Value"
 														onChange={(event) =>
-															console.log(event.target.value)
+															// console.log(event.target.value)
+															page.updateConfigInterfaceProperty(
+																prop.name,
+																event.target.value,
+															)
 														}
 													>
 														{prop.types.map((propType) => (

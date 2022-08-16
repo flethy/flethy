@@ -37,6 +37,7 @@ import { DeepL } from '../configs/deepl.config'
 import { DevTo } from '../configs/devto.config'
 import { Dhl } from '../configs/dhl.config'
 import { Disify } from '../configs/disify.config'
+import { Doppler } from '../configs/doppler.config'
 import { DynaPictures } from '../configs/dynapictures.config'
 import { Etherscan } from '../configs/etherscan.config'
 import { Eventbrite } from '../configs/eventbrite.config'
@@ -83,6 +84,7 @@ import { Peekalink } from '../configs/peekalink.config'
 import { Personio } from '../configs/personio.config'
 import { Pinata } from '../configs/pinata.config'
 import { Pixela } from '../configs/pixela.config'
+import { PostHog } from '../configs/posthog.config'
 import { PurgoMalum } from '../configs/purgomalum.config'
 import { RapidApi } from '../configs/rapidapi.config'
 import { RedisCloud } from '../configs/rediscloud.config'
@@ -104,6 +106,7 @@ import { Tribe } from '../configs/tribe.config'
 import { Twilio } from '../configs/twilio.config'
 import { Typeform } from '../configs/typeform.config'
 import { Unavatar } from '../configs/unavatar.config'
+import { Unsplash } from '../configs/unsplash.config'
 import { Up42 } from '../configs/up42.config'
 import { UptimeRobot } from '../configs/uptimerobot.config'
 import { UrlScan } from '../configs/urlscan.config'
@@ -153,6 +156,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['devto', DevTo.API],
 ['dhl', Dhl.API],
 ['disify', Disify.API],
+['doppler', Doppler.API],
 ['dynapictures', DynaPictures.API],
 ['etherscan', Etherscan.API],
 ['eventbrite', Eventbrite.API],
@@ -199,6 +203,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['personio', Personio.API],
 ['pinata', Pinata.API],
 ['pixela', Pixela.API],
+['posthog', PostHog.API],
 ['purgomalum', PurgoMalum.API],
 ['rapidapi', RapidApi.API],
 ['rediscloud', RedisCloud.API],
@@ -220,6 +225,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['twilio', Twilio.API],
 ['typeform', Typeform.API],
 ['unavatar', Unavatar.API],
+['unsplash', Unsplash.API],
 ['up42', Up42.API],
 ['uptimerobot', UptimeRobot.API],
 ['urlscan', UrlScan.API],
