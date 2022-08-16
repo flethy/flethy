@@ -37,6 +37,7 @@ import { DeepL } from '../../../http-configs/src/configs/deepl.config'
 import { DevTo } from '../../../http-configs/src/configs/devto.config'
 import { Dhl } from '../../../http-configs/src/configs/dhl.config'
 import { Disify } from '../../../http-configs/src/configs/disify.config'
+import { Doppler } from '../../../http-configs/src/configs/doppler.config'
 import { DynaPictures } from '../../../http-configs/src/configs/dynapictures.config'
 import { Etherscan } from '../../../http-configs/src/configs/etherscan.config'
 import { Eventbrite } from '../../../http-configs/src/configs/eventbrite.config'
@@ -83,6 +84,7 @@ import { Peekalink } from '../../../http-configs/src/configs/peekalink.config'
 import { Personio } from '../../../http-configs/src/configs/personio.config'
 import { Pinata } from '../../../http-configs/src/configs/pinata.config'
 import { Pixela } from '../../../http-configs/src/configs/pixela.config'
+import { PostHog } from '../../../http-configs/src/configs/posthog.config'
 import { PurgoMalum } from '../../../http-configs/src/configs/purgomalum.config'
 import { RapidApi } from '../../../http-configs/src/configs/rapidapi.config'
 import { RedisCloud } from '../../../http-configs/src/configs/rediscloud.config'
@@ -104,6 +106,7 @@ import { Tribe } from '../../../http-configs/src/configs/tribe.config'
 import { Twilio } from '../../../http-configs/src/configs/twilio.config'
 import { Typeform } from '../../../http-configs/src/configs/typeform.config'
 import { Unavatar } from '../../../http-configs/src/configs/unavatar.config'
+import { Unsplash } from '../../../http-configs/src/configs/unsplash.config'
 import { Up42 } from '../../../http-configs/src/configs/up42.config'
 import { UptimeRobot } from '../../../http-configs/src/configs/uptimerobot.config'
 import { UrlScan } from '../../../http-configs/src/configs/urlscan.config'
@@ -211,6 +214,7 @@ configTypes.push({type: getType<Disify.CheckSingleDomain>(), name: 'Disify', int
 configTypes.push({type: getType<Disify.CheckMassDomain>(), name: 'Disify', interface: 'CheckMassDomain'})
 configTypes.push({type: getType<Disify.CheckSingleEmail>(), name: 'Disify', interface: 'CheckSingleEmail'})
 configTypes.push({type: getType<Disify.CheckMassEmail>(), name: 'Disify', interface: 'CheckMassEmail'})
+configTypes.push({type: getType<Doppler.DownloadSecrets>(), name: 'Doppler', interface: 'DownloadSecrets'})
 configTypes.push({type: getType<DynaPictures.GenerateImage>(), name: 'DynaPictures', interface: 'GenerateImage'})
 configTypes.push({type: getType<Etherscan.AccountsBalanceSingleAddress>(), name: 'Etherscan', interface: 'AccountsBalanceSingleAddress'})
 configTypes.push({type: getType<Eventbrite.ListAttendeeByEventId>(), name: 'Eventbrite', interface: 'ListAttendeeByEventId'})
@@ -316,6 +320,7 @@ configTypes.push({type: getType<Pinata.PinningPinJsonToIPFS>(), name: 'Pinata', 
 configTypes.push({type: getType<Pixela.CreateGraph>(), name: 'Pixela', interface: 'CreateGraph'})
 configTypes.push({type: getType<Pixela.GetGraph>(), name: 'Pixela', interface: 'GetGraph'})
 configTypes.push({type: getType<Pixela.PostValue>(), name: 'Pixela', interface: 'PostValue'})
+configTypes.push({type: getType<PostHog.SendEvent>(), name: 'PostHog', interface: 'SendEvent'})
 configTypes.push({type: getType<PurgoMalum.Profanity>(), name: 'PurgoMalum', interface: 'Profanity'})
 configTypes.push({type: getType<RapidApi.ArticleExtractor>(), name: 'RapidApi', interface: 'ArticleExtractor'})
 configTypes.push({type: getType<RedisCloud.GetCurrentAccount>(), name: 'RedisCloud', interface: 'GetCurrentAccount'})
@@ -351,6 +356,8 @@ configTypes.push({type: getType<Twilio.SendSms>(), name: 'Twilio', interface: 'S
 configTypes.push({type: getType<Typeform.CreateApiCreateForm>(), name: 'Typeform', interface: 'CreateApiCreateForm'})
 configTypes.push({type: getType<Unavatar.FromUsernameEmailDomain>(), name: 'Unavatar', interface: 'FromUsernameEmailDomain'})
 configTypes.push({type: getType<Unavatar.FromProvider>(), name: 'Unavatar', interface: 'FromProvider'})
+configTypes.push({type: getType<Unsplash.ListPhotos>(), name: 'Unsplash', interface: 'ListPhotos'})
+configTypes.push({type: getType<Unsplash.SearchPhotos>(), name: 'Unsplash', interface: 'SearchPhotos'})
 configTypes.push({type: getType<Up42.AuthRequest>(), name: 'Up42', interface: 'AuthRequest'})
 configTypes.push({type: getType<Up42.CreditsBalance>(), name: 'Up42', interface: 'CreditsBalance'})
 configTypes.push({type: getType<Up42.CatalogSearch>(), name: 'Up42', interface: 'CatalogSearch'})

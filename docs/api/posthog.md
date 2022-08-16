@@ -1,0 +1,24 @@
+# PostHog
+
+## Links
+
+* URL: [https://posthog.com](https://posthog.com)
+* Documentation: [https://posthog.com/docs](https://posthog.com/docs)
+* Tags: web2
+* Category: analytics
+* Type: webinsights
+
+## API
+
+### post
+
+#### sendEvent
+
+##### Authentication
+
+* api_key: body
+
+##### Single Event
+
+* Description: Single Event
+* Docs: [https://posthog.com/docs/api/post-only-endpoints](https://posthog.com/docs/api/post-only-endpoints)
