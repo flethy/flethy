@@ -17,7 +17,7 @@
 		"@emotion/styled": "^11.9.3",
 		"@web3nao/http-configs": "workspace:*",
 		"axios": "^0.27.2",
-		"framer-motion": "^6.5.1",
+		"framer-motion": "^7.2.0",
 		"i18next": "^21.8.14",
 		"mobx": "6.6.1",
 		"mobx-react": "7.5.2",
