@@ -88,6 +88,7 @@ The following Endpoints are currently supported.
 * [MicroDev](./api/microdev.md)
 * [Microlink](./api/microlink.md)
 * [Mixpanel](./api/mixpanel.md)
+* [MojoAuth](./api/mojoauth.md)
 * [Nasa](./api/nasa.md)
 * [NewRelic](./api/newrelic.md)
 * [NewsApi](./api/newsapi.md)
