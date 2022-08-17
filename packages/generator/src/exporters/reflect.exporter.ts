@@ -70,6 +70,7 @@ import { Mezmo } from '../../../http-configs/src/configs/mezmo.config'
 import { MicroDev } from '../../../http-configs/src/configs/microdev.config'
 import { Microlink } from '../../../http-configs/src/configs/microlink.config'
 import { Mixpanel } from '../../../http-configs/src/configs/mixpanel.config'
+import { MojoAuth } from '../../../http-configs/src/configs/mojoauth.config'
 import { Nasa } from '../../../http-configs/src/configs/nasa.config'
 import { NewRelic } from '../../../http-configs/src/configs/newrelic.config'
 import { NewsApi } from '../../../http-configs/src/configs/newsapi.config'
@@ -297,6 +298,7 @@ configTypes.push({type: getType<MicroDev.StorageNotesRead>(), name: 'MicroDev', 
 configTypes.push({type: getType<MicroDev.StorageNotesUpdate>(), name: 'MicroDev', interface: 'StorageNotesUpdate'})
 configTypes.push({type: getType<Microlink.Url>(), name: 'Microlink', interface: 'Url'})
 configTypes.push({type: getType<Mixpanel.TrackEvents>(), name: 'Mixpanel', interface: 'TrackEvents'})
+configTypes.push({type: getType<MojoAuth.SendMagicLink>(), name: 'MojoAuth', interface: 'SendMagicLink'})
 configTypes.push({type: getType<Nasa.AstronomyPictureOfTheDay>(), name: 'Nasa', interface: 'AstronomyPictureOfTheDay'})
 configTypes.push({type: getType<NewRelic.InsightsEvents>(), name: 'NewRelic', interface: 'InsightsEvents'})
 configTypes.push({type: getType<NewsApi.SearchEverything>(), name: 'NewsApi', interface: 'SearchEverything'})

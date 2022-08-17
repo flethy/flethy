@@ -1,0 +1,24 @@
+# MojoAuth
+
+## Links
+
+* URL: [https://mojoauth.com](https://mojoauth.com)
+* Documentation: [https://mojoauth.com/docs](https://mojoauth.com/docs)
+* Tags: web2
+* Category: identity
+* Type: identitymanagement
+
+## API
+
+### Authentication
+
+* X-API-Key: header
+
+### auth
+
+#### sendMagicLink
+
+##### Send magic link on the email
+
+* Description: This endpoint sends a magiclink to your email.
+* Docs: [https://mojoauth.com/docs/api/#send-magic-link-on-the-email](https://mojoauth.com/docs/api/#send-magic-link-on-the-email)

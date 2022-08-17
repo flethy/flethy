@@ -117,6 +117,7 @@ import DatoCMS from '../../http-configs/src/configs/datocms.config'
 import Unsplash from '../../http-configs/src/configs/unsplash.config'
 import PostHog from '../../http-configs/src/configs/posthog.config'
 import Doppler from '../../http-configs/src/configs/doppler.config'
+import MojoAuth from '../../http-configs/src/configs/mojoauth.config'
 
 async function main() {
   const requestConfigs: {
@@ -1660,8 +1661,13 @@ async function main() {
       'auth:token': process.env.DOPPLER_SERVICE_TOKEN,
       'query:format': 'json',
     }),
+    mojoauthSendMagicLink: nao<MojoAuth.SendMagicLink>({
+      kind: 'mojoauth.auth.sendMagicLink',
+      'auth:X-API-Key': process.env.MOJOAUTH_API_KEY,
+      'body:email': 'adam.urban@gmail.com',
+    }),
   }
-  const requestConfig = requestConfigs.dopplerDownloadSecrets
+  const requestConfig = requestConfigs.mojoauthSendMagicLink
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

@@ -70,6 +70,7 @@ import { Mezmo } from '../configs/mezmo.config'
 import { MicroDev } from '../configs/microdev.config'
 import { Microlink } from '../configs/microlink.config'
 import { Mixpanel } from '../configs/mixpanel.config'
+import { MojoAuth } from '../configs/mojoauth.config'
 import { Nasa } from '../configs/nasa.config'
 import { NewRelic } from '../configs/newrelic.config'
 import { NewsApi } from '../configs/newsapi.config'
@@ -189,6 +190,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['microdev', MicroDev.API],
 ['microlink', Microlink.API],
 ['mixpanel', Mixpanel.API],
+['mojoauth', MojoAuth.API],
 ['nasa', Nasa.API],
 ['newrelic', NewRelic.API],
 ['newsapi', NewsApi.API],
