@@ -118,6 +118,7 @@ import Unsplash from '../../http-configs/src/configs/unsplash.config'
 import PostHog from '../../http-configs/src/configs/posthog.config'
 import Doppler from '../../http-configs/src/configs/doppler.config'
 import MojoAuth from '../../http-configs/src/configs/mojoauth.config'
+import Ably from '../../http-configs/src/configs/ably.config'
 
 async function main() {
   const requestConfigs: {
@@ -1666,8 +1667,15 @@ async function main() {
       'auth:X-API-Key': process.env.MOJOAUTH_API_KEY,
       'body:email': 'adam.urban@gmail.com',
     }),
+    ablyPublishMessage: nao<Ably.PublishMessage>({
+      kind: 'ably.channels.publishMessage',
+      'auth:Authorization': process.env.ABLY_API_KEY,
+      'param:channelId': 'web3nao',
+      'body:name': 'greeting',
+      'body:data': 'hello',
+    }),
   }
-  const requestConfig = requestConfigs.mojoauthSendMagicLink
+  const requestConfig = requestConfigs.ablyPublishMessage
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

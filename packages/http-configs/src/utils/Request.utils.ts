@@ -162,9 +162,14 @@ export class HttpRequestConfig {
               if (!config.headers) {
                 config.headers = {}
               }
-              const toEncode = options.params[paramKey].password
-                ? `${options.params[paramKey].username}:${options.params[paramKey].password}`
-                : `${options.params[paramKey].username}:`
+              let toEncode = ''
+              if (options.params[paramKey].username) {
+                toEncode = options.params[paramKey].password
+                  ? `${options.params[paramKey].username}:${options.params[paramKey].password}`
+                  : `${options.params[paramKey].username}:`
+              } else {
+                toEncode = options.params[paramKey]
+              }
               config.headers[keyname] = `Basic ${Base64Utils.encode(toEncode)}`
               break
             case 'header:token':

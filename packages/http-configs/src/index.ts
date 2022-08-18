@@ -1,3 +1,4 @@
+export { Ably } from './configs/ably.config'
 export { AbstractApi } from './configs/abstractapi.config'
 export { Airtable } from './configs/airtable.config'
 export { Alchemy } from './configs/alchemy.config'
