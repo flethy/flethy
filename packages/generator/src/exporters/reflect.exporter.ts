@@ -1,4 +1,5 @@
 import { getType, Type } from 'tst-reflect'
+import { Ably } from '../../../http-configs/src/configs/ably.config'
 import { AbstractApi } from '../../../http-configs/src/configs/abstractapi.config'
 import { Airtable } from '../../../http-configs/src/configs/airtable.config'
 import { Alchemy } from '../../../http-configs/src/configs/alchemy.config'
@@ -118,6 +119,7 @@ import { WordSimi } from '../../../http-configs/src/configs/wordsimi.config'
 import { ZeroX } from '../../../http-configs/src/configs/zerox.config'
 import { Zora } from '../../../http-configs/src/configs/zora.config'
 export const configTypes: Array<{type: Type; name: string; interface: string}> = []
+configTypes.push({type: getType<Ably.PublishMessage>(), name: 'Ably', interface: 'PublishMessage'})
 configTypes.push({type: getType<AbstractApi.GetPublicHolidays>(), name: 'AbstractApi', interface: 'GetPublicHolidays'})
 configTypes.push({type: getType<Airtable.ListTableRecords>(), name: 'Airtable', interface: 'ListTableRecords'})
 configTypes.push({type: getType<Airtable.CreateTableRecords>(), name: 'Airtable', interface: 'CreateTableRecords'})

@@ -1,4 +1,5 @@
 import { ApiDescription } from '../types/ApiDescription.type'
+import { Ably } from '../configs/ably.config'
 import { AbstractApi } from '../configs/abstractapi.config'
 import { Airtable } from '../configs/airtable.config'
 import { Alchemy } from '../configs/alchemy.config'
@@ -119,6 +120,7 @@ import { ZeroX } from '../configs/zerox.config'
 import { Zora } from '../configs/zora.config'
 
 export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, ApiDescription<any, any>>([
+['ably', Ably.API],
 ['abstractapi', AbstractApi.API],
 ['airtable', Airtable.API],
 ['alchemy', Alchemy.API],

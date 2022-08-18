@@ -24,6 +24,7 @@ The following Endpoints are currently supported.
 
 ### Web2
 
+* [Ably](./api/ably.md)
 * [AbstractApi](./api/abstractapi.md)
 * [Airtable](./api/airtable.md)
 * [ApicAgent](./api/apicagent.md)
