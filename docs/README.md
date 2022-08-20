@@ -17,6 +17,7 @@ The following Endpoints are currently supported.
 * [OneInch](./api/1inch.md)
 * [OpenSea](./api/opensea.md)
 * [Pinata](./api/pinata.md)
+* [Tenderly](./api/tenderly.md)
 * [TheGraph](./api/thegraph.md)
 * [Web3Storage](./api/web3storage.md)
 * [ZeroX](./api/0x.md)

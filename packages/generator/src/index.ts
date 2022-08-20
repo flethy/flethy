@@ -120,6 +120,7 @@ import Doppler from '../../http-configs/src/configs/doppler.config'
 import MojoAuth from '../../http-configs/src/configs/mojoauth.config'
 import Ably from '../../http-configs/src/configs/ably.config'
 import GraphJSON from '../../http-configs/src/configs/graphjson.config'
+import Tenderly from '../../http-configs/src/configs/tenderly.config'
 
 async function main() {
   const requestConfigs: {
@@ -1706,8 +1707,26 @@ async function main() {
         id: 'web3nao',
       }),
     }),
+    tenderlySimulation: nao<Tenderly.ExecuteTransactionSimulation>({
+      kind: 'tenderly.simulator.simulation',
+      'auth:X-Access-Key': process.env.TENDERLY_API_KEY,
+      'param:projectSlug': 'project',
+      'body:from': '0x0000000000000000000000000000000000000000',
+      'body:to': '0x0000000000000000000000000000000000000001',
+      'body:gas_limit': '8000000',
+      'body:gas_price': '0',
+      'body:value': '10000000000',
+      'body:input': '',
+      'body:target': {
+        network: {
+          block_number: '15375377',
+          id: '1',
+          transaction_index: '97',
+        },
+      },
+    }),
   }
-  const requestConfig = requestConfigs.graphJsonLog
+  const requestConfig = requestConfigs.tenderlySimulation
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

@@ -103,6 +103,7 @@ import { Slack } from '../configs/slack.config'
 import { Stackby } from '../configs/stackby.config'
 import { Statically } from '../configs/statically.config'
 import { Supabase } from '../configs/supabase.config'
+import { Tenderly } from '../configs/tenderly.config'
 import { TheGraph } from '../configs/thegraph.config'
 import { Trello } from '../configs/trello.config'
 import { Tribe } from '../configs/tribe.config'
@@ -225,6 +226,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['stackby', Stackby.API],
 ['statically', Statically.API],
 ['supabase', Supabase.API],
+['tenderly', Tenderly.API],
 ['thegraph', TheGraph.API],
 ['trello', Trello.API],
 ['tribe', Tribe.API],
