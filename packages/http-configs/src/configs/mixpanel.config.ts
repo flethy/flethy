@@ -7,15 +7,50 @@ import { RequestParams } from '../types/Request.types'
 
 export namespace Mixpanel {
   export type Entity = { events: any }
-  export type Endpoint = { track: ApiDescriptionEndpoint }
+  export type Endpoint = {
+    track: ApiDescriptionEndpoint
+    import: ApiDescriptionEndpoint
+  }
 
-  export interface TrackEvents extends RequestParams {
-    kind: 'mixpanel.events.track'
+  type MixpanelBaseId = 'api' | 'api-eu'
+
+  interface MixpanelBaseProjectToken {
+    baseId: MixpanelBaseId
     'auth:token': string
+  }
+
+  interface MixpanelBaseServiceAccount {
+    baseId: MixpanelBaseId
+    'auth:Authorization': {
+      username: string
+      password: string
+    }
+  }
+
+  export interface TrackEvents extends MixpanelBaseProjectToken, RequestParams {
+    kind: 'mixpanel.events.track'
+    baseId: MixpanelBaseId
     'body:body': Array<{
       properties: {
         time: number
         distinct_id: string
+        [key: string]: string | number
+      }
+      event: string
+    }>
+  }
+
+  export interface ImportEvents
+    extends MixpanelBaseServiceAccount,
+      RequestParams {
+    kind: 'mixpanel.events.import'
+    baseId: MixpanelBaseId
+    'query:project_id': string
+    'body:body': Array<{
+      properties: {
+        time: number
+        distinct_id: string
+        $insert_id: string
         [key: string]: string | number
       }
       event: string
@@ -36,7 +71,16 @@ export namespace Mixpanel {
       category: 'analytics',
       type: 'webinsights',
     },
-    base: 'https://api.mixpanel.com',
+    base: [
+      {
+        id: 'api',
+        url: 'https://api.mixpanel.com',
+      },
+      {
+        id: 'api-eu',
+        url: 'https://api-eu.mixpanel.com',
+      },
+    ],
     api: {
       events: {
         track: {
@@ -62,6 +106,27 @@ export namespace Mixpanel {
           paths: [
             {
               name: 'track',
+              type: 'static',
+            },
+          ],
+        },
+        import: {
+          interface: 'ImportEvents',
+          meta: {
+            title: 'Import Events',
+            description:
+              'Send batches of events from your servers to Mixpanel.',
+            docs: 'https://developer.mixpanel.com/reference/import-events',
+          },
+          method: 'POST',
+          auth: {
+            Authorization: {
+              type: 'header:basic',
+            },
+          },
+          paths: [
+            {
+              name: 'import',
               type: 'static',
             },
           ],
