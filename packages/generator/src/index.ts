@@ -119,6 +119,7 @@ import PostHog from '../../http-configs/src/configs/posthog.config'
 import Doppler from '../../http-configs/src/configs/doppler.config'
 import MojoAuth from '../../http-configs/src/configs/mojoauth.config'
 import Ably from '../../http-configs/src/configs/ably.config'
+import GraphJSON from '../../http-configs/src/configs/graphjson.config'
 
 async function main() {
   const requestConfigs: {
@@ -1694,8 +1695,19 @@ async function main() {
         },
       ],
     }),
+    graphJsonLog: nao<GraphJSON.Log>({
+      kind: 'graphjson.core.logging',
+      'auth:api_key': process.env.GRAPHJSON_API_KEY,
+      'body:collection': 'web3nao',
+      'body:timestamp': Math.floor(Date.now() / 1000),
+      'body:json': JSON.stringify({
+        price: 0.5,
+        value: 'nice!',
+        id: 'web3nao',
+      }),
+    }),
   }
-  const requestConfig = requestConfigs.mixpanelImport
+  const requestConfig = requestConfigs.graphJsonLog
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

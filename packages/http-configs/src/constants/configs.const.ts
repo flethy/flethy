@@ -47,6 +47,7 @@ import { Frankfurter } from '../configs/frankfurter.config'
 import { Geekflare } from '../configs/geekflare.config'
 import { Github } from '../configs/github.config'
 import { GrafBase } from '../configs/grafbase.config'
+import { GraphJSON } from '../configs/graphjson.config'
 import { Grist } from '../configs/grist.config'
 import { HackerNews } from '../configs/hackernews.config'
 import { Harvest } from '../configs/harvest.config'
@@ -168,6 +169,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['geekflare', Geekflare.API],
 ['github', Github.API],
 ['grafbase', GrafBase.API],
+['graphjson', GraphJSON.API],
 ['grist', Grist.API],
 ['hackernews', HackerNews.API],
 ['harvest', Harvest.API],

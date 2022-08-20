@@ -47,6 +47,7 @@ import { Frankfurter } from '../../../http-configs/src/configs/frankfurter.confi
 import { Geekflare } from '../../../http-configs/src/configs/geekflare.config'
 import { Github } from '../../../http-configs/src/configs/github.config'
 import { GrafBase } from '../../../http-configs/src/configs/grafbase.config'
+import { GraphJSON } from '../../../http-configs/src/configs/graphjson.config'
 import { Grist } from '../../../http-configs/src/configs/grist.config'
 import { HackerNews } from '../../../http-configs/src/configs/hackernews.config'
 import { Harvest } from '../../../http-configs/src/configs/harvest.config'
@@ -232,6 +233,10 @@ configTypes.push({type: getType<Geekflare.Lighthouse>(), name: 'Geekflare', inte
 configTypes.push({type: getType<Geekflare.Screenshot>(), name: 'Geekflare', interface: 'Screenshot'})
 configTypes.push({type: getType<Github.ListRepositoryIssues>(), name: 'Github', interface: 'ListRepositoryIssues'})
 configTypes.push({type: getType<GrafBase.GraphQLQuery>(), name: 'GrafBase', interface: 'GraphQLQuery'})
+configTypes.push({type: getType<GraphJSON.Log>(), name: 'GraphJSON', interface: 'Log'})
+configTypes.push({type: getType<GraphJSON.BulkLog>(), name: 'GraphJSON', interface: 'BulkLog'})
+configTypes.push({type: getType<GraphJSON.Data>(), name: 'GraphJSON', interface: 'Data'})
+configTypes.push({type: getType<GraphJSON.Visualization>(), name: 'GraphJSON', interface: 'Visualization'})
 configTypes.push({type: getType<Grist.AddRecords>(), name: 'Grist', interface: 'AddRecords'})
 configTypes.push({type: getType<Grist.FetchRecords>(), name: 'Grist', interface: 'FetchRecords'})
 configTypes.push({type: getType<Grist.DescribeDocument>(), name: 'Grist', interface: 'DescribeDocument'})
@@ -300,6 +305,7 @@ configTypes.push({type: getType<MicroDev.StorageNotesRead>(), name: 'MicroDev', 
 configTypes.push({type: getType<MicroDev.StorageNotesUpdate>(), name: 'MicroDev', interface: 'StorageNotesUpdate'})
 configTypes.push({type: getType<Microlink.Url>(), name: 'Microlink', interface: 'Url'})
 configTypes.push({type: getType<Mixpanel.TrackEvents>(), name: 'Mixpanel', interface: 'TrackEvents'})
+configTypes.push({type: getType<Mixpanel.ImportEvents>(), name: 'Mixpanel', interface: 'ImportEvents'})
 configTypes.push({type: getType<MojoAuth.SendMagicLink>(), name: 'MojoAuth', interface: 'SendMagicLink'})
 configTypes.push({type: getType<Nasa.AstronomyPictureOfTheDay>(), name: 'Nasa', interface: 'AstronomyPictureOfTheDay'})
 configTypes.push({type: getType<NewRelic.InsightsEvents>(), name: 'NewRelic', interface: 'InsightsEvents'})

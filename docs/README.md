@@ -65,6 +65,7 @@ The following Endpoints are currently supported.
 * [Geekflare](./api/geekflare.md)
 * [Github](./api/github.md)
 * [GrafBase](./api/grafbase.md)
+* [GraphJSON](./api/graphjson.md)
 * [Grist](./api/grist.md)
 * [HackerNews](./api/hackernews.md)
 * [Harvest](./api/harvest.md)
