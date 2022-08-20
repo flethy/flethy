@@ -106,6 +106,7 @@ import { Statically } from '../../../http-configs/src/configs/statically.config'
 import { Supabase } from '../../../http-configs/src/configs/supabase.config'
 import { Tenderly } from '../../../http-configs/src/configs/tenderly.config'
 import { TheGraph } from '../../../http-configs/src/configs/thegraph.config'
+import { TMDB } from '../../../http-configs/src/configs/tmdb.config'
 import { Trello } from '../../../http-configs/src/configs/trello.config'
 import { Tribe } from '../../../http-configs/src/configs/tribe.config'
 import { Twilio } from '../../../http-configs/src/configs/twilio.config'
@@ -364,6 +365,7 @@ configTypes.push({type: getType<Supabase.ReadRows>(), name: 'Supabase', interfac
 configTypes.push({type: getType<Tenderly.ExecuteTransactionSimulation>(), name: 'Tenderly', interface: 'ExecuteTransactionSimulation'})
 configTypes.push({type: getType<TheGraph.QueryById>(), name: 'TheGraph', interface: 'QueryById'})
 configTypes.push({type: getType<TheGraph.QueryByName>(), name: 'TheGraph', interface: 'QueryByName'})
+configTypes.push({type: getType<TMDB.Trending>(), name: 'TMDB', interface: 'Trending'})
 configTypes.push({type: getType<Trello.BoardGetLists>(), name: 'Trello', interface: 'BoardGetLists'})
 configTypes.push({type: getType<Trello.CardsCreate>(), name: 'Trello', interface: 'CardsCreate'})
 configTypes.push({type: getType<Tribe.TribeAccessToken>(), name: 'Tribe', interface: 'TribeAccessToken'})

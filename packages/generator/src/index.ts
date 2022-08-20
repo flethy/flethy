@@ -122,6 +122,7 @@ import Ably from '../../http-configs/src/configs/ably.config'
 import GraphJSON from '../../http-configs/src/configs/graphjson.config'
 import Tenderly from '../../http-configs/src/configs/tenderly.config'
 import OpenWeatherMap from '../../http-configs/src/configs/openweathermap.config'
+import TMDB from '../../http-configs/src/configs/tmdb.config'
 
 async function main() {
   const requestConfigs: {
@@ -1732,8 +1733,14 @@ async function main() {
       'query:lat': 52.52,
       'query:lon': 13.405,
     }),
+    tmdbTrending: nao<TMDB.Trending>({
+      kind: 'tmdb.core.trending',
+      'auth:Authorization': process.env.TMDB_ACCESS_TOKEN,
+      'param:mediaType': 'movie',
+      'param:timeWindow': 'day',
+    }),
   }
-  const requestConfig = requestConfigs.openweathermapCurrent
+  const requestConfig = requestConfigs.tmdbTrending
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

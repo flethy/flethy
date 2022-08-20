@@ -120,6 +120,7 @@ The following Endpoints are currently supported.
 * [Stackby](./api/stackby.md)
 * [Statically](./api/statically.md)
 * [Supabase](./api/supabase.md)
+* [TMDB](./api/tmdb.md)
 * [Trello](./api/trello.md)
 * [Tribe](./api/tribe.md)
 * [Twilio](./api/twilio.md)

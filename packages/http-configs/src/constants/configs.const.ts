@@ -106,6 +106,7 @@ import { Statically } from '../configs/statically.config'
 import { Supabase } from '../configs/supabase.config'
 import { Tenderly } from '../configs/tenderly.config'
 import { TheGraph } from '../configs/thegraph.config'
+import { TMDB } from '../configs/tmdb.config'
 import { Trello } from '../configs/trello.config'
 import { Tribe } from '../configs/tribe.config'
 import { Twilio } from '../configs/twilio.config'
@@ -230,6 +231,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['supabase', Supabase.API],
 ['tenderly', Tenderly.API],
 ['thegraph', TheGraph.API],
+['tmdb', TMDB.API],
 ['trello', Trello.API],
 ['tribe', Tribe.API],
 ['twilio', Twilio.API],
