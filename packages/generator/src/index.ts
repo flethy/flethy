@@ -121,6 +121,7 @@ import MojoAuth from '../../http-configs/src/configs/mojoauth.config'
 import Ably from '../../http-configs/src/configs/ably.config'
 import GraphJSON from '../../http-configs/src/configs/graphjson.config'
 import Tenderly from '../../http-configs/src/configs/tenderly.config'
+import OpenWeatherMap from '../../http-configs/src/configs/openweathermap.config'
 
 async function main() {
   const requestConfigs: {
@@ -1725,8 +1726,14 @@ async function main() {
         },
       },
     }),
+    openweathermapCurrent: nao<OpenWeatherMap.Current>({
+      kind: 'openweathermap.core.current',
+      'auth:appid': process.env.OPENWEATHERMAP_API_KEY,
+      'query:lat': 52.52,
+      'query:lon': 13.405,
+    }),
   }
-  const requestConfig = requestConfigs.tenderlySimulation
+  const requestConfig = requestConfigs.openweathermapCurrent
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

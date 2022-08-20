@@ -98,6 +98,7 @@ The following Endpoints are currently supported.
 * [Notion](./api/notion.md)
 * [OCRSpace](./api/ocrspace.md)
 * [OpenLibrary](./api/openlibrary.md)
+* [OpenWeatherMap](./api/openweathermap.md)
 * [Ortto](./api/ortto.md)
 * [PayPal](./api/paypal.md)
 * [Peekalink](./api/peekalink.md)

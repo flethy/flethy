@@ -81,6 +81,7 @@ import { OCRSpace } from '../configs/ocrspace.config'
 import { OneInch } from '../configs/oneinch.config'
 import { OpenLibrary } from '../configs/openlibrary.config'
 import { OpenSea } from '../configs/opensea.config'
+import { OpenWeatherMap } from '../configs/openweathermap.config'
 import { Ortto } from '../configs/ortto.config'
 import { PayPal } from '../configs/paypal.config'
 import { Peekalink } from '../configs/peekalink.config'
@@ -204,6 +205,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['1inch', OneInch.API],
 ['openlibrary', OpenLibrary.API],
 ['opensea', OpenSea.API],
+['openweathermap', OpenWeatherMap.API],
 ['ortto', Ortto.API],
 ['paypal', PayPal.API],
 ['peekalink', Peekalink.API],
