@@ -306,6 +306,7 @@ async function main() {
     mixpanel: nao<Mixpanel.TrackEvents>({
       kind: 'mixpanel.events.track',
       'auth:token': process.env.MIXPANEL_TOKEN,
+      baseId: 'api',
       'body:body': [
         {
           properties: {
@@ -1674,8 +1675,27 @@ async function main() {
       'body:name': 'greeting',
       'body:data': 'hello',
     }),
+    mixpanelImport: nao<Mixpanel.ImportEvents>({
+      kind: 'mixpanel.events.import',
+      baseId: 'api-eu',
+      'auth:Authorization': {
+        username: process.env.MIXPANEL_USER,
+        password: process.env.MIXPANEL_SECRET,
+      },
+      'query:project_id': '2781461',
+      'body:body': [
+        {
+          properties: {
+            distinct_id: 'userId',
+            time: Date.now(),
+            $insert_id: 'test',
+          },
+          event: 'test',
+        },
+      ],
+    }),
   }
-  const requestConfig = requestConfigs.ablyPublishMessage
+  const requestConfig = requestConfigs.mixpanelImport
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)
