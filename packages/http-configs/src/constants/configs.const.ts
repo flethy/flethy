@@ -47,6 +47,7 @@ import { Frankfurter } from '../configs/frankfurter.config'
 import { Geekflare } from '../configs/geekflare.config'
 import { Github } from '../configs/github.config'
 import { GrafBase } from '../configs/grafbase.config'
+import { GraphJSON } from '../configs/graphjson.config'
 import { Grist } from '../configs/grist.config'
 import { HackerNews } from '../configs/hackernews.config'
 import { Harvest } from '../configs/harvest.config'
@@ -80,6 +81,7 @@ import { OCRSpace } from '../configs/ocrspace.config'
 import { OneInch } from '../configs/oneinch.config'
 import { OpenLibrary } from '../configs/openlibrary.config'
 import { OpenSea } from '../configs/opensea.config'
+import { OpenWeatherMap } from '../configs/openweathermap.config'
 import { Ortto } from '../configs/ortto.config'
 import { PayPal } from '../configs/paypal.config'
 import { Peekalink } from '../configs/peekalink.config'
@@ -102,7 +104,9 @@ import { Slack } from '../configs/slack.config'
 import { Stackby } from '../configs/stackby.config'
 import { Statically } from '../configs/statically.config'
 import { Supabase } from '../configs/supabase.config'
+import { Tenderly } from '../configs/tenderly.config'
 import { TheGraph } from '../configs/thegraph.config'
+import { TMDB } from '../configs/tmdb.config'
 import { Trello } from '../configs/trello.config'
 import { Tribe } from '../configs/tribe.config'
 import { Twilio } from '../configs/twilio.config'
@@ -168,6 +172,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['geekflare', Geekflare.API],
 ['github', Github.API],
 ['grafbase', GrafBase.API],
+['graphjson', GraphJSON.API],
 ['grist', Grist.API],
 ['hackernews', HackerNews.API],
 ['harvest', Harvest.API],
@@ -201,6 +206,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['1inch', OneInch.API],
 ['openlibrary', OpenLibrary.API],
 ['opensea', OpenSea.API],
+['openweathermap', OpenWeatherMap.API],
 ['ortto', Ortto.API],
 ['paypal', PayPal.API],
 ['peekalink', Peekalink.API],
@@ -223,7 +229,9 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['stackby', Stackby.API],
 ['statically', Statically.API],
 ['supabase', Supabase.API],
+['tenderly', Tenderly.API],
 ['thegraph', TheGraph.API],
+['tmdb', TMDB.API],
 ['trello', Trello.API],
 ['tribe', Tribe.API],
 ['twilio', Twilio.API],

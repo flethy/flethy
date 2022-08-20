@@ -47,6 +47,7 @@ import { Frankfurter } from '../../../http-configs/src/configs/frankfurter.confi
 import { Geekflare } from '../../../http-configs/src/configs/geekflare.config'
 import { Github } from '../../../http-configs/src/configs/github.config'
 import { GrafBase } from '../../../http-configs/src/configs/grafbase.config'
+import { GraphJSON } from '../../../http-configs/src/configs/graphjson.config'
 import { Grist } from '../../../http-configs/src/configs/grist.config'
 import { HackerNews } from '../../../http-configs/src/configs/hackernews.config'
 import { Harvest } from '../../../http-configs/src/configs/harvest.config'
@@ -80,6 +81,7 @@ import { OCRSpace } from '../../../http-configs/src/configs/ocrspace.config'
 import { OneInch } from '../../../http-configs/src/configs/oneinch.config'
 import { OpenLibrary } from '../../../http-configs/src/configs/openlibrary.config'
 import { OpenSea } from '../../../http-configs/src/configs/opensea.config'
+import { OpenWeatherMap } from '../../../http-configs/src/configs/openweathermap.config'
 import { Ortto } from '../../../http-configs/src/configs/ortto.config'
 import { PayPal } from '../../../http-configs/src/configs/paypal.config'
 import { Peekalink } from '../../../http-configs/src/configs/peekalink.config'
@@ -102,7 +104,9 @@ import { Slack } from '../../../http-configs/src/configs/slack.config'
 import { Stackby } from '../../../http-configs/src/configs/stackby.config'
 import { Statically } from '../../../http-configs/src/configs/statically.config'
 import { Supabase } from '../../../http-configs/src/configs/supabase.config'
+import { Tenderly } from '../../../http-configs/src/configs/tenderly.config'
 import { TheGraph } from '../../../http-configs/src/configs/thegraph.config'
+import { TMDB } from '../../../http-configs/src/configs/tmdb.config'
 import { Trello } from '../../../http-configs/src/configs/trello.config'
 import { Tribe } from '../../../http-configs/src/configs/tribe.config'
 import { Twilio } from '../../../http-configs/src/configs/twilio.config'
@@ -232,6 +236,10 @@ configTypes.push({type: getType<Geekflare.Lighthouse>(), name: 'Geekflare', inte
 configTypes.push({type: getType<Geekflare.Screenshot>(), name: 'Geekflare', interface: 'Screenshot'})
 configTypes.push({type: getType<Github.ListRepositoryIssues>(), name: 'Github', interface: 'ListRepositoryIssues'})
 configTypes.push({type: getType<GrafBase.GraphQLQuery>(), name: 'GrafBase', interface: 'GraphQLQuery'})
+configTypes.push({type: getType<GraphJSON.Log>(), name: 'GraphJSON', interface: 'Log'})
+configTypes.push({type: getType<GraphJSON.BulkLog>(), name: 'GraphJSON', interface: 'BulkLog'})
+configTypes.push({type: getType<GraphJSON.Data>(), name: 'GraphJSON', interface: 'Data'})
+configTypes.push({type: getType<GraphJSON.Visualization>(), name: 'GraphJSON', interface: 'Visualization'})
 configTypes.push({type: getType<Grist.AddRecords>(), name: 'Grist', interface: 'AddRecords'})
 configTypes.push({type: getType<Grist.FetchRecords>(), name: 'Grist', interface: 'FetchRecords'})
 configTypes.push({type: getType<Grist.DescribeDocument>(), name: 'Grist', interface: 'DescribeDocument'})
@@ -300,6 +308,7 @@ configTypes.push({type: getType<MicroDev.StorageNotesRead>(), name: 'MicroDev', 
 configTypes.push({type: getType<MicroDev.StorageNotesUpdate>(), name: 'MicroDev', interface: 'StorageNotesUpdate'})
 configTypes.push({type: getType<Microlink.Url>(), name: 'Microlink', interface: 'Url'})
 configTypes.push({type: getType<Mixpanel.TrackEvents>(), name: 'Mixpanel', interface: 'TrackEvents'})
+configTypes.push({type: getType<Mixpanel.ImportEvents>(), name: 'Mixpanel', interface: 'ImportEvents'})
 configTypes.push({type: getType<MojoAuth.SendMagicLink>(), name: 'MojoAuth', interface: 'SendMagicLink'})
 configTypes.push({type: getType<Nasa.AstronomyPictureOfTheDay>(), name: 'Nasa', interface: 'AstronomyPictureOfTheDay'})
 configTypes.push({type: getType<NewRelic.InsightsEvents>(), name: 'NewRelic', interface: 'InsightsEvents'})
@@ -313,6 +322,8 @@ configTypes.push({type: getType<OneInch.AggregationSwap>(), name: 'OneInch', int
 configTypes.push({type: getType<OpenLibrary.Books>(), name: 'OpenLibrary', interface: 'Books'})
 configTypes.push({type: getType<OpenSea.GetAssets>(), name: 'OpenSea', interface: 'GetAssets'})
 configTypes.push({type: getType<OpenSea.GetCollections>(), name: 'OpenSea', interface: 'GetCollections'})
+configTypes.push({type: getType<OpenWeatherMap.CurrentAndForecast>(), name: 'OpenWeatherMap', interface: 'CurrentAndForecast'})
+configTypes.push({type: getType<OpenWeatherMap.Current>(), name: 'OpenWeatherMap', interface: 'Current'})
 configTypes.push({type: getType<Ortto.RetrieveOneOrMorePeople>(), name: 'Ortto', interface: 'RetrieveOneOrMorePeople'})
 configTypes.push({type: getType<PayPal.AuthRequest>(), name: 'PayPal', interface: 'AuthRequest'})
 configTypes.push({type: getType<Peekalink.Preview>(), name: 'Peekalink', interface: 'Preview'})
@@ -351,8 +362,10 @@ configTypes.push({type: getType<Statically.StaticZapGitlab>(), name: 'Statically
 configTypes.push({type: getType<Statically.StaticZapBitbucket>(), name: 'Statically', interface: 'StaticZapBitbucket'})
 configTypes.push({type: getType<Supabase.InsertRows>(), name: 'Supabase', interface: 'InsertRows'})
 configTypes.push({type: getType<Supabase.ReadRows>(), name: 'Supabase', interface: 'ReadRows'})
+configTypes.push({type: getType<Tenderly.ExecuteTransactionSimulation>(), name: 'Tenderly', interface: 'ExecuteTransactionSimulation'})
 configTypes.push({type: getType<TheGraph.QueryById>(), name: 'TheGraph', interface: 'QueryById'})
 configTypes.push({type: getType<TheGraph.QueryByName>(), name: 'TheGraph', interface: 'QueryByName'})
+configTypes.push({type: getType<TMDB.Trending>(), name: 'TMDB', interface: 'Trending'})
 configTypes.push({type: getType<Trello.BoardGetLists>(), name: 'Trello', interface: 'BoardGetLists'})
 configTypes.push({type: getType<Trello.CardsCreate>(), name: 'Trello', interface: 'CardsCreate'})
 configTypes.push({type: getType<Tribe.TribeAccessToken>(), name: 'Tribe', interface: 'TribeAccessToken'})

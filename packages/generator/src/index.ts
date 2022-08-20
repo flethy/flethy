@@ -119,6 +119,10 @@ import PostHog from '../../http-configs/src/configs/posthog.config'
 import Doppler from '../../http-configs/src/configs/doppler.config'
 import MojoAuth from '../../http-configs/src/configs/mojoauth.config'
 import Ably from '../../http-configs/src/configs/ably.config'
+import GraphJSON from '../../http-configs/src/configs/graphjson.config'
+import Tenderly from '../../http-configs/src/configs/tenderly.config'
+import OpenWeatherMap from '../../http-configs/src/configs/openweathermap.config'
+import TMDB from '../../http-configs/src/configs/tmdb.config'
 
 async function main() {
   const requestConfigs: {
@@ -1694,8 +1698,49 @@ async function main() {
         },
       ],
     }),
+    graphJsonLog: nao<GraphJSON.Log>({
+      kind: 'graphjson.core.logging',
+      'auth:api_key': process.env.GRAPHJSON_API_KEY,
+      'body:collection': 'web3nao',
+      'body:timestamp': Math.floor(Date.now() / 1000),
+      'body:json': JSON.stringify({
+        price: 0.5,
+        value: 'nice!',
+        id: 'web3nao',
+      }),
+    }),
+    tenderlySimulation: nao<Tenderly.ExecuteTransactionSimulation>({
+      kind: 'tenderly.simulator.simulation',
+      'auth:X-Access-Key': process.env.TENDERLY_API_KEY,
+      'param:projectSlug': 'project',
+      'body:from': '0x0000000000000000000000000000000000000000',
+      'body:to': '0x0000000000000000000000000000000000000001',
+      'body:gas_limit': '8000000',
+      'body:gas_price': '0',
+      'body:value': '10000000000',
+      'body:input': '',
+      'body:target': {
+        network: {
+          block_number: '15375377',
+          id: '1',
+          transaction_index: '97',
+        },
+      },
+    }),
+    openweathermapCurrent: nao<OpenWeatherMap.Current>({
+      kind: 'openweathermap.core.current',
+      'auth:appid': process.env.OPENWEATHERMAP_API_KEY,
+      'query:lat': 52.52,
+      'query:lon': 13.405,
+    }),
+    tmdbTrending: nao<TMDB.Trending>({
+      kind: 'tmdb.core.trending',
+      'auth:Authorization': process.env.TMDB_ACCESS_TOKEN,
+      'param:mediaType': 'movie',
+      'param:timeWindow': 'day',
+    }),
   }
-  const requestConfig = requestConfigs.mixpanelImport
+  const requestConfig = requestConfigs.tmdbTrending
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)
