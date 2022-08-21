@@ -33,6 +33,7 @@ The following Endpoints are currently supported.
 * [APITemplateIo](./api/apitemplateio.md)
 * [Auth0](./api/auth0.md)
 * [BambooHR](./api/bamboohr.md)
+* [BannerBear](./api/bannerbear.md)
 * [BaseRow](./api/baserow.md)
 * [Beehiiv](./api/beehiiv.md)
 * [BigDataCloud](./api/bigdatacloud.md)

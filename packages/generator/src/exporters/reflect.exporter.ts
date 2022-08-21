@@ -8,6 +8,7 @@ import { Apify } from '../../../http-configs/src/configs/apify.config'
 import { APITemplateIo } from '../../../http-configs/src/configs/apitemplateio.config'
 import { Auth0 } from '../../../http-configs/src/configs/auth0.config'
 import { BambooHR } from '../../../http-configs/src/configs/bamboohr.config'
+import { BannerBear } from '../../../http-configs/src/configs/bannerbear.config'
 import { BaseRow } from '../../../http-configs/src/configs/baserow.config'
 import { Beehiiv } from '../../../http-configs/src/configs/beehiiv.config'
 import { BigDataCloud } from '../../../http-configs/src/configs/bigdatacloud.config'
@@ -138,6 +139,9 @@ configTypes.push({type: getType<Auth0.GetUsersByEmail>(), name: 'Auth0', interfa
 configTypes.push({type: getType<Auth0.ListOrSearchUsers>(), name: 'Auth0', interface: 'ListOrSearchUsers'})
 configTypes.push({type: getType<Auth0.GetUser>(), name: 'Auth0', interface: 'GetUser'})
 configTypes.push({type: getType<BambooHR.EmployeesDirectory>(), name: 'BambooHR', interface: 'EmployeesDirectory'})
+configTypes.push({type: getType<BannerBear.CreateImage>(), name: 'BannerBear', interface: 'CreateImage'})
+configTypes.push({type: getType<BannerBear.RetrieveImage>(), name: 'BannerBear', interface: 'RetrieveImage'})
+configTypes.push({type: getType<BannerBear.ListImages>(), name: 'BannerBear', interface: 'ListImages'})
 configTypes.push({type: getType<BaseRow.CreateRow>(), name: 'BaseRow', interface: 'CreateRow'})
 configTypes.push({type: getType<BaseRow.GetRows>(), name: 'BaseRow', interface: 'GetRows'})
 configTypes.push({type: getType<Beehiiv.CreateSubscriber>(), name: 'Beehiiv', interface: 'CreateSubscriber'})
