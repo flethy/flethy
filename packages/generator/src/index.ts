@@ -123,6 +123,8 @@ import GraphJSON from '../../http-configs/src/configs/graphjson.config'
 import Tenderly from '../../http-configs/src/configs/tenderly.config'
 import OpenWeatherMap from '../../http-configs/src/configs/openweathermap.config'
 import TMDB from '../../http-configs/src/configs/tmdb.config'
+import Beehiiv from '../../http-configs/src/configs/beehiiv.config'
+import BannerBear from '../../http-configs/src/configs/bannerbear.config'
 
 async function main() {
   const requestConfigs: {
@@ -1739,8 +1741,34 @@ async function main() {
       'param:mediaType': 'movie',
       'param:timeWindow': 'day',
     }),
+    beehiivGetPublications: nao<Beehiiv.GetPublications>({
+      kind: 'beehiiv.core.getPublications',
+      'auth:X-ApiKey': process.env.BEEHIIV_API_KEY,
+    }),
+    bannerbearCreateImage: nao<BannerBear.CreateImage>({
+      kind: 'bannerbear.images.create',
+      'auth:Authorization': process.env.BANNERBEAR_API_KEY,
+      'body:template': 'n1MJGd520ojPb7LaPV',
+      'body:modifications': [
+        {
+          name: 'message',
+          text: 'web3nao rockz!',
+          color: null,
+          background: null,
+        },
+        {
+          name: 'face',
+          image_url:
+            'https://cdn.bannerbear.com/sample_images/welcome_bear_photo.jpg',
+        },
+      ],
+    }),
+    bannerbearListImages: nao<BannerBear.ListImages>({
+      kind: 'bannerbear.images.list',
+      'auth:Authorization': process.env.BANNERBEAR_API_KEY,
+    }),
   }
-  const requestConfig = requestConfigs.tmdbTrending
+  const requestConfig = requestConfigs.bannerbearListImages
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)
