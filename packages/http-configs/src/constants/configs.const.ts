@@ -9,6 +9,7 @@ import { APITemplateIo } from '../configs/apitemplateio.config'
 import { Auth0 } from '../configs/auth0.config'
 import { BambooHR } from '../configs/bamboohr.config'
 import { BaseRow } from '../configs/baserow.config'
+import { Beehiiv } from '../configs/beehiiv.config'
 import { BigDataCloud } from '../configs/bigdatacloud.config'
 import { Bitly } from '../configs/bitly.config'
 import { Brandfetch } from '../configs/brandfetch.config'
@@ -134,6 +135,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['auth0', Auth0.API],
 ['bamboohr', BambooHR.API],
 ['baserow', BaseRow.API],
+['beehiiv', Beehiiv.API],
 ['bigdatacloud', BigDataCloud.API],
 ['bitly', Bitly.API],
 ['brandfetch', Brandfetch.API],

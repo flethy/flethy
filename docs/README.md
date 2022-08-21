@@ -34,6 +34,7 @@ The following Endpoints are currently supported.
 * [Auth0](./api/auth0.md)
 * [BambooHR](./api/bamboohr.md)
 * [BaseRow](./api/baserow.md)
+* [Beehiiv](./api/beehiiv.md)
 * [BigDataCloud](./api/bigdatacloud.md)
 * [Bitly](./api/bitly.md)
 * [Brandfetch](./api/brandfetch.md)

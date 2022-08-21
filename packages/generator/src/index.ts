@@ -123,6 +123,7 @@ import GraphJSON from '../../http-configs/src/configs/graphjson.config'
 import Tenderly from '../../http-configs/src/configs/tenderly.config'
 import OpenWeatherMap from '../../http-configs/src/configs/openweathermap.config'
 import TMDB from '../../http-configs/src/configs/tmdb.config'
+import Beehiiv from '../../http-configs/src/configs/beehiiv.config'
 
 async function main() {
   const requestConfigs: {
@@ -1739,8 +1740,12 @@ async function main() {
       'param:mediaType': 'movie',
       'param:timeWindow': 'day',
     }),
+    beehiivGetPublications: nao<Beehiiv.GetPublications>({
+      kind: 'beehiiv.core.getPublications',
+      'auth:X-ApiKey': process.env.BEEHIIV_API_KEY,
+    }),
   }
-  const requestConfig = requestConfigs.tmdbTrending
+  const requestConfig = requestConfigs.beehiivGetPublications
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

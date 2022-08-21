@@ -9,6 +9,7 @@ import { APITemplateIo } from '../../../http-configs/src/configs/apitemplateio.c
 import { Auth0 } from '../../../http-configs/src/configs/auth0.config'
 import { BambooHR } from '../../../http-configs/src/configs/bamboohr.config'
 import { BaseRow } from '../../../http-configs/src/configs/baserow.config'
+import { Beehiiv } from '../../../http-configs/src/configs/beehiiv.config'
 import { BigDataCloud } from '../../../http-configs/src/configs/bigdatacloud.config'
 import { Bitly } from '../../../http-configs/src/configs/bitly.config'
 import { Brandfetch } from '../../../http-configs/src/configs/brandfetch.config'
@@ -139,6 +140,8 @@ configTypes.push({type: getType<Auth0.GetUser>(), name: 'Auth0', interface: 'Get
 configTypes.push({type: getType<BambooHR.EmployeesDirectory>(), name: 'BambooHR', interface: 'EmployeesDirectory'})
 configTypes.push({type: getType<BaseRow.CreateRow>(), name: 'BaseRow', interface: 'CreateRow'})
 configTypes.push({type: getType<BaseRow.GetRows>(), name: 'BaseRow', interface: 'GetRows'})
+configTypes.push({type: getType<Beehiiv.CreateSubscriber>(), name: 'Beehiiv', interface: 'CreateSubscriber'})
+configTypes.push({type: getType<Beehiiv.GetPublications>(), name: 'Beehiiv', interface: 'GetPublications'})
 configTypes.push({type: getType<BigDataCloud.ReverseGeoCodeClient>(), name: 'BigDataCloud', interface: 'ReverseGeoCodeClient'})
 configTypes.push({type: getType<Bitly.CreateShortLink>(), name: 'Bitly', interface: 'CreateShortLink'})
 configTypes.push({type: getType<Brandfetch.BrandByDomainOrId>(), name: 'Brandfetch', interface: 'BrandByDomainOrId'})
