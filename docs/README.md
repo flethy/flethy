@@ -80,6 +80,7 @@ The following Endpoints are currently supported.
 * [Hybiscus](./api/hybiscus.md)
 * [Jira](./api/jira.md)
 * [Klaviyo](./api/klaviyo.md)
+* [Lecto](./api/lecto.md)
 * [Linear](./api/linear.md)
 * [LinkedIn](./api/linkedin.md)
 * [Lokalise](./api/lokalise.md)

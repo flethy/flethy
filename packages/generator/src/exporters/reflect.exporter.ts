@@ -61,6 +61,7 @@ import { HunterIo } from '../../../http-configs/src/configs/hunterio.config'
 import { Hybiscus } from '../../../http-configs/src/configs/hybiscus.config'
 import { Jira } from '../../../http-configs/src/configs/jira.config'
 import { Klaviyo } from '../../../http-configs/src/configs/klaviyo.config'
+import { Lecto } from '../../../http-configs/src/configs/lecto.config'
 import { Linear } from '../../../http-configs/src/configs/linear.config'
 import { LinkedIn } from '../../../http-configs/src/configs/linkedin.config'
 import { Lokalise } from '../../../http-configs/src/configs/lokalise.config'
@@ -278,6 +279,8 @@ configTypes.push({type: getType<Klaviyo.TrackProfileActivity>(), name: 'Klaviyo'
 configTypes.push({type: getType<Klaviyo.IdentifyProfile>(), name: 'Klaviyo', interface: 'IdentifyProfile'})
 configTypes.push({type: getType<Klaviyo.GetProfileId>(), name: 'Klaviyo', interface: 'GetProfileId'})
 configTypes.push({type: getType<Klaviyo.GetProfile>(), name: 'Klaviyo', interface: 'GetProfile'})
+configTypes.push({type: getType<Lecto.TranslateText>(), name: 'Lecto', interface: 'TranslateText'})
+configTypes.push({type: getType<Lecto.TranslateJson>(), name: 'Lecto', interface: 'TranslateJson'})
 configTypes.push({type: getType<Linear.GraphQLQuery>(), name: 'Linear', interface: 'GraphQLQuery'})
 configTypes.push({type: getType<LinkedIn.SharePost>(), name: 'LinkedIn', interface: 'SharePost'})
 configTypes.push({type: getType<Lokalise.CreateTask>(), name: 'Lokalise', interface: 'CreateTask'})

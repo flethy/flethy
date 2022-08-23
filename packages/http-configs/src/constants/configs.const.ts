@@ -61,6 +61,7 @@ import { HunterIo } from '../configs/hunterio.config'
 import { Hybiscus } from '../configs/hybiscus.config'
 import { Jira } from '../configs/jira.config'
 import { Klaviyo } from '../configs/klaviyo.config'
+import { Lecto } from '../configs/lecto.config'
 import { Linear } from '../configs/linear.config'
 import { LinkedIn } from '../configs/linkedin.config'
 import { Lokalise } from '../configs/lokalise.config'
@@ -188,6 +189,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['hybiscus', Hybiscus.API],
 ['jira', Jira.API],
 ['klaviyo', Klaviyo.API],
+['lecto', Lecto.API],
 ['linear', Linear.API],
 ['linkedin', LinkedIn.API],
 ['lokalise', Lokalise.API],
