@@ -125,6 +125,7 @@ import OpenWeatherMap from '../../http-configs/src/configs/openweathermap.config
 import TMDB from '../../http-configs/src/configs/tmdb.config'
 import Beehiiv from '../../http-configs/src/configs/beehiiv.config'
 import BannerBear from '../../http-configs/src/configs/bannerbear.config'
+import Lecto from '../../http-configs/src/configs/lecto.config'
 
 async function main() {
   const requestConfigs: {
@@ -1767,8 +1768,29 @@ async function main() {
       kind: 'bannerbear.images.list',
       'auth:Authorization': process.env.BANNERBEAR_API_KEY,
     }),
+    lectoTranslateText: nao<Lecto.TranslateText>({
+      kind: 'lecto.translate.text',
+      'auth:X-API-Key': process.env.LECTO_API_KEY,
+      'body:texts': ['Hello World!', 'Nice to meet you!'],
+      'body:to': ['de', 'es'],
+    }),
+    lectoTranslateJson: nao<Lecto.TranslateJson>({
+      kind: 'lecto.translate.json',
+      'auth:X-API-Key': process.env.LECTO_API_KEY,
+      'body:to': ['de', 'es'],
+      'body:from': 'en',
+      'body:json': JSON.stringify({
+        hello: {
+          world: 'Hello world!',
+        },
+        nice: {
+          toMeetYou: 'Nice to meet you!',
+        },
+      }),
+      'body:protected_keys': ['nice.toMeetYou'],
+    }),
   }
-  const requestConfig = requestConfigs.bannerbearListImages
+  const requestConfig = requestConfigs.lectoTranslateJson
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)
