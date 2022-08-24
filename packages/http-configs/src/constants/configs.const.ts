@@ -3,6 +3,7 @@ import { Ably } from '../configs/ably.config'
 import { AbstractApi } from '../configs/abstractapi.config'
 import { Airtable } from '../configs/airtable.config'
 import { Alchemy } from '../configs/alchemy.config'
+import { Algolia } from '../configs/algolia.config'
 import { ApicAgent } from '../configs/apicagent.config'
 import { Apify } from '../configs/apify.config'
 import { APITemplateIo } from '../configs/apitemplateio.config'
@@ -131,6 +132,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['abstractapi', AbstractApi.API],
 ['airtable', Airtable.API],
 ['alchemy', Alchemy.API],
+['algolia', Algolia.API],
 ['apicagent', ApicAgent.API],
 ['apify', Apify.API],
 ['apitemplateio', APITemplateIo.API],
