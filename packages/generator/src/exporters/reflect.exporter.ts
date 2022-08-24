@@ -3,6 +3,7 @@ import { Ably } from '../../../http-configs/src/configs/ably.config'
 import { AbstractApi } from '../../../http-configs/src/configs/abstractapi.config'
 import { Airtable } from '../../../http-configs/src/configs/airtable.config'
 import { Alchemy } from '../../../http-configs/src/configs/alchemy.config'
+import { Algolia } from '../../../http-configs/src/configs/algolia.config'
 import { ApicAgent } from '../../../http-configs/src/configs/apicagent.config'
 import { Apify } from '../../../http-configs/src/configs/apify.config'
 import { APITemplateIo } from '../../../http-configs/src/configs/apitemplateio.config'
@@ -131,6 +132,10 @@ configTypes.push({type: getType<AbstractApi.GetPublicHolidays>(), name: 'Abstrac
 configTypes.push({type: getType<Airtable.ListTableRecords>(), name: 'Airtable', interface: 'ListTableRecords'})
 configTypes.push({type: getType<Airtable.CreateTableRecords>(), name: 'Airtable', interface: 'CreateTableRecords'})
 configTypes.push({type: getType<Alchemy.NftGetNFTs>(), name: 'Alchemy', interface: 'NftGetNFTs'})
+configTypes.push({type: getType<Algolia.PostEvents>(), name: 'Algolia', interface: 'PostEvents'})
+configTypes.push({type: getType<Algolia.AddObjectWithoutId>(), name: 'Algolia', interface: 'AddObjectWithoutId'})
+configTypes.push({type: getType<Algolia.AddObjectWithId>(), name: 'Algolia', interface: 'AddObjectWithId'})
+configTypes.push({type: getType<Algolia.SearchQueryIndex>(), name: 'Algolia', interface: 'SearchQueryIndex'})
 configTypes.push({type: getType<ApicAgent.Get>(), name: 'ApicAgent', interface: 'Get'})
 configTypes.push({type: getType<ApicAgent.Post>(), name: 'ApicAgent', interface: 'Post'})
 configTypes.push({type: getType<Apify.ListActors>(), name: 'Apify', interface: 'ListActors'})

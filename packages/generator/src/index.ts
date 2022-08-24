@@ -126,6 +126,7 @@ import TMDB from '../../http-configs/src/configs/tmdb.config'
 import Beehiiv from '../../http-configs/src/configs/beehiiv.config'
 import BannerBear from '../../http-configs/src/configs/bannerbear.config'
 import Lecto from '../../http-configs/src/configs/lecto.config'
+import Algolia from '../../http-configs/src/configs/algolia.config'
 
 async function main() {
   const requestConfigs: {
@@ -1789,8 +1790,53 @@ async function main() {
       }),
       'body:protected_keys': ['nice.toMeetYou'],
     }),
+    algoliaInsightsEvent: nao<Algolia.PostEvents>({
+      kind: 'algolia.insights.events',
+      'auth:x-algolia-api-key': process.env.ALGOLIA_SEARCH_API_KEY,
+      'auth:x-algolia-application-id': process.env.ALGOLIA_APP_ID,
+      'body:events': [
+        {
+          eventName: 'first',
+          eventType: 'view',
+          index: 'web3nao',
+          userToken: 'adam',
+          objectIDs: ['9780545139700', '9780439784542'],
+        },
+      ],
+    }),
+    algoliaObjectsAddWithoutId: nao<Algolia.AddObjectWithoutId>({
+      kind: 'algolia.objects.addWithoutId',
+      'auth:x-algolia-api-key': process.env.ALGOLIA_ADMIN_API_KEY,
+      'auth:x-algolia-application-id': process.env.ALGOLIA_APP_ID,
+      'body:body': {
+        name: 'first',
+      },
+      'param:indexName': 'web3nao',
+      'subdomain:applicationId': process.env.ALGOLIA_APP_ID,
+    }),
+    algoliaObjectsAddWithId: nao<Algolia.AddObjectWithId>({
+      kind: 'algolia.objects.addWithId',
+      'auth:x-algolia-api-key': process.env.ALGOLIA_ADMIN_API_KEY,
+      'auth:x-algolia-application-id': process.env.ALGOLIA_APP_ID,
+      'body:body': {
+        firstname: 'Adam',
+        lastname: 'nice',
+        company: 'web3nao',
+      },
+      'param:indexName': 'web3nao',
+      'param:objectId': 'myId',
+      'subdomain:applicationId': process.env.ALGOLIA_APP_ID,
+    }),
+    algoliaSearchQueryIndex: nao<Algolia.SearchQueryIndex>({
+      kind: 'algolia.search.queryIndex',
+      'auth:x-algolia-api-key': process.env.ALGOLIA_ADMIN_API_KEY,
+      'auth:x-algolia-application-id': process.env.ALGOLIA_APP_ID,
+      'body:params': 'query=Adam',
+      'param:indexName': 'web3nao',
+      'subdomain:applicationId': process.env.ALGOLIA_APP_ID,
+    }),
   }
-  const requestConfig = requestConfigs.lectoTranslateJson
+  const requestConfig = requestConfigs.algoliaSearchQueryIndex
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

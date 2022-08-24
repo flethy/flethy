@@ -28,6 +28,7 @@ The following Endpoints are currently supported.
 * [Ably](./api/ably.md)
 * [AbstractApi](./api/abstractapi.md)
 * [Airtable](./api/airtable.md)
+* [Algolia](./api/algolia.md)
 * [ApicAgent](./api/apicagent.md)
 * [Apify](./api/apify.md)
 * [APITemplateIo](./api/apitemplateio.md)
