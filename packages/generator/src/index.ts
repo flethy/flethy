@@ -127,6 +127,8 @@ import Beehiiv from '../../http-configs/src/configs/beehiiv.config'
 import BannerBear from '../../http-configs/src/configs/bannerbear.config'
 import Lecto from '../../http-configs/src/configs/lecto.config'
 import Algolia from '../../http-configs/src/configs/algolia.config'
+import TheStarWarsApi from '../../http-configs/src/configs/thestarwarsapi.config'
+import SideKick from '../../http-configs/src/configs/sidekick.config'
 
 async function main() {
   const requestConfigs: {
@@ -1835,8 +1837,22 @@ async function main() {
       'param:indexName': 'web3nao',
       'subdomain:applicationId': process.env.ALGOLIA_APP_ID,
     }),
+    swapiGetEntities: nao<TheStarWarsApi.GetEntities>({
+      kind: 'thestarwarsapi.core.getEntities',
+      'param:entity': 'films',
+    }),
+    swapiGetEntity: nao<TheStarWarsApi.GetEntity>({
+      kind: 'thestarwarsapi.core.getEntity',
+      'param:entity': 'people',
+      'param:id': 1,
+    }),
+    sidekickListLogpoints: nao<SideKick.ListLogpoints>({
+      kind: 'sidekick.logpoint.list',
+      'auth:ApiKey': process.env.SIDEKICK_API_KEY,
+      'auth:Authorization': process.env.SIDEKICK_API_TOKEN,
+    }),
   }
-  const requestConfig = requestConfigs.algoliaSearchQueryIndex
+  const requestConfig = requestConfigs.sidekickListLogpoints
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)
