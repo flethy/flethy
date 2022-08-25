@@ -104,12 +104,14 @@ import { SerpApi } from '../configs/serpapi.config'
 import { SerpStack } from '../configs/serpstack.config'
 import { Shortcut } from '../configs/shortcut.config'
 import { Shrtcode } from '../configs/shrtcode.config'
+import { SideKick } from '../configs/sidekick.config'
 import { Slack } from '../configs/slack.config'
 import { Stackby } from '../configs/stackby.config'
 import { Statically } from '../configs/statically.config'
 import { Supabase } from '../configs/supabase.config'
 import { Tenderly } from '../configs/tenderly.config'
 import { TheGraph } from '../configs/thegraph.config'
+import { TheStarWarsApi } from '../configs/thestarwarsapi.config'
 import { TMDB } from '../configs/tmdb.config'
 import { Trello } from '../configs/trello.config'
 import { Tribe } from '../configs/tribe.config'
@@ -233,12 +235,14 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['serpstack', SerpStack.API],
 ['shortcut', Shortcut.API],
 ['shrtcode', Shrtcode.API],
+['sidekick', SideKick.API],
 ['slack', Slack.API],
 ['stackby', Stackby.API],
 ['statically', Statically.API],
 ['supabase', Supabase.API],
 ['tenderly', Tenderly.API],
 ['thegraph', TheGraph.API],
+['thestarwarsapi', TheStarWarsApi.API],
 ['tmdb', TMDB.API],
 ['trello', Trello.API],
 ['tribe', Tribe.API],

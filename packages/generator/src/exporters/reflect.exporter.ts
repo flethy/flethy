@@ -104,12 +104,14 @@ import { SerpApi } from '../../../http-configs/src/configs/serpapi.config'
 import { SerpStack } from '../../../http-configs/src/configs/serpstack.config'
 import { Shortcut } from '../../../http-configs/src/configs/shortcut.config'
 import { Shrtcode } from '../../../http-configs/src/configs/shrtcode.config'
+import { SideKick } from '../../../http-configs/src/configs/sidekick.config'
 import { Slack } from '../../../http-configs/src/configs/slack.config'
 import { Stackby } from '../../../http-configs/src/configs/stackby.config'
 import { Statically } from '../../../http-configs/src/configs/statically.config'
 import { Supabase } from '../../../http-configs/src/configs/supabase.config'
 import { Tenderly } from '../../../http-configs/src/configs/tenderly.config'
 import { TheGraph } from '../../../http-configs/src/configs/thegraph.config'
+import { TheStarWarsApi } from '../../../http-configs/src/configs/thestarwarsapi.config'
 import { TMDB } from '../../../http-configs/src/configs/tmdb.config'
 import { Trello } from '../../../http-configs/src/configs/trello.config'
 import { Tribe } from '../../../http-configs/src/configs/tribe.config'
@@ -368,6 +370,8 @@ configTypes.push({type: getType<Shortcut.SearchEpics>(), name: 'Shortcut', inter
 configTypes.push({type: getType<Shortcut.SearchStories>(), name: 'Shortcut', interface: 'SearchStories'})
 configTypes.push({type: getType<Shrtcode.Shorten>(), name: 'Shrtcode', interface: 'Shorten'})
 configTypes.push({type: getType<Shrtcode.Info>(), name: 'Shrtcode', interface: 'Info'})
+configTypes.push({type: getType<SideKick.ListApplications>(), name: 'SideKick', interface: 'ListApplications'})
+configTypes.push({type: getType<SideKick.ListLogpoints>(), name: 'SideKick', interface: 'ListLogpoints'})
 configTypes.push({type: getType<Slack.IncomingWebhooksMessage>(), name: 'Slack', interface: 'IncomingWebhooksMessage'})
 configTypes.push({type: getType<Slack.ChatPostMessage>(), name: 'Slack', interface: 'ChatPostMessage'})
 configTypes.push({type: getType<Slack.ConversationsList>(), name: 'Slack', interface: 'ConversationsList'})
@@ -380,6 +384,8 @@ configTypes.push({type: getType<Supabase.ReadRows>(), name: 'Supabase', interfac
 configTypes.push({type: getType<Tenderly.ExecuteTransactionSimulation>(), name: 'Tenderly', interface: 'ExecuteTransactionSimulation'})
 configTypes.push({type: getType<TheGraph.QueryById>(), name: 'TheGraph', interface: 'QueryById'})
 configTypes.push({type: getType<TheGraph.QueryByName>(), name: 'TheGraph', interface: 'QueryByName'})
+configTypes.push({type: getType<TheStarWarsApi.GetEntities>(), name: 'TheStarWarsApi', interface: 'GetEntities'})
+configTypes.push({type: getType<TheStarWarsApi.GetEntity>(), name: 'TheStarWarsApi', interface: 'GetEntity'})
 configTypes.push({type: getType<TMDB.Trending>(), name: 'TMDB', interface: 'Trending'})
 configTypes.push({type: getType<Trello.BoardGetLists>(), name: 'Trello', interface: 'BoardGetLists'})
 configTypes.push({type: getType<Trello.CardsCreate>(), name: 'Trello', interface: 'CardsCreate'})
