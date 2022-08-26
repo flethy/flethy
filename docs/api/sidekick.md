@@ -10,6 +10,11 @@
 
 ## API
 
+### Authentication
+
+* ApiKey: header
+* Authorization: header:bearer
+
 ### applications
 
 #### list
