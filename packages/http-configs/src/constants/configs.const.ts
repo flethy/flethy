@@ -98,6 +98,7 @@ import { RapidApi } from '../configs/rapidapi.config'
 import { RedisCloud } from '../configs/rediscloud.config'
 import { RemoteOk } from '../configs/remoteok.config'
 import { RemoveBg } from '../configs/removebg.config'
+import { RestZeebe } from '../configs/restzeebe.config'
 import { SendGrid } from '../configs/sendgrid.config'
 import { Sentry } from '../configs/sentry.config'
 import { SerpApi } from '../configs/serpapi.config'
@@ -229,6 +230,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['rediscloud', RedisCloud.API],
 ['remoteok', RemoteOk.API],
 ['removebg', RemoveBg.API],
+['restzeebe', RestZeebe.API],
 ['sendgrid', SendGrid.API],
 ['sentry', Sentry.API],
 ['serpapi', SerpApi.API],

@@ -129,6 +129,7 @@ import Lecto from '../../http-configs/src/configs/lecto.config'
 import Algolia from '../../http-configs/src/configs/algolia.config'
 import TheStarWarsApi from '../../http-configs/src/configs/thestarwarsapi.config'
 import SideKick from '../../http-configs/src/configs/sidekick.config'
+import RestZeebe from '../../http-configs/src/configs/restzeebe.config'
 
 async function main() {
   const requestConfigs: {
@@ -752,13 +753,7 @@ async function main() {
       'auth:Authorization': process.env.CONTENTFUL_DELIVERY_API_KEY,
       'param:spaceId': process.env.CONTENTFUL_SPACE_ID,
       'body:query': `
-        {
-          productCollection {
-            items {
-              title
-            }
-          }
-        }
+        { emailCollection(order: [order_ASC]) { items { content } } }
         `,
     }),
     contentfulQueryBySpaceAndEnv: nao<ContentFul.GraphQLbySpaceAndEnvironment>({
@@ -1851,8 +1846,23 @@ async function main() {
       'auth:ApiKey': process.env.SIDEKICK_API_KEY,
       'auth:Authorization': process.env.SIDEKICK_API_TOKEN,
     }),
+    restZeebeStartInstance: nao<RestZeebe.StartInstance>({
+      kind: 'restzeebe.core.start',
+      'auth:Authorization': process.env.RESTZEEBE_API_KEY,
+      'param:workspaceId': process.env.RESTZEEBE_WORKSPACE_ID,
+      'param:clusterId': process.env.RESTZEEBE_CLUSTER_ID,
+      'param:processId': process.env.RESTZEEBE_PROCESS_ID,
+      'body:clientId': process.env.RESTZEEBE_CLIENT_ID,
+      'body:clientSecret': process.env.RESTZEEBE_CLIENT_SECRET,
+      'header:Content-Type': 'application/json',
+      'body:variables': {
+        data: {
+          name: 'Adam',
+        },
+      },
+    }),
   }
-  const requestConfig = requestConfigs.sidekickListLogpoints
+  const requestConfig = requestConfigs.contentfulQueryBySpace
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)
