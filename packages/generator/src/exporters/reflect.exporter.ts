@@ -26,6 +26,7 @@ import { Carifai } from '../../../http-configs/src/configs/clarifai.config'
 import { Clearbit } from '../../../http-configs/src/configs/clearbit.config'
 import { ClickUp } from '../../../http-configs/src/configs/clickup.config'
 import { Clockify } from '../../../http-configs/src/configs/clockify.config'
+import { CloudFlare } from '../../../http-configs/src/configs/cloudflare.config'
 import { CoinCap } from '../../../http-configs/src/configs/coincap.config'
 import { CoinGecko } from '../../../http-configs/src/configs/coingecko.config'
 import { Coinlayer } from '../../../http-configs/src/configs/coinlayer.config'
@@ -187,6 +188,7 @@ configTypes.push({type: getType<ClickUp.SpacesGetAll>(), name: 'ClickUp', interf
 configTypes.push({type: getType<ClickUp.ListsGetAllFolderless>(), name: 'ClickUp', interface: 'ListsGetAllFolderless'})
 configTypes.push({type: getType<ClickUp.TasksGetAll>(), name: 'ClickUp', interface: 'TasksGetAll'})
 configTypes.push({type: getType<Clockify.ProjectsGetAll>(), name: 'Clockify', interface: 'ProjectsGetAll'})
+configTypes.push({type: getType<CloudFlare.ListZones>(), name: 'CloudFlare', interface: 'ListZones'})
 configTypes.push({type: getType<CoinCap.getAssets>(), name: 'CoinCap', interface: 'getAssets'})
 configTypes.push({type: getType<CoinCap.getAsset>(), name: 'CoinCap', interface: 'getAsset'})
 configTypes.push({type: getType<CoinCap.getAssetHistory>(), name: 'CoinCap', interface: 'getAssetHistory'})

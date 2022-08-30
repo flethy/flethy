@@ -130,6 +130,7 @@ import Algolia from '../../http-configs/src/configs/algolia.config'
 import TheStarWarsApi from '../../http-configs/src/configs/thestarwarsapi.config'
 import SideKick from '../../http-configs/src/configs/sidekick.config'
 import RestZeebe from '../../http-configs/src/configs/restzeebe.config'
+import CloudFlare from '../../http-configs/src/configs/cloudflare.config'
 
 async function main() {
   const requestConfigs: {
@@ -1861,8 +1862,12 @@ async function main() {
         },
       },
     }),
+    cloudflareListZones: nao<CloudFlare.ListZones>({
+      kind: 'cloudflare.zones.list',
+      'auth:Authorization': process.env.CLOUDFLARE_API_TOKEN,
+    }),
   }
-  const requestConfig = requestConfigs.contentfulQueryBySpace
+  const requestConfig = requestConfigs.cloudflareListZones
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)
