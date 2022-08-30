@@ -51,6 +51,7 @@ The following Endpoints are currently supported.
 * [Clearbit](./api/clearbit.md)
 * [ClickUp](./api/clickup.md)
 * [Clockify](./api/clockify.md)
+* [CloudFlare](./api/cloudflare.md)
 * [ContentFul](./api/contentful.md)
 * [ConvertKit](./api/convertkit.md)
 * [CountApi](./api/countapi.md)
