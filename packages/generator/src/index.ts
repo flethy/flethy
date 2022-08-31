@@ -131,6 +131,7 @@ import TheStarWarsApi from '../../http-configs/src/configs/thestarwarsapi.config
 import SideKick from '../../http-configs/src/configs/sidekick.config'
 import RestZeebe from '../../http-configs/src/configs/restzeebe.config'
 import CloudFlare from '../../http-configs/src/configs/cloudflare.config'
+import Netlify from '../../http-configs/src/configs/netlify.config'
 
 async function main() {
   const requestConfigs: {
@@ -1866,8 +1867,17 @@ async function main() {
       kind: 'cloudflare.zones.list',
       'auth:Authorization': process.env.CLOUDFLARE_API_TOKEN,
     }),
+    netlifyGetEnvVars: nao<Netlify.GetEnvironmentVariables>({
+      kind: 'netlify.sites.getEnvironmentVariables',
+      'auth:Authorization': process.env.NETLIFY_PAT,
+      'param:accountId': 'adam-urban',
+    }),
+    netlifyListSites: nao<Netlify.ListSites>({
+      kind: 'netlify.sites.listSites',
+      'auth:Authorization': process.env.NETLIFY_PAT,
+    }),
   }
-  const requestConfig = requestConfigs.cloudflareListZones
+  const requestConfig = requestConfigs.netlifyListSites
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)
