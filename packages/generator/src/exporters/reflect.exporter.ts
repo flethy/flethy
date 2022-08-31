@@ -79,6 +79,7 @@ import { Microlink } from '../../../http-configs/src/configs/microlink.config'
 import { Mixpanel } from '../../../http-configs/src/configs/mixpanel.config'
 import { MojoAuth } from '../../../http-configs/src/configs/mojoauth.config'
 import { Nasa } from '../../../http-configs/src/configs/nasa.config'
+import { Netlify } from '../../../http-configs/src/configs/netlify.config'
 import { NewRelic } from '../../../http-configs/src/configs/newrelic.config'
 import { NewsApi } from '../../../http-configs/src/configs/newsapi.config'
 import { Notion } from '../../../http-configs/src/configs/notion.config'
@@ -331,6 +332,8 @@ configTypes.push({type: getType<Mixpanel.TrackEvents>(), name: 'Mixpanel', inter
 configTypes.push({type: getType<Mixpanel.ImportEvents>(), name: 'Mixpanel', interface: 'ImportEvents'})
 configTypes.push({type: getType<MojoAuth.SendMagicLink>(), name: 'MojoAuth', interface: 'SendMagicLink'})
 configTypes.push({type: getType<Nasa.AstronomyPictureOfTheDay>(), name: 'Nasa', interface: 'AstronomyPictureOfTheDay'})
+configTypes.push({type: getType<Netlify.ListSites>(), name: 'Netlify', interface: 'ListSites'})
+configTypes.push({type: getType<Netlify.GetEnvironmentVariables>(), name: 'Netlify', interface: 'GetEnvironmentVariables'})
 configTypes.push({type: getType<NewRelic.InsightsEvents>(), name: 'NewRelic', interface: 'InsightsEvents'})
 configTypes.push({type: getType<NewsApi.SearchEverything>(), name: 'NewsApi', interface: 'SearchEverything'})
 configTypes.push({type: getType<Notion.CreateDatabase>(), name: 'Notion', interface: 'CreateDatabase'})

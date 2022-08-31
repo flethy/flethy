@@ -98,6 +98,7 @@ The following Endpoints are currently supported.
 * [Mixpanel](./api/mixpanel.md)
 * [MojoAuth](./api/mojoauth.md)
 * [Nasa](./api/nasa.md)
+* [Netlify](./api/netlify.md)
 * [NewRelic](./api/newrelic.md)
 * [NewsApi](./api/newsapi.md)
 * [Notion](./api/notion.md)
