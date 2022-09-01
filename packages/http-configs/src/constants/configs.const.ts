@@ -44,6 +44,7 @@ import { Dhl } from '../configs/dhl.config'
 import { Disify } from '../configs/disify.config'
 import { Doppler } from '../configs/doppler.config'
 import { DynaPictures } from '../configs/dynapictures.config'
+import { EasyDb } from '../configs/easydb.config'
 import { Etherscan } from '../configs/etherscan.config'
 import { Eventbrite } from '../configs/eventbrite.config'
 import { Fauna } from '../configs/fauna.config'
@@ -178,6 +179,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['disify', Disify.API],
 ['doppler', Doppler.API],
 ['dynapictures', DynaPictures.API],
+['easydb', EasyDb.API],
 ['etherscan', Etherscan.API],
 ['eventbrite', Eventbrite.API],
 ['fauna', Fauna.API],

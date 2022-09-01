@@ -132,6 +132,7 @@ import SideKick from '../../http-configs/src/configs/sidekick.config'
 import RestZeebe from '../../http-configs/src/configs/restzeebe.config'
 import CloudFlare from '../../http-configs/src/configs/cloudflare.config'
 import Netlify from '../../http-configs/src/configs/netlify.config'
+import EasyDb from '../../http-configs/src/configs/easydb.config'
 
 async function main() {
   const requestConfigs: {
@@ -1876,8 +1877,20 @@ async function main() {
       kind: 'netlify.sites.listSites',
       'auth:Authorization': process.env.NETLIFY_PAT,
     }),
+    easydbPut: nao<EasyDb.Put>({
+      kind: 'easydb.core.put',
+      'auth:token': process.env.EASYDB_TOKEN,
+      'param:databaseId': process.env.EASYDB_UUID,
+      'body:key': 'web3nao',
+      'body:value': 'nice',
+    }),
+    easydbList: nao<EasyDb.List>({
+      kind: 'easydb.core.list',
+      'auth:token': process.env.EASYDB_TOKEN,
+      'param:databaseId': process.env.EASYDB_UUID,
+    }),
   }
-  const requestConfig = requestConfigs.netlifyListSites
+  const requestConfig = requestConfigs.easydbList
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

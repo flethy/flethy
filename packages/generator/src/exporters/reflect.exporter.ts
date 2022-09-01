@@ -44,6 +44,7 @@ import { Dhl } from '../../../http-configs/src/configs/dhl.config'
 import { Disify } from '../../../http-configs/src/configs/disify.config'
 import { Doppler } from '../../../http-configs/src/configs/doppler.config'
 import { DynaPictures } from '../../../http-configs/src/configs/dynapictures.config'
+import { EasyDb } from '../../../http-configs/src/configs/easydb.config'
 import { Etherscan } from '../../../http-configs/src/configs/etherscan.config'
 import { Eventbrite } from '../../../http-configs/src/configs/eventbrite.config'
 import { Fauna } from '../../../http-configs/src/configs/fauna.config'
@@ -242,6 +243,10 @@ configTypes.push({type: getType<Disify.CheckSingleEmail>(), name: 'Disify', inte
 configTypes.push({type: getType<Disify.CheckMassEmail>(), name: 'Disify', interface: 'CheckMassEmail'})
 configTypes.push({type: getType<Doppler.DownloadSecrets>(), name: 'Doppler', interface: 'DownloadSecrets'})
 configTypes.push({type: getType<DynaPictures.GenerateImage>(), name: 'DynaPictures', interface: 'GenerateImage'})
+configTypes.push({type: getType<EasyDb.Get>(), name: 'EasyDb', interface: 'Get'})
+configTypes.push({type: getType<EasyDb.Put>(), name: 'EasyDb', interface: 'Put'})
+configTypes.push({type: getType<EasyDb.List>(), name: 'EasyDb', interface: 'List'})
+configTypes.push({type: getType<EasyDb.Delete>(), name: 'EasyDb', interface: 'Delete'})
 configTypes.push({type: getType<Etherscan.AccountsBalanceSingleAddress>(), name: 'Etherscan', interface: 'AccountsBalanceSingleAddress'})
 configTypes.push({type: getType<Eventbrite.ListAttendeeByEventId>(), name: 'Eventbrite', interface: 'ListAttendeeByEventId'})
 configTypes.push({type: getType<Eventbrite.GetUserMe>(), name: 'Eventbrite', interface: 'GetUserMe'})
