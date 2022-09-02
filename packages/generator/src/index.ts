@@ -133,6 +133,7 @@ import RestZeebe from '../../http-configs/src/configs/restzeebe.config'
 import CloudFlare from '../../http-configs/src/configs/cloudflare.config'
 import Netlify from '../../http-configs/src/configs/netlify.config'
 import EasyDb from '../../http-configs/src/configs/easydb.config'
+import RestDB from '../../http-configs/src/configs/restdb.config'
 
 async function main() {
   const requestConfigs: {
@@ -1889,8 +1890,14 @@ async function main() {
       'auth:token': process.env.EASYDB_TOKEN,
       'param:databaseId': process.env.EASYDB_UUID,
     }),
+    restDbGet: nao<RestDB.GetItemsFromCollection>({
+      kind: 'restdb.collections.get',
+      'auth:x-apikey': process.env.RESTDB_API_KEY,
+      'subdomain:databaseId': process.env.RESTDB_DBID,
+      'param:collection': 'web3nao',
+    }),
   }
-  const requestConfig = requestConfigs.easydbList
+  const requestConfig = requestConfigs.restDbGet
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

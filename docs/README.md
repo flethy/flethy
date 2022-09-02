@@ -117,6 +117,7 @@ The following Endpoints are currently supported.
 * [RedisCloud](./api/rediscloud.md)
 * [RemoteOk](./api/remoteok.md)
 * [RemoveBg](./api/removebg.md)
+* [RestDB](./api/restdb.md)
 * [RestZeebe](./api/restzeebe.md)
 * [SendGrid](./api/sendgrid.md)
 * [Sentry](./api/sentry.md)
