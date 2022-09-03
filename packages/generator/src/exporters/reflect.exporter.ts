@@ -24,6 +24,7 @@ import { Canny } from '../../../http-configs/src/configs/canny.config'
 import { ChartMogul } from '../../../http-configs/src/configs/chartmogul.config'
 import { Carifai } from '../../../http-configs/src/configs/clarifai.config'
 import { Clearbit } from '../../../http-configs/src/configs/clearbit.config'
+import { ClickSend } from '../../../http-configs/src/configs/clicksend.config'
 import { ClickUp } from '../../../http-configs/src/configs/clickup.config'
 import { Clockify } from '../../../http-configs/src/configs/clockify.config'
 import { CloudFlare } from '../../../http-configs/src/configs/cloudflare.config'
@@ -187,6 +188,7 @@ configTypes.push({type: getType<ChartMogul.TrackLeadAndFreeTrial>(), name: 'Char
 configTypes.push({type: getType<Carifai.MakePredictions>(), name: 'Carifai', interface: 'MakePredictions'})
 configTypes.push({type: getType<Carifai.MakePredictionsWithVersion>(), name: 'Carifai', interface: 'MakePredictionsWithVersion'})
 configTypes.push({type: getType<Clearbit.LogoGet>(), name: 'Clearbit', interface: 'LogoGet'})
+configTypes.push({type: getType<ClickSend.SendEmail>(), name: 'ClickSend', interface: 'SendEmail'})
 configTypes.push({type: getType<ClickUp.SpacesGetAll>(), name: 'ClickUp', interface: 'SpacesGetAll'})
 configTypes.push({type: getType<ClickUp.ListsGetAllFolderless>(), name: 'ClickUp', interface: 'ListsGetAllFolderless'})
 configTypes.push({type: getType<ClickUp.TasksGetAll>(), name: 'ClickUp', interface: 'TasksGetAll'})

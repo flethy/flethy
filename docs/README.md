@@ -50,6 +50,7 @@ The following Endpoints are currently supported.
 * [ChartMogul](./api/chartmogul.md)
 * [Carifai](./api/clarifai.md)
 * [Clearbit](./api/clearbit.md)
+* [ClickSend](./api/clicksend.md)
 * [ClickUp](./api/clickup.md)
 * [Clockify](./api/clockify.md)
 * [CloudFlare](./api/cloudflare.md)
