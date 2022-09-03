@@ -134,6 +134,7 @@ import CloudFlare from '../../http-configs/src/configs/cloudflare.config'
 import Netlify from '../../http-configs/src/configs/netlify.config'
 import EasyDb from '../../http-configs/src/configs/easydb.config'
 import RestDB from '../../http-configs/src/configs/restdb.config'
+import ClickSend from '../../http-configs/src/configs/clicksend.config'
 
 async function main() {
   const requestConfigs: {
@@ -1896,8 +1897,29 @@ async function main() {
       'subdomain:databaseId': process.env.RESTDB_DBID,
       'param:collection': 'web3nao',
     }),
+    clicksendSendEmail: nao<ClickSend.SendEmail>({
+      kind: 'clicksend.email.send',
+      'auth:Authorization': {
+        username: process.env.CLICKSEND_USERNAME,
+        password: process.env.CLICKSEND_API_KEY,
+      },
+      'body:body': {
+        from: {
+          email_address_id: 23143,
+          name: 'Adam',
+        },
+        to: [
+          {
+            email: 'adam.urban@gmail.com',
+            name: 'Adam',
+          },
+        ],
+        subject: 'Hi!',
+        body: 'web3nao is nice!',
+      },
+    }),
   }
-  const requestConfig = requestConfigs.restDbGet
+  const requestConfig = requestConfigs.clicksendSendEmail
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

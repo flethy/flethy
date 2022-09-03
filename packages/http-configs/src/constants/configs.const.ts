@@ -24,6 +24,7 @@ import { Canny } from '../configs/canny.config'
 import { ChartMogul } from '../configs/chartmogul.config'
 import { Carifai } from '../configs/clarifai.config'
 import { Clearbit } from '../configs/clearbit.config'
+import { ClickSend } from '../configs/clicksend.config'
 import { ClickUp } from '../configs/clickup.config'
 import { Clockify } from '../configs/clockify.config'
 import { CloudFlare } from '../configs/cloudflare.config'
@@ -160,6 +161,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['chartmogul', ChartMogul.API],
 ['clarifai', Carifai.API],
 ['clearbit', Clearbit.API],
+['clicksend', ClickSend.API],
 ['clickup', ClickUp.API],
 ['clockify', Clockify.API],
 ['cloudflare', CloudFlare.API],
