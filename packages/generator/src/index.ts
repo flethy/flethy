@@ -135,6 +135,7 @@ import Netlify from '../../http-configs/src/configs/netlify.config'
 import EasyDb from '../../http-configs/src/configs/easydb.config'
 import RestDB from '../../http-configs/src/configs/restdb.config'
 import ClickSend from '../../http-configs/src/configs/clicksend.config'
+import Render from '../../http-configs/src/configs/render.config'
 
 async function main() {
   const requestConfigs: {
@@ -1918,8 +1919,12 @@ async function main() {
         body: 'web3nao is nice!',
       },
     }),
+    renderListServices: nao<Render.ListServices>({
+      kind: 'render.services.list',
+      'auth:Authorization': process.env.RENDER_API_KEY,
+    }),
   }
-  const requestConfig = requestConfigs.clicksendSendEmail
+  const requestConfig = requestConfigs.renderListServices
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)
