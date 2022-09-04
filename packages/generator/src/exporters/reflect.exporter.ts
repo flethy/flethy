@@ -102,6 +102,7 @@ import { RapidApi } from '../../../http-configs/src/configs/rapidapi.config'
 import { RedisCloud } from '../../../http-configs/src/configs/rediscloud.config'
 import { RemoteOk } from '../../../http-configs/src/configs/remoteok.config'
 import { RemoveBg } from '../../../http-configs/src/configs/removebg.config'
+import { Render } from '../../../http-configs/src/configs/render.config'
 import { RestDB } from '../../../http-configs/src/configs/restdb.config'
 import { RestZeebe } from '../../../http-configs/src/configs/restzeebe.config'
 import { SendGrid } from '../../../http-configs/src/configs/sendgrid.config'
@@ -372,6 +373,8 @@ configTypes.push({type: getType<RapidApi.ArticleExtractor>(), name: 'RapidApi', 
 configTypes.push({type: getType<RedisCloud.GetCurrentAccount>(), name: 'RedisCloud', interface: 'GetCurrentAccount'})
 configTypes.push({type: getType<RemoteOk.GetListings>(), name: 'RemoteOk', interface: 'GetListings'})
 configTypes.push({type: getType<RemoveBg.Remove>(), name: 'RemoveBg', interface: 'Remove'})
+configTypes.push({type: getType<Render.ListServices>(), name: 'Render', interface: 'ListServices'})
+configTypes.push({type: getType<Render.UpdateEnvironmentVariables>(), name: 'Render', interface: 'UpdateEnvironmentVariables'})
 configTypes.push({type: getType<RestDB.GetItemsFromCollection>(), name: 'RestDB', interface: 'GetItemsFromCollection'})
 configTypes.push({type: getType<RestZeebe.StartInstance>(), name: 'RestZeebe', interface: 'StartInstance'})
 configTypes.push({type: getType<SendGrid.SendMail>(), name: 'SendGrid', interface: 'SendMail'})
