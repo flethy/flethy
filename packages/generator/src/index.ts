@@ -119,6 +119,24 @@ import PostHog from '../../http-configs/src/configs/posthog.config'
 import Doppler from '../../http-configs/src/configs/doppler.config'
 import MojoAuth from '../../http-configs/src/configs/mojoauth.config'
 import Ably from '../../http-configs/src/configs/ably.config'
+import GraphJSON from '../../http-configs/src/configs/graphjson.config'
+import Tenderly from '../../http-configs/src/configs/tenderly.config'
+import OpenWeatherMap from '../../http-configs/src/configs/openweathermap.config'
+import TMDB from '../../http-configs/src/configs/tmdb.config'
+import Beehiiv from '../../http-configs/src/configs/beehiiv.config'
+import BannerBear from '../../http-configs/src/configs/bannerbear.config'
+import Lecto from '../../http-configs/src/configs/lecto.config'
+import Algolia from '../../http-configs/src/configs/algolia.config'
+import TheStarWarsApi from '../../http-configs/src/configs/thestarwarsapi.config'
+import SideKick from '../../http-configs/src/configs/sidekick.config'
+import RestZeebe from '../../http-configs/src/configs/restzeebe.config'
+import CloudFlare from '../../http-configs/src/configs/cloudflare.config'
+import Netlify from '../../http-configs/src/configs/netlify.config'
+import EasyDb from '../../http-configs/src/configs/easydb.config'
+import RestDB from '../../http-configs/src/configs/restdb.config'
+import ClickSend from '../../http-configs/src/configs/clicksend.config'
+import Render from '../../http-configs/src/configs/render.config'
+import Parsiq from '../../http-configs/src/configs/parsiq.config'
 
 async function main() {
   const requestConfigs: {
@@ -306,6 +324,7 @@ async function main() {
     mixpanel: nao<Mixpanel.TrackEvents>({
       kind: 'mixpanel.events.track',
       'auth:token': process.env.MIXPANEL_TOKEN,
+      baseId: 'api',
       'body:body': [
         {
           properties: {
@@ -741,13 +760,7 @@ async function main() {
       'auth:Authorization': process.env.CONTENTFUL_DELIVERY_API_KEY,
       'param:spaceId': process.env.CONTENTFUL_SPACE_ID,
       'body:query': `
-        {
-          productCollection {
-            items {
-              title
-            }
-          }
-        }
+        { emailCollection(order: [order_ASC]) { items { content } } }
         `,
     }),
     contentfulQueryBySpaceAndEnv: nao<ContentFul.GraphQLbySpaceAndEnvironment>({
@@ -1674,8 +1687,262 @@ async function main() {
       'body:name': 'greeting',
       'body:data': 'hello',
     }),
+    mixpanelImport: nao<Mixpanel.ImportEvents>({
+      kind: 'mixpanel.events.import',
+      baseId: 'api-eu',
+      'auth:Authorization': {
+        username: process.env.MIXPANEL_USER,
+        password: process.env.MIXPANEL_SECRET,
+      },
+      'query:project_id': '2781461',
+      'body:body': [
+        {
+          properties: {
+            distinct_id: 'userId',
+            time: Date.now(),
+            $insert_id: 'test',
+          },
+          event: 'test',
+        },
+      ],
+    }),
+    graphJsonLog: nao<GraphJSON.Log>({
+      kind: 'graphjson.core.logging',
+      'auth:api_key': process.env.GRAPHJSON_API_KEY,
+      'body:collection': 'web3nao',
+      'body:timestamp': Math.floor(Date.now() / 1000),
+      'body:json': JSON.stringify({
+        price: 0.5,
+        value: 'nice!',
+        id: 'web3nao',
+      }),
+    }),
+    tenderlySimulation: nao<Tenderly.ExecuteTransactionSimulation>({
+      kind: 'tenderly.simulator.simulation',
+      'auth:X-Access-Key': process.env.TENDERLY_API_KEY,
+      'param:projectSlug': 'project',
+      'body:from': '0x0000000000000000000000000000000000000000',
+      'body:to': '0x0000000000000000000000000000000000000001',
+      'body:gas_limit': '8000000',
+      'body:gas_price': '0',
+      'body:value': '10000000000',
+      'body:input': '',
+      'body:target': {
+        network: {
+          block_number: '15375377',
+          id: '1',
+          transaction_index: '97',
+        },
+      },
+    }),
+    openweathermapCurrent: nao<OpenWeatherMap.Current>({
+      kind: 'openweathermap.core.current',
+      'auth:appid': process.env.OPENWEATHERMAP_API_KEY,
+      'query:lat': 52.52,
+      'query:lon': 13.405,
+    }),
+    tmdbTrending: nao<TMDB.Trending>({
+      kind: 'tmdb.core.trending',
+      'auth:Authorization': process.env.TMDB_ACCESS_TOKEN,
+      'param:mediaType': 'movie',
+      'param:timeWindow': 'day',
+    }),
+    beehiivGetPublications: nao<Beehiiv.GetPublications>({
+      kind: 'beehiiv.core.getPublications',
+      'auth:X-ApiKey': process.env.BEEHIIV_API_KEY,
+    }),
+    bannerbearCreateImage: nao<BannerBear.CreateImage>({
+      kind: 'bannerbear.images.create',
+      'auth:Authorization': process.env.BANNERBEAR_API_KEY,
+      'body:template': 'n1MJGd520ojPb7LaPV',
+      'body:modifications': [
+        {
+          name: 'message',
+          text: 'web3nao rockz!',
+          color: null,
+          background: null,
+        },
+        {
+          name: 'face',
+          image_url:
+            'https://cdn.bannerbear.com/sample_images/welcome_bear_photo.jpg',
+        },
+      ],
+    }),
+    bannerbearListImages: nao<BannerBear.ListImages>({
+      kind: 'bannerbear.images.list',
+      'auth:Authorization': process.env.BANNERBEAR_API_KEY,
+    }),
+    lectoTranslateText: nao<Lecto.TranslateText>({
+      kind: 'lecto.translate.text',
+      'auth:X-API-Key': process.env.LECTO_API_KEY,
+      'body:texts': ['Hello World!', 'Nice to meet you!'],
+      'body:to': ['de', 'es'],
+    }),
+    lectoTranslateJson: nao<Lecto.TranslateJson>({
+      kind: 'lecto.translate.json',
+      'auth:X-API-Key': process.env.LECTO_API_KEY,
+      'body:to': ['de', 'es'],
+      'body:from': 'en',
+      'body:json': JSON.stringify({
+        hello: {
+          world: 'Hello world!',
+        },
+        nice: {
+          toMeetYou: 'Nice to meet you!',
+        },
+      }),
+      'body:protected_keys': ['nice.toMeetYou'],
+    }),
+    algoliaInsightsEvent: nao<Algolia.PostEvents>({
+      kind: 'algolia.insights.events',
+      'auth:x-algolia-api-key': process.env.ALGOLIA_SEARCH_API_KEY,
+      'auth:x-algolia-application-id': process.env.ALGOLIA_APP_ID,
+      'body:events': [
+        {
+          eventName: 'first',
+          eventType: 'view',
+          index: 'web3nao',
+          userToken: 'adam',
+          objectIDs: ['9780545139700', '9780439784542'],
+        },
+      ],
+    }),
+    algoliaObjectsAddWithoutId: nao<Algolia.AddObjectWithoutId>({
+      kind: 'algolia.objects.addWithoutId',
+      'auth:x-algolia-api-key': process.env.ALGOLIA_ADMIN_API_KEY,
+      'auth:x-algolia-application-id': process.env.ALGOLIA_APP_ID,
+      'body:body': {
+        name: 'first',
+      },
+      'param:indexName': 'web3nao',
+      'subdomain:applicationId': process.env.ALGOLIA_APP_ID,
+    }),
+    algoliaObjectsAddWithId: nao<Algolia.AddObjectWithId>({
+      kind: 'algolia.objects.addWithId',
+      'auth:x-algolia-api-key': process.env.ALGOLIA_ADMIN_API_KEY,
+      'auth:x-algolia-application-id': process.env.ALGOLIA_APP_ID,
+      'body:body': {
+        firstname: 'Adam',
+        lastname: 'nice',
+        company: 'web3nao',
+      },
+      'param:indexName': 'web3nao',
+      'param:objectId': 'myId',
+      'subdomain:applicationId': process.env.ALGOLIA_APP_ID,
+    }),
+    algoliaSearchQueryIndex: nao<Algolia.SearchQueryIndex>({
+      kind: 'algolia.search.queryIndex',
+      'auth:x-algolia-api-key': process.env.ALGOLIA_ADMIN_API_KEY,
+      'auth:x-algolia-application-id': process.env.ALGOLIA_APP_ID,
+      'body:params': 'query=Adam',
+      'param:indexName': 'web3nao',
+      'subdomain:applicationId': process.env.ALGOLIA_APP_ID,
+    }),
+    swapiGetEntities: nao<TheStarWarsApi.GetEntities>({
+      kind: 'thestarwarsapi.core.getEntities',
+      'param:entity': 'films',
+    }),
+    swapiGetEntity: nao<TheStarWarsApi.GetEntity>({
+      kind: 'thestarwarsapi.core.getEntity',
+      'param:entity': 'people',
+      'param:id': 1,
+    }),
+    sidekickListLogpoints: nao<SideKick.ListLogpoints>({
+      kind: 'sidekick.logpoint.list',
+      'auth:ApiKey': process.env.SIDEKICK_API_KEY,
+      'auth:Authorization': process.env.SIDEKICK_API_TOKEN,
+    }),
+    restZeebeStartInstance: nao<RestZeebe.StartInstance>({
+      kind: 'restzeebe.core.start',
+      'auth:Authorization': process.env.RESTZEEBE_API_KEY,
+      'param:workspaceId': process.env.RESTZEEBE_WORKSPACE_ID,
+      'param:clusterId': process.env.RESTZEEBE_CLUSTER_ID,
+      'param:processId': process.env.RESTZEEBE_PROCESS_ID,
+      'body:clientId': process.env.RESTZEEBE_CLIENT_ID,
+      'body:clientSecret': process.env.RESTZEEBE_CLIENT_SECRET,
+      'header:Content-Type': 'application/json',
+      'body:variables': {
+        data: {
+          name: 'Adam',
+        },
+      },
+    }),
+    cloudflareListZones: nao<CloudFlare.ListZones>({
+      kind: 'cloudflare.zones.list',
+      'auth:Authorization': process.env.CLOUDFLARE_API_TOKEN,
+    }),
+    netlifyGetEnvVars: nao<Netlify.GetEnvironmentVariables>({
+      kind: 'netlify.sites.getEnvironmentVariables',
+      'auth:Authorization': process.env.NETLIFY_PAT,
+      'param:accountId': 'adam-urban',
+    }),
+    netlifyListSites: nao<Netlify.ListSites>({
+      kind: 'netlify.sites.listSites',
+      'auth:Authorization': process.env.NETLIFY_PAT,
+    }),
+    easydbPut: nao<EasyDb.Put>({
+      kind: 'easydb.core.put',
+      'auth:token': process.env.EASYDB_TOKEN,
+      'param:databaseId': process.env.EASYDB_UUID,
+      'body:key': 'web3nao',
+      'body:value': 'nice',
+    }),
+    easydbList: nao<EasyDb.List>({
+      kind: 'easydb.core.list',
+      'auth:token': process.env.EASYDB_TOKEN,
+      'param:databaseId': process.env.EASYDB_UUID,
+    }),
+    restDbGet: nao<RestDB.GetItemsFromCollection>({
+      kind: 'restdb.collections.get',
+      'auth:x-apikey': process.env.RESTDB_API_KEY,
+      'subdomain:databaseId': process.env.RESTDB_DBID,
+      'param:collection': 'web3nao',
+    }),
+    clicksendSendEmail: nao<ClickSend.SendEmail>({
+      kind: 'clicksend.email.send',
+      'auth:Authorization': {
+        username: process.env.CLICKSEND_USERNAME,
+        password: process.env.CLICKSEND_API_KEY,
+      },
+      'body:body': {
+        from: {
+          email_address_id: 23143,
+          name: 'Adam',
+        },
+        to: [
+          {
+            email: 'adam.urban@gmail.com',
+            name: 'Adam',
+          },
+        ],
+        subject: 'Hi!',
+        body: 'web3nao is nice!',
+      },
+    }),
+    renderListServices: nao<Render.ListServices>({
+      kind: 'render.services.list',
+      'auth:Authorization': process.env.RENDER_API_KEY,
+    }),
+    parsiqEvents: nao<Parsiq.GetEvents>({
+      kind: 'parsiq.fundamentalData.events',
+      'auth:Authorization': process.env.PARSIQ_API_KEY,
+      'param:chainId': 'eip155-1',
+      'query:block_number_start': 0,
+      'query:block_number_end': 'latest',
+      'query:conract': '0x362bc847A3a9637d3af6624EeC853618a43ed7D2',
+      'query:limit': 1000,
+      'query:topic_0': 'test',
+    }),
+    parsiqSingleBlock: nao<Parsiq.GetSingleBlock>({
+      kind: 'parsiq.blocks.single',
+      'auth:Authorization': process.env.PARSIQ_API_KEY,
+      'param:chainId': 'eip155-80001',
+      'param:blockHash':
+        '0xe4f060e269a1266dddf02f2ec1d3e60579b5241f9adb5fddd31e5aa7ef647914',
+    }),
   }
-  const requestConfig = requestConfigs.ablyPublishMessage
+  const requestConfig = requestConfigs.parsiqSingleBlock
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)
