@@ -17,6 +17,7 @@ The following Endpoints are currently supported.
 * [MicroDev](./api/microdev.md)
 * [OneInch](./api/1inch.md)
 * [OpenSea](./api/opensea.md)
+* [Parsiq](./api/parsiq.md)
 * [Pinata](./api/pinata.md)
 * [Tenderly](./api/tenderly.md)
 * [TheGraph](./api/thegraph.md)
