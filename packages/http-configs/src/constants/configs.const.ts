@@ -3,6 +3,7 @@ import { Ably } from '../configs/ably.config'
 import { AbstractApi } from '../configs/abstractapi.config'
 import { Airtable } from '../configs/airtable.config'
 import { Alchemy } from '../configs/alchemy.config'
+import { Algolia } from '../configs/algolia.config'
 import { ApicAgent } from '../configs/apicagent.config'
 import { Apify } from '../configs/apify.config'
 import { APITemplateIo } from '../configs/apitemplateio.config'
@@ -23,8 +24,10 @@ import { Canny } from '../configs/canny.config'
 import { ChartMogul } from '../configs/chartmogul.config'
 import { Carifai } from '../configs/clarifai.config'
 import { Clearbit } from '../configs/clearbit.config'
+import { ClickSend } from '../configs/clicksend.config'
 import { ClickUp } from '../configs/clickup.config'
 import { Clockify } from '../configs/clockify.config'
+import { CloudFlare } from '../configs/cloudflare.config'
 import { CoinCap } from '../configs/coincap.config'
 import { CoinGecko } from '../configs/coingecko.config'
 import { Coinlayer } from '../configs/coinlayer.config'
@@ -42,6 +45,7 @@ import { Dhl } from '../configs/dhl.config'
 import { Disify } from '../configs/disify.config'
 import { Doppler } from '../configs/doppler.config'
 import { DynaPictures } from '../configs/dynapictures.config'
+import { EasyDb } from '../configs/easydb.config'
 import { Etherscan } from '../configs/etherscan.config'
 import { Eventbrite } from '../configs/eventbrite.config'
 import { Fauna } from '../configs/fauna.config'
@@ -77,6 +81,7 @@ import { Microlink } from '../configs/microlink.config'
 import { Mixpanel } from '../configs/mixpanel.config'
 import { MojoAuth } from '../configs/mojoauth.config'
 import { Nasa } from '../configs/nasa.config'
+import { Netlify } from '../configs/netlify.config'
 import { NewRelic } from '../configs/newrelic.config'
 import { NewsApi } from '../configs/newsapi.config'
 import { Notion } from '../configs/notion.config'
@@ -86,6 +91,7 @@ import { OpenLibrary } from '../configs/openlibrary.config'
 import { OpenSea } from '../configs/opensea.config'
 import { OpenWeatherMap } from '../configs/openweathermap.config'
 import { Ortto } from '../configs/ortto.config'
+import { Parsiq } from '../configs/parsiq.config'
 import { PayPal } from '../configs/paypal.config'
 import { Peekalink } from '../configs/peekalink.config'
 import { Personio } from '../configs/personio.config'
@@ -97,18 +103,23 @@ import { RapidApi } from '../configs/rapidapi.config'
 import { RedisCloud } from '../configs/rediscloud.config'
 import { RemoteOk } from '../configs/remoteok.config'
 import { RemoveBg } from '../configs/removebg.config'
+import { Render } from '../configs/render.config'
+import { RestDB } from '../configs/restdb.config'
+import { RestZeebe } from '../configs/restzeebe.config'
 import { SendGrid } from '../configs/sendgrid.config'
 import { Sentry } from '../configs/sentry.config'
 import { SerpApi } from '../configs/serpapi.config'
 import { SerpStack } from '../configs/serpstack.config'
 import { Shortcut } from '../configs/shortcut.config'
 import { Shrtcode } from '../configs/shrtcode.config'
+import { SideKick } from '../configs/sidekick.config'
 import { Slack } from '../configs/slack.config'
 import { Stackby } from '../configs/stackby.config'
 import { Statically } from '../configs/statically.config'
 import { Supabase } from '../configs/supabase.config'
 import { Tenderly } from '../configs/tenderly.config'
 import { TheGraph } from '../configs/thegraph.config'
+import { TheStarWarsApi } from '../configs/thestarwarsapi.config'
 import { TMDB } from '../configs/tmdb.config'
 import { Trello } from '../configs/trello.config'
 import { Tribe } from '../configs/tribe.config'
@@ -131,6 +142,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['abstractapi', AbstractApi.API],
 ['airtable', Airtable.API],
 ['alchemy', Alchemy.API],
+['algolia', Algolia.API],
 ['apicagent', ApicAgent.API],
 ['apify', Apify.API],
 ['apitemplateio', APITemplateIo.API],
@@ -151,8 +163,10 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['chartmogul', ChartMogul.API],
 ['clarifai', Carifai.API],
 ['clearbit', Clearbit.API],
+['clicksend', ClickSend.API],
 ['clickup', ClickUp.API],
 ['clockify', Clockify.API],
+['cloudflare', CloudFlare.API],
 ['coincap', CoinCap.API],
 ['coingecko', CoinGecko.API],
 ['coinlayer', Coinlayer.API],
@@ -170,6 +184,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['disify', Disify.API],
 ['doppler', Doppler.API],
 ['dynapictures', DynaPictures.API],
+['easydb', EasyDb.API],
 ['etherscan', Etherscan.API],
 ['eventbrite', Eventbrite.API],
 ['fauna', Fauna.API],
@@ -205,6 +220,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['mixpanel', Mixpanel.API],
 ['mojoauth', MojoAuth.API],
 ['nasa', Nasa.API],
+['netlify', Netlify.API],
 ['newrelic', NewRelic.API],
 ['newsapi', NewsApi.API],
 ['notion', Notion.API],
@@ -214,6 +230,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['opensea', OpenSea.API],
 ['openweathermap', OpenWeatherMap.API],
 ['ortto', Ortto.API],
+['parsiq', Parsiq.API],
 ['paypal', PayPal.API],
 ['peekalink', Peekalink.API],
 ['personio', Personio.API],
@@ -225,18 +242,23 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['rediscloud', RedisCloud.API],
 ['remoteok', RemoteOk.API],
 ['removebg', RemoveBg.API],
+['render', Render.API],
+['restdb', RestDB.API],
+['restzeebe', RestZeebe.API],
 ['sendgrid', SendGrid.API],
 ['sentry', Sentry.API],
 ['serpapi', SerpApi.API],
 ['serpstack', SerpStack.API],
 ['shortcut', Shortcut.API],
 ['shrtcode', Shrtcode.API],
+['sidekick', SideKick.API],
 ['slack', Slack.API],
 ['stackby', Stackby.API],
 ['statically', Statically.API],
 ['supabase', Supabase.API],
 ['tenderly', Tenderly.API],
 ['thegraph', TheGraph.API],
+['thestarwarsapi', TheStarWarsApi.API],
 ['tmdb', TMDB.API],
 ['trello', Trello.API],
 ['tribe', Tribe.API],
