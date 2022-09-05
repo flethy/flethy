@@ -136,6 +136,7 @@ import EasyDb from '../../http-configs/src/configs/easydb.config'
 import RestDB from '../../http-configs/src/configs/restdb.config'
 import ClickSend from '../../http-configs/src/configs/clicksend.config'
 import Render from '../../http-configs/src/configs/render.config'
+import Parsiq from '../../http-configs/src/configs/parsiq.config'
 
 async function main() {
   const requestConfigs: {
@@ -1923,8 +1924,25 @@ async function main() {
       kind: 'render.services.list',
       'auth:Authorization': process.env.RENDER_API_KEY,
     }),
+    parsiqEvents: nao<Parsiq.GetEvents>({
+      kind: 'parsiq.fundamentalData.events',
+      'auth:Authorization': process.env.PARSIQ_API_KEY,
+      'param:chainId': 'eip155-1',
+      'query:block_number_start': 0,
+      'query:block_number_end': 'latest',
+      'query:conract': '0x362bc847A3a9637d3af6624EeC853618a43ed7D2',
+      'query:limit': 1000,
+      'query:topic_0': 'test',
+    }),
+    parsiqSingleBlock: nao<Parsiq.GetSingleBlock>({
+      kind: 'parsiq.blocks.single',
+      'auth:Authorization': process.env.PARSIQ_API_KEY,
+      'param:chainId': 'eip155-80001',
+      'param:blockHash':
+        '0xe4f060e269a1266dddf02f2ec1d3e60579b5241f9adb5fddd31e5aa7ef647914',
+    }),
   }
-  const requestConfig = requestConfigs.renderListServices
+  const requestConfig = requestConfigs.parsiqSingleBlock
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)
