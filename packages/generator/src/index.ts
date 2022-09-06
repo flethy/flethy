@@ -137,6 +137,7 @@ import RestDB from '../../http-configs/src/configs/restdb.config'
 import ClickSend from '../../http-configs/src/configs/clicksend.config'
 import Render from '../../http-configs/src/configs/render.config'
 import Parsiq from '../../http-configs/src/configs/parsiq.config'
+import QuickChart from '../../http-configs/src/configs/quickchart.config'
 
 async function main() {
   const requestConfigs: {
@@ -1941,8 +1942,23 @@ async function main() {
       'param:blockHash':
         '0xe4f060e269a1266dddf02f2ec1d3e60579b5241f9adb5fddd31e5aa7ef647914',
     }),
+    quickchart: nao<QuickChart.PlotChart>({
+      kind: 'quickchart.core.chart',
+      'body:chart': {
+        type: 'bar', // Show a bar chart
+        data: {
+          labels: [2012, 2013, 2014, 2015, 2016], // Set X-axis labels
+          datasets: [
+            {
+              label: 'Users', // Create the 'Users' dataset
+              data: [120, 60, 50, 180, 120], // Add data to the chart
+            },
+          ],
+        },
+      },
+    }),
   }
-  const requestConfig = requestConfigs.parsiqSingleBlock
+  const requestConfig = requestConfigs.quickchart
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

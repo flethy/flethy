@@ -99,6 +99,7 @@ import { Pinata } from '../configs/pinata.config'
 import { Pixela } from '../configs/pixela.config'
 import { PostHog } from '../configs/posthog.config'
 import { PurgoMalum } from '../configs/purgomalum.config'
+import { QuickChart } from '../configs/quickchart.config'
 import { RapidApi } from '../configs/rapidapi.config'
 import { RedisCloud } from '../configs/rediscloud.config'
 import { RemoteOk } from '../configs/remoteok.config'
@@ -238,6 +239,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['pixela', Pixela.API],
 ['posthog', PostHog.API],
 ['purgomalum', PurgoMalum.API],
+['quickchart', QuickChart.API],
 ['rapidapi', RapidApi.API],
 ['rediscloud', RedisCloud.API],
 ['remoteok', RemoteOk.API],
