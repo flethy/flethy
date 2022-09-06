@@ -7,7 +7,7 @@
 		"build": "tsc --p ./tsconfig.json"
 	},
 	"devDependencies": {
-		"@babel/core": "7.18.9",
+		"@babel/core": "7.19.0",
 		"@types/node": "18.6.1",
 		"@types/react": "18.0.10",
 		"@types/react-dom": "18.0.5",
