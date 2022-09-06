@@ -1,0 +1,20 @@
+# QuickChart
+
+## Links
+
+* URL: [https://quickchart.io/](https://quickchart.io/)
+* Documentation: [https://quickchart.io/documentation/](https://quickchart.io/documentation/)
+* Tags: web2
+* Category: utils
+* Type: image-processing
+
+## API
+
+### core
+
+#### chart
+
+##### Plot Chart
+
+* Description: Plot Chart
+* Docs: [https://quickchart.io/documentation/](https://quickchart.io/documentation/)

@@ -115,6 +115,7 @@ The following Endpoints are currently supported.
 * [Pixela](./api/pixela.md)
 * [PostHog](./api/posthog.md)
 * [PurgoMalum](./api/purgomalum.md)
+* [QuickChart](./api/quickchart.md)
 * [RapidApi](./api/rapidapi.md)
 * [RedisCloud](./api/rediscloud.md)
 * [RemoteOk](./api/remoteok.md)
