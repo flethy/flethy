@@ -121,6 +121,7 @@ import { Supabase } from '../configs/supabase.config'
 import { Tenderly } from '../configs/tenderly.config'
 import { TheGraph } from '../configs/thegraph.config'
 import { TheStarWarsApi } from '../configs/thestarwarsapi.config'
+import { Tinify } from '../configs/tinify.config'
 import { TMDB } from '../configs/tmdb.config'
 import { Trello } from '../configs/trello.config'
 import { Tribe } from '../configs/tribe.config'
@@ -261,6 +262,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['tenderly', Tenderly.API],
 ['thegraph', TheGraph.API],
 ['thestarwarsapi', TheStarWarsApi.API],
+['tinify', Tinify.API],
 ['tmdb', TMDB.API],
 ['trello', Trello.API],
 ['tribe', Tribe.API],

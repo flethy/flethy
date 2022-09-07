@@ -121,6 +121,7 @@ import { Supabase } from '../../../http-configs/src/configs/supabase.config'
 import { Tenderly } from '../../../http-configs/src/configs/tenderly.config'
 import { TheGraph } from '../../../http-configs/src/configs/thegraph.config'
 import { TheStarWarsApi } from '../../../http-configs/src/configs/thestarwarsapi.config'
+import { Tinify } from '../../../http-configs/src/configs/tinify.config'
 import { TMDB } from '../../../http-configs/src/configs/tmdb.config'
 import { Trello } from '../../../http-configs/src/configs/trello.config'
 import { Tribe } from '../../../http-configs/src/configs/tribe.config'
@@ -410,6 +411,7 @@ configTypes.push({type: getType<TheGraph.QueryById>(), name: 'TheGraph', interfa
 configTypes.push({type: getType<TheGraph.QueryByName>(), name: 'TheGraph', interface: 'QueryByName'})
 configTypes.push({type: getType<TheStarWarsApi.GetEntities>(), name: 'TheStarWarsApi', interface: 'GetEntities'})
 configTypes.push({type: getType<TheStarWarsApi.GetEntity>(), name: 'TheStarWarsApi', interface: 'GetEntity'})
+configTypes.push({type: getType<Tinify.Shrink>(), name: 'Tinify', interface: 'Shrink'})
 configTypes.push({type: getType<TMDB.Trending>(), name: 'TMDB', interface: 'Trending'})
 configTypes.push({type: getType<Trello.BoardGetLists>(), name: 'Trello', interface: 'BoardGetLists'})
 configTypes.push({type: getType<Trello.CardsCreate>(), name: 'Trello', interface: 'CardsCreate'})

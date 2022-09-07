@@ -135,6 +135,7 @@ The following Endpoints are currently supported.
 * [Statically](./api/statically.md)
 * [Supabase](./api/supabase.md)
 * [TheStarWarsApi](./api/thestarwarsapi.md)
+* [Tinify](./api/tinify.md)
 * [TMDB](./api/tmdb.md)
 * [Trello](./api/trello.md)
 * [Tribe](./api/tribe.md)
