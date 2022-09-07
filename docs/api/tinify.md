@@ -12,7 +12,7 @@
 
 ### Authentication
 
-* Authentication: header:basic
+* Authorization: header:basic
 
 ### core
 

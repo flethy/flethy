@@ -31,7 +31,9 @@ export namespace Tinify {
       tags: ['web2'],
       category: 'utils',
       type: 'image-processing',
-      social: {},
+      social: {
+        twitter: 'tinypng',
+      },
     },
     base: 'https://api.tinify.com',
     auth: {
