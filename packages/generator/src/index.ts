@@ -138,6 +138,7 @@ import ClickSend from '../../http-configs/src/configs/clicksend.config'
 import Render from '../../http-configs/src/configs/render.config'
 import Parsiq from '../../http-configs/src/configs/parsiq.config'
 import QuickChart from '../../http-configs/src/configs/quickchart.config'
+import Tinify from '../../http-configs/src/configs/tinify.config'
 
 async function main() {
   const requestConfigs: {
@@ -1957,8 +1958,18 @@ async function main() {
         },
       },
     }),
+    tinifyShrink: nao<Tinify.Shrink>({
+      kind: 'tinify.core.shrink',
+      'auth:Authorization': {
+        username: 'api',
+        password: process.env.TINIFY_API_KEY,
+      },
+      'body:source': {
+        url: 'https://tinypng.com/images/panda-happy.png',
+      },
+    }),
   }
-  const requestConfig = requestConfigs.quickchart
+  const requestConfig = requestConfigs.tinifyShrink
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)
