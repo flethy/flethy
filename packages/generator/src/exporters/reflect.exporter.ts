@@ -128,6 +128,7 @@ import { Tribe } from '../../../http-configs/src/configs/tribe.config'
 import { Twilio } from '../../../http-configs/src/configs/twilio.config'
 import { Typeform } from '../../../http-configs/src/configs/typeform.config'
 import { Unavatar } from '../../../http-configs/src/configs/unavatar.config'
+import { Unlayer } from '../../../http-configs/src/configs/unlayer.config'
 import { Unsplash } from '../../../http-configs/src/configs/unsplash.config'
 import { Up42 } from '../../../http-configs/src/configs/up42.config'
 import { UptimeRobot } from '../../../http-configs/src/configs/uptimerobot.config'
@@ -420,6 +421,8 @@ configTypes.push({type: getType<Twilio.SendSms>(), name: 'Twilio', interface: 'S
 configTypes.push({type: getType<Typeform.CreateApiCreateForm>(), name: 'Typeform', interface: 'CreateApiCreateForm'})
 configTypes.push({type: getType<Unavatar.FromUsernameEmailDomain>(), name: 'Unavatar', interface: 'FromUsernameEmailDomain'})
 configTypes.push({type: getType<Unavatar.FromProvider>(), name: 'Unavatar', interface: 'FromProvider'})
+configTypes.push({type: getType<Unlayer.ListTemplates>(), name: 'Unlayer', interface: 'ListTemplates'})
+configTypes.push({type: getType<Unlayer.ExportHtml>(), name: 'Unlayer', interface: 'ExportHtml'})
 configTypes.push({type: getType<Unsplash.ListPhotos>(), name: 'Unsplash', interface: 'ListPhotos'})
 configTypes.push({type: getType<Unsplash.SearchPhotos>(), name: 'Unsplash', interface: 'SearchPhotos'})
 configTypes.push({type: getType<Up42.AuthRequest>(), name: 'Up42', interface: 'AuthRequest'})
