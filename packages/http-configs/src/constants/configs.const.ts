@@ -128,6 +128,7 @@ import { Tribe } from '../configs/tribe.config'
 import { Twilio } from '../configs/twilio.config'
 import { Typeform } from '../configs/typeform.config'
 import { Unavatar } from '../configs/unavatar.config'
+import { Unlayer } from '../configs/unlayer.config'
 import { Unsplash } from '../configs/unsplash.config'
 import { Up42 } from '../configs/up42.config'
 import { UptimeRobot } from '../configs/uptimerobot.config'
@@ -269,6 +270,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['twilio', Twilio.API],
 ['typeform', Typeform.API],
 ['unavatar', Unavatar.API],
+['unlayer', Unlayer.API],
 ['unsplash', Unsplash.API],
 ['up42', Up42.API],
 ['uptimerobot', UptimeRobot.API],

@@ -142,6 +142,7 @@ The following Endpoints are currently supported.
 * [Twilio](./api/twilio.md)
 * [Typeform](./api/typeform.md)
 * [Unavatar](./api/unavatar.md)
+* [Unlayer](./api/unlayer.md)
 * [Unsplash](./api/unsplash.md)
 * [Up42](./api/up42.md)
 * [UptimeRobot](./api/uptimerobot.md)
