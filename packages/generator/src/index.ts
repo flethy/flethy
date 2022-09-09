@@ -139,6 +139,7 @@ import Render from '../../http-configs/src/configs/render.config'
 import Parsiq from '../../http-configs/src/configs/parsiq.config'
 import QuickChart from '../../http-configs/src/configs/quickchart.config'
 import Tinify from '../../http-configs/src/configs/tinify.config'
+import CongressGov from '../../http-configs/src/configs/congressgov.config'
 
 async function main() {
   const requestConfigs: {
@@ -1968,8 +1969,12 @@ async function main() {
         url: 'https://tinypng.com/images/panda-happy.png',
       },
     }),
+    congressGovListBills: nao<CongressGov.ListBills>({
+      kind: 'congressgov.bill.get',
+      'auth:api_key': process.env.CONGRESSGOV_API_KEY,
+    }),
   }
-  const requestConfig = requestConfigs.tinifyShrink
+  const requestConfig = requestConfigs.congressGovListBills
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

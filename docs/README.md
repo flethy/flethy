@@ -55,6 +55,7 @@ The following Endpoints are currently supported.
 * [ClickUp](./api/clickup.md)
 * [Clockify](./api/clockify.md)
 * [CloudFlare](./api/cloudflare.md)
+* [CongressGov](./api/congressgov.md)
 * [ContentFul](./api/contentful.md)
 * [ConvertKit](./api/convertkit.md)
 * [CountApi](./api/countapi.md)

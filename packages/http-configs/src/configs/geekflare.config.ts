@@ -73,7 +73,7 @@ export namespace Geekflare {
     kind: 'geekflare.core.screenshot'
     'body:url': string
     'body:device'?: DeviceType
-    'body:proxyCountry?': string
+    'body:proxyCountry'?: string
   }
 
   export interface UrlToPdf extends GeekflareBase, RequestParams {
