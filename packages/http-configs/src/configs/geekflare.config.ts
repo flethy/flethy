@@ -11,6 +11,7 @@ export namespace Geekflare {
     dnsRecords: ApiDescriptionEndpoint
     lighthouse: ApiDescriptionEndpoint
     screenshot: ApiDescriptionEndpoint
+    urlToPdf: ApiDescriptionEndpoint
   }
 
   interface GeekflareBase {
@@ -72,7 +73,27 @@ export namespace Geekflare {
     kind: 'geekflare.core.screenshot'
     'body:url': string
     'body:device'?: DeviceType
-    'body:proxyCountry': string
+    'body:proxyCountry?': string
+  }
+
+  export interface UrlToPdf extends GeekflareBase, RequestParams {
+    kind: 'geekflare.core.urlToPdf'
+    'body:url': string
+    'body:device'?: DeviceType
+    'body:proxyCountry'?: string
+    'body:format'?:
+      | 'letter'
+      | 'legal'
+      | 'a0'
+      | 'a1'
+      | 'a2'
+      | 'a3'
+      | 'a4'
+      | 'a5'
+      | 'a6'
+    'body:orientation'?: 'portrait' | 'landscape'
+    'body:margin'?: 'top' | 'bottom' | 'left' | 'right'
+    'body:scale'?: number
   }
 
   export const API: ApiDescription<Entity, Endpoint> = {
@@ -152,6 +173,21 @@ export namespace Geekflare {
           paths: [
             {
               name: 'screenshot',
+              type: 'static',
+            },
+          ],
+        },
+        urlToPdf: {
+          interface: 'UrlToPdf',
+          meta: {
+            title: 'PDF Generator',
+            description: `The PDF Generator API converts any URL to PDF. You can set the file orientation to landscape or portrait, set margins, scale down, and it supports Proxy.`,
+            docs: 'https://geekflare.com/api/docs#screenshot',
+          },
+          method: 'POST',
+          paths: [
+            {
+              name: 'url2pdf',
               type: 'static',
             },
           ],

@@ -43,3 +43,10 @@
 
 * Description: The Screenshot API grabs a full-page screenshot of a website from a given device and location. This helps in knowing rendering correctness and performance of a website from the perspective of geographically distributed users having different devices.
 * Docs: [https://geekflare.com/api/docs#screenshot](https://geekflare.com/api/docs#screenshot)
+
+#### urlToPdf
+
+##### PDF Generator
+
+* Description: The PDF Generator API converts any URL to PDF. You can set the file orientation to landscape or portrait, set margins, scale down, and it supports Proxy.
+* Docs: [https://geekflare.com/api/docs#screenshot](https://geekflare.com/api/docs#screenshot)

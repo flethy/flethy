@@ -1,6 +1,6 @@
 import fs from 'fs'
 import path from 'path'
-import { Property } from 'tst-reflect'
+import { PropertyInfo } from 'tst-reflect'
 import {
   ConfigType,
   ConfigTypeProperty,
@@ -53,7 +53,9 @@ export class ConfigTypeGenerator {
     )
   }
 
-  private static generateProperties(property: Property): ConfigTypeProperty {
+  private static generateProperties(
+    property: PropertyInfo
+  ): ConfigTypeProperty {
     return {
       name: property.name,
       type: property.type.name.toLowerCase(),
