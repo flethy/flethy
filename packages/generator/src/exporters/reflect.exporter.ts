@@ -32,6 +32,7 @@ import { CoinCap } from '../../../http-configs/src/configs/coincap.config'
 import { CoinGecko } from '../../../http-configs/src/configs/coingecko.config'
 import { Coinlayer } from '../../../http-configs/src/configs/coinlayer.config'
 import { CoinMarketCap } from '../../../http-configs/src/configs/coinmarketcap.config'
+import { CongressGov } from '../../../http-configs/src/configs/congressgov.config'
 import { ContentFul } from '../../../http-configs/src/configs/contentful.config'
 import { ConvertKit } from '../../../http-configs/src/configs/convertkit.config'
 import { CountApi } from '../../../http-configs/src/configs/countapi.config'
@@ -218,6 +219,8 @@ configTypes.push({type: getType<Coinlayer.GetList>(), name: 'Coinlayer', interfa
 configTypes.push({type: getType<Coinlayer.GetHistorical>(), name: 'Coinlayer', interface: 'GetHistorical'})
 configTypes.push({type: getType<CoinMarketCap.CryptocurrencyListingsHistorical>(), name: 'CoinMarketCap', interface: 'CryptocurrencyListingsHistorical'})
 configTypes.push({type: getType<CoinMarketCap.CryptocurrencyListingsLatest>(), name: 'CoinMarketCap', interface: 'CryptocurrencyListingsLatest'})
+configTypes.push({type: getType<CongressGov.ListBills>(), name: 'CongressGov', interface: 'ListBills'})
+configTypes.push({type: getType<CongressGov.ListAmendments>(), name: 'CongressGov', interface: 'ListAmendments'})
 configTypes.push({type: getType<ContentFul.ContentGetSpace>(), name: 'ContentFul', interface: 'ContentGetSpace'})
 configTypes.push({type: getType<ContentFul.ContentGetSpaceContentModel>(), name: 'ContentFul', interface: 'ContentGetSpaceContentModel'})
 configTypes.push({type: getType<ContentFul.ContentGetSpaceSingleContentType>(), name: 'ContentFul', interface: 'ContentGetSpaceSingleContentType'})
