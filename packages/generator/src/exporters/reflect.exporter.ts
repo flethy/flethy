@@ -266,6 +266,7 @@ configTypes.push({type: getType<Geekflare.BrokenLink>(), name: 'Geekflare', inte
 configTypes.push({type: getType<Geekflare.DNSRecords>(), name: 'Geekflare', interface: 'DNSRecords'})
 configTypes.push({type: getType<Geekflare.Lighthouse>(), name: 'Geekflare', interface: 'Lighthouse'})
 configTypes.push({type: getType<Geekflare.Screenshot>(), name: 'Geekflare', interface: 'Screenshot'})
+configTypes.push({type: getType<Geekflare.UrlToPdf>(), name: 'Geekflare', interface: 'UrlToPdf'})
 configTypes.push({type: getType<Github.ListRepositoryIssues>(), name: 'Github', interface: 'ListRepositoryIssues'})
 configTypes.push({type: getType<GrafBase.GraphQLQuery>(), name: 'GrafBase', interface: 'GraphQLQuery'})
 configTypes.push({type: getType<GraphJSON.Log>(), name: 'GraphJSON', interface: 'Log'})
