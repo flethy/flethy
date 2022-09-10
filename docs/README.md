@@ -32,6 +32,7 @@ The following Endpoints are currently supported.
 * [Airtable](./api/airtable.md)
 * [Algolia](./api/algolia.md)
 * [ApicAgent](./api/apicagent.md)
+* [APIFlash](./api/apiflash.md)
 * [Apify](./api/apify.md)
 * [APITemplateIo](./api/apitemplateio.md)
 * [Auth0](./api/auth0.md)
