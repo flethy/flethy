@@ -5,6 +5,7 @@ import { Airtable } from '../../../http-configs/src/configs/airtable.config'
 import { Alchemy } from '../../../http-configs/src/configs/alchemy.config'
 import { Algolia } from '../../../http-configs/src/configs/algolia.config'
 import { ApicAgent } from '../../../http-configs/src/configs/apicagent.config'
+import { APIFlash } from '../../../http-configs/src/configs/apiflash.config'
 import { Apify } from '../../../http-configs/src/configs/apify.config'
 import { APITemplateIo } from '../../../http-configs/src/configs/apitemplateio.config'
 import { Auth0 } from '../../../http-configs/src/configs/auth0.config'
@@ -152,6 +153,7 @@ configTypes.push({type: getType<Algolia.AddObjectWithId>(), name: 'Algolia', int
 configTypes.push({type: getType<Algolia.SearchQueryIndex>(), name: 'Algolia', interface: 'SearchQueryIndex'})
 configTypes.push({type: getType<ApicAgent.Get>(), name: 'ApicAgent', interface: 'Get'})
 configTypes.push({type: getType<ApicAgent.Post>(), name: 'ApicAgent', interface: 'Post'})
+configTypes.push({type: getType<APIFlash.Screenshot>(), name: 'APIFlash', interface: 'Screenshot'})
 configTypes.push({type: getType<Apify.ListActors>(), name: 'Apify', interface: 'ListActors'})
 configTypes.push({type: getType<APITemplateIo.CreateImage>(), name: 'APITemplateIo', interface: 'CreateImage'})
 configTypes.push({type: getType<Auth0.GetAuthAccessToken>(), name: 'Auth0', interface: 'GetAuthAccessToken'})

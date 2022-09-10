@@ -1,0 +1,24 @@
+# APIFlash
+
+## Links
+
+* URL: [https://apiflash.com/](https://apiflash.com/)
+* Documentation: [https://apiflash.com/documentation](https://apiflash.com/documentation)
+* Tags: web2
+* Category: utils
+* Type: other
+
+## API
+
+### Authentication
+
+* access_key: query
+
+### core
+
+#### screenshot
+
+##### Screenshot
+
+* Description: Screenshot
+* Docs: [https://apiflash.com/documentation](https://apiflash.com/documentation)

@@ -5,6 +5,7 @@ import { Airtable } from '../configs/airtable.config'
 import { Alchemy } from '../configs/alchemy.config'
 import { Algolia } from '../configs/algolia.config'
 import { ApicAgent } from '../configs/apicagent.config'
+import { APIFlash } from '../configs/apiflash.config'
 import { Apify } from '../configs/apify.config'
 import { APITemplateIo } from '../configs/apitemplateio.config'
 import { Auth0 } from '../configs/auth0.config'
@@ -148,6 +149,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['alchemy', Alchemy.API],
 ['algolia', Algolia.API],
 ['apicagent', ApicAgent.API],
+['apiflash', APIFlash.API],
 ['apify', Apify.API],
 ['apitemplateio', APITemplateIo.API],
 ['auth0', Auth0.API],

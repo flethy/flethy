@@ -140,6 +140,7 @@ import Parsiq from '../../http-configs/src/configs/parsiq.config'
 import QuickChart from '../../http-configs/src/configs/quickchart.config'
 import Tinify from '../../http-configs/src/configs/tinify.config'
 import CongressGov from '../../http-configs/src/configs/congressgov.config'
+import APIFlash from '../../http-configs/src/configs/apiflash.config'
 
 async function main() {
   const requestConfigs: {
@@ -1973,8 +1974,15 @@ async function main() {
       kind: 'congressgov.bill.get',
       'auth:api_key': process.env.CONGRESSGOV_API_KEY,
     }),
+    apiflash: nao<APIFlash.Screenshot>({
+      kind: 'apiflash.core.screenshot',
+      'auth:access_key': process.env.APIFLASH_API_KEY,
+      'query:url': 'https://diypunks.xyz',
+      'query:wait_until': 'page_loaded',
+      'query:response_type': 'json',
+    }),
   }
-  const requestConfig = requestConfigs.congressGovListBills
+  const requestConfig = requestConfigs.apiflash
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)
