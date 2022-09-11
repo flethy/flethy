@@ -18,6 +18,8 @@ export namespace Template {
       name: '',
       url: '',
       docs: '',
+      signup: '',
+      pricing: '',
       tags: ['web3'],
       category: 'aggregation',
       type: 'indexer',

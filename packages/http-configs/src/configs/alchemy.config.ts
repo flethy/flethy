@@ -23,6 +23,8 @@ export namespace Alchemy {
       name: 'Alchemy',
       url: 'https://alchemy.com',
       docs: 'https://docs.alchemy.com/',
+      signup: 'https://auth.alchemyapi.io/signup',
+      pricing: 'https://www.alchemy.com/pricing',
       social: {
         twitter: 'AlchemyPlatform',
       },
