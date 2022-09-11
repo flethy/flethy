@@ -66,6 +66,7 @@ The following Endpoints are currently supported.
 * [DeepL](./api/deepl.md)
 * [DevTo](./api/devto.md)
 * [Dhl](./api/dhl.md)
+* [Directus](./api/directus.md)
 * [Disify](./api/disify.md)
 * [Doppler](./api/doppler.md)
 * [DynaPictures](./api/dynapictures.md)
