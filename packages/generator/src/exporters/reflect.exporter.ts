@@ -252,6 +252,8 @@ configTypes.push({type: getType<DeepL.GlossaryListLanguagePairs>(), name: 'DeepL
 configTypes.push({type: getType<DevTo.PostArticle>(), name: 'DevTo', interface: 'PostArticle'})
 configTypes.push({type: getType<Dhl.TrackingUnified>(), name: 'Dhl', interface: 'TrackingUnified'})
 configTypes.push({type: getType<Directus.Login>(), name: 'Directus', interface: 'Login'})
+configTypes.push({type: getType<Directus.CreateCollection>(), name: 'Directus', interface: 'CreateCollection'})
+configTypes.push({type: getType<Directus.ListCollections>(), name: 'Directus', interface: 'ListCollections'})
 configTypes.push({type: getType<Disify.CheckSingleDomain>(), name: 'Disify', interface: 'CheckSingleDomain'})
 configTypes.push({type: getType<Disify.CheckMassDomain>(), name: 'Disify', interface: 'CheckMassDomain'})
 configTypes.push({type: getType<Disify.CheckSingleEmail>(), name: 'Disify', interface: 'CheckSingleEmail'})

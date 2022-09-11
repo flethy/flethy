@@ -2,13 +2,17 @@
 
 ## Links
 
-* URL: []()
-* Documentation: []()
-* Tags: web3
-* Category: aggregation
-* Type: indexer
+* URL: [https://directus.io/](https://directus.io/)
+* Documentation: [https://docs.directus.io](https://docs.directus.io)
+* Tags: web2
+* Category: marketing
+* Type: content
 
 ## API
+
+### Authentication
+
+* Authorization: header:bearer
 
 ### auth
 
@@ -18,3 +22,19 @@
 
 * Description: Login
 * Docs: [https://docs.directus.io/reference/authentication.html#login](https://docs.directus.io/reference/authentication.html#login)
+
+### collections
+
+#### create
+
+##### Create a Collection
+
+* Description: Create a new Collection. This will create a new table in the database as well.
+* Docs: [https://docs.directus.io/reference/system/collections.html#create-a-collection](https://docs.directus.io/reference/system/collections.html#create-a-collection)
+
+#### list
+
+##### List Collections
+
+* Description: List the available collections.
+* Docs: [https://docs.directus.io/reference/system/collections.html#list-collections](https://docs.directus.io/reference/system/collections.html#list-collections)
