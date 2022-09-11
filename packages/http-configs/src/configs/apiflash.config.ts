@@ -38,7 +38,22 @@ export namespace APIFlash {
     'query:transparent'?: boolean
     'query:wait_for'?: string
     'query:wait_until'?: 'network_idle' | 'dom_loaded' | 'page_loaded'
-    // todo: add remaining query params
+    'query:fail_on_status'?: string
+    'query:accept_language'?: string
+    'query:css'?: string
+    'query:cookies'?: string
+    'query:proxy'?: string
+    'query:latitude'?: string
+    'query:longitude'?: string
+    'query:accuracy'?: number
+    'query:js'?: string
+    'query:headers'?: string
+    'query:time_zone'?: string
+    'query:ip_location'?: string
+    'query:s3_access_key_id'?: string
+    'query:s3_secret_key'?: string
+    'query:s3_bucket'?: string
+    'query:s3_key'?: string
   }
 
   export const API: ApiDescription<Entity, Endpoint> = {
