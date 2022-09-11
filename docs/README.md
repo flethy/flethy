@@ -12,6 +12,7 @@ The following Endpoints are currently supported.
 * [Coinlayer](./api/coinlayer.md)
 * [CoinMarketCap](./api/coinmarketcap.md)
 * [Covalent](./api/covalent.md)
+* [Directus](./api/directus.md)
 * [EasyDb](./api/easydb.md)
 * [Etherscan](./api/etherscan.md)
 * [MicroDev](./api/microdev.md)

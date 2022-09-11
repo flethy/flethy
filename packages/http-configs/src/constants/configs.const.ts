@@ -44,6 +44,7 @@ import { DatoCMS } from '../configs/datocms.config'
 import { DeepL } from '../configs/deepl.config'
 import { DevTo } from '../configs/devto.config'
 import { Dhl } from '../configs/dhl.config'
+import { Directus } from '../configs/directus.config'
 import { Disify } from '../configs/disify.config'
 import { Doppler } from '../configs/doppler.config'
 import { DynaPictures } from '../configs/dynapictures.config'
@@ -188,6 +189,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['deepl', DeepL.API],
 ['devto', DevTo.API],
 ['dhl', Dhl.API],
+['directus', Directus.API],
 ['disify', Disify.API],
 ['doppler', Doppler.API],
 ['dynapictures', DynaPictures.API],

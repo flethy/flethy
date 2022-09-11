@@ -141,6 +141,7 @@ import QuickChart from '../../http-configs/src/configs/quickchart.config'
 import Tinify from '../../http-configs/src/configs/tinify.config'
 import CongressGov from '../../http-configs/src/configs/congressgov.config'
 import APIFlash from '../../http-configs/src/configs/apiflash.config'
+import Directus from '../../http-configs/src/configs/directus.config'
 
 async function main() {
   const requestConfigs: {
@@ -1981,8 +1982,26 @@ async function main() {
       'query:wait_until': 'page_loaded',
       'query:response_type': 'json',
     }),
+    directusLogin: nao<Directus.Login>({
+      kind: 'directus.auth.login',
+      'subdomain:id': process.env.DIRECTUS_ID,
+      'body:email': process.env.DIRECTUS_EMAIL,
+      'body:password': process.env.DIRECTUS_PASSWORD,
+    }),
+    directusCreateCollection: nao<Directus.CreateCollection>({
+      kind: 'directus.collections.create',
+      'subdomain:id': process.env.DIRECTUS_ID,
+      'auth:Authorization': process.env.DIRECTUS_JWT,
+      'body:collection': 'web3nao',
+      'body:schema': {},
+    }),
+    directusListCollections: nao<Directus.ListCollections>({
+      kind: 'directus.collections.list',
+      'subdomain:id': process.env.DIRECTUS_ID,
+      'auth:Authorization': process.env.DIRECTUS_JWT,
+    }),
   }
-  const requestConfig = requestConfigs.apiflash
+  const requestConfig = requestConfigs.directusListCollections
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

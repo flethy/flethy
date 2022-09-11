@@ -44,6 +44,7 @@ import { DatoCMS } from '../../../http-configs/src/configs/datocms.config'
 import { DeepL } from '../../../http-configs/src/configs/deepl.config'
 import { DevTo } from '../../../http-configs/src/configs/devto.config'
 import { Dhl } from '../../../http-configs/src/configs/dhl.config'
+import { Directus } from '../../../http-configs/src/configs/directus.config'
 import { Disify } from '../../../http-configs/src/configs/disify.config'
 import { Doppler } from '../../../http-configs/src/configs/doppler.config'
 import { DynaPictures } from '../../../http-configs/src/configs/dynapictures.config'
@@ -250,6 +251,7 @@ configTypes.push({type: getType<DeepL.TranslatingRequest>(), name: 'DeepL', inte
 configTypes.push({type: getType<DeepL.GlossaryListLanguagePairs>(), name: 'DeepL', interface: 'GlossaryListLanguagePairs'})
 configTypes.push({type: getType<DevTo.PostArticle>(), name: 'DevTo', interface: 'PostArticle'})
 configTypes.push({type: getType<Dhl.TrackingUnified>(), name: 'Dhl', interface: 'TrackingUnified'})
+configTypes.push({type: getType<Directus.Login>(), name: 'Directus', interface: 'Login'})
 configTypes.push({type: getType<Disify.CheckSingleDomain>(), name: 'Disify', interface: 'CheckSingleDomain'})
 configTypes.push({type: getType<Disify.CheckMassDomain>(), name: 'Disify', interface: 'CheckMassDomain'})
 configTypes.push({type: getType<Disify.CheckSingleEmail>(), name: 'Disify', interface: 'CheckSingleEmail'})
