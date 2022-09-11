@@ -41,6 +41,8 @@ export namespace Directus {
       name: 'Directus',
       url: 'https://directus.io/',
       docs: 'https://docs.directus.io',
+      signup: 'https://directus.cloud/register',
+      pricing: 'https://directus.io/pricing/',
       tags: ['web2'],
       category: 'marketing',
       type: 'content',

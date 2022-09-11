@@ -23,6 +23,7 @@ export namespace AbstractApi {
       name: 'AbstractApi',
       url: 'https://www.abstractapi.com/',
       docs: 'https://www.abstractapi.com/api',
+      signup: 'https://app.abstractapi.com/users/signup',
       social: {
         twitter: 'abstractapi',
       },

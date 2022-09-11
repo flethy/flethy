@@ -42,6 +42,8 @@ export namespace Airtable {
       name: 'Airtable',
       url: 'https://airtable.com',
       docs: 'https://airtable.com/api',
+      signup: 'https://airtable.com/signup',
+      pricing: 'https://airtable.com/pricing',
       social: {
         twitter: 'airtable',
         instagram: 'airtable',

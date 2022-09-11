@@ -30,6 +30,8 @@ export namespace Ably {
       name: 'Ably',
       url: 'https://ably.com/',
       docs: 'https://ably.com/docs/api/rest-api',
+      signup: 'https://ably.com/signup',
+      pricing: 'https://ably.com/pricing',
       tags: ['web2'],
       category: 'communication',
       type: 'multichannel',

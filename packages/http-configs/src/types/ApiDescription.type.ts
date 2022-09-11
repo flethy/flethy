@@ -7,6 +7,8 @@ export interface ApiDescription<Entity, Endpoint> {
     name: string
     url: string
     docs: string
+    signup?: string
+    pricing?: string
     social?: {
       twitter?: string
       github?: string

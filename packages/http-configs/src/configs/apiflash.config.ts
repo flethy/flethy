@@ -62,10 +62,14 @@ export namespace APIFlash {
       name: 'APIFlash',
       url: 'https://apiflash.com/',
       docs: 'https://apiflash.com/documentation',
+      signup: 'https://apiflash.com/register',
+      pricing: 'https://apiflash.com/#pricing',
       tags: ['web2'],
       category: 'utils',
       type: 'other',
-      social: {},
+      social: {
+        twitter: 'apiflash_com',
+      },
     },
     base: 'https://api.apiflash.com/v1',
     auth: {

@@ -62,6 +62,8 @@ export namespace Algolia {
       name: 'Algolia',
       url: 'https://www.algolia.com',
       docs: 'https://www.algolia.com/doc/',
+      signup: 'https://www.algolia.com/users/sign_up',
+      pricing: 'https://www.algolia.com/pricing/',
       tags: ['web2'],
       category: 'utils',
       type: 'index',
