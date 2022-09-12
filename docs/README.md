@@ -49,6 +49,7 @@ The following Endpoints are currently supported.
 * [Calendarific](./api/calendarific.md)
 * [Camunda](./api/camunda.md)
 * [Canny](./api/canny.md)
+* [Chargebee](./api/chargebee.md)
 * [ChartMogul](./api/chartmogul.md)
 * [Carifai](./api/clarifai.md)
 * [Clearbit](./api/clearbit.md)

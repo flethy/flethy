@@ -22,6 +22,7 @@ import { CalCom } from '../configs/calcom.config'
 import { Calendarific } from '../configs/calendarific.config'
 import { Camunda } from '../configs/camunda.config'
 import { Canny } from '../configs/canny.config'
+import { Chargebee } from '../configs/chargebee.config'
 import { ChartMogul } from '../configs/chartmogul.config'
 import { Carifai } from '../configs/clarifai.config'
 import { Clearbit } from '../configs/clearbit.config'
@@ -167,6 +168,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['calendarific', Calendarific.API],
 ['camunda', Camunda.API],
 ['canny', Canny.API],
+['chargebee', Chargebee.API],
 ['chartmogul', ChartMogul.API],
 ['clarifai', Carifai.API],
 ['clearbit', Clearbit.API],

@@ -22,6 +22,7 @@ import { CalCom } from '../../../http-configs/src/configs/calcom.config'
 import { Calendarific } from '../../../http-configs/src/configs/calendarific.config'
 import { Camunda } from '../../../http-configs/src/configs/camunda.config'
 import { Canny } from '../../../http-configs/src/configs/canny.config'
+import { Chargebee } from '../../../http-configs/src/configs/chargebee.config'
 import { ChartMogul } from '../../../http-configs/src/configs/chartmogul.config'
 import { Carifai } from '../../../http-configs/src/configs/clarifai.config'
 import { Clearbit } from '../../../http-configs/src/configs/clearbit.config'
@@ -193,6 +194,7 @@ configTypes.push({type: getType<Camunda.ConsoleDeleteClient>(), name: 'Camunda',
 configTypes.push({type: getType<Canny.ListBoards>(), name: 'Canny', interface: 'ListBoards'})
 configTypes.push({type: getType<Canny.RetrieveBoard>(), name: 'Canny', interface: 'RetrieveBoard'})
 configTypes.push({type: getType<Canny.ListPosts>(), name: 'Canny', interface: 'ListPosts'})
+configTypes.push({type: getType<Chargebee.ListSubscriptions>(), name: 'Chargebee', interface: 'ListSubscriptions'})
 configTypes.push({type: getType<ChartMogul.TrackLeadAndFreeTrial>(), name: 'ChartMogul', interface: 'TrackLeadAndFreeTrial'})
 configTypes.push({type: getType<Carifai.MakePredictions>(), name: 'Carifai', interface: 'MakePredictions'})
 configTypes.push({type: getType<Carifai.MakePredictionsWithVersion>(), name: 'Carifai', interface: 'MakePredictionsWithVersion'})
