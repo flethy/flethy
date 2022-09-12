@@ -142,6 +142,7 @@ import Tinify from '../../http-configs/src/configs/tinify.config'
 import CongressGov from '../../http-configs/src/configs/congressgov.config'
 import APIFlash from '../../http-configs/src/configs/apiflash.config'
 import Directus from '../../http-configs/src/configs/directus.config'
+import Chargebee from '../../http-configs/src/configs/chargebee.config'
 
 async function main() {
   const requestConfigs: {
@@ -2000,8 +2001,15 @@ async function main() {
       'subdomain:id': process.env.DIRECTUS_ID,
       'auth:Authorization': process.env.DIRECTUS_JWT,
     }),
+    chargebeeListSubscriptions: nao<Chargebee.ListSubscriptions>({
+      kind: 'chargebee.subscriptions.list',
+      'subdomain:chargebeeSlug': process.env.CHARGEBEE_SLUG,
+      'auth:Authorization': {
+        username: process.env.CHARGEBEE_API_KEY,
+      },
+    }),
   }
-  const requestConfig = requestConfigs.directusListCollections
+  const requestConfig = requestConfigs.chargebeeListSubscriptions
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

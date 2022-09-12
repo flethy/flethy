@@ -101,7 +101,7 @@ export type UTILS_TYPE =
   | 'weather'
 export type DEFI_TYPE = 'liquidity'
 export type BOOKS_TYPE = 'index'
-export type FINANCE_TYPE = 'currency' | 'payment'
+export type FINANCE_TYPE = 'currency' | 'payment' | 'subscription-management'
 export type DATA_TYPE =
   | 'validation'
   | 'resolution'
