@@ -25,6 +25,8 @@ export namespace Bitly {
       name: 'Bitly',
       url: 'https://bitly.com',
       docs: 'https://dev.bitly.com/',
+      signup: 'https://bitly.com/a/sign_up',
+      pricing: 'https://bitly.com/pages/pricing',
       social: {
         twitter: 'bitly',
         instagram: 'bitly',

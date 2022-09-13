@@ -143,6 +143,7 @@ import CongressGov from '../../http-configs/src/configs/congressgov.config'
 import APIFlash from '../../http-configs/src/configs/apiflash.config'
 import Directus from '../../http-configs/src/configs/directus.config'
 import Chargebee from '../../http-configs/src/configs/chargebee.config'
+import ConfigCat from '../../http-configs/src/configs/configcat.config'
 
 async function main() {
   const requestConfigs: {
@@ -2008,8 +2009,17 @@ async function main() {
         username: process.env.CHARGEBEE_API_KEY,
       },
     }),
+    configcatGetValue: nao<ConfigCat.FeatureFlagGetValue>({
+      kind: 'configcat.featureflagValue.get',
+      'auth:Authorization': {
+        username: process.env.CONFIGCAT_BASIC_USERNAME,
+        password: process.env.CONFIGCAT_BASIC_PASSWORD,
+      },
+      'auth:X-CONFIGCAT-SDKKEY': process.env.CONFIGCAT_SDK_KEY,
+      'param:settingKeyOrId': 'isWeb3naoAwesome',
+    }),
   }
-  const requestConfig = requestConfigs.chargebeeListSubscriptions
+  const requestConfig = requestConfigs.configcatGetValue
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

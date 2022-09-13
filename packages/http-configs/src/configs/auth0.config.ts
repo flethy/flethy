@@ -65,6 +65,8 @@ export namespace Auth0 {
       name: 'Auth0',
       url: 'https://auth0.com',
       docs: 'https://auth0.com/docs',
+      signup: 'https://auth0.com/signup',
+      pricing: 'https://auth0.com/pricing/',
       social: {
         twitter: 'auth0',
         github: 'auth0',

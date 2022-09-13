@@ -34,6 +34,7 @@ import { CoinCap } from '../configs/coincap.config'
 import { CoinGecko } from '../configs/coingecko.config'
 import { Coinlayer } from '../configs/coinlayer.config'
 import { CoinMarketCap } from '../configs/coinmarketcap.config'
+import { ConfigCat } from '../configs/configcat.config'
 import { CongressGov } from '../configs/congressgov.config'
 import { ContentFul } from '../configs/contentful.config'
 import { ConvertKit } from '../configs/convertkit.config'
@@ -180,6 +181,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['coingecko', CoinGecko.API],
 ['coinlayer', Coinlayer.API],
 ['coinmarketcap', CoinMarketCap.API],
+['configcat', ConfigCat.API],
 ['congressgov', CongressGov.API],
 ['contentful', ContentFul.API],
 ['convertkit', ConvertKit.API],

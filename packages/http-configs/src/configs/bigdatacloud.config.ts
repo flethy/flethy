@@ -21,6 +21,8 @@ export namespace BigDataCloud {
       name: 'BigDataCloud',
       url: 'https://www.bigdatacloud.com',
       docs: 'https://www.bigdatacloud.com/docs',
+      signup: 'https://www.bigdatacloud.com/account',
+      pricing: 'https://www.bigdatacloud.com/pricing',
       social: {
         twitter: 'BigDataCloud',
         github: 'bigdatacloudapi',

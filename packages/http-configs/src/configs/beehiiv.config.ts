@@ -33,6 +33,8 @@ export namespace Beehiiv {
       name: 'Beehiiv',
       url: 'https://www.beehiiv.com/',
       docs: 'https://www.beehiiv.com/developers/docs',
+      signup: 'https://app.beehiiv.com/signup',
+      pricing: 'https://www.beehiiv.com/pricing',
       tags: ['web2'],
       category: 'communication',
       type: 'email',

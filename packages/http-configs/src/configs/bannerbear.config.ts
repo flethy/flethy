@@ -78,6 +78,8 @@ export namespace BannerBear {
       name: 'BannerBear',
       url: 'https://bannerbear.com',
       docs: 'https://developers.bannerbear.com',
+      signup: 'https://app.bannerbear.com/',
+      pricing: 'https://www.bannerbear.com/pricing/',
       tags: ['web2'],
       category: 'utils',
       type: 'image-processing',
