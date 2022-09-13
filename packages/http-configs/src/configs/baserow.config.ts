@@ -41,6 +41,8 @@ export namespace BaseRow {
       name: 'BaseRow',
       url: 'https://baserow.io/',
       docs: 'https://baserow.io/api-docs/',
+      signup: 'https://baserow.io/signup',
+      pricing: 'https://baserow.io/pricing',
       social: {
         twitter: 'baserow',
       },

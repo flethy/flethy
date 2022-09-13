@@ -54,6 +54,8 @@ export namespace Canny {
       name: 'Canny',
       url: 'https://canny.io',
       docs: 'https://developers.canny.io',
+      signup: 'https://canny.io/register',
+      pricing: 'https://canny.io/pricing',
       social: {
         twitter: 'cannyhq',
       },

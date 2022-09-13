@@ -44,6 +44,8 @@ export namespace CalCom {
       name: 'CalCom',
       url: 'https://cal.com',
       docs: 'https://developer.cal.com/',
+      signup: 'https://app.cal.com/',
+      pricing: 'https://cal.com/pricing',
       social: {
         twitter: 'calcom',
         github: 'calcom',

@@ -30,6 +30,8 @@ export namespace Bruzu {
       name: 'Bruzu',
       url: 'https://bruzu.com',
       docs: 'https://docs.bruzu.com',
+      signup: 'https://img.bruzu.com/twitter',
+      pricing: 'https://bruzu.com/pricing',
       social: {
         twitter: 'bruzuHQ',
         instagram: 'bruzuHQ',

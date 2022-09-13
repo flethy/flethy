@@ -26,6 +26,8 @@ export namespace Apify {
       name: 'Apify',
       url: 'https://apify.com',
       docs: 'https://docs.apify.com',
+      signup: 'https://console.apify.com/sign-up',
+      pricing: 'https://apify.com/pricing',
       social: {
         twitter: 'apify',
         github: 'apify',

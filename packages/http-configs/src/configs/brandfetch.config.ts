@@ -23,6 +23,8 @@ export namespace Brandfetch {
       name: 'Brandfetch',
       url: 'https://brandfetch.com',
       docs: 'https://docs.brandfetch.com',
+      signup: 'https://brandfetch.com/register',
+      pricing: 'https://brandfetch.com/developers/pricing',
       social: {
         twitter: 'brandfetch',
       },

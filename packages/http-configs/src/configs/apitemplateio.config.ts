@@ -25,6 +25,8 @@ export namespace APITemplateIo {
       name: 'APITemplateIo',
       url: 'https://apitemplate.io/',
       docs: 'https://apitemplate.io/apiv2/#section/Introduction',
+      signup: 'https://app.apitemplate.io/accounts/signup',
+      pricing: 'https://apitemplate.io/pricing/',
       social: {
         twitter: 'apitemplateio',
         instagram: 'apitemplateio',

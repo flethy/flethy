@@ -42,6 +42,8 @@ export namespace Calendarific {
       name: 'Calendarific',
       url: 'https://calendarific.com',
       docs: 'https://calendarific.com/api-documentation',
+      signup: 'https://calendarific.com/signup',
+      pricing: 'https://calendarific.com/pricing',
       tags: ['web2'],
       social: {
         twitter: 'calendarific',

@@ -26,6 +26,8 @@ export namespace BambooHR {
       name: 'BambooHR',
       url: 'https://bamboohr.com',
       docs: 'https://documentation.bamboohr.com',
+      signup: 'https://www.bamboohr.com/signup/',
+      pricing: 'https://www.bamboohr.com/pricing/',
       social: {
         twitter: 'bamboohr',
         instagram: 'bamboohr',

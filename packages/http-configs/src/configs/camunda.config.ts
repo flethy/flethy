@@ -85,6 +85,8 @@ export namespace Camunda {
       name: 'Camunda',
       url: 'https://camunda.com',
       docs: 'https://docs.camunda.io/',
+      signup: 'https://accounts.cloud.camunda.io/signup',
+      pricing: 'https://camunda.com/pricing/',
       social: {
         twitter: 'camunda',
         github: 'camunda',
