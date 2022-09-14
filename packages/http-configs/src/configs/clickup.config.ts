@@ -52,6 +52,8 @@ export namespace ClickUp {
       name: 'ClickUp',
       url: 'https://clickup.com',
       docs: 'https://clickup.com/api',
+      signup: 'https://clickup.com/signup',
+      pricing: 'https://clickup.com/pricing',
       social: {
         twitter: 'clickup',
         instagram: 'clickup',

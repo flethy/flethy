@@ -22,6 +22,8 @@ export namespace Clearbit {
       name: 'Clearbit',
       url: 'https://clearbit.com',
       docs: 'https://dashboard.clearbit.com/docs',
+      signup: 'https://dashboard.clearbit.com/signup',
+      pricing: 'https://clearbit.com/pricing',
       social: {
         twitter: 'clearbit',
       },

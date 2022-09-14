@@ -60,6 +60,8 @@ export namespace ContentFul {
       name: 'ContentFul',
       url: 'https://www.contentful.com/',
       docs: 'https://www.contentful.com/developers/docs',
+      signup: 'https://www.contentful.com/sign-up/',
+      pricing: 'https://www.contentful.com/pricing/',
       social: {
         twitter: 'contentful',
         github: 'contentful',

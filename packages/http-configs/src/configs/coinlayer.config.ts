@@ -39,6 +39,8 @@ export namespace Coinlayer {
       name: 'Coinlayer',
       url: 'https://coinlayer.com',
       docs: 'https://coinlayer.com/',
+      signup: 'https://coinlayer.com/signup',
+      pricing: 'https://coinlayer.com/product',
       social: {
         twitter: 'apilayer',
         github: 'coinlayer-api',

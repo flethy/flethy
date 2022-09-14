@@ -44,6 +44,7 @@ import { Covalent } from '../../../http-configs/src/configs/covalent.config'
 import { CurrencyScoop } from '../../../http-configs/src/configs/currencyscoop.config'
 import { DatoCMS } from '../../../http-configs/src/configs/datocms.config'
 import { DeepL } from '../../../http-configs/src/configs/deepl.config'
+import { DevCycle } from '../../../http-configs/src/configs/devcycle.config'
 import { DevTo } from '../../../http-configs/src/configs/devto.config'
 import { Dhl } from '../../../http-configs/src/configs/dhl.config'
 import { Directus } from '../../../http-configs/src/configs/directus.config'
@@ -253,6 +254,7 @@ configTypes.push({type: getType<CurrencyScoop.Convert>(), name: 'CurrencyScoop',
 configTypes.push({type: getType<DatoCMS.Query>(), name: 'DatoCMS', interface: 'Query'})
 configTypes.push({type: getType<DeepL.TranslatingRequest>(), name: 'DeepL', interface: 'TranslatingRequest'})
 configTypes.push({type: getType<DeepL.GlossaryListLanguagePairs>(), name: 'DeepL', interface: 'GlossaryListLanguagePairs'})
+configTypes.push({type: getType<DevCycle.DevCycleToken>(), name: 'DevCycle', interface: 'DevCycleToken'})
 configTypes.push({type: getType<DevTo.PostArticle>(), name: 'DevTo', interface: 'PostArticle'})
 configTypes.push({type: getType<Dhl.TrackingUnified>(), name: 'Dhl', interface: 'TrackingUnified'})
 configTypes.push({type: getType<Directus.Login>(), name: 'Directus', interface: 'Login'})

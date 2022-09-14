@@ -144,6 +144,7 @@ import APIFlash from '../../http-configs/src/configs/apiflash.config'
 import Directus from '../../http-configs/src/configs/directus.config'
 import Chargebee from '../../http-configs/src/configs/chargebee.config'
 import ConfigCat from '../../http-configs/src/configs/configcat.config'
+import DevCycle from '../../http-configs/src/configs/devcycle.config'
 
 async function main() {
   const requestConfigs: {
@@ -2018,8 +2019,20 @@ async function main() {
       'auth:X-CONFIGCAT-SDKKEY': process.env.CONFIGCAT_SDK_KEY,
       'param:settingKeyOrId': 'isWeb3naoAwesome',
     }),
+    devcycleToken: nao<DevCycle.Token>({
+      kind: 'devcycle.auth.token',
+      'body:audience': 'https://api.devcycle.com/',
+      'body:grant_type': 'client_credentials',
+      'body:client_id': process.env.DEVCYCLE_CLIENT_ID,
+      'body:client_secret': process.env.DEVCYCLE_CLIENT_SECRET,
+    }),
+    devcyclelistFeatures: nao<DevCycle.ListFeatures>({
+      kind: 'devcycle.features.list',
+      'auth:Authorization': process.env.DEVCYCLE_JWT,
+      'param:projectId': 'web3nao',
+    }),
   }
-  const requestConfig = requestConfigs.configcatGetValue
+  const requestConfig = requestConfigs.devcyclelistFeatures
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)
