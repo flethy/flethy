@@ -61,6 +61,8 @@ export namespace Courier {
       name: 'Courier',
       url: 'https://www.courier.com/',
       docs: 'https://www.courier.com/docs/',
+      signup: 'https://app.courier.com/signup',
+      pricing: 'https://www.courier.com/pricing/',
       social: {
         twitter: 'trycourier',
         github: 'trycourier',

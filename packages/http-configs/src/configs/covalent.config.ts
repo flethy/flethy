@@ -54,6 +54,7 @@ export namespace Covalent {
       name: 'Covalent',
       url: 'https://www.covalenthq.com',
       docs: 'https://www.covalenthq.com/docs',
+      signup: 'https://www.covalenthq.com/platform/#/auth/register/',
       social: {
         twitter: 'covalent_hq',
       },

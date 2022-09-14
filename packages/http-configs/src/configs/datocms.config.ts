@@ -25,6 +25,8 @@ export namespace DatoCMS {
       name: 'DatoCMS',
       url: 'https://www.datocms.com',
       docs: 'https://www.datocms.com/docs',
+      signup: 'https://dashboard.datocms.com/signup',
+      pricing: 'https://www.datocms.com/pricing',
       tags: ['web2'],
       category: 'marketing',
       type: 'content',

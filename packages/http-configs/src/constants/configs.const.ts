@@ -44,6 +44,7 @@ import { Covalent } from '../configs/covalent.config'
 import { CurrencyScoop } from '../configs/currencyscoop.config'
 import { DatoCMS } from '../configs/datocms.config'
 import { DeepL } from '../configs/deepl.config'
+import { DevCycle } from '../configs/devcycle.config'
 import { DevTo } from '../configs/devto.config'
 import { Dhl } from '../configs/dhl.config'
 import { Directus } from '../configs/directus.config'
@@ -191,6 +192,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['currencyscoop', CurrencyScoop.API],
 ['datocms', DatoCMS.API],
 ['deepl', DeepL.API],
+['devcycle', DevCycle.API],
 ['devto', DevTo.API],
 ['dhl', Dhl.API],
 ['directus', Directus.API],

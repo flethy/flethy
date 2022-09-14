@@ -38,6 +38,8 @@ export namespace CloudFlare {
       name: 'CloudFlare',
       url: 'https://cloudflare.com/',
       docs: 'https://api.cloudflare.com/',
+      signup: 'https://dash.cloudflare.com/sign-up',
+      pricing: 'https://www.cloudflare.com/plans',
       tags: ['web2'],
       category: 'infra',
       type: 'cdn',

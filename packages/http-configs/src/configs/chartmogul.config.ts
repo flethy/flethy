@@ -31,6 +31,8 @@ export namespace ChartMogul {
       name: 'ChartMogul',
       url: 'https://chartmogul.com',
       docs: 'https://dev.chartmogul.com/docs',
+      signup: 'https://app.chartmogul.com/sign_up',
+      pricing: 'https://chartmogul.com/pricing/',
       social: {
         twitter: 'chartmogul',
       },

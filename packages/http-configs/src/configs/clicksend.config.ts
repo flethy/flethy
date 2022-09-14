@@ -53,6 +53,8 @@ export namespace ClickSend {
       name: 'ClickSend',
       url: 'https://clicksend.com',
       docs: 'https://developers.clicksend.com/docs/',
+      signup: 'https://dashboard.clicksend.com/signup',
+      pricing: 'https://www.clicksend.com/pricing/',
       tags: ['web2'],
       category: 'communication',
       type: 'email',

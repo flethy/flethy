@@ -66,6 +66,8 @@ export namespace CoinMarketCap {
       name: 'CoinMarketCap',
       url: 'https://coinmarketcap.com',
       docs: 'https://coinmarketcap.com/api/documentation/v1/',
+      signup: 'https://pro.coinmarketcap.com/signup/',
+      pricing: 'https://coinmarketcap.com/api/pricing/',
       social: {
         twitter: 'coinmarketcap',
         instagram: 'coinmarketcap',

@@ -38,6 +38,8 @@ export namespace Clockify {
       name: 'Clockify',
       url: 'https://clockify.me',
       docs: 'https://clockify.me/developers-api',
+      signup: 'https://app.clockify.me/signup',
+      pricing: 'https://clockify.me/pricing',
       social: {
         twitter: 'clockify',
         instagram: 'clockify.me',

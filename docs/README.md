@@ -66,6 +66,7 @@ The following Endpoints are currently supported.
 * [CurrencyScoop](./api/currencyscoop.md)
 * [DatoCMS](./api/datocms.md)
 * [DeepL](./api/deepl.md)
+* [DevCycle](./api/devcycle.md)
 * [DevTo](./api/devto.md)
 * [Dhl](./api/dhl.md)
 * [Directus](./api/directus.md)

@@ -40,6 +40,8 @@ export namespace ConvertKit {
       name: 'ConvertKit',
       url: 'https://convertkit.com',
       docs: 'https://developers.convertkit.com',
+      signup: 'https://app.convertkit.com/users/signup',
+      pricing: 'https://convertkit.com/pricing',
       social: {
         twitter: 'convertkit',
         instagram: 'convertkit',

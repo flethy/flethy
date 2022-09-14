@@ -53,6 +53,8 @@ export namespace Carifai {
       name: 'Carifai',
       url: 'https://clarifai.com',
       docs: 'https://docs.clarifai.com',
+      signup: 'https://clarifai.com/signup',
+      pricing: 'https://www.clarifai.com/pricing',
       social: {
         twitter: 'clarifai',
         instagram: 'clarifai',
