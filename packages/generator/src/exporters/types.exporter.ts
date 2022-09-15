@@ -1,10 +1,10 @@
 import * as fs from 'fs'
 import * as path from 'path'
-import { ApiDescription } from '../../../http-configs/src/types/ApiDescription.type'
+import { ApiDescription } from '../../../connectors/src/types/ApiDescription.type'
 import { logger } from '../utils/Logger'
 
 const CONFIGS_DIR_NAME = 'configs'
-const HTTP_CONFIGS_DIR_NAME = 'http-configs'
+const HTTP_CONFIGS_DIR_NAME = 'connectors'
 const CONFIGS_DIR = path.join(
   __dirname,
   '..',
@@ -38,7 +38,7 @@ export class TypesExporter {
         const api: ApiDescription<any, any> = instanceOfConfig.API
 
         tempImports.push(
-          `import { ${instanceOfConfig.API.meta.name} } from '../../../http-configs/src/configs/${configName}'`
+          `import { ${instanceOfConfig.API.meta.name} } from '../../../connectors/src/configs/${configName}'`
         )
 
         Object.keys(api.api).forEach((key) => {

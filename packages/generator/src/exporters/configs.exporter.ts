@@ -3,7 +3,7 @@ import * as path from 'path'
 import { logger } from '../utils/Logger'
 
 const CONFIGS_DIR_NAME = 'configs'
-const HTTP_CONFIGS_DIR_NAME = 'http-configs'
+const HTTP_CONFIGS_DIR_NAME = 'connectors'
 const CONFIGS_DIR = path.join(
   __dirname,
   '..',

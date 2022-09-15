@@ -1,7 +1,7 @@
-import { CoinGecko } from '../../http-configs/src/configs/coingecko.config'
+import { CoinGecko } from '../../connectors/src/configs/coingecko.config'
 import { getType, Type } from 'tst-reflect'
-import Clearbit from '../../http-configs/src/configs/clearbit.config'
-import Courier from '../../http-configs/src/configs/courier.config'
+import Clearbit from '../../connectors/src/configs/clearbit.config'
+import Courier from '../../connectors/src/configs/courier.config'
 
 function main() {
   // let test = eval(`CoinGecko.CoinById`)
