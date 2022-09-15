@@ -121,6 +121,7 @@ The following Endpoints are currently supported.
 * [Personio](./api/personio.md)
 * [Pixela](./api/pixela.md)
 * [PostHog](./api/posthog.md)
+* [ProductHunt](./api/producthunt.md)
 * [PurgoMalum](./api/purgomalum.md)
 * [QuickChart](./api/quickchart.md)
 * [RapidApi](./api/rapidapi.md)

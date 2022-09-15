@@ -105,6 +105,7 @@ import { Personio } from '../configs/personio.config'
 import { Pinata } from '../configs/pinata.config'
 import { Pixela } from '../configs/pixela.config'
 import { PostHog } from '../configs/posthog.config'
+import { ProductHunt } from '../configs/producthunt.config'
 import { PurgoMalum } from '../configs/purgomalum.config'
 import { QuickChart } from '../configs/quickchart.config'
 import { RapidApi } from '../configs/rapidapi.config'
@@ -254,6 +255,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['pinata', Pinata.API],
 ['pixela', Pixela.API],
 ['posthog', PostHog.API],
+['producthunt', ProductHunt.API],
 ['purgomalum', PurgoMalum.API],
 ['quickchart', QuickChart.API],
 ['rapidapi', RapidApi.API],

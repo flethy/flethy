@@ -105,6 +105,7 @@ import { Personio } from '../../../connectors/src/configs/personio.config'
 import { Pinata } from '../../../connectors/src/configs/pinata.config'
 import { Pixela } from '../../../connectors/src/configs/pixela.config'
 import { PostHog } from '../../../connectors/src/configs/posthog.config'
+import { ProductHunt } from '../../../connectors/src/configs/producthunt.config'
 import { PurgoMalum } from '../../../connectors/src/configs/purgomalum.config'
 import { QuickChart } from '../../../connectors/src/configs/quickchart.config'
 import { RapidApi } from '../../../connectors/src/configs/rapidapi.config'
@@ -395,6 +396,7 @@ configTypes.push({type: getType<Pixela.CreateGraph>(), name: 'Pixela', interface
 configTypes.push({type: getType<Pixela.GetGraph>(), name: 'Pixela', interface: 'GetGraph'})
 configTypes.push({type: getType<Pixela.PostValue>(), name: 'Pixela', interface: 'PostValue'})
 configTypes.push({type: getType<PostHog.SendEvent>(), name: 'PostHog', interface: 'SendEvent'})
+configTypes.push({type: getType<ProductHunt.GetCollections>(), name: 'ProductHunt', interface: 'GetCollections'})
 configTypes.push({type: getType<PurgoMalum.Profanity>(), name: 'PurgoMalum', interface: 'Profanity'})
 configTypes.push({type: getType<QuickChart.PlotChart>(), name: 'QuickChart', interface: 'PlotChart'})
 configTypes.push({type: getType<RapidApi.ArticleExtractor>(), name: 'RapidApi', interface: 'ArticleExtractor'})

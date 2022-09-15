@@ -1,0 +1,24 @@
+# ProductHunt
+
+## Links
+
+* URL: [https://www.producthunt.com](https://www.producthunt.com)
+* Documentation: [https://api.producthunt.com/v1/docs](https://api.producthunt.com/v1/docs)
+* Tags: web2
+* Category: news
+* Type: software
+
+## API
+
+### Authentication
+
+* Authorization: header:bearer
+
+### collections
+
+#### get
+
+##### Get newest collections
+
+* Description: Get newest collections
+* Docs: [https://api.producthunt.com/v1/docs/collections/collections_index_get_newest_collections](https://api.producthunt.com/v1/docs/collections/collections_index_get_newest_collections)

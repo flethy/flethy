@@ -146,6 +146,7 @@ import Chargebee from '../../connectors/src/configs/chargebee.config'
 import ConfigCat from '../../connectors/src/configs/configcat.config'
 import DevCycle from '../../connectors/src/configs/devcycle.config'
 import Hygraph from '../../connectors/src/configs/hygraph.config'
+import ProductHunt from '../../connectors/src/configs/producthunt.config'
 
 async function main() {
   const requestConfigs: {
@@ -2060,8 +2061,12 @@ async function main() {
       'auth:Authorization': process.env.GITHUB_PAT,
       'header:accept': 'application/vnd.github+json',
     }),
+    producthuntGetCollections: nao<ProductHunt.GetCollections>({
+      kind: 'producthunt.collections.get',
+      'auth:Authorization': process.env.PRODUCTHUNT_TOKEN,
+    }),
   }
-  const requestConfig = requestConfigs.githubGetTree
+  const requestConfig = requestConfigs.producthuntGetCollections
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)
