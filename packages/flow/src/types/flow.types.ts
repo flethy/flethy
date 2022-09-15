@@ -1,4 +1,4 @@
-import { RequestParams } from '@web3nao/http-configs/dist/types/Request.types'
+import { RequestParams } from '@flethy/connectors/dist/types/Request.types'
 
 export interface FlowNode extends RequestParams {
   id: string

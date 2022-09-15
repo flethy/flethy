@@ -1,7 +1,7 @@
 {
-  "name": "@web3nao/generator",
+  "name": "@flethy/generator",
   "version": "1.0.0",
-  "description": "toolkit for web3 services",
+  "description": "toolkit for web services",
   "keywords": [],
   "main": "index.ts",
   "scripts": {

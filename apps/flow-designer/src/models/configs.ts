@@ -1,5 +1,5 @@
 import { Instance, types, cast } from 'mobx-state-tree'
-import { CONFIG_TYPES } from '@web3nao/http-configs'
+import { CONFIG_TYPES } from '@flethy/connectors'
 
 export const ConfigProperty = types.model({
 	name: types.string,

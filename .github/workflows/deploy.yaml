@@ -44,6 +44,6 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Publish
-        run: pnpm publish --filter @web3nao/http-configs --no-git-checks
+        run: pnpm publish --filter @flethy/connectors --no-git-checks
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

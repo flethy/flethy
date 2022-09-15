@@ -1,7 +1,7 @@
 {
-  "name": "@web3nao/http-configs",
+  "name": "@flethy/connectors",
   "version": "0.0.1",
-  "description": "web3nao http configs",
+  "description": "@flethy/connectors",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "browser": {
@@ -14,7 +14,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "repository": "github:web3nao/web3nao",
+  "repository": "github:flethy/flethy",
   "author": "adam.urban@gmail.com",
   "license": "MIT",
   "keywords": [

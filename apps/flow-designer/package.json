@@ -15,7 +15,7 @@
 		"@chakra-ui/system": "^2.2.9",
 		"@emotion/react": "^11.10.4",
 		"@emotion/styled": "^11.10.4",
-		"@web3nao/http-configs": "workspace:*",
+		"@flethy/connectors": "workspace:*",
 		"axios": "^0.27.2",
 		"framer-motion": "^7.3.2",
 		"i18next": "^21.9.1",

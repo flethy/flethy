@@ -1,7 +1,7 @@
-import { FetchParams } from '@web3nao/http-configs/dist/types/FetchParams.type'
+import { FetchParams } from '@flethy/connectors/dist/types/FetchParams.type'
 import { FlowNode, FlowNodeResponse } from '../types/flow.types'
 import axios from 'axios'
-import { nao } from '@web3nao/http-configs'
+import { nao } from '@flethy/connectors'
 
 export class ExecutionUtils {
   public static async execute(node: FlowNode): Promise<FlowNodeResponse> {

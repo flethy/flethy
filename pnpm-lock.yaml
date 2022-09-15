@@ -20,11 +20,11 @@ importers:
       '@chakra-ui/system': ^2.2.9
       '@emotion/react': ^11.10.4
       '@emotion/styled': ^11.10.4
+      '@flethy/connectors': workspace:*
       '@types/node': 18.7.16
       '@types/react': 18.0.18
       '@types/react-dom': 18.0.6
       '@vitejs/plugin-react': 2.1.0
-      '@web3nao/http-configs': workspace:*
       autoprefixer: ^10.4.8
       axios: ^0.27.2
       eslint-config-custom: workspace:*
@@ -53,11 +53,11 @@ importers:
       vite: 3.1.0
     dependencies:
       '@chakra-ui/icons': 2.0.9_t3ehvuuqn76q3rgsqchbz6ue7u
-      '@chakra-ui/react': 2.3.2_c75nlvk7ihizl2gpsegkwladgi
+      '@chakra-ui/react': 2.3.2_ie36cp5aphvhhrl3lzi63r6eiu
       '@chakra-ui/system': 2.2.9_hfzxdiydbrbhhfpkwuv3jhvwmq
       '@emotion/react': 11.10.4_p6fq7jdyqwnykllwwkx4b6uid4
       '@emotion/styled': 11.10.4_lxst47gwu5lqjtx2guwl7nfnjm
-      '@web3nao/http-configs': link:../../packages/http-configs
+      '@flethy/connectors': link:../../packages/http-configs
       axios: 0.27.2
       framer-motion: 7.3.2_biqbaboplfbrettd7655fr4n2y
       i18next: 21.9.1
@@ -86,7 +86,7 @@ importers:
       prettier: 2.7.1
       rollup-plugin-analyzer: 4.0.0
       sass: 1.54.9
-      tailwindcss: 3.1.8
+      tailwindcss: 3.1.8_postcss@8.4.16
       tsconfig: link:../../packages/tsconfig
       typescript: 4.8.2
       vite: 3.1.0_sass@1.54.9
@@ -101,10 +101,10 @@ importers:
 
   packages/flow:
     specifiers:
+      '@flethy/connectors': workspace:*
       '@types/node': ^18.7.16
       '@typescript-eslint/eslint-plugin': ^5.36.2
       '@typescript-eslint/parser': ^5.36.2
-      '@web3nao/http-configs': workspace:*
       axios: ^0.27.2
       eslint: ^8.23.0
       eslint-config-airbnb-base: ^15.0.0
@@ -120,10 +120,10 @@ importers:
       axios: 0.27.2
       jsonata: 1.8.6
     devDependencies:
+      '@flethy/connectors': link:../http-configs
       '@types/node': 18.7.16
       '@typescript-eslint/eslint-plugin': 5.36.2_iurrlxgqcgk5svigzxakafpeuu
       '@typescript-eslint/parser': 5.36.2_yqf6kl63nyoq5megxukfnom5rm
-      '@web3nao/http-configs': link:../http-configs
       eslint: 8.23.0
       eslint-config-airbnb-base: 15.0.0_faomjyrlgqmwswvqymymzkxcqi
       eslint-config-prettier: 8.5.0_eslint@8.23.0
@@ -253,7 +253,7 @@ importers:
       prettier: 2.6.2
       rollup-plugin-analyzer: 4.0.0
       sass: 1.54.0
-      tailwindcss: 3.1.6
+      tailwindcss: 3.1.6_postcss@8.4.14
       tsconfig: link:../tsconfig
       typescript: 4.7.4
       vite: 3.0.3_sass@1.54.0
@@ -287,7 +287,7 @@ importers:
       prettier: 2.6.2
       rollup-plugin-analyzer: 4.0.0
       sass: 1.54.0
-      tailwindcss: 3.1.6
+      tailwindcss: 3.1.6_postcss@8.4.14
       tsconfig: link:../tsconfig
       typescript: 4.7.4
       vite: 3.0.3_sass@1.54.0
@@ -1560,7 +1560,7 @@ packages:
       react: 18.2.0
     dev: false
 
-  /@chakra-ui/react/2.3.2_c75nlvk7ihizl2gpsegkwladgi:
+  /@chakra-ui/react/2.3.2_ie36cp5aphvhhrl3lzi63r6eiu:
     resolution: {integrity: sha512-qOcDLbA1x4pnpJPtF4YJ7pZzK/ki6SoQl9Vj7fsR+hJw1lt3y1475NSyYGiA6qgho/8twUgYLhcdrTbQPcmOHg==}
     peerDependencies:
       '@emotion/react': ^11.0.0
@@ -1610,8 +1610,8 @@ packages:
       '@chakra-ui/tabs': 2.1.1_t3ehvuuqn76q3rgsqchbz6ue7u
       '@chakra-ui/tag': 2.0.9_t3ehvuuqn76q3rgsqchbz6ue7u
       '@chakra-ui/textarea': 2.0.10_t3ehvuuqn76q3rgsqchbz6ue7u
-      '@chakra-ui/theme': 2.1.11
-      '@chakra-ui/toast': 3.0.10_xcebru2mtxwtnu5zwtepdcu23e
+      '@chakra-ui/theme': 2.1.11_ixdfg65nzjkaw36n6br7hh33cu
+      '@chakra-ui/toast': 3.0.10_njbrph2kmna6oab6at54psyzmy
       '@chakra-ui/tooltip': 2.0.10_xcebru2mtxwtnu5zwtepdcu23e
       '@chakra-ui/transition': 2.0.9_axhznocaid242nqelsaasbb6ay
       '@chakra-ui/utils': 2.0.9
@@ -1783,25 +1783,27 @@ packages:
       react: 18.2.0
     dev: false
 
-  /@chakra-ui/theme-tools/2.0.11:
+  /@chakra-ui/theme-tools/2.0.11_ixdfg65nzjkaw36n6br7hh33cu:
     resolution: {integrity: sha512-0Juf98bAyOgnBeQ39nMKWqRsOxZDw75BbAB8o0oVyjhYVS1wJh7tFX1ZRV8N/+AN6fuRXEznZPpyUh3J+ZTiRg==}
     peerDependencies:
       '@chakra-ui/styled-system': '>=2.0.0'
     dependencies:
       '@chakra-ui/anatomy': 2.0.6
+      '@chakra-ui/styled-system': 2.3.1
       '@ctrl/tinycolor': 3.4.1
     dev: false
 
-  /@chakra-ui/theme/2.1.11:
+  /@chakra-ui/theme/2.1.11_ixdfg65nzjkaw36n6br7hh33cu:
     resolution: {integrity: sha512-gI0NLU6wO/5cRq8gbDHuy24Y/ZhJxN4D/2uucNN9is3h+d58/En5jV3fwzZW8PLiLKW/T2CmbYWEZWV2YkcUVA==}
     peerDependencies:
       '@chakra-ui/styled-system': '>=2.0.0'
     dependencies:
       '@chakra-ui/anatomy': 2.0.6
-      '@chakra-ui/theme-tools': 2.0.11
+      '@chakra-ui/styled-system': 2.3.1
+      '@chakra-ui/theme-tools': 2.0.11_ixdfg65nzjkaw36n6br7hh33cu
     dev: false
 
-  /@chakra-ui/toast/3.0.10_xcebru2mtxwtnu5zwtepdcu23e:
+  /@chakra-ui/toast/3.0.10_njbrph2kmna6oab6at54psyzmy:
     resolution: {integrity: sha512-i/oEtzmarO0hM6fxa55OmA8ZGkZv9b+vIC2xs5kQ/C0rJaC0ycibok8srq2Stjq9309fZNezyzThQp6e9acUYQ==}
     peerDependencies:
       '@chakra-ui/system': 2.2.9
@@ -1815,7 +1817,7 @@ packages:
       '@chakra-ui/react-use-timeout': 2.0.1_react@18.2.0
       '@chakra-ui/react-use-update-effect': 2.0.3_react@18.2.0
       '@chakra-ui/system': 2.2.9_hfzxdiydbrbhhfpkwuv3jhvwmq
-      '@chakra-ui/theme': 2.1.11
+      '@chakra-ui/theme': 2.1.11_ixdfg65nzjkaw36n6br7hh33cu
       framer-motion: 7.3.2_biqbaboplfbrettd7655fr4n2y
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
@@ -7072,10 +7074,12 @@ packages:
     resolution: {integrity: sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==}
     engines: {node: '>= 0.4'}
 
-  /tailwindcss/3.1.6:
+  /tailwindcss/3.1.6_postcss@8.4.14:
     resolution: {integrity: sha512-7skAOY56erZAFQssT1xkpk+kWt2NrO45kORlxFPXUt3CiGsVPhH1smuH5XoDH6sGPXLyBv+zgCKA2HWBsgCytg==}
     engines: {node: '>=12.13.0'}
     hasBin: true
+    peerDependencies:
+      postcss: ^8.0.9
     dependencies:
       arg: 5.0.2
       chokidar: 3.5.3
@@ -7103,10 +7107,12 @@ packages:
       - ts-node
     dev: true
 
-  /tailwindcss/3.1.8:
+  /tailwindcss/3.1.8_postcss@8.4.16:
     resolution: {integrity: sha512-YSneUCZSFDYMwk+TGq8qYFdCA3yfBRdBlS7txSq0LUmzyeqRe3a8fBQzbz9M3WS/iFT4BNf/nmw9mEzrnSaC0g==}
     engines: {node: '>=12.13.0'}
     hasBin: true
+    peerDependencies:
+      postcss: ^8.0.9
     dependencies:
       arg: 5.0.2
       chokidar: 3.5.3

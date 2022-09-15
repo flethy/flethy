@@ -5,7 +5,7 @@ dotenv.config()
 
 // locally using pretty config: https://github.com/pinojs/pino-pretty
 const localConfig = {
-  name: 'web3nao',
+  name: 'flethy',
   level: 'debug',
   transport: {
     target: 'pino-pretty',
@@ -13,7 +13,7 @@ const localConfig = {
 }
 
 const config = {
-  name: 'web3nao',
+  name: 'flethy',
   level: 'debug',
 }
 
