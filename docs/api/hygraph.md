@@ -1,0 +1,24 @@
+# Hygraph
+
+## Links
+
+* URL: [https://hygraph.com](https://hygraph.com)
+* Documentation: [https://hygraph.com/docs](https://hygraph.com/docs)
+* Tags: web2
+* Category: marketing
+* Type: content
+
+## API
+
+### Authentication
+
+* Authorization: header:bearer
+
+### content
+
+#### graphql
+
+##### Content API
+
+* Description: Content API
+* Docs: [https://hygraph.com/docs](https://hygraph.com/docs)

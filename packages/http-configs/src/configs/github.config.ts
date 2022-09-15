@@ -5,8 +5,11 @@ import {
 import { RequestParams } from '../types/Request.types'
 
 export namespace Github {
-  export type Entity = { issues: any }
-  export type Endpoint = { listrepository: ApiDescriptionEndpoint }
+  export type Entity = { issues: any; repositories: any; gitDatabase: any }
+  export type Endpoint =
+    | { listrepository: ApiDescriptionEndpoint }
+    | { getContent: ApiDescriptionEndpoint }
+    | { getTree: ApiDescriptionEndpoint }
 
   export interface ListRepositoryIssues extends RequestParams {
     kind: 'github.issues.listrepository'
@@ -26,12 +29,34 @@ export namespace Github {
     'query:per_page'?: number
   }
 
+  export interface RepositoriesGetContent extends RequestParams {
+    kind: 'github.repositories.getContent'
+    'param:owner': string
+    'param:repo': string
+    'param:path': string
+    'auth:Authorization'?: string
+    'query:ref'?: string
+    'header:accept': 'application/vnd.github+json'
+  }
+
+  export interface GitDatabaseGetTree extends RequestParams {
+    kind: 'github.gitDatabase.getTree'
+    'param:owner': string
+    'param:repo': string
+    'param:tree_sha': string
+    'auth:Authorization'?: string
+    'query:recursive'?: 0 | 1 | true | false
+    'header:accept': 'application/vnd.github+json'
+  }
+
   export const API: ApiDescription<Entity, Endpoint> = {
     meta: {
       id: 'github',
       name: 'Github',
       url: 'https://github.com',
       docs: 'https://docs.github.com/en/rest',
+      signup: 'https://github.com/signup',
+      pricing: 'https://github.com/pricing',
       social: {
         twitter: 'github',
       },
@@ -71,6 +96,88 @@ export namespace Github {
             {
               name: 'issues',
               type: 'static',
+            },
+          ],
+        },
+      },
+      repositories: {
+        getContent: {
+          interface: 'RepositoriesGetContent',
+          meta: {
+            title: 'Get repository content',
+            description:
+              'Gets the contents of a file or directory in a repository. Specify the file path or directory in :path.',
+            docs: 'https://docs.github.com/en/rest/repos/contents#get-repository-content',
+          },
+          method: 'GET',
+          auth: {
+            Authorization: {
+              type: 'header:token',
+            },
+          },
+          paths: [
+            {
+              name: 'repos',
+              type: 'static',
+            },
+            {
+              name: 'owner',
+              type: 'param',
+            },
+            {
+              name: 'repo',
+              type: 'param',
+            },
+            {
+              name: 'contents',
+              type: 'static',
+            },
+            {
+              name: 'path',
+              type: 'param',
+            },
+          ],
+        },
+      },
+      gitDatabase: {
+        getTree: {
+          interface: 'GitDatabaseGetTree',
+          meta: {
+            title: 'Get a tree',
+            description:
+              'Returns a single tree using the SHA1 value for that tree.',
+            docs: 'https://docs.github.com/en/rest/git/trees#get-a-tree',
+          },
+          method: 'GET',
+          auth: {
+            Authorization: {
+              type: 'header:token',
+            },
+          },
+          paths: [
+            {
+              name: 'repos',
+              type: 'static',
+            },
+            {
+              name: 'owner',
+              type: 'param',
+            },
+            {
+              name: 'repo',
+              type: 'param',
+            },
+            {
+              name: 'git',
+              type: 'static',
+            },
+            {
+              name: 'trees',
+              type: 'static',
+            },
+            {
+              name: 'tree_sha',
+              type: 'param',
             },
           ],
         },

@@ -41,6 +41,8 @@ export namespace Jira {
       name: 'Jira',
       url: 'https://www.atlassian.com/software/jira',
       docs: 'https://support.atlassian.com/jira-software-cloud/resources/',
+      signup: 'https://www.atlassian.com/try/cloud/signup',
+      pricing: 'https://www.atlassian.com/software/jira/pricing',
       social: {
         twitter: 'atlassian',
       },

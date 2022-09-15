@@ -67,6 +67,8 @@ export namespace GraphJSON {
       name: 'GraphJSON',
       url: 'https://www.graphjson.com/',
       docs: 'https://docs.graphjson.com/',
+      signup: 'https://www.graphjson.com/register',
+      pricing: 'https://www.graphjson.com/pricing',
       tags: ['web2'],
       category: 'analytics',
       type: 'webinsights',

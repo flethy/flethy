@@ -36,6 +36,8 @@ export namespace Lecto {
       name: 'Lecto',
       url: 'https://lecto.ai/',
       docs: 'https://dashboard.lecto.ai/docs',
+      signup: 'https://dashboard.lecto.ai/signin',
+      pricing: 'https://lecto.ai/#pricing',
       tags: ['web2'],
       category: 'utils',
       type: 'translation',

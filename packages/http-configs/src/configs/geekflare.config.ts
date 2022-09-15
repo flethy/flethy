@@ -102,6 +102,8 @@ export namespace Geekflare {
       name: 'Geekflare',
       url: 'https://geekflare.com',
       docs: 'https://geekflare.com/api/docs',
+      signup: 'https://geekflare.com',
+      pricing: 'https://geekflare.com/api/pricing',
       social: {
         twitter: 'geekflarehq',
       },

@@ -69,6 +69,7 @@ import { HostIo } from '../../../http-configs/src/configs/hostio.config'
 import { Hubspot } from '../../../http-configs/src/configs/hubspot.config'
 import { HunterIo } from '../../../http-configs/src/configs/hunterio.config'
 import { Hybiscus } from '../../../http-configs/src/configs/hybiscus.config'
+import { Hygraph } from '../../../http-configs/src/configs/hygraph.config'
 import { Jira } from '../../../http-configs/src/configs/jira.config'
 import { Klaviyo } from '../../../http-configs/src/configs/klaviyo.config'
 import { Lecto } from '../../../http-configs/src/configs/lecto.config'
@@ -254,7 +255,8 @@ configTypes.push({type: getType<CurrencyScoop.Convert>(), name: 'CurrencyScoop',
 configTypes.push({type: getType<DatoCMS.Query>(), name: 'DatoCMS', interface: 'Query'})
 configTypes.push({type: getType<DeepL.TranslatingRequest>(), name: 'DeepL', interface: 'TranslatingRequest'})
 configTypes.push({type: getType<DeepL.GlossaryListLanguagePairs>(), name: 'DeepL', interface: 'GlossaryListLanguagePairs'})
-configTypes.push({type: getType<DevCycle.DevCycleToken>(), name: 'DevCycle', interface: 'DevCycleToken'})
+configTypes.push({type: getType<DevCycle.Token>(), name: 'DevCycle', interface: 'Token'})
+configTypes.push({type: getType<DevCycle.ListFeatures>(), name: 'DevCycle', interface: 'ListFeatures'})
 configTypes.push({type: getType<DevTo.PostArticle>(), name: 'DevTo', interface: 'PostArticle'})
 configTypes.push({type: getType<Dhl.TrackingUnified>(), name: 'Dhl', interface: 'TrackingUnified'})
 configTypes.push({type: getType<Directus.Login>(), name: 'Directus', interface: 'Login'})
@@ -283,6 +285,8 @@ configTypes.push({type: getType<Geekflare.Lighthouse>(), name: 'Geekflare', inte
 configTypes.push({type: getType<Geekflare.Screenshot>(), name: 'Geekflare', interface: 'Screenshot'})
 configTypes.push({type: getType<Geekflare.UrlToPdf>(), name: 'Geekflare', interface: 'UrlToPdf'})
 configTypes.push({type: getType<Github.ListRepositoryIssues>(), name: 'Github', interface: 'ListRepositoryIssues'})
+configTypes.push({type: getType<Github.RepositoriesGetContent>(), name: 'Github', interface: 'RepositoriesGetContent'})
+configTypes.push({type: getType<Github.GitDatabaseGetTree>(), name: 'Github', interface: 'GitDatabaseGetTree'})
 configTypes.push({type: getType<GrafBase.GraphQLQuery>(), name: 'GrafBase', interface: 'GraphQLQuery'})
 configTypes.push({type: getType<GraphJSON.Log>(), name: 'GraphJSON', interface: 'Log'})
 configTypes.push({type: getType<GraphJSON.BulkLog>(), name: 'GraphJSON', interface: 'BulkLog'})
@@ -312,6 +316,7 @@ configTypes.push({type: getType<HunterIo.AuthorFinder>(), name: 'HunterIo', inte
 configTypes.push({type: getType<HunterIo.EmailVerification>(), name: 'HunterIo', interface: 'EmailVerification'})
 configTypes.push({type: getType<Hybiscus.BuildReport>(), name: 'Hybiscus', interface: 'BuildReport'})
 configTypes.push({type: getType<Hybiscus.GetReport>(), name: 'Hybiscus', interface: 'GetReport'})
+configTypes.push({type: getType<Hygraph.ContentApiGraphQl>(), name: 'Hygraph', interface: 'ContentApiGraphQl'})
 configTypes.push({type: getType<Jira.GetIssue>(), name: 'Jira', interface: 'GetIssue'})
 configTypes.push({type: getType<Jira.SearchIssues>(), name: 'Jira', interface: 'SearchIssues'})
 configTypes.push({type: getType<Jira.CreateIssue>(), name: 'Jira', interface: 'CreateIssue'})

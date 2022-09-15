@@ -24,6 +24,7 @@ export namespace GrafBase {
       name: 'GrafBase',
       url: 'https://grafbase.com',
       docs: 'https://grafbase.com/docs',
+      signup: 'https://grafbase.com/sign-up',
       social: {
         twitter: 'grafbase',
         github: 'grafbase',

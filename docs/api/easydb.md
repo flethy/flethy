@@ -4,9 +4,9 @@
 
 * URL: [https://easydb.io](https://easydb.io)
 * Documentation: [https://easydb.io/docs](https://easydb.io/docs)
-* Tags: web3
-* Category: aggregation
-* Type: indexer
+* Tags: web2
+* Category: infra
+* Type: database
 
 ## API
 

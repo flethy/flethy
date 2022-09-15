@@ -133,6 +133,8 @@ export namespace HelloSign {
       name: 'HelloSign',
       url: 'https://hellosign.com',
       docs: 'https://developers.hellosign.com/',
+      signup: 'https://app.hellosign.com/account/signUp',
+      pricing: 'https://app.hellosign.com/api/pricing',
       social: {
         twitter: 'hellosign',
       },

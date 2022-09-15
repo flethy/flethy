@@ -24,6 +24,7 @@ export namespace Hashnode {
       name: 'Hashnode',
       url: 'https://hashnode.com/',
       docs: 'https://api.hashnode.com/',
+      signup: 'https://hashnode.com/onboard',
       tags: ['web2'],
       category: 'marketing',
       type: 'blogging',

@@ -65,6 +65,8 @@ export namespace Hubspot {
       name: 'Hubspot',
       url: 'https://hubspot.com',
       docs: 'https://developers.hubspot.com/docs/api/overview',
+      signup: 'https://www.hubspot.com/products/get-started',
+      pricing: 'https://www.hubspot.com/pricing',
       social: {
         twitter: 'hubspot',
         instagram: 'hubspot',

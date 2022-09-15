@@ -28,6 +28,8 @@ export namespace Harvest {
       name: 'Harvest',
       url: 'https://getharvest.com',
       docs: 'https://help.getharvest.com/',
+      signup: 'https://www.getharvest.com/signup',
+      pricing: 'https://www.getharvest.com/pricing',
       social: {
         twitter: 'harvest',
         instagram: 'harvest',

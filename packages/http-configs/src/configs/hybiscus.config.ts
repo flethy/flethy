@@ -50,6 +50,8 @@ export namespace Hybiscus {
       name: 'Hybiscus',
       url: 'https://hybiscus.dev/',
       docs: 'https://api.hybiscus.dev/',
+      signup: 'https://hybiscus.dev/signup',
+      pricing: 'https://hybiscus.dev/pricing',
       social: {
         twitter: 'hybiscusdev',
         github: 'hybiscus-dev',
