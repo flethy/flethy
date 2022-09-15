@@ -1,5 +1,5 @@
 {
-  "extends": "tsconfig/http-configs.json",
+  "extends": "tsconfig/connectors.json",
   "include": ["src/**/*.ts"],
   "exclude": ["dist", "node_modules", "playground"],
   "compilerOptions": {

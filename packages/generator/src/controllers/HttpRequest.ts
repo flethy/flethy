@@ -4,7 +4,7 @@ import {
   jsonInputForTargetLanguage,
   quicktype,
 } from 'quicktype-core'
-import { FetchParams } from '../../../http-configs/src/types/FetchParams.type'
+import { FetchParams } from '../../../connectors/src/types/FetchParams.type'
 import { logger } from '../utils/Logger'
 
 export class HttpRequest {

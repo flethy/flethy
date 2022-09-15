@@ -1,10 +1,10 @@
-# flethy http-configs
+# flethy connectors
 
-Supporting {{ apicount }} APIs. Find all APIs [here](https://github.com/flethy/flethy/tree/main/docs).
+Supporting 147 APIs. Find all APIs [here](https://github.com/flethy/flethy/tree/main/docs).
 
 ## What and Why?
 
-flethy http-configs is a zero-dependency library that provides http configs for a number of web3 (and web2) APIs in a simple way. The whole library is fully typed and gives easy access to the included APIs.
+flethy connectors is a zero-dependency library that provides http configs for a number of web3 (and web2) APIs in a simple way. The whole library is fully typed and gives easy access to the included APIs.
 
 Motivated to implement for a simple reason: less dependencies in your own projects. What I have done so far:
 

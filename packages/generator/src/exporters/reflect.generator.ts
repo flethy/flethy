@@ -4,11 +4,11 @@ import { PropertyInfo } from 'tst-reflect'
 import {
   ConfigType,
   ConfigTypeProperty,
-} from '../../../http-configs/src/types/ConfigType.type'
+} from '../../../connectors/src/types/ConfigType.type'
 import { configTypes as exportedConfigTypes } from './reflect.exporter'
 
 const CONFIGSTYPES_DIR_NAME = 'configTypes'
-const HTTP_CONFIGS_DIR_NAME = 'http-configs'
+const HTTP_CONFIGS_DIR_NAME = 'connectors'
 const CONFIGSTYPES_DIR = path.join(
   __dirname,
   '..',
