@@ -1,4 +1,4 @@
-import { nao } from '@web3nao/http-configs'
+import { nao } from '@flethy/connectors'
 import { cast, types } from 'mobx-state-tree'
 import { applyNodeChanges, Connection, NodeChange } from 'react-flow-renderer'
 import { getRootStore } from '../../models/helpers'

@@ -1,5 +1,5 @@
 {
-  "name": "@web3nao/flow",
+  "name": "@flethy/flow",
   "version": "0.0.1",
   "description": "flow",
   "main": "dist/index.js",
@@ -10,7 +10,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "repository": "github:web3nao/web3nao",
+  "repository": "github:flethy/flethy",
   "author": "adam.urban@gmail.com",
   "license": "MIT",
   "keywords": [
@@ -28,7 +28,7 @@
     "@types/node": "^18.7.16",
     "@typescript-eslint/eslint-plugin": "^5.36.2",
     "@typescript-eslint/parser": "^5.36.2",
-    "@web3nao/http-configs": "workspace:*",
+    "@flethy/connectors": "workspace:*",
     "eslint": "^8.23.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-prettier": "^8.5.0",

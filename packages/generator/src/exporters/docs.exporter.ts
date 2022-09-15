@@ -34,7 +34,7 @@ export class DocsExporter {
     const readme: Readme = {
       filename: 'README.md',
       markdown: [
-        `# web3nao/http-configs`,
+        `# @flethy/connectors`,
         '',
         'The following Endpoints are currently supported.',
         '',
