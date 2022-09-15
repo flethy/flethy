@@ -64,6 +64,8 @@ export namespace Klaviyo {
       name: 'Klaviyo',
       url: 'https://www.klaviyo.com',
       docs: 'https://developers.klaviyo.com',
+      signup: 'https://www.klaviyo.com/',
+      pricing: 'https://www.klaviyo.com/pricing',
       social: {
         twitter: 'klaviyo',
         instagram: 'klaviyo',

@@ -69,6 +69,7 @@ import { HostIo } from '../configs/hostio.config'
 import { Hubspot } from '../configs/hubspot.config'
 import { HunterIo } from '../configs/hunterio.config'
 import { Hybiscus } from '../configs/hybiscus.config'
+import { Hygraph } from '../configs/hygraph.config'
 import { Jira } from '../configs/jira.config'
 import { Klaviyo } from '../configs/klaviyo.config'
 import { Lecto } from '../configs/lecto.config'
@@ -217,6 +218,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['hubspot', Hubspot.API],
 ['hunterio', HunterIo.API],
 ['hybiscus', Hybiscus.API],
+['hygraph', Hygraph.API],
 ['jira', Jira.API],
 ['klaviyo', Klaviyo.API],
 ['lecto', Lecto.API],

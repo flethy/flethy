@@ -45,6 +45,8 @@ export namespace HunterIo {
       name: 'HunterIo',
       url: 'https://hunter.io/',
       docs: 'https://hunter.io/',
+      signup: 'https://hunter.io/users/sign_up',
+      pricing: 'https://hunter.io/pricing',
       social: {
         twitter: 'emailhunter',
         github: 'hunter-io',

@@ -63,6 +63,8 @@ export namespace HostIo {
       name: 'HostIo',
       url: 'https://host.io',
       docs: 'https://host.io/docs',
+      signup: 'https://host.io/signup',
+      pricing: 'https://host.io/pricing',
       social: {
         twitter: 'host',
       },

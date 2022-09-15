@@ -70,6 +70,8 @@ export namespace Lokalise {
       name: 'Lokalise',
       url: 'https://lokalise.com/',
       docs: 'https://developers.lokalise.com/',
+      signup: 'https://app.lokalise.com/signup',
+      pricing: 'https://lokalise.com/pricing',
       social: {
         twitter: 'lokalise',
         github: 'lokalise',

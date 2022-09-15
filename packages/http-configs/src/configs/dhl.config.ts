@@ -26,6 +26,7 @@ export namespace Dhl {
       name: 'Dhl',
       url: 'https://dhl.com/',
       docs: 'https://developer.dhl.com/',
+      signup: 'https://developer.dhl.com/user/register',
       social: {
         github: 'dhl_global',
       },

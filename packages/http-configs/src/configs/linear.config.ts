@@ -23,6 +23,8 @@ export namespace Linear {
       name: 'Linear',
       url: 'https://linear.app',
       docs: 'https://developers.linear.app/docs',
+      signup: 'https://linear.app/signup',
+      pricing: 'https://linear.app/pricing',
       social: {
         twitter: 'linear',
         github: 'linear',

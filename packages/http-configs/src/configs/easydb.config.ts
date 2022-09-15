@@ -44,9 +44,10 @@ export namespace EasyDb {
       name: 'EasyDb',
       url: 'https://easydb.io',
       docs: 'https://easydb.io/docs',
-      tags: ['web3'],
-      category: 'aggregation',
-      type: 'indexer',
+      signup: 'https://easydb.io/signup',
+      tags: ['web2'],
+      category: 'infra',
+      type: 'database',
       social: {
         twitter: 'JustJake',
       },

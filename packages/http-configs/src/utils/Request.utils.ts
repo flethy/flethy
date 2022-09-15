@@ -97,6 +97,14 @@ export class HttpRequestConfig {
       }
     }
 
+    if (!config.headers) {
+      config.headers = {}
+    }
+
+    if (!config.headers['Content-Type'] && !config.headers['content-type']) {
+      config.headers['content-type'] = 'application/json'
+    }
+
     // STATIC PARAMS
     if (options.endpoint.query) {
       for (const queryParam of Object.keys(options.endpoint.query)) {

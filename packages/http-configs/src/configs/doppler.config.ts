@@ -23,6 +23,8 @@ export namespace Doppler {
       name: 'Doppler',
       url: 'https://doppler.com',
       docs: 'https://docs.doppler.com',
+      signup: 'https://dashboard.doppler.com/register',
+      pricing: 'https://www.doppler.com/pricing',
       tags: ['web2'],
       category: 'infra',
       type: 'secret-management',

@@ -32,6 +32,7 @@ export namespace DevTo {
       name: 'DevTo',
       url: 'https://dev.to',
       docs: 'https://developers.forem.com/api',
+      signup: 'https://dev.to/enter?state=new-user',
       tags: ['web2'],
       category: 'marketing',
       type: 'blogging',

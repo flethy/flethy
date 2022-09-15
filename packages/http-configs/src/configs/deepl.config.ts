@@ -44,6 +44,8 @@ export namespace DeepL {
       name: 'DeepL',
       url: 'https://deepl.com',
       docs: 'https://www.deepl.com/docs-api',
+      signup: 'https://www.deepl.com/pro',
+      pricing: 'https://www.deepl.com/pro',
       social: {
         twitter: 'deeplcom',
         github: 'deeplcom',

@@ -21,6 +21,8 @@ export namespace Etherscan {
       name: 'Etherscan',
       url: 'https://etherscan.io',
       docs: 'https://docs.etherscan.io/',
+      signup: 'https://etherscan.io/register',
+      pricing: 'https://etherscan.io/apis',
       social: {
         twitter: 'etherscan',
       },

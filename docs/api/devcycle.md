@@ -10,6 +10,10 @@
 
 ## API
 
+### Authentication
+
+* Authorization: header:bearer
+
 ### auth
 
 #### token
@@ -18,3 +22,12 @@
 
 * Description: Token
 * Docs: [https://docs.devcycle.com/management-api/](https://docs.devcycle.com/management-api/)
+
+### features
+
+#### list
+
+##### List Features
+
+* Description: List Features
+* Docs: [https://docs.devcycle.com/management-api/#operation/FeaturesController_findAll](https://docs.devcycle.com/management-api/#operation/FeaturesController_findAll)

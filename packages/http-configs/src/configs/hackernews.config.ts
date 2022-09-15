@@ -44,6 +44,7 @@ export namespace HackerNews {
       name: 'HackerNews',
       url: 'https://news.ycombinator.com/',
       docs: 'https://github.com/HackerNews/API',
+      signup: 'https://news.ycombinator.com/login',
       tags: ['web2'],
       category: 'news',
       type: 'everything',

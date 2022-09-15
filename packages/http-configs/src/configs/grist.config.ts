@@ -45,6 +45,8 @@ export namespace Grist {
       name: 'Grist',
       url: 'https://getgrist.com',
       docs: 'https://support.getgrist.com/api',
+      signup: 'https://docs.getgrist.com/signup',
+      pricing: 'https://www.getgrist.com/pricing/',
       social: {
         twitter: 'getgrist',
       },

@@ -26,6 +26,8 @@ export namespace Fauna {
       name: 'Fauna',
       url: 'https://fauna.com',
       docs: 'https://docs.fauna.com',
+      signup: 'https://dashboard.fauna.com/accounts/register',
+      pricing: 'https://fauna.com/pricing',
       social: {
         twitter: 'fauna',
       },

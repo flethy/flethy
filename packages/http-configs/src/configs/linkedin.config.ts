@@ -49,6 +49,8 @@ export namespace LinkedIn {
       name: 'LinkedIn',
       url: 'https://linkedin.com',
       docs: 'https://developer.linkedin.com/',
+      signup: 'https://www.linkedin.com/developers/login',
+      pricing: 'https://business.linkedin.com/sales-solutions/compare-plans',
       tags: ['web2'],
       category: 'collaboration',
       type: 'socialmedia',

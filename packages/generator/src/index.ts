@@ -145,6 +145,7 @@ import Directus from '../../http-configs/src/configs/directus.config'
 import Chargebee from '../../http-configs/src/configs/chargebee.config'
 import ConfigCat from '../../http-configs/src/configs/configcat.config'
 import DevCycle from '../../http-configs/src/configs/devcycle.config'
+import Hygraph from '../../http-configs/src/configs/hygraph.config'
 
 async function main() {
   const requestConfigs: {
@@ -2031,8 +2032,36 @@ async function main() {
       'auth:Authorization': process.env.DEVCYCLE_JWT,
       'param:projectId': 'web3nao',
     }),
+    hygraphContentApi: nao<Hygraph.ContentApiGraphQl>({
+      kind: 'hygraph.content.graphql',
+      'auth:Authorization': process.env.HYGRAPH_TOKEN,
+      'subdomain:datacenter': 'api-eu-central-1',
+      'param:projectslug': 'cl82loppj2io701t34rqo8jlf',
+      'param:environment': 'master',
+      'body:query': `{
+        posts {
+          id
+        }
+      }`,
+    }),
+    githubGetContent: nao<Github.RepositoriesGetContent>({
+      kind: 'github.repositories.getContent',
+      'param:owner': 'urbanisierung',
+      'param:repo': 'camundacon22-frontend',
+      'param:path': 'package.json',
+      'auth:Authorization': process.env.GITHUB_PAT,
+      'header:accept': 'application/vnd.github+json',
+    }),
+    githubGetTree: nao<Github.GitDatabaseGetTree>({
+      kind: 'github.gitDatabase.getTree',
+      'param:owner': 'urbanisierung',
+      'param:repo': 'camundacon22-frontend',
+      'param:tree_sha': 'main',
+      'auth:Authorization': process.env.GITHUB_PAT,
+      'header:accept': 'application/vnd.github+json',
+    }),
   }
-  const requestConfig = requestConfigs.devcyclelistFeatures
+  const requestConfig = requestConfigs.githubGetTree
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

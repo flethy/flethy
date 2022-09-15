@@ -44,6 +44,8 @@ export namespace DynaPictures {
       name: 'DynaPictures',
       url: 'https://dynapictures.com',
       docs: 'https://dynapictures.com/docs',
+      signup: 'https://dynapictures.com/b/p/register',
+      pricing: 'https://dynapictures.com/p/pricing',
       tags: ['web2'],
       category: 'utils',
       type: 'image-processing',

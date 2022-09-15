@@ -33,6 +33,8 @@ export namespace Eventbrite {
       name: 'Eventbrite',
       url: 'https://www.eventbrite.com/',
       docs: 'https://www.eventbrite.com/platform/api#/introduction/',
+      signup: 'https://www.eventbrite.com/signin/signup/',
+      pricing: 'https://www.eventbrite.com/organizer/pricing/',
       social: {
         twitter: 'eventbrite',
         instagram: 'eventbrite',
