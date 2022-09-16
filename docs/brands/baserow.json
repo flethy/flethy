@@ -1,0 +1,85 @@
+{
+  "id": "id7xNESIOy",
+  "name": "Baserow",
+  "domain": "baserow.io",
+  "claimed": false,
+  "description": "Self hosted open source online database build with Django and Nuxt. Our tool gives you the powers of a developer without leaving your browser.",
+  "links": [
+    { "name": "github", "url": "https://github.com/sponsors" },
+    { "name": "twitter", "url": "https://twitter.com/baserow" }
+  ],
+  "logos": [
+    {
+      "type": "icon",
+      "theme": null,
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/id7xNESIOy/id9mtR0NNa.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 400,
+          "width": 400,
+          "size": 5701
+        }
+      ]
+    },
+    {
+      "type": "logo",
+      "theme": null,
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/id7xNESIOy/idlkRl1hIM.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 126,
+          "width": 820,
+          "size": 16831
+        },
+        {
+          "src": "https://asset.brandfetch.io/id7xNESIOy/id4M5zDj_-.svg",
+          "background": "transparent",
+          "format": "svg",
+          "height": null,
+          "width": null,
+          "size": 3397
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#062e47", "type": "dark", "brightness": 39 },
+    { "hex": "#83c2eb", "type": "light", "brightness": 184 },
+    { "hex": "#4570a9", "type": "accent", "brightness": 107 }
+  ],
+  "fonts": [
+    {
+      "name": "Montserrat",
+      "type": "title",
+      "origin": "google",
+      "originId": "Montserrat",
+      "weights": []
+    },
+    {
+      "name": "Open Sans",
+      "type": "body",
+      "origin": "google",
+      "originId": "Open+Sans",
+      "weights": []
+    }
+  ],
+  "images": [
+    {
+      "type": "banner",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/id7xNESIOy/id_TalIBnB.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 500,
+          "width": 1500,
+          "size": 19961
+        }
+      ]
+    }
+  ]
+}

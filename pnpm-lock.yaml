@@ -164,6 +164,7 @@ importers:
 
   packages/generator:
     specifiers:
+      '@flethy/connectors': workspace:*
       '@types/jasmine': ^4.3.0
       '@types/jest': ^29.0.2
       '@types/node': ^18.7.18
@@ -191,6 +192,7 @@ importers:
       typescript: ^4.8.3
       uuid: ^9.0.0
     dependencies:
+      '@flethy/connectors': link:../connectors
       axios: 0.27.2
       dotenv: 16.0.2
       node-fetch: 3.2.10

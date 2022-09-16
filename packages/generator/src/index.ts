@@ -2065,8 +2065,13 @@ async function main() {
       kind: 'producthunt.collections.get',
       'auth:Authorization': process.env.PRODUCTHUNT_TOKEN,
     }),
+    brandFetchAbly: nao<Brandfetch.BrandByDomainOrId>({
+      kind: 'brandfetch.brands.byDomainOrId',
+      'auth:Authorization': process.env.BRANDFETCH_API_KEY,
+      'param:domainOrId': 'ably.com',
+    }),
   }
-  const requestConfig = requestConfigs.producthuntGetCollections
+  const requestConfig = requestConfigs.brandFetchAbly
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

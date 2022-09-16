@@ -1,0 +1,57 @@
+{
+  "id": "idEDvLtegW",
+  "name": "beehiiv",
+  "domain": "beehiiv.com",
+  "claimed": false,
+  "description": "Access the best tools available in email, helping your newsletter scale and monetize like never before.",
+  "links": [
+    { "name": "twitter", "url": "https://twitter.com/beehiiv" },
+    { "name": "facebook", "url": "https://facebook.com/trybeehiiv" },
+    { "name": "instagram", "url": "https://instagram.com/beehiiv" }
+  ],
+  "logos": [
+    {
+      "type": "icon",
+      "theme": null,
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idEDvLtegW/idm3TBCfT-.png",
+          "background": null,
+          "format": "png",
+          "height": 200,
+          "width": 200,
+          "size": 10505
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#c66ee3", "type": "accent", "brightness": 137 },
+    { "hex": "#111828", "type": "dark", "brightness": 24 },
+    { "hex": "#a596d9", "type": "light", "brightness": 158 }
+  ],
+  "fonts": [
+    {
+      "name": "system-ui",
+      "type": "body",
+      "origin": "system",
+      "originId": "system-ui",
+      "weights": []
+    }
+  ],
+  "images": [
+    {
+      "type": "banner",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idEDvLtegW/idOyTu2wrU.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 500,
+          "width": 1500,
+          "size": 10714
+        }
+      ]
+    }
+  ]
+}
