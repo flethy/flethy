@@ -1,0 +1,63 @@
+{
+  "id": "id5pJemdki",
+  "name": "0x",
+  "domain": "0x.org",
+  "claimed": false,
+  "description": "0x is an open protocol that enables peer-to-peer trading of assets.",
+  "links": [
+    { "name": "twitter", "url": "https://twitter.com/0xproject" },
+    { "name": "facebook", "url": "https://facebook.com/0xproject" },
+    { "name": "linkedin", "url": "https://linkedin.com/company/17942619" }
+  ],
+  "logos": [
+    {
+      "type": "icon",
+      "theme": null,
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/id5pJemdki/idWx9qkl3-.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 390,
+          "width": 390,
+          "size": 16348
+        }
+      ]
+    },
+    {
+      "type": "logo",
+      "theme": null,
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/id5pJemdki/ido5ADupDN.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 32,
+          "width": 32,
+          "size": 1517
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#006759", "type": "dark", "brightness": 80 },
+    { "hex": "#fefefe", "type": "light", "brightness": 254 },
+    { "hex": "#01ae9a", "type": "accent", "brightness": 136 }
+  ],
+  "fonts": [],
+  "images": [
+    {
+      "type": "banner",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/id5pJemdki/idXLoplJYH.png",
+          "background": null,
+          "format": "png",
+          "height": 500,
+          "width": 1500,
+          "size": 102110
+        }
+      ]
+    }
+  ]
+}

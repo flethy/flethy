@@ -8,12 +8,15 @@ import { FetchParams } from '../../../connectors/src/types/FetchParams.type'
 import { logger } from '../utils/Logger'
 
 export class HttpRequest {
-  public static async request(params: FetchParams) {
+  public static async request(
+    params: FetchParams & { responseType?: 'stream' }
+  ) {
     const axiosConfig = {
       method: params.method,
       url: params.url,
       headers: params.headers,
       data: params.body,
+      responseType: params.responseType,
     }
 
     try {

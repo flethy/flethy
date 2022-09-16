@@ -1,0 +1,94 @@
+{
+  "id": "idJVMFSF-i",
+  "name": "Algolia",
+  "domain": "algolia.com",
+  "claimed": false,
+  "description": "Algolia is a computer software platform that specializes in providing developer tools, API, SaaS, and e-Commerce.",
+  "links": [
+    {
+      "name": "youtube",
+      "url": "https://youtube.com/channel/UCTNkiq-SO8hay1PRx-it9Cw"
+    },
+    { "name": "twitter", "url": "https://twitter.com/algolia" },
+    { "name": "instagram", "url": "https://instagram.com/algoliahq" },
+    { "name": "linkedin", "url": "https://linkedin.com/company/algolia" },
+    { "name": "facebook", "url": "https://facebook.com/algolia" }
+  ],
+  "logos": [
+    {
+      "type": "logo",
+      "theme": null,
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idJVMFSF-i/idXBSP6rM8.svg",
+          "background": "transparent",
+          "format": "svg",
+          "size": 5418
+        },
+        {
+          "src": "https://asset.brandfetch.io/idJVMFSF-i/id_qrfbly8.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 198,
+          "width": 800,
+          "size": 17866
+        }
+      ]
+    },
+    {
+      "type": "symbol",
+      "theme": null,
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idJVMFSF-i/idJfo9fUW7.svg",
+          "background": "transparent",
+          "format": "svg",
+          "size": 1198
+        },
+        {
+          "src": "https://asset.brandfetch.io/idJVMFSF-i/idp8uBGHSw.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 800,
+          "width": 800,
+          "size": 60789
+        }
+      ]
+    },
+    {
+      "type": "icon",
+      "theme": null,
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idJVMFSF-i/idHX-DYCuo.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 400,
+          "width": 400,
+          "size": 10341
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#21243d", "type": "dark", "brightness": 37 },
+    { "hex": "#ffffff", "type": "light", "brightness": 255 },
+    { "hex": "#5468ff", "type": "accent", "brightness": 111 }
+  ],
+  "fonts": [],
+  "images": [
+    {
+      "type": "banner",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idJVMFSF-i/idEpd2wQ4Q.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 500,
+          "width": 1500,
+          "size": 49748
+        }
+      ]
+    }
+  ]
+}

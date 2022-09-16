@@ -15,7 +15,7 @@ const CONFIGS_DIR = path.join(
   CONFIGS_DIR_NAME
 )
 
-const DOCS_BASE = path.join(__dirname, '..', '..', '..', '..', 'docs')
+export const DOCS_BASE = path.join(__dirname, '..', '..', '..', '..', 'docs')
 const API_FOLDER = 'api'
 
 interface Documentation {

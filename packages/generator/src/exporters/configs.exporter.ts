@@ -1,6 +1,7 @@
 import * as fs from 'fs'
 import * as path from 'path'
 import { logger } from '../utils/Logger'
+import { BrandExporter } from './brand.exporter'
 
 const CONFIGS_DIR_NAME = 'configs'
 const HTTP_CONFIGS_DIR_NAME = 'connectors'
@@ -46,6 +47,8 @@ export class ConfigsExporter {
 
     const files = fs.readdirSync(CONFIGS_DIR)
     const dataJsonContent = { apicount: files.length }
+    const brandExporter = new BrandExporter()
+    brandExporter.readLoadedBrands()
     for (const file of files) {
       if (file.split('.')[1] !== 'config') {
         continue
@@ -56,6 +59,7 @@ export class ConfigsExporter {
       const Config = await import(`${CONFIGS_DIR}/${configName}`)
       try {
         const instanceOfConfig = Config.default
+        await brandExporter.exportOne(instanceOfConfig)
         imports.push(
           `import { ${instanceOfConfig.API.meta.name} } from '../configs/${configName}'`
         )
@@ -92,5 +96,6 @@ export class ConfigsExporter {
     logger.info(`Exported ${files.length} configs.`)
     logger.info(`Writing data json...`)
     fs.writeFileSync(API_COUNT_FILE, JSON.stringify(dataJsonContent))
+    await brandExporter.fetchLogos()
   }
 }

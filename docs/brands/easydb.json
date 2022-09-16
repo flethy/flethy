@@ -1,0 +1,23 @@
+{
+  "id": "id27xBgRNv",
+  "name": "EasyDB",
+  "domain": "easydb.io",
+  "claimed": false,
+  "description": "A one-click database, no server required.",
+  "links": [],
+  "logos": [],
+  "colors": [
+    { "hex": "#021130", "type": "dark", "brightness": 16 },
+    { "hex": "#fefefe", "type": "light", "brightness": 254 }
+  ],
+  "fonts": [
+    {
+      "name": "Helvetica",
+      "type": "body",
+      "origin": "custom",
+      "originId": null,
+      "weights": []
+    }
+  ],
+  "images": []
+}

@@ -14,6 +14,7 @@
   "author": "adam.urban@gmail.com",
   "license": "ISC",
   "dependencies": {
+    "@flethy/connectors": "workspace:*",
     "axios": "^0.27.2",
     "dotenv": "^16.0.2",
     "node-fetch": "^3.2.10",
