@@ -14,6 +14,8 @@
     "play": "turbo run start --filter=@flethy/generator --no-cache",
     "=============== F L O W   D E S I G N E R ===============": "===============",
     "start:flowdesigner": "pnpm --filter flow-designer start",
+    "=============== L A N D I N G   P A G E =================": "===============",
+    "start:landingpage": "pnpm --filter landing-page start",
     "=============== O T H E R ===============": "===============",
     "dev": "turbo run dev --parallel",
     "lint": "turbo run lint",
