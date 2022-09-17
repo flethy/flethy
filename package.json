@@ -16,6 +16,7 @@
     "start:flowdesigner": "pnpm --filter flow-designer start",
     "=============== L A N D I N G   P A G E =================": "===============",
     "start:landingpage": "pnpm --filter landing-page start",
+    "build:landingpage": "pnpm --filter landing-page build:prod",
     "=============== O T H E R ===============": "===============",
     "dev": "turbo run dev --parallel",
     "lint": "turbo run lint",
