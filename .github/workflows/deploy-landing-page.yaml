@@ -1,9 +1,8 @@
 name: "Deploy Landing Page"
 
-on: [push]
-# on:
-#   release:
-#     types: [published]
+on:
+  release:
+    types: [published]
 
 jobs:
   publish-landing-page:
@@ -43,6 +42,7 @@ jobs:
       - name: Build Landing Page
         run: pnpm run build:landingpage
 
+      # https://github.com/cloudflare/pages-action
       - name: Publish to Cloudflare Pages
         uses: cloudflare/pages-action@1
         with:
