@@ -41,6 +41,7 @@ import { ConvertKit } from '../configs/convertkit.config'
 import { CountApi } from '../configs/countapi.config'
 import { Courier } from '../configs/courier.config'
 import { Covalent } from '../configs/covalent.config'
+import { Cronhooks } from '../configs/cronhooks.config'
 import { CurrencyScoop } from '../configs/currencyscoop.config'
 import { DatoCMS } from '../configs/datocms.config'
 import { DeepL } from '../configs/deepl.config'
@@ -191,6 +192,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['countapi', CountApi.API],
 ['courier', Courier.API],
 ['covalent', Covalent.API],
+['cronhooks', Cronhooks.API],
 ['currencyscoop', CurrencyScoop.API],
 ['datocms', DatoCMS.API],
 ['deepl', DeepL.API],

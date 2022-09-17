@@ -41,6 +41,7 @@ import { ConvertKit } from '../../../connectors/src/configs/convertkit.config'
 import { CountApi } from '../../../connectors/src/configs/countapi.config'
 import { Courier } from '../../../connectors/src/configs/courier.config'
 import { Covalent } from '../../../connectors/src/configs/covalent.config'
+import { Cronhooks } from '../../../connectors/src/configs/cronhooks.config'
 import { CurrencyScoop } from '../../../connectors/src/configs/currencyscoop.config'
 import { DatoCMS } from '../../../connectors/src/configs/datocms.config'
 import { DeepL } from '../../../connectors/src/configs/deepl.config'
@@ -248,6 +249,7 @@ configTypes.push({type: getType<Courier.Send>(), name: 'Courier', interface: 'Se
 configTypes.push({type: getType<Covalent.ClassAGetTransactionsForAddress>(), name: 'Covalent', interface: 'ClassAGetTransactionsForAddress'})
 configTypes.push({type: getType<Covalent.ClassBGetUniswapV3Pools>(), name: 'Covalent', interface: 'ClassBGetUniswapV3Pools'})
 configTypes.push({type: getType<Covalent.PricingGetHistoricalTokenPrices>(), name: 'Covalent', interface: 'PricingGetHistoricalTokenPrices'})
+configTypes.push({type: getType<Cronhooks.ScheduleNewWebhool>(), name: 'Cronhooks', interface: 'ScheduleNewWebhool'})
 configTypes.push({type: getType<CurrencyScoop.Latest>(), name: 'CurrencyScoop', interface: 'Latest'})
 configTypes.push({type: getType<CurrencyScoop.Historical>(), name: 'CurrencyScoop', interface: 'Historical'})
 configTypes.push({type: getType<CurrencyScoop.Timeseries>(), name: 'CurrencyScoop', interface: 'Timeseries'})
