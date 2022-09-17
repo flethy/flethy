@@ -5,7 +5,7 @@ on:
     types: [published]
 
 jobs:
-  publish-preview-stage:
+  publish-landing-page:
     runs-on: ubuntu-latest
 
     steps:
@@ -48,7 +48,7 @@ jobs:
         id: publish
         run: |
           npm i -g wrangler
-          CF_PUBLISH_OUTPUT=$(wrangler pages publish ${{ env.DIST_DIRECTORY }} --project-name=${{ env.CLOUDFLARE_PAGES_PROJECT_NAME }} --commit-dirty --commit-hash=${{ steps.meta.outputs.sha_short }} | grep complete)
+          CF_PUBLISH_OUTPUT=$(wrangler pages publish ${{ env.DIST_DIRECTORY }} --project-name=${{ env.CLOUDFLARE_PAGES_PROJECT_NAME }} | grep complete)
           echo "::set-output name=cf_deployments::$CF_PUBLISH_OUTPUT"
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
