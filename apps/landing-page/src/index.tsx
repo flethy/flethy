@@ -3,7 +3,6 @@ import { observer } from 'mobx-react-lite'
 import { MobxRouter, startRouter } from 'mobx-router'
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import Navbar from './components/navbar'
 import events, { LogLevel } from './events/events'
 import './i18n/config'
 import './index.scss'
@@ -26,8 +25,8 @@ const App = observer(() => {
 
 	return (
 		<ChakraProvider>
-			<Navbar />
-			<Box p={4} minHeight={{ md: 'calc(100vh - 415px)' }}>
+			{/* <Box p={4} minHeight={{ md: 'calc(100vh - 415px)' }}> */}
+			<Box>
 				<MobxRouter store={rootStore} />
 			</Box>
 		</ChakraProvider>

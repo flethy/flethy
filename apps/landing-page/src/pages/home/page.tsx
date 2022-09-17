@@ -1,8 +1,10 @@
-import { Box, Heading } from '@chakra-ui/react'
+import { Box, Center, Heading, Stack, Text } from '@chakra-ui/react'
 import { observer } from 'mobx-react-lite'
 import { useMst } from '../../models/root'
+import { useTranslation } from 'react-i18next'
 
 export default observer(() => {
+	const { t } = useTranslation('app')
 	const {
 		root: {
 			pages: { home: page },
@@ -10,10 +12,14 @@ export default observer(() => {
 	} = useMst()
 
 	return (
-		<Box style={{ width: '100%', height: 'calc(100vh - 120px)' }}>
-			<Heading as="h1" size="lg" mb={4}>
-				flethy
-			</Heading>
-		</Box>
+		<Center h="100vh">
+			<Stack textAlign={'center'}>
+				<Heading as="h1" size="lg" mb={4}>
+					{t('title')}
+				</Heading>
+				<Text>{t('description')}</Text>
+				<Text>{t('home.stayTuned')}</Text>
+			</Stack>
+		</Center>
 	)
 })

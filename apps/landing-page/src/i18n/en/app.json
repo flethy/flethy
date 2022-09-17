@@ -1,6 +1,10 @@
 {
 	"title": "flethy",
+	"description": "time to speed up",
 	"navbar": {
 		"home": "Home"
+	},
+	"home": {
+		"stayTuned": "Stay tuned for more updates!"
 	}
 }
