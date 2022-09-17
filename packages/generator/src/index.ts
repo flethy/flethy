@@ -198,7 +198,7 @@ async function main() {
       },
       'body:to': [
         {
-          email: 'adam.urban@gmail.com',
+          email: 'adam@flethy.com',
           name: 'Adam',
         },
       ],
@@ -686,7 +686,7 @@ async function main() {
       kind: 'auth0.usersByEmail.get',
       'auth:Authorization': process.env.AUTH0_JWT,
       'subdomain:tenant': process.env.AUTH0_TENANT,
-      'query:email': 'adam.urban@gmail.com',
+      'query:email': 'adam@flethy.com',
     }),
     redisCloudGetAccount: nao<RedisCloud.GetCurrentAccount>({
       kind: 'rediscloud.account.get',
@@ -836,7 +836,7 @@ async function main() {
       signers: [
         {
           name: 'Adam',
-          email_address: 'adam.urban@gmail.com',
+          email_address: 'adam@flethy.com',
         },
       ],
       file_url: ['https://web3nao.xyz'],
@@ -1092,7 +1092,7 @@ async function main() {
       kind: 'useplunk.core.event',
       'auth:Authorization': process.env.USEPLUNK_SECRET_KEY,
       'body:event': 'my-first-event',
-      'body:email': 'adam.urban@gmail.com',
+      'body:email': 'adam@flethy.com',
     }),
     clickupGetAllSpaces: nao<ClickUp.SpacesGetAll>({
       kind: 'clickup.spaces.getAll',
@@ -1176,7 +1176,7 @@ async function main() {
       'header:Accept': 'application/json',
       'header:Content-Type': 'application/json',
       'body:from': 'adam@web3nao.xyz',
-      'body:to': 'adam.urban@gmail.com',
+      'body:to': 'adam@flethy.com',
       'body:textbody': `Yo!
       
       Already checked web3nao? It's AWESOME!`,
@@ -1307,7 +1307,7 @@ async function main() {
         {
           to: [
             {
-              email: 'adam.urban@gmail.com',
+              email: 'adam@flethy.com',
             },
           ],
           dynamic_template_data: {
@@ -1379,13 +1379,13 @@ async function main() {
       'auth:token': process.env.KLAVIYO_PUBLIC_KEY,
       'body:event': 'first',
       'body:customer_properties': {
-        $email: 'adam.urban@gmail.com',
+        $email: 'adam@flethy.com',
       },
     }),
     klaviyoGetProfileId: nao<Klaviyo.GetProfileId>({
       kind: 'klaviyo.profiles.getProfileId',
       'auth:api_key': process.env.KLAVIYO_PRIVATE_KEY,
-      'query:email': 'adam.urban@gmail.com',
+      'query:email': 'adam@flethy.com',
     }),
     klaviyoGetProfile: nao<Klaviyo.GetProfile>({
       kind: 'klaviyo.profiles.getProfile',
@@ -1532,7 +1532,7 @@ async function main() {
       'body:data_source_uuid': process.env.CHARTMOGUL_DS_ID,
       'body:external_id': 'web3nao_1',
       'body:name': 'Adam Urban',
-      'body:email': 'adam.urban@gmail.com',
+      'body:email': 'adam@flethy.com',
       'body:country': 'DE',
       'body:lead_created_at': '2022-07-10 00:00:00',
       'body:free_trial_started_at': '2022-07-31 00:00:00',
@@ -1587,7 +1587,7 @@ async function main() {
       nao<MailboxValidator.SingleEmailValidation>({
         kind: 'mailboxvalidator.singleEmailValidation.singleEmailValidation',
         'auth:key': process.env.MAILBOXVALIDATOR_API_KEY,
-        'query:email': 'adam.urban@gmail.com',
+        'query:email': 'adam@flethy.com',
       }),
     microlinkUrl: nao<Microlink.Url>({
       kind: 'microlink.core.url',
@@ -1689,7 +1689,7 @@ async function main() {
     mojoauthSendMagicLink: nao<MojoAuth.SendMagicLink>({
       kind: 'mojoauth.auth.sendMagicLink',
       'auth:X-API-Key': process.env.MOJOAUTH_API_KEY,
-      'body:email': 'adam.urban@gmail.com',
+      'body:email': 'adam@flethy.com',
     }),
     ablyPublishMessage: nao<Ably.PublishMessage>({
       kind: 'ably.channels.publishMessage',
@@ -1923,7 +1923,7 @@ async function main() {
         },
         to: [
           {
-            email: 'adam.urban@gmail.com',
+            email: 'adam@flethy.com',
             name: 'Adam',
           },
         ],

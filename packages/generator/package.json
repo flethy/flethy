@@ -11,7 +11,7 @@
     "reflectgen": "NODE_ENV=local ts-node -P tsconfig-tt.json ./src/exporters/reflect.generator.ts",
     "updateapicount": "mustache data.json ../connectors/README.md.template > ../connectors/README.md"
   },
-  "author": "adam.urban@gmail.com",
+  "author": "adam@flethy.com",
   "license": "ISC",
   "dependencies": {
     "@flethy/connectors": "workspace:*",
