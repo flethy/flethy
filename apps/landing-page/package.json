@@ -6,7 +6,7 @@
 		"dev": "vite ",
 		"build:dev": "vite build --mode dev",
 		"build:int": "vite build --mode int",
-		"build:prod": "vite build --mode prod",
+		"build": "vite build --mode prod",
 		"serve": "vite preview --mode dev"
 	},
 	"dependencies": {
