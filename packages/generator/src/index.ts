@@ -147,6 +147,7 @@ import ConfigCat from '../../connectors/src/configs/configcat.config'
 import DevCycle from '../../connectors/src/configs/devcycle.config'
 import Hygraph from '../../connectors/src/configs/hygraph.config'
 import ProductHunt from '../../connectors/src/configs/producthunt.config'
+import Cronhooks from '@flethy/connectors/src/configs/cronhooks.config'
 
 async function main() {
   const requestConfigs: {
@@ -2070,8 +2071,24 @@ async function main() {
       'auth:Authorization': process.env.BRANDFETCH_API_KEY,
       'param:domainOrId': 'ably.com',
     }),
+    cronhooksScheduleWebhook: nao<Cronhooks.ScheduleNewWebhool>({
+      kind: 'cronhooks.schedules.create',
+      'auth:Authorization': process.env.CRONHOOKS_API_KEY,
+      'body:contentType': 'application/json',
+      'body:isRecurring': false,
+      'body:method': 'POST',
+      'body:payload': JSON.stringify({ hello: 'world' }),
+      'body:sendCronhookObject': false,
+      'body:sendFailureAlert': false,
+      'body:timezone': 'Europe/Berlin',
+      'body:title': "hey! it's flethy",
+      'body:runAt': new Date(
+        Date.now() + 10 * 1000 + 1000 * 60 * 60 * 2
+      ).toISOString(),
+      'body:url': 'https://webhook.site/60bf3d41-66df-4e82-86e1-503efbc76599',
+    }),
   }
-  const requestConfig = requestConfigs.brandFetchAbly
+  const requestConfig = requestConfigs.cronhooksScheduleWebhook
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)
