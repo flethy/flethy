@@ -74,6 +74,7 @@ The following Endpoints are currently supported.
 * [Doppler](./api/doppler.md)
 * [DynaPictures](./api/dynapictures.md)
 * [EasyDb](./api/easydb.md)
+* [EmailOctopus](./api/emailoctopus.md)
 * [Eventbrite](./api/eventbrite.md)
 * [Fauna](./api/fauna.md)
 * [Frankfurter](./api/frankfurter.md)

@@ -53,6 +53,7 @@ import { Disify } from '../configs/disify.config'
 import { Doppler } from '../configs/doppler.config'
 import { DynaPictures } from '../configs/dynapictures.config'
 import { EasyDb } from '../configs/easydb.config'
+import { EmailOctopus } from '../configs/emailoctopus.config'
 import { Etherscan } from '../configs/etherscan.config'
 import { Eventbrite } from '../configs/eventbrite.config'
 import { Fauna } from '../configs/fauna.config'
@@ -204,6 +205,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['doppler', Doppler.API],
 ['dynapictures', DynaPictures.API],
 ['easydb', EasyDb.API],
+['emailoctopus', EmailOctopus.API],
 ['etherscan', Etherscan.API],
 ['eventbrite', Eventbrite.API],
 ['fauna', Fauna.API],

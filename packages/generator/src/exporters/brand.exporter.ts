@@ -50,39 +50,43 @@ export class BrandExporter {
         const brandJson: any = JSON.parse(
           fs.readFileSync(`${BRANDS_DIR}/${brand}`, 'utf8')
         )
-        let availableLogos = brandJson.logos.find(
-          (logo) => logo.type === 'logo'
-        )
-        if (!availableLogos) {
-          availableLogos = brandJson.logos.find((logo) => logo.type === 'icon')
-        }
-        if (availableLogos?.formats) {
-          for (const logoUrl of availableLogos.formats) {
-            if (logoUrl.format !== 'svg') {
-              const logoImage = await HttpRequest.request({
-                method: 'GET',
-                url: logoUrl.src,
-                responseType: 'stream',
-              })
-              const w = logoImage.pipe(
-                fs.createWriteStream(`${BRAND_LOGOS}/${id}.${logoUrl.format}`)
-              )
-              w.on('finish', () => {
-                logger.info(`Successfully downloaded logo for <${id}>`)
-              })
-            } else {
-              const logoImage = await HttpRequest.request({
-                method: 'GET',
-                url: logoUrl.src,
-              })
-              fs.writeFileSync(
-                `${BRAND_LOGOS}/${id}.${logoUrl.format}`,
-                logoImage
-              )
-            }
+        if (brandJson.logo) {
+          let availableLogos = brandJson.logos.find(
+            (logo) => logo.type === 'logo'
+          )
+          if (!availableLogos) {
+            availableLogos = brandJson.logos.find(
+              (logo) => logo.type === 'icon'
+            )
           }
-        } else {
-          logger.error(`No formats found for <${id}>`)
+          if (availableLogos?.formats) {
+            for (const logoUrl of availableLogos.formats) {
+              if (logoUrl.format !== 'svg') {
+                const logoImage = await HttpRequest.request({
+                  method: 'GET',
+                  url: logoUrl.src,
+                  responseType: 'stream',
+                })
+                const w = logoImage.pipe(
+                  fs.createWriteStream(`${BRAND_LOGOS}/${id}.${logoUrl.format}`)
+                )
+                w.on('finish', () => {
+                  logger.info(`Successfully downloaded logo for <${id}>`)
+                })
+              } else {
+                const logoImage = await HttpRequest.request({
+                  method: 'GET',
+                  url: logoUrl.src,
+                })
+                fs.writeFileSync(
+                  `${BRAND_LOGOS}/${id}.${logoUrl.format}`,
+                  logoImage
+                )
+              }
+            }
+          } else {
+            logger.error(`No formats found for <${id}>`)
+          }
         }
       }
     }

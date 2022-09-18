@@ -148,6 +148,7 @@ import DevCycle from '../../connectors/src/configs/devcycle.config'
 import Hygraph from '../../connectors/src/configs/hygraph.config'
 import ProductHunt from '../../connectors/src/configs/producthunt.config'
 import Cronhooks from '@flethy/connectors/src/configs/cronhooks.config'
+import EmailOctopus from '@flethy/connectors/src/configs/emailoctopus.config'
 
 async function main() {
   const requestConfigs: {
@@ -2087,8 +2088,19 @@ async function main() {
       ).toISOString(),
       'body:url': 'https://webhook.site/60bf3d41-66df-4e82-86e1-503efbc76599',
     }),
+    emailOctopusGetList: nao<EmailOctopus.GetList>({
+      kind: 'emailoctopus.lists.get',
+      'auth:api_key': process.env.EMAILOCTOPUS_API_KEY,
+      'param:listId': process.env.EMAILOCTOPUS_LIST_ID,
+    }),
+    emailOctopusCreateContact: nao<EmailOctopus.CreateContact>({
+      kind: 'emailoctopus.lists.createContact',
+      'auth:api_key': process.env.EMAILOCTOPUS_API_KEY,
+      'param:listId': process.env.EMAILOCTOPUS_LIST_ID,
+      'body:email_address': 'adam@flethy.com',
+    }),
   }
-  const requestConfig = requestConfigs.cronhooksScheduleWebhook
+  const requestConfig = requestConfigs.emailOctopusCreateContact
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

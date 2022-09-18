@@ -53,6 +53,7 @@ import { Disify } from '../../../connectors/src/configs/disify.config'
 import { Doppler } from '../../../connectors/src/configs/doppler.config'
 import { DynaPictures } from '../../../connectors/src/configs/dynapictures.config'
 import { EasyDb } from '../../../connectors/src/configs/easydb.config'
+import { EmailOctopus } from '../../../connectors/src/configs/emailoctopus.config'
 import { Etherscan } from '../../../connectors/src/configs/etherscan.config'
 import { Eventbrite } from '../../../connectors/src/configs/eventbrite.config'
 import { Fauna } from '../../../connectors/src/configs/fauna.config'
@@ -275,6 +276,8 @@ configTypes.push({type: getType<EasyDb.Get>(), name: 'EasyDb', interface: 'Get'}
 configTypes.push({type: getType<EasyDb.Put>(), name: 'EasyDb', interface: 'Put'})
 configTypes.push({type: getType<EasyDb.List>(), name: 'EasyDb', interface: 'List'})
 configTypes.push({type: getType<EasyDb.Delete>(), name: 'EasyDb', interface: 'Delete'})
+configTypes.push({type: getType<EmailOctopus.GetList>(), name: 'EmailOctopus', interface: 'GetList'})
+configTypes.push({type: getType<EmailOctopus.CreateContact>(), name: 'EmailOctopus', interface: 'CreateContact'})
 configTypes.push({type: getType<Etherscan.AccountsBalanceSingleAddress>(), name: 'Etherscan', interface: 'AccountsBalanceSingleAddress'})
 configTypes.push({type: getType<Eventbrite.ListAttendeeByEventId>(), name: 'Eventbrite', interface: 'ListAttendeeByEventId'})
 configTypes.push({type: getType<Eventbrite.GetUserMe>(), name: 'Eventbrite', interface: 'GetUserMe'})

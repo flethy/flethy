@@ -1,0 +1,31 @@
+# EmailOctopus
+
+## Links
+
+* URL: [https://emailoctopus.com/](https://emailoctopus.com/)
+* Documentation: [https://emailoctopus.com/api-documentation](https://emailoctopus.com/api-documentation)
+* Tags: web2
+* Category: marketing
+* Type: email
+
+## API
+
+### Authentication
+
+* api_key: query
+
+### lists
+
+#### get
+
+##### Get List
+
+* Description: Get details of a list.
+* Docs: [https://emailoctopus.com/api-documentation/lists/get](https://emailoctopus.com/api-documentation/lists/get)
+
+#### createContact
+
+##### Create Contact of a list
+
+* Description: Create a contact of a list.
+* Docs: [https://emailoctopus.com/api-documentation/lists/create-contact](https://emailoctopus.com/api-documentation/lists/create-contact)
