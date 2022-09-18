@@ -1,84 +1,19 @@
 name: "Deploy Landing Page"
 
+# on: [push]
 on:
   release:
     types: [published]
 
 jobs:
   publish-landing-page:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-
-      - name: Compute metadata
-        id: meta
-        run: |
-          export SHA_SHORT="$(git rev-parse --short=8 ${{ github.sha }})"
-          echo "::set-output name=sha_short::$SHA_SHORT"
-
-      - name: Extract branch name
-        shell: bash
-        run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
-        id: extract_branch
-
-      - uses: pnpm/action-setup@v2.2.2
-        name: Install pnpm
-        id: pnpm-install
-        with:
-          version: 7
-          run_install: false
-
-      - name: Install Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 16
-          cache: "pnpm"
-
-      - name: Install dependencies
-        run: pnpm install
-
-      - name: Build Landing Page
-        run: pnpm run build:landingpage
-
-      # https://github.com/cloudflare/pages-action
-      - name: Publish to Cloudflare Pages
-        uses: cloudflare/pages-action@1
-        with:
-          apiToken: ${{ secrets.CF_API_TOKEN }}
-          accountId: ${{ secrets.CF_ACCOUNT_ID }}
-          projectName: flethy
-          directory: ./apps/landing-page/dist
-          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
-
-      # use this for preview stages (including --branch)
-      # CF_PUBLISH_OUTPUT=$(wrangler pages publish ${{ env.DIST_DIRECTORY }} --project-name=${{ env.CLOUDFLARE_PAGES_PROJECT_NAME }} --commit-dirty --commit-hash=${{ steps.meta.outputs.sha_short }} --branch=${{ steps.extract_branch.outputs.branch }} | grep complete)
-      # - name: Publish
-      #   id: publish
-      #   run: |
-      #     npm i -g wrangler
-      #     CF_PUBLISH_OUTPUT=$(wrangler pages publish ${{ env.DIST_DIRECTORY }} --project-name=${{ env.CLOUDFLARE_PAGES_PROJECT_NAME }} | grep complete)
-      #     echo "::set-output name=cf_deployments::$CF_PUBLISH_OUTPUT"
-      #   env:
-      #     CLOUDFLARE_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
-      #     CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
-      #     CLOUDFLARE_PAGES_PROJECT_NAME: flethy-landing-page
-      #     DIST_DIRECTORY: ./apps/landing-page/dist
-
-      # not needed - just for preview stages
-      # - name: Get Pull Request
-      #   uses: 8BitJonny/gh-get-current-pr@2.1.0
-      #   id: PR
-
-      # - name: Comment PR
-      #   uses: thollander/actions-comment-pull-request@v1
-      #   if: steps.PR.outputs.number > 0
-      #   with:
-      #     message: |
-      #       # Branch Preview Stage
-      #       ${{ steps.publish.outputs.cf_deployments }}
-      #     reactions: rocket
-      #     pr_number: ${{ steps.PR.outputs.number }}
-      #     comment_includes: "Branch Preview Stage"
-      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    uses: ./.github/workflows/template-deploy-to-cloudflare.yaml
+    with:
+      buildTarget: build:landingpage
+      rootDir: ./apps/landing-page
+      distDir: ./dist
+      branchName: main
+      cfPagesName: flethy
+    secrets:
+      cf_account_id: ${{ secrets.CF_ACCOUNT_ID }}
+      ch_api_token: ${{ secrets.CF_API_TOKEN }}
