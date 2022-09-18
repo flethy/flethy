@@ -8,7 +8,7 @@ export const onRequestGet: PagesFunction<{
 	VITE_LOGLEVEL: string
 }> = async ({ request, env }) => {
 	return jsonResponse({
-		status: 'hf!',
+		status: 'hf!1!',
 		setting: env.VITE_LOGLEVEL,
 	})
 }
