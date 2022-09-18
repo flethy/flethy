@@ -9,6 +9,7 @@ jobs:
   publish-landing-page:
     uses: ./.github/workflows/template-deploy-to-cloudflare.yaml
     with:
+      buildTarget: build:landingpage
       rootDir: ./apps/landing-page
       distDir: ./dist
       branchName: main
