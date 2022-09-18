@@ -1,5 +1,8 @@
 {
+	"compilerOptions": {
+		"types": ["vite/client", "@cloudflare/workers-types"]
+	},
 	"extends": "tsconfig/react-mobx.json",
-	"include": ["**/*.ts", "**/*.tsx"],
-	"exclude": ["node_modules"]
+	"include": ["./src/**/*"],
+	"exclude": ["node_modules", "./functions/**/*"]
 }
