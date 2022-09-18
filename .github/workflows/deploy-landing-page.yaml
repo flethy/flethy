@@ -53,7 +53,7 @@ jobs:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
           CLOUDFLARE_PAGES_PROJECT_NAME: flethy
-          DIST_DIRECTORY: ./apps/landing-page/dist
+          DIST_DIRECTORY: ./dist
           ROOT_DIRECTORY: ./apps/landing-page
 
       # https://github.com/cloudflare/pages-action
