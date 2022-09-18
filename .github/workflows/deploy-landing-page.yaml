@@ -7,7 +7,7 @@ on: [push]
 
 jobs:
   publish-landing-page:
-    uses: ./.github/workflows/deploy-template.yaml
+    uses: ./.github/workflows/template-deploy-to-cloudflare.yaml
     with:
       rootDir: ./apps/landing-page
       distDir: ./dist
