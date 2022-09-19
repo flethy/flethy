@@ -9,7 +9,7 @@ jobs:
   publish-landing-page:
     uses: ./.github/workflows/template-publish-npm-package.yaml
     with:
-      packageDir: ./packages/connectors
-      packageScope: @flethy/connectors
+      packageDir: ./packages/flow
+      packageScope: @flethy/flow
     secrets:
       npm_token: ${{ secrets.NPM_TOKEN }}

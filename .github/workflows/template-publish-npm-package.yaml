@@ -1,0 +1,58 @@
+name: Publish Package
+
+on:
+  workflow_call:
+    inputs:
+      packageDir:
+        required: true
+        type: string
+      packageScope:
+        required: true
+        type: string
+    secrets:
+      npm_token:
+        required: true
+
+jobs:
+  publish:
+    name: "Publishing including packages"
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Set output
+        id: vars
+        run: echo ::set-output name=tag::${GITHUB_REF#refs/*/}
+
+      - name: "Update Version according to Tag"
+        run: npm version "${{ env.RELEASE_VERSION }}" --prefix ${{ inputs.packageDir }}
+        env:
+          RELEASE_VERSION: ${{ steps.vars.outputs.tag }}
+
+      - uses: pnpm/action-setup@v2.2.2
+        name: Install pnpm
+        id: pnpm-install
+        with:
+          version: 7
+          run_install: false
+
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: "pnpm"
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Build everything
+        run: pnpm run build
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.npm_token }}
+
+      - name: Publish
+        run: pnpm publish --filter ${{ inputs.packageScope }} --no-git-checks
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.npm_token }}

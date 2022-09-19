@@ -115,6 +115,7 @@ import { RedisCloud } from '../configs/rediscloud.config'
 import { RemoteOk } from '../configs/remoteok.config'
 import { RemoveBg } from '../configs/removebg.config'
 import { Render } from '../configs/render.config'
+import { RestCountries } from '../configs/restcountries.config'
 import { RestDB } from '../configs/restdb.config'
 import { RestZeebe } from '../configs/restzeebe.config'
 import { SendGrid } from '../configs/sendgrid.config'
@@ -267,6 +268,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['remoteok', RemoteOk.API],
 ['removebg', RemoveBg.API],
 ['render', Render.API],
+['restcountries', RestCountries.API],
 ['restdb', RestDB.API],
 ['restzeebe', RestZeebe.API],
 ['sendgrid', SendGrid.API],

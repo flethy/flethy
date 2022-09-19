@@ -108,6 +108,7 @@ export type DATA_TYPE =
   | 'resolution'
   | 'image-provider'
   | 'brands'
+  | 'geo'
 export type CLOUD_TYPE = 'services'
 export type SEARCH_TYPE = 'serp'
 export type NETWORK_TYPE = 'cdn'
