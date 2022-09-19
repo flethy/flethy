@@ -10,6 +10,6 @@ jobs:
     uses: ./.github/workflows/template-publish-npm-package.yaml
     with:
       packageDir: ./packages/connectors
-      packageScope: @flethy/connectors
+      packageScope: "@flethy/connectors"
     secrets:
       npm_token: ${{ secrets.NPM_TOKEN }}
