@@ -149,6 +149,7 @@ import Hygraph from '../../connectors/src/configs/hygraph.config'
 import ProductHunt from '../../connectors/src/configs/producthunt.config'
 import Cronhooks from '@flethy/connectors/src/configs/cronhooks.config'
 import EmailOctopus from '@flethy/connectors/src/configs/emailoctopus.config'
+import RestCountries from '@flethy/connectors/src/configs/restcountries.config'
 
 async function main() {
   const requestConfigs: {
@@ -2099,8 +2100,16 @@ async function main() {
       'param:listId': process.env.EMAILOCTOPUS_LIST_ID,
       'body:email_address': 'adam@flethy.com',
     }),
+    restCountriesAll: nao<RestCountries.GetAll>({
+      kind: 'restcountries.core.all',
+    }),
+    restCountriesByFullName: nao<RestCountries.GetByFullName>({
+      kind: 'restcountries.core.fullName',
+      'param:name': 'Germany',
+      'query:fullText': true,
+    }),
   }
-  const requestConfig = requestConfigs.emailOctopusCreateContact
+  const requestConfig = requestConfigs.restCountriesByFullName
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

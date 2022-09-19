@@ -115,6 +115,7 @@ import { RedisCloud } from '../../../connectors/src/configs/rediscloud.config'
 import { RemoteOk } from '../../../connectors/src/configs/remoteok.config'
 import { RemoveBg } from '../../../connectors/src/configs/removebg.config'
 import { Render } from '../../../connectors/src/configs/render.config'
+import { RestCountries } from '../../../connectors/src/configs/restcountries.config'
 import { RestDB } from '../../../connectors/src/configs/restdb.config'
 import { RestZeebe } from '../../../connectors/src/configs/restzeebe.config'
 import { SendGrid } from '../../../connectors/src/configs/sendgrid.config'
@@ -410,6 +411,10 @@ configTypes.push({type: getType<RemoteOk.GetListings>(), name: 'RemoteOk', inter
 configTypes.push({type: getType<RemoveBg.Remove>(), name: 'RemoveBg', interface: 'Remove'})
 configTypes.push({type: getType<Render.ListServices>(), name: 'Render', interface: 'ListServices'})
 configTypes.push({type: getType<Render.UpdateEnvironmentVariables>(), name: 'Render', interface: 'UpdateEnvironmentVariables'})
+configTypes.push({type: getType<RestCountries.GetAll>(), name: 'RestCountries', interface: 'GetAll'})
+configTypes.push({type: getType<RestCountries.GetByFullName>(), name: 'RestCountries', interface: 'GetByFullName'})
+configTypes.push({type: getType<RestCountries.GetByCode>(), name: 'RestCountries', interface: 'GetByCode'})
+configTypes.push({type: getType<RestCountries.ListOfCodes>(), name: 'RestCountries', interface: 'ListOfCodes'})
 configTypes.push({type: getType<RestDB.GetItemsFromCollection>(), name: 'RestDB', interface: 'GetItemsFromCollection'})
 configTypes.push({type: getType<RestZeebe.StartInstance>(), name: 'RestZeebe', interface: 'StartInstance'})
 configTypes.push({type: getType<SendGrid.SendMail>(), name: 'SendGrid', interface: 'SendMail'})

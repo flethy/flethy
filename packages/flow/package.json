@@ -4,8 +4,12 @@
   "description": "flow",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "play": "ts-node ./playground/play.ts"
+    "play": "ts-node ./playground/play.ts",
+    "build": "tsc --p tsconfig.json"
   },
   "publishConfig": {
     "access": "public"
@@ -14,11 +18,11 @@
   "author": "adam@flethy.com",
   "license": "MIT",
   "keywords": [
-    "web3",
-    "http",
-    "ipfs",
-    "etherscan",
-    "alchemy"
+    "flowengine",
+    "orchestration",
+    "saas",
+    "api",
+    "flow"
   ],
   "dependencies": {
     "axios": "^0.27.2",

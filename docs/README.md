@@ -131,6 +131,7 @@ The following Endpoints are currently supported.
 * [RemoteOk](./api/remoteok.md)
 * [RemoveBg](./api/removebg.md)
 * [Render](./api/render.md)
+* [RestCountries](./api/restcountries.md)
 * [RestDB](./api/restdb.md)
 * [RestZeebe](./api/restzeebe.md)
 * [SendGrid](./api/sendgrid.md)
