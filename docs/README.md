@@ -161,3 +161,4 @@ The following Endpoints are currently supported.
 * [UsePlunk](./api/useplunk.md)
 * [WhoIsXMLApi](./api/whoisxmlapi.md)
 * [WordSimi](./api/wordsimi.md)
+* [YahooFinance](./api/yahoofinance.md)

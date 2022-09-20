@@ -150,6 +150,7 @@ import ProductHunt from '../../connectors/src/configs/producthunt.config'
 import Cronhooks from '@flethy/connectors/src/configs/cronhooks.config'
 import EmailOctopus from '@flethy/connectors/src/configs/emailoctopus.config'
 import RestCountries from '@flethy/connectors/src/configs/restcountries.config'
+import YahooFinance from '@flethy/connectors/src/configs/yahoofinance.config'
 
 async function main() {
   const requestConfigs: {
@@ -2108,8 +2109,23 @@ async function main() {
       'param:name': 'Germany',
       'query:fullText': true,
     }),
+    yfGetQuote: nao<YahooFinance.GetQuote>({
+      kind: 'yahoofinance.finance.getQuote',
+      'auth:x-api-key': process.env.YAHOOFINANCE_API_KEY,
+      'query:symbols': 'AAPL',
+    }),
+    yfGetInsights: nao<YahooFinance.GetInsights>({
+      kind: 'yahoofinance.insights.get',
+      'auth:x-api-key': process.env.YAHOOFINANCE_API_KEY,
+      'query:symbol': 'AAPL',
+    }),
+    yfGetRecommendations: nao<YahooFinance.GetRecommendations>({
+      kind: 'yahoofinance.finance.getRecommentations',
+      'auth:x-api-key': process.env.YAHOOFINANCE_API_KEY,
+      'param:symbol': 'AAPL',
+    }),
   }
-  const requestConfig = requestConfigs.restCountriesByFullName
+  const requestConfig = requestConfigs.yfGetRecommendations
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

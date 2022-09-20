@@ -148,6 +148,7 @@ import { UsePlunk } from '../../../connectors/src/configs/useplunk.config'
 import { Web3Storage } from '../../../connectors/src/configs/web3storage.config'
 import { WhoIsXMLApi } from '../../../connectors/src/configs/whoisxmlapi.config'
 import { WordSimi } from '../../../connectors/src/configs/wordsimi.config'
+import { YahooFinance } from '../../../connectors/src/configs/yahoofinance.config'
 import { ZeroX } from '../../../connectors/src/configs/zerox.config'
 import { Zora } from '../../../connectors/src/configs/zora.config'
 export const configTypes: Array<{type: Type; name: string; interface: string}> = []
@@ -469,6 +470,9 @@ configTypes.push({type: getType<UsePlunk.PostEvent>(), name: 'UsePlunk', interfa
 configTypes.push({type: getType<Web3Storage.UploadContent>(), name: 'Web3Storage', interface: 'UploadContent'})
 configTypes.push({type: getType<WhoIsXMLApi.DomainAvailability>(), name: 'WhoIsXMLApi', interface: 'DomainAvailability'})
 configTypes.push({type: getType<WordSimi.MostSimilarWords>(), name: 'WordSimi', interface: 'MostSimilarWords'})
+configTypes.push({type: getType<YahooFinance.GetQuote>(), name: 'YahooFinance', interface: 'GetQuote'})
+configTypes.push({type: getType<YahooFinance.GetRecommendations>(), name: 'YahooFinance', interface: 'GetRecommendations'})
+configTypes.push({type: getType<YahooFinance.GetInsights>(), name: 'YahooFinance', interface: 'GetInsights'})
 configTypes.push({type: getType<ZeroX.SwapQuote>(), name: 'ZeroX', interface: 'SwapQuote'})
 configTypes.push({type: getType<ZeroX.SwapPrice>(), name: 'ZeroX', interface: 'SwapPrice'})
 configTypes.push({type: getType<ZeroX.SwapSources>(), name: 'ZeroX', interface: 'SwapSources'})

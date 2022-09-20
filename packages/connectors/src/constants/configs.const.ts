@@ -148,6 +148,7 @@ import { UsePlunk } from '../configs/useplunk.config'
 import { Web3Storage } from '../configs/web3storage.config'
 import { WhoIsXMLApi } from '../configs/whoisxmlapi.config'
 import { WordSimi } from '../configs/wordsimi.config'
+import { YahooFinance } from '../configs/yahoofinance.config'
 import { ZeroX } from '../configs/zerox.config'
 import { Zora } from '../configs/zora.config'
 
@@ -301,6 +302,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['web3storage', Web3Storage.API],
 ['whoisxmlapi', WhoIsXMLApi.API],
 ['wordsimi', WordSimi.API],
+['yahoofinance', YahooFinance.API],
 ['0x', ZeroX.API],
 ['zora', Zora.API],
 ])
