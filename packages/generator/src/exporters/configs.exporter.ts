@@ -97,5 +97,6 @@ export class ConfigsExporter {
     logger.info(`Writing data json...`)
     fs.writeFileSync(API_COUNT_FILE, JSON.stringify(dataJsonContent))
     await brandExporter.fetchLogos()
+    brandExporter.exportLogosToLandingPage()
   }
 }

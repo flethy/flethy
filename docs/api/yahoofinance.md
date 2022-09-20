@@ -1,0 +1,40 @@
+# YahooFinance
+
+## Links
+
+* URL: [https://financeapi.net](https://financeapi.net)
+* Documentation: [https://financeapi.net](https://financeapi.net)
+* Tags: web2
+* Category: finance
+* Type: stocks
+
+## API
+
+### Authentication
+
+* x-api-key: header
+
+### finance
+
+#### getQuote
+
+##### Get Quote
+
+* Description: Real time quote data for stocks, ETFs, mutuals funds, etc...
+* Docs: [https://financeapi.net](https://financeapi.net)
+
+#### getRecommentations
+
+##### Get Similar Stocks
+
+* Description: Get Similar Stocks
+* Docs: [https://financeapi.net](https://financeapi.net)
+
+### insights
+
+#### get
+
+##### Research insights
+
+* Description: Research insights
+* Docs: [https://financeapi.net](https://financeapi.net)

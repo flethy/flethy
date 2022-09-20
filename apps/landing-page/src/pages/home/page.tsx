@@ -1,9 +1,20 @@
-import { Box, Center, Heading, Stack, Text } from '@chakra-ui/react'
+import {
+	Box,
+	Center,
+	Grid,
+	GridItem,
+	Heading,
+	Image,
+	Stack,
+	Text,
+} from '@chakra-ui/react'
 import { observer } from 'mobx-react-lite'
-import { useMst } from '../../models/root'
 import { useTranslation } from 'react-i18next'
-import SyntaxHighlighter from 'react-syntax-highlighter'
-import { anOldHope } from 'react-syntax-highlighter/dist/esm/styles/hljs'
+import SyntaxHighlight from '../../components/SyntaxHighlight'
+import { CODE_EXAMPLES } from '../../constants/codeExamples.const'
+import { INTEGRATIONS } from '../../constants/integrations.const'
+import { BOX } from '../../constants/style.const'
+import { useMst } from '../../models/root'
 
 export default observer(() => {
 	const { t } = useTranslation('app')
@@ -13,39 +24,52 @@ export default observer(() => {
 		},
 	} = useMst()
 
-	const codeString = `import { nao, Web3Storage } from '@flethy/connectors'
-
-const requestConfig = nao<Web3Storage.UploadContent>({
-	kind: 'web3storage.upload.content',
-	'auth:Authorization': process.env.WEB3_STORAGE_API_TOKEN,
-	'body:content': {
-		testString: 'testString',
-		testNumber: 1,
-		testBoolean: true,
-	},
-})`
-
 	return (
-		<Center h="100vh">
+		<Center marginTop={'5rem'}>
 			<Stack textAlign={'center'}>
 				<Heading as="h1" size="lg" mb={4}>
 					{t('title')}
 				</Heading>
 				<Text>{t('description')}</Text>
 				<Text>{t('home.stayTuned')}</Text>
-				<Box textAlign={'left'}>
-					<SyntaxHighlighter
-						language="typescript"
-						style={anOldHope}
-						customStyle={{
-							borderRadius: '5px',
-							borderColor: 'yellow',
-							borderWidth: '1px',
-							margin: '2px',
-						}}
+				<Box mb={'3rem'}>
+					<SyntaxHighlight {...{ code: CODE_EXAMPLES.AUTH0 }} />
+				</Box>
+				<Heading as="h1" size="lg" mt={'3rem'}>
+					{t('home.integrations')}
+				</Heading>
+				<Box mb={'3rem'}>
+					<Grid
+						templateColumns="repeat(3, 1fr)"
+						gap={6}
+						justifyItems={'center'}
+						alignItems={'center'}
 					>
-						{codeString}
-					</SyntaxHighlighter>
+						{INTEGRATIONS.map((integration) => (
+							<GridItem
+								key={integration.id}
+								title={integration.id}
+								width={{ base: '50px', md: '70px' }}
+								height={{ base: '50px', md: '70px' }}
+							>
+								<Center
+									width={'100%'}
+									height={'100%'}
+									bgColor={integration.light ? '#1A202C' : 'white'}
+									borderRadius={BOX.borderRadius}
+									borderColor={BOX.borderColor}
+									borderWidth={BOX.borderWidth}
+									padding={'0.5em'}
+								>
+									<Image
+										src={`integrations/${integration.file}`}
+										alt={integration.id}
+										maxHeight={'100%'}
+									/>
+								</Center>
+							</GridItem>
+						))}
+					</Grid>
 				</Box>
 			</Stack>
 		</Center>

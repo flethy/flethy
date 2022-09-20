@@ -1,11 +1,23 @@
 import { Brandfetch, nao } from '@flethy/connectors'
 import { HttpRequest } from '../controllers/HttpRequest'
 import * as fs from 'fs'
+import * as path from 'path'
 import { DOCS_BASE } from './docs.exporter'
 import { logger } from '../utils/Logger'
 
 const BRANDS_DIR = `${DOCS_BASE}/brands`
 const BRAND_LOGOS = `${DOCS_BASE}/brand-logos`
+const LANDINGPAGE_BASE = path.join(
+  __dirname,
+  '..',
+  '..',
+  '..',
+  '..',
+  'apps',
+  'landing-page'
+)
+const LANDINGPAGE_INTEGRATIONS = `${LANDINGPAGE_BASE}/public/integrations`
+const LANDINGPAGE_CONSTANTS = `${LANDINGPAGE_BASE}/src/constants`
 
 export class BrandExporter {
   private files: string[] = []
@@ -89,6 +101,54 @@ export class BrandExporter {
           }
         }
       }
+    }
+  }
+
+  public exportLogosToLandingPage() {
+    logger.info(`Exporting Brand logos to Landing Page`)
+    this.readLoadedBrands()
+    const logos = fs.readdirSync(BRAND_LOGOS)
+    const logoMap: Map<string, string> = new Map<string, string>()
+    for (const logo of logos) {
+      const splitted = logo.split('.')
+      const id = splitted[0]
+      logoMap.set(id, logo)
+    }
+    const lightBrands: string[] = [
+      '1inch',
+      'apiflash',
+      'bigdatacloud',
+      'calendarific',
+      'camunda',
+      'coinlayer',
+      'courier',
+      'covalant',
+      'directus',
+      'restdb',
+      'serpapi',
+      'unlayer',
+      'up42',
+    ]
+    const logoArray: Array<{ id: string; file: string; light?: boolean }> = []
+    for (const fileName of logoMap.keys()) {
+      logoArray.push({
+        id: fileName,
+        file: logoMap.get(fileName),
+        light: lightBrands.includes(fileName),
+      })
+    }
+    const integrationConstants = `export const INTEGRATIONS = ${JSON.stringify(
+      logoArray
+    )}`
+    fs.writeFileSync(
+      `${LANDINGPAGE_CONSTANTS}/integrations.const.ts`,
+      integrationConstants
+    )
+    for (const logo of logoArray) {
+      fs.copyFileSync(
+        `${BRAND_LOGOS}/${logo.file}`,
+        `${LANDINGPAGE_INTEGRATIONS}/${logo.file}`
+      )
     }
   }
 }

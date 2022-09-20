@@ -102,7 +102,11 @@ export type UTILS_TYPE =
   | 'featureflags'
 export type DEFI_TYPE = 'liquidity'
 export type BOOKS_TYPE = 'index'
-export type FINANCE_TYPE = 'currency' | 'payment' | 'subscription-management'
+export type FINANCE_TYPE =
+  | 'currency'
+  | 'payment'
+  | 'subscription-management'
+  | 'stocks'
 export type DATA_TYPE =
   | 'validation'
   | 'resolution'
