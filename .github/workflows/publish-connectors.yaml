@@ -6,7 +6,7 @@ on:
     types: [published]
 
 jobs:
-  publish-landing-page:
+  publish-connectors:
     uses: ./.github/workflows/template-publish-npm-package.yaml
     with:
       packageDir: ./packages/connectors

@@ -1,4 +1,4 @@
-name: "Publish Connectors"
+name: "Publish Flow"
 
 # on: [push]
 on:
@@ -6,7 +6,7 @@ on:
     types: [published]
 
 jobs:
-  publish-landing-page:
+  publish-flow:
     uses: ./.github/workflows/template-publish-npm-package.yaml
     with:
       packageDir: ./packages/flow
