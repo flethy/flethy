@@ -1,7 +1,9 @@
 import * as fs from 'fs'
 import * as path from 'path'
 import { logger } from '../utils/Logger'
-import { BrandExporter } from './brand.exporter'
+import { BrandExporter, LANDINGPAGE_CONSTANTS } from './brand.exporter'
+import { DOCS_BASE } from './docs.exporter'
+import metaBirthdays from '../../../../docs/meta/birthdays.json'
 
 const CONFIGS_DIR_NAME = 'configs'
 const HTTP_CONFIGS_DIR_NAME = 'connectors'
@@ -37,6 +39,18 @@ const INDEX_FILE = path.join(
 // API COUNT
 const API_COUNT_FILE = path.join(__dirname, '..', '..', 'data.json')
 
+interface MetaBirthdays {
+  id: string
+  created: {
+    iso: string
+    unix: number
+  }
+  updated: {
+    iso: string
+    unix: number
+  }
+}
+
 export class ConfigsExporter {
   public static async export() {
     const imports: string[] = [
@@ -44,12 +58,29 @@ export class ConfigsExporter {
     ]
     const exports: string[] = []
     const mapEntries: string[] = []
+    const birthdays: MetaBirthdays[] = metaBirthdays
 
     const files = fs.readdirSync(CONFIGS_DIR)
     const dataJsonContent = { apicount: files.length }
     const brandExporter = new BrandExporter()
     brandExporter.readLoadedBrands()
     for (const file of files) {
+      const id = file.split('.')[0]
+      if (!birthdays.find((birthday) => birthday.id === id)) {
+        const stat = fs.statSync(`${CONFIGS_DIR}/${file}`)
+        birthdays.push({
+          id,
+          created: {
+            iso: stat.birthtime.toISOString(),
+            unix: stat.birthtime.getTime(),
+          },
+          updated: {
+            iso: stat.mtime.toISOString(),
+            unix: stat.mtime.getTime(),
+          },
+        })
+        logger.info(`Adding <${id}> to birthdays`)
+      }
       if (file.split('.')[1] !== 'config') {
         continue
       }
@@ -96,6 +127,14 @@ export class ConfigsExporter {
     logger.info(`Exported ${files.length} configs.`)
     logger.info(`Writing data json...`)
     fs.writeFileSync(API_COUNT_FILE, JSON.stringify(dataJsonContent))
+    fs.writeFileSync(
+      `${LANDINGPAGE_CONSTANTS}/api.const.ts`,
+      `export const API_COUNT = ${files.length}`
+    )
+    fs.writeFileSync(
+      `${DOCS_BASE}/meta/birthdays.json`,
+      JSON.stringify(birthdays)
+    )
     await brandExporter.fetchLogos()
     brandExporter.exportLogosToLandingPage()
   }

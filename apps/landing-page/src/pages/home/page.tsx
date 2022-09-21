@@ -11,6 +11,7 @@ import {
 import { observer } from 'mobx-react-lite'
 import { useTranslation } from 'react-i18next'
 import SyntaxHighlight from '../../components/SyntaxHighlight'
+import { API_COUNT } from '../../constants/api.const'
 import { CODE_EXAMPLES } from '../../constants/codeExamples.const'
 import { INTEGRATIONS } from '../../constants/integrations.const'
 import { BOX } from '../../constants/style.const'
@@ -36,11 +37,11 @@ export default observer(() => {
 					<SyntaxHighlight {...{ code: CODE_EXAMPLES.AUTH0 }} />
 				</Box>
 				<Heading as="h1" size="lg" mt={'3rem'}>
-					{t('home.integrations')}
+					{API_COUNT} {t('home.integrations')}
 				</Heading>
 				<Box mb={'3rem'}>
 					<Grid
-						templateColumns="repeat(3, 1fr)"
+						templateColumns="repeat(5, 1fr)"
 						gap={6}
 						justifyItems={'center'}
 						alignItems={'center'}
