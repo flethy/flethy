@@ -100,6 +100,7 @@ import { OpenLibrary } from '../../../connectors/src/configs/openlibrary.config'
 import { OpenSea } from '../../../connectors/src/configs/opensea.config'
 import { OpenWeatherMap } from '../../../connectors/src/configs/openweathermap.config'
 import { Ortto } from '../../../connectors/src/configs/ortto.config'
+import { Ory } from '../../../connectors/src/configs/ory.config'
 import { Parsiq } from '../../../connectors/src/configs/parsiq.config'
 import { PayPal } from '../../../connectors/src/configs/paypal.config'
 import { Peekalink } from '../../../connectors/src/configs/peekalink.config'
@@ -390,6 +391,7 @@ configTypes.push({type: getType<OpenSea.GetCollections>(), name: 'OpenSea', inte
 configTypes.push({type: getType<OpenWeatherMap.CurrentAndForecast>(), name: 'OpenWeatherMap', interface: 'CurrentAndForecast'})
 configTypes.push({type: getType<OpenWeatherMap.Current>(), name: 'OpenWeatherMap', interface: 'Current'})
 configTypes.push({type: getType<Ortto.RetrieveOneOrMorePeople>(), name: 'Ortto', interface: 'RetrieveOneOrMorePeople'})
+configTypes.push({type: getType<Ory.ListOAuth2Clients>(), name: 'Ory', interface: 'ListOAuth2Clients'})
 configTypes.push({type: getType<Parsiq.GetEvents>(), name: 'Parsiq', interface: 'GetEvents'})
 configTypes.push({type: getType<Parsiq.GetSingleBlock>(), name: 'Parsiq', interface: 'GetSingleBlock'})
 configTypes.push({type: getType<PayPal.AuthRequest>(), name: 'PayPal', interface: 'AuthRequest'})

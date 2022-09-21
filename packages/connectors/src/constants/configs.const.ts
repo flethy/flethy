@@ -100,6 +100,7 @@ import { OpenLibrary } from '../configs/openlibrary.config'
 import { OpenSea } from '../configs/opensea.config'
 import { OpenWeatherMap } from '../configs/openweathermap.config'
 import { Ortto } from '../configs/ortto.config'
+import { Ory } from '../configs/ory.config'
 import { Parsiq } from '../configs/parsiq.config'
 import { PayPal } from '../configs/paypal.config'
 import { Peekalink } from '../configs/peekalink.config'
@@ -254,6 +255,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['opensea', OpenSea.API],
 ['openweathermap', OpenWeatherMap.API],
 ['ortto', Ortto.API],
+['ory', Ory.API],
 ['parsiq', Parsiq.API],
 ['paypal', PayPal.API],
 ['peekalink', Peekalink.API],

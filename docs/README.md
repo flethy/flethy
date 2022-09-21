@@ -118,6 +118,7 @@ The following Endpoints are currently supported.
 * [OpenLibrary](./api/openlibrary.md)
 * [OpenWeatherMap](./api/openweathermap.md)
 * [Ortto](./api/ortto.md)
+* [Ory](./api/ory.md)
 * [PayPal](./api/paypal.md)
 * [Peekalink](./api/peekalink.md)
 * [Personio](./api/personio.md)

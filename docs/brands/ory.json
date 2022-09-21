@@ -1,0 +1,46 @@
+{
+  "name": "Ory",
+  "domain": "ory.sh",
+  "claimed": false,
+  "description": "Implement OAuth 2.0 and OpenID Connect in minutes with open source from ORY. Works in both new and existing systems.",
+  "links": [{ "name": "github", "url": "https://github.com/ory" }],
+  "logos": [
+    {
+      "type": "logo",
+      "theme": null,
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idmjA9QY9i/idlyQmNsXz.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 419,
+          "width": 820,
+          "size": 21914
+        },
+        {
+          "src": "https://asset.brandfetch.io/idmjA9QY9i/idPPyxHBlL.svg",
+          "background": "transparent",
+          "format": "svg",
+          "height": null,
+          "width": null,
+          "size": 1685
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#19181d", "type": "dark", "brightness": 25 },
+    { "hex": "#fffdff", "type": "light", "brightness": 254 },
+    { "hex": "#5528ff", "type": "accent", "brightness": 65 }
+  ],
+  "fonts": [
+    {
+      "name": "Inter",
+      "type": "title",
+      "origin": "google",
+      "originId": "Inter",
+      "weights": []
+    }
+  ],
+  "images": []
+}
