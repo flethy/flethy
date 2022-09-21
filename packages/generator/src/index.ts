@@ -151,6 +151,7 @@ import Cronhooks from '@flethy/connectors/src/configs/cronhooks.config'
 import EmailOctopus from '@flethy/connectors/src/configs/emailoctopus.config'
 import RestCountries from '@flethy/connectors/src/configs/restcountries.config'
 import YahooFinance from '@flethy/connectors/src/configs/yahoofinance.config'
+import Ory from '@flethy/connectors/src/configs/ory.config'
 
 async function main() {
   const requestConfigs: {
@@ -2124,8 +2125,14 @@ async function main() {
       'auth:x-api-key': process.env.YAHOOFINANCE_API_KEY,
       'param:symbol': 'AAPL',
     }),
+    oryListOAuth2Clients: nao<Ory.ListOAuth2Clients>({
+      kind: 'ory.admin.listOAuth2Clients',
+      'auth:Authorization': process.env.ORY_API_TOKEN,
+      'subdomain:project': process.env.ORY_TENANT,
+      baseId: 'admin',
+    }),
   }
-  const requestConfig = requestConfigs.yfGetRecommendations
+  const requestConfig = requestConfigs.oryListOAuth2Clients
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

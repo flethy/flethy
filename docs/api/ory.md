@@ -1,0 +1,24 @@
+# Ory
+
+## Links
+
+* URL: [https://www.ory.sh/](https://www.ory.sh/)
+* Documentation: [https://www.ory.sh/docs](https://www.ory.sh/docs)
+* Tags: web2
+* Category: identity
+* Type: identitymanagement
+
+## API
+
+### Authentication
+
+* Authorization: header:bearer
+
+### admin
+
+#### listOAuth2Clients
+
+##### List OAuth 2.0 Clients
+
+* Description: List OAuth 2.0 Clients
+* Docs: [https://www.ory.sh/docs/reference/api#operation/listOAuth2Clients](https://www.ory.sh/docs/reference/api#operation/listOAuth2Clients)
