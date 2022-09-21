@@ -301,6 +301,7 @@ async function main() {
       'auth:Authorization': process.env.AIRTABLE_API_KEY,
       'param:baseId': process.env.AIRTABLE_BASE,
       'param:tableId': process.env.AIRTABLE_TABLE,
+      'query:filterByFormula': `{Name} = "Test"`,
     }),
     notion: nao<Notion.CreateDatabase>({
       kind: 'notion.databases.create',

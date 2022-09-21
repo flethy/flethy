@@ -17,7 +17,7 @@ const LANDINGPAGE_BASE = path.join(
   'landing-page'
 )
 const LANDINGPAGE_INTEGRATIONS = `${LANDINGPAGE_BASE}/public/integrations`
-const LANDINGPAGE_CONSTANTS = `${LANDINGPAGE_BASE}/src/constants`
+export const LANDINGPAGE_CONSTANTS = `${LANDINGPAGE_BASE}/src/constants`
 
 export class BrandExporter {
   private files: string[] = []
