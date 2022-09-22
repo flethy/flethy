@@ -124,6 +124,7 @@ export class BrandExporter {
       'courier',
       'covalant',
       'directus',
+      'mezmo',
       'ory',
       'restdb',
       'serpapi',
