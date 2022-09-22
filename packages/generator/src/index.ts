@@ -152,6 +152,7 @@ import EmailOctopus from '@flethy/connectors/src/configs/emailoctopus.config'
 import RestCountries from '@flethy/connectors/src/configs/restcountries.config'
 import YahooFinance from '@flethy/connectors/src/configs/yahoofinance.config'
 import Ory from '@flethy/connectors/src/configs/ory.config'
+import MailJet from '@flethy/connectors/src/configs/mailjet.config'
 
 async function main() {
   const requestConfigs: {
@@ -2132,8 +2133,31 @@ async function main() {
       'subdomain:project': process.env.ORY_TENANT,
       baseId: 'admin',
     }),
+    mailjetBasicEmail: nao<MailJet.SendBasicEmail>({
+      kind: 'mailjet.send.basicEmail',
+      'auth:Authorization': {
+        username: process.env.MAILJET_API_KEY,
+        password: process.env.MAILJET_API_SECRET,
+      },
+      'body:Messages': [
+        {
+          From: {
+            Email: 'adam@flethy.com',
+            Name: 'Adam (from flethy)',
+          },
+          To: [
+            {
+              Name: 'Adam',
+              Email: 'adam.urban@gmail.com',
+            },
+          ],
+          Subject: `Hello from flethy!`,
+          HTMLPart: `<h3>Hello from flethy!</h3>`,
+        },
+      ],
+    }),
   }
-  const requestConfig = requestConfigs.oryListOAuth2Clients
+  const requestConfig = requestConfigs.mailjetBasicEmail
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

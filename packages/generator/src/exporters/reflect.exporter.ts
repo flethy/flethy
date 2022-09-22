@@ -81,6 +81,7 @@ import { Lokalise } from '../../../connectors/src/configs/lokalise.config'
 import { MailboxValidator } from '../../../connectors/src/configs/mailboxvalidator.config'
 import { MailCheckAi } from '../../../connectors/src/configs/mailcheckai.config'
 import { MailerSend } from '../../../connectors/src/configs/mailersend.config'
+import { MailJet } from '../../../connectors/src/configs/mailjet.config'
 import { MailPace } from '../../../connectors/src/configs/mailpace.config'
 import { Medium } from '../../../connectors/src/configs/medium.config'
 import { Mergent } from '../../../connectors/src/configs/mergent.config'
@@ -347,6 +348,7 @@ configTypes.push({type: getType<MailboxValidator.FreeEmail>(), name: 'MailboxVal
 configTypes.push({type: getType<MailCheckAi.CheckDomain>(), name: 'MailCheckAi', interface: 'CheckDomain'})
 configTypes.push({type: getType<MailCheckAi.CheckEmail>(), name: 'MailCheckAi', interface: 'CheckEmail'})
 configTypes.push({type: getType<MailerSend.EmailSend>(), name: 'MailerSend', interface: 'EmailSend'})
+configTypes.push({type: getType<MailJet.SendBasicEmail>(), name: 'MailJet', interface: 'SendBasicEmail'})
 configTypes.push({type: getType<MailPace.Send>(), name: 'MailPace', interface: 'Send'})
 configTypes.push({type: getType<Medium.Me>(), name: 'Medium', interface: 'Me'})
 configTypes.push({type: getType<Medium.GetPublications>(), name: 'Medium', interface: 'GetPublications'})

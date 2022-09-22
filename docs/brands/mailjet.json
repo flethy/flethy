@@ -1,0 +1,88 @@
+{
+  "name": "Mailjet",
+  "domain": "mailjet.com",
+  "claimed": false,
+  "description": "Mailjet is a real-time cloud emailing platform that improves the deliverability of emails and allows users to track and monitor sent emails.",
+  "links": [
+    { "name": "youtube", "url": "https://youtube.com/c/MailjetTV" },
+    { "name": "github", "url": "https://github.com/mailjet" },
+    { "name": "twitter", "url": "https://twitter.com/mailjet" },
+    { "name": "instagram", "url": "https://instagram.com/mailjet" },
+    { "name": "linkedin", "url": "https://linkedin.com/company/mailjet" },
+    { "name": "facebook", "url": "https://facebook.com/mailjet" }
+  ],
+  "logos": [
+    {
+      "type": "icon",
+      "theme": null,
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/id85L_ueNA/idJMy_aWv3.png",
+          "background": null,
+          "format": "png",
+          "height": 400,
+          "width": 400,
+          "size": 60732
+        }
+      ]
+    },
+    {
+      "type": "logo",
+      "theme": null,
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/id85L_ueNA/idGjF_Akmp.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 311,
+          "width": 800,
+          "size": 36481
+        },
+        {
+          "src": "https://asset.brandfetch.io/id85L_ueNA/iduOxdBkn9.svg",
+          "background": "transparent",
+          "format": "svg",
+          "height": null,
+          "width": null,
+          "size": 2030
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#333333", "type": "dark", "brightness": 51 },
+    { "hex": "#fcfcfc", "type": "light", "brightness": 252 },
+    { "hex": "#fead0d", "type": "accent", "brightness": 179 }
+  ],
+  "fonts": [
+    {
+      "name": "Roboto",
+      "type": "title",
+      "origin": "google",
+      "originId": "Roboto",
+      "weights": []
+    },
+    {
+      "name": "Roboto",
+      "type": "body",
+      "origin": "google",
+      "originId": "Roboto",
+      "weights": []
+    }
+  ],
+  "images": [
+    {
+      "type": "banner",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/id85L_ueNA/idoNywciai.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 500,
+          "width": 1500,
+          "size": 64721
+        }
+      ]
+    }
+  ]
+}
