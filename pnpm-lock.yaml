@@ -100,7 +100,7 @@ importers:
       '@cloudflare/workers-types': ^3.16.0
       '@emotion/react': ^11.10.4
       '@emotion/styled': ^11.10.4
-      '@flethy/flow': 0.0.147
+      '@flethy/flow': ^0.0.147
       '@types/node': 18.7.18
       '@types/react': 18.0.20
       '@types/react-dom': 18.0.6
