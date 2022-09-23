@@ -100,7 +100,7 @@ importers:
       '@cloudflare/workers-types': ^3.16.0
       '@emotion/react': ^11.10.4
       '@emotion/styled': ^11.10.4
-      '@flethy/flow': ^0.0.147
+      '@flethy/flow': ^0.0.148
       '@types/node': 18.7.18
       '@types/react': 18.0.20
       '@types/react-dom': 18.0.6
@@ -137,7 +137,7 @@ importers:
       '@chakra-ui/system': 2.2.11_hfzxdiydbrbhhfpkwuv3jhvwmq
       '@emotion/react': 11.10.4_axxkdcpdr7up57umjkldobkynm
       '@emotion/styled': 11.10.4_sn4wuyy54zwps25tv4w7lbiz6i
-      '@flethy/flow': 0.0.147
+      '@flethy/flow': 0.0.148
       framer-motion: 7.3.6_biqbaboplfbrettd7655fr4n2y
       i18next: 21.9.2
       mobx: 6.6.2
@@ -210,7 +210,7 @@ importers:
 
   packages/flow:
     specifiers:
-      '@flethy/connectors': ^0.0.147
+      '@flethy/connectors': ^0.0.148
       '@types/node': ^18.7.18
       '@typescript-eslint/eslint-plugin': ^5.38.0
       '@typescript-eslint/parser': ^5.38.0
@@ -226,7 +226,7 @@ importers:
       tsconfig: workspace:*
       typescript: ^4.8.3
     dependencies:
-      '@flethy/connectors': 0.0.147
+      '@flethy/connectors': 0.0.148
       axios: 0.27.2
       jsonata: 1.8.6
     devDependencies:
@@ -1951,9 +1951,14 @@ packages:
     resolution: {integrity: sha512-xRbvSsPQzYfPVRmR8qcSRpAYhBkU7ncYhHsoo5dfiK8TkCGTKlzQL23Uabhlskp1gDhxA8U1BsOxoh1tFP3x6g==}
     dev: false
 
-  /@flethy/flow/0.0.147:
-    resolution: {integrity: sha512-cMcw0lC7XlgDulEO0L8nWUWBXOt46p967OYGPhd024C9xcgrJ4twXIskV8sa3uflcCFa4DdPAkRjAOE33DLfdA==}
+  /@flethy/connectors/0.0.148:
+    resolution: {integrity: sha512-eLLUHM2oTzCqxFQvemyWfQve49ZvilUbV9cJgUa9GsExREGIbG2JM4K7CYESk+XWWqjAoBNy0tgSzXptJWSBYw==}
+    dev: false
+
+  /@flethy/flow/0.0.148:
+    resolution: {integrity: sha512-hCyXcBNxbrkT+LdlfrTuH627eDVTUkc+75+Xf/vpii03vyv+0b0+bp/dJs+JZibMsVHDoiKRGDSTsktd5YLq8g==}
     dependencies:
+      '@flethy/connectors': 0.0.147
       axios: 0.27.2
       jsonata: 1.8.6
     transitivePeerDependencies:
