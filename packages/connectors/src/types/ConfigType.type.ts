@@ -2,7 +2,7 @@ export interface ConfigTypeProperty {
   name: string
   type: string
   types: any
-  optional: boolean
+  optional?: boolean
   properties?: ConfigTypeProperty[]
 }
 

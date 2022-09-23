@@ -1,0 +1,77 @@
+{
+  "name": "Fibery",
+  "domain": "fibery.io",
+  "claimed": false,
+  "description": "Connected workspace for growing teams",
+  "links": [
+    {
+      "name": "youtube",
+      "url": "https://youtube.com/channel/UCFt3bN21j3OrVbOs6ERk7Xg"
+    },
+    { "name": "twitter", "url": "https://twitter.com/fibery_io" },
+    { "name": "linkedin", "url": "https://linkedin.com/company/admin" },
+    {
+      "name": "facebook",
+      "url": "https://facebook.com/Fiberyio-511880635957260"
+    }
+  ],
+  "logos": [
+    {
+      "type": "icon",
+      "theme": null,
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idI5ebu0_F/iduhCzu94O.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 400,
+          "width": 400,
+          "size": 9257
+        }
+      ]
+    },
+    {
+      "type": "logo",
+      "theme": null,
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idI5ebu0_F/id8ozhdSS8.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 120,
+          "width": 120,
+          "size": 10158
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#132330", "type": "dark", "brightness": 33 },
+    { "hex": "#f2f2f2", "type": "light", "brightness": 242 },
+    { "hex": "#05d4af", "type": "accent", "brightness": 165 }
+  ],
+  "fonts": [
+    {
+      "name": "Libre Baskerville",
+      "type": "body",
+      "origin": "google",
+      "originId": "Libre+Baskerville",
+      "weights": []
+    }
+  ],
+  "images": [
+    {
+      "type": "banner",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idI5ebu0_F/idi6yPdvwi.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 500,
+          "width": 1500,
+          "size": 24335
+        }
+      ]
+    }
+  ]
+}

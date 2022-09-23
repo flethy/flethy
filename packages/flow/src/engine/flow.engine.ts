@@ -26,6 +26,10 @@ export class FlowEngine {
     // console.log(JSON.stringify(this.instanceContext))
   }
 
+  public getContent() {
+    return this.utils.getInstanceContext().context
+  }
+
   private async execute(node: FlowNode) {
     if (this.utils.waitForIncoming(node)) {
       // need to wait for all incoming nodes

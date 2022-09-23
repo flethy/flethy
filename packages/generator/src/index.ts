@@ -153,6 +153,7 @@ import RestCountries from '@flethy/connectors/src/configs/restcountries.config'
 import YahooFinance from '@flethy/connectors/src/configs/yahoofinance.config'
 import Ory from '@flethy/connectors/src/configs/ory.config'
 import MailJet from '@flethy/connectors/src/configs/mailjet.config'
+import Fibery from '@flethy/connectors/src/configs/fibery.config'
 
 async function main() {
   const requestConfigs: {
@@ -2156,8 +2157,21 @@ async function main() {
         },
       ],
     }),
+    fiberySchema: nao<Fibery.GetSchema>({
+      kind: 'fibery.schema.get',
+      'auth:Authorization': process.env.FIBERY_API_TOKEN,
+      'subdomain:workspace': 'flethy',
+      'body:body': [{ command: 'fibery.schema/query' }],
+    }),
+    fiberyGraphQL: nao<Fibery.GraphQLQuery>({
+      kind: 'fibery.graphql.query',
+      'auth:Authorization': process.env.FIBERY_API_TOKEN,
+      'subdomain:workspace': 'flethy',
+      'param:spaceId': 'Software_Development',
+      'body:query': `{findBugs{id,name,state{name}}}`,
+    }),
   }
-  const requestConfig = requestConfigs.mailjetBasicEmail
+  const requestConfig = requestConfigs.fiberyGraphQL
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)
