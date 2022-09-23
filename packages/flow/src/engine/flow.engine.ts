@@ -26,8 +26,12 @@ export class FlowEngine {
     // console.log(JSON.stringify(this.instanceContext))
   }
 
-  public getContent() {
-    return this.utils.getInstanceContext().context
+  public getContent(type: 'all' | 'instanceContext' = 'instanceContext') {
+    if (type === 'all') {
+      return this.utils.getInstanceContext()
+    } else {
+      return this.utils.getInstanceContext().context
+    }
   }
 
   private async execute(node: FlowNode) {
