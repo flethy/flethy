@@ -1,0 +1,33 @@
+# Fibery
+
+## Links
+
+* URL: [https://fibery.io](https://fibery.io)
+* Documentation: [https://api.fibery.io/#introduction](https://api.fibery.io/#introduction)
+* Tags: web2
+* Category: collaboration
+* Type: spreadsheet
+
+## API
+
+### Authentication
+
+* Authorization: header:token
+
+### schema
+
+#### get
+
+##### Schema
+
+* Description: Schema
+* Docs: [https://api.fibery.io/#schema](https://api.fibery.io/#schema)
+
+### graphql
+
+#### query
+
+##### GraphQL Query
+
+* Description: GraphQL Query
+* Docs: [https://api.fibery.io/graphql.html#queries](https://api.fibery.io/graphql.html#queries)

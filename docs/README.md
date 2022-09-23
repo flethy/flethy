@@ -77,6 +77,7 @@ The following Endpoints are currently supported.
 * [EmailOctopus](./api/emailoctopus.md)
 * [Eventbrite](./api/eventbrite.md)
 * [Fauna](./api/fauna.md)
+* [Fibery](./api/fibery.md)
 * [Frankfurter](./api/frankfurter.md)
 * [Geekflare](./api/geekflare.md)
 * [Github](./api/github.md)

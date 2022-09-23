@@ -3,6 +3,6 @@
 		"types": ["vite/client", "@cloudflare/workers-types"]
 	},
 	"extends": "tsconfig/react-mobx.json",
-	"include": ["./src/**/*"],
-	"exclude": ["node_modules", "./functions/**/*"]
+	"include": ["./src/**/*", "./functions/**/*"],
+	"exclude": ["node_modules"]
 }

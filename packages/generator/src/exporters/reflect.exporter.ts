@@ -57,6 +57,7 @@ import { EmailOctopus } from '../../../connectors/src/configs/emailoctopus.confi
 import { Etherscan } from '../../../connectors/src/configs/etherscan.config'
 import { Eventbrite } from '../../../connectors/src/configs/eventbrite.config'
 import { Fauna } from '../../../connectors/src/configs/fauna.config'
+import { Fibery } from '../../../connectors/src/configs/fibery.config'
 import { Frankfurter } from '../../../connectors/src/configs/frankfurter.config'
 import { Geekflare } from '../../../connectors/src/configs/geekflare.config'
 import { Github } from '../../../connectors/src/configs/github.config'
@@ -286,6 +287,8 @@ configTypes.push({type: getType<Etherscan.AccountsBalanceSingleAddress>(), name:
 configTypes.push({type: getType<Eventbrite.ListAttendeeByEventId>(), name: 'Eventbrite', interface: 'ListAttendeeByEventId'})
 configTypes.push({type: getType<Eventbrite.GetUserMe>(), name: 'Eventbrite', interface: 'GetUserMe'})
 configTypes.push({type: getType<Fauna.GraphQLQuery>(), name: 'Fauna', interface: 'GraphQLQuery'})
+configTypes.push({type: getType<Fibery.GetSchema>(), name: 'Fibery', interface: 'GetSchema'})
+configTypes.push({type: getType<Fibery.GraphQLQuery>(), name: 'Fibery', interface: 'GraphQLQuery'})
 configTypes.push({type: getType<Frankfurter.Latest>(), name: 'Frankfurter', interface: 'Latest'})
 configTypes.push({type: getType<Frankfurter.Historical>(), name: 'Frankfurter', interface: 'Historical'})
 configTypes.push({type: getType<Frankfurter.TimeSeries>(), name: 'Frankfurter', interface: 'TimeSeries'})

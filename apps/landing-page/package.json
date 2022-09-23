@@ -4,6 +4,7 @@
 	"scripts": {
 		"start": "vite --mode dev",
 		"dev": "vite ",
+		"build": "vite build --mode dev",
 		"build:dev": "vite build --mode dev",
 		"build:int": "vite build --mode int",
 		"build:prod": "vite build --mode prod",
@@ -15,6 +16,7 @@
 		"@chakra-ui/system": "^2.2.11",
 		"@emotion/react": "^11.10.4",
 		"@emotion/styled": "^11.10.4",
+		"@flethy/flow": "workspace:*",
 		"framer-motion": "^7.3.5",
 		"i18next": "^21.9.2",
 		"mobx": "6.6.2",
