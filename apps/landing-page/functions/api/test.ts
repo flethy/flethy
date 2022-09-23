@@ -42,6 +42,6 @@ export const onRequestGet: PagesFunction<{
 	return jsonResponse({
 		status: 'hf!1! new',
 		setting: env.VITE_LOGLEVEL,
-		content: engine.getContent(),
+		content: engine.getContent('all'),
 	})
 }
