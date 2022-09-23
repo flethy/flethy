@@ -21,7 +21,7 @@ export const onRequestGet: PagesFunction<{
 			kind: 'emailoctopus.lists.createContact',
 			'auth:api_key': '==>secrets==>EMAILOCTOPUS_API_KEY',
 			'param:listId': '==>secrets==>EMAILOCTOPUS_LIST_ID',
-			'body:email_address': 'adam@flethy.com',
+			'body:email_address': 'adam2@flethy.com',
 		},
 	]
 
@@ -42,5 +42,6 @@ export const onRequestGet: PagesFunction<{
 	return jsonResponse({
 		status: 'hf!1! new',
 		setting: env.VITE_LOGLEVEL,
+		content: engine.getContent(),
 	})
 }
