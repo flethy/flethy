@@ -121,6 +121,7 @@ import { Render } from '../configs/render.config'
 import { RestCountries } from '../configs/restcountries.config'
 import { RestDB } from '../configs/restdb.config'
 import { RestZeebe } from '../configs/restzeebe.config'
+import { Semrush } from '../configs/semrush.config'
 import { SendGrid } from '../configs/sendgrid.config'
 import { Sentry } from '../configs/sentry.config'
 import { SerpApi } from '../configs/serpapi.config'
@@ -278,6 +279,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['restcountries', RestCountries.API],
 ['restdb', RestDB.API],
 ['restzeebe', RestZeebe.API],
+['semrush', Semrush.API],
 ['sendgrid', SendGrid.API],
 ['sentry', Sentry.API],
 ['serpapi', SerpApi.API],
