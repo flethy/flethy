@@ -1,9 +1,9 @@
 name: "Deploy Landing Page"
 
-on: [push]
-# on:
-#   release:
-#     types: [published]
+# on: [push]
+on:
+  release:
+    types: [published]
 
 jobs:
   publish-landing-page:
