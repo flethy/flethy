@@ -137,6 +137,7 @@ The following Endpoints are currently supported.
 * [RestCountries](./api/restcountries.md)
 * [RestDB](./api/restdb.md)
 * [RestZeebe](./api/restzeebe.md)
+* [Semrush](./api/semrush.md)
 * [SendGrid](./api/sendgrid.md)
 * [Sentry](./api/sentry.md)
 * [SerpApi](./api/serpapi.md)
