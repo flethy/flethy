@@ -7,5 +7,15 @@
 	"home": {
 		"stayTuned": "Stay tuned for more updates!",
 		"integrations": "Integrations!"
+	},
+	"general": {
+		"email": "Email",
+		"subscribe": "Subscribe"
+	},
+	"components": {
+		"emailSubscription": {
+			"thanks": "Thanks for subscribing!",
+			"error": "Sorry, something went wrong. Please try again later."
+		}
 	}
 }

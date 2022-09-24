@@ -10,6 +10,7 @@ import {
 } from '@chakra-ui/react'
 import { observer } from 'mobx-react-lite'
 import { useTranslation } from 'react-i18next'
+import EmailSubscription from '../../components/email-subscription/EmailSubscription'
 import SyntaxHighlight from '../../components/SyntaxHighlight'
 import { API_COUNT } from '../../constants/api.const'
 import { CODE_EXAMPLES } from '../../constants/codeExamples.const'
@@ -36,6 +37,7 @@ export default observer(() => {
 				<Box mb={'3rem'}>
 					<SyntaxHighlight {...{ code: CODE_EXAMPLES.AUTH0 }} />
 				</Box>
+				<EmailSubscription />
 				<Heading as="h1" size="lg" mt={'3rem'}>
 					{API_COUNT} {t('home.integrations')}
 				</Heading>
