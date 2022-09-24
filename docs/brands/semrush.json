@@ -1,0 +1,107 @@
+{
+  "name": "SEMrush",
+  "domain": "semrush.com",
+  "claimed": false,
+  "description": "SEMrush is a an online visibility management and content marketing SaaS platform.",
+  "links": [
+    { "name": "twitter", "url": "https://twitter.com/semrush" },
+    { "name": "facebook", "url": "https://facebook.com/SEMrush" },
+    { "name": "linkedin", "url": "https://linkedin.com/company/semrush" }
+  ],
+  "logos": [
+    {
+      "type": "symbol",
+      "theme": null,
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idt3n8W3ef/idTv-rh9Ur.svg",
+          "background": "transparent",
+          "format": "svg",
+          "height": null,
+          "width": null,
+          "size": 1127
+        },
+        {
+          "src": "https://asset.brandfetch.io/idt3n8W3ef/idgEzuzwRW.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 684,
+          "width": 800,
+          "size": 14102
+        }
+      ]
+    },
+    {
+      "type": "logo",
+      "theme": null,
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idt3n8W3ef/idsOB0noI0.svg",
+          "background": "transparent",
+          "format": "svg",
+          "height": null,
+          "width": null,
+          "size": 3058
+        },
+        {
+          "src": "https://asset.brandfetch.io/idt3n8W3ef/idZlxQDw38.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 212,
+          "width": 800,
+          "size": 9453
+        }
+      ]
+    },
+    {
+      "type": "icon",
+      "theme": null,
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idt3n8W3ef/idO0uL_oC1.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 400,
+          "width": 400,
+          "size": 8613
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#421984", "type": "dark", "brightness": 41 },
+    { "hex": "#ffffff", "type": "light", "brightness": 255 },
+    { "hex": "#ff642d", "type": "accent", "brightness": 129 }
+  ],
+  "fonts": [
+    {
+      "name": "Factor A",
+      "type": "title",
+      "origin": "custom",
+      "originId": null,
+      "weights": []
+    },
+    {
+      "name": "Inter",
+      "type": "body",
+      "origin": "google",
+      "originId": "Inter",
+      "weights": []
+    }
+  ],
+  "images": [
+    {
+      "type": "banner",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idt3n8W3ef/idoWiuWI-J.png",
+          "background": null,
+          "format": "png",
+          "height": 200,
+          "width": 600,
+          "size": 74015
+        }
+      ]
+    }
+  ]
+}

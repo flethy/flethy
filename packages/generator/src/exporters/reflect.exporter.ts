@@ -121,6 +121,7 @@ import { Render } from '../../../connectors/src/configs/render.config'
 import { RestCountries } from '../../../connectors/src/configs/restcountries.config'
 import { RestDB } from '../../../connectors/src/configs/restdb.config'
 import { RestZeebe } from '../../../connectors/src/configs/restzeebe.config'
+import { Semrush } from '../../../connectors/src/configs/semrush.config'
 import { SendGrid } from '../../../connectors/src/configs/sendgrid.config'
 import { Sentry } from '../../../connectors/src/configs/sentry.config'
 import { SerpApi } from '../../../connectors/src/configs/serpapi.config'
@@ -425,6 +426,7 @@ configTypes.push({type: getType<RestCountries.GetByCode>(), name: 'RestCountries
 configTypes.push({type: getType<RestCountries.ListOfCodes>(), name: 'RestCountries', interface: 'ListOfCodes'})
 configTypes.push({type: getType<RestDB.GetItemsFromCollection>(), name: 'RestDB', interface: 'GetItemsFromCollection'})
 configTypes.push({type: getType<RestZeebe.StartInstance>(), name: 'RestZeebe', interface: 'StartInstance'})
+configTypes.push({type: getType<Semrush.GetBacklinksOverview>(), name: 'Semrush', interface: 'GetBacklinksOverview'})
 configTypes.push({type: getType<SendGrid.SendMail>(), name: 'SendGrid', interface: 'SendMail'})
 configTypes.push({type: getType<Sentry.QueryDiscoverEvents>(), name: 'Sentry', interface: 'QueryDiscoverEvents'})
 configTypes.push({type: getType<Sentry.ListProjects>(), name: 'Sentry', interface: 'ListProjects'})

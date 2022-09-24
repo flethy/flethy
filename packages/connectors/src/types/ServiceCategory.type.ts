@@ -79,6 +79,7 @@ export type MARKETING_TYPE =
   | 'crm'
   | 'media'
   | 'blogging'
+  | 'seo'
 export type AUTOMATION_TYPE = 'workflows' | 'decisions'
 export type UTILS_TYPE =
   | 'emailverification'
