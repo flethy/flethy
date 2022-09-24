@@ -1,27 +1,27 @@
 import { KV_KEY_ALL_PENDING, PendingSubscription } from './meta'
 
-declare const EMAILSUB: KVNamespace
-
 export class KvUtils {
-	public static async put(key: string, value: string): Promise<void> {
-		await EMAILSUB.put(key, value)
+	constructor(private EMAILSUB: KVNamespace) {}
+
+	public async put(key: string, value: string): Promise<void> {
+		await this.EMAILSUB.put(key, value)
 	}
 
-	public static async get(key: string): Promise<string | null> {
-		const value = await EMAILSUB.get(key)
+	public async get(key: string): Promise<string | null> {
+		const value = await this.EMAILSUB.get(key)
 		return value
 	}
 
 	// ===
 
-	public static async getPendingEntry(options: {
+	public async getPendingEntry(options: {
 		email?: string
 		token?: string
 	}): Promise<PendingSubscription | undefined> {
 		if (!options.email && !options.token) {
 			return undefined
 		}
-		const pendingValue: string | null = await KvUtils.get(KV_KEY_ALL_PENDING)
+		const pendingValue: string | null = await this.get(KV_KEY_ALL_PENDING)
 		if (pendingValue) {
 			const pending: PendingSubscription[] = JSON.parse(pendingValue)
 			const existing = pending.find((p) => {
@@ -38,11 +38,11 @@ export class KvUtils {
 		return undefined
 	}
 
-	public static async isPendingEntryAvailable(options: {
+	public async isPendingEntryAvailable(options: {
 		email?: string
 		token?: string
 	}): Promise<boolean> {
-		const existing = await KvUtils.getPendingEntry(options)
+		const existing = await this.getPendingEntry(options)
 		if (existing) {
 			return true
 		} else {
@@ -50,30 +50,27 @@ export class KvUtils {
 		}
 	}
 
-	public static async addPendingEntry(
+	public async addPendingEntry(
 		pendingSubscription: PendingSubscription,
 	): Promise<void> {
-		const pendingValue: string | null = await KvUtils.get(KV_KEY_ALL_PENDING)
+		const pendingValue: string | null = await this.get(KV_KEY_ALL_PENDING)
 		if (pendingValue) {
 			const pending: PendingSubscription[] = JSON.parse(pendingValue)
 			pending.push(pendingSubscription)
-			await KvUtils.put(KV_KEY_ALL_PENDING, JSON.stringify(pending))
+			await this.put(KV_KEY_ALL_PENDING, JSON.stringify(pending))
 		} else {
-			await KvUtils.put(
-				KV_KEY_ALL_PENDING,
-				JSON.stringify([pendingSubscription]),
-			)
+			await this.put(KV_KEY_ALL_PENDING, JSON.stringify([pendingSubscription]))
 		}
 	}
 
-	public static async removePendingEntry(options: {
+	public async removePendingEntry(options: {
 		email?: string
 		token?: string
 	}): Promise<void> {
 		if (!options.email && !options.token) {
 			return
 		}
-		const pendingValue: string | null = await KvUtils.get(KV_KEY_ALL_PENDING)
+		const pendingValue: string | null = await this.get(KV_KEY_ALL_PENDING)
 		if (pendingValue) {
 			const pending: PendingSubscription[] = JSON.parse(pendingValue)
 			const filtered = pending.filter((p) => {
@@ -85,7 +82,7 @@ export class KvUtils {
 				}
 				return true
 			})
-			await KvUtils.put(KV_KEY_ALL_PENDING, JSON.stringify(filtered))
+			await this.put(KV_KEY_ALL_PENDING, JSON.stringify(filtered))
 		}
 	}
 }

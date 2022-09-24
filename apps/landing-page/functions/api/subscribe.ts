@@ -9,6 +9,7 @@ export const onRequestPost: PagesFunction<{
 	VITE_LOGLEVEL: string
 	MAILJET_API_KEY: string
 	MAILJET_API_SECRET: string
+	EMAILSUB: KVNamespace
 }> = async ({ request, env }) => {
 	const body: SubscriptionRequest = await request.json()
 	if (!body.email) {
@@ -20,8 +21,9 @@ export const onRequestPost: PagesFunction<{
 
 	try {
 		const email = body.email.toLowerCase()
+		const kvUtils = new KvUtils(env.EMAILSUB)
 
-		const isPendingAvailable = await KvUtils.isPendingEntryAvailable({ email })
+		const isPendingAvailable = await kvUtils.isPendingEntryAvailable({ email })
 		if (isPendingAvailable) {
 			return jsonResponse({
 				status: 'done',
@@ -81,7 +83,7 @@ export const onRequestPost: PagesFunction<{
 
 		await engine.start()
 
-		await KvUtils.addPendingEntry(pendingSubscription)
+		await kvUtils.addPendingEntry(pendingSubscription)
 
 		return jsonResponse({
 			status: 'done',
