@@ -41,11 +41,11 @@ export const EmailSubscription = types
 
 			try {
 				yield request({
-					url: `api/verify/${options.token}`,
+					url: `api/verify`,
 					method: 'post',
 					base: 'origin',
 					body: {
-						email: options.token,
+						token: options.token,
 					},
 				})
 				api.stateAndCache.updateToDone(stateAndCacheKey)
