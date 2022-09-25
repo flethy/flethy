@@ -100,7 +100,7 @@ importers:
       '@cloudflare/workers-types': ^3.16.0
       '@emotion/react': ^11.10.4
       '@emotion/styled': ^11.10.4
-      '@flethy/flow': ^0.0.150
+      '@flethy/flow': ^0.0.153
       '@types/node': 18.7.19
       '@types/react': 18.0.21
       '@types/react-dom': 18.0.6
@@ -137,7 +137,7 @@ importers:
       '@chakra-ui/system': 2.2.11_hfzxdiydbrbhhfpkwuv3jhvwmq
       '@emotion/react': 11.10.4_msyv5sllghxdhcqrv627wahqgi
       '@emotion/styled': 11.10.4_3hd6nwy3r2wumq5zfueojfsowa
-      '@flethy/flow': 0.0.150
+      '@flethy/flow': 0.0.153
       framer-motion: 7.3.6_biqbaboplfbrettd7655fr4n2y
       i18next: 21.9.2
       mobx: 6.6.2
@@ -210,7 +210,7 @@ importers:
 
   packages/flow:
     specifiers:
-      '@flethy/connectors': ^0.0.150
+      '@flethy/connectors': ^0.0.153
       '@types/node': ^18.7.19
       '@typescript-eslint/eslint-plugin': ^5.38.0
       '@typescript-eslint/parser': ^5.38.0
@@ -226,7 +226,7 @@ importers:
       tsconfig: workspace:*
       typescript: ^4.8.3
     dependencies:
-      '@flethy/connectors': 0.0.150
+      '@flethy/connectors': 0.0.153
       axios: 0.27.2
       jsonata: 1.8.6
     devDependencies:
@@ -1947,18 +1947,18 @@ packages:
     transitivePeerDependencies:
       - supports-color
 
-  /@flethy/connectors/0.0.147:
-    resolution: {integrity: sha512-xRbvSsPQzYfPVRmR8qcSRpAYhBkU7ncYhHsoo5dfiK8TkCGTKlzQL23Uabhlskp1gDhxA8U1BsOxoh1tFP3x6g==}
-    dev: false
-
   /@flethy/connectors/0.0.150:
     resolution: {integrity: sha512-4AgKAhaYX86C8vca2UrmzvEVoOWHkC+iOqc3zlwIy1lC5CPaIvpAo3jzjQKobRFMhHat+G6Y2ONUUZgkxXnBWQ==}
     dev: false
 
-  /@flethy/flow/0.0.150:
-    resolution: {integrity: sha512-5nBDrGe4UEzV2FvOLoqYkZdMEB/N8TPXMDUNajsY9Sil6cwYOh0ZPWWDC3TaZfgzbdDcd+l1ORXJYuj1EMYrGA==}
+  /@flethy/connectors/0.0.153:
+    resolution: {integrity: sha512-8Rbhrtr3WmkJkbYfFoY5o4Eb0hQvoP5tcRa8JaoIvAecmqPQ3W7IiYNrjQY+UeJ/PqXW4ue2zW/cJGRGOKPRRg==}
+    dev: false
+
+  /@flethy/flow/0.0.153:
+    resolution: {integrity: sha512-2PsmkOyqCeXOvyCR6Lqc5KWvBhdqlllgZ5pvguBtqH7l19r1JkGF1rGfH1aWWOigEuo1Lvj/dtjhkSVL0sPEkw==}
     dependencies:
-      '@flethy/connectors': 0.0.147
+      '@flethy/connectors': 0.0.150
       axios: 0.27.2
       jsonata: 1.8.6
     transitivePeerDependencies:
