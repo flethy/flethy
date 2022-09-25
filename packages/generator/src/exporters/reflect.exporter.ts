@@ -109,6 +109,7 @@ import { Peekalink } from '../../../connectors/src/configs/peekalink.config'
 import { Personio } from '../../../connectors/src/configs/personio.config'
 import { Pinata } from '../../../connectors/src/configs/pinata.config'
 import { Pixela } from '../../../connectors/src/configs/pixela.config'
+import { PolyScale } from '../../../connectors/src/configs/polyscale.config'
 import { PostHog } from '../../../connectors/src/configs/posthog.config'
 import { ProductHunt } from '../../../connectors/src/configs/producthunt.config'
 import { PurgoMalum } from '../../../connectors/src/configs/purgomalum.config'
@@ -410,6 +411,8 @@ configTypes.push({type: getType<Pinata.PinningPinJsonToIPFS>(), name: 'Pinata', 
 configTypes.push({type: getType<Pixela.CreateGraph>(), name: 'Pixela', interface: 'CreateGraph'})
 configTypes.push({type: getType<Pixela.GetGraph>(), name: 'Pixela', interface: 'GetGraph'})
 configTypes.push({type: getType<Pixela.PostValue>(), name: 'Pixela', interface: 'PostValue'})
+configTypes.push({type: getType<PolyScale.GetCaches>(), name: 'PolyScale', interface: 'GetCaches'})
+configTypes.push({type: getType<PolyScale.PurgeCache>(), name: 'PolyScale', interface: 'PurgeCache'})
 configTypes.push({type: getType<PostHog.SendEvent>(), name: 'PostHog', interface: 'SendEvent'})
 configTypes.push({type: getType<ProductHunt.GetCollections>(), name: 'ProductHunt', interface: 'GetCollections'})
 configTypes.push({type: getType<PurgoMalum.Profanity>(), name: 'PurgoMalum', interface: 'Profanity'})

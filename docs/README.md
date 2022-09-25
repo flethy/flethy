@@ -125,6 +125,7 @@ The following Endpoints are currently supported.
 * [Peekalink](./api/peekalink.md)
 * [Personio](./api/personio.md)
 * [Pixela](./api/pixela.md)
+* [PolyScale](./api/polyscale.md)
 * [PostHog](./api/posthog.md)
 * [ProductHunt](./api/producthunt.md)
 * [PurgoMalum](./api/purgomalum.md)

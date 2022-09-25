@@ -154,6 +154,7 @@ import YahooFinance from '@flethy/connectors/src/configs/yahoofinance.config'
 import Ory from '@flethy/connectors/src/configs/ory.config'
 import MailJet from '@flethy/connectors/src/configs/mailjet.config'
 import Fibery from '@flethy/connectors/src/configs/fibery.config'
+import PolyScale from '@flethy/connectors/src/configs/polyscale.config'
 
 async function main() {
   const requestConfigs: {
@@ -2170,8 +2171,17 @@ async function main() {
       'param:spaceId': 'Software_Development',
       'body:query': `{findBugs{id,name,state{name}}}`,
     }),
+    polyscaleGetCaches: nao<PolyScale.GetCaches>({
+      kind: 'polyscale.cache.getAll',
+      'auth:Authorization': process.env.POLYSCALE_API_KEY,
+    }),
+    polyscalePurgeCache: nao<PolyScale.PurgeCache>({
+      kind: 'polyscale.cache.purge',
+      'auth:Authorization': process.env.POLYSCALE_API_KEY,
+      'param:cacheId': process.env.POLYSCALE_CACHE_ID,
+    }),
   }
-  const requestConfig = requestConfigs.fiberyGraphQL
+  const requestConfig = requestConfigs.polyscalePurgeCache
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)
