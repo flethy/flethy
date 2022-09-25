@@ -109,6 +109,7 @@ import { Peekalink } from '../configs/peekalink.config'
 import { Personio } from '../configs/personio.config'
 import { Pinata } from '../configs/pinata.config'
 import { Pixela } from '../configs/pixela.config'
+import { PolyScale } from '../configs/polyscale.config'
 import { PostHog } from '../configs/posthog.config'
 import { ProductHunt } from '../configs/producthunt.config'
 import { PurgoMalum } from '../configs/purgomalum.config'
@@ -267,6 +268,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['personio', Personio.API],
 ['pinata', Pinata.API],
 ['pixela', Pixela.API],
+['polyscale', PolyScale.API],
 ['posthog', PostHog.API],
 ['producthunt', ProductHunt.API],
 ['purgomalum', PurgoMalum.API],

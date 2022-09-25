@@ -1,0 +1,58 @@
+{
+  "name": "PolyScale Database Edge Cache",
+  "domain": "polyscale.ai",
+  "claimed": false,
+  "description": null,
+  "links": [{ "name": "twitter", "url": "https://twitter.com/PolyScaleAi" }],
+  "logos": [
+    {
+      "type": "logo",
+      "theme": null,
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idj-fW8me0/id_vfrGUYo.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 224,
+          "width": 820,
+          "size": 15410
+        },
+        {
+          "src": "https://asset.brandfetch.io/idj-fW8me0/idQ7f51kgM.svg",
+          "background": "transparent",
+          "format": "svg",
+          "size": 10058
+        }
+      ]
+    },
+    {
+      "type": "icon",
+      "theme": null,
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idj-fW8me0/idgP6wwgtV.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 400,
+          "width": 400,
+          "size": 7607
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#812b39", "type": "accent", "brightness": 62 },
+    { "hex": "#231b1b", "type": "dark", "brightness": 29 },
+    { "hex": "#f2f7f6", "type": "light", "brightness": 246 }
+  ],
+  "fonts": [
+    {
+      "name": "Inter",
+      "type": "body",
+      "origin": "google",
+      "originId": "Inter",
+      "weights": []
+    }
+  ],
+  "images": []
+}
