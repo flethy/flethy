@@ -7,5 +7,23 @@
 	"home": {
 		"stayTuned": "Stay tuned for more updates!",
 		"integrations": "Integrations!"
+	},
+	"general": {
+		"email": "Email",
+		"subscribe": "Subscribe"
+	},
+	"components": {
+		"emailSubscription": {
+			"thanks": "Thanks for subscribing!",
+			"error": "Sorry, something went wrong. Please try again later."
+		}
+	},
+	"pages": {
+		"verification": {
+			"heading": "You're ready to speed up!",
+			"loading": "Please wait while we're updating your subscription",
+			"thanks": "You're now subscribed to our newsletter!",
+			"error": "Sorry, something went wrong. Please try again later."
+		}
 	}
 }

@@ -5,7 +5,7 @@ import events from '../../events/events'
 const DEFAULT_CACHE_TTL = 15 * MINUTE
 
 export interface StateAndCacheKey {
-	api: 'cats'
+	api: 'emailSubscription'
 	operation: string
 	id?: string
 }
@@ -41,7 +41,7 @@ export const StateAndCache = types
 
 		state(key: StateAndCacheKey): 'pending' | 'done' | 'failure' {
 			const entry = this.entry(key)
-			return entry ? entry.state : 'done'
+			return entry ? (entry.state as 'pending' | 'done' | 'failure') : 'done'
 		},
 
 		isPending(key: StateAndCacheKey): boolean {

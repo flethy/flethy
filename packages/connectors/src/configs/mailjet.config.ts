@@ -16,7 +16,7 @@ export namespace MailJet {
   }
 
   interface MailJetContact {
-    Name: string
+    Name?: string
     Email: string
   }
 
