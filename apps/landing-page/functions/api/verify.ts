@@ -11,6 +11,9 @@ export const onRequestPost: PagesFunction<{
 	EMAILOCTOPUS_LIST_ID: string
 	MAILJET_API_KEY: string
 	MAILJET_API_SECRET: string
+	SLACK_WEBHOOK_ID: string
+	MIXPANEL_TOKEN: string
+	EMAILSUB: KVNamespace
 }> = async ({ request, env }) => {
 	const body: VerificationRequest = await request.json()
 	if (!body.token) {
@@ -20,8 +23,9 @@ export const onRequestPost: PagesFunction<{
 		)
 	}
 	const token = body.token
+	const kvUtils = new KvUtils(env.EMAILSUB)
 
-	const pendingSubscription = await KvUtils.getPendingEntry({ token })
+	const pendingSubscription = await kvUtils.getPendingEntry({ token })
 
 	if (!pendingSubscription) {
 		return jsonResponse(
@@ -39,6 +43,12 @@ export const onRequestPost: PagesFunction<{
 			next: [
 				{
 					id: 'sendWelcomeEmail',
+				},
+				{
+					id: 'slackNotification',
+				},
+				{
+					id: 'mixpanelEvent',
 				},
 			],
 			config: {
@@ -76,6 +86,34 @@ export const onRequestPost: PagesFunction<{
 				},
 			],
 		},
+		{
+			id: 'slackNotification',
+			config: {
+				namespace: 'slack',
+			},
+			kind: 'slack.incomingWebhooks.message',
+			'auth:webhookid': '==>secrets==>SLACK_WEBHOOK_ID',
+			'body:text': `verified signup: ${pendingSubscription.email}`,
+			'body:blocks': [],
+		},
+		{
+			id: 'mixpanelEvent',
+			config: {
+				namespace: 'mixpanel',
+			},
+			kind: 'mixpanel.events.track',
+			'auth:token': '==>secrets==>MIXPANEL_TOKEN',
+			baseId: 'api',
+			'body:body': [
+				{
+					properties: {
+						distinct_id: pendingSubscription.email,
+						time: Date.now(),
+					},
+					event: 'emailVerification',
+				},
+			],
+		},
 	]
 
 	const engine = new FlowEngine({
@@ -86,13 +124,16 @@ export const onRequestPost: PagesFunction<{
 			secrets: {
 				EMAILOCTOPUS_API_KEY: env.EMAILOCTOPUS_API_KEY,
 				EMAILOCTOPUS_LIST_ID: env.EMAILOCTOPUS_LIST_ID,
+				SLACK_WEBHOOK_ID: env.SLACK_WEBHOOK_ID,
+				MIXPANEL_TOKEN: env.MIXPANEL_TOKEN,
 			},
 		},
 	})
 
 	await engine.start()
 
-	await KvUtils.removePendingEntry({ token })
+	await kvUtils.removePendingEntry({ token })
+	await kvUtils.addVerifiedEntry(pendingSubscription.email)
 
 	return jsonResponse({
 		status: 'done',

@@ -27,4 +27,30 @@ export const EmailSubscription = types
 			})
 			api.stateAndCache.updateToDone(stateAndCacheKey)
 		}),
+
+		verify: flow(function* (options: { token: string }) {
+			const { api } = getRootStore(self)
+
+			const stateAndCacheKey: StateAndCacheKey = {
+				api: `emailSubscription`,
+				operation: `verify`,
+				id: options.token,
+			}
+
+			api.stateAndCache.updateToPending(stateAndCacheKey)
+
+			try {
+				yield request({
+					url: `api/verify/${options.token}`,
+					method: 'post',
+					base: 'origin',
+					body: {
+						email: options.token,
+					},
+				})
+				api.stateAndCache.updateToDone(stateAndCacheKey)
+			} catch (error) {
+				api.stateAndCache.updateToFailure(stateAndCacheKey)
+			}
+		}),
 	}))

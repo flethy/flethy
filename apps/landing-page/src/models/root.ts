@@ -4,11 +4,15 @@ import { createContext, useContext } from 'react'
 import { EmailSubscriptionModel } from '../components/email-subscription/EmailSubscriptionModel'
 import { NotFoundPage } from '../pages/404/model'
 import { HomePage } from '../pages/home/model'
+import { VerificationPage } from '../pages/verification/model'
 import ApiStore, { APIType } from './api'
 
 const PagesStore = types.model('Pages', {
 	notFound: types.optional(NotFoundPage, () => NotFoundPage.create()),
 	home: types.optional(HomePage, () => HomePage.create()),
+	verification: types.optional(VerificationPage, () =>
+		VerificationPage.create(),
+	),
 })
 
 const ComponentsStore = types.model('Components', {

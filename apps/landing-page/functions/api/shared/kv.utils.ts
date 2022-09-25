@@ -1,4 +1,9 @@
-import { KV_KEY_ALL_PENDING, PendingSubscription } from './meta'
+import {
+	KV_KEY_ALL_PENDING,
+	KV_KEY_ALL_VERIFIED,
+	PendingSubscription,
+	VerifiedSubscription,
+} from './meta'
 
 export class KvUtils {
 	constructor(private EMAILSUB: KVNamespace) {}
@@ -60,6 +65,20 @@ export class KvUtils {
 			await this.put(KV_KEY_ALL_PENDING, JSON.stringify(pending))
 		} else {
 			await this.put(KV_KEY_ALL_PENDING, JSON.stringify([pendingSubscription]))
+		}
+	}
+
+	public async addVerifiedEntry(email: string): Promise<void> {
+		const newEntry: VerifiedSubscription = { email, ts: Date.now() }
+		const verifiedValue: string | null = await this.get(KV_KEY_ALL_VERIFIED)
+		if (verifiedValue) {
+			const verified: VerifiedSubscription[] = JSON.parse(verifiedValue)
+			if (!verified.find((entry) => entry.email === email)) {
+				verified.push(newEntry)
+			}
+			await this.put(KV_KEY_ALL_VERIFIED, JSON.stringify(verified))
+		} else {
+			await this.put(KV_KEY_ALL_VERIFIED, JSON.stringify([newEntry]))
 		}
 	}
 
