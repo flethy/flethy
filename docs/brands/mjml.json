@@ -1,0 +1,76 @@
+{
+  "name": "mjml.",
+  "domain": "mjml.io",
+  "claimed": false,
+  "description": "The only framework that makes responsive email easy. MJML is a markup language designed to reduce the pain of coding a responsive email.",
+  "links": [
+    { "name": "github", "url": "https://github.com/mjmlio" },
+    { "name": "twitter", "url": "https://twitter.com/mjmlio" }
+  ],
+  "logos": [
+    {
+      "type": "icon",
+      "theme": null,
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idPfkFw0h0/idGjzsaq-i.png",
+          "background": null,
+          "format": "png",
+          "height": 400,
+          "width": 400,
+          "size": 6932
+        }
+      ]
+    },
+    {
+      "type": "logo",
+      "theme": null,
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idPfkFw0h0/id1WEWDIY3.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 48,
+          "width": 150,
+          "size": 1879
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#840010", "type": "dark", "brightness": 29 },
+    { "hex": "#f89b93", "type": "light", "brightness": 174 },
+    { "hex": "#e74f59", "type": "accent", "brightness": 112 }
+  ],
+  "fonts": [
+    {
+      "name": "Soleil_Bold",
+      "type": "title",
+      "origin": "custom",
+      "originId": null,
+      "weights": []
+    },
+    {
+      "name": "Soleil_Light",
+      "type": "body",
+      "origin": "custom",
+      "originId": null,
+      "weights": []
+    }
+  ],
+  "images": [
+    {
+      "type": "banner",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idPfkFw0h0/idIB-W2gVh.png",
+          "background": null,
+          "format": "png",
+          "height": 500,
+          "width": 1500,
+          "size": 9725
+        }
+      ]
+    }
+  ]
+}

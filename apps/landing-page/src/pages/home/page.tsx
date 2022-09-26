@@ -29,6 +29,9 @@ export default observer(() => {
 	return (
 		<Center marginTop={'5rem'}>
 			<Stack textAlign={'center'}>
+				<Center>
+					<Image src="favicon.webp" alt="logo" width="100px" />
+				</Center>
 				<Heading as="h1" size="lg" mb={4}>
 					{t('title')}
 				</Heading>

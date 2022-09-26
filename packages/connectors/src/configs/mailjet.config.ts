@@ -30,7 +30,9 @@ export namespace MailJet {
       Subject: string
       TextPart?: string
       HTMLPart?: string
-      TemplateID?: string
+      TemplateID?: number
+      TemplateLanguage?: boolean
+      Variables?: any
     }>
   }
 
