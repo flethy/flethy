@@ -2,6 +2,7 @@ import {
 	Box,
 	ChakraProvider,
 	ColorModeScript,
+	extendTheme,
 	useColorMode,
 } from '@chakra-ui/react'
 import { observer } from 'mobx-react-lite'
@@ -28,10 +29,16 @@ const App = observer(() => {
 		notfound: () => rootStore.router.goTo(routes.notFound),
 	})
 
+	const theme = extendTheme({
+		initialColorMode: 'light',
+		useSystemColorMode: false,
+		colors: {},
+	})
+
 	return (
-		<ChakraProvider>
+		<ChakraProvider theme={theme}>
 			{/* <Box p={4} minHeight={{ md: 'calc(100vh - 415px)' }}> */}
-			<Box>
+			<Box bg="blackAlpha.500">
 				<MobxRouter store={rootStore} />
 			</Box>
 		</ChakraProvider>
