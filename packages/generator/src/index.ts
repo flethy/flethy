@@ -155,6 +155,8 @@ import Ory from '@flethy/connectors/src/configs/ory.config'
 import MailJet from '@flethy/connectors/src/configs/mailjet.config'
 import Fibery from '@flethy/connectors/src/configs/fibery.config'
 import PolyScale from '@flethy/connectors/src/configs/polyscale.config'
+import HeapAnalytics from '@flethy/connectors/src/configs/heapanalytics.config'
+import MJML from '@flethy/connectors/src/configs/mjml.config'
 
 async function main() {
   const requestConfigs: {
@@ -2180,8 +2182,59 @@ async function main() {
       'auth:Authorization': process.env.POLYSCALE_API_KEY,
       'param:cacheId': process.env.POLYSCALE_CACHE_ID,
     }),
+    heapAnalyticsTrack: nao<HeapAnalytics.ServerSideTrack>({
+      kind: 'heapanalytics.serverside.track',
+      'body:app_id': process.env.HEAPANALYTICS_APP_ID,
+      'body:event': 'first',
+      'body:identity': 'adam@flethy.com',
+    }),
+    mjml: nao<MJML.RenderMJMLToHMTL>({
+      kind: 'mjml.core.render',
+      'auth:Authorization': {
+        username: process.env.MJML_APP_ID,
+        password: process.env.MJML_SECRET_KEY,
+      },
+      'body:mjml': `<mjml>
+      <mj-body>
+          <mj-section>
+            <mj-column>
+              <mj-text>
+                Hello world
+              </mj-text>
+            </mj-column>
+          </mj-section>
+      </mj-body>
+    </mjml>`,
+    }),
+    mailjetBasicTemplate: nao<MailJet.SendBasicEmail>({
+      kind: 'mailjet.send.basicEmail',
+      'auth:Authorization': {
+        username: process.env.MAILJET_API_KEY,
+        password: process.env.MAILJET_API_SECRET,
+      },
+      'body:Messages': [
+        {
+          From: {
+            Email: 'adam@flethy.com',
+            Name: 'Adam (from flethy)',
+          },
+          To: [
+            {
+              Name: 'Adam',
+              Email: 'adam@flethy.com',
+            },
+          ],
+          TemplateID: Number(process.env.MAILJET_TEMPLATE_ID),
+          TemplateLanguage: true,
+          Subject: 'Only one more step to subscribe to flethy!',
+          Variables: {
+            'verification-url': 'https://flethy.com',
+          },
+        },
+      ],
+    }),
   }
-  const requestConfig = requestConfigs.polyscalePurgeCache
+  const requestConfig = requestConfigs.mailjetBasicEmail
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

@@ -67,6 +67,7 @@ import { Grist } from '../../../connectors/src/configs/grist.config'
 import { HackerNews } from '../../../connectors/src/configs/hackernews.config'
 import { Harvest } from '../../../connectors/src/configs/harvest.config'
 import { Hashnode } from '../../../connectors/src/configs/hashnode.config'
+import { HeapAnalytics } from '../../../connectors/src/configs/heapanalytics.config'
 import { HelloSign } from '../../../connectors/src/configs/hellosign.config'
 import { HostIo } from '../../../connectors/src/configs/hostio.config'
 import { Hubspot } from '../../../connectors/src/configs/hubspot.config'
@@ -90,6 +91,7 @@ import { Mezmo } from '../../../connectors/src/configs/mezmo.config'
 import { MicroDev } from '../../../connectors/src/configs/microdev.config'
 import { Microlink } from '../../../connectors/src/configs/microlink.config'
 import { Mixpanel } from '../../../connectors/src/configs/mixpanel.config'
+import { MJML } from '../../../connectors/src/configs/mjml.config'
 import { MojoAuth } from '../../../connectors/src/configs/mojoauth.config'
 import { Nasa } from '../../../connectors/src/configs/nasa.config'
 import { Netlify } from '../../../connectors/src/configs/netlify.config'
@@ -315,6 +317,7 @@ configTypes.push({type: getType<HackerNews.GetUser>(), name: 'HackerNews', inter
 configTypes.push({type: getType<HackerNews.GetLive>(), name: 'HackerNews', interface: 'GetLive'})
 configTypes.push({type: getType<Harvest.ListProjects>(), name: 'Harvest', interface: 'ListProjects'})
 configTypes.push({type: getType<Hashnode.GraphQLQuery>(), name: 'Hashnode', interface: 'GraphQLQuery'})
+configTypes.push({type: getType<HeapAnalytics.ServerSideTrack>(), name: 'HeapAnalytics', interface: 'ServerSideTrack'})
 configTypes.push({type: getType<HelloSign.GetAccount>(), name: 'HelloSign', interface: 'GetAccount'})
 configTypes.push({type: getType<HelloSign.SendSignatureRequest>(), name: 'HelloSign', interface: 'SendSignatureRequest'})
 configTypes.push({type: getType<HostIo.GetDomain>(), name: 'HostIo', interface: 'GetDomain'})
@@ -380,6 +383,7 @@ configTypes.push({type: getType<MicroDev.StorageNotesUpdate>(), name: 'MicroDev'
 configTypes.push({type: getType<Microlink.Url>(), name: 'Microlink', interface: 'Url'})
 configTypes.push({type: getType<Mixpanel.TrackEvents>(), name: 'Mixpanel', interface: 'TrackEvents'})
 configTypes.push({type: getType<Mixpanel.ImportEvents>(), name: 'Mixpanel', interface: 'ImportEvents'})
+configTypes.push({type: getType<MJML.RenderMJMLToHMTL>(), name: 'MJML', interface: 'RenderMJMLToHMTL'})
 configTypes.push({type: getType<MojoAuth.SendMagicLink>(), name: 'MojoAuth', interface: 'SendMagicLink'})
 configTypes.push({type: getType<Nasa.AstronomyPictureOfTheDay>(), name: 'Nasa', interface: 'AstronomyPictureOfTheDay'})
 configTypes.push({type: getType<Netlify.ListSites>(), name: 'Netlify', interface: 'ListSites'})

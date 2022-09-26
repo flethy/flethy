@@ -67,6 +67,7 @@ import { Grist } from '../configs/grist.config'
 import { HackerNews } from '../configs/hackernews.config'
 import { Harvest } from '../configs/harvest.config'
 import { Hashnode } from '../configs/hashnode.config'
+import { HeapAnalytics } from '../configs/heapanalytics.config'
 import { HelloSign } from '../configs/hellosign.config'
 import { HostIo } from '../configs/hostio.config'
 import { Hubspot } from '../configs/hubspot.config'
@@ -90,6 +91,7 @@ import { Mezmo } from '../configs/mezmo.config'
 import { MicroDev } from '../configs/microdev.config'
 import { Microlink } from '../configs/microlink.config'
 import { Mixpanel } from '../configs/mixpanel.config'
+import { MJML } from '../configs/mjml.config'
 import { MojoAuth } from '../configs/mojoauth.config'
 import { Nasa } from '../configs/nasa.config'
 import { Netlify } from '../configs/netlify.config'
@@ -226,6 +228,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['hackernews', HackerNews.API],
 ['harvest', Harvest.API],
 ['hashnode', Hashnode.API],
+['heapanalytics', HeapAnalytics.API],
 ['hellosign', HelloSign.API],
 ['hostio', HostIo.API],
 ['hubspot', Hubspot.API],
@@ -249,6 +252,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['microdev', MicroDev.API],
 ['microlink', Microlink.API],
 ['mixpanel', Mixpanel.API],
+['mjml', MJML.API],
 ['mojoauth', MojoAuth.API],
 ['nasa', Nasa.API],
 ['netlify', Netlify.API],

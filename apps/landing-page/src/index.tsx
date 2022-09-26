@@ -1,4 +1,9 @@
-import { Box, ChakraProvider } from '@chakra-ui/react'
+import {
+	Box,
+	ChakraProvider,
+	ColorModeScript,
+	useColorMode,
+} from '@chakra-ui/react'
 import { observer } from 'mobx-react-lite'
 import { MobxRouter, startRouter } from 'mobx-router'
 import { StrictMode } from 'react'

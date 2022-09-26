@@ -1,0 +1,83 @@
+{
+  "name": "Heap",
+  "domain": "heap.io",
+  "claimed": false,
+  "description": "Heap is a platform that provides analytics infrastructure to reduce the annoying parts of user analytics.",
+  "links": [
+    { "name": "twitter", "url": "https://twitter.com/heap" },
+    { "name": "facebook", "url": "https://facebook.com/HeapAnalytics" },
+    { "name": "linkedin", "url": "https://linkedin.com/company/heap-inc-" }
+  ],
+  "logos": [
+    {
+      "type": "logo",
+      "theme": null,
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idKHsfm8T0/idNcOuUteV.svg",
+          "background": "transparent",
+          "format": "svg",
+          "size": 3085
+        },
+        {
+          "src": "https://asset.brandfetch.io/idKHsfm8T0/idhJ1e48LD.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 278,
+          "width": 800,
+          "size": 17182
+        }
+      ]
+    },
+    {
+      "type": "icon",
+      "theme": null,
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idKHsfm8T0/idDVTs1f7e.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 400,
+          "width": 400,
+          "size": 10307
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#29004e", "type": "dark", "brightness": 14 },
+    { "hex": "#ffffff", "type": "light", "brightness": 255 },
+    { "hex": "#ed485f", "type": "accent", "brightness": 109 }
+  ],
+  "fonts": [
+    {
+      "name": "GT America",
+      "type": "title",
+      "origin": "custom",
+      "originId": null,
+      "weights": []
+    },
+    {
+      "name": "GT America",
+      "type": "body",
+      "origin": "custom",
+      "originId": null,
+      "weights": []
+    }
+  ],
+  "images": [
+    {
+      "type": "banner",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idKHsfm8T0/id9YY1-xB8.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 500,
+          "width": 1500,
+          "size": 48116
+        }
+      ]
+    }
+  ]
+}

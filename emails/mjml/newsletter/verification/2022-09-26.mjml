@@ -1,0 +1,38 @@
+<mjml>
+  <mj-body background-color="#F4F4F2">
+    <mj-section>
+      <mj-column>
+        <mj-spacer height="50px" />
+      </mj-column>
+    </mj-section>
+    <mj-section background-color="white" border-left="solid 1px #354A5D" border-top="solid 1px #354A5D" border-right="solid 1px #354A5D">
+      <mj-column>
+        <mj-image width="50px" src="https://flethy.com/favicon.png" />
+      </mj-column>
+    </mj-section>
+    <mj-section background-color="white" border-left="solid 1px #354A5D" border-right="solid 1px #354A5D">
+      <mj-column>
+        <mj-text>
+          Hi there!
+        </mj-text>
+        <mj-text>
+          Thanks for signing up for news around <a href="https://flethy.com">flethy.com</a>! Please verify your address so you can get all the news!
+        </mj-text>
+        <mj-button background-color="#f48847" color="white" href="${verification-url}">
+          Verify
+        </mj-button>
+        <mj-text>
+          Or click <a href="${verification-url}">${verification-url}</a>
+        </mj-text>
+      </mj-column>
+    </mj-section>
+    <mj-section background-color="white" border-left="solid 1px #354A5D" border-right="solid 1px #354A5D" border-bottom="solid 1px #354A5D">
+      <mj-column>
+        <mj-social font-size="15px" icon-size="30px" mode="horizontal">
+          <mj-social-element name="twitter" href="https://twitter.com/flethycom">
+          </mj-social-element>
+        </mj-social>
+      </mj-column>
+    </mj-section>
+  </mj-body>
+</mjml>
