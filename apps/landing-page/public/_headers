@@ -1,0 +1,11 @@
+/*
+  Access-Control-Allow-Origin: *
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: no-referrer
+  Permissions-Policy: document-domain=()
+  Content-Security-Policy: script-src 'self' 'unsafe-inline' static.cloudflareinsights.com; frame-ancestors 'none'; connect-src 'self' cloudflareinsights.com cdnjs.cloudflare.com;
+
+/api/*
+  Access-Control-Allow-Origin: *
+  Access-Control-Allow-Methods: HEAD, OPTIONS, POST

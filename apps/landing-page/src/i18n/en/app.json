@@ -5,12 +5,14 @@
 		"home": "Home"
 	},
 	"home": {
-		"stayTuned": "Stay tuned for more updates!",
+		"stayTuned": "Subscribe for updates!",
 		"integrations": "Integrations!"
 	},
 	"general": {
 		"email": "Email",
-		"subscribe": "Subscribe"
+		"subscribe": "Subscribe",
+		"showMore": "Show more",
+		"showLess": "Show less"
 	},
 	"components": {
 		"emailSubscription": {
