@@ -3,6 +3,7 @@ import {
 	Box,
 	Button,
 	Center,
+	Collapse,
 	Container,
 	Grid,
 	GridItem,
@@ -59,40 +60,42 @@ export default observer(() => {
 							{API_COUNT} {t('home.integrations')}
 						</Heading>
 						<Box mt={'3rem'} mb={'3rem'}>
-							<Grid
-								templateColumns="repeat(5, 1fr)"
-								gap={6}
-								justifyItems={'center'}
-								alignItems={'center'}
-							>
-								{INTEGRATIONS.map((integration) => (
-									<GridItem
-										key={integration.id}
-										title={integration.id}
-										width={{ base: '50px', md: '70px' }}
-										height={{ base: '50px', md: '70px' }}
-									>
-										<Center
-											width={'100%'}
-											height={'100%'}
-											bgColor={integration.light ? '#1A202C' : 'white'}
-											borderRadius={BOX.borderRadius}
-											borderColor={BOX.borderColor}
-											borderWidth={BOX.borderWidth}
-											padding={'0.5em'}
+							<Collapse startingHeight={500} in={page.showMore}>
+								<Grid
+									templateColumns="repeat(5, 1fr)"
+									gap={6}
+									justifyItems={'center'}
+									alignItems={'center'}
+								>
+									{INTEGRATIONS.map((integration) => (
+										<GridItem
+											key={integration.id}
+											title={integration.id}
+											width={{ base: '50px', md: '70px' }}
+											height={{ base: '50px', md: '70px' }}
 										>
-											<Image
-												src={`integrations/${integration.file}`}
-												alt={integration.id}
-												maxHeight={'100%'}
-											/>
-										</Center>
-									</GridItem>
-								))}
-							</Grid>
+											<Center
+												width={'100%'}
+												height={'100%'}
+												bgColor={integration.light ? '#1A202C' : 'white'}
+												borderRadius={BOX.borderRadius}
+												borderColor={BOX.borderColor}
+												borderWidth={BOX.borderWidth}
+												padding={'0.5em'}
+											>
+												<Image
+													src={`integrations/${integration.file}`}
+													alt={integration.id}
+													maxHeight={'100%'}
+												/>
+											</Center>
+										</GridItem>
+									))}
+								</Grid>
+							</Collapse>
 						</Box>
-						<Button onClick={toggleColorMode} my={3}>
-							{colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
+						<Button onClick={() => page.toggleShowMore()} mb={5}>
+							{page.showMore ? t('general.showLess') : t('general.showMore')}
 						</Button>
 					</Container>
 				</Center>

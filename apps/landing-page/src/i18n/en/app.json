@@ -10,7 +10,9 @@
 	},
 	"general": {
 		"email": "Email",
-		"subscribe": "Subscribe"
+		"subscribe": "Subscribe",
+		"showMore": "Show more",
+		"showLess": "Show less"
 	},
 	"components": {
 		"emailSubscription": {
