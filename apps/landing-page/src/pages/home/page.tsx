@@ -1,4 +1,3 @@
-import { MoonIcon, SunIcon } from '@chakra-ui/icons'
 import {
 	Box,
 	Button,
@@ -15,12 +14,12 @@ import {
 } from '@chakra-ui/react'
 import { observer } from 'mobx-react-lite'
 import { useTranslation } from 'react-i18next'
+import Carousel, { ImageSource } from '../../components/carousel/Carousel'
 import EmailSubscription from '../../components/email-subscription/EmailSubscription'
 import { API_COUNT } from '../../constants/api.const'
 import { INTEGRATIONS } from '../../constants/integrations.const'
 import { BOX } from '../../constants/style.const'
 import { useMst } from '../../models/root'
-import Carousel, { ImageSource } from '../../components/carousel/Carousel'
 
 const images: ImageSource[] = [
 	{
@@ -59,25 +58,26 @@ export default observer(() => {
 				<Center marginTop={'5em'}>
 					<Image src="favicon.webp" alt="logo" width="100px" />
 				</Center>
-				<Box
-					padding={'2em'}
-					background={
-						' linear-gradient(30deg, rgba(238,117,36,1) 0%, rgba(204,63,107,1) 35%, rgba(163,55,146,1) 100%)'
-					}
-					width={{ base: '100vw', md: 'calc(100vw - 15px)' }}
-				>
-					<Heading as="h1" size="lg" mb={4}>
-						{t('title')}
-					</Heading>
-					<Text>{t('description')}</Text>
-					<Text>{t('home.stayTuned')}</Text>
-				</Box>
+				<Center>
+					<Box
+						padding={'2em'}
+						background={
+							' linear-gradient(30deg, rgba(238,117,36,1) 0%, rgba(204,63,107,1) 35%, rgba(163,55,146,1) 100%)'
+						}
+						width={{ base: '100vw', md: 'calc(100vw - 15px)' }}
+					>
+						<Heading as="h1" size="lg" mb={4}>
+							{t('title')}
+						</Heading>
+						<Text>{t('description')}</Text>
+						<Text mb={2}>{t('home.stayTuned')}</Text>
+						<EmailSubscription />
+					</Box>
+				</Center>
 				<Center>
 					<Container>
 						<Carousel images={images} />
-						<EmailSubscription />
-
-						<Heading as="h1" size="lg" mt={'3rem'}>
+						<Heading as="h1" size="lg">
 							{API_COUNT} {t('home.integrations')}
 						</Heading>
 						<Box mt={'3rem'} mb={'3rem'}>
