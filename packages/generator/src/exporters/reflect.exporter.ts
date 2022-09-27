@@ -108,6 +108,7 @@ import { Ory } from '../../../connectors/src/configs/ory.config'
 import { Parsiq } from '../../../connectors/src/configs/parsiq.config'
 import { PayPal } from '../../../connectors/src/configs/paypal.config'
 import { Peekalink } from '../../../connectors/src/configs/peekalink.config'
+import { PeopleDataLabs } from '../../../connectors/src/configs/peopledatalabs.config'
 import { Personio } from '../../../connectors/src/configs/personio.config'
 import { Pinata } from '../../../connectors/src/configs/pinata.config'
 import { Pixela } from '../../../connectors/src/configs/pixela.config'
@@ -408,6 +409,7 @@ configTypes.push({type: getType<Parsiq.GetSingleBlock>(), name: 'Parsiq', interf
 configTypes.push({type: getType<PayPal.AuthRequest>(), name: 'PayPal', interface: 'AuthRequest'})
 configTypes.push({type: getType<Peekalink.Preview>(), name: 'Peekalink', interface: 'Preview'})
 configTypes.push({type: getType<Peekalink.IsAvailable>(), name: 'Peekalink', interface: 'IsAvailable'})
+configTypes.push({type: getType<PeopleDataLabs.CompanyEnrichment>(), name: 'PeopleDataLabs', interface: 'CompanyEnrichment'})
 configTypes.push({type: getType<Personio.AuthRequest>(), name: 'Personio', interface: 'AuthRequest'})
 configTypes.push({type: getType<Personio.EmployeesGet>(), name: 'Personio', interface: 'EmployeesGet'})
 configTypes.push({type: getType<Personio.AbsencesGet>(), name: 'Personio', interface: 'AbsencesGet'})

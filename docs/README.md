@@ -125,6 +125,7 @@ The following Endpoints are currently supported.
 * [Ory](./api/ory.md)
 * [PayPal](./api/paypal.md)
 * [Peekalink](./api/peekalink.md)
+* [PeopleDataLabs](./api/peopledatalabs.md)
 * [Personio](./api/personio.md)
 * [Pixela](./api/pixela.md)
 * [PolyScale](./api/polyscale.md)

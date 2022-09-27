@@ -1,5 +1,7 @@
+import { MoonIcon, SunIcon } from '@chakra-ui/icons'
 import {
 	Box,
+	Button,
 	Center,
 	Container,
 	Grid,
@@ -8,6 +10,7 @@ import {
 	Image,
 	Stack,
 	Text,
+	useColorMode,
 } from '@chakra-ui/react'
 import { observer } from 'mobx-react-lite'
 import { useTranslation } from 'react-i18next'
@@ -18,6 +21,7 @@ import { BOX } from '../../constants/style.const'
 import { useMst } from '../../models/root'
 
 export default observer(() => {
+	const { colorMode, toggleColorMode } = useColorMode()
 	const { t } = useTranslation('app')
 	const {
 		root: {
@@ -47,7 +51,7 @@ export default observer(() => {
 				<Center>
 					<Container>
 						<Box mb={'1rem'}>
-							<Image src="code-auth0.svg" alt="code example auth0" />
+							<Image src="code-auth0.png" alt="code example auth0" />
 						</Box>
 						<EmailSubscription />
 
@@ -87,6 +91,9 @@ export default observer(() => {
 								))}
 							</Grid>
 						</Box>
+						<Button onClick={toggleColorMode} my={3}>
+							{colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
+						</Button>
 					</Container>
 				</Center>
 			</Stack>

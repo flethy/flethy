@@ -157,6 +157,7 @@ import Fibery from '@flethy/connectors/src/configs/fibery.config'
 import PolyScale from '@flethy/connectors/src/configs/polyscale.config'
 import HeapAnalytics from '@flethy/connectors/src/configs/heapanalytics.config'
 import MJML from '@flethy/connectors/src/configs/mjml.config'
+import PeopleDataLabs from '@flethy/connectors/src/configs/peopledatalabs.config'
 
 async function main() {
   const requestConfigs: {
@@ -2233,8 +2234,13 @@ async function main() {
         },
       ],
     }),
+    peopledatalabsEnrichCompany: nao<PeopleDataLabs.CompanyEnrichment>({
+      kind: 'peopledatalabs.company.enrich',
+      'auth:X-Api-Key': process.env.PDL_API_KEY,
+      'query:website': 'flethy.com',
+    }),
   }
-  const requestConfig = requestConfigs.mailjetBasicEmail
+  const requestConfig = requestConfigs.peopledatalabsEnrichCompany
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

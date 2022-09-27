@@ -38,7 +38,7 @@ const App = observer(() => {
 	return (
 		<ChakraProvider theme={theme}>
 			{/* <Box p={4} minHeight={{ md: 'calc(100vh - 415px)' }}> */}
-			<Box bg="blackAlpha.500">
+			<Box bg="black">
 				<MobxRouter store={rootStore} />
 			</Box>
 		</ChakraProvider>
