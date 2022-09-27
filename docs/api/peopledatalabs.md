@@ -1,0 +1,24 @@
+# PeopleDataLabs
+
+## Links
+
+* URL: [https://www.peopledatalabs.com/](https://www.peopledatalabs.com/)
+* Documentation: [https://docs.peopledatalabs.com/docs](https://docs.peopledatalabs.com/docs)
+* Tags: web2
+* Category: data
+* Type: brands
+
+## API
+
+### Authentication
+
+* X-Api-Key: header
+
+### company
+
+#### enrich
+
+##### Company Enrichment API
+
+* Description: Company Enrichment API
+* Docs: [https://docs.peopledatalabs.com/docs/reference-company-enrichment-api](https://docs.peopledatalabs.com/docs/reference-company-enrichment-api)

@@ -108,6 +108,7 @@ import { Ory } from '../configs/ory.config'
 import { Parsiq } from '../configs/parsiq.config'
 import { PayPal } from '../configs/paypal.config'
 import { Peekalink } from '../configs/peekalink.config'
+import { PeopleDataLabs } from '../configs/peopledatalabs.config'
 import { Personio } from '../configs/personio.config'
 import { Pinata } from '../configs/pinata.config'
 import { Pixela } from '../configs/pixela.config'
@@ -269,6 +270,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['parsiq', Parsiq.API],
 ['paypal', PayPal.API],
 ['peekalink', Peekalink.API],
+['peopledatalabs', PeopleDataLabs.API],
 ['personio', Personio.API],
 ['pinata', Pinata.API],
 ['pixela', Pixela.API],

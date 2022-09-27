@@ -1,0 +1,77 @@
+{
+  "name": "People Data Labs",
+  "domain": "peopledatalabs.com",
+  "claimed": false,
+  "description": "Full Suite of Developer APIs to Enrich, Standardize, and De-duplicate person data.",
+  "links": [
+    { "name": "twitter", "url": "https://twitter.com/peopledatalabs" },
+    { "name": "facebook", "url": "https://facebook.com/peopledatalabs" },
+    { "name": "linkedin", "url": "https://linkedin.com/company/peopledatalabs" }
+  ],
+  "logos": [
+    {
+      "type": "icon",
+      "theme": null,
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idU7X6782V/idts2K_-ag.png",
+          "background": null,
+          "format": "png",
+          "height": 400,
+          "width": 400,
+          "size": 59949
+        }
+      ]
+    },
+    {
+      "type": "logo",
+      "theme": null,
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idU7X6782V/idzW5v1x1d.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 40,
+          "width": 44,
+          "size": 1779
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#000000", "type": "dark", "brightness": 0 },
+    { "hex": "#f2f8ff", "type": "light", "brightness": 247 },
+    { "hex": "#5c36ba", "type": "accent", "brightness": 72 }
+  ],
+  "fonts": [
+    {
+      "name": "PxGrotesk",
+      "type": "title",
+      "origin": "custom",
+      "originId": null,
+      "weights": []
+    },
+    {
+      "name": "PxGrotesk",
+      "type": "body",
+      "origin": "custom",
+      "originId": null,
+      "weights": []
+    }
+  ],
+  "images": [
+    {
+      "type": "banner",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idU7X6782V/idBaEqeNiu.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 500,
+          "width": 1500,
+          "size": 45431
+        }
+      ]
+    }
+  ]
+}
