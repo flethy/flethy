@@ -1,10 +1,6 @@
-import {
-	Box,
-	ChakraProvider,
-	ColorModeScript,
-	extendTheme,
-	useColorMode,
-} from '@chakra-ui/react'
+import { Box, ChakraProvider, extendTheme } from '@chakra-ui/react'
+import '@fontsource/open-sans/700.css'
+import '@fontsource/raleway/400.css'
 import { observer } from 'mobx-react-lite'
 import { MobxRouter, startRouter } from 'mobx-router'
 import { StrictMode } from 'react'
@@ -30,9 +26,15 @@ const App = observer(() => {
 	})
 
 	const theme = extendTheme({
-		initialColorMode: 'light',
-		useSystemColorMode: false,
+		config: {
+			initialColorMode: 'dark',
+			useSystemColorMode: false,
+		},
 		colors: {},
+		fonts: {
+			heading: `'Open Sans', sans-serif`,
+			body: `'Raleway', sans-serif`,
+		},
 	})
 
 	return (
@@ -56,12 +58,3 @@ if (container) {
 		</StrictMode>,
 	)
 }
-
-// render(
-// 	<StrictMode>
-// 		<Provider value={rootStore}>
-// 			<App />
-// 		</Provider>
-// 	</StrictMode>,
-// 	document.getElementById('root'),
-// )

@@ -20,6 +20,25 @@ import { API_COUNT } from '../../constants/api.const'
 import { INTEGRATIONS } from '../../constants/integrations.const'
 import { BOX } from '../../constants/style.const'
 import { useMst } from '../../models/root'
+import Carousel, { ImageSource } from '../../components/carousel/Carousel'
+
+const images: ImageSource[] = [
+	{
+		src: 'code-auth0.webp',
+		alt: 'Code Example for auth0',
+		id: 'auth0',
+	},
+	{
+		src: 'code-supabase.webp',
+		alt: 'Code Example for SupaBase',
+		id: 'supabase',
+	},
+	{
+		src: 'code-web3storage.webp',
+		alt: 'Code Example for Web3.Storage',
+		id: 'web3storage',
+	},
+]
 
 export default observer(() => {
 	const { colorMode, toggleColorMode } = useColorMode()
@@ -29,6 +48,10 @@ export default observer(() => {
 			pages: { home: page },
 		},
 	} = useMst()
+
+	if (colorMode === 'light') {
+		toggleColorMode()
+	}
 
 	return (
 		<Center>
@@ -51,9 +74,7 @@ export default observer(() => {
 				</Box>
 				<Center>
 					<Container>
-						<Box mb={'1rem'}>
-							<Image src="code-auth0.png" alt="code example auth0" />
-						</Box>
+						<Carousel images={images} />
 						<EmailSubscription />
 
 						<Heading as="h1" size="lg" mt={'3rem'}>

@@ -101,9 +101,12 @@ importers:
       '@emotion/react': ^11.10.4
       '@emotion/styled': ^11.10.4
       '@flethy/flow': ^0.0.155
+      '@fontsource/open-sans': ^4.5.11
+      '@fontsource/raleway': ^4.5.10
       '@types/node': 18.7.23
       '@types/react': 18.0.21
       '@types/react-dom': 18.0.6
+      '@types/react-slick': ^0.23.10
       '@types/react-syntax-highlighter': ^15.5.5
       '@vitejs/plugin-react': 2.1.0
       autoprefixer: ^10.4.12
@@ -123,6 +126,7 @@ importers:
       react-dom: 18.2.0
       react-i18next: ^11.18.6
       react-icons: ^4.4.0
+      react-slick: ^0.29.0
       react-syntax-highlighter: ^15.5.0
       rollup-plugin-analyzer: 4.0.0
       sass: 1.55.0
@@ -138,6 +142,8 @@ importers:
       '@emotion/react': 11.10.4_msyv5sllghxdhcqrv627wahqgi
       '@emotion/styled': 11.10.4_3hd6nwy3r2wumq5zfueojfsowa
       '@flethy/flow': 0.0.155
+      '@fontsource/open-sans': 4.5.11
+      '@fontsource/raleway': 4.5.10
       framer-motion: 7.4.0_biqbaboplfbrettd7655fr4n2y
       i18next: 21.9.2
       mobx: 6.6.2
@@ -151,6 +157,7 @@ importers:
       react-dom: 18.2.0_react@18.2.0
       react-i18next: 11.18.6_ulhmqqxshznzmtuvahdi5nasbq
       react-icons: 4.4.0_react@18.2.0
+      react-slick: 0.29.0_biqbaboplfbrettd7655fr4n2y
       react-syntax-highlighter: 15.5.0_react@18.2.0
       shared-types: link:../../packages/shared-types
     devDependencies:
@@ -159,6 +166,7 @@ importers:
       '@types/node': 18.7.23
       '@types/react': 18.0.21
       '@types/react-dom': 18.0.6
+      '@types/react-slick': 0.23.10
       '@types/react-syntax-highlighter': 15.5.5
       '@vitejs/plugin-react': 2.1.0_vite@3.1.3
       autoprefixer: 10.4.12_postcss@8.4.16
@@ -1965,6 +1973,14 @@ packages:
       - debug
     dev: false
 
+  /@fontsource/open-sans/4.5.11:
+    resolution: {integrity: sha512-nG0gmbx4pSr8wltdG/ZdlS6OrsMK40Wt6iyuLTKHEf0TQfzKRMlWaskZHdeuWCwS6WUgqHKMf9KSwGdxPfapOg==}
+    dev: false
+
+  /@fontsource/raleway/4.5.10:
+    resolution: {integrity: sha512-G5ykrg9cK/i5wSLD0cFkmK9Phoo803VQqwsbWePU1IULFkZWxOe4L9L6cPwbcS392RNBjCj3UE6nBt4QvwQ/Vg==}
+    dev: false
+
   /@humanwhocodes/config-array/0.10.5:
     resolution: {integrity: sha512-XVVDtp+dVvRxMoxSiSfasYaG02VEe1qH5cKgMQJWhol6HwzbcqoCMJi8dAGoYAO57jhUyhI6cWuRiTcRaDaYug==}
     engines: {node: '>=10.10.0'}
@@ -2652,6 +2668,12 @@ packages:
       '@types/react': 18.0.21
     dev: true
 
+  /@types/react-slick/0.23.10:
+    resolution: {integrity: sha512-ZiqdencANDZy6sWOWJ54LDvebuXFEhDlHtXU9FFipQR2BcYU2QJxZhvJPW6YK7cocibUiNn+YvDTbt1HtCIBVA==}
+    dependencies:
+      '@types/react': 18.0.21
+    dev: true
+
   /@types/react-syntax-highlighter/15.5.5:
     resolution: {integrity: sha512-QH3JZQXa2usAvJvSsdSUJ4Yu4j8ReuZpgRrEW+XP+Rmosbn425YshW9iGEb/pAARm8496axHhHUPRH3UmTiB6A==}
     dependencies:
@@ -3248,6 +3270,10 @@ packages:
     resolution: {integrity: sha512-6dK2ke4VEJZOFx2ZfdDAl5OhEL8lvkl6EHF92IfRePfHxQTqir5NlcNVUv+2idjDqCX2NDc8m8YSAI5NI975ZQ==}
     dev: false
 
+  /classnames/2.3.2:
+    resolution: {integrity: sha512-CSbhY4cFEJRe6/GQzIk5qXZ4Jeg5pcsP7b5peFSDpffpe1cqjASH/n9UTjBwOp6XpMSTwQ8Za2K5V02ueA7Tmw==}
+    dev: false
+
   /cliui/7.0.4:
     resolution: {integrity: sha512-OcRE68cOsVMXp1Yvonl/fzkQOyjLSu/8bhPDfQt0e0/Eb283TKP20Fs2MqoPsr9SwA595rRCA+QMzYc9nBP+JQ==}
     dependencies:
@@ -3611,6 +3637,10 @@ packages:
     dependencies:
       once: 1.4.0
     dev: true
+
+  /enquire.js/2.1.6:
+    resolution: {integrity: sha512-/KujNpO+PT63F7Hlpu4h3pE3TokKRHN26JYmQpPyjkRD/N57R7bPDNojMXdi7uveAKjYB7yQnartCxZnFWr0Xw==}
+    dev: false
 
   /error-ex/1.3.2:
     resolution: {integrity: sha512-7dFHNmqeFSEt2ZBsCriorKnn3Z2pj+fd9kmI6QoWw4//DL+icEBfc0U7qJCisqrTsKTjw4fNFy2pW9OqStD84g==}
@@ -5309,6 +5339,12 @@ packages:
   /json-stable-stringify-without-jsonify/1.0.1:
     resolution: {integrity: sha512-Bdboy+l7tA3OGW6FjyFHWkP5LuByj1Tk33Ljyq0axyzdk9//JSi2u3fP1QSmd1KNwq6VOKYGlAu87CisVir6Pw==}
 
+  /json2mq/0.2.0:
+    resolution: {integrity: sha512-SzoRg7ux5DWTII9J2qkrZrqV1gt+rTaoufMxEzXbS26Uid0NwaJd123HcoB80TgubEppxxIGdNxCx50fEoEWQA==}
+    dependencies:
+      string-convert: 0.2.1
+    dev: false
+
   /json5/1.0.1:
     resolution: {integrity: sha512-aKS4WQjPenRxiQsC93MNfjx+nbF4PAdYzmd/1JIj8HYzqfbu86beTuNgXDzPknWk0n0uARlyewZo4s++ES36Ow==}
     hasBin: true
@@ -5379,6 +5415,10 @@ packages:
     engines: {node: '>=10'}
     dependencies:
       p-locate: 5.0.0
+
+  /lodash.debounce/4.0.8:
+    resolution: {integrity: sha512-FT1yDzDYEoYWhnSGnpE/4Kj1fLZkDFyqRb7fNt6FdYOSxlUWAtp42Eh6Wb0rGIv/m9Bgo7x4GhQbm5Ys4SG5ow==}
+    dev: false
 
   /lodash.merge/4.6.2:
     resolution: {integrity: sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ==}
@@ -6255,6 +6295,21 @@ packages:
       use-sidecar: 1.1.2_iapumuv4e6jcjznwuxpf4tt22e
     dev: false
 
+  /react-slick/0.29.0_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-TGdOKE+ZkJHHeC4aaoH85m8RnFyWqdqRfAGkhd6dirmATXMZWAxOpTLmw2Ll/jPTQ3eEG7ercFr/sbzdeYCJXA==}
+    peerDependencies:
+      react: ^0.14.0 || ^15.0.1 || ^16.0.0 || ^17.0.0 || ^18.0.0
+      react-dom: ^0.14.0 || ^15.0.1 || ^16.0.0 || ^17.0.0 || ^18.0.0
+    dependencies:
+      classnames: 2.3.2
+      enquire.js: 2.1.6
+      json2mq: 0.2.0
+      lodash.debounce: 4.0.8
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+      resize-observer-polyfill: 1.5.1
+    dev: false
+
   /react-style-singleton/2.2.1_iapumuv4e6jcjznwuxpf4tt22e:
     resolution: {integrity: sha512-ZWj0fHEMyWkHzKYUr2Bs/4zU6XLmq9HsgBURm7g5pAVfyn49DgUiNgY2d4lXRlYSiCif9YBGpQleewkcqddc7g==}
     engines: {node: '>=10'}
@@ -6378,6 +6433,10 @@ packages:
     resolution: {integrity: sha512-fGxEI7+wsG9xrvdjsrlmL22OMTTiHRwAMroiEeMgq8gzoLC/PQr7RsRDSTLUg/bZAZtF+TVIkHc6/4RIKrui+Q==}
     engines: {node: '>=0.10.0'}
     dev: true
+
+  /resize-observer-polyfill/1.5.1:
+    resolution: {integrity: sha512-LwZrotdHOo12nQuZlHEmtuXdqGoOD0OhaxopaNFxWzInpEgaLWoVuAMbTzixuosCx2nEG58ngzW3vxdWoxIgdg==}
+    dev: false
 
   /resolve-cwd/3.0.0:
     resolution: {integrity: sha512-OrZaX2Mb+rJCpH/6CpSqt9xFVpN++x01XnN2ie9g6P5/3xelLAkXWVADpdz1IHD/KFfEXyE6V0U01OQ3UO2rEg==}
@@ -6607,6 +6666,10 @@ packages:
   /strict-uri-encode/2.0.0:
     resolution: {integrity: sha512-QwiXZgpRcKkhTj2Scnn++4PKtWsH0kpzZ62L2R6c/LUVYv7hVnZqcg2+sMuT6R7Jusu1vviK/MFsu6kNJfWlEQ==}
     engines: {node: '>=4'}
+    dev: false
+
+  /string-convert/0.2.1:
+    resolution: {integrity: sha512-u/1tdPl4yQnPBjnVrmdLo9gtuLvELKsAoRapekWggdiQNvvvum+jYF329d84NAa660KQw7pB2n36KrIKVoXa3A==}
     dev: false
 
   /string-length/4.0.2:
