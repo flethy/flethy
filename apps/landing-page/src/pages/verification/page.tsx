@@ -1,6 +1,7 @@
-import { Center, Heading, Stack, Text } from '@chakra-ui/react'
+import { Box, Center, Heading, Stack, Text } from '@chakra-ui/react'
 import { observer } from 'mobx-react-lite'
 import { useTranslation } from 'react-i18next'
+import Logo from '../../components/Logo'
 import { useMst } from '../../models/root'
 
 export default observer(() => {
@@ -17,12 +18,21 @@ export default observer(() => {
 	}
 
 	return (
-		<Center marginTop={'5rem'}>
+		<Center>
 			<Stack textAlign={'center'}>
-				<Heading as="h1" size="lg" mb={4}>
-					{t('pages.verification.heading')}
-				</Heading>
-				{content}
+				<Logo marginTop="5em" />
+				<Center>
+					<Box
+						padding={'2em'}
+						background={'flethy.bannerbg'}
+						width={{ base: '100vw', md: 'calc(100vw - 15px)' }}
+					>
+						<Heading as="h1" size="lg" mb={4}>
+							{t('pages.verification.heading')}
+						</Heading>
+						{content}
+					</Box>
+				</Center>
 			</Stack>
 		</Center>
 	)
