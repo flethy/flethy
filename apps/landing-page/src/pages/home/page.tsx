@@ -10,12 +10,12 @@ import {
 	Image,
 	Stack,
 	Text,
-	useColorMode,
 } from '@chakra-ui/react'
 import { observer } from 'mobx-react-lite'
 import { useTranslation } from 'react-i18next'
 import Carousel, { ImageSource } from '../../components/carousel/Carousel'
 import EmailSubscription from '../../components/email-subscription/EmailSubscription'
+import Logo from '../../components/Logo'
 import { API_COUNT } from '../../constants/api.const'
 import { INTEGRATIONS } from '../../constants/integrations.const'
 import { BOX } from '../../constants/style.const'
@@ -40,7 +40,6 @@ const images: ImageSource[] = [
 ]
 
 export default observer(() => {
-	const { colorMode, toggleColorMode } = useColorMode()
 	const { t } = useTranslation('app')
 	const {
 		root: {
@@ -48,22 +47,14 @@ export default observer(() => {
 		},
 	} = useMst()
 
-	if (colorMode === 'light') {
-		toggleColorMode()
-	}
-
 	return (
 		<Center>
 			<Stack textAlign={'center'}>
-				<Center marginTop={'5em'}>
-					<Image src="favicon.webp" alt="logo" width="100px" />
-				</Center>
+				<Logo marginTop="5em" />
 				<Center>
 					<Box
 						padding={'2em'}
-						background={
-							' linear-gradient(30deg, rgba(238,117,36,1) 0%, rgba(204,63,107,1) 35%, rgba(163,55,146,1) 100%)'
-						}
+						background={'flethy.bannerbg'}
 						width={{ base: '100vw', md: 'calc(100vw - 15px)' }}
 					>
 						<Heading as="h1" size="lg" mb={4}>
@@ -99,9 +90,9 @@ export default observer(() => {
 												width={'100%'}
 												height={'100%'}
 												bgColor={integration.light ? '#1A202C' : 'white'}
-												borderRadius={BOX.borderRadius}
-												borderColor={BOX.borderColor}
-												borderWidth={BOX.borderWidth}
+												borderRadius={10}
+												borderColor="flethy.purple"
+												borderWidth={3}
 												padding={'0.5em'}
 											>
 												<Image

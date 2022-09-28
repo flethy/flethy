@@ -1,14 +1,15 @@
-import { Box, ChakraProvider, extendTheme } from '@chakra-ui/react'
+import { ChakraProvider, extendTheme } from '@chakra-ui/react'
 import '@fontsource/open-sans/700.css'
 import '@fontsource/raleway/400.css'
 import { observer } from 'mobx-react-lite'
-import { MobxRouter, startRouter } from 'mobx-router'
+import { startRouter } from 'mobx-router'
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import events, { LogLevel } from './events/events'
 import './i18n/config'
 import './index.scss'
 import { Provider, rootStore, useMst } from './models/root'
+import AppPage from './pages/app/page'
 import routes from './routes'
 
 export const LOGLEVEL = import.meta.env.VITE_LOGLEVEL
@@ -26,11 +27,27 @@ const App = observer(() => {
 	})
 
 	const theme = extendTheme({
+		styles: {
+			global: {
+				body: {
+					bg: 'black',
+				},
+			},
+		},
 		config: {
 			initialColorMode: 'dark',
 			useSystemColorMode: false,
 		},
-		colors: {},
+		colors: {
+			flethy: {
+				orange: '#EE7524',
+				lightpurple: '#CC3F6B',
+				purple: '#A33792',
+				bannerbg:
+					'linear-gradient(30deg, rgba(238,117,36,1) 0%, rgba(204,63,107,1) 35%, rgba(163,55,146,1) 100%)',
+				900: 'yellow',
+			},
+		},
 		fonts: {
 			heading: `'Open Sans', sans-serif`,
 			body: `'Raleway', sans-serif`,
@@ -39,10 +56,7 @@ const App = observer(() => {
 
 	return (
 		<ChakraProvider theme={theme}>
-			{/* <Box p={4} minHeight={{ md: 'calc(100vh - 415px)' }}> */}
-			<Box bg="black">
-				<MobxRouter store={rootStore} />
-			</Box>
+			<AppPage />
 		</ChakraProvider>
 	)
 })

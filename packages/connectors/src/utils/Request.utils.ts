@@ -175,6 +175,10 @@ export class HttpRequestConfig {
                 toEncode = options.params[paramKey].password
                   ? `${options.params[paramKey].username}:${options.params[paramKey].password}`
                   : `${options.params[paramKey].username}:`
+              } else if (options.params[paramKey].password) {
+                toEncode = options.params[paramKey].username
+                  ? `${options.params[paramKey].username}:${options.params[paramKey].password}`
+                  : `:${options.params[paramKey].password}`
               } else {
                 toEncode = options.params[paramKey]
               }

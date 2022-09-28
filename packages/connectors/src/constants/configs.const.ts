@@ -74,6 +74,7 @@ import { Hubspot } from '../configs/hubspot.config'
 import { HunterIo } from '../configs/hunterio.config'
 import { Hybiscus } from '../configs/hybiscus.config'
 import { Hygraph } from '../configs/hygraph.config'
+import { IncidentIo } from '../configs/incidentio.config'
 import { Jira } from '../configs/jira.config'
 import { Klaviyo } from '../configs/klaviyo.config'
 import { Lecto } from '../configs/lecto.config'
@@ -82,6 +83,7 @@ import { LinkedIn } from '../configs/linkedin.config'
 import { Lokalise } from '../configs/lokalise.config'
 import { MailboxValidator } from '../configs/mailboxvalidator.config'
 import { MailCheckAi } from '../configs/mailcheckai.config'
+import { Mailchimp } from '../configs/mailchimp.config'
 import { MailerSend } from '../configs/mailersend.config'
 import { MailJet } from '../configs/mailjet.config'
 import { MailPace } from '../configs/mailpace.config'
@@ -236,6 +238,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['hunterio', HunterIo.API],
 ['hybiscus', Hybiscus.API],
 ['hygraph', Hygraph.API],
+['incidentio', IncidentIo.API],
 ['jira', Jira.API],
 ['klaviyo', Klaviyo.API],
 ['lecto', Lecto.API],
@@ -244,6 +247,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['lokalise', Lokalise.API],
 ['mailboxvalidator', MailboxValidator.API],
 ['mailcheckai', MailCheckAi.API],
+['mailchimp', Mailchimp.API],
 ['mailersend', MailerSend.API],
 ['mailjet', MailJet.API],
 ['mailpace', MailPace.API],

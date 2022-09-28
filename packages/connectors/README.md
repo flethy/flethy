@@ -1,6 +1,6 @@
 # flethy connectors
 
-Supporting 160 APIs. Find all APIs [here](https://github.com/flethy/flethy/tree/main/docs).
+Supporting 162 APIs. Find all APIs [here](https://github.com/flethy/flethy/tree/main/docs).
 
 ## What and Why?
 

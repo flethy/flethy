@@ -1,0 +1,28 @@
+{
+  "name": "incident.io",
+  "domain": "incident.io",
+  "claimed": false,
+  "description": "Create, manage and resolve incidents directly in Slack. Leave the admin and reporting to us.",
+  "links": [
+    { "name": "github", "url": "https://github.com/incident-io" },
+    { "name": "twitter", "url": "https://twitter.com/incident_io" }
+  ],
+  "logos": [],
+  "colors": [],
+  "fonts": [],
+  "images": [
+    {
+      "type": "banner",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idBR-MZuZU/idW5wIotPN.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 500,
+          "width": 1500,
+          "size": 27422
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,89 @@
+{
+  "name": "Mailchimp",
+  "domain": "mailchimp.com",
+  "claimed": false,
+  "description": "Mailchimp has email marketing, ads, landing pages, and CRM tools to grow your business on your terms. Get the word out with email, social ads, and make your life easier with automation. It's easy, and you can start for free.",
+  "links": [
+    { "name": "youtube", "url": "https://youtube.com/user/Mailchimp" },
+    {
+      "name": "crunchbase",
+      "url": "https://crunchbase.com/organization/mailchimp"
+    },
+    { "name": "twitter", "url": "https://twitter.com/Mailchimp" },
+    { "name": "instagram", "url": "https://instagram.com/mailchimp" },
+    { "name": "linkedin", "url": "https://linkedin.com/company/mailchimp" },
+    { "name": "facebook", "url": "https://facebook.com/mailchimp" }
+  ],
+  "logos": [
+    {
+      "type": "logo",
+      "theme": null,
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idMvnv36a4/idbiyBBgqE.svg",
+          "background": "transparent",
+          "format": "svg",
+          "size": 109620
+        },
+        {
+          "src": "https://asset.brandfetch.io/idMvnv36a4/id2IWG11vm.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 215,
+          "width": 800,
+          "size": 15721
+        }
+      ]
+    },
+    {
+      "type": "icon",
+      "theme": null,
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idMvnv36a4/idxkRqm5u5.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 400,
+          "width": 400,
+          "size": 19506
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#241c15", "type": "dark", "brightness": 29 },
+    { "hex": "#ffe01b", "type": "light", "brightness": 216 },
+    { "hex": "#007c89", "type": "accent", "brightness": 99 }
+  ],
+  "fonts": [
+    {
+      "name": "Means Web",
+      "type": "title",
+      "origin": "custom",
+      "originId": null,
+      "weights": []
+    },
+    {
+      "name": "Graphik Web",
+      "type": "body",
+      "origin": "custom",
+      "originId": null,
+      "weights": []
+    }
+  ],
+  "images": [
+    {
+      "type": "banner",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idMvnv36a4/idSI2lLEex.png",
+          "background": null,
+          "format": "png",
+          "height": 500,
+          "width": 1500,
+          "size": 1397384
+        }
+      ]
+    }
+  ]
+}
