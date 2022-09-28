@@ -122,7 +122,7 @@ export class BrandExporter {
       'camunda',
       'coinlayer',
       'courier',
-      'covalant',
+      'covalent',
       'directus',
       'mezmo',
       'ory',

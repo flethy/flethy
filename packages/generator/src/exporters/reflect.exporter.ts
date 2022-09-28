@@ -74,6 +74,7 @@ import { Hubspot } from '../../../connectors/src/configs/hubspot.config'
 import { HunterIo } from '../../../connectors/src/configs/hunterio.config'
 import { Hybiscus } from '../../../connectors/src/configs/hybiscus.config'
 import { Hygraph } from '../../../connectors/src/configs/hygraph.config'
+import { IncidentIo } from '../../../connectors/src/configs/incidentio.config'
 import { Jira } from '../../../connectors/src/configs/jira.config'
 import { Klaviyo } from '../../../connectors/src/configs/klaviyo.config'
 import { Lecto } from '../../../connectors/src/configs/lecto.config'
@@ -82,6 +83,7 @@ import { LinkedIn } from '../../../connectors/src/configs/linkedin.config'
 import { Lokalise } from '../../../connectors/src/configs/lokalise.config'
 import { MailboxValidator } from '../../../connectors/src/configs/mailboxvalidator.config'
 import { MailCheckAi } from '../../../connectors/src/configs/mailcheckai.config'
+import { Mailchimp } from '../../../connectors/src/configs/mailchimp.config'
 import { MailerSend } from '../../../connectors/src/configs/mailersend.config'
 import { MailJet } from '../../../connectors/src/configs/mailjet.config'
 import { MailPace } from '../../../connectors/src/configs/mailpace.config'
@@ -336,6 +338,7 @@ configTypes.push({type: getType<HunterIo.EmailVerification>(), name: 'HunterIo',
 configTypes.push({type: getType<Hybiscus.BuildReport>(), name: 'Hybiscus', interface: 'BuildReport'})
 configTypes.push({type: getType<Hybiscus.GetReport>(), name: 'Hybiscus', interface: 'GetReport'})
 configTypes.push({type: getType<Hygraph.ContentApiGraphQl>(), name: 'Hygraph', interface: 'ContentApiGraphQl'})
+configTypes.push({type: getType<IncidentIo.ListIncidents>(), name: 'IncidentIo', interface: 'ListIncidents'})
 configTypes.push({type: getType<Jira.GetIssue>(), name: 'Jira', interface: 'GetIssue'})
 configTypes.push({type: getType<Jira.SearchIssues>(), name: 'Jira', interface: 'SearchIssues'})
 configTypes.push({type: getType<Jira.CreateIssue>(), name: 'Jira', interface: 'CreateIssue'})
@@ -356,6 +359,7 @@ configTypes.push({type: getType<MailboxValidator.DisposableEmail>(), name: 'Mail
 configTypes.push({type: getType<MailboxValidator.FreeEmail>(), name: 'MailboxValidator', interface: 'FreeEmail'})
 configTypes.push({type: getType<MailCheckAi.CheckDomain>(), name: 'MailCheckAi', interface: 'CheckDomain'})
 configTypes.push({type: getType<MailCheckAi.CheckEmail>(), name: 'MailCheckAi', interface: 'CheckEmail'})
+configTypes.push({type: getType<Mailchimp.ListCampaigns>(), name: 'Mailchimp', interface: 'ListCampaigns'})
 configTypes.push({type: getType<MailerSend.EmailSend>(), name: 'MailerSend', interface: 'EmailSend'})
 configTypes.push({type: getType<MailJet.SendBasicEmail>(), name: 'MailJet', interface: 'SendBasicEmail'})
 configTypes.push({type: getType<MailPace.Send>(), name: 'MailPace', interface: 'Send'})

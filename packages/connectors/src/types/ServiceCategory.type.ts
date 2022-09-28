@@ -125,6 +125,7 @@ export type INFRA_TYPE =
   | 'monitoring'
   | 'serverless'
   | 'secret-management'
+  | 'incident-management'
 export type MACHINE_LEARNING_TYPE = 'platform'
 export type COMMUNITY_TYPE = 'user-feedback'
 export type BUSINESS_TYPE = 'subscription-analytics'

@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
+import VitePluginHtmlEnv from 'vite-plugin-html-env'
 
 import analyze from 'rollup-plugin-analyzer'
 
@@ -13,5 +14,10 @@ export default defineConfig({
 		rollupOptions: {
 			plugins: [analyze({})],
 		},
+		plugins: [
+			VitePluginHtmlEnv({
+				compiler: true,
+			}),
+		],
 	},
 })
