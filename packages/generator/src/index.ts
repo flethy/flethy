@@ -10,6 +10,7 @@ import Ory from '@flethy/connectors/src/configs/ory.config'
 import PeopleDataLabs from '@flethy/connectors/src/configs/peopledatalabs.config'
 import PolyScale from '@flethy/connectors/src/configs/polyscale.config'
 import RestCountries from '@flethy/connectors/src/configs/restcountries.config'
+import TheCompaniesApi from '@flethy/connectors/src/configs/thecompaniesapi.config'
 import YahooFinance from '@flethy/connectors/src/configs/yahoofinance.config'
 import Ably from '../../connectors/src/configs/ably.config'
 import AbstractApi from '../../connectors/src/configs/abstractapi.config'
@@ -2249,8 +2250,15 @@ async function main() {
       kind: 'incidentio.incidents.list',
       'auth:Authorization': process.env.INCIDENTIO_API_KEY,
     }),
+    thecompaniesapiSearchByDomain: nao<TheCompaniesApi.SearchCompaniesByDomain>(
+      {
+        kind: 'thecompaniesapi.companies.searchByDomain',
+        'auth:Authorization': process.env.THECOMPANIESAPI_API_KEY,
+        'param:domain': 'flethy.com',
+      }
+    ),
   }
-  const requestConfig = requestConfigs.incidentIoListIncidents
+  const requestConfig = requestConfigs.thecompaniesapiSearchByDomain
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

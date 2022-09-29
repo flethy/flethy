@@ -1,0 +1,65 @@
+{
+  "name": "The Companies API",
+  "domain": "thecompaniesapi.com",
+  "claimed": false,
+  "description": "Search and enrich 54 million companies, find similar businesses, and detect their employees. Use our API and data to supercharge your product or marketing tools.",
+  "links": [
+    { "name": "youtube", "url": "https://youtube.com/user/gucciofficial" },
+    { "name": "twitter", "url": "https://twitter.com/thecompaniesapi" },
+    { "name": "github", "url": "https://github.com/thecompaniesapi" },
+    {
+      "name": "linkedin",
+      "url": "https://linkedin.com/company/thecompaniesapi"
+    }
+  ],
+  "logos": [
+    {
+      "type": "logo",
+      "theme": null,
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idkOGMa0et/idPxr2SoY_.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 112,
+          "width": 820,
+          "size": 11108
+        },
+        {
+          "src": "https://asset.brandfetch.io/idkOGMa0et/idoDNUhLv9.svg",
+          "background": "transparent",
+          "format": "svg",
+          "size": 5780
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#5c53bc", "type": "accent", "brightness": 92 },
+    { "hex": "#1b222f", "type": "dark", "brightness": 33 }
+  ],
+  "fonts": [
+    {
+      "name": "system-ui",
+      "type": "body",
+      "origin": "system",
+      "originId": null,
+      "weights": []
+    }
+  ],
+  "images": [
+    {
+      "type": "banner",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idkOGMa0et/idDf-ttdPC.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 500,
+          "width": 1500,
+          "size": 55564
+        }
+      ]
+    }
+  ]
+}

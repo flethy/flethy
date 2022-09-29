@@ -140,6 +140,7 @@ import { Stackby } from '../../../connectors/src/configs/stackby.config'
 import { Statically } from '../../../connectors/src/configs/statically.config'
 import { Supabase } from '../../../connectors/src/configs/supabase.config'
 import { Tenderly } from '../../../connectors/src/configs/tenderly.config'
+import { TheCompaniesApi } from '../../../connectors/src/configs/thecompaniesapi.config'
 import { TheGraph } from '../../../connectors/src/configs/thegraph.config'
 import { TheStarWarsApi } from '../../../connectors/src/configs/thestarwarsapi.config'
 import { Tinify } from '../../../connectors/src/configs/tinify.config'
@@ -464,6 +465,13 @@ configTypes.push({type: getType<Statically.StaticZapBitbucket>(), name: 'Statica
 configTypes.push({type: getType<Supabase.InsertRows>(), name: 'Supabase', interface: 'InsertRows'})
 configTypes.push({type: getType<Supabase.ReadRows>(), name: 'Supabase', interface: 'ReadRows'})
 configTypes.push({type: getType<Tenderly.ExecuteTransactionSimulation>(), name: 'Tenderly', interface: 'ExecuteTransactionSimulation'})
+configTypes.push({type: getType<TheCompaniesApi.SearchCompanies>(), name: 'TheCompaniesApi', interface: 'SearchCompanies'})
+configTypes.push({type: getType<TheCompaniesApi.SearchCompaniesByName>(), name: 'TheCompaniesApi', interface: 'SearchCompaniesByName'})
+configTypes.push({type: getType<TheCompaniesApi.SearchCompaniesByDomain>(), name: 'TheCompaniesApi', interface: 'SearchCompaniesByDomain'})
+configTypes.push({type: getType<TheCompaniesApi.FindSimilarCompanies>(), name: 'TheCompaniesApi', interface: 'FindSimilarCompanies'})
+configTypes.push({type: getType<TheCompaniesApi.DetectEmployees>(), name: 'TheCompaniesApi', interface: 'DetectEmployees'})
+configTypes.push({type: getType<TheCompaniesApi.EnrichBusinessEmail>(), name: 'TheCompaniesApi', interface: 'EnrichBusinessEmail'})
+configTypes.push({type: getType<TheCompaniesApi.SearchCities>(), name: 'TheCompaniesApi', interface: 'SearchCities'})
 configTypes.push({type: getType<TheGraph.QueryById>(), name: 'TheGraph', interface: 'QueryById'})
 configTypes.push({type: getType<TheGraph.QueryByName>(), name: 'TheGraph', interface: 'QueryByName'})
 configTypes.push({type: getType<TheStarWarsApi.GetEntities>(), name: 'TheStarWarsApi', interface: 'GetEntities'})

@@ -155,6 +155,7 @@ The following Endpoints are currently supported.
 * [Stackby](./api/stackby.md)
 * [Statically](./api/statically.md)
 * [Supabase](./api/supabase.md)
+* [TheCompaniesApi](./api/thecompaniesapi.md)
 * [TheStarWarsApi](./api/thestarwarsapi.md)
 * [Tinify](./api/tinify.md)
 * [TMDB](./api/tmdb.md)
