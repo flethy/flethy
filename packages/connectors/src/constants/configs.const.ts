@@ -140,6 +140,7 @@ import { Stackby } from '../configs/stackby.config'
 import { Statically } from '../configs/statically.config'
 import { Supabase } from '../configs/supabase.config'
 import { Tenderly } from '../configs/tenderly.config'
+import { TheCompaniesApi } from '../configs/thecompaniesapi.config'
 import { TheGraph } from '../configs/thegraph.config'
 import { TheStarWarsApi } from '../configs/thestarwarsapi.config'
 import { Tinify } from '../configs/tinify.config'
@@ -304,6 +305,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['statically', Statically.API],
 ['supabase', Supabase.API],
 ['tenderly', Tenderly.API],
+['thecompaniesapi', TheCompaniesApi.API],
 ['thegraph', TheGraph.API],
 ['thestarwarsapi', TheStarWarsApi.API],
 ['tinify', Tinify.API],

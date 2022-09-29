@@ -184,6 +184,12 @@ export class HttpRequestConfig {
               }
               config.headers[keyname] = `Basic ${Base64Utils.encode(toEncode)}`
               break
+            case 'header:basic:encoded':
+              if (!config.headers) {
+                config.headers = {}
+              }
+              config.headers[keyname] = `Basic ${options.params[paramKey]}`
+              break
             case 'header:token':
               if (!config.headers) {
                 config.headers = {}
