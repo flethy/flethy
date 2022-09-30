@@ -15,6 +15,7 @@ import { BaseRow } from '../../../connectors/src/configs/baserow.config'
 import { Beehiiv } from '../../../connectors/src/configs/beehiiv.config'
 import { BigDataCloud } from '../../../connectors/src/configs/bigdatacloud.config'
 import { Bitly } from '../../../connectors/src/configs/bitly.config'
+import { BooAPI } from '../../../connectors/src/configs/booapi.config'
 import { Brandfetch } from '../../../connectors/src/configs/brandfetch.config'
 import { BrowsersFyi } from '../../../connectors/src/configs/browsersfyi.config'
 import { Bruzu } from '../../../connectors/src/configs/bruzu.config'
@@ -43,6 +44,7 @@ import { Courier } from '../../../connectors/src/configs/courier.config'
 import { Covalent } from '../../../connectors/src/configs/covalent.config'
 import { Cronhooks } from '../../../connectors/src/configs/cronhooks.config'
 import { CurrencyScoop } from '../../../connectors/src/configs/currencyscoop.config'
+import { DataDog } from '../../../connectors/src/configs/datadog.config'
 import { DatoCMS } from '../../../connectors/src/configs/datocms.config'
 import { DeepL } from '../../../connectors/src/configs/deepl.config'
 import { DevCycle } from '../../../connectors/src/configs/devcycle.config'
@@ -113,6 +115,7 @@ import { Peekalink } from '../../../connectors/src/configs/peekalink.config'
 import { PeopleDataLabs } from '../../../connectors/src/configs/peopledatalabs.config'
 import { Personio } from '../../../connectors/src/configs/personio.config'
 import { Pinata } from '../../../connectors/src/configs/pinata.config'
+import { Pipedream } from '../../../connectors/src/configs/pipedream.config'
 import { Pixela } from '../../../connectors/src/configs/pixela.config'
 import { PolyScale } from '../../../connectors/src/configs/polyscale.config'
 import { PostHog } from '../../../connectors/src/configs/posthog.config'
@@ -191,6 +194,10 @@ configTypes.push({type: getType<Beehiiv.CreateSubscriber>(), name: 'Beehiiv', in
 configTypes.push({type: getType<Beehiiv.GetPublications>(), name: 'Beehiiv', interface: 'GetPublications'})
 configTypes.push({type: getType<BigDataCloud.ReverseGeoCodeClient>(), name: 'BigDataCloud', interface: 'ReverseGeoCodeClient'})
 configTypes.push({type: getType<Bitly.CreateShortLink>(), name: 'Bitly', interface: 'CreateShortLink'})
+configTypes.push({type: getType<BooAPI.UserBalance>(), name: 'BooAPI', interface: 'UserBalance'})
+configTypes.push({type: getType<BooAPI.CreateTask>(), name: 'BooAPI', interface: 'CreateTask'})
+configTypes.push({type: getType<BooAPI.TaskStatus>(), name: 'BooAPI', interface: 'TaskStatus'})
+configTypes.push({type: getType<BooAPI.TaskResults>(), name: 'BooAPI', interface: 'TaskResults'})
 configTypes.push({type: getType<Brandfetch.BrandByDomainOrId>(), name: 'Brandfetch', interface: 'BrandByDomainOrId'})
 configTypes.push({type: getType<BrowsersFyi.Get>(), name: 'BrowsersFyi', interface: 'Get'})
 configTypes.push({type: getType<Bruzu.CreateImage>(), name: 'Bruzu', interface: 'CreateImage'})
@@ -269,6 +276,9 @@ configTypes.push({type: getType<CurrencyScoop.Historical>(), name: 'CurrencyScoo
 configTypes.push({type: getType<CurrencyScoop.Timeseries>(), name: 'CurrencyScoop', interface: 'Timeseries'})
 configTypes.push({type: getType<CurrencyScoop.Currencies>(), name: 'CurrencyScoop', interface: 'Currencies'})
 configTypes.push({type: getType<CurrencyScoop.Convert>(), name: 'CurrencyScoop', interface: 'Convert'})
+configTypes.push({type: getType<DataDog.ValidateApiKey>(), name: 'DataDog', interface: 'ValidateApiKey'})
+configTypes.push({type: getType<DataDog.PostEvent>(), name: 'DataDog', interface: 'PostEvent'})
+configTypes.push({type: getType<DataDog.ListEvents>(), name: 'DataDog', interface: 'ListEvents'})
 configTypes.push({type: getType<DatoCMS.Query>(), name: 'DatoCMS', interface: 'Query'})
 configTypes.push({type: getType<DeepL.TranslatingRequest>(), name: 'DeepL', interface: 'TranslatingRequest'})
 configTypes.push({type: getType<DeepL.GlossaryListLanguagePairs>(), name: 'DeepL', interface: 'GlossaryListLanguagePairs'})
@@ -419,6 +429,8 @@ configTypes.push({type: getType<Personio.AuthRequest>(), name: 'Personio', inter
 configTypes.push({type: getType<Personio.EmployeesGet>(), name: 'Personio', interface: 'EmployeesGet'})
 configTypes.push({type: getType<Personio.AbsencesGet>(), name: 'Personio', interface: 'AbsencesGet'})
 configTypes.push({type: getType<Pinata.PinningPinJsonToIPFS>(), name: 'Pinata', interface: 'PinningPinJsonToIPFS'})
+configTypes.push({type: getType<Pipedream.GetWorkflowEmits>(), name: 'Pipedream', interface: 'GetWorkflowEmits'})
+configTypes.push({type: getType<Pipedream.ListCurrentUserSources>(), name: 'Pipedream', interface: 'ListCurrentUserSources'})
 configTypes.push({type: getType<Pixela.CreateGraph>(), name: 'Pixela', interface: 'CreateGraph'})
 configTypes.push({type: getType<Pixela.GetGraph>(), name: 'Pixela', interface: 'GetGraph'})
 configTypes.push({type: getType<Pixela.PostValue>(), name: 'Pixela', interface: 'PostValue'})

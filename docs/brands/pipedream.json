@@ -1,0 +1,62 @@
+{
+  "name": "Pipedream",
+  "domain": "pipedream.com",
+  "claimed": false,
+  "description": "The integration platform built for developers",
+  "links": [{ "name": "twitter", "url": "https://twitter.com/@pipedreamHQ" }],
+  "logos": [
+    {
+      "type": "icon",
+      "theme": null,
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idd8VMyYIn/idml4hpn4e.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 400,
+          "width": 400,
+          "size": 6591
+        }
+      ]
+    },
+    {
+      "type": "logo",
+      "theme": null,
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idd8VMyYIn/idC0B74il3.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 32,
+          "width": 32,
+          "size": 1093
+        }
+      ]
+    }
+  ],
+  "colors": [],
+  "fonts": [
+    {
+      "name": "sans-serif",
+      "type": "body",
+      "origin": "custom",
+      "originId": null,
+      "weights": []
+    }
+  ],
+  "images": [
+    {
+      "type": "banner",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idd8VMyYIn/idML9mSrio.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 500,
+          "width": 1500,
+          "size": 54557
+        }
+      ]
+    }
+  ]
+}

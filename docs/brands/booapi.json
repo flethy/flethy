@@ -1,0 +1,51 @@
+{
+  "name": "BooAPI",
+  "domain": "booapi.com",
+  "claimed": false,
+  "description": null,
+  "links": [],
+  "logos": [
+    {
+      "type": "logo",
+      "theme": null,
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/id7-kjS5iq/idx4xEms4H.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 194,
+          "width": 820,
+          "size": 16419
+        },
+        {
+          "src": "https://asset.brandfetch.io/id7-kjS5iq/idkMzRHpnS.svg",
+          "background": "transparent",
+          "format": "svg",
+          "size": 2609
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#4285f4", "type": "accent", "brightness": 127 },
+    { "hex": "#212429", "type": "dark", "brightness": 36 },
+    { "hex": "#ffffff", "type": "light", "brightness": 255 }
+  ],
+  "fonts": [
+    {
+      "name": "Source Code Pro",
+      "type": "title",
+      "origin": "google",
+      "originId": "Source+Code+Pro",
+      "weights": []
+    },
+    {
+      "name": "var(--bs-body-font-family)",
+      "type": "body",
+      "origin": "custom",
+      "originId": null,
+      "weights": []
+    }
+  ],
+  "images": []
+}

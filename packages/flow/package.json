@@ -27,7 +27,7 @@
   "dependencies": {
     "axios": "^0.27.2",
     "jsonata": "^1.8.6",
-    "@flethy/connectors": "^0.0.155"
+    "@flethy/connectors": "^0.0.159"
   },
   "devDependencies": {
     "@types/node": "^18.7.23",
@@ -41,6 +41,6 @@
     "prettier": "2.7.1",
     "ts-node": "^10.9.1",
     "tsconfig": "workspace:*",
-    "typescript": "^4.8.3"
+    "typescript": "^4.8.4"
   }
 }

@@ -1,0 +1,96 @@
+{
+  "name": "Datadog",
+  "domain": "datadoghq.com",
+  "claimed": false,
+  "description": "Datadog provides cloud-scale monitoring and security for metrics, traces and logs in one unified platform.",
+  "links": [
+    { "name": "twitter", "url": "https://twitter.com/datadoghq" },
+    { "name": "linkedin", "url": "https://linkedin.com/company/datadog" },
+    { "name": "instagram", "url": "https://instagram.com/datadoghq" }
+  ],
+  "logos": [
+    {
+      "type": "icon",
+      "theme": null,
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idg33VVWFZ/id_htPDJBQ.png",
+          "background": null,
+          "format": "png",
+          "height": 400,
+          "width": 400,
+          "size": 36014
+        }
+      ]
+    },
+    {
+      "type": "logo",
+      "theme": null,
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idg33VVWFZ/idEfDOyo2e.svg",
+          "background": "transparent",
+          "format": "svg",
+          "size": 5629
+        },
+        {
+          "src": "https://asset.brandfetch.io/idg33VVWFZ/id2s5WiZAd.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 203,
+          "width": 800,
+          "size": 20653
+        }
+      ]
+    },
+    {
+      "type": "symbol",
+      "theme": null,
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idg33VVWFZ/idQ1VnhBSc.svg",
+          "background": "transparent",
+          "format": "svg",
+          "size": 3970
+        },
+        {
+          "src": "https://asset.brandfetch.io/idg33VVWFZ/idY5hw8jJ1.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 856,
+          "width": 800,
+          "size": 55090
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#632CA6", "type": "accent", "brightness": 65 },
+    { "hex": "#FFFFFF", "type": "light", "brightness": 255 },
+    { "hex": "#110617", "type": "dark", "brightness": 10 }
+  ],
+  "fonts": [
+    {
+      "name": "NationalWeb",
+      "type": "body",
+      "origin": "custom",
+      "originId": null,
+      "weights": []
+    }
+  ],
+  "images": [
+    {
+      "type": "banner",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idg33VVWFZ/idPCvp5y8S.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 500,
+          "width": 1500,
+          "size": 138538
+        }
+      ]
+    }
+  ]
+}
