@@ -1,4 +1,6 @@
+import BooAPI from '@flethy/connectors/src/configs/booapi.config'
 import Cronhooks from '@flethy/connectors/src/configs/cronhooks.config'
+import DataDog from '@flethy/connectors/src/configs/datadog.config'
 import EmailOctopus from '@flethy/connectors/src/configs/emailoctopus.config'
 import Fibery from '@flethy/connectors/src/configs/fibery.config'
 import HeapAnalytics from '@flethy/connectors/src/configs/heapanalytics.config'
@@ -113,6 +115,7 @@ import PayPal from '../../connectors/src/configs/paypal.config'
 import Peekalink from '../../connectors/src/configs/peekalink.config'
 import Personio from '../../connectors/src/configs/personio.config'
 import { Pinata } from '../../connectors/src/configs/pinata.config'
+import Pipedream from '../../connectors/src/configs/pipedream.config'
 import Pixela from '../../connectors/src/configs/pixela.config'
 import PostHog from '../../connectors/src/configs/posthog.config'
 import ProductHunt from '../../connectors/src/configs/producthunt.config'
@@ -2257,8 +2260,55 @@ async function main() {
         'param:domain': 'flethy.com',
       }
     ),
+    booapiCreateTask: nao<BooAPI.CreateTask>({
+      kind: 'booapi.task.create',
+      'auth:key': process.env.BOOAPI_API_KEY,
+      'body:keywords': ['saas'],
+    }),
+    booapiTaskStatus: nao<BooAPI.TaskStatus>({
+      kind: 'booapi.task.status',
+      'auth:key': process.env.BOOAPI_API_KEY,
+      'param:taskId': process.env.BOOAPI_TASK_ID,
+    }),
+    booapiTaskResults: nao<BooAPI.TaskResults>({
+      kind: 'booapi.task.results',
+      'auth:key': process.env.BOOAPI_API_KEY,
+      'param:taskId': process.env.BOOAPI_TASK_ID,
+      'query:limit': 10,
+    }),
+    datadogValidate: nao<DataDog.ValidateApiKey>({
+      kind: 'datadog.auth.validate',
+      baseId: 'eu',
+      'auth:DD-API-KEY': process.env.DATADOG_API_KEY,
+    }),
+    datadogPostEvent: nao<DataDog.PostEvent>({
+      kind: 'datadog.events.post',
+      baseId: 'eu',
+      'auth:DD-API-KEY': process.env.DATADOG_API_KEY,
+      'body:text': 'flethy',
+      'body:title': 'flethy',
+      'body:alert_type': 'success',
+      'body:priority': 'low',
+    }),
+    datadogListEvents: nao<DataDog.ListEvents>({
+      kind: 'datadog.events.list',
+      baseId: 'eu',
+      'auth:DD-API-KEY': process.env.DATADOG_API_KEY,
+      'auth:DD-APPLICATION-KEY': process.env.DATADOG_APP_KEY,
+      'query:start': new Date('2022-09-30 00:00').getTime() / 1000,
+      'query:end': new Date('2022-09-31 00:00').getTime() / 1000,
+    }),
+    pipedreamWorkfowEmits: nao<Pipedream.GetWorkflowEmits>({
+      kind: 'pipedream.workflows.getEmits',
+      'auth:Authorization': process.env.PIPEDREAM_API_KEY,
+      'param:workflowId': process.env.PIPEDREAM_WF_ID,
+    }),
+    pipedreamListSources: nao<Pipedream.ListCurrentUserSources>({
+      kind: 'pipedream.sources.list',
+      'auth:Authorization': process.env.PIPEDREAM_API_KEY,
+    }),
   }
-  const requestConfig = requestConfigs.thecompaniesapiSearchByDomain
+  const requestConfig = requestConfigs.pipedreamListSources
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

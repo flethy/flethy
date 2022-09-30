@@ -15,6 +15,7 @@ import { BaseRow } from '../configs/baserow.config'
 import { Beehiiv } from '../configs/beehiiv.config'
 import { BigDataCloud } from '../configs/bigdatacloud.config'
 import { Bitly } from '../configs/bitly.config'
+import { BooAPI } from '../configs/booapi.config'
 import { Brandfetch } from '../configs/brandfetch.config'
 import { BrowsersFyi } from '../configs/browsersfyi.config'
 import { Bruzu } from '../configs/bruzu.config'
@@ -43,6 +44,7 @@ import { Courier } from '../configs/courier.config'
 import { Covalent } from '../configs/covalent.config'
 import { Cronhooks } from '../configs/cronhooks.config'
 import { CurrencyScoop } from '../configs/currencyscoop.config'
+import { DataDog } from '../configs/datadog.config'
 import { DatoCMS } from '../configs/datocms.config'
 import { DeepL } from '../configs/deepl.config'
 import { DevCycle } from '../configs/devcycle.config'
@@ -113,6 +115,7 @@ import { Peekalink } from '../configs/peekalink.config'
 import { PeopleDataLabs } from '../configs/peopledatalabs.config'
 import { Personio } from '../configs/personio.config'
 import { Pinata } from '../configs/pinata.config'
+import { Pipedream } from '../configs/pipedream.config'
 import { Pixela } from '../configs/pixela.config'
 import { PolyScale } from '../configs/polyscale.config'
 import { PostHog } from '../configs/posthog.config'
@@ -180,6 +183,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['beehiiv', Beehiiv.API],
 ['bigdatacloud', BigDataCloud.API],
 ['bitly', Bitly.API],
+['booapi', BooAPI.API],
 ['brandfetch', Brandfetch.API],
 ['browsersfyi', BrowsersFyi.API],
 ['bruzu', Bruzu.API],
@@ -208,6 +212,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['covalent', Covalent.API],
 ['cronhooks', Cronhooks.API],
 ['currencyscoop', CurrencyScoop.API],
+['datadog', DataDog.API],
 ['datocms', DatoCMS.API],
 ['deepl', DeepL.API],
 ['devcycle', DevCycle.API],
@@ -278,6 +283,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['peopledatalabs', PeopleDataLabs.API],
 ['personio', Personio.API],
 ['pinata', Pinata.API],
+['pipedream', Pipedream.API],
 ['pixela', Pixela.API],
 ['polyscale', PolyScale.API],
 ['posthog', PostHog.API],
