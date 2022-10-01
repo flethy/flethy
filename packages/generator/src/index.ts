@@ -3,6 +3,7 @@ import Cronhooks from '@flethy/connectors/src/configs/cronhooks.config'
 import DataDog from '@flethy/connectors/src/configs/datadog.config'
 import EmailOctopus from '@flethy/connectors/src/configs/emailoctopus.config'
 import Fibery from '@flethy/connectors/src/configs/fibery.config'
+import Figma from '@flethy/connectors/src/configs/figma.config'
 import HeapAnalytics from '@flethy/connectors/src/configs/heapanalytics.config'
 import IncidentIo from '@flethy/connectors/src/configs/incidentio.config'
 import Mailchimp from '@flethy/connectors/src/configs/mailchimp.config'
@@ -2307,8 +2308,19 @@ async function main() {
       kind: 'pipedream.sources.list',
       'auth:Authorization': process.env.PIPEDREAM_API_KEY,
     }),
+    figmaGetFile: nao<Figma.GetFile>({
+      kind: 'figma.files.get',
+      'auth:X-Figma-Token': process.env.FIGMA_API_KEY,
+      'param:key': process.env.FIGMA_FILE_KEY,
+    }),
+    figmaGetFileNodes: nao<Figma.GetFileNodes>({
+      kind: 'figma.files.getNodes',
+      'auth:X-Figma-Token': process.env.FIGMA_API_KEY,
+      'param:key': process.env.FIGMA_FILE_KEY,
+      'query:ids': '0%3A1',
+    }),
   }
-  const requestConfig = requestConfigs.pipedreamListSources
+  const requestConfig = requestConfigs.figmaGetFileNodes
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

@@ -26,6 +26,7 @@ export type CATEGORY =
   | 'community'
   | 'business'
   | 'science'
+  | 'design'
 export type TYPE =
   | COMM_TYPE
   | STORAGE_TYPE
@@ -53,6 +54,7 @@ export type TYPE =
   | COMMUNITY_TYPE
   | BUSINESS_TYPE
   | SCIENCE_TYPE
+  | DESIGN_TYPE
 
 export type COMM_TYPE = 'email' | 'messenger' | 'multichannel'
 export type STORAGE_TYPE = 'ipfs' | 'database'
@@ -130,3 +132,4 @@ export type MACHINE_LEARNING_TYPE = 'platform'
 export type COMMUNITY_TYPE = 'user-feedback'
 export type BUSINESS_TYPE = 'subscription-analytics'
 export type SCIENCE_TYPE = 'astronomy'
+export type DESIGN_TYPE = 'editor'

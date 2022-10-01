@@ -60,6 +60,7 @@ import { Etherscan } from '../configs/etherscan.config'
 import { Eventbrite } from '../configs/eventbrite.config'
 import { Fauna } from '../configs/fauna.config'
 import { Fibery } from '../configs/fibery.config'
+import { Figma } from '../configs/figma.config'
 import { Frankfurter } from '../configs/frankfurter.config'
 import { Geekflare } from '../configs/geekflare.config'
 import { Github } from '../configs/github.config'
@@ -228,6 +229,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['eventbrite', Eventbrite.API],
 ['fauna', Fauna.API],
 ['fibery', Fibery.API],
+['figma', Figma.API],
 ['frankfurter', Frankfurter.API],
 ['geekflare', Geekflare.API],
 ['github', Github.API],
