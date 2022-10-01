@@ -1,0 +1,45 @@
+# Figma
+
+## Links
+
+* URL: [https://www.figma.com/](https://www.figma.com/)
+* Documentation: [https://www.figma.com/developers/api](https://www.figma.com/developers/api)
+* Tags: web2
+* Category: design
+* Type: editor
+
+## API
+
+### Authentication
+
+* X-Figma-Token: header
+
+### files
+
+#### get
+
+##### Get File
+
+* Description: Get File
+* Docs: [https://www.figma.com/developers/api#get-files-endpoint](https://www.figma.com/developers/api#get-files-endpoint)
+
+#### getNodes
+
+##### Get File Nodes
+
+* Description: Get File Nodes
+* Docs: [https://www.figma.com/developers/api#get-file-nodes-endpoint](https://www.figma.com/developers/api#get-file-nodes-endpoint)
+
+#### getImages
+
+##### Get Image
+
+* Description: Get Image
+* Docs: [https://www.figma.com/developers/api#get-images-endpoint](https://www.figma.com/developers/api#get-images-endpoint)
+
+#### getImageFills
+
+##### Get Image Fills
+
+* Description: Get Image Fills
+* Docs: [https://www.figma.com/developers/api#get-image-fills-endpoint](https://www.figma.com/developers/api#get-image-fills-endpoint)

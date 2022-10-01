@@ -60,6 +60,7 @@ import { Etherscan } from '../../../connectors/src/configs/etherscan.config'
 import { Eventbrite } from '../../../connectors/src/configs/eventbrite.config'
 import { Fauna } from '../../../connectors/src/configs/fauna.config'
 import { Fibery } from '../../../connectors/src/configs/fibery.config'
+import { Figma } from '../../../connectors/src/configs/figma.config'
 import { Frankfurter } from '../../../connectors/src/configs/frankfurter.config'
 import { Geekflare } from '../../../connectors/src/configs/geekflare.config'
 import { Github } from '../../../connectors/src/configs/github.config'
@@ -307,6 +308,10 @@ configTypes.push({type: getType<Eventbrite.GetUserMe>(), name: 'Eventbrite', int
 configTypes.push({type: getType<Fauna.GraphQLQuery>(), name: 'Fauna', interface: 'GraphQLQuery'})
 configTypes.push({type: getType<Fibery.GetSchema>(), name: 'Fibery', interface: 'GetSchema'})
 configTypes.push({type: getType<Fibery.GraphQLQuery>(), name: 'Fibery', interface: 'GraphQLQuery'})
+configTypes.push({type: getType<Figma.GetFile>(), name: 'Figma', interface: 'GetFile'})
+configTypes.push({type: getType<Figma.GetFileNodes>(), name: 'Figma', interface: 'GetFileNodes'})
+configTypes.push({type: getType<Figma.GetImages>(), name: 'Figma', interface: 'GetImages'})
+configTypes.push({type: getType<Figma.GetImageFills>(), name: 'Figma', interface: 'GetImageFills'})
 configTypes.push({type: getType<Frankfurter.Latest>(), name: 'Frankfurter', interface: 'Latest'})
 configTypes.push({type: getType<Frankfurter.Historical>(), name: 'Frankfurter', interface: 'Historical'})
 configTypes.push({type: getType<Frankfurter.TimeSeries>(), name: 'Frankfurter', interface: 'TimeSeries'})

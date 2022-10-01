@@ -1,0 +1,103 @@
+{
+  "name": "Figma",
+  "domain": "figma.com",
+  "claimed": false,
+  "description": "A design platform for teams who build products together.",
+  "links": [
+    { "name": "twitter", "url": "https://twitter.com/figmadesign" },
+    { "name": "facebook", "url": "https://facebook.com/figmadesign" },
+    { "name": "instagram", "url": "https://instagram.com/figmadesign" }
+  ],
+  "logos": [
+    {
+      "type": "icon",
+      "theme": null,
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idZHcZ_i7F/ida1pqjhS_.png",
+          "background": null,
+          "format": "png",
+          "height": 398,
+          "width": 398,
+          "size": 10279
+        }
+      ]
+    },
+    {
+      "type": "logo",
+      "theme": null,
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idZHcZ_i7F/idmRT2A2yv.svg",
+          "background": "transparent",
+          "format": "svg",
+          "size": 2575
+        },
+        {
+          "src": "https://asset.brandfetch.io/idZHcZ_i7F/idREBy-yZU.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 290,
+          "width": 800,
+          "size": 18827
+        }
+      ]
+    },
+    {
+      "type": "symbol",
+      "theme": null,
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idZHcZ_i7F/idcJ00e7RI.svg",
+          "background": "transparent",
+          "format": "svg",
+          "size": 1290
+        },
+        {
+          "src": "https://asset.brandfetch.io/idZHcZ_i7F/idsiHSMzJg.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 1200,
+          "width": 800,
+          "size": 81807
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#000000", "type": "dark", "brightness": 0 },
+    { "hex": "#ffffff", "type": "light", "brightness": 255 },
+    { "hex": "#18a0fb", "type": "accent", "brightness": 138 }
+  ],
+  "fonts": [
+    {
+      "name": "Whyte",
+      "type": "title",
+      "origin": "custom",
+      "originId": null,
+      "weights": []
+    },
+    {
+      "name": "Whyte",
+      "type": "body",
+      "origin": "custom",
+      "originId": null,
+      "weights": []
+    }
+  ],
+  "images": [
+    {
+      "type": "banner",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idZHcZ_i7F/idMPDVSwsi.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 500,
+          "width": 1500,
+          "size": 48248
+        }
+      ]
+    }
+  ]
+}
