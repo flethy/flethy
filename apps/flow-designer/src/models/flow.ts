@@ -67,6 +67,13 @@ export const Flow = types
 			return newNode
 		},
 
+		updateName(id: string, name: string) {
+			const foundNode = self.nodes.find((currentNode) => currentNode.id === id)
+			if (foundNode) {
+				foundNode.data.label = name
+			}
+		},
+
 		// EDGES
 		connect(connection: { source: string; target: string }) {
 			self.edges.push({
@@ -90,6 +97,10 @@ export const Flow = types
 
 		getSelected(): string {
 			return self.selectedNodes[0]
+		},
+
+		getNode(id: string) {
+			return self.nodes.find((node) => node.id === id)
 		},
 
 		getNodes() {

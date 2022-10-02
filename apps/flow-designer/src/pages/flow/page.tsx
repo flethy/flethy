@@ -60,6 +60,14 @@ export default observer(() => {
 					<DrawerHeader>Selected: {page.config.nodeId}</DrawerHeader>
 
 					<DrawerBody>
+						{flow.getNode(page.config.nodeId) && (
+							<Input
+								value={flow.getNode(page.config.nodeId)!.data.label}
+								onChange={(event) =>
+									flow.updateName(page.config.nodeId, event.target.value)
+								}
+							/>
+						)}
 						<Select
 							placeholder="Select Config"
 							onChange={(event) => page.selectConfig(event.target.value)}

@@ -9,7 +9,8 @@
   "scripts": {
     "=============== B U I L D ===============": "===============",
     "build": "turbo run build",
-    "=============== H T T P C O N F I G S ===============": "===============",
+    "build:nocache": "turbo run build --no-cache",
+    "=============== C O N N E C T O R S ===============": "===============",
     "export": "turbo run export --no-cache",
     "play": "turbo run start --filter=@flethy/generator --no-cache",
     "=============== F L O W   D E S I G N E R ===============": "===============",
