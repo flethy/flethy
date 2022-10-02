@@ -1,0 +1,96 @@
+{
+  "name": "AssemblyAI",
+  "domain": "assemblyai.com",
+  "claimed": false,
+  "description": "We're a Deep Learning company, focused on researching and applying advanced neural networks and machine learning technology.",
+  "links": [
+    { "name": "twitter", "url": "https://twitter.com/assemblyai" },
+    { "name": "linkedin", "url": "https://linkedin.com/company/assemblyai" }
+  ],
+  "logos": [
+    {
+      "type": "icon",
+      "theme": null,
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idXvvtuty0/idMLKgrSp-.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 300,
+          "width": 300,
+          "size": 17796
+        }
+      ]
+    },
+    {
+      "type": "logo",
+      "theme": null,
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idXvvtuty0/idsnigfNA3.svg",
+          "background": "transparent",
+          "format": "svg",
+          "height": null,
+          "width": null,
+          "size": 7914
+        },
+        {
+          "src": "https://asset.brandfetch.io/idXvvtuty0/idGpf_tanq.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 149,
+          "width": 800,
+          "size": 18034
+        }
+      ]
+    },
+    {
+      "type": "symbol",
+      "theme": null,
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idXvvtuty0/idlULWZtj0.svg",
+          "background": "transparent",
+          "format": "svg",
+          "size": 2110
+        },
+        {
+          "src": "https://asset.brandfetch.io/idXvvtuty0/idq7sOLbRm.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 737,
+          "width": 800,
+          "size": 41130
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#6B2BD6", "type": "accent", "brightness": 69 },
+    { "hex": "#FFFFFF", "type": "light", "brightness": 255 }
+  ],
+  "fonts": [
+    {
+      "name": "Roboto",
+      "type": "body",
+      "origin": "google",
+      "originId": "Roboto",
+      "weights": []
+    }
+  ],
+  "images": [
+    {
+      "type": "banner",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idXvvtuty0/idELdCCEK9.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 500,
+          "width": 1500,
+          "size": 49305
+        }
+      ]
+    }
+  ]
+}

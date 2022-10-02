@@ -1,9 +1,9 @@
 import * as fs from 'fs'
 import * as path from 'path'
-import { logger } from '../utils/Logger'
-import { BrandExporter, LANDINGPAGE_CONSTANTS } from './brand.exporter'
-import { DOCS_BASE } from './docs.exporter'
 import metaBirthdays from '../../../../docs/meta/birthdays.json'
+import { logger } from '../utils/Logger'
+import { BrandExporter } from './brand.exporter'
+import { DOCS_BASE } from './docs.exporter'
 
 const CONFIGS_DIR_NAME = 'configs'
 const HTTP_CONFIGS_DIR_NAME = 'connectors'
@@ -36,8 +36,6 @@ const INDEX_FILE = path.join(
   'src',
   'index.ts'
 )
-// API COUNT
-const API_COUNT_FILE = path.join(__dirname, '..', '..', 'data.json')
 
 interface MetaBirthdays {
   id: string
@@ -61,7 +59,6 @@ export class ConfigsExporter {
     const birthdays: MetaBirthdays[] = metaBirthdays
 
     const files = fs.readdirSync(CONFIGS_DIR)
-    const dataJsonContent = { apicount: files.length }
     const brandExporter = new BrandExporter()
     brandExporter.readLoadedBrands()
     for (const file of files) {
@@ -126,11 +123,6 @@ export class ConfigsExporter {
     fs.writeFileSync(INDEX_FILE, exports.join('\n'))
     logger.info(`Exported ${files.length} configs.`)
     logger.info(`Writing data json...`)
-    fs.writeFileSync(API_COUNT_FILE, JSON.stringify(dataJsonContent))
-    fs.writeFileSync(
-      `${LANDINGPAGE_CONSTANTS}/api.const.ts`,
-      `export const API_COUNT = ${files.length}`
-    )
     fs.writeFileSync(
       `${DOCS_BASE}/meta/birthdays.json`,
       JSON.stringify(birthdays)

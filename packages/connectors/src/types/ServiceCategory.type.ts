@@ -103,6 +103,7 @@ export type UTILS_TYPE =
   | 'ocr'
   | 'weather'
   | 'featureflags'
+  | 'audio-transcription'
 export type DEFI_TYPE = 'liquidity'
 export type BOOKS_TYPE = 'index'
 export type FINANCE_TYPE =
