@@ -1,4 +1,4 @@
-import { Box, useColorMode } from '@chakra-ui/react'
+import { Box } from '@chakra-ui/react'
 import { observer } from 'mobx-react-lite'
 import { MobxRouter } from 'mobx-router'
 import Navbar from '../../components/navbar'
