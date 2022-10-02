@@ -1,4 +1,6 @@
 import { types } from 'mobx-state-tree'
+import { getRouter } from '../../models/helpers'
+import routes from '../../routes'
 
 export const HomePage = types
 	.model('HomePage', {
@@ -7,10 +9,19 @@ export const HomePage = types
 	})
 	.actions((self) => ({
 		// INITIALIZATION
-		initialisePage() {
-			// setInterval(() => {
-			// 	self.codeExample = (self.codeExample + 1) % 3
-			// }, 1000)
+		initialisePage(options?: { emailSubscription?: boolean }) {
+			if (options?.emailSubscription === true) {
+				const router = getRouter()
+				router.goTo(routes.home)
+				setTimeout(() => {
+					const emailSubscription = document.querySelector(
+						'#email-subscription',
+					)
+					if (emailSubscription) {
+						emailSubscription.scrollIntoView({ behavior: 'smooth' })
+					}
+				}, 100)
+			}
 		},
 
 		toggleShowMore() {

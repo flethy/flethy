@@ -42,7 +42,7 @@ export default observer((props: { images: ImageSource[] }) => {
 			<Box
 				position={'relative'}
 				overflow={'hidden'}
-				w={{ base: '350px', sm: '100%' }}
+				// w={{ base: '350px', sm: '100%' }}
 			>
 				{/* CSS files for react-slick */}
 				<link

@@ -1,7 +1,6 @@
 import { Box, Center, Heading, Stack, Text } from '@chakra-ui/react'
 import { observer } from 'mobx-react-lite'
 import { useTranslation } from 'react-i18next'
-import Logo from '../../components/Logo'
 import { useMst } from '../../models/root'
 
 export default observer(() => {
@@ -20,7 +19,6 @@ export default observer(() => {
 	return (
 		<Center>
 			<Stack textAlign={'center'}>
-				<Logo marginTop="5em" />
 				<Center>
 					<Box
 						padding={'2em'}

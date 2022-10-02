@@ -12,7 +12,8 @@
 		"email": "Email",
 		"subscribe": "Subscribe",
 		"showMore": "Show more",
-		"showLess": "Show less"
+		"showLess": "Show less",
+		"integrations": "Integrations"
 	},
 	"components": {
 		"emailSubscription": {
@@ -26,6 +27,29 @@
 			"loading": "Please wait while we're updating your subscription",
 			"thanks": "You're now subscribed to our newsletter!",
 			"error": "Sorry, something went wrong. Please try again later."
+		},
+		"home": {
+			"sections": {
+				"connectors": {
+					"heading1": "Import once,",
+					"heading2": "access hundreds of endpoints!",
+					"description": "Imagine you can connect hundreds of API endpoints with one package. flethy is a zero-dependency library that lets you integrate with popular APIs much faster."
+				},
+				"flow": {
+					"heading1": "Design the flow,",
+					"heading2": "and let the engine do the rest.",
+					"description": "Go a step further and design flows that make use of the ease of the above explained connectors. Use sequences, parallel and conditional paths and mappings of variables to embed as little as possible in code."
+				},
+				"saas": {
+					"heading1": "Deploy,",
+					"heading2": "and relax!",
+					"description": "If you don't want to run your flows yourself, you can leave it to us. Design, deploy, start! We are currently working on making the product available. Subscribe to our newsletter to stay up to date on this!"
+				},
+				"subscription": {
+					"heading1": "Subscribe,",
+					"heading2": "to get the latest news."
+				}
+			}
 		}
 	}
 }
