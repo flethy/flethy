@@ -50,7 +50,7 @@ export default observer(() => {
 	return (
 		<Center>
 			<Stack textAlign={'center'}>
-				<Logo marginTop="5em" />
+				<Logo marginTop="5em" width="100px" />
 				<Center>
 					<Box
 						padding={'2em'}

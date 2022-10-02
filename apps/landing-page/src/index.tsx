@@ -30,7 +30,7 @@ const App = observer(() => {
 		styles: {
 			global: {
 				body: {
-					bg: 'black',
+					// bg: 'black',
 				},
 			},
 		},
