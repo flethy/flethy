@@ -14,15 +14,23 @@ import {
 	useColorMode,
 	useColorModeValue,
 	Text,
+	Link,
 } from '@chakra-ui/react'
 import { observer } from 'mobx-react-lite'
-import { Link } from 'mobx-router'
 import { useMst } from '../models/root'
 import routes from '../routes'
 import { useTranslation } from 'react-i18next'
 import { ReactNode } from 'react'
 import { MoonIcon, SunIcon } from '@chakra-ui/icons'
 import Logo from './Logo'
+
+const NavbarLinks = [
+	{
+		id: 'integrations',
+		name: 'Integrations',
+		route: routes.integrations,
+	},
+]
 
 export default observer(() => {
 	const { colorMode, toggleColorMode } = useColorMode()
@@ -39,8 +47,34 @@ export default observer(() => {
 			<Box bg={useColorModeValue('gray.100', 'gray.900')} px={4}>
 				<Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
 					<HStack>
-						<Logo width={'12'} />
-						<Text fontWeight={'bold'}>{t('title')}</Text>
+						<HStack
+							style={{ cursor: 'pointer' }}
+							onClick={() => router.goTo(routes.home)}
+						>
+							<Logo width={'12'} />
+							<Text fontWeight={'bold'}>{t('title')}</Text>
+						</HStack>
+						<HStack
+							as={'nav'}
+							spacing={4}
+							display={{ base: 'none', md: 'flex' }}
+						>
+							<Link
+								px={2}
+								py={1}
+								rounded={'md'}
+								_hover={{
+									textDecoration: 'none',
+									bg: useColorModeValue('gray.200', 'gray.700'),
+								}}
+								onClick={() => {
+									console.log('test')
+									router.goTo(routes.integrations)
+								}}
+							>
+								Integrations
+							</Link>
+						</HStack>
 					</HStack>
 
 					<Flex alignItems={'center'}>

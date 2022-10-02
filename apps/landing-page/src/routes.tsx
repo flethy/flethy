@@ -2,6 +2,7 @@ import { Route } from 'mobx-router'
 import { RootStore } from './models/root'
 import NotFoundPage from './pages/404/page'
 import HomePage from './pages/home/page'
+import IntegrationsPage from './pages/integrations/page'
 import VerificationPage from './pages/verification/page'
 
 export default {
@@ -18,6 +19,14 @@ export default {
 		component: <VerificationPage />,
 		onEnter(_route, parameters, { root: { pages } }) {
 			pages.verification.initialisePage(parameters!.token as string)
+		},
+	}),
+
+	integrations: new Route<RootStore>({
+		path: '/integrations',
+		component: <IntegrationsPage />,
+		onEnter(_route, _parameters, { root: { pages } }) {
+			pages.integrations.initialisePage()
 		},
 	}),
 

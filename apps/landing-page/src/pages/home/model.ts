@@ -13,10 +13,14 @@ export const HomePage = types
 			if (options?.emailSubscription === true) {
 				const router = getRouter()
 				router.goTo(routes.home)
-				const emailSubscription = document.querySelector('#email-subscription')
-				if (emailSubscription) {
-					emailSubscription.scrollIntoView({ behavior: 'smooth' })
-				}
+				setTimeout(() => {
+					const emailSubscription = document.querySelector(
+						'#email-subscription',
+					)
+					if (emailSubscription) {
+						emailSubscription.scrollIntoView({ behavior: 'smooth' })
+					}
+				}, 100)
 			}
 		},
 
