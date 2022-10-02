@@ -38,6 +38,13 @@ export default observer(() => {
 				/>
 			</InputGroup>
 			<Button
+				rounded={'full'}
+				size={'lg'}
+				fontWeight={'normal'}
+				px={6}
+				colorScheme={'orange'}
+				bg={'flethy.orange'}
+				_hover={{ bg: 'flethy.purple' }}
 				onClick={() => component.submit()}
 				isLoading={component.state === 'pending'}
 			>

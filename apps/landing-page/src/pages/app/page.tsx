@@ -1,6 +1,7 @@
 import { Box } from '@chakra-ui/react'
 import { observer } from 'mobx-react-lite'
 import { MobxRouter } from 'mobx-router'
+import Footer from '../../components/footer'
 import Navbar from '../../components/navbar'
 import { rootStore } from '../../models/root'
 
@@ -18,6 +19,7 @@ export default observer(() => {
 				{/* <Box> */}
 				<MobxRouter store={rootStore} />
 			</Box>
+			<Footer />
 		</>
 	)
 	return app

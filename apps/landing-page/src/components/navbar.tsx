@@ -29,7 +29,9 @@ export default observer(() => {
 	const { t } = useTranslation('app')
 	const {
 		router,
-		root: {},
+		root: {
+			pages: { home },
+		},
 	} = useMst()
 
 	return (
@@ -45,6 +47,19 @@ export default observer(() => {
 						<Stack direction={'row'} spacing={7}>
 							<Button onClick={toggleColorMode}>
 								{colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
+							</Button>
+							<Button
+								display={{ base: 'none', md: 'inline-flex' }}
+								fontSize={'sm'}
+								fontWeight={600}
+								color={'white'}
+								bg={'flethy.orange'}
+								_hover={{
+									bg: 'flethy.purple',
+								}}
+								onClick={() => home.initialisePage({ emailSubscription: true })}
+							>
+								Subscribe
 							</Button>
 						</Stack>
 					</Flex>

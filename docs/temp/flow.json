@@ -1,0 +1,23 @@
+[
+  {
+    "id": "sendVerificationEmail",
+    "config": {
+      "namespace": "mailjet"
+    },
+    "next": [
+      {
+        "id": "slackNotification"
+      },
+      {
+        "id": "mixpanelEvent"
+      }
+    ],
+    "kind": "mailjet.send.basicEmail",
+    "auth:Authorization": {
+      "username": "==>secrets==>MAILJET_API_KEY",
+      "password": "==>secrets==>MAILJET_API_SECRET"
+    },
+    "body:Messages": []
+  }
+  // ...
+]
