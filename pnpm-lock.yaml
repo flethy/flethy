@@ -20,7 +20,7 @@ importers:
       '@chakra-ui/system': ^2.2.11
       '@emotion/react': ^11.10.4
       '@emotion/styled': ^11.10.4
-      '@flethy/connectors': workspace:*
+      '@flethy/connectors': ^0.0.161
       '@types/node': 18.7.23
       '@types/react': 18.0.21
       '@types/react-dom': 18.0.6
@@ -57,7 +57,7 @@ importers:
       '@chakra-ui/system': 2.2.11_hfzxdiydbrbhhfpkwuv3jhvwmq
       '@emotion/react': 11.10.4_bjroym7kxlcs2vvwnej4p3gzwu
       '@emotion/styled': 11.10.4_ogudqqhlstsi7uge4lir7ff3ty
-      '@flethy/connectors': link:../../packages/connectors
+      '@flethy/connectors': 0.0.161
       axios: 0.27.2
       framer-motion: 7.5.1_biqbaboplfbrettd7655fr4n2y
       i18next: 21.9.2
@@ -1975,6 +1975,10 @@ packages:
 
   /@flethy/connectors/0.0.159:
     resolution: {integrity: sha512-suW3vHVpCkLZVvCl4W0CTP+/+OaVuncLb4UDv4E2NHsd7plXg0IuZ2BNulUJvu2d2reTG6UZb4IFgsPPISXf7g==}
+    dev: false
+
+  /@flethy/connectors/0.0.161:
+    resolution: {integrity: sha512-f1gZjefrExAU+OJnkEpPCEZ57PJ5c8hCm4WtK+41IfXPYWADo8S5YmRDy0VlX+Hrrig7wdxQt6q3SbuRlPYeqQ==}
     dev: false
 
   /@flethy/flow/0.0.159:
