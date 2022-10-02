@@ -1,3 +1,4 @@
+import AssemblyAI from '@flethy/connectors/src/configs/assemblyai.config'
 import BooAPI from '@flethy/connectors/src/configs/booapi.config'
 import Cronhooks from '@flethy/connectors/src/configs/cronhooks.config'
 import DataDog from '@flethy/connectors/src/configs/datadog.config'
@@ -2319,8 +2320,19 @@ async function main() {
       'param:key': process.env.FIGMA_FILE_KEY,
       'query:ids': '0%3A1',
     }),
+    assemblyaiTranscribe: nao<AssemblyAI.Transcribe>({
+      kind: 'assemblyai.core.transcription',
+      'auth:Authorization': process.env.ASSEMBLYAI_API_KEY,
+      'body:audio_url': 'https://bit.ly/3yxKEIY',
+    }),
+    assemblyaiExport: nao<AssemblyAI.Export>({
+      kind: 'assemblyai.core.export',
+      'auth:Authorization': process.env.ASSEMBLYAI_API_KEY,
+      'param:transcriptId': process.env.ASSEMBLYAI_TID,
+      'param:format': 'sentences',
+    }),
   }
-  const requestConfig = requestConfigs.figmaGetFileNodes
+  const requestConfig = requestConfigs.assemblyaiExport
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

@@ -35,6 +35,7 @@ The following Endpoints are currently supported.
 * [APIFlash](./api/apiflash.md)
 * [Apify](./api/apify.md)
 * [APITemplateIo](./api/apitemplateio.md)
+* [AssemblyAI](./api/assemblyai.md)
 * [Auth0](./api/auth0.md)
 * [BambooHR](./api/bamboohr.md)
 * [BannerBear](./api/bannerbear.md)

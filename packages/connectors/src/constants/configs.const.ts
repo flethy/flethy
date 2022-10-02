@@ -8,6 +8,7 @@ import { ApicAgent } from '../configs/apicagent.config'
 import { APIFlash } from '../configs/apiflash.config'
 import { Apify } from '../configs/apify.config'
 import { APITemplateIo } from '../configs/apitemplateio.config'
+import { AssemblyAI } from '../configs/assemblyai.config'
 import { Auth0 } from '../configs/auth0.config'
 import { BambooHR } from '../configs/bamboohr.config'
 import { BannerBear } from '../configs/bannerbear.config'
@@ -177,6 +178,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['apiflash', APIFlash.API],
 ['apify', Apify.API],
 ['apitemplateio', APITemplateIo.API],
+['assemblyai', AssemblyAI.API],
 ['auth0', Auth0.API],
 ['bamboohr', BambooHR.API],
 ['bannerbear', BannerBear.API],

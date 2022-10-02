@@ -8,6 +8,7 @@ import { ApicAgent } from '../../../connectors/src/configs/apicagent.config'
 import { APIFlash } from '../../../connectors/src/configs/apiflash.config'
 import { Apify } from '../../../connectors/src/configs/apify.config'
 import { APITemplateIo } from '../../../connectors/src/configs/apitemplateio.config'
+import { AssemblyAI } from '../../../connectors/src/configs/assemblyai.config'
 import { Auth0 } from '../../../connectors/src/configs/auth0.config'
 import { BambooHR } from '../../../connectors/src/configs/bamboohr.config'
 import { BannerBear } from '../../../connectors/src/configs/bannerbear.config'
@@ -181,6 +182,8 @@ configTypes.push({type: getType<ApicAgent.Post>(), name: 'ApicAgent', interface:
 configTypes.push({type: getType<APIFlash.Screenshot>(), name: 'APIFlash', interface: 'Screenshot'})
 configTypes.push({type: getType<Apify.ListActors>(), name: 'Apify', interface: 'ListActors'})
 configTypes.push({type: getType<APITemplateIo.CreateImage>(), name: 'APITemplateIo', interface: 'CreateImage'})
+configTypes.push({type: getType<AssemblyAI.Transcribe>(), name: 'AssemblyAI', interface: 'Transcribe'})
+configTypes.push({type: getType<AssemblyAI.Export>(), name: 'AssemblyAI', interface: 'Export'})
 configTypes.push({type: getType<Auth0.GetAuthAccessToken>(), name: 'Auth0', interface: 'GetAuthAccessToken'})
 configTypes.push({type: getType<Auth0.GetUsersByEmail>(), name: 'Auth0', interface: 'GetUsersByEmail'})
 configTypes.push({type: getType<Auth0.ListOrSearchUsers>(), name: 'Auth0', interface: 'ListOrSearchUsers'})
