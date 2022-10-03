@@ -63,6 +63,7 @@ import { Eventbrite } from '../configs/eventbrite.config'
 import { Fauna } from '../configs/fauna.config'
 import { Fibery } from '../configs/fibery.config'
 import { Figma } from '../configs/figma.config'
+import { Flatfile } from '../configs/flatfile.config'
 import { Frankfurter } from '../configs/frankfurter.config'
 import { Geekflare } from '../configs/geekflare.config'
 import { Github } from '../configs/github.config'
@@ -234,6 +235,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['fauna', Fauna.API],
 ['fibery', Fibery.API],
 ['figma', Figma.API],
+['flatfile', Flatfile.API],
 ['frankfurter', Frankfurter.API],
 ['geekflare', Geekflare.API],
 ['github', Github.API],

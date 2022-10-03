@@ -200,13 +200,25 @@ export class HttpRequestConfig {
               if (!config.headers) {
                 config.headers = {}
               }
-              config.headers[keyname] = `${authConfig.custom?.prefix ?? ''}${
-                options.params[paramKey]
-              }${authConfig.custom?.postfix ?? ''}`
+              if (authConfig.custom?.prefix || authConfig.custom?.postfix) {
+                config.headers[keyname] = `${authConfig.custom?.prefix ?? ''}${
+                  options.params[paramKey]
+                }${authConfig.custom?.postfix ?? ''}`
+              }
+              if (authConfig.custom?.concat) {
+                config.headers[keyname] = authConfig.custom?.concat.keys
+                  .map((key) => options.params[paramKey][key])
+                  .join(authConfig.custom?.concat.separator ?? '')
+              }
               break
             case 'body':
               if (authConfig.authHandler) {
                 authConfig.authHandler(config, options.params[paramKey])
+              } else {
+                if (!config.body) {
+                  config.body = {}
+                }
+                config.body[keyname] = options.params[paramKey]
               }
               break
             case 'body:form':
