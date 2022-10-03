@@ -63,6 +63,7 @@ import { Eventbrite } from '../../../connectors/src/configs/eventbrite.config'
 import { Fauna } from '../../../connectors/src/configs/fauna.config'
 import { Fibery } from '../../../connectors/src/configs/fibery.config'
 import { Figma } from '../../../connectors/src/configs/figma.config'
+import { Flatfile } from '../../../connectors/src/configs/flatfile.config'
 import { Frankfurter } from '../../../connectors/src/configs/frankfurter.config'
 import { Geekflare } from '../../../connectors/src/configs/geekflare.config'
 import { Github } from '../../../connectors/src/configs/github.config'
@@ -322,6 +323,10 @@ configTypes.push({type: getType<Figma.GetFile>(), name: 'Figma', interface: 'Get
 configTypes.push({type: getType<Figma.GetFileNodes>(), name: 'Figma', interface: 'GetFileNodes'})
 configTypes.push({type: getType<Figma.GetImages>(), name: 'Figma', interface: 'GetImages'})
 configTypes.push({type: getType<Figma.GetImageFills>(), name: 'Figma', interface: 'GetImageFills'})
+configTypes.push({type: getType<Flatfile.ExchangeAccessKey>(), name: 'Flatfile', interface: 'ExchangeAccessKey'})
+configTypes.push({type: getType<Flatfile.ListWorkspaces>(), name: 'Flatfile', interface: 'ListWorkspaces'})
+configTypes.push({type: getType<Flatfile.DownloadUpload>(), name: 'Flatfile', interface: 'DownloadUpload'})
+configTypes.push({type: getType<Flatfile.DeleteUpload>(), name: 'Flatfile', interface: 'DeleteUpload'})
 configTypes.push({type: getType<Frankfurter.Latest>(), name: 'Frankfurter', interface: 'Latest'})
 configTypes.push({type: getType<Frankfurter.Historical>(), name: 'Frankfurter', interface: 'Historical'})
 configTypes.push({type: getType<Frankfurter.TimeSeries>(), name: 'Frankfurter', interface: 'TimeSeries'})

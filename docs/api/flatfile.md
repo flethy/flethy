@@ -1,0 +1,55 @@
+# Flatfile
+
+## Links
+
+* URL: [https://flatfile.com/](https://flatfile.com/)
+* Documentation: [https://flatfile.com/docs/api-reference/](https://flatfile.com/docs/api-reference/)
+* Tags: web2
+* Category: utils
+* Type: data-exchange
+
+## API
+
+### Authentication
+
+* Authorization: header:bearer
+* X-Api-Key: header:custom
+
+### auth
+
+#### keyExchange
+
+##### Authentication
+
+* accessKeyId: body
+* secretAccessKey: body
+
+##### Exchange access key for JWT
+
+* Description: Exchange access key for JWT
+* Docs: [https://flatfile.com/docs/api-reference/#post-exchange-access-key-for-jwt](https://flatfile.com/docs/api-reference/#post-exchange-access-key-for-jwt)
+
+### workspaces
+
+#### list
+
+##### List team Workspaces
+
+* Description: List team Workspaces
+* Docs: [https://flatfile.com/docs/api-reference/#get-list-team-workspaces](https://flatfile.com/docs/api-reference/#get-list-team-workspaces)
+
+### batch
+
+#### downloadUpload
+
+##### Download an upload
+
+* Description: Download an upload
+* Docs: [https://flatfile.com/docs/api-reference/#get-download-an-upload](https://flatfile.com/docs/api-reference/#get-download-an-upload)
+
+#### deleteUpload
+
+##### Delete an upload
+
+* Description: Delete an upload
+* Docs: [https://flatfile.com/docs/api-reference/#delete-delete-an-upload](https://flatfile.com/docs/api-reference/#delete-delete-an-upload)

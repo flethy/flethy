@@ -86,6 +86,10 @@ export interface ApiDescriptionAuth {
   custom?: {
     prefix?: string
     postfix?: string
+    concat?: {
+      keys: string[]
+      separator: string
+    }
   }
 }
 

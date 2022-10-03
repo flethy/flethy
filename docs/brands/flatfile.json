@@ -1,0 +1,46 @@
+{
+  "name": "Flatfile",
+  "domain": "flatfile.com",
+  "claimed": false,
+  "description": "Never clean messy customer data or build yet another CSV importer again. Create delightful customer data import & data onboarding experiences with Flatfile.",
+  "links": [],
+  "logos": [
+    {
+      "type": "logo",
+      "theme": null,
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/id7H36Ui8h/idxPavLPhZ.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 13,
+          "width": 820,
+          "size": 1504
+        },
+        {
+          "src": "https://asset.brandfetch.io/id7H36Ui8h/idP3L5aSHn.svg",
+          "background": "transparent",
+          "format": "svg",
+          "height": null,
+          "width": null,
+          "size": 2487
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#5fb700", "type": "dark", "brightness": 151 },
+    { "hex": "#ffffff", "type": "light", "brightness": 255 },
+    { "hex": "#3f5c71", "type": "accent", "brightness": 87 }
+  ],
+  "fonts": [
+    {
+      "name": "Avenir Next",
+      "type": "body",
+      "origin": "custom",
+      "originId": null,
+      "weights": []
+    }
+  ],
+  "images": []
+}

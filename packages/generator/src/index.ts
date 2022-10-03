@@ -162,11 +162,12 @@ import WordSimi from '../../connectors/src/configs/wordsimi.config'
 import { ZeroX } from '../../connectors/src/configs/zerox.config'
 import Zora from '../../connectors/src/configs/zora.config'
 import { FetchParams } from '../../connectors/src/types/FetchParams.type'
-// import { nao } from '../../connectors/src/utils/Request.utils'
-import { nao } from '@flethy/connectors'
+import { nao } from '../../connectors/src/utils/Request.utils'
+// import { nao } from '@flethy/connectors'
+import APIPoint from '@flethy/connectors/src/configs/apipoint.config'
+import Flatfile from '@flethy/connectors/src/configs/flatfile.config'
 import { HttpRequest } from './controllers/HttpRequest'
 import { logger } from './utils/Logger'
-import APIPoint from '@flethy/connectors/src/configs/apipoint.config'
 
 async function main() {
   const requestConfigs: {
@@ -2338,8 +2339,26 @@ async function main() {
       'subdomain:type': 'qr-code',
       'query:data': 'flethy.com',
     }),
+    flatfileKeyExchange: nao<Flatfile.ExchangeAccessKey>({
+      kind: 'flatfile.auth.keyExchange',
+      'auth:accessKeyId': process.env.FLATFILE_AKID,
+      'auth:secretAccessKey': process.env.FLATFILE_SAKEY,
+    }),
+    flatfileListWorkspaces1: nao<Flatfile.ListWorkspaces>({
+      kind: 'flatfile.workspaces.list',
+      'auth:Authorization': process.env.FLATFILE_JWT,
+      'param:teamId': Number(process.env.FLATFILE_TEAM_ID),
+    }),
+    flatfileListWorkspaces2: nao<Flatfile.ListWorkspaces>({
+      kind: 'flatfile.workspaces.list',
+      'auth:X-Api-Key': {
+        accessKeyId: process.env.FLATFILE_AKID,
+        secretAccessKey: process.env.FLATFILE_SAKEY,
+      },
+      'param:teamId': Number(process.env.FLATFILE_TEAM_ID),
+    }),
   }
-  const requestConfig = requestConfigs.apipointQr
+  const requestConfig = requestConfigs.flatfileListWorkspaces2
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)
