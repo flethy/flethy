@@ -2,6 +2,7 @@ import { FlowEngine } from '@flethy/flow'
 import { FlowNode } from '@flethy/flow/dist/types/flow.types'
 
 import { jsonResponse } from './shared/cf.utils'
+import { EmailTemplates } from './shared/email.templates'
 import { KvUtils } from './shared/kv.utils'
 import { VerificationRequest } from './shared/meta'
 
@@ -73,7 +74,7 @@ export const onRequestPost: PagesFunction<{
 				{
 					From: {
 						Email: 'adam@flethy.com',
-						Name: 'Adam (from flethy)',
+						Name: 'Adam from flethy',
 					},
 					To: [
 						{
@@ -81,8 +82,8 @@ export const onRequestPost: PagesFunction<{
 							Email: pendingSubscription.email,
 						},
 					],
-					Subject: `Hello from flethy!`,
-					HTMLPart: `<h3>Welcome!</h3>`,
+					Subject: `Thanks for subscribing!`,
+					HTMLPart: EmailTemplates.welcomeEmail()
 				},
 			],
 		},
