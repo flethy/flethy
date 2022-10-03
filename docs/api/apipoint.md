@@ -1,0 +1,55 @@
+# APIPoint
+
+## Links
+
+* URL: [https://www.api-point.cf/](https://www.api-point.cf/)
+* Documentation: [https://www.api-point.cf/](https://www.api-point.cf/)
+* Tags: web2
+* Category: utils
+* Type: other
+
+## API
+
+### core
+
+#### avatar
+
+##### User Avatar
+
+* Description: User Avatar
+* Docs: [https://www.api-point.cf/](https://www.api-point.cf/)
+
+#### weather
+
+##### Weather
+
+* Description: Weather
+* Docs: [https://www.api-point.cf/](https://www.api-point.cf/)
+
+#### gif
+
+##### Free Gifs
+
+* Description: Free Gifs
+* Docs: [https://www.api-point.cf/](https://www.api-point.cf/)
+
+#### qr
+
+##### QR Code
+
+* Description: QR Code
+* Docs: [https://www.api-point.cf/](https://www.api-point.cf/)
+
+#### ip
+
+##### IP Details
+
+* Description: IP Details
+* Docs: [https://www.api-point.cf/](https://www.api-point.cf/)
+
+#### urlshot
+
+##### URl Shot
+
+* Description: URL SHot
+* Docs: [https://www.api-point.cf/](https://www.api-point.cf/)

@@ -7,6 +7,7 @@ import { Algolia } from '../../../connectors/src/configs/algolia.config'
 import { ApicAgent } from '../../../connectors/src/configs/apicagent.config'
 import { APIFlash } from '../../../connectors/src/configs/apiflash.config'
 import { Apify } from '../../../connectors/src/configs/apify.config'
+import { APIPoint } from '../../../connectors/src/configs/apipoint.config'
 import { APITemplateIo } from '../../../connectors/src/configs/apitemplateio.config'
 import { AssemblyAI } from '../../../connectors/src/configs/assemblyai.config'
 import { Auth0 } from '../../../connectors/src/configs/auth0.config'
@@ -181,6 +182,12 @@ configTypes.push({type: getType<ApicAgent.Get>(), name: 'ApicAgent', interface: 
 configTypes.push({type: getType<ApicAgent.Post>(), name: 'ApicAgent', interface: 'Post'})
 configTypes.push({type: getType<APIFlash.Screenshot>(), name: 'APIFlash', interface: 'Screenshot'})
 configTypes.push({type: getType<Apify.ListActors>(), name: 'Apify', interface: 'ListActors'})
+configTypes.push({type: getType<APIPoint.UserAvatar>(), name: 'APIPoint', interface: 'UserAvatar'})
+configTypes.push({type: getType<APIPoint.Weather>(), name: 'APIPoint', interface: 'Weather'})
+configTypes.push({type: getType<APIPoint.FreeGifs>(), name: 'APIPoint', interface: 'FreeGifs'})
+configTypes.push({type: getType<APIPoint.QRCode>(), name: 'APIPoint', interface: 'QRCode'})
+configTypes.push({type: getType<APIPoint.IPDetails>(), name: 'APIPoint', interface: 'IPDetails'})
+configTypes.push({type: getType<APIPoint.URLShot>(), name: 'APIPoint', interface: 'URLShot'})
 configTypes.push({type: getType<APITemplateIo.CreateImage>(), name: 'APITemplateIo', interface: 'CreateImage'})
 configTypes.push({type: getType<AssemblyAI.Transcribe>(), name: 'AssemblyAI', interface: 'Transcribe'})
 configTypes.push({type: getType<AssemblyAI.Export>(), name: 'AssemblyAI', interface: 'Export'})
