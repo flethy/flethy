@@ -1,0 +1,55 @@
+<mjml>
+  <mj-head>
+    <mj-title>Say hello to flethy</mj-title>
+    <mj-font name="Roboto" href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500"></mj-font>
+    <mj-attributes>
+      <mj-all font-family="Montserrat, Helvetica, Arial, sans-serif"></mj-all>
+      <mj-text font-weight="400" font-size="16px" color="#000000" line-height="24px"></mj-text>
+      <mj-section padding="0px"></mj-section>
+    </mj-attributes>
+  </mj-head>
+  <mj-body background-color="#F2F2F2">
+    <mj-section padding="10px 0 20px 0">
+      <mj-column>
+        <mj-text align="center" color="#9B9B9B" font-size="11px">Verify your email address</mj-text>
+      </mj-column>
+    </mj-section>
+    <mj-section padding="20px 20px 0 20px" background-color="#FFFFFF">
+      <mj-column width="35%">
+        <mj-image height="25px" width="25px" src="https://flethy.com/favicon.png" />
+      </mj-column>      
+    </mj-section>
+    <mj-section padding="20px 20px 0 20px" background-color="#FFFFFF">
+      <mj-column>
+        <mj-text align="center" font-weight="300" padding="30px 40px 10px 40px" font-size="32px" line-height="40px" color="#A33792">One last step!</mj-text>
+      </mj-column>
+    </mj-section>
+    <mj-section padding="10px 20px" background-color="#FFFFFF">
+      <mj-column>
+        <mj-divider width="30px" border-width="3px" border-color="#9B9B9B"></mj-divider>
+      </mj-column>
+    </mj-section>
+    <mj-section padding="0 20px 20px 20px" background-color="#FFFFFF">
+      <mj-column width="80%">
+        <mj-text align="center" padding-top="10px" font-weight="500" padding="0px">Please <strong>verify</strong> your email address now so you can get the latest news around flethy. You'll also get early access to our cloud product as soon as it's ready!</mj-text>
+      </mj-column>
+    </mj-section>
+    <mj-section background-color="#1A202C" vertical-align="middle">
+      <mj-column width="100%">
+        <mj-image src="http://nimus.de/share/tpl-card/lineshadow.png" alt="" align="center" border="none" padding="0px"></mj-image>
+        <mj-text color="#FFFFFF" align="center" padding="50px 40px 0 40px" font-weight="300">Time to speed up! <br /><a href="${verificationUrl}" style="color: #FFFFFF; text-decoration: none;">${verificationUrl}</a></mj-text>
+        <mj-button align="center" background-color="#EE7524" color="#FFFFFF" border-radius="15px" href="${verificationUrl}" inner-padding="15px 30px" padding-bottom="100px" padding-top="20px">VERIFY</mj-button>        
+      </mj-column>
+    </mj-section>
+    <mj-section padding="50px 0 0 0" background-color="#FFFFFF">
+      <mj-column>
+        <mj-image src="http://nimus.de/share/tpl-card/bottom.png" alt="bottom border" align="center" border="none" padding="0px"></mj-image>
+      </mj-column>
+    </mj-section>
+    <mj-section padding="10px 0 20px 0">
+      <mj-column>
+        <mj-text align="center" color="#9B9B9B" font-size="11px">flethy.com<br />Time to speed up</mj-text>
+      </mj-column>
+    </mj-section>
+  </mj-body>
+</mjml>

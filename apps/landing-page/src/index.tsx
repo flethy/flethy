@@ -40,6 +40,7 @@ const App = observer(() => {
 		},
 		colors: {
 			flethy: {
+				darkbg: '#1A202C',
 				orange: '#EE7524',
 				lightpurple: '#CC3F6B',
 				purple: '#A33792',
