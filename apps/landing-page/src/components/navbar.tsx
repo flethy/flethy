@@ -1,27 +1,19 @@
+import { EmailIcon, MoonIcon, SunIcon } from '@chakra-ui/icons'
 import {
-	Avatar,
 	Box,
 	Button,
-	Center,
 	Flex,
 	HStack,
-	Menu,
-	MenuButton,
-	MenuDivider,
-	MenuItem,
-	MenuList,
+	Link,
 	Stack,
+	Text,
 	useColorMode,
 	useColorModeValue,
-	Text,
-	Link,
 } from '@chakra-ui/react'
 import { observer } from 'mobx-react-lite'
+import { useTranslation } from 'react-i18next'
 import { useMst } from '../models/root'
 import routes from '../routes'
-import { useTranslation } from 'react-i18next'
-import { ReactNode } from 'react'
-import { MoonIcon, SunIcon } from '@chakra-ui/icons'
 import Logo from './Logo'
 
 const NavbarLinks = [
@@ -95,20 +87,23 @@ export default observer(() => {
 							>
 								Subscribe
 							</Button>
+							<Button
+								display={{ base: 'inline-flex', md: 'none' }}
+								fontSize={'sm'}
+								fontWeight={600}
+								color={'white'}
+								bg={'flethy.orange'}
+								_hover={{
+									bg: 'flethy.purple',
+								}}
+								onClick={() => home.initialisePage({ emailSubscription: true })}
+							>
+								<EmailIcon />
+							</Button>
 						</Stack>
 					</Flex>
 				</Flex>
 			</Box>
 		</>
-		// <div>
-		// 	<h1 className="text-3xl font-bold">{t('title')}</h1>
-		// 	<div>
-		// 		<HStack gap={3}>
-		// 			<Link className="underline" route={routes.home} router={router}>
-		// 				{t('navbar.home')}
-		// 			</Link>
-		// 		</HStack>
-		// 	</div>
-		// </div>
 	)
 })
