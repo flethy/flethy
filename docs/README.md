@@ -34,6 +34,7 @@ The following Endpoints are currently supported.
 * [ApicAgent](./api/apicagent.md)
 * [APIFlash](./api/apiflash.md)
 * [Apify](./api/apify.md)
+* [APIPoint](./api/apipoint.md)
 * [APITemplateIo](./api/apitemplateio.md)
 * [AssemblyAI](./api/assemblyai.md)
 * [Auth0](./api/auth0.md)

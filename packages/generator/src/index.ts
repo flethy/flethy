@@ -166,6 +166,7 @@ import { FetchParams } from '../../connectors/src/types/FetchParams.type'
 import { nao } from '@flethy/connectors'
 import { HttpRequest } from './controllers/HttpRequest'
 import { logger } from './utils/Logger'
+import APIPoint from '@flethy/connectors/src/configs/apipoint.config'
 
 async function main() {
   const requestConfigs: {
@@ -2332,8 +2333,13 @@ async function main() {
       'param:transcriptId': process.env.ASSEMBLYAI_TID,
       'param:format': 'sentences',
     }),
+    apipointQr: nao<APIPoint.QRCode>({
+      kind: 'apipoint.core.qr',
+      'subdomain:type': 'qr-code',
+      'query:data': 'flethy.com',
+    }),
   }
-  const requestConfig = requestConfigs.assemblyaiExport
+  const requestConfig = requestConfigs.apipointQr
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

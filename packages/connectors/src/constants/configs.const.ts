@@ -7,6 +7,7 @@ import { Algolia } from '../configs/algolia.config'
 import { ApicAgent } from '../configs/apicagent.config'
 import { APIFlash } from '../configs/apiflash.config'
 import { Apify } from '../configs/apify.config'
+import { APIPoint } from '../configs/apipoint.config'
 import { APITemplateIo } from '../configs/apitemplateio.config'
 import { AssemblyAI } from '../configs/assemblyai.config'
 import { Auth0 } from '../configs/auth0.config'
@@ -177,6 +178,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['apicagent', ApicAgent.API],
 ['apiflash', APIFlash.API],
 ['apify', Apify.API],
+['apipoint', APIPoint.API],
 ['apitemplateio', APITemplateIo.API],
 ['assemblyai', AssemblyAI.API],
 ['auth0', Auth0.API],

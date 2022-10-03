@@ -1,0 +1,44 @@
+{
+  "name": "API Point",
+  "domain": "api-point.cf",
+  "claimed": false,
+  "description": null,
+  "links": [],
+  "logos": [
+    {
+      "type": "logo",
+      "theme": null,
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idnQ8OOZ26/idV6Hrofph.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 750,
+          "width": 820,
+          "size": 30527
+        },
+        {
+          "src": "https://asset.brandfetch.io/idnQ8OOZ26/idBn1-oZed.svg",
+          "background": "transparent",
+          "format": "svg",
+          "size": 1622
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#4f46e5", "type": "accent", "brightness": 83 },
+    { "hex": "#3f3d55", "type": "dark", "brightness": 63 },
+    { "hex": "#ff5353", "type": "light", "brightness": 120 }
+  ],
+  "fonts": [
+    {
+      "name": "PT Mono",
+      "type": "body",
+      "origin": "google",
+      "originId": "PT+Mono",
+      "weights": []
+    }
+  ],
+  "images": []
+}
