@@ -327,6 +327,7 @@ configTypes.push({type: getType<Flatfile.ExchangeAccessKey>(), name: 'Flatfile',
 configTypes.push({type: getType<Flatfile.ListWorkspaces>(), name: 'Flatfile', interface: 'ListWorkspaces'})
 configTypes.push({type: getType<Flatfile.DownloadUpload>(), name: 'Flatfile', interface: 'DownloadUpload'})
 configTypes.push({type: getType<Flatfile.DeleteUpload>(), name: 'Flatfile', interface: 'DeleteUpload'})
+configTypes.push({type: getType<Flatfile.BulkDeleteUploads>(), name: 'Flatfile', interface: 'BulkDeleteUploads'})
 configTypes.push({type: getType<Frankfurter.Latest>(), name: 'Frankfurter', interface: 'Latest'})
 configTypes.push({type: getType<Frankfurter.Historical>(), name: 'Frankfurter', interface: 'Historical'})
 configTypes.push({type: getType<Frankfurter.TimeSeries>(), name: 'Frankfurter', interface: 'TimeSeries'})
