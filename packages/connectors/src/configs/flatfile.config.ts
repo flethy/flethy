@@ -12,6 +12,7 @@ export namespace Flatfile {
     | {
         downloadUpload: ApiDescriptionEndpoint
         deleteUpload: ApiDescriptionEndpoint
+        bulkDeleteUploads: ApiDescriptionEndpoint
       }
 
   interface FlatfileBaseKeyExchange {
@@ -51,6 +52,14 @@ export namespace Flatfile {
   export interface DeleteUpload extends FlatfileBase, RequestParams {
     kind: 'flatfile.batch.deleteUpload'
     'param:batchId': string
+  }
+
+  export interface BulkDeleteUploads extends FlatfileBase, RequestParams {
+    kind: 'flatfile.batch.bulkDeleteUploads'
+    'query:olderThanQuantity': string
+    'query:olderThanUnit': 'minute' | 'hour' | 'day' | 'week' | 'month'
+    'query:sendEmail': boolean
+    'query:teamId': string
   }
 
   export const API: ApiDescription<Entity, Endpoint> = {
@@ -186,6 +195,25 @@ export namespace Flatfile {
             {
               name: 'batchId',
               type: 'param',
+            },
+          ],
+        },
+        bulkDeleteUploads: {
+          interface: 'BulkDeleteUploads',
+          meta: {
+            title: 'Bulk delete uploads',
+            description: `Bulk delete uploads`,
+            docs: 'https://flatfile.com/docs/api-reference/#get-bulk-delete-uploads',
+          },
+          method: 'GET',
+          paths: [
+            {
+              name: 'delete',
+              type: 'static',
+            },
+            {
+              name: 'batches',
+              type: 'static',
             },
           ],
         },

@@ -53,3 +53,10 @@
 
 * Description: Delete an upload
 * Docs: [https://flatfile.com/docs/api-reference/#delete-delete-an-upload](https://flatfile.com/docs/api-reference/#delete-delete-an-upload)
+
+#### bulkDeleteUploads
+
+##### Bulk delete uploads
+
+* Description: Bulk delete uploads
+* Docs: [https://flatfile.com/docs/api-reference/#get-bulk-delete-uploads](https://flatfile.com/docs/api-reference/#get-bulk-delete-uploads)
