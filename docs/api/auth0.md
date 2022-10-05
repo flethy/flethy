@@ -56,6 +56,17 @@
 * Description: Retrieve user details. A list of fields to include or exclude may also be specified.
 * Docs: [https://auth0.com/docs/api/management/v2/#!/Users/get_users_by_id](https://auth0.com/docs/api/management/v2/#!/Users/get_users_by_id)
 
+#### create
+
+##### Authentication
+
+* Authorization: header:bearer
+
+##### Create a User
+
+* Description: Create a new user for a given database or passwordless connection.
+* Docs: [https://auth0.com/docs/api/management/v2#!/Users/post_users](https://auth0.com/docs/api/management/v2#!/Users/post_users)
+
 ### connections
 
 #### get
