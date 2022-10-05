@@ -6,7 +6,12 @@ import {
 import { RequestParams } from '../types/Request.types'
 
 export namespace Auth0 {
-  export type Entity = { auth: any; users: any; usersByEmail: any }
+  export type Entity = {
+    auth: any
+    users: any
+    usersByEmail: any
+    connections: any
+  }
   export type Endpoint =
     | { accesstoken: ApiDescriptionEndpoint }
     | { listOrSearch: ApiDescriptionEndpoint; get: ApiDescriptionEndpoint }
@@ -51,6 +56,17 @@ export namespace Auth0 {
     'query:email': string
     'query:fields'?: string
     'query:include_fields'?: boolean
+  }
+
+  export interface GetConnections extends ManagementApiBase, RequestParams {
+    kind: 'auth0.connections.get'
+    'param:per_page'?: number
+    'param:page'?: number
+    'param:include_totals'?: boolean
+    'param:strategy'?: string
+    'param:name'?: string
+    'param:fields'?: string
+    'param:include_fields'?: boolean
   }
 
   const ManagementApiAuth: { [key: string]: ApiDescriptionAuth } = {
@@ -177,6 +193,33 @@ export namespace Auth0 {
             {
               name: 'id',
               type: 'param',
+            },
+          ],
+        },
+      },
+      connections: {
+        get: {
+          interface: 'GetConnections',
+          meta: {
+            title: 'Get all connections',
+            description:
+              'Retrieves every connection matching the specified strategy. All connections are retrieved if no strategy is being specified. Accepts a list of fields to include or exclude in the resulting list of connection objects.',
+            docs: 'https://auth0.com/docs/api/management/v2#!/Connections/get_connections',
+          },
+          auth: ManagementApiAuth,
+          method: 'GET',
+          paths: [
+            {
+              name: 'api',
+              type: 'static',
+            },
+            {
+              name: 'v2',
+              type: 'static',
+            },
+            {
+              name: 'connections',
+              type: 'static',
             },
           ],
         },
