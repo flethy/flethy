@@ -14,7 +14,11 @@ export namespace Auth0 {
   }
   export type Endpoint =
     | { accesstoken: ApiDescriptionEndpoint }
-    | { listOrSearch: ApiDescriptionEndpoint; get: ApiDescriptionEndpoint }
+    | {
+        listOrSearch: ApiDescriptionEndpoint
+        get: ApiDescriptionEndpoint
+        create: ApiDescriptionEndpoint
+      }
     | { get: ApiDescriptionEndpoint }
 
   export interface GetAuthAccessToken extends RequestParams {
@@ -67,6 +71,27 @@ export namespace Auth0 {
     'param:name'?: string
     'param:fields'?: string
     'param:include_fields'?: boolean
+  }
+
+  export interface CreateUser extends ManagementApiBase, RequestParams {
+    kind: 'auth0.users.create'
+    'body:email'?: string
+    'body:phone_number'?: string
+    'body:user_metadata'?: any
+    'body:blocked'?: boolean
+    'body:email_verified'?: boolean
+    'body:phone_verified'?: boolean
+    'body:app_metadata'?: any
+    'body:given_name'?: string
+    'body:family_name'?: string
+    'body:name'?: string
+    'body:nickname'?: string
+    'body:picture'?: string
+    'body:user_id'?: string
+    'body:connection'?: string
+    'body:password'?: string
+    'body:verify_email'?: boolean
+    'body:username'?: string
   }
 
   const ManagementApiAuth: { [key: string]: ApiDescriptionAuth } = {
@@ -193,6 +218,31 @@ export namespace Auth0 {
             {
               name: 'id',
               type: 'param',
+            },
+          ],
+        },
+        create: {
+          interface: 'CreateUser',
+          meta: {
+            title: 'Create a User',
+            description:
+              'Create a new user for a given database or passwordless connection.',
+            docs: 'https://auth0.com/docs/api/management/v2#!/Users/post_users',
+          },
+          auth: ManagementApiAuth,
+          method: 'POST',
+          paths: [
+            {
+              name: 'api',
+              type: 'static',
+            },
+            {
+              name: 'v2',
+              type: 'static',
+            },
+            {
+              name: 'users',
+              type: 'static',
             },
           ],
         },

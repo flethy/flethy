@@ -196,6 +196,7 @@ configTypes.push({type: getType<Auth0.GetAuthAccessToken>(), name: 'Auth0', inte
 configTypes.push({type: getType<Auth0.GetUsersByEmail>(), name: 'Auth0', interface: 'GetUsersByEmail'})
 configTypes.push({type: getType<Auth0.ListOrSearchUsers>(), name: 'Auth0', interface: 'ListOrSearchUsers'})
 configTypes.push({type: getType<Auth0.GetUser>(), name: 'Auth0', interface: 'GetUser'})
+configTypes.push({type: getType<Auth0.CreateUser>(), name: 'Auth0', interface: 'CreateUser'})
 configTypes.push({type: getType<Auth0.GetConnections>(), name: 'Auth0', interface: 'GetConnections'})
 configTypes.push({type: getType<BambooHR.EmployeesDirectory>(), name: 'BambooHR', interface: 'EmployeesDirectory'})
 configTypes.push({type: getType<BannerBear.CreateImage>(), name: 'BannerBear', interface: 'CreateImage'})
