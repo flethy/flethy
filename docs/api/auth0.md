@@ -55,3 +55,16 @@
 
 * Description: Retrieve user details. A list of fields to include or exclude may also be specified.
 * Docs: [https://auth0.com/docs/api/management/v2/#!/Users/get_users_by_id](https://auth0.com/docs/api/management/v2/#!/Users/get_users_by_id)
+
+### connections
+
+#### get
+
+##### Authentication
+
+* Authorization: header:bearer
+
+##### Get all connections
+
+* Description: Retrieves every connection matching the specified strategy. All connections are retrieved if no strategy is being specified. Accepts a list of fields to include or exclude in the resulting list of connection objects.
+* Docs: [https://auth0.com/docs/api/management/v2#!/Connections/get_connections](https://auth0.com/docs/api/management/v2#!/Connections/get_connections)
