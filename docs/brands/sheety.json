@@ -1,0 +1,62 @@
+{
+  "name": "Sheety",
+  "domain": "sheety.co",
+  "claimed": false,
+  "description": "Turn your Google Sheet into an API.",
+  "links": [
+    { "name": "github", "url": "https://github.com/getsheety" },
+    { "name": "twitter", "url": "https://twitter.com/getsheety" }
+  ],
+  "logos": [
+    {
+      "type": "icon",
+      "theme": null,
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idq-TbIJy_/idlHZBDjCK.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 400,
+          "width": 400,
+          "size": 14370
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#013825", "type": "dark", "brightness": 43 },
+    { "hex": "#6236ff", "type": "light", "brightness": 78 },
+    { "hex": "#00b679", "type": "accent", "brightness": 139 }
+  ],
+  "fonts": [
+    {
+      "name": "Eina",
+      "type": "title",
+      "origin": "custom",
+      "originId": null,
+      "weights": []
+    },
+    {
+      "name": "sans-serif",
+      "type": "body",
+      "origin": "custom",
+      "originId": null,
+      "weights": []
+    }
+  ],
+  "images": [
+    {
+      "type": "banner",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idq-TbIJy_/idkHcU_Zgl.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 500,
+          "width": 1500,
+          "size": 84949
+        }
+      ]
+    }
+  ]
+}

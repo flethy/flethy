@@ -168,6 +168,7 @@ import APIPoint from '@flethy/connectors/src/configs/apipoint.config'
 import Flatfile from '@flethy/connectors/src/configs/flatfile.config'
 import { HttpRequest } from './controllers/HttpRequest'
 import { logger } from './utils/Logger'
+import Sheety from '@flethy/connectors/src/configs/sheety.config'
 
 async function main() {
   const requestConfigs: {
@@ -2357,8 +2358,15 @@ async function main() {
       },
       'param:teamId': Number(process.env.FLATFILE_TEAM_ID),
     }),
+    sheetyGet: nao<Sheety.Get>({
+      kind: 'sheety.core.get',
+      'auth:Authorization': process.env.SHEETY_API_KEY,
+      'param:username': process.env.SHEETY_USERNAME,
+      'param:project': 'sheety',
+      'param:sheet': 'sheet1',
+    }),
   }
-  const requestConfig = requestConfigs.flatfileListWorkspaces2
+  const requestConfig = requestConfigs.sheetyGet
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)
