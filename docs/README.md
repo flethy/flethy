@@ -155,6 +155,7 @@ The following Endpoints are currently supported.
 * [Sentry](./api/sentry.md)
 * [SerpApi](./api/serpapi.md)
 * [SerpStack](./api/serpstack.md)
+* [Sheety](./api/sheety.md)
 * [Shortcut](./api/shortcut.md)
 * [Shrtcode](./api/shrtcode.md)
 * [SideKick](./api/sidekick.md)

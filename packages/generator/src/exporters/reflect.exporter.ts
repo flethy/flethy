@@ -139,6 +139,7 @@ import { SendGrid } from '../../../connectors/src/configs/sendgrid.config'
 import { Sentry } from '../../../connectors/src/configs/sentry.config'
 import { SerpApi } from '../../../connectors/src/configs/serpapi.config'
 import { SerpStack } from '../../../connectors/src/configs/serpstack.config'
+import { Sheety } from '../../../connectors/src/configs/sheety.config'
 import { Shortcut } from '../../../connectors/src/configs/shortcut.config'
 import { Shrtcode } from '../../../connectors/src/configs/shrtcode.config'
 import { SideKick } from '../../../connectors/src/configs/sidekick.config'
@@ -481,6 +482,10 @@ configTypes.push({type: getType<Sentry.QueryDiscoverEvents>(), name: 'Sentry', i
 configTypes.push({type: getType<Sentry.ListProjects>(), name: 'Sentry', interface: 'ListProjects'})
 configTypes.push({type: getType<SerpApi.Search>(), name: 'SerpApi', interface: 'Search'})
 configTypes.push({type: getType<SerpStack.Search>(), name: 'SerpStack', interface: 'Search'})
+configTypes.push({type: getType<Sheety.Get>(), name: 'Sheety', interface: 'Get'})
+configTypes.push({type: getType<Sheety.Post>(), name: 'Sheety', interface: 'Post'})
+configTypes.push({type: getType<Sheety.Put>(), name: 'Sheety', interface: 'Put'})
+configTypes.push({type: getType<Sheety.Delete>(), name: 'Sheety', interface: 'Delete'})
 configTypes.push({type: getType<Shortcut.ListCategories>(), name: 'Shortcut', interface: 'ListCategories'})
 configTypes.push({type: getType<Shortcut.CreateCategory>(), name: 'Shortcut', interface: 'CreateCategory'})
 configTypes.push({type: getType<Shortcut.Search>(), name: 'Shortcut', interface: 'Search'})
