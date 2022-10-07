@@ -18,6 +18,7 @@ export namespace Auth0 {
         listOrSearch: ApiDescriptionEndpoint
         get: ApiDescriptionEndpoint
         create: ApiDescriptionEndpoint
+        delete: ApiDescriptionEndpoint
       }
     | { get: ApiDescriptionEndpoint }
 
@@ -92,6 +93,11 @@ export namespace Auth0 {
     'body:password'?: string
     'body:verify_email'?: boolean
     'body:username'?: string
+  }
+
+  export interface DeleteUser extends ManagementApiBase, RequestParams {
+    kind: 'auth0.users.delete'
+    'param:userId': string
   }
 
   const ManagementApiAuth: { [key: string]: ApiDescriptionAuth } = {
@@ -243,6 +249,34 @@ export namespace Auth0 {
             {
               name: 'users',
               type: 'static',
+            },
+          ],
+        },
+        delete: {
+          interface: 'DeleteUser',
+          meta: {
+            title: 'Delete a User',
+            description: 'Delete a User.',
+            docs: 'https://auth0.com/docs/api/management/v2#!/Users/delete_users_by_id',
+          },
+          auth: ManagementApiAuth,
+          method: 'DELETE',
+          paths: [
+            {
+              name: 'api',
+              type: 'static',
+            },
+            {
+              name: 'v2',
+              type: 'static',
+            },
+            {
+              name: 'users',
+              type: 'static',
+            },
+            {
+              name: 'userId',
+              type: 'param',
             },
           ],
         },
