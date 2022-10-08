@@ -166,9 +166,10 @@ import { nao } from '../../connectors/src/utils/Request.utils'
 // import { nao } from '@flethy/connectors'
 import APIPoint from '@flethy/connectors/src/configs/apipoint.config'
 import Flatfile from '@flethy/connectors/src/configs/flatfile.config'
+import GitLab from '@flethy/connectors/src/configs/gitlab.config'
+import Sheety from '@flethy/connectors/src/configs/sheety.config'
 import { HttpRequest } from './controllers/HttpRequest'
 import { logger } from './utils/Logger'
-import Sheety from '@flethy/connectors/src/configs/sheety.config'
 
 async function main() {
   const requestConfigs: {
@@ -2365,8 +2366,13 @@ async function main() {
       'param:project': 'sheety',
       'param:sheet': 'sheet1',
     }),
+    gitlabGraphQL: nao<GitLab.GraphQLQuery>({
+      kind: 'gitlab.graphql.query',
+      'auth:Authorization': process.env.GITLAB_PAT,
+      'body:query': `query {currentUser {name}}`,
+    }),
   }
-  const requestConfig = requestConfigs.sheetyGet
+  const requestConfig = requestConfigs.gitlabGraphQL
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

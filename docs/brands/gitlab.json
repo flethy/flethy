@@ -1,0 +1,100 @@
+{
+  "name": "GitLab",
+  "domain": "gitlab.com",
+  "claimed": false,
+  "description": "âFrom project planning and source code management to CI/CD and monitoring, GitLab is a complete DevOps platform, delivered as a single application. Only GitLab enables Concurrent DevOps to make the software lifecycle 200% faster.â",
+  "links": [
+    {
+      "name": "youtube",
+      "url": "https://youtube.com/channel/UCnMGQ8QHMAnVIsI3xJrihhg"
+    },
+    { "name": "twitter", "url": "https://twitter.com/gitlab" },
+    { "name": "linkedin", "url": "https://linkedin.com/company/gitlab-com" },
+    { "name": "facebook", "url": "https://facebook.com/gitlab" }
+  ],
+  "logos": [
+    {
+      "type": "logo",
+      "theme": null,
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idw382nG0m/iddF-JOD0I.svg",
+          "background": "transparent",
+          "format": "svg",
+          "size": 6125
+        },
+        {
+          "src": "https://asset.brandfetch.io/idw382nG0m/idf3ZdUel1.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 353,
+          "width": 800,
+          "size": 17160
+        }
+      ]
+    },
+    {
+      "type": "symbol",
+      "theme": null,
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idw382nG0m/idUCpm3axR.svg",
+          "background": "transparent",
+          "format": "svg",
+          "size": 3630
+        },
+        {
+          "src": "https://asset.brandfetch.io/idw382nG0m/idVn6myaqy.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 763,
+          "width": 800,
+          "size": 21376
+        }
+      ]
+    },
+    {
+      "type": "icon",
+      "theme": null,
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idw382nG0m/idSyYAgu-X.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 400,
+          "width": 400,
+          "size": 19216
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#474d57", "type": "dark", "brightness": 76 },
+    { "hex": "#f9f9f9", "type": "light", "brightness": 249 },
+    { "hex": "#e24329", "type": "accent", "brightness": 99 }
+  ],
+  "fonts": [
+    {
+      "name": "system",
+      "type": "body",
+      "origin": "custom",
+      "originId": null,
+      "weights": []
+    }
+  ],
+  "images": [
+    {
+      "type": "banner",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idw382nG0m/iddzxN7FK7.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 500,
+          "width": 1500,
+          "size": 19992
+        }
+      ]
+    }
+  ]
+}
