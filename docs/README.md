@@ -87,6 +87,7 @@ The following Endpoints are currently supported.
 * [Frankfurter](./api/frankfurter.md)
 * [Geekflare](./api/geekflare.md)
 * [Github](./api/github.md)
+* [GitLab](./api/gitlab.md)
 * [GrafBase](./api/grafbase.md)
 * [GraphJSON](./api/graphjson.md)
 * [Grist](./api/grist.md)

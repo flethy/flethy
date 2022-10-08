@@ -67,6 +67,7 @@ import { Flatfile } from '../../../connectors/src/configs/flatfile.config'
 import { Frankfurter } from '../../../connectors/src/configs/frankfurter.config'
 import { Geekflare } from '../../../connectors/src/configs/geekflare.config'
 import { Github } from '../../../connectors/src/configs/github.config'
+import { GitLab } from '../../../connectors/src/configs/gitlab.config'
 import { GrafBase } from '../../../connectors/src/configs/grafbase.config'
 import { GraphJSON } from '../../../connectors/src/configs/graphjson.config'
 import { Grist } from '../../../connectors/src/configs/grist.config'
@@ -343,6 +344,7 @@ configTypes.push({type: getType<Geekflare.UrlToPdf>(), name: 'Geekflare', interf
 configTypes.push({type: getType<Github.ListRepositoryIssues>(), name: 'Github', interface: 'ListRepositoryIssues'})
 configTypes.push({type: getType<Github.RepositoriesGetContent>(), name: 'Github', interface: 'RepositoriesGetContent'})
 configTypes.push({type: getType<Github.GitDatabaseGetTree>(), name: 'Github', interface: 'GitDatabaseGetTree'})
+configTypes.push({type: getType<GitLab.GraphQLQuery>(), name: 'GitLab', interface: 'GraphQLQuery'})
 configTypes.push({type: getType<GrafBase.GraphQLQuery>(), name: 'GrafBase', interface: 'GraphQLQuery'})
 configTypes.push({type: getType<GraphJSON.Log>(), name: 'GraphJSON', interface: 'Log'})
 configTypes.push({type: getType<GraphJSON.BulkLog>(), name: 'GraphJSON', interface: 'BulkLog'})

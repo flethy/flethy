@@ -67,6 +67,7 @@ import { Flatfile } from '../configs/flatfile.config'
 import { Frankfurter } from '../configs/frankfurter.config'
 import { Geekflare } from '../configs/geekflare.config'
 import { Github } from '../configs/github.config'
+import { GitLab } from '../configs/gitlab.config'
 import { GrafBase } from '../configs/grafbase.config'
 import { GraphJSON } from '../configs/graphjson.config'
 import { Grist } from '../configs/grist.config'
@@ -240,6 +241,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['frankfurter', Frankfurter.API],
 ['geekflare', Geekflare.API],
 ['github', Github.API],
+['gitlab', GitLab.API],
 ['grafbase', GrafBase.API],
 ['graphjson', GraphJSON.API],
 ['grist', Grist.API],
