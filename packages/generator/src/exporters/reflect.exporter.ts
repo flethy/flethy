@@ -159,6 +159,7 @@ import { Trello } from '../../../connectors/src/configs/trello.config'
 import { Tribe } from '../../../connectors/src/configs/tribe.config'
 import { Twilio } from '../../../connectors/src/configs/twilio.config'
 import { Typeform } from '../../../connectors/src/configs/typeform.config'
+import { Umami } from '../../../connectors/src/configs/umami.config'
 import { Unavatar } from '../../../connectors/src/configs/unavatar.config'
 import { Unlayer } from '../../../connectors/src/configs/unlayer.config'
 import { Unsplash } from '../../../connectors/src/configs/unsplash.config'
@@ -531,6 +532,9 @@ configTypes.push({type: getType<Trello.CardsCreate>(), name: 'Trello', interface
 configTypes.push({type: getType<Tribe.TribeAccessToken>(), name: 'Tribe', interface: 'TribeAccessToken'})
 configTypes.push({type: getType<Twilio.SendSms>(), name: 'Twilio', interface: 'SendSms'})
 configTypes.push({type: getType<Typeform.CreateApiCreateForm>(), name: 'Typeform', interface: 'CreateApiCreateForm'})
+configTypes.push({type: getType<Umami.AuthLogin>(), name: 'Umami', interface: 'AuthLogin'})
+configTypes.push({type: getType<Umami.CreateWebsite>(), name: 'Umami', interface: 'CreateWebsite'})
+configTypes.push({type: getType<Umami.ListWebsites>(), name: 'Umami', interface: 'ListWebsites'})
 configTypes.push({type: getType<Unavatar.FromUsernameEmailDomain>(), name: 'Unavatar', interface: 'FromUsernameEmailDomain'})
 configTypes.push({type: getType<Unavatar.FromProvider>(), name: 'Unavatar', interface: 'FromProvider'})
 configTypes.push({type: getType<Unlayer.ListTemplates>(), name: 'Unlayer', interface: 'ListTemplates'})
