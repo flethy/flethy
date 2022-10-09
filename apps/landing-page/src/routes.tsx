@@ -30,6 +30,15 @@ export default {
 		},
 	}),
 
+	integration: new Route<RootStore>({
+		path: '/integration/:id',
+		component: <IntegrationsPage />,
+		onEnter(_route, parameters, { root: { pages } }) {
+			const id = (parameters?.id as string) ?? ''
+			pages.integration.initialisePage(id)
+		},
+	}),
+
 	notFound: new Route<RootStore>({
 		path: '/404',
 		component: <NotFoundPage />,
