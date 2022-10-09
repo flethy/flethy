@@ -21,6 +21,7 @@ import { BooAPI } from '../../../connectors/src/configs/booapi.config'
 import { Brandfetch } from '../../../connectors/src/configs/brandfetch.config'
 import { BrowsersFyi } from '../../../connectors/src/configs/browsersfyi.config'
 import { Bruzu } from '../../../connectors/src/configs/bruzu.config'
+import { ButtondownEmail } from '../../../connectors/src/configs/buttondownemail.config'
 import { CalCom } from '../../../connectors/src/configs/calcom.config'
 import { Calendarific } from '../../../connectors/src/configs/calendarific.config'
 import { Camunda } from '../../../connectors/src/configs/camunda.config'
@@ -218,6 +219,10 @@ configTypes.push({type: getType<BooAPI.TaskResults>(), name: 'BooAPI', interface
 configTypes.push({type: getType<Brandfetch.BrandByDomainOrId>(), name: 'Brandfetch', interface: 'BrandByDomainOrId'})
 configTypes.push({type: getType<BrowsersFyi.Get>(), name: 'BrowsersFyi', interface: 'Get'})
 configTypes.push({type: getType<Bruzu.CreateImage>(), name: 'Bruzu', interface: 'CreateImage'})
+configTypes.push({type: getType<ButtondownEmail.ListSubscribers>(), name: 'ButtondownEmail', interface: 'ListSubscribers'})
+configTypes.push({type: getType<ButtondownEmail.CreateSubscriber>(), name: 'ButtondownEmail', interface: 'CreateSubscriber'})
+configTypes.push({type: getType<ButtondownEmail.UpdateSubscriber>(), name: 'ButtondownEmail', interface: 'UpdateSubscriber'})
+configTypes.push({type: getType<ButtondownEmail.DeleteSubscriber>(), name: 'ButtondownEmail', interface: 'DeleteSubscriber'})
 configTypes.push({type: getType<CalCom.FindAllAvailabilities>(), name: 'CalCom', interface: 'FindAllAvailabilities'})
 configTypes.push({type: getType<CalCom.FindAnAvailability>(), name: 'CalCom', interface: 'FindAnAvailability'})
 configTypes.push({type: getType<CalCom.CreateAvailability>(), name: 'CalCom', interface: 'CreateAvailability'})

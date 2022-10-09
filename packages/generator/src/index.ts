@@ -170,6 +170,7 @@ import GitLab from '@flethy/connectors/src/configs/gitlab.config'
 import Sheety from '@flethy/connectors/src/configs/sheety.config'
 import { HttpRequest } from './controllers/HttpRequest'
 import { logger } from './utils/Logger'
+import ButtondownEmail from '@flethy/connectors/src/configs/buttondownemail.config'
 
 async function main() {
   const requestConfigs: {
@@ -2371,8 +2372,12 @@ async function main() {
       'auth:Authorization': process.env.GITLAB_PAT,
       'body:query': `query {currentUser {name}}`,
     }),
+    buttondownEmailListSubscribers: nao<ButtondownEmail.ListSubscribers>({
+      kind: 'buttondownemail.subscribers.list',
+      'auth:Authorization': process.env.BUTTONDOWN_API_KEY,
+    }),
   }
-  const requestConfig = requestConfigs.gitlabGraphQL
+  const requestConfig = requestConfigs.buttondownEmailListSubscribers
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)
