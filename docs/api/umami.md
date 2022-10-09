@@ -1,0 +1,42 @@
+# Umami
+
+## Links
+
+* URL: [https://umami.is/](https://umami.is/)
+* Documentation: [https://umami.is/docs/](https://umami.is/docs/)
+* Tags: web2
+* Category: analytics
+* Type: webinsights
+
+## API
+
+### Authentication
+
+* Authorization: header:bearer
+* username: body
+* password: body
+
+### auth
+
+#### login
+
+##### Authentication
+
+* Description: Authentication
+* Docs: [https://umami.is/docs/api](https://umami.is/docs/api)
+
+### websites
+
+#### create
+
+##### Creates a website.
+
+* Description: Creates a website.
+* Docs: [https://umami.is/docs/api](https://umami.is/docs/api)
+
+#### list
+
+##### Returns all tracked websites.
+
+* Description: Returns all tracked websites.
+* Docs: [https://umami.is/docs/api](https://umami.is/docs/api)

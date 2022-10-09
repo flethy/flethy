@@ -159,6 +159,7 @@ import { Trello } from '../configs/trello.config'
 import { Tribe } from '../configs/tribe.config'
 import { Twilio } from '../configs/twilio.config'
 import { Typeform } from '../configs/typeform.config'
+import { Umami } from '../configs/umami.config'
 import { Unavatar } from '../configs/unavatar.config'
 import { Unlayer } from '../configs/unlayer.config'
 import { Unsplash } from '../configs/unsplash.config'
@@ -334,6 +335,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['tribe', Tribe.API],
 ['twilio', Twilio.API],
 ['typeform', Typeform.API],
+['umami', Umami.API],
 ['unavatar', Unavatar.API],
 ['unlayer', Unlayer.API],
 ['unsplash', Unsplash.API],

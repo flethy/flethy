@@ -1,0 +1,75 @@
+{
+  "name": "umami",
+  "domain": "umami.is",
+  "claimed": false,
+  "description": null,
+  "links": [
+    { "name": "twitter", "url": "https://twitter.com/umami_software" },
+    { "name": "github", "url": "https://github.com/umami-software" }
+  ],
+  "logos": [
+    {
+      "type": "logo",
+      "theme": null,
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/id_3VEohOm/idcdHSX169.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 820,
+          "width": 820,
+          "size": 30413
+        },
+        {
+          "src": "https://asset.brandfetch.io/id_3VEohOm/idVub_Asjq.svg",
+          "background": "transparent",
+          "format": "svg",
+          "size": 448
+        }
+      ]
+    },
+    {
+      "type": "icon",
+      "theme": null,
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/id_3VEohOm/idJFtKdT7p.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 400,
+          "width": 400,
+          "size": 9304
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#2580eb", "type": "accent", "brightness": 116 },
+    { "hex": "#2c2c2c", "type": "dark", "brightness": 44 },
+    { "hex": "#a9cbf8", "type": "light", "brightness": 199 }
+  ],
+  "fonts": [
+    {
+      "name": "Inter",
+      "type": "body",
+      "origin": "google",
+      "originId": "Inter",
+      "weights": []
+    }
+  ],
+  "images": [
+    {
+      "type": "banner",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/id_3VEohOm/idMDtoTKPb.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 500,
+          "width": 1500,
+          "size": 75594
+        }
+      ]
+    }
+  ]
+}

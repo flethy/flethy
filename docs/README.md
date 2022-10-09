@@ -173,6 +173,7 @@ The following Endpoints are currently supported.
 * [Tribe](./api/tribe.md)
 * [Twilio](./api/twilio.md)
 * [Typeform](./api/typeform.md)
+* [Umami](./api/umami.md)
 * [Unavatar](./api/unavatar.md)
 * [Unlayer](./api/unlayer.md)
 * [Unsplash](./api/unsplash.md)
