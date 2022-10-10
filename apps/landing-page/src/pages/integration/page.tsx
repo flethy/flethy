@@ -1,67 +1,65 @@
-import {
-	Center,
-	Container,
-	Grid,
-	GridItem,
-	Heading,
-	Image,
-	Stack,
-	Text,
-} from '@chakra-ui/react'
+import { Box, Container, Flex, Image, Stack, Text } from '@chakra-ui/react'
 import { observer } from 'mobx-react-lite'
 import { useTranslation } from 'react-i18next'
 import FancyHeading from '../../components/molecules/fancy-heading/FancyHeading'
-import { API_COUNT, API_ENDPOINT_COUNT } from '../../constants/api.const'
-import { INTEGRATIONS } from '../../constants/integrations.const'
 import { useMst } from '../../models/root'
 
 export default observer(() => {
 	const { t } = useTranslation('app')
 	const {
 		root: {
-			pages: { integrations: page },
+			pages: { integration: page },
 		},
 	} = useMst()
 
-	return (
-		<Container>
-			<Stack gap={6}>
-				<FancyHeading
-					textA={`${API_COUNT} Integrations,`}
-					textB={`${API_ENDPOINT_COUNT} endpoints.`}
-				/>
-				<Grid
-					templateColumns="repeat(5, 1fr)"
-					gap={6}
-					justifyItems={'center'}
-					alignItems={'center'}
-				>
-					{INTEGRATIONS.map((integration) => (
-						<GridItem
-							key={integration.id}
-							title={integration.id}
-							width={{ base: '50px', md: '70px' }}
-							height={{ base: '50px', md: '70px' }}
-						>
-							<Center
-								width={'100%'}
-								height={'100%'}
-								bgColor={integration.light ? '#1A202C' : 'white'}
-								borderRadius={10}
-								borderColor="flethy.purple"
-								borderWidth={3}
-								padding={'0.5em'}
-							>
-								<Image
-									src={`integrations/${integration.file}`}
-									alt={integration.id}
-									maxHeight={'100%'}
-								/>
-							</Center>
-						</GridItem>
-					))}
-				</Grid>
-			</Stack>
-		</Container>
+	let content = (
+		<FancyHeading textA={`${page.id} not available`} textB={`Sorry!`} />
 	)
+
+	if (page.get()) {
+		content = (
+			<Container>
+				<Stack gap={6} direction={{ base: 'column', md: 'row' }}>
+					<FancyHeading textA={page.get()?.name ?? ''} textB={`...`} />
+					<Flex
+						flex={1}
+						justify={'center'}
+						align={'center'}
+						position={'relative'}
+						w={'full'}
+					>
+						<Box
+							position={'relative'}
+							bgColor={page.get()?.light ? '#1A202C' : 'white'}
+							// height={'300px'}
+							rounded={'2xl'}
+							boxShadow={'2xl'}
+							width={'full'}
+							overflow={'hidden'}
+						>
+							<Image
+								alt={page.get()?.id}
+								fit={'cover'}
+								align={'center'}
+								w={'100%'}
+								// h={'100%'}
+								src={`/integrations/${page.get()?.logo}`}
+							/>
+						</Box>
+					</Flex>
+				</Stack>
+				<Stack>
+					<Stack direction={'column'}>
+						{page.get()?.interfaces.map((serviceInterface: any) => (
+							<Box key={serviceInterface}>
+								<Text>{serviceInterface}</Text>
+							</Box>
+						))}
+					</Stack>
+				</Stack>
+			</Container>
+		)
+	}
+
+	return content
 })

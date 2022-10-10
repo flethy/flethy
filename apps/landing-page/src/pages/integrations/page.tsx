@@ -3,10 +3,8 @@ import {
 	Container,
 	Grid,
 	GridItem,
-	Heading,
 	Image,
 	Stack,
-	Text,
 } from '@chakra-ui/react'
 import { observer } from 'mobx-react-lite'
 import { useTranslation } from 'react-i18next'
@@ -14,10 +12,12 @@ import FancyHeading from '../../components/molecules/fancy-heading/FancyHeading'
 import { API_COUNT, API_ENDPOINT_COUNT } from '../../constants/api.const'
 import { INTEGRATIONS } from '../../constants/integrations.const'
 import { useMst } from '../../models/root'
+import routes from '../../routes'
 
 export default observer(() => {
 	const { t } = useTranslation('app')
 	const {
+		router,
 		root: {
 			pages: { integrations: page },
 		},
@@ -42,6 +42,10 @@ export default observer(() => {
 							title={integration.id}
 							width={{ base: '50px', md: '70px' }}
 							height={{ base: '50px', md: '70px' }}
+							cursor={'pointer'}
+							onClick={() =>
+								router.goTo(routes.integration, { id: integration.id })
+							}
 						>
 							<Center
 								width={'100%'}

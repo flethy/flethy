@@ -11,6 +11,7 @@ import { APIPoint } from '../configs/apipoint.config'
 import { APITemplateIo } from '../configs/apitemplateio.config'
 import { AssemblyAI } from '../configs/assemblyai.config'
 import { Auth0 } from '../configs/auth0.config'
+import { Ayrshare } from '../configs/ayrshare.config'
 import { BambooHR } from '../configs/bamboohr.config'
 import { BannerBear } from '../configs/bannerbear.config'
 import { BaseRow } from '../configs/baserow.config'
@@ -89,6 +90,7 @@ import { Lecto } from '../configs/lecto.config'
 import { Linear } from '../configs/linear.config'
 import { LinkedIn } from '../configs/linkedin.config'
 import { Lokalise } from '../configs/lokalise.config'
+import { Luabase } from '../configs/luabase.config'
 import { MailboxValidator } from '../configs/mailboxvalidator.config'
 import { MailCheckAi } from '../configs/mailcheckai.config'
 import { Mailchimp } from '../configs/mailchimp.config'
@@ -187,6 +189,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['apitemplateio', APITemplateIo.API],
 ['assemblyai', AssemblyAI.API],
 ['auth0', Auth0.API],
+['ayrshare', Ayrshare.API],
 ['bamboohr', BambooHR.API],
 ['bannerbear', BannerBear.API],
 ['baserow', BaseRow.API],
@@ -265,6 +268,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['linear', Linear.API],
 ['linkedin', LinkedIn.API],
 ['lokalise', Lokalise.API],
+['luabase', Luabase.API],
 ['mailboxvalidator', MailboxValidator.API],
 ['mailcheckai', MailCheckAi.API],
 ['mailchimp', Mailchimp.API],

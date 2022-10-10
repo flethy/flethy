@@ -2,6 +2,7 @@ import { Route } from 'mobx-router'
 import { RootStore } from './models/root'
 import NotFoundPage from './pages/404/page'
 import HomePage from './pages/home/page'
+import IntegrationPage from './pages/integration/page'
 import IntegrationsPage from './pages/integrations/page'
 import VerificationPage from './pages/verification/page'
 
@@ -31,9 +32,13 @@ export default {
 	}),
 
 	integration: new Route<RootStore>({
-		path: '/integration/:id',
-		component: <IntegrationsPage />,
+		path: '/integrations/:id',
+		component: <IntegrationPage />,
 		onEnter(_route, parameters, { root: { pages } }) {
+			const id = (parameters?.id as string) ?? ''
+			pages.integration.initialisePage(id)
+		},
+		onParamsChange(_router, parameters, { root: { pages } }) {
 			const id = (parameters?.id as string) ?? ''
 			pages.integration.initialisePage(id)
 		},

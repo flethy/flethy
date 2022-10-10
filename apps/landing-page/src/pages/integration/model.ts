@@ -1,5 +1,14 @@
 import { types } from 'mobx-state-tree'
-import { getRootStore } from '../../models/helpers'
+import configTypes from '../../constants/configTypes.json'
+import { INTEGRATIONS } from '../../constants/integrations.const'
+
+interface IntegrationMeta {
+	id: string
+	name: string
+	logo: string
+	light: boolean
+	interfaces: string[]
+}
 
 export const IntegrationPage = types
 	.model('IntegrationPage', {
@@ -18,5 +27,27 @@ export const IntegrationPage = types
 			return false
 		}
 
-		return { isLoading }
+		const get = (): IntegrationMeta | undefined => {
+			const integration = INTEGRATIONS.find(
+				(integration) => integration.id === self.id,
+			)
+			const config = configTypes.find((configType) => configType.id === self.id)
+
+			if (!integration || !config) {
+				return undefined
+			}
+
+			const integrationMeta: IntegrationMeta = {
+				id: integration.id,
+				name: config.name,
+				logo: integration.file,
+				light: integration.light,
+				interfaces: config.interfaces.map(
+					(interfaceType) => interfaceType.name,
+				),
+			}
+			return integrationMeta
+		}
+
+		return { isLoading, get }
 	})

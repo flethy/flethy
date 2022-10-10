@@ -16,7 +16,8 @@ const LANDINGPAGE_BASE = path.join(
   'apps',
   'landing-page'
 )
-const LANDINGPAGE_INTEGRATIONS = `${LANDINGPAGE_BASE}/public/integrations`
+export const LANDINGPAGE_PUBLIC = `${LANDINGPAGE_BASE}/public`
+export const LANDINGPAGE_INTEGRATIONS = `${LANDINGPAGE_PUBLIC}/integrations`
 export const LANDINGPAGE_CONSTANTS = `${LANDINGPAGE_BASE}/src/constants`
 
 export class BrandExporter {

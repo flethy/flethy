@@ -12,6 +12,7 @@ export interface ConfigTypeInterface {
 }
 
 export interface ConfigType {
+  id: string
   name: string
   interfaces: ConfigTypeInterface[]
 }

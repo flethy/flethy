@@ -24,13 +24,13 @@ export class TypesExporter {
     ]
     const tempImports: string[] = []
     const tempContent: string[] = [
-      `export const configTypes: Array<{type: Type; name: string; interface: string}> = []`,
+      `export const configTypes: Array<{type: Type; id: string; name: string; interface: string}> = []`,
     ]
 
     const files = fs.readdirSync(CONFIGS_DIR)
     for (const file of files) {
       const configName = `${file.split('.')[0]}.${file.split('.')[1]}`
-      logger.info(`DocsExporter | Loading Config <${file}>`)
+      logger.info(`TypesExporter | Loading Config <${file}>`)
       // eslint-disable-next-line no-await-in-loop
       const Config = await import(`${CONFIGS_DIR}/${configName}`)
       try {
@@ -45,7 +45,7 @@ export class TypesExporter {
           Object.keys(api.api[key]).forEach((subkey) => {
             const endpoint = api.api[key][subkey]
             tempContent.push(
-              `configTypes.push({type: getType<${instanceOfConfig.API.meta.name}.${endpoint.interface}>(), name: '${instanceOfConfig.API.meta.name}', interface: '${endpoint.interface}'})`
+              `configTypes.push({type: getType<${instanceOfConfig.API.meta.name}.${endpoint.interface}>(), id: '${instanceOfConfig.API.meta.id}', name: '${instanceOfConfig.API.meta.name}', interface: '${endpoint.interface}'})`
             )
           })
         })

@@ -1,0 +1,45 @@
+{
+  "name": "Luabase",
+  "domain": "luabase.com",
+  "claimed": false,
+  "description": "We ETL blockchains so you don't have to.",
+  "links": [{ "name": "twitter", "url": "https://twitter.com/@onluabase" }],
+  "logos": [
+    {
+      "type": "icon",
+      "theme": null,
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/id7ZSZLQT2/id5FnEai83.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 200,
+          "width": 200,
+          "size": 42949
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#fffeed", "type": "accent", "brightness": 253 },
+    { "hex": "#111828", "type": "dark", "brightness": 24 },
+    { "hex": "#c0ed78", "type": "light", "brightness": 219 }
+  ],
+  "fonts": [
+    {
+      "name": "Inter var",
+      "type": "title",
+      "origin": "custom",
+      "originId": "Inter var",
+      "weights": []
+    },
+    {
+      "name": "var(--monaco-monospace-font)",
+      "type": "body",
+      "origin": "custom",
+      "originId": "var(--monaco-monospace-font)",
+      "weights": []
+    }
+  ],
+  "images": []
+}
