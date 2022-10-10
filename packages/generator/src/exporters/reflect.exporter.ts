@@ -160,6 +160,7 @@ import { TMDB } from '../../../connectors/src/configs/tmdb.config'
 import { Trello } from '../../../connectors/src/configs/trello.config'
 import { Tribe } from '../../../connectors/src/configs/tribe.config'
 import { Twilio } from '../../../connectors/src/configs/twilio.config'
+import { Twitter } from '../../../connectors/src/configs/twitter.config'
 import { Typeform } from '../../../connectors/src/configs/typeform.config'
 import { Umami } from '../../../connectors/src/configs/umami.config'
 import { Unavatar } from '../../../connectors/src/configs/unavatar.config'
@@ -536,6 +537,10 @@ configTypes.push({type: getType<Trello.BoardGetLists>(), id: 'trello', name: 'Tr
 configTypes.push({type: getType<Trello.CardsCreate>(), id: 'trello', name: 'Trello', interface: 'CardsCreate'})
 configTypes.push({type: getType<Tribe.TribeAccessToken>(), id: 'tribe', name: 'Tribe', interface: 'TribeAccessToken'})
 configTypes.push({type: getType<Twilio.SendSms>(), id: 'twilio', name: 'Twilio', interface: 'SendSms'})
+configTypes.push({type: getType<Twitter.AuthBearer>(), id: 'twitter', name: 'Twitter', interface: 'AuthBearer'})
+configTypes.push({type: getType<Twitter.AuthOAuth2AuthorizationCode>(), id: 'twitter', name: 'Twitter', interface: 'AuthOAuth2AuthorizationCode'})
+configTypes.push({type: getType<Twitter.PostTweets>(), id: 'twitter', name: 'Twitter', interface: 'PostTweets'})
+configTypes.push({type: getType<Twitter.StatusUpdate>(), id: 'twitter', name: 'Twitter', interface: 'StatusUpdate'})
 configTypes.push({type: getType<Typeform.CreateApiCreateForm>(), id: 'typeform', name: 'Typeform', interface: 'CreateApiCreateForm'})
 configTypes.push({type: getType<Umami.AuthLogin>(), id: 'umami', name: 'Umami', interface: 'AuthLogin'})
 configTypes.push({type: getType<Umami.CreateWebsite>(), id: 'umami', name: 'Umami', interface: 'CreateWebsite'})

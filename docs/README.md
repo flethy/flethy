@@ -174,6 +174,7 @@ The following Endpoints are currently supported.
 * [Trello](./api/trello.md)
 * [Tribe](./api/tribe.md)
 * [Twilio](./api/twilio.md)
+* [Twitter](./api/twitter.md)
 * [Typeform](./api/typeform.md)
 * [Umami](./api/umami.md)
 * [Unavatar](./api/unavatar.md)
