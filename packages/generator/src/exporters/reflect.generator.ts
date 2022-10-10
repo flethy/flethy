@@ -31,6 +31,7 @@ export class ConfigTypeGenerator {
       )
       if (!foundConfigType) {
         foundConfigType = {
+          id: exportedConfigType.id,
           name: exportedConfigType.name,
           interfaces: [],
         }
@@ -52,6 +53,10 @@ export class ConfigTypeGenerator {
     }
     fs.writeFileSync(
       `${CONFIGSTYPES_DIR}/configTypes.json`,
+      JSON.stringify(configTypes)
+    )
+    fs.writeFileSync(
+      `${LANDINGPAGE_CONSTANTS}/configTypes.json`,
       JSON.stringify(configTypes)
     )
 

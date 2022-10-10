@@ -171,6 +171,7 @@ import Sheety from '@flethy/connectors/src/configs/sheety.config'
 import { HttpRequest } from './controllers/HttpRequest'
 import { logger } from './utils/Logger'
 import ButtondownEmail from '@flethy/connectors/src/configs/buttondownemail.config'
+import Luabase from '@flethy/connectors/src/configs/luabase.config'
 
 async function main() {
   const requestConfigs: {
@@ -2376,8 +2377,17 @@ async function main() {
       kind: 'buttondownemail.subscribers.list',
       'auth:Authorization': process.env.BUTTONDOWN_API_KEY,
     }),
+    luabaseRunQuery: nao<Luabase.RunQuery>({
+      kind: 'luabase.run.query',
+      'auth:api_key': process.env.LUABASE_API_KEY,
+      'body:block': {
+        details: {
+          sql: 'select 1',
+        },
+      },
+    }),
   }
-  const requestConfig = requestConfigs.buttondownEmailListSubscribers
+  const requestConfig = requestConfigs.luabaseRunQuery
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

@@ -3,20 +3,21 @@ import {
 	Container,
 	Grid,
 	GridItem,
-	Heading,
 	Image,
 	Stack,
-	Text,
 } from '@chakra-ui/react'
 import { observer } from 'mobx-react-lite'
 import { useTranslation } from 'react-i18next'
+import FancyHeading from '../../components/molecules/fancy-heading/FancyHeading'
 import { API_COUNT, API_ENDPOINT_COUNT } from '../../constants/api.const'
 import { INTEGRATIONS } from '../../constants/integrations.const'
 import { useMst } from '../../models/root'
+import routes from '../../routes'
 
 export default observer(() => {
 	const { t } = useTranslation('app')
 	const {
+		router,
 		root: {
 			pages: { integrations: page },
 		},
@@ -25,34 +26,10 @@ export default observer(() => {
 	return (
 		<Container>
 			<Stack gap={6}>
-				<Stack flex={1} spacing={{ base: 5, md: 10 }}>
-					<Heading
-						lineHeight={1.1}
-						fontWeight={600}
-						fontSize={{ base: '3xl', sm: '4xl', lg: '6xl' }}
-					>
-						<Text
-							as={'span'}
-							position={'relative'}
-							_after={{
-								content: "''",
-								width: 'full',
-								height: '30%',
-								position: 'absolute',
-								bottom: 1,
-								left: 0,
-								bg: 'flethy.orange',
-								zIndex: -1,
-							}}
-						>
-							{API_COUNT} Integrations,
-						</Text>
-						<br />
-						<Text as={'span'} color={'flethy.purple'}>
-							{API_ENDPOINT_COUNT} endpoints.
-						</Text>
-					</Heading>
-				</Stack>
+				<FancyHeading
+					textA={`${API_COUNT} Integrations,`}
+					textB={`${API_ENDPOINT_COUNT} endpoints.`}
+				/>
 				<Grid
 					templateColumns="repeat(5, 1fr)"
 					gap={6}
@@ -65,6 +42,10 @@ export default observer(() => {
 							title={integration.id}
 							width={{ base: '50px', md: '70px' }}
 							height={{ base: '50px', md: '70px' }}
+							cursor={'pointer'}
+							onClick={() =>
+								router.goTo(routes.integration, { id: integration.id })
+							}
 						>
 							<Center
 								width={'100%'}

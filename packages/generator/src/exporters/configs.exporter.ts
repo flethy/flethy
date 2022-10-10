@@ -108,6 +108,7 @@ export class ConfigsExporter {
     exports.push(
       `export { CONFIG_TYPES } from './configTypes/configTypes.const'`
     )
+    exports.push(`export { ConfigUtils } from './utils/Config.utils'`)
     const constantContent: string[] = [...imports, '']
     constantContent.push(
       `export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, ApiDescription<any, any>>([`

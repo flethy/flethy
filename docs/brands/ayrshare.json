@@ -1,0 +1,81 @@
+{
+  "name": "Ayrshare",
+  "domain": "ayrshare.com",
+  "claimed": false,
+  "description": "Powerful APIs that enable you to send social media posts effortlessly. For developers and businesses of all sizes.",
+  "links": [
+    {
+      "name": "youtube",
+      "url": "https://youtube.com/channel/UCvVNc5oXfyD7yOIFgoY1HqQ"
+    },
+    { "name": "twitter", "url": "https://twitter.com/ayrshare" },
+    { "name": "linkedin", "url": "https://linkedin.com/company/ayrshare" },
+    { "name": "facebook", "url": "https://facebook.com/ayrshare" }
+  ],
+  "logos": [
+    {
+      "type": "icon",
+      "theme": null,
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idWh1q1o4s/idETJTtPr3.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 400,
+          "width": 400,
+          "size": 11367
+        }
+      ]
+    },
+    {
+      "type": "logo",
+      "theme": null,
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idWh1q1o4s/idFkdaJBuk.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 400,
+          "width": 1536,
+          "size": 92964
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#02172a", "type": "dark", "brightness": 20 },
+    { "hex": "#ffffff", "type": "light", "brightness": 255 },
+    { "hex": "#bf2428", "type": "accent", "brightness": 69 }
+  ],
+  "fonts": [
+    {
+      "name": "halyard-display",
+      "type": "title",
+      "origin": "custom",
+      "originId": null,
+      "weights": []
+    },
+    {
+      "name": "halyard-text",
+      "type": "body",
+      "origin": "custom",
+      "originId": null,
+      "weights": []
+    }
+  ],
+  "images": [
+    {
+      "type": "banner",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idWh1q1o4s/idZSLC3Wjx.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 500,
+          "width": 1500,
+          "size": 76354
+        }
+      ]
+    }
+  ]
+}

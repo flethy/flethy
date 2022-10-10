@@ -5,6 +5,7 @@ import { EmailSubscriptionModel } from '../components/email-subscription/EmailSu
 import { NotFoundPage } from '../pages/404/model'
 import { HomePage } from '../pages/home/model'
 import { IntegrationsPage } from '../pages/integrations/model'
+import { IntegrationPage } from '../pages/integration/model'
 import { VerificationPage } from '../pages/verification/model'
 import ApiStore, { APIType } from './api'
 
@@ -17,6 +18,7 @@ const PagesStore = types.model('Pages', {
 	integrations: types.optional(IntegrationsPage, () =>
 		IntegrationsPage.create(),
 	),
+	integration: types.optional(IntegrationPage, () => IntegrationPage.create()),
 })
 
 const ComponentsStore = types.model('Components', {
