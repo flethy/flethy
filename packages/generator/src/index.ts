@@ -2390,14 +2390,10 @@ async function main() {
     twitterManagePostTweets: nao<Twitter.PostTweets>({
       kind: 'twitter.manage.postTweets',
       'auth:Authorization': {
-        // consumerKey: process.env.TWITTER_CLIENT_ID,
-        // consumerSecret: process.env.TWITTER_CLIENT_SECRET,
-        // accessKey: process.env.TWITTER_ACCESS_TOKEN,
-        // accessSecret: process.env.TWITTER_ACCESS_TOKEN_SECRET,
-        consumerKey: '0vppswHsCR0H3krvnJTdTnXfp',
-        consumerSecret: 'ugMKq0D5SJ2adSRPDpo9E3ZydJ5NfPvy2o3D7NmkT1bMnUbeYG',
-        accessKey: '1471466182612033541-n39dxdHYZEwJ5YpeIaZnibU8znAajw',
-        accessSecret: 'HOZ1Y2kMp27BgXidwYvRe8oCRK2PK3AlB2Vc7MkhAVlsX',
+        consumerKey: process.env.TWITTER_CLIENT_ID,
+        consumerSecret: process.env.TWITTER_CLIENT_SECRET,
+        accessKey: process.env.TWITTER_ACCESS_TOKEN,
+        accessSecret: process.env.TWITTER_ACCESS_TOKEN_SECRET,
       },
       'body:text': 'nice!',
     }),
