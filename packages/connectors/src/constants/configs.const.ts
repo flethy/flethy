@@ -50,6 +50,7 @@ import { Cronhooks } from '../configs/cronhooks.config'
 import { CurrencyScoop } from '../configs/currencyscoop.config'
 import { DataDog } from '../configs/datadog.config'
 import { DatoCMS } from '../configs/datocms.config'
+import { Deepgram } from '../configs/deepgram.config'
 import { DeepL } from '../configs/deepl.config'
 import { DevCycle } from '../configs/devcycle.config'
 import { DevTo } from '../configs/devto.config'
@@ -229,6 +230,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['currencyscoop', CurrencyScoop.API],
 ['datadog', DataDog.API],
 ['datocms', DatoCMS.API],
+['deepgram', Deepgram.API],
 ['deepl', DeepL.API],
 ['devcycle', DevCycle.API],
 ['devto', DevTo.API],

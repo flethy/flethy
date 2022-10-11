@@ -1,0 +1,63 @@
+{
+  "name": "Deepgram",
+  "domain": "deepgram.com",
+  "claimed": false,
+  "description": "Deepgram helps enterprises unlock the potential of their audio data with custom trained speech recognition for accuracy and scale.",
+  "links": [
+    { "name": "twitter", "url": "https://twitter.com/DeepgramAI" },
+    { "name": "facebook", "url": "https://facebook.com/deepgram" },
+    { "name": "linkedin", "url": "https://linkedin.com/company/deepgram" }
+  ],
+  "logos": [
+    {
+      "type": "icon",
+      "theme": null,
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idzwZUV5rL/idc7gPqxp4.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 400,
+          "width": 400,
+          "size": 7745
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#141e28", "type": "dark", "brightness": 29 },
+    { "hex": "#38ecab", "type": "light", "brightness": 193 },
+    { "hex": "#7f2d33", "type": "accent", "brightness": 63 }
+  ],
+  "fonts": [
+    {
+      "name": "Cairo",
+      "type": "title",
+      "origin": "google",
+      "originId": "Cairo",
+      "weights": []
+    },
+    {
+      "name": "Roboto",
+      "type": "body",
+      "origin": "google",
+      "originId": "Roboto",
+      "weights": []
+    }
+  ],
+  "images": [
+    {
+      "type": "banner",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idzwZUV5rL/id-g6eJDyW.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 500,
+          "width": 1500,
+          "size": 105117
+        }
+      ]
+    }
+  ]
+}
