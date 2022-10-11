@@ -21,6 +21,16 @@ export namespace Twitter {
       password: string
     }
   }
+
+  interface TwitterBaseOAuth1a {
+    'auth:Authorization': {
+      consumerKey: string
+      consumerSecret: string
+      accessKey: string
+      accessSecret: string
+    }
+  }
+
   export interface AuthBearer extends RequestParams {
     kind: 'twitter.auth.bearer'
     'auth:Authorization': {
@@ -39,18 +49,14 @@ export namespace Twitter {
     'header:Content-Type': 'application/x-www-form-urlencoded'
   }
 
-  export interface PostTweets extends TwitterBase, RequestParams {
+  export interface PostTweets extends TwitterBaseOAuth1a, RequestParams {
     kind: 'twitter.manage.postTweets'
-    'body:text': string
+    'body:text'?: string
   }
 
-  export interface StatusUpdate extends RequestParams {
+  export interface StatusUpdate extends TwitterBaseOAuth1a, RequestParams {
     kind: 'twitter.v1status.update'
     'query:status': string
-    'auth:Authorization': {
-      username: string
-      password: string
-    }
   }
 
   export const API: ApiDescription<Entity, Endpoint> = {
@@ -142,7 +148,7 @@ export namespace Twitter {
           method: 'POST',
           auth: {
             Authorization: {
-              type: 'header:basic',
+              type: 'header:oauth1a',
             },
           },
           paths: [
@@ -168,7 +174,7 @@ export namespace Twitter {
           method: 'POST',
           auth: {
             Authorization: {
-              type: 'header:basic',
+              type: 'header:oauth1a',
             },
           },
           paths: [

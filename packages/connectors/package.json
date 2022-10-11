@@ -23,19 +23,21 @@
     "etherscan",
     "alchemy"
   ],
-  "dependencies": {},
+  "dependencies": {
+    "oauth-1.0a": "^2.2.6"
+  },
   "devDependencies": {
-    "@types/node": "^18.8.3",
-    "@typescript-eslint/eslint-plugin": "^5.39.0",
-    "@typescript-eslint/parser": "^5.39.0",
+    "@types/node": "^18.8.4",
+    "@typescript-eslint/eslint-plugin": "^5.40.0",
+    "@typescript-eslint/parser": "^5.40.0",
     "eslint": "^8.25.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-prettier": "^4.2.1",
     "prettier": "2.7.1",
-    "tsconfig": "workspace:*",
     "ts-node": "^10.9.1",
+    "tsconfig": "workspace:*",
     "typescript": "^4.8.4"
   }
 }

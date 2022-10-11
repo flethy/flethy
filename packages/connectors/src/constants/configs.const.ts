@@ -160,6 +160,7 @@ import { TMDB } from '../configs/tmdb.config'
 import { Trello } from '../configs/trello.config'
 import { Tribe } from '../configs/tribe.config'
 import { Twilio } from '../configs/twilio.config'
+import { Twitter } from '../configs/twitter.config'
 import { Typeform } from '../configs/typeform.config'
 import { Umami } from '../configs/umami.config'
 import { Unavatar } from '../configs/unavatar.config'
@@ -338,6 +339,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['trello', Trello.API],
 ['tribe', Tribe.API],
 ['twilio', Twilio.API],
+['twitter', Twitter.API],
 ['typeform', Typeform.API],
 ['umami', Umami.API],
 ['unavatar', Unavatar.API],

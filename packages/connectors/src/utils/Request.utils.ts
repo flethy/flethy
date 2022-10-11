@@ -2,6 +2,7 @@ import { FetchParams } from '../types/FetchParams.type'
 import { RequestOptions, RequestParams } from '../types/Request.types'
 import { Base64Utils } from './Base64.utils'
 import { ConfigUtils } from './Config.utils'
+import { OAuth1Helper } from './OAuth1a.utils'
 
 export function nao<Params extends RequestParams>(params: Params): FetchParams {
   return HttpRequestConfig.requestConfig(
@@ -210,6 +211,35 @@ export class HttpRequestConfig {
                   .map((key) => options.params[paramKey][key])
                   .join(authConfig.custom?.concat.separator ?? '')
               }
+              break
+            case 'header:oauth1a':
+              if (!config.headers) {
+                config.headers = {}
+              }
+              const oauthhelper = new OAuth1Helper({
+                consumerKeys: {
+                  key: options.params[paramKey].consumerKey,
+                  secret: options.params[paramKey].consumerSecret,
+                },
+              })
+              const oauthRequest = {
+                url: config.url,
+                method: options.endpoint.method,
+                data: config.body,
+              }
+              const oauthInfo = oauthhelper.authorize(
+                {
+                  url: config.url,
+                  method: options.endpoint.method,
+                  data: {},
+                },
+                {
+                  key: options.params[paramKey].accessKey,
+                  secret: options.params[paramKey].accessSecret,
+                },
+              )
+              const headerValue = oauthhelper.toHeader(oauthInfo)
+              config.headers[keyname] = headerValue.Authorization
               break
             case 'body':
               if (authConfig.authHandler) {

@@ -1,0 +1,108 @@
+{
+  "name": "Twitter ",
+  "domain": "twitter.com",
+  "claimed": false,
+  "description": "Twitter is what’s happening and what people are talking about right now.",
+  "links": [
+    {
+      "name": "crunchbase",
+      "url": "https://crunchbase.com/organization/twitter"
+    },
+    { "name": "twitter", "url": "https://twitter.com/twitter" },
+    { "name": "instagram", "url": "https://instagram.com/twitter" },
+    { "name": "linkedin", "url": "https://linkedin.com/company/twitter" },
+    { "name": "facebook", "url": "https://facebook.com/twitterinc" }
+  ],
+  "logos": [
+    {
+      "type": "logo",
+      "theme": null,
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idCvQYuc_q/ideT8OzYlX.svg",
+          "background": "transparent",
+          "format": "svg",
+          "size": 983
+        },
+        {
+          "src": "https://asset.brandfetch.io/idCvQYuc_q/idB1DYSiSU.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 658,
+          "width": 800,
+          "size": 25558
+        }
+      ]
+    },
+    {
+      "type": "icon",
+      "theme": null,
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idCvQYuc_q/idBrNPHmqO.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 400,
+          "width": 400,
+          "size": 28294
+        }
+      ]
+    },
+    {
+      "type": "symbol",
+      "theme": null,
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idCvQYuc_q/idYzicu9R4.svg",
+          "background": "transparent",
+          "format": "svg",
+          "size": 1062
+        },
+        {
+          "src": "https://asset.brandfetch.io/idCvQYuc_q/idWtd343FE.png",
+          "background": null,
+          "format": "png",
+          "height": 800,
+          "width": 800,
+          "size": 25428
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#14171a", "type": "dark", "brightness": 23 },
+    { "hex": "#ffffff", "type": "light", "brightness": 255 },
+    { "hex": "#1da1f2", "type": "accent", "brightness": 139 }
+  ],
+  "fonts": [
+    {
+      "name": "Helvetica Neue LT",
+      "type": "title",
+      "origin": "custom",
+      "originId": null,
+      "weights": []
+    },
+    {
+      "name": "Helvetica Neue LT",
+      "type": "body",
+      "origin": "custom",
+      "originId": null,
+      "weights": []
+    }
+  ],
+  "images": [
+    {
+      "type": "banner",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idCvQYuc_q/id6h_dSBdZ.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 500,
+          "width": 1500,
+          "size": 174875
+        }
+      ]
+    }
+  ]
+}

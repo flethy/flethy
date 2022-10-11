@@ -78,6 +78,7 @@ export interface ApiDescriptionAuth {
     | 'header:token'
     | 'header:custom'
     | 'header:key'
+    | 'header:oauth1a'
     | 'path'
     | 'body'
     | 'body:form'

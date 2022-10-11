@@ -172,6 +172,7 @@ import { HttpRequest } from './controllers/HttpRequest'
 import { logger } from './utils/Logger'
 import ButtondownEmail from '@flethy/connectors/src/configs/buttondownemail.config'
 import Luabase from '@flethy/connectors/src/configs/luabase.config'
+import Twitter from '@flethy/connectors/src/configs/twitter.config'
 
 async function main() {
   const requestConfigs: {
@@ -2386,8 +2387,18 @@ async function main() {
         },
       },
     }),
+    twitterManagePostTweets: nao<Twitter.PostTweets>({
+      kind: 'twitter.manage.postTweets',
+      'auth:Authorization': {
+        consumerKey: process.env.CONSUMER_KEY,
+        consumerSecret: process.env.CONSUMER_SECRET,
+        accessKey: process.env.ACCESS_TOKEN,
+        accessSecret: process.env.ACCESS_TOKEN_SECRET,
+      },
+      'body:text': 'gmfrens',
+    }),
   }
-  const requestConfig = requestConfigs.luabaseRunQuery
+  const requestConfig = requestConfigs.twitterManagePostTweets
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)
