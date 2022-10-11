@@ -227,12 +227,11 @@ export class HttpRequestConfig {
                 method: options.endpoint.method,
                 data: config.body,
               }
-              console.log(oauthRequest)
               const oauthInfo = oauthhelper.authorize(
                 {
                   url: config.url,
                   method: options.endpoint.method,
-                  data: config.body,
+                  data: {},
                 },
                 {
                   key: options.params[paramKey].accessKey,

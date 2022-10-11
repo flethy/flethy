@@ -27,12 +27,12 @@
   "dependencies": {
     "axios": "^1.1.2",
     "jsonata": "^1.8.6",
-    "@flethy/connectors": "^0.0.169"
+    "@flethy/connectors": "^0.0.172"
   },
   "devDependencies": {
-    "@types/node": "^18.8.3",
-    "@typescript-eslint/eslint-plugin": "^5.39.0",
-    "@typescript-eslint/parser": "^5.39.0",
+    "@types/node": "^18.8.4",
+    "@typescript-eslint/eslint-plugin": "^5.40.0",
+    "@typescript-eslint/parser": "^5.40.0",
     "eslint": "^8.25.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-prettier": "^8.5.0",

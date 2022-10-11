@@ -203,10 +203,13 @@ export default OAuth1Helper
 function mergeObject<A extends object, B extends object>(
   obj1: A,
   obj2: B,
-): A & B {
+): any {
+  // const newObj1 = { ...(obj1 || {}) }
+  // const newObj2 = { ...(obj2 || {}) }
+  // return { ...newObj1, ...newObj2 }
   return {
-    ...obj1,
-    ...obj2,
+    ...(obj1 || {}),
+    ...(obj2 || {}),
   }
 }
 

@@ -44,7 +44,7 @@
 
 ##### Authentication
 
-* Authorization: header:basic
+* Authorization: header:oauth1a
 
 ##### Post Tweets
 
@@ -57,7 +57,7 @@
 
 ##### Authentication
 
-* Authorization: header:basic
+* Authorization: header:oauth1a
 
 ##### Status Update
 

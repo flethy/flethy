@@ -51,16 +51,12 @@ export namespace Twitter {
 
   export interface PostTweets extends TwitterBaseOAuth1a, RequestParams {
     kind: 'twitter.manage.postTweets'
-    'body:text': string
+    'body:text'?: string
   }
 
-  export interface StatusUpdate extends RequestParams {
+  export interface StatusUpdate extends TwitterBaseOAuth1a, RequestParams {
     kind: 'twitter.v1status.update'
     'query:status': string
-    'auth:Authorization': {
-      username: string
-      password: string
-    }
   }
 
   export const API: ApiDescription<Entity, Endpoint> = {
@@ -178,7 +174,7 @@ export namespace Twitter {
           method: 'POST',
           auth: {
             Authorization: {
-              type: 'header:basic',
+              type: 'header:oauth1a',
             },
           },
           paths: [

@@ -2390,12 +2390,12 @@ async function main() {
     twitterManagePostTweets: nao<Twitter.PostTweets>({
       kind: 'twitter.manage.postTweets',
       'auth:Authorization': {
-        consumerKey: process.env.TWITTER_CLIENT_ID,
-        consumerSecret: process.env.TWITTER_CLIENT_SECRET,
-        accessKey: process.env.TWITTER_ACCESS_TOKEN,
-        accessSecret: process.env.TWITTER_ACCESS_TOKEN_SECRET,
+        consumerKey: process.env.CONSUMER_KEY,
+        consumerSecret: process.env.CONSUMER_SECRET,
+        accessKey: process.env.ACCESS_TOKEN,
+        accessSecret: process.env.ACCESS_TOKEN_SECRET,
       },
-      'body:text': 'nice!',
+      'body:text': 'gmfrens',
     }),
   }
   const requestConfig = requestConfigs.twitterManagePostTweets
