@@ -213,6 +213,10 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://flethy.com/integrations/deepgram</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://flethy.com/integrations/deepl</loc>
     <priority>0.8</priority>
   </url>

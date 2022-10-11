@@ -50,6 +50,7 @@ import { Cronhooks } from '../../../connectors/src/configs/cronhooks.config'
 import { CurrencyScoop } from '../../../connectors/src/configs/currencyscoop.config'
 import { DataDog } from '../../../connectors/src/configs/datadog.config'
 import { DatoCMS } from '../../../connectors/src/configs/datocms.config'
+import { Deepgram } from '../../../connectors/src/configs/deepgram.config'
 import { DeepL } from '../../../connectors/src/configs/deepl.config'
 import { DevCycle } from '../../../connectors/src/configs/devcycle.config'
 import { DevTo } from '../../../connectors/src/configs/devto.config'
@@ -308,6 +309,7 @@ configTypes.push({type: getType<DataDog.ValidateApiKey>(), id: 'datadog', name: 
 configTypes.push({type: getType<DataDog.PostEvent>(), id: 'datadog', name: 'DataDog', interface: 'PostEvent'})
 configTypes.push({type: getType<DataDog.ListEvents>(), id: 'datadog', name: 'DataDog', interface: 'ListEvents'})
 configTypes.push({type: getType<DatoCMS.Query>(), id: 'datocms', name: 'DatoCMS', interface: 'Query'})
+configTypes.push({type: getType<Deepgram.TranscribePrerecordedAudio>(), id: 'deepgram', name: 'Deepgram', interface: 'TranscribePrerecordedAudio'})
 configTypes.push({type: getType<DeepL.TranslatingRequest>(), id: 'deepl', name: 'DeepL', interface: 'TranslatingRequest'})
 configTypes.push({type: getType<DeepL.GlossaryListLanguagePairs>(), id: 'deepl', name: 'DeepL', interface: 'GlossaryListLanguagePairs'})
 configTypes.push({type: getType<DevCycle.Token>(), id: 'devcycle', name: 'DevCycle', interface: 'Token'})

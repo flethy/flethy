@@ -165,14 +165,15 @@ import { FetchParams } from '../../connectors/src/types/FetchParams.type'
 import { nao } from '../../connectors/src/utils/Request.utils'
 // import { nao } from '@flethy/connectors'
 import APIPoint from '@flethy/connectors/src/configs/apipoint.config'
+import ButtondownEmail from '@flethy/connectors/src/configs/buttondownemail.config'
+import Deepgram from '@flethy/connectors/src/configs/deepgram.config'
 import Flatfile from '@flethy/connectors/src/configs/flatfile.config'
 import GitLab from '@flethy/connectors/src/configs/gitlab.config'
+import Luabase from '@flethy/connectors/src/configs/luabase.config'
 import Sheety from '@flethy/connectors/src/configs/sheety.config'
+import Twitter from '@flethy/connectors/src/configs/twitter.config'
 import { HttpRequest } from './controllers/HttpRequest'
 import { logger } from './utils/Logger'
-import ButtondownEmail from '@flethy/connectors/src/configs/buttondownemail.config'
-import Luabase from '@flethy/connectors/src/configs/luabase.config'
-import Twitter from '@flethy/connectors/src/configs/twitter.config'
 
 async function main() {
   const requestConfigs: {
@@ -2397,8 +2398,16 @@ async function main() {
       },
       'body:text': 'gmfrens',
     }),
+    deepgramListen: nao<Deepgram.TranscribePrerecordedAudio>({
+      kind: 'deepgram.transcription.preRecordedAudio',
+      'auth:Authorization': process.env.DEEPGRAM_API_KEY,
+      'body:url': `https://static.deepgram.com/examples/Bueller-Life-moves-pretty-fast.wav`,
+      'query:model': 'general',
+      'query:tier': 'enhanced',
+      'query:punctuation': true,
+    }),
   }
-  const requestConfig = requestConfigs.twitterManagePostTweets
+  const requestConfig = requestConfigs.deepgramListen
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)
