@@ -1,0 +1,24 @@
+# Rye
+
+## Links
+
+* URL: [https://www.rye.com/](https://www.rye.com/)
+* Documentation: [https://docs.rye.com/start-here/readme](https://docs.rye.com/start-here/readme)
+* Tags: web2
+* Category: ecommerce
+* Type: aggregation
+
+## API
+
+### Authentication
+
+* Authorization: header:basic
+
+### graphql
+
+#### query
+
+##### GraphQL Query
+
+* Description: GraphQL Query
+* Docs: [https://docs.rye.com/start-here/quick-start](https://docs.rye.com/start-here/quick-start)

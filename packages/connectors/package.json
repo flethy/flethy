@@ -23,9 +23,7 @@
     "etherscan",
     "alchemy"
   ],
-  "dependencies": {
-    "oauth-1.0a": "^2.2.6"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@types/node": "^18.8.4",
     "@typescript-eslint/eslint-plugin": "^5.40.0",

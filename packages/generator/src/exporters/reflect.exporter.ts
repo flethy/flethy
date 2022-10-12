@@ -125,6 +125,7 @@ import { PeopleDataLabs } from '../../../connectors/src/configs/peopledatalabs.c
 import { Personio } from '../../../connectors/src/configs/personio.config'
 import { Pinata } from '../../../connectors/src/configs/pinata.config'
 import { Pipedream } from '../../../connectors/src/configs/pipedream.config'
+import { Pirsch } from '../../../connectors/src/configs/pirsch.config'
 import { Pixela } from '../../../connectors/src/configs/pixela.config'
 import { PolyScale } from '../../../connectors/src/configs/polyscale.config'
 import { PostHog } from '../../../connectors/src/configs/posthog.config'
@@ -139,6 +140,7 @@ import { Render } from '../../../connectors/src/configs/render.config'
 import { RestCountries } from '../../../connectors/src/configs/restcountries.config'
 import { RestDB } from '../../../connectors/src/configs/restdb.config'
 import { RestZeebe } from '../../../connectors/src/configs/restzeebe.config'
+import { Rye } from '../../../connectors/src/configs/rye.config'
 import { Semrush } from '../../../connectors/src/configs/semrush.config'
 import { SendGrid } from '../../../connectors/src/configs/sendgrid.config'
 import { Sentry } from '../../../connectors/src/configs/sentry.config'
@@ -472,6 +474,9 @@ configTypes.push({type: getType<Personio.AbsencesGet>(), id: 'personio', name: '
 configTypes.push({type: getType<Pinata.PinningPinJsonToIPFS>(), id: 'pinata', name: 'Pinata', interface: 'PinningPinJsonToIPFS'})
 configTypes.push({type: getType<Pipedream.GetWorkflowEmits>(), id: 'pipedream', name: 'Pipedream', interface: 'GetWorkflowEmits'})
 configTypes.push({type: getType<Pipedream.ListCurrentUserSources>(), id: 'pipedream', name: 'Pipedream', interface: 'ListCurrentUserSources'})
+configTypes.push({type: getType<Pirsch.GetAccessToken>(), id: 'pirsch', name: 'Pirsch', interface: 'GetAccessToken'})
+configTypes.push({type: getType<Pirsch.SendPageHit>(), id: 'pirsch', name: 'Pirsch', interface: 'SendPageHit'})
+configTypes.push({type: getType<Pirsch.SendEvent>(), id: 'pirsch', name: 'Pirsch', interface: 'SendEvent'})
 configTypes.push({type: getType<Pixela.CreateGraph>(), id: 'pixela', name: 'Pixela', interface: 'CreateGraph'})
 configTypes.push({type: getType<Pixela.GetGraph>(), id: 'pixela', name: 'Pixela', interface: 'GetGraph'})
 configTypes.push({type: getType<Pixela.PostValue>(), id: 'pixela', name: 'Pixela', interface: 'PostValue'})
@@ -493,6 +498,7 @@ configTypes.push({type: getType<RestCountries.GetByCode>(), id: 'restcountries',
 configTypes.push({type: getType<RestCountries.ListOfCodes>(), id: 'restcountries', name: 'RestCountries', interface: 'ListOfCodes'})
 configTypes.push({type: getType<RestDB.GetItemsFromCollection>(), id: 'restdb', name: 'RestDB', interface: 'GetItemsFromCollection'})
 configTypes.push({type: getType<RestZeebe.StartInstance>(), id: 'restzeebe', name: 'RestZeebe', interface: 'StartInstance'})
+configTypes.push({type: getType<Rye.GraphQLQuery>(), id: 'rye', name: 'Rye', interface: 'GraphQLQuery'})
 configTypes.push({type: getType<Semrush.GetBacklinksOverview>(), id: 'semrush', name: 'Semrush', interface: 'GetBacklinksOverview'})
 configTypes.push({type: getType<SendGrid.SendMail>(), id: 'sendgrid', name: 'SendGrid', interface: 'SendMail'})
 configTypes.push({type: getType<Sentry.QueryDiscoverEvents>(), id: 'sentry', name: 'Sentry', interface: 'QueryDiscoverEvents'})

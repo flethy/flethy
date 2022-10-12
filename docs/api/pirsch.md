@@ -1,0 +1,42 @@
+# Pirsch
+
+## Links
+
+* URL: [https://pirsch.io/](https://pirsch.io/)
+* Documentation: [https://docs.pirsch.io/api-sdks/api/](https://docs.pirsch.io/api-sdks/api/)
+* Tags: web2
+* Category: analytics
+* Type: webinsights
+
+## API
+
+### Authentication
+
+* client_id: body
+* client_secret: body
+* Authorization: header:bearer
+
+### auth
+
+#### accessToken
+
+##### Getting an Access Token
+
+* Description: Getting an Access Token
+* Docs: [https://docs.pirsch.io/api-sdks/api/#getting-an-access-token](https://docs.pirsch.io/api-sdks/api/#getting-an-access-token)
+
+### send
+
+#### pageHit
+
+##### Sending a Page Hit
+
+* Description: This endpoint is used to send page hits to Pirsch. It requires you to send information about the request made by the client. How you get these depends on the programming language and framework you’re using. The example shows which fields are required and which are optional. We recommend sending all of them to make the results as accurate as possible.
+* Docs: [https://docs.pirsch.io/api-sdks/api/#sending-a-page-hit](https://docs.pirsch.io/api-sdks/api/#sending-a-page-hit)
+
+#### event
+
+##### Sending an Event
+
+* Description: This endpoint is used to send events to Pirsch. It requires you to send information about the request made by the client. How you get these depends on the programming language and framework you’re using. The example shows which fields are required and which are optional. We recommend sending all of them to make the results as accurate as possible.
+* Docs: [https://docs.pirsch.io/api-sdks/api/#sending-an-event](https://docs.pirsch.io/api-sdks/api/#sending-an-event)

@@ -1,9 +1,10 @@
-import { EmailIcon, MoonIcon, SunIcon } from '@chakra-ui/icons'
+import { EmailIcon, MoonIcon, SearchIcon, SunIcon } from '@chakra-ui/icons'
 import {
 	Box,
 	Button,
 	Flex,
 	HStack,
+	Kbd,
 	Link,
 	Stack,
 	Text,
@@ -31,6 +32,7 @@ export default observer(() => {
 		router,
 		root: {
 			pages: { home },
+			components: { quickSearch },
 		},
 	} = useMst()
 
@@ -71,6 +73,12 @@ export default observer(() => {
 
 					<Flex alignItems={'center'}>
 						<Stack direction={'row'} spacing={7}>
+							<Button onClick={quickSearch.open}>
+								<SearchIcon />
+								<HStack ml={2} display={{ base: 'none', md: 'inline-flex' }}>
+									<Kbd>ctrl</Kbd> <Text>+</Text> <Kbd>k</Kbd>
+								</HStack>
+							</Button>
 							<Button onClick={toggleColorMode}>
 								{colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
 							</Button>

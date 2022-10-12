@@ -194,13 +194,10 @@ importers:
       eslint-config-prettier: ^8.5.0
       eslint-plugin-import: ^2.26.0
       eslint-plugin-prettier: ^4.2.1
-      oauth-1.0a: ^2.2.6
       prettier: 2.7.1
       ts-node: ^10.9.1
       tsconfig: workspace:*
       typescript: ^4.8.4
-    dependencies:
-      oauth-1.0a: 2.2.6
     devDependencies:
       '@types/node': 18.8.4
       '@typescript-eslint/eslint-plugin': 5.40.0_25sstg4uu2sk4pm7xcyzuov7xq
@@ -5709,10 +5706,6 @@ packages:
     dependencies:
       path-key: 3.1.1
     dev: true
-
-  /oauth-1.0a/2.2.6:
-    resolution: {integrity: sha512-6bkxv3N4Gu5lty4viIcIAnq5GbxECviMBeKR3WX/q87SPQ8E8aursPZUtsXDnxCs787af09WPRBLqYrf/lwoYQ==}
-    dev: false
 
   /object-assign/4.1.1:
     resolution: {integrity: sha512-rJgTQnkUnH1sFw8yT6VSU3zD3sWmu6sZhIseY8VX+GRu3P6F7Fu+JNDoXfklElbLJSnc3FUQHVe4cU5hj+BcUg==}

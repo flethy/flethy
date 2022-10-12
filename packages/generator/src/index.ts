@@ -170,6 +170,8 @@ import Deepgram from '@flethy/connectors/src/configs/deepgram.config'
 import Flatfile from '@flethy/connectors/src/configs/flatfile.config'
 import GitLab from '@flethy/connectors/src/configs/gitlab.config'
 import Luabase from '@flethy/connectors/src/configs/luabase.config'
+import Pirsch from '@flethy/connectors/src/configs/pirsch.config'
+import Rye from '@flethy/connectors/src/configs/rye.config'
 import Sheety from '@flethy/connectors/src/configs/sheety.config'
 import Twitter from '@flethy/connectors/src/configs/twitter.config'
 import { HttpRequest } from './controllers/HttpRequest'
@@ -2406,8 +2408,69 @@ async function main() {
       'query:tier': 'enhanced',
       'query:punctuation': true,
     }),
+    ryeQuery: nao<Rye.GraphQLQuery>({
+      kind: 'rye.graphql.query',
+      'auth:Authorization': { username: process.env.RYE_API_KEY },
+      'body:query': `query DemoAmazonShopifyProductFetch($input: ProductByIDInput!) {
+        amazonItem: productByID(input: $input) {
+          id
+          title
+          marketplace
+          description
+          vendor
+          url
+          isAvailable
+          tags
+          images {
+            url
+          }
+          variants {
+            title
+          }
+          price {
+            displayValue
+          }
+          ... on AmazonProduct {
+            ASIN
+            titleExcludingVariantName
+            categories {
+              name
+              url
+            }
+          }
+        }
+      }`,
+      'body:variables': {
+        input: {
+          id: 'B08C1W5N87',
+          marketplace: 'AMAZON',
+        },
+      },
+    }),
+    pirschAccessToken: nao<Pirsch.GetAccessToken>({
+      kind: 'pirsch.auth.accessToken',
+      'auth:client_id': process.env.PIRSCH_CLIENT_ID,
+      'auth:client_secret': process.env.PIRSCH_CLIENT_SECRET,
+    }),
+    pirschSendPageHit: nao<Pirsch.SendPageHit>({
+      kind: 'pirsch.send.pageHit',
+      'auth:Authorization': process.env.PIRSCH_ACCESS_TOKEN,
+      'body:url': 'https://flethy.com',
+      'body:ip': '172.67.179.35',
+      'body:screen_width': 1920,
+      'body:screen_height': 1080,
+    }),
+    pirschSendEvent: nao<Pirsch.SendEvent>({
+      kind: 'pirsch.send.event',
+      'auth:Authorization': process.env.PIRSCH_ACCESS_TOKEN,
+      'body:event_name': 'onboarding',
+      'body:url': 'https://flethy.com',
+      'body:ip': '172.67.179.35',
+      'body:screen_width': 1920,
+      'body:screen_height': 1080,
+    }),
   }
-  const requestConfig = requestConfigs.deepgramListen
+  const requestConfig = requestConfigs.pirschSendEvent
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)
