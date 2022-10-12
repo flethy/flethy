@@ -125,6 +125,7 @@ import { PeopleDataLabs } from '../configs/peopledatalabs.config'
 import { Personio } from '../configs/personio.config'
 import { Pinata } from '../configs/pinata.config'
 import { Pipedream } from '../configs/pipedream.config'
+import { Pirsch } from '../configs/pirsch.config'
 import { Pixela } from '../configs/pixela.config'
 import { PolyScale } from '../configs/polyscale.config'
 import { PostHog } from '../configs/posthog.config'
@@ -139,6 +140,7 @@ import { Render } from '../configs/render.config'
 import { RestCountries } from '../configs/restcountries.config'
 import { RestDB } from '../configs/restdb.config'
 import { RestZeebe } from '../configs/restzeebe.config'
+import { Rye } from '../configs/rye.config'
 import { Semrush } from '../configs/semrush.config'
 import { SendGrid } from '../configs/sendgrid.config'
 import { Sentry } from '../configs/sentry.config'
@@ -305,6 +307,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['personio', Personio.API],
 ['pinata', Pinata.API],
 ['pipedream', Pipedream.API],
+['pirsch', Pirsch.API],
 ['pixela', Pixela.API],
 ['polyscale', PolyScale.API],
 ['posthog', PostHog.API],
@@ -319,6 +322,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['restcountries', RestCountries.API],
 ['restdb', RestDB.API],
 ['restzeebe', RestZeebe.API],
+['rye', Rye.API],
 ['semrush', Semrush.API],
 ['sendgrid', SendGrid.API],
 ['sentry', Sentry.API],

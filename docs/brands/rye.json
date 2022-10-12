@@ -1,0 +1,73 @@
+{
+  "name": "OPERATOR",
+  "domain": "rye.com",
+  "claimed": false,
+  "description": null,
+  "links": [{ "name": "twitter", "url": "https://twitter.com/Operator" }],
+  "logos": [
+    {
+      "type": "logo",
+      "theme": null,
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idY5o1l9D7/id9Yb_7S2h.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 244,
+          "width": 707,
+          "size": 24204
+        }
+      ]
+    },
+    {
+      "type": "icon",
+      "theme": null,
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idY5o1l9D7/id2G4NtwtN.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 400,
+          "width": 400,
+          "size": 18112
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#a836bf", "type": "accent", "brightness": 88 },
+    { "hex": "#07072c", "type": "dark", "brightness": 10 },
+    { "hex": "#ff5383", "type": "light", "brightness": 123 }
+  ],
+  "fonts": [
+    {
+      "name": "Monument Extended",
+      "type": "title",
+      "origin": "custom",
+      "originId": null,
+      "weights": []
+    },
+    {
+      "name": "UntitledSansWeb",
+      "type": "body",
+      "origin": "custom",
+      "originId": null,
+      "weights": []
+    }
+  ],
+  "images": [
+    {
+      "type": "banner",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idY5o1l9D7/idoTBM0i2m.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 500,
+          "width": 1500,
+          "size": 110411
+        }
+      ]
+    }
+  ]
+}

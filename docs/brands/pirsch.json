@@ -1,0 +1,75 @@
+{
+  "name": "Pirsch Analytics",
+  "domain": "pirsch.io",
+  "claimed": false,
+  "description": "Pirsch is a simple, privacy-friendly, open-source alternative to Google Analytics — lightweight, cookie-free and easily integrated into any website or backend.",
+  "links": [
+    { "name": "twitter", "url": "https://twitter.com/PirschAnalytics" },
+    { "name": "github", "url": "https://github.com/pirsch-analytics" }
+  ],
+  "logos": [
+    {
+      "type": "logo",
+      "theme": null,
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/id0oC6qsUu/idk-ES0DlT.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 1199,
+          "width": 820,
+          "size": 36944
+        },
+        {
+          "src": "https://asset.brandfetch.io/id0oC6qsUu/id-AUxDS9T.svg",
+          "background": "transparent",
+          "format": "svg",
+          "size": 280
+        }
+      ]
+    },
+    {
+      "type": "icon",
+      "theme": null,
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/id0oC6qsUu/idD3X6VB3J.png",
+          "background": null,
+          "format": "png",
+          "height": 256,
+          "width": 256,
+          "size": 1797
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#6ece9e", "type": "accent", "brightness": 182 },
+    { "hex": "#000000", "type": "dark", "brightness": 0 },
+    { "hex": "#f8f5ec", "type": "light", "brightness": 245 }
+  ],
+  "fonts": [
+    {
+      "name": "DM Sans",
+      "type": "body",
+      "origin": "google",
+      "originId": "DM+Sans",
+      "weights": []
+    }
+  ],
+  "images": [
+    {
+      "type": "banner",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/id0oC6qsUu/idPubqRa1u.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 500,
+          "width": 1500,
+          "size": 49730
+        }
+      ]
+    }
+  ]
+}

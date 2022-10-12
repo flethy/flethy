@@ -513,6 +513,10 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://flethy.com/integrations/pirsch</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://flethy.com/integrations/pixela</loc>
     <priority>0.8</priority>
   </url>
@@ -566,6 +570,10 @@
   </url>
   <url>
     <loc>https://flethy.com/integrations/restzeebe</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://flethy.com/integrations/rye</loc>
     <priority>0.8</priority>
   </url>
   <url>

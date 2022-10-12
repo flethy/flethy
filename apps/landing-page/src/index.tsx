@@ -19,12 +19,15 @@ events.init(LOGLEVEL)
 
 const App = observer(() => {
 	const {
-		root: {},
+		root: { components, api },
 	} = useMst()
 
 	startRouter(routes, rootStore, {
 		notfound: () => rootStore.router.goTo(routes.notFound),
 	})
+
+	components.quickSearch.initialise()
+	api.integrations.load()
 
 	const theme = extendTheme({
 		styles: {

@@ -2,10 +2,11 @@ import { RouterStore } from 'mobx-router'
 import { Instance, types } from 'mobx-state-tree'
 import { createContext, useContext } from 'react'
 import { EmailSubscriptionModel } from '../components/email-subscription/EmailSubscriptionModel'
+import { QuickSearchComponent } from '../components/quicksearch/model'
 import { NotFoundPage } from '../pages/404/model'
 import { HomePage } from '../pages/home/model'
-import { IntegrationsPage } from '../pages/integrations/model'
 import { IntegrationPage } from '../pages/integration/model'
+import { IntegrationsPage } from '../pages/integrations/model'
 import { VerificationPage } from '../pages/verification/model'
 import ApiStore, { APIType } from './api'
 
@@ -24,6 +25,9 @@ const PagesStore = types.model('Pages', {
 const ComponentsStore = types.model('Components', {
 	emailSubscription: types.optional(EmailSubscriptionModel, () =>
 		EmailSubscriptionModel.create(),
+	),
+	quickSearch: types.optional(QuickSearchComponent, () =>
+		QuickSearchComponent.create(),
 	),
 })
 
