@@ -21,6 +21,7 @@ export default observer(() => {
 			components: { quickSearch: component },
 		},
 	} = useMst()
+	const bg = useColorModeValue('flethy.orange', 'flethy.purple')
 
 	return (
 		<Modal
@@ -41,18 +42,14 @@ export default observer(() => {
 					{component.getSearchResults().map((action) => {
 						return (
 							<Box
-								bg={
-									component.selectedId === action.id
-										? useColorModeValue('flethy.orange', 'flethy.purple')
-										: undefined
-								}
+								bg={component.selectedId === action.id ? bg : undefined}
 								p={2}
 								rounded={'md'}
 								key={action.id}
 								onClick={() => component.performAction(action.id)}
 								cursor={'pointer'}
 								_hover={{
-									bg: useColorModeValue('flethy.orange', 'flethy.purple'),
+									bg,
 								}}
 							>
 								<Text>

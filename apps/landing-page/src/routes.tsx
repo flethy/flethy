@@ -4,6 +4,7 @@ import NotFoundPage from './pages/404/page'
 import HomePage from './pages/home/page'
 import IntegrationPage from './pages/integration/page'
 import IntegrationsPage from './pages/integrations/page'
+import PitchDeckPage from './pages/pitchdeck/page'
 import VerificationPage from './pages/verification/page'
 
 export default {
@@ -13,6 +14,11 @@ export default {
 		onEnter(_route, _parameters, { root: { pages } }) {
 			pages.home.initialisePage()
 		},
+	}),
+
+	pitch: new Route<RootStore>({
+		path: '/pitch',
+		component: <PitchDeckPage />,
 	}),
 
 	verification: new Route<RootStore>({

@@ -57,12 +57,12 @@ export default observer(() => {
 								px={2}
 								py={1}
 								rounded={'md'}
+								href="#"
 								_hover={{
 									textDecoration: 'none',
 									bg: useColorModeValue('gray.200', 'gray.700'),
 								}}
 								onClick={() => {
-									console.log('test')
 									router.goTo(routes.integrations)
 								}}
 							>

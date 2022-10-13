@@ -27,6 +27,7 @@ import { CalCom } from '../configs/calcom.config'
 import { Calendarific } from '../configs/calendarific.config'
 import { Camunda } from '../configs/camunda.config'
 import { Canny } from '../configs/canny.config'
+import { CarbEngage } from '../configs/carbengage.config'
 import { Chargebee } from '../configs/chargebee.config'
 import { ChartMogul } from '../configs/chartmogul.config'
 import { Carifai } from '../configs/clarifai.config'
@@ -84,6 +85,7 @@ import { Hubspot } from '../configs/hubspot.config'
 import { HunterIo } from '../configs/hunterio.config'
 import { Hybiscus } from '../configs/hybiscus.config'
 import { Hygraph } from '../configs/hygraph.config'
+import { Imglab } from '../configs/imglab.config'
 import { IncidentIo } from '../configs/incidentio.config'
 import { Jira } from '../configs/jira.config'
 import { Klaviyo } from '../configs/klaviyo.config'
@@ -209,6 +211,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['calendarific', Calendarific.API],
 ['camunda', Camunda.API],
 ['canny', Canny.API],
+['carbengage', CarbEngage.API],
 ['chargebee', Chargebee.API],
 ['chartmogul', ChartMogul.API],
 ['clarifai', Carifai.API],
@@ -266,6 +269,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['hunterio', HunterIo.API],
 ['hybiscus', Hybiscus.API],
 ['hygraph', Hygraph.API],
+['imglab', Imglab.API],
 ['incidentio', IncidentIo.API],
 ['jira', Jira.API],
 ['klaviyo', Klaviyo.API],

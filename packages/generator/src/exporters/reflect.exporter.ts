@@ -27,6 +27,7 @@ import { CalCom } from '../../../connectors/src/configs/calcom.config'
 import { Calendarific } from '../../../connectors/src/configs/calendarific.config'
 import { Camunda } from '../../../connectors/src/configs/camunda.config'
 import { Canny } from '../../../connectors/src/configs/canny.config'
+import { CarbEngage } from '../../../connectors/src/configs/carbengage.config'
 import { Chargebee } from '../../../connectors/src/configs/chargebee.config'
 import { ChartMogul } from '../../../connectors/src/configs/chartmogul.config'
 import { Carifai } from '../../../connectors/src/configs/clarifai.config'
@@ -84,6 +85,7 @@ import { Hubspot } from '../../../connectors/src/configs/hubspot.config'
 import { HunterIo } from '../../../connectors/src/configs/hunterio.config'
 import { Hybiscus } from '../../../connectors/src/configs/hybiscus.config'
 import { Hygraph } from '../../../connectors/src/configs/hygraph.config'
+import { Imglab } from '../../../connectors/src/configs/imglab.config'
 import { IncidentIo } from '../../../connectors/src/configs/incidentio.config'
 import { Jira } from '../../../connectors/src/configs/jira.config'
 import { Klaviyo } from '../../../connectors/src/configs/klaviyo.config'
@@ -209,6 +211,7 @@ configTypes.push({type: getType<Auth0.GetUser>(), id: 'auth0', name: 'Auth0', in
 configTypes.push({type: getType<Auth0.CreateUser>(), id: 'auth0', name: 'Auth0', interface: 'CreateUser'})
 configTypes.push({type: getType<Auth0.DeleteUser>(), id: 'auth0', name: 'Auth0', interface: 'DeleteUser'})
 configTypes.push({type: getType<Auth0.GetConnections>(), id: 'auth0', name: 'Auth0', interface: 'GetConnections'})
+configTypes.push({type: getType<Auth0.GetRoles>(), id: 'auth0', name: 'Auth0', interface: 'GetRoles'})
 configTypes.push({type: getType<Ayrshare.AnalyticsOnAShortenedLink>(), id: 'ayrshare', name: 'Ayrshare', interface: 'AnalyticsOnAShortenedLink'})
 configTypes.push({type: getType<Ayrshare.Post>(), id: 'ayrshare', name: 'Ayrshare', interface: 'Post'})
 configTypes.push({type: getType<BambooHR.EmployeesDirectory>(), id: 'bamboohr', name: 'BambooHR', interface: 'EmployeesDirectory'})
@@ -251,6 +254,7 @@ configTypes.push({type: getType<Camunda.ConsoleDeleteClient>(), id: 'camunda', n
 configTypes.push({type: getType<Canny.ListBoards>(), id: 'canny', name: 'Canny', interface: 'ListBoards'})
 configTypes.push({type: getType<Canny.RetrieveBoard>(), id: 'canny', name: 'Canny', interface: 'RetrieveBoard'})
 configTypes.push({type: getType<Canny.ListPosts>(), id: 'canny', name: 'Canny', interface: 'ListPosts'})
+configTypes.push({type: getType<CarbEngage.Info>(), id: 'carbengage', name: 'CarbEngage', interface: 'Info'})
 configTypes.push({type: getType<Chargebee.ListSubscriptions>(), id: 'chargebee', name: 'Chargebee', interface: 'ListSubscriptions'})
 configTypes.push({type: getType<ChartMogul.TrackLeadAndFreeTrial>(), id: 'chartmogul', name: 'ChartMogul', interface: 'TrackLeadAndFreeTrial'})
 configTypes.push({type: getType<Carifai.MakePredictions>(), id: 'clarifai', name: 'Carifai', interface: 'MakePredictions'})
@@ -391,6 +395,7 @@ configTypes.push({type: getType<HunterIo.EmailVerification>(), id: 'hunterio', n
 configTypes.push({type: getType<Hybiscus.BuildReport>(), id: 'hybiscus', name: 'Hybiscus', interface: 'BuildReport'})
 configTypes.push({type: getType<Hybiscus.GetReport>(), id: 'hybiscus', name: 'Hybiscus', interface: 'GetReport'})
 configTypes.push({type: getType<Hygraph.ContentApiGraphQl>(), id: 'hygraph', name: 'Hygraph', interface: 'ContentApiGraphQl'})
+configTypes.push({type: getType<Imglab.Api>(), id: 'imglab', name: 'Imglab', interface: 'Api'})
 configTypes.push({type: getType<IncidentIo.ListIncidents>(), id: 'incidentio', name: 'IncidentIo', interface: 'ListIncidents'})
 configTypes.push({type: getType<Jira.GetIssue>(), id: 'jira', name: 'Jira', interface: 'GetIssue'})
 configTypes.push({type: getType<Jira.SearchIssues>(), id: 'jira', name: 'Jira', interface: 'SearchIssues'})

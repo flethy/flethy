@@ -1,4 +1,23 @@
-import { Box, Container, Flex, Image, Stack, Text } from '@chakra-ui/react'
+import {
+	Box,
+	Container,
+	Flex,
+	Image,
+	Link,
+	Stack,
+	Table,
+	TableCaption,
+	TableContainer,
+	Tag,
+	Tbody,
+	Td,
+	Text,
+	Tfoot,
+	Th,
+	Thead,
+	Tr,
+	useColorModeValue,
+} from '@chakra-ui/react'
 import { observer } from 'mobx-react-lite'
 import { useTranslation } from 'react-i18next'
 import FancyHeading from '../../components/molecules/fancy-heading/FancyHeading'
@@ -11,6 +30,7 @@ export default observer(() => {
 			pages: { integration: page },
 		},
 	} = useMst()
+	const bg = useColorModeValue('gray.200', 'gray.700')
 
 	let content = (
 		<FancyHeading textA={`${page.id} not available`} textB={`Sorry!`} />
@@ -20,7 +40,10 @@ export default observer(() => {
 		content = (
 			<Container>
 				<Stack gap={6} direction={{ base: 'column', md: 'row' }}>
-					<FancyHeading textA={page.get()?.name ?? ''} textB={`...`} />
+					<FancyHeading
+						textA={page.get()?.name ?? ''}
+						textB={t('pages.integration.subtitle')}
+					/>
 					<Flex
 						flex={1}
 						justify={'center'}
@@ -32,12 +55,13 @@ export default observer(() => {
 							position={'relative'}
 							bgColor={page.get()?.light ? '#1A202C' : 'white'}
 							// height={'300px'}
-							rounded={'2xl'}
+							rounded={4}
 							boxShadow={'2xl'}
-							width={'full'}
+							width={'70px'}
 							overflow={'hidden'}
 						>
 							<Image
+								p={2}
 								alt={page.get()?.id}
 								fit={'cover'}
 								align={'center'}
@@ -48,14 +72,79 @@ export default observer(() => {
 						</Box>
 					</Flex>
 				</Stack>
-				<Stack>
-					<Stack direction={'column'}>
-						{page.get()?.interfaces.map((serviceInterface: any) => (
-							<Box key={serviceInterface}>
-								<Text>{serviceInterface}</Text>
-							</Box>
+				<Stack mt={5}>
+					<Flex
+						flex={1}
+						justify={'center'}
+						align={'center'}
+						position={'relative'}
+						w={'full'}
+					>
+						{page.urls().map((url) => (
+							<Link
+								key={url.labelId}
+								px={2}
+								py={2}
+								rounded={'md'}
+								href={url.url}
+								target={'_blank'}
+								_hover={{
+									textDecoration: 'none',
+									bg,
+								}}
+							>
+								{t(url.labelId)}
+							</Link>
 						))}
-					</Stack>
+					</Flex>
+					<Flex
+						flex={1}
+						justify={'center'}
+						align={'center'}
+						position={'relative'}
+						w={'full'}
+					>
+						{page.get()?.auth.map((auth) => (
+							<Tag key={auth.replaceAll(':', '.')} px={2} py={2} mx={1}>
+								{t(auth)}
+							</Tag>
+						))}
+					</Flex>
+					<TableContainer>
+						<Table variant="simple" size="sm" my={5}>
+							<Thead>
+								<Tr>
+									<Th>{t('pages.integration.endpoints.title')}</Th>
+									<Th>{t('pages.integration.endpoints.docs')}</Th>
+									<Th>{t('pages.integration.endpoints.method')}</Th>
+								</Tr>
+							</Thead>
+							<Tbody>
+								{page.get()?.endpoints.map((endpoint) => (
+									<Tr key={endpoint.id}>
+										<Td>{endpoint.title}</Td>
+										<Td>
+											<Tag p={2}>
+												<Link href={endpoint.docs} target={'_blank'}>
+													{t('pages.integration.endpoints.docslabel')}
+												</Link>
+											</Tag>
+										</Td>
+										<Td>
+											<Tag p={2}>{endpoint.method}</Tag>
+										</Td>
+									</Tr>
+								))}
+							</Tbody>
+							<Tfoot>
+								<Tr>
+									<Th>{t('pages.integration.endpoints.title')}</Th>
+									<Th>{t('pages.integration.endpoints.docs')}</Th>
+									<Th>{t('pages.integration.endpoints.method')}</Th>
+								</Tr>
+							</Tfoot>
+						</Table>
+					</TableContainer>
 				</Stack>
 			</Container>
 		)

@@ -4,6 +4,10 @@
 	"navbar": {
 		"home": "Home"
 	},
+	"footer": {
+		"pitchdeck": "Pitch Deck",
+		"allRightsReserved": " flethy. All rights reserved"
+	},
 	"home": {
 		"stayTuned": "Subscribe for updates!",
 		"integrations": "Integrations!"
@@ -50,6 +54,24 @@
 					"heading2": "to get the latest news."
 				}
 			}
+		},
+		"integration": {
+			"subtitle": "Endpoints",
+			"url": "Website",
+			"docs": "Documentation",
+			"signup": "Signup",
+			"pricing": "Pricing",
+			"endpoints": {
+				"title": "Endpoint",
+				"description": "Description",
+				"docs": "Docs",
+				"docslabel": "URL",
+				"method": "Method"
+			}
+		},
+		"pitchdeck": {
+			"title": "Pitch Deck",
+			"subtitle": ":)"
 		}
 	}
 }

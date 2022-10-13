@@ -120,6 +120,7 @@ export type DATA_TYPE =
   | 'image-provider'
   | 'brands'
   | 'geo'
+  | 'carbon-emmisions'
 export type CLOUD_TYPE = 'services'
 export type SEARCH_TYPE = 'serp'
 export type NETWORK_TYPE = 'cdn'

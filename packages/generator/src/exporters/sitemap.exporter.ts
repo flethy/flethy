@@ -31,6 +31,10 @@ export class SitemapExporter {
   <url>
     <loc>https://flethy.com/integrations</loc>
     <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://flethy.com/pitch</loc>
+    <priority>0.6</priority>
   </url>`,
     ]
     ids.forEach((id) => {

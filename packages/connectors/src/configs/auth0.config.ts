@@ -11,6 +11,7 @@ export namespace Auth0 {
     users: any
     usersByEmail: any
     connections: any
+    roles: any
   }
   export type Endpoint =
     | { accesstoken: ApiDescriptionEndpoint }
@@ -98,6 +99,14 @@ export namespace Auth0 {
   export interface DeleteUser extends ManagementApiBase, RequestParams {
     kind: 'auth0.users.delete'
     'param:userId': string
+  }
+
+  export interface GetRoles extends ManagementApiBase, RequestParams {
+    kind: 'auth0.roles.get'
+    'param:per_page'?: number
+    'param:page'?: number
+    'param:include_totals'?: boolean
+    'param:name_filter'?: string
   }
 
   const ManagementApiAuth: { [key: string]: ApiDescriptionAuth } = {
@@ -303,6 +312,33 @@ export namespace Auth0 {
             },
             {
               name: 'connections',
+              type: 'static',
+            },
+          ],
+        },
+      },
+      roles: {
+        get: {
+          interface: 'GetRoles',
+          meta: {
+            title: 'Get roles',
+            description:
+              'Retrieve filtered list of roles that can be assigned to users.',
+            docs: 'https://auth0.com/docs/api/management/v2#!/Roles/get_roles',
+          },
+          auth: ManagementApiAuth,
+          method: 'GET',
+          paths: [
+            {
+              name: 'api',
+              type: 'static',
+            },
+            {
+              name: 'v2',
+              type: 'static',
+            },
+            {
+              name: 'roles',
               type: 'static',
             },
           ],

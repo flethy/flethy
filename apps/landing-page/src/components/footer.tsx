@@ -1,32 +1,21 @@
 import {
-	Avatar,
 	Box,
 	Button,
-	Center,
-	Flex,
-	HStack,
-	Menu,
-	MenuButton,
-	MenuDivider,
-	MenuItem,
-	MenuList,
+	Container,
+	Link,
 	Stack,
+	Text,
 	useColorMode,
 	useColorModeValue,
-	Text,
-	Container,
 	VisuallyHidden,
 } from '@chakra-ui/react'
 import { observer } from 'mobx-react-lite'
-import { Link } from 'mobx-router'
+import { ReactNode } from 'react'
+import { useTranslation } from 'react-i18next'
+import { FaTwitter } from 'react-icons/fa'
+import { EXTERNAL_LINKS } from '../constants/externallinks.const'
 import { useMst } from '../models/root'
 import routes from '../routes'
-import { useTranslation } from 'react-i18next'
-import { ReactNode } from 'react'
-import { MoonIcon, SunIcon } from '@chakra-ui/icons'
-import Logo from './Logo'
-import { FaTwitter, FaYoutube, FaInstagram } from 'react-icons/fa'
-import { EXTERNAL_LINKS } from '../constants/externallinks.const'
 
 const SocialButton = ({
 	children,
@@ -84,7 +73,25 @@ export default observer(() => {
 					justify={{ md: 'space-between' }}
 					align={{ md: 'center' }}
 				>
-					<Text>© {new Date().getFullYear()} flethy. All rights reserved</Text>
+					<Text>
+						© {new Date().getFullYear()}
+						{t('footer.allRightsReserved')}
+					</Text>
+					<Link
+						px={2}
+						py={1}
+						rounded={'md'}
+						href="#"
+						_hover={{
+							textDecoration: 'none',
+							bg: useColorModeValue('gray.200', 'gray.700'),
+						}}
+						onClick={() => {
+							router.goTo(routes.pitch)
+						}}
+					>
+						{t('footer.pitchdeck')}
+					</Link>
 					<Stack direction={'row'} spacing={6}>
 						<SocialButton label={'Twitter'} href={EXTERNAL_LINKS.TWITTER}>
 							<FaTwitter />
