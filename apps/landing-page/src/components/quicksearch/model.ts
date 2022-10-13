@@ -51,6 +51,12 @@ export const QuickSearchComponent = types
 					action: () => getRouter().goTo(routes.home),
 				})
 				this.addAction({
+					id: 'navigatePitchDeck',
+					title: 'Pitch Deck',
+					subtitle: 'Show the Pitch Deck',
+					action: () => getRouter().goTo(routes.pitch),
+				})
+				this.addAction({
 					id: 'navigateIntegrations',
 					title: 'Integrations',
 					subtitle: 'See all Integrations',

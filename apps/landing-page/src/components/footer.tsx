@@ -73,7 +73,10 @@ export default observer(() => {
 					justify={{ md: 'space-between' }}
 					align={{ md: 'center' }}
 				>
-					<Text>© {new Date().getFullYear()} flethy. All rights reserved</Text>
+					<Text>
+						© {new Date().getFullYear()}
+						{t('footer.allRightsReserved')}
+					</Text>
 					<Link
 						px={2}
 						py={1}

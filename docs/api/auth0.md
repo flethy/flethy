@@ -90,3 +90,16 @@
 
 * Description: Retrieves every connection matching the specified strategy. All connections are retrieved if no strategy is being specified. Accepts a list of fields to include or exclude in the resulting list of connection objects.
 * Docs: [https://auth0.com/docs/api/management/v2#!/Connections/get_connections](https://auth0.com/docs/api/management/v2#!/Connections/get_connections)
+
+### roles
+
+#### get
+
+##### Authentication
+
+* Authorization: header:bearer
+
+##### Get roles
+
+* Description: Retrieve filtered list of roles that can be assigned to users.
+* Docs: [https://auth0.com/docs/api/management/v2#!/Roles/get_roles](https://auth0.com/docs/api/management/v2#!/Roles/get_roles)

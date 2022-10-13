@@ -1,10 +1,10 @@
 import { Route } from 'mobx-router'
-import { EXTERNAL_LINKS } from './constants/externallinks.const'
 import { RootStore } from './models/root'
 import NotFoundPage from './pages/404/page'
 import HomePage from './pages/home/page'
 import IntegrationPage from './pages/integration/page'
 import IntegrationsPage from './pages/integrations/page'
+import PitchDeckPage from './pages/pitchdeck/page'
 import VerificationPage from './pages/verification/page'
 
 export default {
@@ -18,10 +18,7 @@ export default {
 
 	pitch: new Route<RootStore>({
 		path: '/pitch',
-		component: <HomePage />,
-		onEnter(_route, _parameters, { root: { pages } }) {
-			window.location.href = EXTERNAL_LINKS.PITCHDECK
-		},
+		component: <PitchDeckPage />,
 	}),
 
 	verification: new Route<RootStore>({

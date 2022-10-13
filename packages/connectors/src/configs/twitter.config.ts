@@ -65,6 +65,8 @@ export namespace Twitter {
       name: 'Twitter',
       url: 'https://twitter.com',
       docs: 'https://developer.twitter.com/en/docs/twitter-api',
+      signup: 'https://twitter.com/i/flow/signup',
+      pricing: 'https://developer.twitter.com/en/pricing/search-30day',
       tags: ['web2'],
       category: 'marketing',
       type: 'socialmedia',
