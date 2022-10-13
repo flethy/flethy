@@ -4,6 +4,9 @@
 	"navbar": {
 		"home": "Home"
 	},
+	"footer": {
+		"pitchdeck": "Pitch Deck"
+	},
 	"home": {
 		"stayTuned": "Subscribe for updates!",
 		"integrations": "Integrations!"

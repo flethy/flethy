@@ -176,6 +176,8 @@ import Sheety from '@flethy/connectors/src/configs/sheety.config'
 import Twitter from '@flethy/connectors/src/configs/twitter.config'
 import { HttpRequest } from './controllers/HttpRequest'
 import { logger } from './utils/Logger'
+import CarbEngage from '@flethy/connectors/src/configs/carbengage.config'
+import Imglab from '@flethy/connectors/src/configs/imglab.config'
 
 async function main() {
   const requestConfigs: {
@@ -2469,8 +2471,20 @@ async function main() {
       'body:screen_width': 1920,
       'body:screen_height': 1080,
     }),
+    carbengage: nao<CarbEngage.Info>({
+      kind: 'carbengage.core.info',
+      'auth:x-api-key': process.env.CARBENGAGE_API_KEY,
+      'query:id': 5645,
+    }),
+    imglab: nao<Imglab.Api>({
+      kind: 'imglab.core.api',
+      'subdomain:appSource': 'flethy',
+      'param:image': 'og.png',
+      'query:width': 200,
+      'query:dpr': 2,
+    }),
   }
-  const requestConfig = requestConfigs.pirschSendEvent
+  const requestConfig = requestConfigs.imglab
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

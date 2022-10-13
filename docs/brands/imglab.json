@@ -1,0 +1,38 @@
+{
+  "name": "imglab",
+  "domain": "imglab.io",
+  "claimed": false,
+  "description": null,
+  "links": [],
+  "logos": [
+    {
+      "type": "logo",
+      "theme": null,
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/id95-wPe-O/id7We_wYxF.png",
+          "background": null,
+          "format": "png",
+          "height": 530,
+          "width": 800,
+          "size": 306570
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#2563eb", "type": "accent", "brightness": 96 },
+    { "hex": "#111827", "type": "dark", "brightness": 24 },
+    { "hex": "#ffffff", "type": "light", "brightness": 255 }
+  ],
+  "fonts": [
+    {
+      "name": "system-ui",
+      "type": "body",
+      "origin": "system",
+      "originId": "system-ui",
+      "weights": []
+    }
+  ],
+  "images": []
+}

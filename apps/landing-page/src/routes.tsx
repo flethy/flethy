@@ -1,4 +1,5 @@
 import { Route } from 'mobx-router'
+import { EXTERNAL_LINKS } from './constants/externallinks.const'
 import { RootStore } from './models/root'
 import NotFoundPage from './pages/404/page'
 import HomePage from './pages/home/page'
@@ -12,6 +13,14 @@ export default {
 		component: <HomePage />,
 		onEnter(_route, _parameters, { root: { pages } }) {
 			pages.home.initialisePage()
+		},
+	}),
+
+	pitch: new Route<RootStore>({
+		path: '/pitch',
+		component: <HomePage />,
+		onEnter(_route, _parameters, { root: { pages } }) {
+			window.location.href = EXTERNAL_LINKS.PITCHDECK
 		},
 	}),
 

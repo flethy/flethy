@@ -1,0 +1,45 @@
+{
+  "name": "CarbEngage",
+  "domain": "carbengage.com",
+  "claimed": false,
+  "description": "CO2e data sharing made easy",
+  "links": [],
+  "logos": [
+    {
+      "type": "logo",
+      "theme": null,
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/ids2HlF4rw/idbQmiJPtK.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 221,
+          "width": 872,
+          "size": 17982
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#242f9b", "type": "accent", "brightness": 52 },
+    { "hex": "#373b3e", "type": "dark", "brightness": 58 },
+    { "hex": "#9ba3eb", "type": "light", "brightness": 166 }
+  ],
+  "fonts": [
+    {
+      "name": "PT Sans",
+      "type": "title",
+      "origin": "google",
+      "originId": "PT+Sans",
+      "weights": []
+    },
+    {
+      "name": "-apple-system",
+      "type": "body",
+      "origin": "system",
+      "originId": null,
+      "weights": []
+    }
+  ],
+  "images": []
+}
