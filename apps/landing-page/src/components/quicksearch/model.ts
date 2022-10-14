@@ -8,7 +8,7 @@ interface QuickSearchAction {
 	id: string
 	title: string
 	subtitle?: string
-	tag?: string
+	tags?: string[]
 	icon?: string
 	action: () => {}
 }
@@ -119,10 +119,16 @@ export const QuickSearchComponent = types
 			}
 
 			ACTIONS.forEach((action) => {
+				const actionTitle = action.title.toLowerCase()
+				const actionSubtitle = action.subtitle?.toLowerCase()
+				const searchTermLowerCase = searchTerm.toLowerCase()
 				if (
-					action.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-					(action.subtitle &&
-						action.subtitle.toLowerCase().includes(searchTerm.toLowerCase()))
+					actionTitle.includes(searchTermLowerCase) ||
+					(actionSubtitle && actionSubtitle.includes(searchTermLowerCase)) ||
+					(action.tags &&
+						action.tags.some((tag) =>
+							tag.toLowerCase().includes(searchTermLowerCase),
+						))
 				) {
 					self.searchResults.push(action.id)
 				}

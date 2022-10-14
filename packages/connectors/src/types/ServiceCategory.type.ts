@@ -84,6 +84,7 @@ export type MARKETING_TYPE =
   | 'media'
   | 'blogging'
   | 'seo'
+  | 'forms'
 export type AUTOMATION_TYPE = 'workflows' | 'decisions'
 export type UTILS_TYPE =
   | 'emailverification'
@@ -133,6 +134,7 @@ export type INFRA_TYPE =
   | 'serverless'
   | 'secret-management'
   | 'incident-management'
+  | 'streaming'
 export type MACHINE_LEARNING_TYPE = 'platform'
 export type COMMUNITY_TYPE = 'user-feedback'
 export type BUSINESS_TYPE = 'subscription-analytics'

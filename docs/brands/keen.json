@@ -1,0 +1,83 @@
+{
+  "name": "Keen",
+  "domain": "keen.io",
+  "claimed": false,
+  "description": "Keen is the embedded analytics API that makes shipping custom user-facing analytics easy and seamless.",
+  "links": [
+    {
+      "name": "youtube",
+      "url": "https://youtube.com/channel/UCpoSL4ZSILD3VdyBhXAaWhQ"
+    },
+    { "name": "github", "url": "https://github.com/keen" },
+    { "name": "twitter", "url": "https://twitter.com/keen_io" },
+    { "name": "instagram", "url": "https://instagram.com/keen_io" },
+    { "name": "linkedin", "url": "https://linkedin.com/company/keen-io" },
+    { "name": "facebook", "url": "https://facebook.com/Keen.io" }
+  ],
+  "logos": [
+    {
+      "type": "icon",
+      "theme": null,
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idB2uUnI2n/idr-t7A4LD.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 400,
+          "width": 400,
+          "size": 29488
+        }
+      ]
+    },
+    {
+      "type": "logo",
+      "theme": null,
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idB2uUnI2n/idn09M0gHi.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 200,
+          "width": 714,
+          "size": 27010
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#16313e", "type": "dark", "brightness": 44 },
+    { "hex": "#ffffff", "type": "light", "brightness": 255 },
+    { "hex": "#20b4e5", "type": "accent", "brightness": 152 }
+  ],
+  "fonts": [
+    {
+      "name": "GangsterGrotesk",
+      "type": "title",
+      "origin": "custom",
+      "originId": null,
+      "weights": []
+    },
+    {
+      "name": "Lato",
+      "type": "body",
+      "origin": "google",
+      "originId": "Lato",
+      "weights": []
+    }
+  ],
+  "images": [
+    {
+      "type": "banner",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idB2uUnI2n/id-KaacVeO.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 500,
+          "width": 1500,
+          "size": 47073
+        }
+      ]
+    }
+  ]
+}

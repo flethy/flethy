@@ -1,0 +1,31 @@
+# Keen
+
+## Links
+
+* URL: [https://keen.io/](https://keen.io/)
+* Documentation: [https://keen.io/docs/api/](https://keen.io/docs/api/)
+* Tags: web2
+* Category: infra
+* Type: streaming
+
+## API
+
+### Authentication
+
+* Authorization: header
+
+### events
+
+#### recordSingleEvent
+
+##### HTTP Record a single event
+
+* Description: HTTP Record a single event
+* Docs: [https://keen.io/docs/api/?shell#http-record-a-single-event](https://keen.io/docs/api/?shell#http-record-a-single-event)
+
+#### recordMultipleEvents
+
+##### HTTP Record multiple events
+
+* Description: HTTP Record multiple events
+* Docs: [https://keen.io/docs/api/?shell#http-record-multiple-events](https://keen.io/docs/api/?shell#http-record-multiple-events)

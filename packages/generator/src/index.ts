@@ -166,18 +166,20 @@ import { nao } from '../../connectors/src/utils/Request.utils'
 // import { nao } from '@flethy/connectors'
 import APIPoint from '@flethy/connectors/src/configs/apipoint.config'
 import ButtondownEmail from '@flethy/connectors/src/configs/buttondownemail.config'
+import CarbEngage from '@flethy/connectors/src/configs/carbengage.config'
 import Deepgram from '@flethy/connectors/src/configs/deepgram.config'
 import Flatfile from '@flethy/connectors/src/configs/flatfile.config'
 import GitLab from '@flethy/connectors/src/configs/gitlab.config'
+import Imglab from '@flethy/connectors/src/configs/imglab.config'
+import Keen from '@flethy/connectors/src/configs/keen.config'
 import Luabase from '@flethy/connectors/src/configs/luabase.config'
 import Pirsch from '@flethy/connectors/src/configs/pirsch.config'
 import Rye from '@flethy/connectors/src/configs/rye.config'
 import Sheety from '@flethy/connectors/src/configs/sheety.config'
 import Twitter from '@flethy/connectors/src/configs/twitter.config'
+import Vantevo from '@flethy/connectors/src/configs/vantevo.config'
 import { HttpRequest } from './controllers/HttpRequest'
 import { logger } from './utils/Logger'
-import CarbEngage from '@flethy/connectors/src/configs/carbengage.config'
-import Imglab from '@flethy/connectors/src/configs/imglab.config'
 
 async function main() {
   const requestConfigs: {
@@ -2483,8 +2485,31 @@ async function main() {
       'query:width': 200,
       'query:dpr': 2,
     }),
+    vantevoSendEvent: nao<Vantevo.SendEvent>({
+      kind: 'vantevo.event.send',
+      'body:event': 'pageview',
+      'body:url': 'https://flethy.com',
+      'header:User-Agent': 'flethy user agent',
+      'header:X-Forwarded-For': '123.456.789.0',
+    }),
+    keenSingleRecord: nao<Keen.RecordASingleEvent>({
+      kind: 'keen.events.recordSingleEvent',
+      'body:body': { flethy: 'hi' },
+      'auth:Authorization': process.env.KEEN_MASTER_KEY,
+      'param:projectId': process.env.KEEN_PROJECT_ID,
+      'param:collectionName': 'signups',
+    }),
+    keenMultipleRecords: nao<Keen.RecordMultipleEvents>({
+      kind: 'keen.events.recordMultipleEvents',
+      'body:body': {
+        signups: [{ flethy: 'hi1' }],
+        purchases: [{ flethy: 'hi2' }],
+      },
+      'auth:Authorization': process.env.KEEN_MASTER_KEY,
+      'param:projectId': process.env.KEEN_PROJECT_ID,
+    }),
   }
-  const requestConfig = requestConfigs.imglab
+  const requestConfig = requestConfigs.keenMultipleRecords
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

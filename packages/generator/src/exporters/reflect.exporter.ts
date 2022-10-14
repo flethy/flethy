@@ -88,6 +88,7 @@ import { Hygraph } from '../../../connectors/src/configs/hygraph.config'
 import { Imglab } from '../../../connectors/src/configs/imglab.config'
 import { IncidentIo } from '../../../connectors/src/configs/incidentio.config'
 import { Jira } from '../../../connectors/src/configs/jira.config'
+import { Keen } from '../../../connectors/src/configs/keen.config'
 import { Klaviyo } from '../../../connectors/src/configs/klaviyo.config'
 import { Lecto } from '../../../connectors/src/configs/lecto.config'
 import { Linear } from '../../../connectors/src/configs/linear.config'
@@ -175,6 +176,7 @@ import { Up42 } from '../../../connectors/src/configs/up42.config'
 import { UptimeRobot } from '../../../connectors/src/configs/uptimerobot.config'
 import { UrlScan } from '../../../connectors/src/configs/urlscan.config'
 import { UsePlunk } from '../../../connectors/src/configs/useplunk.config'
+import { Vantevo } from '../../../connectors/src/configs/vantevo.config'
 import { Web3Storage } from '../../../connectors/src/configs/web3storage.config'
 import { WhoIsXMLApi } from '../../../connectors/src/configs/whoisxmlapi.config'
 import { WordSimi } from '../../../connectors/src/configs/wordsimi.config'
@@ -400,6 +402,8 @@ configTypes.push({type: getType<IncidentIo.ListIncidents>(), id: 'incidentio', n
 configTypes.push({type: getType<Jira.GetIssue>(), id: 'jira', name: 'Jira', interface: 'GetIssue'})
 configTypes.push({type: getType<Jira.SearchIssues>(), id: 'jira', name: 'Jira', interface: 'SearchIssues'})
 configTypes.push({type: getType<Jira.CreateIssue>(), id: 'jira', name: 'Jira', interface: 'CreateIssue'})
+configTypes.push({type: getType<Keen.RecordASingleEvent>(), id: 'keen', name: 'Keen', interface: 'RecordASingleEvent'})
+configTypes.push({type: getType<Keen.RecordMultipleEvents>(), id: 'keen', name: 'Keen', interface: 'RecordMultipleEvents'})
 configTypes.push({type: getType<Klaviyo.TrackProfileActivity>(), id: 'klaviyo', name: 'Klaviyo', interface: 'TrackProfileActivity'})
 configTypes.push({type: getType<Klaviyo.IdentifyProfile>(), id: 'klaviyo', name: 'Klaviyo', interface: 'IdentifyProfile'})
 configTypes.push({type: getType<Klaviyo.GetProfileId>(), id: 'klaviyo', name: 'Klaviyo', interface: 'GetProfileId'})
@@ -572,6 +576,9 @@ configTypes.push({type: getType<UrlScan.Submission>(), id: 'urlscan', name: 'Url
 configTypes.push({type: getType<UrlScan.Result>(), id: 'urlscan', name: 'UrlScan', interface: 'Result'})
 configTypes.push({type: getType<UrlScan.Search>(), id: 'urlscan', name: 'UrlScan', interface: 'Search'})
 configTypes.push({type: getType<UsePlunk.PostEvent>(), id: 'useplunk', name: 'UsePlunk', interface: 'PostEvent'})
+configTypes.push({type: getType<Vantevo.SendEvent>(), id: 'vantevo', name: 'Vantevo', interface: 'SendEvent'})
+configTypes.push({type: getType<Vantevo.GetStatistics>(), id: 'vantevo', name: 'Vantevo', interface: 'GetStatistics'})
+configTypes.push({type: getType<Vantevo.GetEventStatistics>(), id: 'vantevo', name: 'Vantevo', interface: 'GetEventStatistics'})
 configTypes.push({type: getType<Web3Storage.UploadContent>(), id: 'web3storage', name: 'Web3Storage', interface: 'UploadContent'})
 configTypes.push({type: getType<WhoIsXMLApi.DomainAvailability>(), id: 'whoisxmlapi', name: 'WhoIsXMLApi', interface: 'DomainAvailability'})
 configTypes.push({type: getType<WordSimi.MostSimilarWords>(), id: 'wordsimi', name: 'WordSimi', interface: 'MostSimilarWords'})
