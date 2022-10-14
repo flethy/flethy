@@ -1,0 +1,40 @@
+# Vantevo
+
+## Links
+
+* URL: [https://vantevo.io/](https://vantevo.io/)
+* Documentation: [https://vantevo.io/docs/api-sdk/api-event](https://vantevo.io/docs/api-sdk/api-event)
+* Tags: web2
+* Category: analytics
+* Type: webinsights
+
+## API
+
+### Authentication
+
+* Authorization: header:bearer
+
+### event
+
+#### send
+
+##### API Event
+
+* Description: Record a pageview or custom event.
+* Docs: [https://vantevo.io/docs/api-sdk/api-event](https://vantevo.io/docs/api-sdk/api-event)
+
+### statistics
+
+#### get
+
+##### Statistics
+
+* Description: With this request you get: number of unique visitors, number of visited pages, bounce frequency, sessions and the average duration of the current and previous period, it helps you to make the comparison between the 2 periods.
+* Docs: [https://vantevo.io/docs/api-sdk/api-statistics](https://vantevo.io/docs/api-sdk/api-statistics)
+
+#### events
+
+##### Statistics
+
+* Description: With this request you get: number of unique visitors, number of unique events, total events and total visitors of the current and previous period, it helps you to make the comparison between the 2 periods.
+* Docs: [https://vantevo.io/docs/api-sdk/api-statistics](https://vantevo.io/docs/api-sdk/api-statistics)

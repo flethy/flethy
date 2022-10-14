@@ -1,0 +1,70 @@
+{
+  "name": "Vantevo Analytics",
+  "domain": "vantevo.io",
+  "claimed": false,
+  "description": "Website analytics tool, monitors visitors and keeps track of conversions. GDPR compliant and without banner cookies and consent.",
+  "links": [
+    { "name": "twitter", "url": "https://twitter.com/VantevoHQ" },
+    { "name": "facebook", "url": "https://facebook.com/VantevoAnalytics" },
+    { "name": "instagram", "url": "https://instagram.com/vantevoanalytics" }
+  ],
+  "logos": [
+    {
+      "type": "logo",
+      "theme": null,
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idkgh0pOmT/idjtw7d7SS.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 241,
+          "width": 766,
+          "size": 29907
+        }
+      ]
+    },
+    {
+      "type": "icon",
+      "theme": null,
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idkgh0pOmT/idvVzHfBa1.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 400,
+          "width": 400,
+          "size": 19117
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#ef49d7", "type": "accent", "brightness": 119 },
+    { "hex": "#000000", "type": "dark", "brightness": 0 },
+    { "hex": "#8a9af9", "type": "light", "brightness": 157 }
+  ],
+  "fonts": [
+    {
+      "name": "Rubik",
+      "type": "body",
+      "origin": "google",
+      "originId": "Rubik",
+      "weights": []
+    }
+  ],
+  "images": [
+    {
+      "type": "banner",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idkgh0pOmT/idceRF9yMe.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 500,
+          "width": 1500,
+          "size": 50806
+        }
+      ]
+    }
+  ]
+}

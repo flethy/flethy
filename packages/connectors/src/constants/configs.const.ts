@@ -88,6 +88,7 @@ import { Hygraph } from '../configs/hygraph.config'
 import { Imglab } from '../configs/imglab.config'
 import { IncidentIo } from '../configs/incidentio.config'
 import { Jira } from '../configs/jira.config'
+import { Keen } from '../configs/keen.config'
 import { Klaviyo } from '../configs/klaviyo.config'
 import { Lecto } from '../configs/lecto.config'
 import { Linear } from '../configs/linear.config'
@@ -175,6 +176,7 @@ import { Up42 } from '../configs/up42.config'
 import { UptimeRobot } from '../configs/uptimerobot.config'
 import { UrlScan } from '../configs/urlscan.config'
 import { UsePlunk } from '../configs/useplunk.config'
+import { Vantevo } from '../configs/vantevo.config'
 import { Web3Storage } from '../configs/web3storage.config'
 import { WhoIsXMLApi } from '../configs/whoisxmlapi.config'
 import { WordSimi } from '../configs/wordsimi.config'
@@ -272,6 +274,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['imglab', Imglab.API],
 ['incidentio', IncidentIo.API],
 ['jira', Jira.API],
+['keen', Keen.API],
 ['klaviyo', Klaviyo.API],
 ['lecto', Lecto.API],
 ['linear', Linear.API],
@@ -359,6 +362,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['uptimerobot', UptimeRobot.API],
 ['urlscan', UrlScan.API],
 ['useplunk', UsePlunk.API],
+['vantevo', Vantevo.API],
 ['web3storage', Web3Storage.API],
 ['whoisxmlapi', WhoIsXMLApi.API],
 ['wordsimi', WordSimi.API],
