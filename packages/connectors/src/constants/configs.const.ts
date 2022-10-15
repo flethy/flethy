@@ -178,7 +178,7 @@ import { UptimeRobot } from '../configs/uptimerobot.config'
 import { UrlScan } from '../configs/urlscan.config'
 import { UsePlunk } from '../configs/useplunk.config'
 import { Vantevo } from '../configs/vantevo.config'
-import { Vontage } from '../configs/vontage.config'
+import { Vonage } from '../configs/vonage.config'
 import { Web3Storage } from '../configs/web3storage.config'
 import { WhoIsXMLApi } from '../configs/whoisxmlapi.config'
 import { WordSimi } from '../configs/wordsimi.config'
@@ -366,7 +366,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['urlscan', UrlScan.API],
 ['useplunk', UsePlunk.API],
 ['vantevo', Vantevo.API],
-['vontage', Vontage.API],
+['vonage', Vonage.API],
 ['web3storage', Web3Storage.API],
 ['whoisxmlapi', WhoIsXMLApi.API],
 ['wordsimi', WordSimi.API],

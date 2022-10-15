@@ -61,12 +61,14 @@
 			"docs": "Documentation",
 			"signup": "Signup",
 			"pricing": "Pricing",
+			"integratedOn": "Integrated on",
 			"endpoints": {
 				"title": "Endpoint",
 				"description": "Description",
 				"docs": "Docs",
 				"docslabel": "URL",
-				"method": "Method"
+				"method": "Method",
+				"generalDescription": "Overview of all integrated endpoints for this service. If you're missing an endpoint, please let us know!"
 			}
 		},
 		"pitchdeck": {
