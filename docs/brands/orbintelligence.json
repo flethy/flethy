@@ -1,0 +1,21 @@
+{
+  "name": "Orb Intelligence",
+  "domain": "orb-intelligence.com",
+  "claimed": false,
+  "description": "Database of company information for B2B marketing and sales",
+  "links": [
+    { "name": "twitter", "url": "https://twitter.com/orbintelligence" },
+    { "name": "facebook", "url": "https://facebook.com/orbintelligence" },
+    {
+      "name": "linkedin",
+      "url": "https://linkedin.com/company/orb-intelligence"
+    }
+  ],
+  "logos": [],
+  "colors": [
+    { "hex": "#000000", "type": "dark", "brightness": 0 },
+    { "hex": "#ffffff", "type": "light", "brightness": 255 }
+  ],
+  "fonts": [],
+  "images": []
+}

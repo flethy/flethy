@@ -137,6 +137,7 @@ The following Endpoints are currently supported.
 * [OCRSpace](./api/ocrspace.md)
 * [OpenLibrary](./api/openlibrary.md)
 * [OpenWeatherMap](./api/openweathermap.md)
+* [ORBIntelligence](./api/orbintelligence.md)
 * [Ortto](./api/ortto.md)
 * [Ory](./api/ory.md)
 * [PayPal](./api/paypal.md)

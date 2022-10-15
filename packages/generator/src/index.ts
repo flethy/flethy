@@ -180,6 +180,7 @@ import Twitter from '@flethy/connectors/src/configs/twitter.config'
 import Vantevo from '@flethy/connectors/src/configs/vantevo.config'
 import { HttpRequest } from './controllers/HttpRequest'
 import { logger } from './utils/Logger'
+import ORBIntelligence from '@flethy/connectors/src/configs/orbintelligence.config'
 
 async function main() {
   const requestConfigs: {
@@ -2508,8 +2509,14 @@ async function main() {
       'auth:Authorization': process.env.KEEN_MASTER_KEY,
       'param:projectId': process.env.KEEN_PROJECT_ID,
     }),
+    orbIntelligence: nao<ORBIntelligence.Match>({
+      kind: 'orbintelligence.core.match',
+      'auth:api_key': process.env.ORBINTELLIGENCE_API_KEY,
+      'query:name': 'apple',
+      'query:country': 'us',
+    }),
   }
-  const requestConfig = requestConfigs.keenMultipleRecords
+  const requestConfig = requestConfigs.orbIntelligence
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)
