@@ -23,10 +23,9 @@ export class HttpRequestConfig {
 
     let url: string | undefined
     const base = options.endpoint.base ?? options.api.base
-    if (Array.isArray(base) && options.params.baseId) {
-      url = base.find(
-        (currentBase) => currentBase.id === options.params.baseId,
-      )?.url
+    if (Array.isArray(base)) {
+      const baseId = options.params.baseId ?? 'default'
+      url = base.find((currentBase) => currentBase.id === baseId)?.url
     } else if (typeof base === 'string') {
       url = base
     }

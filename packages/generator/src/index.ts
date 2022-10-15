@@ -181,6 +181,7 @@ import Vantevo from '@flethy/connectors/src/configs/vantevo.config'
 import { HttpRequest } from './controllers/HttpRequest'
 import { logger } from './utils/Logger'
 import ORBIntelligence from '@flethy/connectors/src/configs/orbintelligence.config'
+import Vontage from '@flethy/connectors/src/configs/vontage.config'
 
 async function main() {
   const requestConfigs: {
@@ -2515,8 +2516,21 @@ async function main() {
       'query:name': 'apple',
       'query:country': 'us',
     }),
+    vonageMessage: nao<Vontage.SendMessageToChannel>({
+      kind: 'vontage.messages.sendToChannel',
+      baseId: 'messages-sandbox',
+      'auth:Authorization': {
+        username: process.env.VONAGE_API_KEY,
+        password: process.env.VONAGE_API_SECRET,
+      },
+      'body:channel': 'whatsapp',
+      'body:from': '14157386102',
+      'body:to': '14157386103',
+      'body:text': 'Hello from Flethy!',
+      'body:message_type': 'text',
+    }),
   }
-  const requestConfig = requestConfigs.orbIntelligence
+  const requestConfig = requestConfigs.vonageMessage
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)
