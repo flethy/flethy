@@ -178,6 +178,7 @@ import { UptimeRobot } from '../../../connectors/src/configs/uptimerobot.config'
 import { UrlScan } from '../../../connectors/src/configs/urlscan.config'
 import { UsePlunk } from '../../../connectors/src/configs/useplunk.config'
 import { Vantevo } from '../../../connectors/src/configs/vantevo.config'
+import { Vontage } from '../../../connectors/src/configs/vontage.config'
 import { Web3Storage } from '../../../connectors/src/configs/web3storage.config'
 import { WhoIsXMLApi } from '../../../connectors/src/configs/whoisxmlapi.config'
 import { WordSimi } from '../../../connectors/src/configs/wordsimi.config'
@@ -586,6 +587,7 @@ configTypes.push({type: getType<UsePlunk.PostEvent>(), id: 'useplunk', name: 'Us
 configTypes.push({type: getType<Vantevo.SendEvent>(), id: 'vantevo', name: 'Vantevo', interface: 'SendEvent'})
 configTypes.push({type: getType<Vantevo.GetStatistics>(), id: 'vantevo', name: 'Vantevo', interface: 'GetStatistics'})
 configTypes.push({type: getType<Vantevo.GetEventStatistics>(), id: 'vantevo', name: 'Vantevo', interface: 'GetEventStatistics'})
+configTypes.push({type: getType<Vontage.SendMessageToChannel>(), id: 'vontage', name: 'Vontage', interface: 'SendMessageToChannel'})
 configTypes.push({type: getType<Web3Storage.UploadContent>(), id: 'web3storage', name: 'Web3Storage', interface: 'UploadContent'})
 configTypes.push({type: getType<WhoIsXMLApi.DomainAvailability>(), id: 'whoisxmlapi', name: 'WhoIsXMLApi', interface: 'DomainAvailability'})
 configTypes.push({type: getType<WordSimi.MostSimilarWords>(), id: 'wordsimi', name: 'WordSimi', interface: 'MostSimilarWords'})

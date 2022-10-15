@@ -729,6 +729,10 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://flethy.com/integrations/vontage</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://flethy.com/integrations/web3storage</loc>
     <priority>0.8</priority>
   </url>

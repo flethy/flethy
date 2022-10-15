@@ -192,6 +192,7 @@ The following Endpoints are currently supported.
 * [UrlScan](./api/urlscan.md)
 * [UsePlunk](./api/useplunk.md)
 * [Vantevo](./api/vantevo.md)
+* [Vontage](./api/vontage.md)
 * [WhoIsXMLApi](./api/whoisxmlapi.md)
 * [WordSimi](./api/wordsimi.md)
 * [YahooFinance](./api/yahoofinance.md)
