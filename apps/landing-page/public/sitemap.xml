@@ -493,6 +493,10 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://flethy.com/integrations/orbintelligence</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://flethy.com/integrations/ortto</loc>
     <priority>0.8</priority>
   </url>

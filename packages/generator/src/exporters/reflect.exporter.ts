@@ -119,6 +119,7 @@ import { OneInch } from '../../../connectors/src/configs/oneinch.config'
 import { OpenLibrary } from '../../../connectors/src/configs/openlibrary.config'
 import { OpenSea } from '../../../connectors/src/configs/opensea.config'
 import { OpenWeatherMap } from '../../../connectors/src/configs/openweathermap.config'
+import { ORBIntelligence } from '../../../connectors/src/configs/orbintelligence.config'
 import { Ortto } from '../../../connectors/src/configs/ortto.config'
 import { Ory } from '../../../connectors/src/configs/ory.config'
 import { Parsiq } from '../../../connectors/src/configs/parsiq.config'
@@ -469,6 +470,12 @@ configTypes.push({type: getType<OpenSea.GetAssets>(), id: 'opensea', name: 'Open
 configTypes.push({type: getType<OpenSea.GetCollections>(), id: 'opensea', name: 'OpenSea', interface: 'GetCollections'})
 configTypes.push({type: getType<OpenWeatherMap.CurrentAndForecast>(), id: 'openweathermap', name: 'OpenWeatherMap', interface: 'CurrentAndForecast'})
 configTypes.push({type: getType<OpenWeatherMap.Current>(), id: 'openweathermap', name: 'OpenWeatherMap', interface: 'Current'})
+configTypes.push({type: getType<ORBIntelligence.Match>(), id: 'orbintelligence', name: 'ORBIntelligence', interface: 'Match'})
+configTypes.push({type: getType<ORBIntelligence.Fetch>(), id: 'orbintelligence', name: 'ORBIntelligence', interface: 'Fetch'})
+configTypes.push({type: getType<ORBIntelligence.Search>(), id: 'orbintelligence', name: 'ORBIntelligence', interface: 'Search'})
+configTypes.push({type: getType<ORBIntelligence.Lookalike>(), id: 'orbintelligence', name: 'ORBIntelligence', interface: 'Lookalike'})
+configTypes.push({type: getType<ORBIntelligence.CorpTree>(), id: 'orbintelligence', name: 'ORBIntelligence', interface: 'CorpTree'})
+configTypes.push({type: getType<ORBIntelligence.Dictionaries>(), id: 'orbintelligence', name: 'ORBIntelligence', interface: 'Dictionaries'})
 configTypes.push({type: getType<Ortto.RetrieveOneOrMorePeople>(), id: 'ortto', name: 'Ortto', interface: 'RetrieveOneOrMorePeople'})
 configTypes.push({type: getType<Ory.ListOAuth2Clients>(), id: 'ory', name: 'Ory', interface: 'ListOAuth2Clients'})
 configTypes.push({type: getType<Parsiq.GetEvents>(), id: 'parsiq', name: 'Parsiq', interface: 'GetEvents'})

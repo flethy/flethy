@@ -119,6 +119,7 @@ import { OneInch } from '../configs/oneinch.config'
 import { OpenLibrary } from '../configs/openlibrary.config'
 import { OpenSea } from '../configs/opensea.config'
 import { OpenWeatherMap } from '../configs/openweathermap.config'
+import { ORBIntelligence } from '../configs/orbintelligence.config'
 import { Ortto } from '../configs/ortto.config'
 import { Ory } from '../configs/ory.config'
 import { Parsiq } from '../configs/parsiq.config'
@@ -305,6 +306,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['openlibrary', OpenLibrary.API],
 ['opensea', OpenSea.API],
 ['openweathermap', OpenWeatherMap.API],
+['orbintelligence', ORBIntelligence.API],
 ['ortto', Ortto.API],
 ['ory', Ory.API],
 ['parsiq', Parsiq.API],
