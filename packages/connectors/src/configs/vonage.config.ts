@@ -4,7 +4,7 @@ import {
 } from '../types/ApiDescription.type'
 import { RequestParams } from '../types/Request.types'
 
-export namespace Vontage {
+export namespace Vonage {
   export type Entity = { messages: any }
   export type Endpoint = { sendToChannel: ApiDescriptionEndpoint }
 
@@ -23,7 +23,7 @@ export namespace Vontage {
   }
 
   export interface SendMessageToChannel extends VontageBase, RequestParams {
-    kind: 'vontage.messages.sendToChannel'
+    kind: 'vonage.messages.sendToChannel'
     baseId?: BaseId
     'body:message_type':
       | 'text'
@@ -64,8 +64,8 @@ export namespace Vontage {
 
   export const API: ApiDescription<Entity, Endpoint> = {
     meta: {
-      id: 'vontage',
-      name: 'Vontage',
+      id: 'vonage',
+      name: 'Vonage',
       url: 'https://vonage.com/',
       docs: 'https://developer.vonage.com/',
       signup: 'https://ui.idp.vonage.com/ui/auth/registration',
@@ -115,4 +115,4 @@ export namespace Vontage {
   }
 }
 
-export default Vontage
+export default Vonage

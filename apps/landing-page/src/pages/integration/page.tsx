@@ -1,12 +1,12 @@
 import {
 	Box,
+	Center,
 	Container,
 	Flex,
 	Image,
 	Link,
 	Stack,
 	Table,
-	TableCaption,
 	TableContainer,
 	Tag,
 	Tbody,
@@ -21,6 +21,7 @@ import {
 import { observer } from 'mobx-react-lite'
 import { useTranslation } from 'react-i18next'
 import FancyHeading from '../../components/molecules/fancy-heading/FancyHeading'
+import { formatDate } from '../../helpers/ui'
 import { useMst } from '../../models/root'
 
 export default observer(() => {
@@ -72,6 +73,13 @@ export default observer(() => {
 						</Box>
 					</Flex>
 				</Stack>
+				<Center mt={5}>
+					<Text>
+						{`${t('pages.integration.integratedOn')} ${formatDate(
+							page.get()!.meta.integrationDate,
+						)}`}
+					</Text>
+				</Center>
 				<Stack mt={5}>
 					<Flex
 						flex={1}
@@ -110,6 +118,7 @@ export default observer(() => {
 							</Tag>
 						))}
 					</Flex>
+					<Text>{t('pages.integration.endpoints.generalDescription')}</Text>
 					<TableContainer>
 						<Table variant="simple" size="sm" my={5}>
 							<Thead>

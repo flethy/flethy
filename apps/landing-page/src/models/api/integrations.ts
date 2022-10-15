@@ -1,4 +1,5 @@
 import { types } from 'mobx-state-tree'
+import birthdays from '../../../../../docs/meta/birthdays.json'
 import { ConfigUtils } from '../../../../../packages/connectors/src/utils/Config.utils'
 import configTypes from '../../constants/configTypes.json'
 import { INTEGRATIONS } from '../../constants/integrations.const'
@@ -15,6 +16,7 @@ export const Integration = types.model({
 		pricing: types.maybeNull(types.string),
 		category: types.string,
 		type: types.string,
+		integrationDate: types.Date,
 	}),
 	auth: types.array(types.string),
 	logo: types.string,
@@ -53,6 +55,9 @@ export const Integrations = types
 					(configType) => configType.id === integration.id,
 				)
 				const apiConfig = ConfigUtils.getConfigById(integration.id)
+				const integrationDate =
+					birthdays.find((entry) => entry.id === integration.id)?.created
+						.unix ?? new Date('2022-06-01').getTime()
 				if (config && apiConfig) {
 					const { components } = getRootStore(self)
 					self.integrations.set(integration.id, {
@@ -65,6 +70,7 @@ export const Integrations = types
 							pricing: apiConfig.meta.pricing,
 							category: apiConfig.meta.category,
 							type: apiConfig.meta.type,
+							integrationDate: new Date(integrationDate),
 						},
 						auth: getAuthTags(apiConfig),
 						logo: integration.file,
