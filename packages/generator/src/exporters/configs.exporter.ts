@@ -1,6 +1,7 @@
 import * as fs from 'fs'
 import * as path from 'path'
 import metaBirthdays from '../../../../docs/meta/birthdays.json'
+import { ROADMAP, ROADMAP_TAGS } from '../constants/roadmap.const'
 import { logger } from '../utils/Logger'
 import { BrandExporter } from './brand.exporter'
 import { DOCS_BASE } from './docs.exporter'
@@ -130,5 +131,20 @@ export class ConfigsExporter {
     )
     await brandExporter.fetchLogos()
     brandExporter.exportLogosToLandingPage()
+
+    // roadmap
+    const roadmap = ROADMAP
+    birthdays.forEach((birthday) => {
+      roadmap.push({
+        title: `Integrated ${birthday.id}`,
+        description: `New connector for ${birthday.id}`,
+        date: birthday.created.iso,
+        delivered: true,
+        milestone: false,
+        tags: [ROADMAP_TAGS.CONNECTORS],
+        link: `https://flethy.com/integrations/${birthday.id}`,
+      })
+    })
+    fs.writeFileSync(`${DOCS_BASE}/meta/roadmap.json`, JSON.stringify(roadmap))
   }
 }
