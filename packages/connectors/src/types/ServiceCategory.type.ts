@@ -1,4 +1,4 @@
-export type TAG = 'web2' | 'web3' | 'nft'
+export type TAG = 'web2' | 'web3' | 'nft' | string
 export type CATEGORY =
   | 'communication'
   | 'storage'

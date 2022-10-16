@@ -221,11 +221,6 @@ export class HttpRequestConfig {
                   secret: options.params[paramKey].consumerSecret,
                 },
               })
-              const oauthRequest = {
-                url: config.url,
-                method: options.endpoint.method,
-                data: config.body,
-              }
               const oauthInfo = oauthhelper.authorize(
                 {
                   url: config.url,

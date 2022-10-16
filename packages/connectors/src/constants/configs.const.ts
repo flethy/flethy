@@ -80,6 +80,7 @@ import { Harvest } from '../configs/harvest.config'
 import { Hashnode } from '../configs/hashnode.config'
 import { HeapAnalytics } from '../configs/heapanalytics.config'
 import { HelloSign } from '../configs/hellosign.config'
+import { Here } from '../configs/here.config'
 import { HostIo } from '../configs/hostio.config'
 import { Hubspot } from '../configs/hubspot.config'
 import { HunterIo } from '../configs/hunterio.config'
@@ -268,6 +269,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['hashnode', Hashnode.API],
 ['heapanalytics', HeapAnalytics.API],
 ['hellosign', HelloSign.API],
+['here', Here.API],
 ['hostio', HostIo.API],
 ['hubspot', Hubspot.API],
 ['hunterio', HunterIo.API],
