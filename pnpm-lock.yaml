@@ -20,7 +20,7 @@ importers:
       '@chakra-ui/system': ^2.2.12
       '@emotion/react': ^11.10.4
       '@emotion/styled': ^11.10.4
-      '@flethy/connectors': ^0.0.182
+      '@flethy/connectors': 0.0.182
       '@types/node': 18.11.0
       '@types/react': 18.0.21
       '@types/react-dom': 18.0.6
@@ -37,13 +37,13 @@ importers:
       mobx-state-tree: 5.1.6
       mobxtypes: workspace:*
       mst-middlewares: 5.1.6
-      postcss: ^8.4.18
+      postcss: 8.4.18
       prettier: 2.7.1
       react: 18.2.0
       react-dom: 18.2.0
       react-flow-renderer: ^10.3.17
       react-i18next: ^11.18.6
-      react-icons: ^4.6.0
+      react-icons: 4.6.0
       rollup-plugin-analyzer: 4.0.0
       sass: 1.55.0
       shared-types: workspace:*
@@ -97,11 +97,11 @@ importers:
       '@chakra-ui/icons': ^2.0.11
       '@chakra-ui/react': ^2.3.5
       '@chakra-ui/system': ^2.2.12
-      '@cloudflare/workers-types': ^3.17.0
+      '@cloudflare/workers-types': 3.17.0
       '@emotion/react': ^11.10.4
       '@emotion/styled': ^11.10.4
       '@flethy/connectors': workspace:*
-      '@flethy/flow': ^0.0.182
+      '@flethy/flow': ^0.0.172
       '@fontsource/open-sans': ^4.5.13
       '@fontsource/raleway': ^4.5.11
       '@types/node': 18.11.0
@@ -121,12 +121,12 @@ importers:
       mobx-state-tree: 5.1.6
       mobxtypes: workspace:*
       mst-middlewares: 5.1.6
-      postcss: ^8.4.18
+      postcss: 8.4.18
       prettier: 2.7.1
       react: 18.2.0
       react-dom: 18.2.0
       react-i18next: ^11.18.6
-      react-icons: ^4.6.0
+      react-icons: 4.6.0
       react-slick: ^0.29.0
       react-syntax-highlighter: ^15.5.0
       rollup-plugin-analyzer: 4.0.0
@@ -144,7 +144,7 @@ importers:
       '@emotion/react': 11.10.4_bjroym7kxlcs2vvwnej4p3gzwu
       '@emotion/styled': 11.10.4_ogudqqhlstsi7uge4lir7ff3ty
       '@flethy/connectors': link:../../packages/connectors
-      '@flethy/flow': 0.0.182
+      '@flethy/flow': 0.0.172
       '@fontsource/open-sans': 4.5.13
       '@fontsource/raleway': 4.5.11
       framer-motion: 7.5.3_biqbaboplfbrettd7655fr4n2y
@@ -186,7 +186,7 @@ importers:
 
   packages/connectors:
     specifiers:
-      '@types/node': ^18.11.0
+      '@types/node': 18.11.0
       '@typescript-eslint/eslint-plugin': ^5.40.0
       '@typescript-eslint/parser': ^5.40.0
       eslint: ^8.25.0
@@ -222,8 +222,8 @@ importers:
 
   packages/flow:
     specifiers:
-      '@flethy/connectors': ^0.0.182
-      '@types/node': ^18.11.0
+      '@flethy/connectors': 0.0.182
+      '@types/node': 18.11.0
       '@typescript-eslint/eslint-plugin': ^5.40.0
       '@typescript-eslint/parser': ^5.40.0
       axios: 1.1.2
@@ -260,7 +260,7 @@ importers:
       '@flethy/connectors': workspace:*
       '@types/jasmine': ^4.3.0
       '@types/jest': ^29.1.2
-      '@types/node': ^18.11.0
+      '@types/node': 18.11.0
       '@typescript-eslint/eslint-plugin': ^5.40.0
       '@typescript-eslint/parser': ^5.40.0
       axios: 1.1.2
@@ -325,7 +325,7 @@ importers:
       eslint-config-custom: workspace:*
       mobx: 6.6.2
       mobx-state-tree: 5.1.6
-      postcss: ^8.4.18
+      postcss: 8.4.18
       prettier: 2.7.1
       rollup-plugin-analyzer: 4.0.0
       sass: 1.55.0
@@ -362,7 +362,7 @@ importers:
       '@vitejs/plugin-react': 2.1.0
       autoprefixer: ^10.4.12
       eslint-config-custom: workspace:*
-      postcss: ^8.4.18
+      postcss: 8.4.18
       prettier: 2.7.1
       rollup-plugin-analyzer: 4.0.0
       sass: 1.55.0
@@ -1989,18 +1989,18 @@ packages:
     transitivePeerDependencies:
       - supports-color
 
-  /@flethy/connectors/0.0.180:
-    resolution: {integrity: sha512-Xxd/sC+xAeKup1Ku5KGCFl60NWrAGPgzs0GtMeSTe1qTJf0ljLiNr39n89hiOSMaL/rYhW3kWWMsQOIg0BwlXQ==}
+  /@flethy/connectors/0.0.169:
+    resolution: {integrity: sha512-hS/NSW3YEvLGkffcM4LXRNLJo3nOrr1OALtpAg+t3Q/VQF6lwRos7pYzOirf+LdBsaeamX9edn5yUtFC+0SGJA==}
     dev: false
 
   /@flethy/connectors/0.0.182:
     resolution: {integrity: sha512-eiMkqDaXE78urboALBdoKPN5Bj1sBmDdfDYEiOuFdzHmBnfolp1suLzr+0NEn4Rm6jEN497IAsD6jJ4Zn4FvUQ==}
     dev: false
 
-  /@flethy/flow/0.0.182:
-    resolution: {integrity: sha512-g8brj4vaFbHwwJrVyP278FMJk5fWdU+ZFRA4uC/+ERcGze9ew+GdEQBQiwI7oCCnerdjEqXXNKzb1bZhuCSwlA==}
+  /@flethy/flow/0.0.172:
+    resolution: {integrity: sha512-gqsoxEPsqg26WTYHBT4uNmSbz0tEs45BPhJNVxIBQ5Brii4ng/iQXRTM6Kn+jMKLYQMBf/SguWJ9joKaFnOvyQ==}
     dependencies:
-      '@flethy/connectors': 0.0.180
+      '@flethy/connectors': 0.0.169
       axios: 1.1.2
       jsonata: 1.8.6
     transitivePeerDependencies:
