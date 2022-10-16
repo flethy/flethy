@@ -10,7 +10,7 @@ export namespace Vonage {
 
   type BaseId = 'default' | 'messages-sandbox'
 
-  interface VontageBase {
+  interface VonageBase {
     'auth:Authorization': {
       username: string
       password: string
@@ -22,7 +22,7 @@ export namespace Vonage {
     caption?: string
   }
 
-  export interface SendMessageToChannel extends VontageBase, RequestParams {
+  export interface SendMessageToChannel extends VonageBase, RequestParams {
     kind: 'vonage.messages.sendToChannel'
     baseId?: BaseId
     'body:message_type':

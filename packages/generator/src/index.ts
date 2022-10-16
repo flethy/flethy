@@ -181,7 +181,8 @@ import Vantevo from '@flethy/connectors/src/configs/vantevo.config'
 import { HttpRequest } from './controllers/HttpRequest'
 import { logger } from './utils/Logger'
 import ORBIntelligence from '@flethy/connectors/src/configs/orbintelligence.config'
-import Vonage from '@flethy/connectors/src/configs/vontage.config'
+import Vonage from '@flethy/connectors/src/configs/vonage.config'
+import Here from '@flethy/connectors/src/configs/here.config'
 
 async function main() {
   const requestConfigs: {
@@ -2517,7 +2518,7 @@ async function main() {
       'query:country': 'us',
     }),
     vonageMessage: nao<Vonage.SendMessageToChannel>({
-      kind: 'vontage.messages.sendToChannel',
+      kind: 'vonage.messages.sendToChannel',
       baseId: 'messages-sandbox',
       'auth:Authorization': {
         username: process.env.VONAGE_API_KEY,
@@ -2529,8 +2530,21 @@ async function main() {
       'body:text': 'Hello from Flethy!',
       'body:message_type': 'text',
     }),
+    hereRouting: nao<Here.CalculateRouteViaGet>({
+      kind: 'here.routing.calculateViaGet',
+      'auth:apiKey': process.env.HERE_API_KEY,
+      'query:origin': '52.5160,13.3779',
+      'query:destination': '41.385063,2.173404',
+      'query:transportMode': 'car',
+    }),
+    discover: nao<Here.Discover>({
+      kind: 'here.geoCodingSearch.discover',
+      'auth:apiKey': process.env.HERE_API_KEY,
+      'query:q': 'Eismieze Berlin',
+      'query:at': '52.5160,13.3779',
+    }),
   }
-  const requestConfig = requestConfigs.vonageMessage
+  const requestConfig = requestConfigs.discover
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

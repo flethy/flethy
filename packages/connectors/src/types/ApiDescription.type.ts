@@ -92,6 +92,9 @@ export interface ApiDescriptionAuth {
       separator: string
     }
   }
+  options?: {
+    oauth1SignatureMethod?: 'HMAC-SHA1' | 'HMAC-SHA256'
+  }
 }
 
 export interface ApiAuthBasic {

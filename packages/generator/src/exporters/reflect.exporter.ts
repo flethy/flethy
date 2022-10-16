@@ -80,6 +80,7 @@ import { Harvest } from '../../../connectors/src/configs/harvest.config'
 import { Hashnode } from '../../../connectors/src/configs/hashnode.config'
 import { HeapAnalytics } from '../../../connectors/src/configs/heapanalytics.config'
 import { HelloSign } from '../../../connectors/src/configs/hellosign.config'
+import { Here } from '../../../connectors/src/configs/here.config'
 import { HostIo } from '../../../connectors/src/configs/hostio.config'
 import { Hubspot } from '../../../connectors/src/configs/hubspot.config'
 import { HunterIo } from '../../../connectors/src/configs/hunterio.config'
@@ -384,6 +385,9 @@ configTypes.push({type: getType<Hashnode.GraphQLQuery>(), id: 'hashnode', name: 
 configTypes.push({type: getType<HeapAnalytics.ServerSideTrack>(), id: 'heapanalytics', name: 'HeapAnalytics', interface: 'ServerSideTrack'})
 configTypes.push({type: getType<HelloSign.GetAccount>(), id: 'hellosign', name: 'HelloSign', interface: 'GetAccount'})
 configTypes.push({type: getType<HelloSign.SendSignatureRequest>(), id: 'hellosign', name: 'HelloSign', interface: 'SendSignatureRequest'})
+configTypes.push({type: getType<Here.CalculateRouteViaGet>(), id: 'here', name: 'Here', interface: 'CalculateRouteViaGet'})
+configTypes.push({type: getType<Here.Autosuggest>(), id: 'here', name: 'Here', interface: 'Autosuggest'})
+configTypes.push({type: getType<Here.Discover>(), id: 'here', name: 'Here', interface: 'Discover'})
 configTypes.push({type: getType<HostIo.GetDomain>(), id: 'hostio', name: 'HostIo', interface: 'GetDomain'})
 configTypes.push({type: getType<HostIo.GetDns>(), id: 'hostio', name: 'HostIo', interface: 'GetDns'})
 configTypes.push({type: getType<HostIo.GetRelated>(), id: 'hostio', name: 'HostIo', interface: 'GetRelated'})

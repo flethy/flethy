@@ -31,6 +31,7 @@ export interface OAuth1AuthInfo {
 
 export class OAuth1Helper {
   nonceLength = 32
+  oauthSignature: 'HMAC-SHA1' | 'HMAC-SHA256' = 'HMAC-SHA1'
   protected consumerKeys: OAuth1Tokens
 
   constructor(options: OAuth1MakerArgs) {
@@ -47,7 +48,17 @@ export class OAuth1Helper {
   }
 
   protected hash(base: string, key: string) {
-    return crypto.createHmac('sha1', key).update(base).digest('base64')
+    let algorithm = 'sha1'
+    switch (this.oauthSignature) {
+      case 'HMAC-SHA256':
+        algorithm = 'sha256'
+        break
+    }
+    return crypto.createHmac(algorithm, key).update(base).digest('base64')
+  }
+
+  setOauthSignature(signature: 'HMAC-SHA1' | 'HMAC-SHA256') {
+    this.oauthSignature = signature
   }
 
   authorize(
@@ -57,7 +68,7 @@ export class OAuth1Helper {
     const oauthInfo: Partial<OAuth1AuthInfo> = {
       oauth_consumer_key: this.consumerKeys.key,
       oauth_nonce: this.getNonce(),
-      oauth_signature_method: 'HMAC-SHA1',
+      oauth_signature_method: this.oauthSignature,
       oauth_timestamp: this.getTimestamp(),
       oauth_version: '1.0',
     }

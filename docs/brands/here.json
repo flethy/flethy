@@ -1,0 +1,79 @@
+{
+  "name": "HERE Technologies",
+  "domain": "here.com",
+  "claimed": false,
+  "description": "HERE Technologies creates living three-dimensional maps that grow upwards, breathing with layers of information and insights.",
+  "links": [
+    { "name": "youtube", "url": "https://youtube.com/user/heremaps" },
+    { "name": "twitter", "url": "https://twitter.com/HERE" },
+    { "name": "instagram", "url": "https://instagram.com/here" },
+    { "name": "linkedin", "url": "https://linkedin.com/company/3237134" },
+    { "name": "facebook", "url": "https://facebook.com/here" }
+  ],
+  "logos": [
+    {
+      "type": "icon",
+      "theme": null,
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idIzjzw9kA/idC75YUI6m.png",
+          "background": null,
+          "format": "png",
+          "height": 400,
+          "width": 400,
+          "size": 48409
+        }
+      ]
+    },
+    {
+      "type": "logo",
+      "theme": null,
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idIzjzw9kA/idG4_Jhcqn.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 747,
+          "width": 820,
+          "size": 28121
+        },
+        {
+          "src": "https://asset.brandfetch.io/idIzjzw9kA/idoxd_g40n.svg",
+          "background": "transparent",
+          "format": "svg",
+          "height": null,
+          "width": null,
+          "size": 1244
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#1b222c", "type": "dark", "brightness": 33 },
+    { "hex": "#f6f6f6", "type": "light", "brightness": 246 }
+  ],
+  "fonts": [
+    {
+      "name": "FiraGO",
+      "type": "body",
+      "origin": "custom",
+      "originId": null,
+      "weights": []
+    }
+  ],
+  "images": [
+    {
+      "type": "banner",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idIzjzw9kA/idqBUIVlnp.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 500,
+          "width": 1500,
+          "size": 37635
+        }
+      ]
+    }
+  ]
+}
