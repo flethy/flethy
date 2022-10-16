@@ -1,0 +1,85 @@
+{
+  "name": "Revue",
+  "domain": "getrevue.co",
+  "claimed": false,
+  "description": "Revue is a tool that provides users with an easy way to share their curated content with people via email.",
+  "links": [
+    { "name": "twitter", "url": "https://twitter.com/revue" },
+    { "name": "facebook", "url": "https://facebook.com/getrevue" },
+    { "name": "linkedin", "url": "https://linkedin.com/company/revue-co" }
+  ],
+  "logos": [
+    {
+      "type": "icon",
+      "theme": null,
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/id8yESANY4/id1s1m_2fn.png",
+          "background": null,
+          "format": "png",
+          "height": 400,
+          "width": 400,
+          "size": 21785
+        }
+      ]
+    },
+    {
+      "type": "logo",
+      "theme": null,
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/id8yESANY4/id9p2K6NzY.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 332,
+          "width": 820,
+          "size": 35310
+        },
+        {
+          "src": "https://asset.brandfetch.io/id8yESANY4/idI8vqI0P9.svg",
+          "background": "transparent",
+          "format": "svg",
+          "height": null,
+          "width": null,
+          "size": 2330
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#333333", "type": "dark", "brightness": 51 },
+    { "hex": "#ffffff", "type": "light", "brightness": 255 },
+    { "hex": "#e15718", "type": "accent", "brightness": 112 }
+  ],
+  "fonts": [
+    {
+      "name": "Merriweather",
+      "type": "title",
+      "origin": "google",
+      "originId": "Merriweather",
+      "weights": []
+    },
+    {
+      "name": "lato",
+      "type": "body",
+      "origin": "google",
+      "originId": "Lato",
+      "weights": []
+    }
+  ],
+  "images": [
+    {
+      "type": "banner",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/id8yESANY4/id1G81779S.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 500,
+          "width": 1500,
+          "size": 115554
+        }
+      ]
+    }
+  ]
+}
