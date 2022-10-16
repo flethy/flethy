@@ -15,7 +15,7 @@
   "license": "ISC",
   "dependencies": {
     "@flethy/connectors": "workspace:*",
-    "axios": "^1.1.2",
+    "axios": "1.1.2",
     "dotenv": "^16.0.3",
     "node-fetch": "^3.2.10",
     "pino": "^8.6.1",
