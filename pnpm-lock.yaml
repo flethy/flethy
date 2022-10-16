@@ -222,7 +222,7 @@ importers:
 
   packages/flow:
     specifiers:
-      '@flethy/connectors': 0.0.182
+      '@flethy/connectors': 0.0.184
       '@types/node': 18.11.0
       '@typescript-eslint/eslint-plugin': ^5.40.0
       '@typescript-eslint/parser': ^5.40.0
@@ -238,7 +238,7 @@ importers:
       tsconfig: workspace:*
       typescript: ^4.8.4
     dependencies:
-      '@flethy/connectors': 0.0.182
+      '@flethy/connectors': 0.0.184
       axios: 1.1.2
       jsonata: 1.8.6
     devDependencies:
@@ -1995,6 +1995,10 @@ packages:
 
   /@flethy/connectors/0.0.182:
     resolution: {integrity: sha512-eiMkqDaXE78urboALBdoKPN5Bj1sBmDdfDYEiOuFdzHmBnfolp1suLzr+0NEn4Rm6jEN497IAsD6jJ4Zn4FvUQ==}
+    dev: false
+
+  /@flethy/connectors/0.0.184:
+    resolution: {integrity: sha512-dfVBqMFpOTxmczcUTMSG5iA7XPaMSOE68N6Nxl2cy75EXZidHt+Bv9P1YbwapTxsko82sVBVJIdI/IBQluNBFg==}
     dev: false
 
   /@flethy/flow/0.0.172:
