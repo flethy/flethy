@@ -16,7 +16,7 @@
 		"@chakra-ui/system": "^2.2.12",
 		"@emotion/react": "^11.10.4",
 		"@emotion/styled": "^11.10.4",
-		"@flethy/connectors": "^0.0.180",
+		"@flethy/connectors": "^0.0.182",
 		"axios": "1.1.2",
 		"framer-motion": "^7.5.3",
 		"i18next": "^21.10.0",

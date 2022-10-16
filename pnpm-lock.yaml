@@ -20,7 +20,7 @@ importers:
       '@chakra-ui/system': ^2.2.12
       '@emotion/react': ^11.10.4
       '@emotion/styled': ^11.10.4
-      '@flethy/connectors': ^0.0.180
+      '@flethy/connectors': ^0.0.182
       '@types/node': 18.11.0
       '@types/react': 18.0.21
       '@types/react-dom': 18.0.6
@@ -57,7 +57,7 @@ importers:
       '@chakra-ui/system': 2.2.12_hfzxdiydbrbhhfpkwuv3jhvwmq
       '@emotion/react': 11.10.4_bjroym7kxlcs2vvwnej4p3gzwu
       '@emotion/styled': 11.10.4_ogudqqhlstsi7uge4lir7ff3ty
-      '@flethy/connectors': 0.0.180
+      '@flethy/connectors': 0.0.182
       axios: 1.1.2
       framer-motion: 7.5.3_biqbaboplfbrettd7655fr4n2y
       i18next: 21.10.0
@@ -101,7 +101,7 @@ importers:
       '@emotion/react': ^11.10.4
       '@emotion/styled': ^11.10.4
       '@flethy/connectors': workspace:*
-      '@flethy/flow': ^0.0.178
+      '@flethy/flow': ^0.0.182
       '@fontsource/open-sans': ^4.5.13
       '@fontsource/raleway': ^4.5.11
       '@types/node': 18.11.0
@@ -144,7 +144,7 @@ importers:
       '@emotion/react': 11.10.4_bjroym7kxlcs2vvwnej4p3gzwu
       '@emotion/styled': 11.10.4_ogudqqhlstsi7uge4lir7ff3ty
       '@flethy/connectors': link:../../packages/connectors
-      '@flethy/flow': 0.0.178
+      '@flethy/flow': 0.0.182
       '@fontsource/open-sans': 4.5.13
       '@fontsource/raleway': 4.5.11
       framer-motion: 7.5.3_biqbaboplfbrettd7655fr4n2y
@@ -222,7 +222,7 @@ importers:
 
   packages/flow:
     specifiers:
-      '@flethy/connectors': ^0.0.180
+      '@flethy/connectors': ^0.0.182
       '@types/node': ^18.11.0
       '@typescript-eslint/eslint-plugin': ^5.40.0
       '@typescript-eslint/parser': ^5.40.0
@@ -238,7 +238,7 @@ importers:
       tsconfig: workspace:*
       typescript: ^4.8.4
     dependencies:
-      '@flethy/connectors': 0.0.180
+      '@flethy/connectors': 0.0.182
       axios: 1.1.2
       jsonata: 1.8.6
     devDependencies:
@@ -1989,19 +1989,19 @@ packages:
     transitivePeerDependencies:
       - supports-color
 
-  /@flethy/connectors/0.0.172:
-    resolution: {integrity: sha512-gaecFaEiej7AAv8SAHaQdWnKyW23Rgr4HyQk8+wWlamhUXcRB2KSyswLCiP9XDwfmYr0LZkALyNCz+gsXW7SQA==}
-    dev: false
-
   /@flethy/connectors/0.0.180:
     resolution: {integrity: sha512-Xxd/sC+xAeKup1Ku5KGCFl60NWrAGPgzs0GtMeSTe1qTJf0ljLiNr39n89hiOSMaL/rYhW3kWWMsQOIg0BwlXQ==}
     dev: false
 
-  /@flethy/flow/0.0.178:
-    resolution: {integrity: sha512-NQUJP4DlzaSzo15lEnYJj+ZUDBjZKi2XpDc8TxvcmW/nm2KxF8kmfP0p7LqBSpjQlbbAQ+xc6N5ZGLSNreyzcQ==}
+  /@flethy/connectors/0.0.182:
+    resolution: {integrity: sha512-eiMkqDaXE78urboALBdoKPN5Bj1sBmDdfDYEiOuFdzHmBnfolp1suLzr+0NEn4Rm6jEN497IAsD6jJ4Zn4FvUQ==}
+    dev: false
+
+  /@flethy/flow/0.0.182:
+    resolution: {integrity: sha512-g8brj4vaFbHwwJrVyP278FMJk5fWdU+ZFRA4uC/+ERcGze9ew+GdEQBQiwI7oCCnerdjEqXXNKzb1bZhuCSwlA==}
     dependencies:
-      '@flethy/connectors': 0.0.172
-      axios: 1.1.3
+      '@flethy/connectors': 0.0.180
+      axios: 1.1.2
       jsonata: 1.8.6
     transitivePeerDependencies:
       - debug
@@ -3068,16 +3068,6 @@ packages:
 
   /axios/1.1.2:
     resolution: {integrity: sha512-bznQyETwElsXl2RK7HLLwb5GPpOLlycxHCtrpDR/4RqqBzjARaOTo3jz4IgtntWUYee7Ne4S8UHd92VCuzPaWA==}
-    dependencies:
-      follow-redirects: 1.15.1
-      form-data: 4.0.0
-      proxy-from-env: 1.1.0
-    transitivePeerDependencies:
-      - debug
-    dev: false
-
-  /axios/1.1.3:
-    resolution: {integrity: sha512-00tXVRwKx/FZr/IDVFt4C+f9FYairX517WoGCL6dpOntqLkZofjhu43F/Xl44UOpqa+9sLFDrG/XAnFsUYgkDA==}
     dependencies:
       follow-redirects: 1.15.1
       form-data: 4.0.0
