@@ -20,13 +20,13 @@ importers:
       '@chakra-ui/system': ^2.2.12
       '@emotion/react': ^11.10.4
       '@emotion/styled': ^11.10.4
-      '@flethy/connectors': ^0.0.178
+      '@flethy/connectors': ^0.0.180
       '@types/node': 18.11.0
       '@types/react': 18.0.21
       '@types/react-dom': 18.0.6
       '@vitejs/plugin-react': 2.1.0
       autoprefixer: ^10.4.12
-      axios: ^1.1.3
+      axios: ^1.1.2
       eslint-config-custom: workspace:*
       framer-motion: ^7.5.3
       i18next: ^21.10.0
@@ -57,7 +57,7 @@ importers:
       '@chakra-ui/system': 2.2.12_hfzxdiydbrbhhfpkwuv3jhvwmq
       '@emotion/react': 11.10.4_bjroym7kxlcs2vvwnej4p3gzwu
       '@emotion/styled': 11.10.4_ogudqqhlstsi7uge4lir7ff3ty
-      '@flethy/connectors': 0.0.178
+      '@flethy/connectors': 0.0.180
       axios: 1.1.3
       framer-motion: 7.5.3_biqbaboplfbrettd7655fr4n2y
       i18next: 21.10.0
@@ -222,11 +222,11 @@ importers:
 
   packages/flow:
     specifiers:
-      '@flethy/connectors': ^0.0.178
+      '@flethy/connectors': ^0.0.180
       '@types/node': ^18.11.0
       '@typescript-eslint/eslint-plugin': ^5.40.0
       '@typescript-eslint/parser': ^5.40.0
-      axios: ^1.1.3
+      axios: ^1.1.2
       eslint: ^8.25.0
       eslint-config-airbnb-base: ^15.0.0
       eslint-config-prettier: ^8.5.0
@@ -238,7 +238,7 @@ importers:
       tsconfig: workspace:*
       typescript: ^4.8.4
     dependencies:
-      '@flethy/connectors': 0.0.178
+      '@flethy/connectors': 0.0.180
       axios: 1.1.3
       jsonata: 1.8.6
     devDependencies:
@@ -263,7 +263,7 @@ importers:
       '@types/node': ^18.11.0
       '@typescript-eslint/eslint-plugin': ^5.40.0
       '@typescript-eslint/parser': ^5.40.0
-      axios: ^1.1.3
+      axios: ^1.1.2
       dotenv: ^16.0.3
       eslint: ^8.25.0
       eslint-config-airbnb-base: ^15.0.0
@@ -1993,8 +1993,8 @@ packages:
     resolution: {integrity: sha512-gaecFaEiej7AAv8SAHaQdWnKyW23Rgr4HyQk8+wWlamhUXcRB2KSyswLCiP9XDwfmYr0LZkALyNCz+gsXW7SQA==}
     dev: false
 
-  /@flethy/connectors/0.0.178:
-    resolution: {integrity: sha512-edQeM07MoA/p4dEpkWgVtWU6LSkgWAhFWPolHDbkps9HzPKxveV1G0MYvM46oevsg5xx6TsFvJw903dDw8ZsVg==}
+  /@flethy/connectors/0.0.180:
+    resolution: {integrity: sha512-Xxd/sC+xAeKup1Ku5KGCFl60NWrAGPgzs0GtMeSTe1qTJf0ljLiNr39n89hiOSMaL/rYhW3kWWMsQOIg0BwlXQ==}
     dev: false
 
   /@flethy/flow/0.0.178:
