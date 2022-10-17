@@ -1,3 +1,4 @@
+import { URLSearchParams } from 'url'
 import { FetchParams } from '../types/FetchParams.type'
 import { RequestOptions, RequestParams } from '../types/Request.types'
 import { Base64Utils } from './Base64.utils'
@@ -39,7 +40,7 @@ export class HttpRequestConfig {
       headers: options.api.headers ?? {},
       body: options.endpoint.method === 'GET' ? undefined : {},
     }
-    const queryParams: { [key: string]: string } = {}
+    const queryParams: URLSearchParams = new URLSearchParams()
     const formData: Array<{ key: string; value: string }> = []
 
     // PARAMS
@@ -48,12 +49,14 @@ export class HttpRequestConfig {
       const [type, keyname] = paramKey.split(':')
       switch (type) {
         case 'query':
-          queryParams[keyname] = options.params[paramKey]
+          queryParams.append(keyname, options.params[paramKey])
           break
         case 'customQuery':
           for (const customQueryKey of Object.keys(options.params[paramKey])) {
-            queryParams[customQueryKey] =
-              options.params[paramKey][customQueryKey]
+            queryParams.append(
+              customQueryKey,
+              options.params[paramKey][customQueryKey],
+            )
           }
           break
         case 'body':
@@ -108,7 +111,7 @@ export class HttpRequestConfig {
     // STATIC PARAMS
     if (options.endpoint.query) {
       for (const queryParam of Object.keys(options.endpoint.query)) {
-        queryParams[queryParam] = options.endpoint.query[queryParam]
+        queryParams.append(queryParam, options.endpoint.query[queryParam])
       }
     }
 
@@ -146,7 +149,7 @@ export class HttpRequestConfig {
           const authConfig = auth[keyname]
           switch (authConfig.type) {
             case 'query':
-              queryParams[keyname] = options.params[paramKey]
+              queryParams.append(keyname, options.params[paramKey])
               break
             case 'header':
               if (!config.headers) {
@@ -269,10 +272,9 @@ export class HttpRequestConfig {
     }
 
     // REQUEST
-    if (Object.keys(queryParams).length > 0) {
-      config.url += `?${Object.entries(queryParams)
-        .map(([key, value]) => `${key}=${value}`)
-        .join('&')}`
+    const queryParameters = queryParams.toString()
+    if (queryParameters?.length > 0) {
+      config.url += `?${queryParameters}`
     }
 
     return config

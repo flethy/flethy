@@ -97,6 +97,7 @@ export type UTILS_TYPE =
   | 'domains'
   | 'time-tracking'
   | 'image-processing'
+  | 'text-processing'
   | 'delivery-tracking'
   | 'api-wrapper'
   | 'web-scraping'
@@ -108,6 +109,7 @@ export type UTILS_TYPE =
   | 'featureflags'
   | 'audio-transcription'
   | 'data-exchange'
+  | 'language-detection'
 export type DEFI_TYPE = 'liquidity'
 export type BOOKS_TYPE = 'index'
 export type FINANCE_TYPE =
@@ -122,6 +124,7 @@ export type DATA_TYPE =
   | 'brands'
   | 'geo'
   | 'carbon-emmisions'
+  | 'creator-data'
 export type CLOUD_TYPE = 'services'
 export type SEARCH_TYPE = 'serp'
 export type NETWORK_TYPE = 'cdn'

@@ -91,6 +91,7 @@ import { IncidentIo } from '../configs/incidentio.config'
 import { Jira } from '../configs/jira.config'
 import { Keen } from '../configs/keen.config'
 import { Klaviyo } from '../configs/klaviyo.config'
+import { LanguageLayer } from '../configs/languagelayer.config'
 import { Lecto } from '../configs/lecto.config'
 import { Linear } from '../configs/linear.config'
 import { LinkedIn } from '../configs/linkedin.config'
@@ -128,6 +129,7 @@ import { PayPal } from '../configs/paypal.config'
 import { Peekalink } from '../configs/peekalink.config'
 import { PeopleDataLabs } from '../configs/peopledatalabs.config'
 import { Personio } from '../configs/personio.config'
+import { Phyllo } from '../configs/phyllo.config'
 import { Pinata } from '../configs/pinata.config'
 import { Pipedream } from '../configs/pipedream.config'
 import { Pirsch } from '../configs/pirsch.config'
@@ -281,6 +283,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['jira', Jira.API],
 ['keen', Keen.API],
 ['klaviyo', Klaviyo.API],
+['languagelayer', LanguageLayer.API],
 ['lecto', Lecto.API],
 ['linear', Linear.API],
 ['linkedin', LinkedIn.API],
@@ -318,6 +321,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['peekalink', Peekalink.API],
 ['peopledatalabs', PeopleDataLabs.API],
 ['personio', Personio.API],
+['phyllo', Phyllo.API],
 ['pinata', Pinata.API],
 ['pipedream', Pipedream.API],
 ['pirsch', Pirsch.API],

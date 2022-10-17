@@ -183,6 +183,8 @@ import { logger } from './utils/Logger'
 import ORBIntelligence from '@flethy/connectors/src/configs/orbintelligence.config'
 import Vonage from '@flethy/connectors/src/configs/vonage.config'
 import Here from '@flethy/connectors/src/configs/here.config'
+import Phyllo from '@flethy/connectors/src/configs/phyllo.config'
+import LanguageLayer from '@flethy/connectors/src/configs/languagelayer.config'
 
 async function main() {
   const requestConfigs: {
@@ -2543,8 +2545,46 @@ async function main() {
       'query:q': 'Eismieze Berlin',
       'query:at': '52.5160,13.3779',
     }),
+    phylloCreateUser: nao<Phyllo.CreateUser>({
+      kind: 'phyllo.connect.createUser',
+      'auth:Authorization': {
+        username: process.env.PHYLLO_CLIENT_ID,
+        password: process.env.PHYLLO_CLIENT_SECRET,
+      },
+      'body:name': 'Adam',
+      'body:external_id': 'flethy-id-123',
+      'header:request-id': 'flethy-id-123',
+      baseId: 'sandbox',
+    }),
+    phylloRetriveUser: nao<Phyllo.RetrieveUserByExternalId>({
+      kind: 'phyllo.connect.retrieveUserByExternalId',
+      'auth:Authorization': {
+        username: process.env.PHYLLO_CLIENT_ID,
+        password: process.env.PHYLLO_CLIENT_SECRET,
+      },
+      'param:external_id': 'flethy-id-123',
+      'header:request-id': 'flethy-id-123',
+      baseId: 'sandbox',
+    }),
+    phylloSdkToken: nao<Phyllo.CreateSDKToken>({
+      kind: 'phyllo.connect.createSDKToken',
+      'auth:Authorization': {
+        username: process.env.PHYLLO_CLIENT_ID,
+        password: process.env.PHYLLO_CLIENT_SECRET,
+      },
+      'body:user_id': '...',
+      'body:products': ['ENGAGEMENT'],
+      'header:request-id': 'flethy-id-123',
+      baseId: 'sandbox',
+    }),
+    languageLayerDetect: nao<LanguageLayer.Detect>({
+      kind: 'languagelayer.core.detect',
+      baseId: 'non-ssl',
+      'auth:access_key': process.env.LANGUAGELAYER_API_KEY,
+      'query:query': 'This is awesome!',
+    }),
   }
-  const requestConfig = requestConfigs.discover
+  const requestConfig = requestConfigs.languageLayerDetect
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

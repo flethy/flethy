@@ -34,6 +34,15 @@ const ITEMS_2022_Q4: RoadmapEntry[] = [
     milestone: false,
     tags: [ROADMAP_TAGS.LANDINGPAGE],
   },
+  {
+    title: 'Roadmap',
+    date: '2022-10-17',
+    description:
+      'Roadmap for future milestones and features. Also a history of already delivered features.',
+    delivered: true,
+    milestone: false,
+    tags: [ROADMAP_TAGS.LANDINGPAGE],
+  },
 ]
 
 const FUTURE_MILESTONES: RoadmapEntry[] = [

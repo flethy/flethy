@@ -1,5 +1,7 @@
 // import * as crypto from 'crypto'
 
+import { CryptoUtils } from './Crypto.utils'
+
 // ----------------------------------------------------------
 // LICENSE: This code partially belongs to oauth-1.0a package
 // ----------------------------------------------------------
@@ -54,19 +56,7 @@ export class OAuth1Helper {
         algorithm = 'sha256'
         break
     }
-    try {
-      // TODO: check web crypto implementation
-      // https://developers.cloudflare.com/workers/runtime-apis/web-crypto/
-      // https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/sign
-      if (!crypto.subtle) {
-        const crypto = require('crypto')
-        return crypto.createHmac(algorithm, key).update(base).digest('base64')
-      } else {
-        throw new Error(`OAuth1a: Web Crypto API to be implemented`)
-      }
-    } catch (error) {
-      throw new Error(`OAuth1a: crypto module not found.`)
-    }
+    return CryptoUtils.createHmacBase64(algorithm, key, base)
   }
 
   setOauthSignature(signature: 'HMAC-SHA1' | 'HMAC-SHA256') {

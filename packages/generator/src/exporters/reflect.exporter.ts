@@ -91,6 +91,7 @@ import { IncidentIo } from '../../../connectors/src/configs/incidentio.config'
 import { Jira } from '../../../connectors/src/configs/jira.config'
 import { Keen } from '../../../connectors/src/configs/keen.config'
 import { Klaviyo } from '../../../connectors/src/configs/klaviyo.config'
+import { LanguageLayer } from '../../../connectors/src/configs/languagelayer.config'
 import { Lecto } from '../../../connectors/src/configs/lecto.config'
 import { Linear } from '../../../connectors/src/configs/linear.config'
 import { LinkedIn } from '../../../connectors/src/configs/linkedin.config'
@@ -128,6 +129,7 @@ import { PayPal } from '../../../connectors/src/configs/paypal.config'
 import { Peekalink } from '../../../connectors/src/configs/peekalink.config'
 import { PeopleDataLabs } from '../../../connectors/src/configs/peopledatalabs.config'
 import { Personio } from '../../../connectors/src/configs/personio.config'
+import { Phyllo } from '../../../connectors/src/configs/phyllo.config'
 import { Pinata } from '../../../connectors/src/configs/pinata.config'
 import { Pipedream } from '../../../connectors/src/configs/pipedream.config'
 import { Pirsch } from '../../../connectors/src/configs/pirsch.config'
@@ -415,6 +417,7 @@ configTypes.push({type: getType<Klaviyo.TrackProfileActivity>(), id: 'klaviyo', 
 configTypes.push({type: getType<Klaviyo.IdentifyProfile>(), id: 'klaviyo', name: 'Klaviyo', interface: 'IdentifyProfile'})
 configTypes.push({type: getType<Klaviyo.GetProfileId>(), id: 'klaviyo', name: 'Klaviyo', interface: 'GetProfileId'})
 configTypes.push({type: getType<Klaviyo.GetProfile>(), id: 'klaviyo', name: 'Klaviyo', interface: 'GetProfile'})
+configTypes.push({type: getType<LanguageLayer.Detect>(), id: 'languagelayer', name: 'LanguageLayer', interface: 'Detect'})
 configTypes.push({type: getType<Lecto.TranslateText>(), id: 'lecto', name: 'Lecto', interface: 'TranslateText'})
 configTypes.push({type: getType<Lecto.TranslateJson>(), id: 'lecto', name: 'Lecto', interface: 'TranslateJson'})
 configTypes.push({type: getType<Linear.GraphQLQuery>(), id: 'linear', name: 'Linear', interface: 'GraphQLQuery'})
@@ -493,6 +496,9 @@ configTypes.push({type: getType<PeopleDataLabs.CompanyEnrichment>(), id: 'people
 configTypes.push({type: getType<Personio.AuthRequest>(), id: 'personio', name: 'Personio', interface: 'AuthRequest'})
 configTypes.push({type: getType<Personio.EmployeesGet>(), id: 'personio', name: 'Personio', interface: 'EmployeesGet'})
 configTypes.push({type: getType<Personio.AbsencesGet>(), id: 'personio', name: 'Personio', interface: 'AbsencesGet'})
+configTypes.push({type: getType<Phyllo.CreateUser>(), id: 'phyllo', name: 'Phyllo', interface: 'CreateUser'})
+configTypes.push({type: getType<Phyllo.RetrieveUserByExternalId>(), id: 'phyllo', name: 'Phyllo', interface: 'RetrieveUserByExternalId'})
+configTypes.push({type: getType<Phyllo.CreateSDKToken>(), id: 'phyllo', name: 'Phyllo', interface: 'CreateSDKToken'})
 configTypes.push({type: getType<Pinata.PinningPinJsonToIPFS>(), id: 'pinata', name: 'Pinata', interface: 'PinningPinJsonToIPFS'})
 configTypes.push({type: getType<Pipedream.GetWorkflowEmits>(), id: 'pipedream', name: 'Pipedream', interface: 'GetWorkflowEmits'})
 configTypes.push({type: getType<Pipedream.ListCurrentUserSources>(), id: 'pipedream', name: 'Pipedream', interface: 'ListCurrentUserSources'})

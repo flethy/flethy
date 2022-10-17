@@ -5,6 +5,7 @@ import HomePage from './pages/home/page'
 import IntegrationPage from './pages/integration/page'
 import IntegrationsPage from './pages/integrations/page'
 import PitchDeckPage from './pages/pitchdeck/page'
+import RoadmapPage from './pages/roadmap/page'
 import VerificationPage from './pages/verification/page'
 
 export default {
@@ -19,6 +20,11 @@ export default {
 	pitch: new Route<RootStore>({
 		path: '/pitch',
 		component: <PitchDeckPage />,
+	}),
+
+	roadmap: new Route<RootStore>({
+		path: '/roadmap',
+		component: <RoadmapPage />,
 	}),
 
 	verification: new Route<RootStore>({

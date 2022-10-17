@@ -1,0 +1,28 @@
+{
+  "name": null,
+  "domain": "getphyllo.com",
+  "claimed": false,
+  "description": "Microsite",
+  "links": [
+    { "name": "linkedin", "url": "https://linkedin.com/company/getphyllo" }
+  ],
+  "logos": [
+    {
+      "type": "logo",
+      "theme": null,
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idPLcTx2sS/idHejxgmL6.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 132,
+          "width": 500,
+          "size": 11345
+        }
+      ]
+    }
+  ],
+  "colors": [],
+  "fonts": [],
+  "images": []
+}
