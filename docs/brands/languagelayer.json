@@ -1,0 +1,69 @@
+{
+  "name": "APILayer",
+  "domain": "languagelayer.com",
+  "claimed": false,
+  "description": "Free, powerful language detection JSON API for 173 languages, supporting single and batch requests, PHP, JavaScript, Python, Ruby, Java, and more.",
+  "links": [
+    {
+      "name": "youtube",
+      "url": "https://youtube.com/channel/UCwDncja3klyMhkKXWV1zoNQ"
+    },
+    { "name": "twitter", "url": "https://twitter.com/apilayer" },
+    { "name": "github", "url": "https://github.com/apilayer" },
+    { "name": "instagram", "url": "https://instagram.com/apilayer" },
+    { "name": "facebook", "url": "https://facebook.com/APILayer" }
+  ],
+  "logos": [
+    { "type": "logo", "theme": null, "formats": [] },
+    {
+      "type": "icon",
+      "theme": null,
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/id1jqdOb4k/idIjblG7MA.png",
+          "background": null,
+          "format": "png",
+          "height": 400,
+          "width": 400,
+          "size": 17450
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#0052cc", "type": "accent", "brightness": 73 },
+    { "hex": "#403f5a", "type": "dark", "brightness": 65 },
+    { "hex": "#f06e46", "type": "light", "brightness": 135 }
+  ],
+  "fonts": [
+    {
+      "name": "Helevetica Neue",
+      "type": "title",
+      "origin": "custom",
+      "originId": null,
+      "weights": []
+    },
+    {
+      "name": "Helevetica Neue",
+      "type": "body",
+      "origin": "custom",
+      "originId": null,
+      "weights": []
+    }
+  ],
+  "images": [
+    {
+      "type": "banner",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/id1jqdOb4k/idgfwNUDdn.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 500,
+          "width": 1500,
+          "size": 74297
+        }
+      ]
+    }
+  ]
+}

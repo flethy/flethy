@@ -62,6 +62,12 @@ export const QuickSearchComponent = types
 					subtitle: 'See all Integrations',
 					action: () => getRouter().goTo(routes.integrations),
 				})
+				this.addAction({
+					id: 'navigateRoadmap',
+					title: 'Roadmap',
+					subtitle: 'Always progress!',
+					action: () => getRouter().goTo(routes.roadmap),
+				})
 
 				self.initStatus = 'success'
 			}

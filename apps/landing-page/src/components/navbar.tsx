@@ -23,6 +23,11 @@ const NavbarLinks = [
 		name: 'Integrations',
 		route: routes.integrations,
 	},
+	{
+		id: 'roadmap',
+		name: 'Roadmap',
+		route: routes.roadmap,
+	},
 ]
 
 export default observer(() => {
@@ -36,9 +41,12 @@ export default observer(() => {
 		},
 	} = useMst()
 
+	const bgLink = useColorModeValue('gray.200', 'gray.700')
+	const bgBox = useColorModeValue('gray.100', 'gray.900')
+
 	return (
 		<>
-			<Box bg={useColorModeValue('gray.100', 'gray.900')} px={4}>
+			<Box bg={bgBox} px={4}>
 				<Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
 					<HStack>
 						<HStack
@@ -53,21 +61,24 @@ export default observer(() => {
 							spacing={4}
 							display={{ base: 'none', md: 'flex' }}
 						>
-							<Link
-								px={2}
-								py={1}
-								rounded={'md'}
-								href="#"
-								_hover={{
-									textDecoration: 'none',
-									bg: useColorModeValue('gray.200', 'gray.700'),
-								}}
-								onClick={() => {
-									router.goTo(routes.integrations)
-								}}
-							>
-								Integrations
-							</Link>
+							{NavbarLinks.map((link) => (
+								<Link
+									key={link.id}
+									px={2}
+									py={1}
+									rounded={'md'}
+									href="#"
+									_hover={{
+										textDecoration: 'none',
+										bg: bgLink,
+									}}
+									onClick={() => {
+										router.goTo(link.route)
+									}}
+								>
+									{link.name}
+								</Link>
+							))}
 						</HStack>
 					</HStack>
 
