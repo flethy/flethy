@@ -70,6 +70,7 @@ The following Endpoints are currently supported.
 * [ConvertKit](./api/convertkit.md)
 * [CountApi](./api/countapi.md)
 * [Courier](./api/courier.md)
+* [Cumul](./api/cumul.md)
 * [CurrencyScoop](./api/currencyscoop.md)
 * [DataDog](./api/datadog.md)
 * [DatoCMS](./api/datocms.md)

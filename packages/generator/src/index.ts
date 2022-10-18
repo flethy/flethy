@@ -185,6 +185,7 @@ import Vonage from '@flethy/connectors/src/configs/vonage.config'
 import Here from '@flethy/connectors/src/configs/here.config'
 import Phyllo from '@flethy/connectors/src/configs/phyllo.config'
 import LanguageLayer from '@flethy/connectors/src/configs/languagelayer.config'
+import Cumul from '@flethy/connectors/src/configs/cumul.config'
 
 async function main() {
   const requestConfigs: {
@@ -2583,8 +2584,17 @@ async function main() {
       'auth:access_key': process.env.LANGUAGELAYER_API_KEY,
       'query:query': 'This is awesome!',
     }),
+    cumulCreate: nao<Cumul.Create>({
+      kind: 'cumul.actions.create',
+      'auth:key': process.env.CUMUL_API_KEY,
+      'auth:token': process.env.CUMUL_API_TOKEN,
+      'param:resource': 'flethy',
+      'body:properties': {
+        name: 'flethy',
+      },
+    }),
   }
-  const requestConfig = requestConfigs.languageLayerDetect
+  const requestConfig = requestConfigs.cumulCreate
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)
