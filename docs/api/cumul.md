@@ -1,0 +1,25 @@
+# Cumul
+
+## Links
+
+* URL: [https://cumul.io/](https://cumul.io/)
+* Documentation: [https://developer.cumul.io/#core_api_schema](https://developer.cumul.io/#core_api_schema)
+* Tags: web2
+* Category: analytics
+* Type: webinsights
+
+## API
+
+### Authentication
+
+* key: body
+* token: body
+
+### actions
+
+#### create
+
+##### Create
+
+* Description: Create a new instance of the requested resource type, for example: create a new User within an Organization, create a new access group, create new data rows, …
+* Docs: [https://developer.cumul.io/#create](https://developer.cumul.io/#create)

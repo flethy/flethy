@@ -48,6 +48,7 @@ import { CountApi } from '../configs/countapi.config'
 import { Courier } from '../configs/courier.config'
 import { Covalent } from '../configs/covalent.config'
 import { Cronhooks } from '../configs/cronhooks.config'
+import { Cumul } from '../configs/cumul.config'
 import { CurrencyScoop } from '../configs/currencyscoop.config'
 import { DataDog } from '../configs/datadog.config'
 import { DatoCMS } from '../configs/datocms.config'
@@ -240,6 +241,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['courier', Courier.API],
 ['covalent', Covalent.API],
 ['cronhooks', Cronhooks.API],
+['cumul', Cumul.API],
 ['currencyscoop', CurrencyScoop.API],
 ['datadog', DataDog.API],
 ['datocms', DatoCMS.API],

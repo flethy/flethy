@@ -1,0 +1,70 @@
+{
+  "name": "Cumul.io",
+  "domain": "cumul.io",
+  "claimed": false,
+  "description": "The building block for dashboards in your platform - SaaS, Data visualization, Analytics, International",
+  "links": [
+    { "name": "twitter", "url": "https://twitter.com/cumul_io" },
+    { "name": "facebook", "url": "https://facebook.com/cumulio" },
+    { "name": "linkedin", "url": "https://linkedin.com/company/cumul-io" }
+  ],
+  "logos": [
+    {
+      "type": "icon",
+      "theme": null,
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idA9PO_WZN/idZjcruemW.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 400,
+          "width": 400,
+          "size": 11084
+        }
+      ]
+    },
+    {
+      "type": "logo",
+      "theme": null,
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idA9PO_WZN/idqRSt1SB7.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 57,
+          "width": 57,
+          "size": 2591
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#343a40", "type": "dark", "brightness": 57 },
+    { "hex": "#80ceff", "type": "light", "brightness": 193 },
+    { "hex": "#e15361", "type": "accent", "brightness": 114 }
+  ],
+  "fonts": [
+    {
+      "name": "Roboto",
+      "type": "body",
+      "origin": "google",
+      "originId": "Roboto",
+      "weights": []
+    }
+  ],
+  "images": [
+    {
+      "type": "banner",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idA9PO_WZN/idlIbClgqs.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 500,
+          "width": 1500,
+          "size": 61486
+        }
+      ]
+    }
+  ]
+}
