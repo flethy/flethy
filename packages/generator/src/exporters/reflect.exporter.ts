@@ -36,6 +36,7 @@ import { ClickSend } from '../../../connectors/src/configs/clicksend.config'
 import { ClickUp } from '../../../connectors/src/configs/clickup.config'
 import { Clockify } from '../../../connectors/src/configs/clockify.config'
 import { CloudFlare } from '../../../connectors/src/configs/cloudflare.config'
+import { Codat } from '../../../connectors/src/configs/codat.config'
 import { CoinCap } from '../../../connectors/src/configs/coincap.config'
 import { CoinGecko } from '../../../connectors/src/configs/coingecko.config'
 import { Coinlayer } from '../../../connectors/src/configs/coinlayer.config'
@@ -275,6 +276,7 @@ configTypes.push({type: getType<ClickUp.ListsGetAllFolderless>(), id: 'clickup',
 configTypes.push({type: getType<ClickUp.TasksGetAll>(), id: 'clickup', name: 'ClickUp', interface: 'TasksGetAll'})
 configTypes.push({type: getType<Clockify.ProjectsGetAll>(), id: 'clockify', name: 'Clockify', interface: 'ProjectsGetAll'})
 configTypes.push({type: getType<CloudFlare.ListZones>(), id: 'cloudflare', name: 'CloudFlare', interface: 'ListZones'})
+configTypes.push({type: getType<Codat.GetCategories>(), id: 'codat', name: 'Codat', interface: 'GetCategories'})
 configTypes.push({type: getType<CoinCap.getAssets>(), id: 'coincap', name: 'CoinCap', interface: 'getAssets'})
 configTypes.push({type: getType<CoinCap.getAsset>(), id: 'coincap', name: 'CoinCap', interface: 'getAsset'})
 configTypes.push({type: getType<CoinCap.getAssetHistory>(), id: 'coincap', name: 'CoinCap', interface: 'getAssetHistory'})

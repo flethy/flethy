@@ -1,0 +1,102 @@
+{
+  "name": "Codat",
+  "domain": "codat.io",
+  "claimed": false,
+  "description": "The universal API for small business data",
+  "links": [
+    { "name": "twitter", "url": "https://twitter.com/CodatData" },
+    { "name": "linkedin", "url": "https://linkedin.com/company/codat-limited" }
+  ],
+  "logos": [
+    {
+      "type": "logo",
+      "theme": null,
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idGdRiN8J-/idIBDYplMy.svg",
+          "background": "transparent",
+          "format": "svg",
+          "size": 3762
+        },
+        {
+          "src": "https://asset.brandfetch.io/idGdRiN8J-/id3q8-okZX.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 206,
+          "width": 800,
+          "size": 14784
+        }
+      ]
+    },
+    {
+      "type": "icon",
+      "theme": null,
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idGdRiN8J-/idr1qJBy50.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 400,
+          "width": 400,
+          "size": 6829
+        }
+      ]
+    },
+    {
+      "type": "symbol",
+      "theme": null,
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idGdRiN8J-/idaPlpueIf.svg",
+          "background": "transparent",
+          "format": "svg",
+          "size": 1214
+        },
+        {
+          "src": "https://asset.brandfetch.io/idGdRiN8J-/idGkdHTPwG.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 879,
+          "width": 800,
+          "size": 21933
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#1A0044", "type": "dark", "brightness": 10 },
+    { "hex": "#ffffff", "type": "light", "brightness": 255 },
+    { "hex": "#2F1BA6", "type": "accent", "brightness": 41 }
+  ],
+  "fonts": [
+    {
+      "name": "Axiforma",
+      "type": "title",
+      "origin": "custom",
+      "originId": null,
+      "weights": []
+    },
+    {
+      "name": "Axiforma",
+      "type": "body",
+      "origin": "custom",
+      "originId": null,
+      "weights": []
+    }
+  ],
+  "images": [
+    {
+      "type": "banner",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idGdRiN8J-/idqn04gYAC.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 256,
+          "width": 1265,
+          "size": 34733
+        }
+      ]
+    }
+  ]
+}

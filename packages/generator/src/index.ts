@@ -186,6 +186,7 @@ import Here from '@flethy/connectors/src/configs/here.config'
 import Phyllo from '@flethy/connectors/src/configs/phyllo.config'
 import LanguageLayer from '@flethy/connectors/src/configs/languagelayer.config'
 import Cumul from '@flethy/connectors/src/configs/cumul.config'
+import Codat from '@flethy/connectors/src/configs/codat.config'
 
 async function main() {
   const requestConfigs: {
@@ -2593,8 +2594,12 @@ async function main() {
         name: 'flethy',
       },
     }),
+    codatCategories: nao<Codat.GetCategories>({
+      kind: 'codat.assess.getCategories',
+      'auth:Authorization': process.env.CODAT_AUTH,
+    }),
   }
-  const requestConfig = requestConfigs.cumulCreate
+  const requestConfig = requestConfigs.codatCategories
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)
