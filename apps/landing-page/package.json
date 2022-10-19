@@ -21,7 +21,7 @@
 		"@fontsource/open-sans": "^4.5.13",
 		"@fontsource/raleway": "^4.5.11",
 		"framer-motion": "^7.5.3",
-		"i18next": "^21.10.0",
+		"i18next": "^22.0.0",
 		"mobx": "6.6.2",
 		"mobx-react": "7.5.3",
 		"mobx-react-lite": "^3.4.0",
