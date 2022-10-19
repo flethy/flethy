@@ -36,6 +36,7 @@ import { ClickSend } from '../configs/clicksend.config'
 import { ClickUp } from '../configs/clickup.config'
 import { Clockify } from '../configs/clockify.config'
 import { CloudFlare } from '../configs/cloudflare.config'
+import { Codat } from '../configs/codat.config'
 import { CoinCap } from '../configs/coincap.config'
 import { CoinGecko } from '../configs/coingecko.config'
 import { Coinlayer } from '../configs/coinlayer.config'
@@ -229,6 +230,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['clickup', ClickUp.API],
 ['clockify', Clockify.API],
 ['cloudflare', CloudFlare.API],
+['codat', Codat.API],
 ['coincap', CoinCap.API],
 ['coingecko', CoinGecko.API],
 ['coinlayer', Coinlayer.API],
