@@ -19,7 +19,7 @@
 		"@flethy/connectors": "0.0.182",
 		"axios": "1.1.2",
 		"framer-motion": "^7.5.3",
-		"i18next": "^21.10.0",
+		"i18next": "^22.0.1",
 		"mobx": "6.6.2",
 		"mobx-react": "7.5.3",
 		"mobx-react-lite": "^3.4.0",
