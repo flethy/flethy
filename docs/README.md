@@ -65,6 +65,7 @@ The following Endpoints are currently supported.
 * [Clockify](./api/clockify.md)
 * [CloudFlare](./api/cloudflare.md)
 * [Codat](./api/codat.md)
+* [CodeDetection](./api/codedetection.md)
 * [ConfigCat](./api/configcat.md)
 * [CongressGov](./api/congressgov.md)
 * [ContentFul](./api/contentful.md)
