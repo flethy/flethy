@@ -110,6 +110,7 @@ export type UTILS_TYPE =
   | 'audio-transcription'
   | 'data-exchange'
   | 'language-detection'
+  | 'code-detection'
 export type DEFI_TYPE = 'liquidity'
 export type BOOKS_TYPE = 'index'
 export type FINANCE_TYPE =
