@@ -187,6 +187,7 @@ import Phyllo from '@flethy/connectors/src/configs/phyllo.config'
 import LanguageLayer from '@flethy/connectors/src/configs/languagelayer.config'
 import Cumul from '@flethy/connectors/src/configs/cumul.config'
 import Codat from '@flethy/connectors/src/configs/codat.config'
+import SpeechTextAI from '@flethy/connectors/src/configs/speechtextai.config'
 
 async function main() {
   const requestConfigs: {
@@ -2598,8 +2599,19 @@ async function main() {
       kind: 'codat.assess.getCategories',
       'auth:Authorization': process.env.CODAT_AUTH,
     }),
+    speechTextAI: nao<SpeechTextAI.Recognize>({
+      kind: 'speechtextai.core.recognize',
+      'auth:key': process.env.SPEECHTEXTAI_API_KEY,
+      'query:url':
+        'https://drive.google.com/file/d/18KHbC4_t3SKNbziEvQxOsOSCVOBJQ2W7/view?usp=sharing',
+    }),
+    speechTextAIResults: nao<SpeechTextAI.Results>({
+      kind: 'speechtextai.core.results',
+      'auth:key': process.env.SPEECHTEXTAI_API_KEY,
+      'query:task': '143e46d7-1c1b-4b7e-b621-9529e8c8cadf',
+    }),
   }
-  const requestConfig = requestConfigs.codatCategories
+  const requestConfig = requestConfigs.speechTextAIResults
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

@@ -178,6 +178,7 @@ The following Endpoints are currently supported.
 * [Shrtcode](./api/shrtcode.md)
 * [SideKick](./api/sidekick.md)
 * [Slack](./api/slack.md)
+* [SpeechTextAI](./api/speechtextai.md)
 * [Stackby](./api/stackby.md)
 * [Statically](./api/statically.md)
 * [Supabase](./api/supabase.md)

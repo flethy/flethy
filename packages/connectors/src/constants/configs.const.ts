@@ -162,6 +162,7 @@ import { Shortcut } from '../configs/shortcut.config'
 import { Shrtcode } from '../configs/shrtcode.config'
 import { SideKick } from '../configs/sidekick.config'
 import { Slack } from '../configs/slack.config'
+import { SpeechTextAI } from '../configs/speechtextai.config'
 import { Stackby } from '../configs/stackby.config'
 import { Statically } from '../configs/statically.config'
 import { Supabase } from '../configs/supabase.config'
@@ -357,6 +358,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['shrtcode', Shrtcode.API],
 ['sidekick', SideKick.API],
 ['slack', Slack.API],
+['speechtextai', SpeechTextAI.API],
 ['stackby', Stackby.API],
 ['statically', Statically.API],
 ['supabase', Supabase.API],
