@@ -162,6 +162,7 @@ import { Shortcut } from '../../../connectors/src/configs/shortcut.config'
 import { Shrtcode } from '../../../connectors/src/configs/shrtcode.config'
 import { SideKick } from '../../../connectors/src/configs/sidekick.config'
 import { Slack } from '../../../connectors/src/configs/slack.config'
+import { SpeechTextAI } from '../../../connectors/src/configs/speechtextai.config'
 import { Stackby } from '../../../connectors/src/configs/stackby.config'
 import { Statically } from '../../../connectors/src/configs/statically.config'
 import { Supabase } from '../../../connectors/src/configs/supabase.config'
@@ -559,6 +560,8 @@ configTypes.push({type: getType<SideKick.ListLogpoints>(), id: 'sidekick', name:
 configTypes.push({type: getType<Slack.IncomingWebhooksMessage>(), id: 'slack', name: 'Slack', interface: 'IncomingWebhooksMessage'})
 configTypes.push({type: getType<Slack.ChatPostMessage>(), id: 'slack', name: 'Slack', interface: 'ChatPostMessage'})
 configTypes.push({type: getType<Slack.ConversationsList>(), id: 'slack', name: 'Slack', interface: 'ConversationsList'})
+configTypes.push({type: getType<SpeechTextAI.Recognize>(), id: 'speechtextai', name: 'SpeechTextAI', interface: 'Recognize'})
+configTypes.push({type: getType<SpeechTextAI.Results>(), id: 'speechtextai', name: 'SpeechTextAI', interface: 'Results'})
 configTypes.push({type: getType<Stackby.ListRows>(), id: 'stackby', name: 'Stackby', interface: 'ListRows'})
 configTypes.push({type: getType<Statically.StaticZapGithub>(), id: 'statically', name: 'Statically', interface: 'StaticZapGithub'})
 configTypes.push({type: getType<Statically.StaticZapGitlab>(), id: 'statically', name: 'Statically', interface: 'StaticZapGitlab'})

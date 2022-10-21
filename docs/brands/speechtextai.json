@@ -1,0 +1,81 @@
+{
+  "name": "SpeechText.AI",
+  "domain": "speechtext.ai",
+  "claimed": false,
+  "description": "AI -powered Speech Recognition and Audio/Video Transcription Service. Automated transcription software with human accuracy.",
+  "links": [
+    {
+      "name": "youtube",
+      "url": "https://youtube.com/channel/UChU4u6T4JJ9LG1tVtwDCvJw"
+    },
+    { "name": "twitter", "url": "https://twitter.com/SpeechTextAI" },
+    { "name": "instagram", "url": "https://instagram.com/speechtext.ai" },
+    { "name": "linkedin", "url": "https://linkedin.com/company/speechtext-ai" }
+  ],
+  "logos": [
+    {
+      "type": "icon",
+      "theme": null,
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/id-n1o0Ynm/idqwL_m17m.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 300,
+          "width": 300,
+          "size": 3462
+        }
+      ]
+    },
+    {
+      "type": "logo",
+      "theme": null,
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/id-n1o0Ynm/idE18T8Phh.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 136,
+          "width": 136,
+          "size": 2358
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#b3226d", "type": "dark", "brightness": 70 },
+    { "hex": "#52d5ff", "type": "light", "brightness": 188 },
+    { "hex": "#fcb316", "type": "accent", "brightness": 183 }
+  ],
+  "fonts": [
+    {
+      "name": "Poppins",
+      "type": "title",
+      "origin": "google",
+      "originId": "Poppins",
+      "weights": []
+    },
+    {
+      "name": "Roboto",
+      "type": "body",
+      "origin": "google",
+      "originId": "Roboto",
+      "weights": []
+    }
+  ],
+  "images": [
+    {
+      "type": "banner",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/id-n1o0Ynm/id0RRHuCjg.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 500,
+          "width": 1500,
+          "size": 52627
+        }
+      ]
+    }
+  ]
+}
