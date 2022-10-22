@@ -98,6 +98,7 @@ import { LanguageLayer } from '../configs/languagelayer.config'
 import { Lecto } from '../configs/lecto.config'
 import { Linear } from '../configs/linear.config'
 import { LinkedIn } from '../configs/linkedin.config'
+import { Logz } from '../configs/logz.config'
 import { Lokalise } from '../configs/lokalise.config'
 import { Luabase } from '../configs/luabase.config'
 import { MailboxValidator } from '../configs/mailboxvalidator.config'
@@ -294,6 +295,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['lecto', Lecto.API],
 ['linear', Linear.API],
 ['linkedin', LinkedIn.API],
+['logz', Logz.API],
 ['lokalise', Lokalise.API],
 ['luabase', Luabase.API],
 ['mailboxvalidator', MailboxValidator.API],

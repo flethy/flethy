@@ -1,0 +1,75 @@
+{
+  "name": "Logz.io",
+  "domain": "logz.io",
+  "claimed": false,
+  "description": "Logz.io provides a scalable and intelligent machine data analytics platform built on ELK and Grafana for monitoring modern applications.",
+  "links": [
+    { "name": "youtube", "url": "https://youtube.com/c/LogzIo" },
+    { "name": "twitter", "url": "https://twitter.com/logzio" },
+    { "name": "instagram", "url": "https://instagram.com/life_at_logz.io" },
+    { "name": "linkedin", "url": "https://linkedin.com/company/logz-io" },
+    { "name": "facebook", "url": "https://facebook.com/logz.io" }
+  ],
+  "logos": [
+    {
+      "type": "icon",
+      "theme": null,
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idmydkZWxV/id0VvtRCkE.png",
+          "background": null,
+          "format": "png",
+          "height": 180,
+          "width": 180,
+          "size": 5863
+        }
+      ]
+    },
+    {
+      "type": "logo",
+      "theme": null,
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idmydkZWxV/idpVDVByCD.png",
+          "background": null,
+          "format": "png",
+          "height": 520,
+          "width": 1362,
+          "size": 31494
+        }
+      ]
+    }
+  ],
+  "colors": [{ "hex": "#b827d1", "type": "accent", "brightness": 82 }],
+  "fonts": [
+    {
+      "name": "Montserrat",
+      "type": "title",
+      "origin": "google",
+      "originId": "Montserrat",
+      "weights": []
+    },
+    {
+      "name": "Roboto",
+      "type": "body",
+      "origin": "google",
+      "originId": "Roboto",
+      "weights": []
+    }
+  ],
+  "images": [
+    {
+      "type": "banner",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idmydkZWxV/idvtdsYyA2.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 500,
+          "width": 1500,
+          "size": 51960
+        }
+      ]
+    }
+  ]
+}

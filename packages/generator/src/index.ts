@@ -188,6 +188,7 @@ import LanguageLayer from '@flethy/connectors/src/configs/languagelayer.config'
 import Cumul from '@flethy/connectors/src/configs/cumul.config'
 import Codat from '@flethy/connectors/src/configs/codat.config'
 import SpeechTextAI from '@flethy/connectors/src/configs/speechtextai.config'
+import Logz from '@flethy/connectors/src/configs/logz.config'
 
 async function main() {
   const requestConfigs: {
@@ -2610,8 +2611,32 @@ async function main() {
       'auth:key': process.env.SPEECHTEXTAI_API_KEY,
       'query:task': '143e46d7-1c1b-4b7e-b621-9529e8c8cadf',
     }),
+    logzSearch: nao<Logz.SearchLogs>({
+      kind: 'logz.monitoring.search',
+      baseId: 'europe_fra',
+      'auth:X-API-TOKEN': process.env.LOGZ_API_TOKEN,
+      'body:query': {
+        bool: {
+          must: [
+            {
+              range: {
+                '@timestamp': {
+                  gte: 'now-5m',
+                  lte: 'now',
+                },
+              },
+            },
+          ],
+        },
+      },
+    }),
+    logzUsers: nao<Logz.RetrieveUsersInAssociatedAccounts>({
+      kind: 'logz.account.retrieveUsersInAssociatedAccounts',
+      baseId: 'europe_fra',
+      'auth:X-API-TOKEN': process.env.LOGZ_API_TOKEN,
+    }),
   }
-  const requestConfig = requestConfigs.speechTextAIResults
+  const requestConfig = requestConfigs.logzUsers
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)
