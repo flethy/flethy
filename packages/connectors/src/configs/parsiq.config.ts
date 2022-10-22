@@ -52,6 +52,8 @@ export namespace Parsiq {
       name: 'Parsiq',
       url: 'https://parsiq.net/',
       docs: 'https://network-docs.parsiq.net/',
+      pricing: 'https://parsiq.net/pricing',
+      signup: 'https://harbour.parsiq.net/sign-up',
       tags: ['web3'],
       category: 'aggregation',
       type: 'indexer',

@@ -127,6 +127,8 @@ export namespace Notion {
       name: 'Notion',
       url: 'https://notion.so',
       docs: 'https://developers.notion.com/reference',
+      pricing: 'https://www.notion.so/pricing',
+      signup: 'https://www.notion.so/signup',
       social: {
         twitter: 'notionhq',
       },

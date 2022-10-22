@@ -22,6 +22,7 @@ export namespace OpenLibrary {
       name: 'OpenLibrary',
       url: 'https://openlibrary.org/',
       docs: 'https://openlibrary.org/dev/docs',
+      signup: 'https://openlibrary.org/account/create',
       social: {
         twitter: 'openlibrary',
         github: 'internetarchive',

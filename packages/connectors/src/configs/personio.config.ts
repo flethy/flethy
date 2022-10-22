@@ -45,6 +45,7 @@ export namespace Personio {
       name: 'Personio',
       url: 'https://personio.de',
       docs: 'https://developer.personio.de',
+      pricing: 'https://www.personio.com/pricing/',
       social: {
         twitter: 'personiohr',
         instagram: 'personio_hr',

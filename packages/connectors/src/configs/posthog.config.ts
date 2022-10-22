@@ -29,6 +29,8 @@ export namespace PostHog {
       name: 'PostHog',
       url: 'https://posthog.com',
       docs: 'https://posthog.com/docs',
+      pricing: 'https://posthog.com/pricing',
+      signup: 'https://posthog.com/signup',
       tags: ['web2'],
       category: 'analytics',
       type: 'webinsights',

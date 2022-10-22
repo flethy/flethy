@@ -25,6 +25,8 @@ export namespace Pinata {
       name: 'Pinata',
       url: 'https://pinata.cloud',
       docs: 'https://docs.pinata.cloud/',
+      pricing: 'https://www.pinata.cloud/pricing',
+      signup: 'https://app.pinata.cloud/register',
       social: {
         twitter: 'pinatacloud',
         instagram: 'pinata.cloud',

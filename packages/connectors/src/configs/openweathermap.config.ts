@@ -41,6 +41,8 @@ export namespace OpenWeatherMap {
       name: 'OpenWeatherMap',
       url: 'https://openweathermap.org',
       docs: 'https://openweathermap.org/api/one-call-3',
+      pricing: 'https://openweathermap.org/price',
+      signup: 'https://home.openweathermap.org/users/sign_up',
       tags: ['web2'],
       category: 'utils',
       type: 'weather',
