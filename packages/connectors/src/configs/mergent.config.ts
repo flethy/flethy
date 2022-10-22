@@ -28,6 +28,8 @@ export namespace Mergent {
       name: 'Mergent',
       url: 'https://mergent.co',
       docs: 'https://docs.mergent.co/',
+      pricing: 'https://mergent.co/#pricing',
+      signup: 'https://app.mergent.co/',
       social: {
         twitter: 'mergentlabs',
       },

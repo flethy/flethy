@@ -79,6 +79,8 @@ export namespace Medium {
       name: 'Medium',
       url: 'https://medium.com',
       docs: 'https://developers.medium.com/',
+      pricing: 'https://medium.com/plans',
+      signup: 'https://medium.com/m/signin',
       social: {
         twitter: 'medium',
       },

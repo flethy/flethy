@@ -41,6 +41,8 @@ export namespace Netlify {
       name: 'Netlify',
       url: 'https://netlify.com/',
       docs: 'https://open-api.netlify.com/',
+      pricing: 'https://www.netlify.com/pricing/',
+      signup: 'https://app.netlify.com/signup',
       tags: ['web2'],
       category: 'infra',
       type: 'hosted',

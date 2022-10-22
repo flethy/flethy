@@ -28,6 +28,8 @@ export namespace NewRelic {
       name: 'NewRelic',
       url: 'https://newrelic.com/',
       docs: 'https://docs.newrelic.com/docs/data-apis/',
+      pricing: 'https://newrelic.com/pricing',
+      signup: 'https://newrelic.com/signup',
       social: {
         twitter: 'newrelic',
         github: 'newrelic',

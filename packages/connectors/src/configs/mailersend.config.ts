@@ -38,6 +38,8 @@ export namespace MailerSend {
       url: 'https://mailersend.com',
       docs: 'https://developers.mailersend.com/',
       config: 'https://app.mailersend.com/',
+      pricing: 'https://www.mailersend.com/pricing',
+      signup: 'https://www.mailersend.com/signup',
       social: {
         twitter: 'mailersend',
       },

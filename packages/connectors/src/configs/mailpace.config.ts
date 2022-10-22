@@ -40,6 +40,8 @@ export namespace MailPace {
       name: 'MailPace',
       url: 'https://mailpace.com',
       docs: 'https://docs.mailpace.com/',
+      pricing: 'https://mailpace.com/#pricing',
+      signup: 'https://app.mailpace.com/users/sign_up',
       social: {
         twitter: 'mailpace',
         github: 'mailpace',

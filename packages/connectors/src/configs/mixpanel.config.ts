@@ -63,6 +63,8 @@ export namespace Mixpanel {
       name: 'Mixpanel',
       url: 'https://mixpanel.com',
       docs: 'https://developer.mixpanel.com/reference/overview',
+      pricing: 'https://mixpanel.com/pricing',
+      signup: 'https://mixpanel.com/register',
       social: {
         twitter: 'mixpanel',
         instagram: 'mixpanel',
