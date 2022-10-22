@@ -33,6 +33,8 @@ export namespace NewsApi {
       name: 'NewsApi',
       url: 'https://newsapi.org',
       docs: 'https://newsapi.org/docs',
+      pricing: 'https://newsapi.org/pricing',
+      signup: 'https://newsapi.org/register',
       social: {
         twitter: 'NewsAPIorg',
       },

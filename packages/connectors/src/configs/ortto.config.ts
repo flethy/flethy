@@ -51,6 +51,8 @@ export namespace Ortto {
       name: 'Ortto',
       url: 'https://ortto.app',
       docs: 'https://help.ortto.com/developer/',
+      pricing: 'https://ortto.com/pricing/',
+      signup: 'https://ortto.com/signup',
       social: {
         twitter: 'orttohq',
         instagram: 'ortto_hq',

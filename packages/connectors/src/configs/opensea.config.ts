@@ -33,6 +33,7 @@ export namespace OpenSea {
       name: 'OpenSea',
       url: 'https://opensea.io',
       docs: 'https://docs.opensea.io/',
+      signup: 'https://opensea.io/account',
       social: {
         twitter: 'opensea',
         instagram: 'opensea',
