@@ -119,6 +119,7 @@ The following Endpoints are currently supported.
 * [Lecto](./api/lecto.md)
 * [Linear](./api/linear.md)
 * [LinkedIn](./api/linkedin.md)
+* [Logz](./api/logz.md)
 * [Lokalise](./api/lokalise.md)
 * [MailboxValidator](./api/mailboxvalidator.md)
 * [MailCheckAi](./api/mailcheckai.md)

@@ -98,6 +98,7 @@ import { LanguageLayer } from '../../../connectors/src/configs/languagelayer.con
 import { Lecto } from '../../../connectors/src/configs/lecto.config'
 import { Linear } from '../../../connectors/src/configs/linear.config'
 import { LinkedIn } from '../../../connectors/src/configs/linkedin.config'
+import { Logz } from '../../../connectors/src/configs/logz.config'
 import { Lokalise } from '../../../connectors/src/configs/lokalise.config'
 import { Luabase } from '../../../connectors/src/configs/luabase.config'
 import { MailboxValidator } from '../../../connectors/src/configs/mailboxvalidator.config'
@@ -429,6 +430,8 @@ configTypes.push({type: getType<Lecto.TranslateText>(), id: 'lecto', name: 'Lect
 configTypes.push({type: getType<Lecto.TranslateJson>(), id: 'lecto', name: 'Lecto', interface: 'TranslateJson'})
 configTypes.push({type: getType<Linear.GraphQLQuery>(), id: 'linear', name: 'Linear', interface: 'GraphQLQuery'})
 configTypes.push({type: getType<LinkedIn.SharePost>(), id: 'linkedin', name: 'LinkedIn', interface: 'SharePost'})
+configTypes.push({type: getType<Logz.SearchLogs>(), id: 'logz', name: 'Logz', interface: 'SearchLogs'})
+configTypes.push({type: getType<Logz.RetrieveUsersInAssociatedAccounts>(), id: 'logz', name: 'Logz', interface: 'RetrieveUsersInAssociatedAccounts'})
 configTypes.push({type: getType<Lokalise.CreateTask>(), id: 'lokalise', name: 'Lokalise', interface: 'CreateTask'})
 configTypes.push({type: getType<Lokalise.ListTasks>(), id: 'lokalise', name: 'Lokalise', interface: 'ListTasks'})
 configTypes.push({type: getType<Lokalise.ListUsers>(), id: 'lokalise', name: 'Lokalise', interface: 'ListUsers'})
