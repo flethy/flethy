@@ -127,6 +127,8 @@ export namespace MicroDev {
       name: 'MicroDev',
       url: 'https://m3o.com',
       docs: 'https://m3o.com/',
+      pricing: 'https://m3o.com/pricing',
+      signup: 'https://m3o.com/register',
       social: {
         twitter: 'm3oservices',
         instagram: 'm3oservices',

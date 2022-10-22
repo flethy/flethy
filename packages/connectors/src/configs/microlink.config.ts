@@ -23,6 +23,7 @@ export namespace Microlink {
       name: 'Microlink',
       url: 'https://microlink.io',
       docs: 'https://microlink.io/docs',
+      pricing: 'https://microlink.io/#pricing',
       tags: ['web2'],
       category: 'utils',
       type: 'other',

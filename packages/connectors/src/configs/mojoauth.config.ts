@@ -25,6 +25,8 @@ export namespace MojoAuth {
       name: 'MojoAuth',
       url: 'https://mojoauth.com',
       docs: 'https://mojoauth.com/docs',
+      pricing: 'https://mojoauth.com/pricing',
+      signup: 'https://mojoauth.com/dashboard/signin',
       tags: ['web2'],
       category: 'identity',
       type: 'identitymanagement',

@@ -40,6 +40,8 @@ export namespace MailboxValidator {
       name: 'MailboxValidator',
       url: 'https://www.mailboxvalidator.com',
       docs: 'https://www.mailboxvalidator.com',
+      pricing: 'https://www.mailboxvalidator.com/plans',
+      signup: 'https://www.mailboxvalidator.com/pay/7',
       social: {
         twitter: 'MailBoxV',
         github: 'mailboxvalidator',

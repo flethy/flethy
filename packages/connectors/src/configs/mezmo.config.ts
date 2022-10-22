@@ -37,6 +37,8 @@ export namespace Mezmo {
       name: 'Mezmo',
       url: 'https://mezmo.com',
       docs: 'https://docs.mezmo.com/',
+      pricing: 'https://www.mezmo.com/pricing',
+      signup: 'https://www.mezmo.com/sign-up-today',
       social: {
         twitter: 'mezmodata',
         github: 'logdna',

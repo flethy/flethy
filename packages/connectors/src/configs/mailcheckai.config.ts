@@ -26,6 +26,7 @@ export namespace MailCheckAi {
       name: 'MailCheckAi',
       url: 'https://www.mailcheck.ai/',
       docs: 'https://docs.mailcheck.ai/',
+      pricing: 'https://www.mailcheck.ai/#pricing',
       tags: ['web2'],
       category: 'utils',
       type: 'emailverification',
