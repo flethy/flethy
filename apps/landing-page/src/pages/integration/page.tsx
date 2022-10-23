@@ -80,6 +80,9 @@ export default observer(() => {
 						)}`}
 					</Text>
 				</Center>
+				<Center mt={5}>
+					<Text>{page.get()!.meta.description}</Text>
+				</Center>
 				<Stack mt={5}>
 					<Flex
 						flex={1}
@@ -101,7 +104,7 @@ export default observer(() => {
 									bg,
 								}}
 							>
-								{t(url.labelId)}
+								{String(t(url.labelId))}
 							</Link>
 						))}
 					</Flex>
@@ -114,18 +117,20 @@ export default observer(() => {
 					>
 						{page.get()?.auth.map((auth) => (
 							<Tag key={auth.replaceAll(':', '.')} px={2} py={2} mx={1}>
-								{t(auth)}
+								{auth}
 							</Tag>
 						))}
 					</Flex>
-					<Text>{t('pages.integration.endpoints.generalDescription')}</Text>
+					<Text>
+						{String(t('pages.integration.endpoints.generalDescription'))}
+					</Text>
 					<TableContainer>
 						<Table variant="simple" size="sm" my={5}>
 							<Thead>
 								<Tr>
-									<Th>{t('pages.integration.endpoints.title')}</Th>
-									<Th>{t('pages.integration.endpoints.docs')}</Th>
-									<Th>{t('pages.integration.endpoints.method')}</Th>
+									<Th>{String(t('pages.integration.endpoints.title'))}</Th>
+									<Th>{String(t('pages.integration.endpoints.docs'))}</Th>
+									<Th>{String(t('pages.integration.endpoints.method'))}</Th>
 								</Tr>
 							</Thead>
 							<Tbody>
@@ -135,7 +140,7 @@ export default observer(() => {
 										<Td>
 											<Tag p={2}>
 												<Link href={endpoint.docs} target={'_blank'}>
-													{t('pages.integration.endpoints.docslabel')}
+													{String(t('pages.integration.endpoints.docslabel'))}
 												</Link>
 											</Tag>
 										</Td>
@@ -147,9 +152,9 @@ export default observer(() => {
 							</Tbody>
 							<Tfoot>
 								<Tr>
-									<Th>{t('pages.integration.endpoints.title')}</Th>
-									<Th>{t('pages.integration.endpoints.docs')}</Th>
-									<Th>{t('pages.integration.endpoints.method')}</Th>
+									<Th>{String(t('pages.integration.endpoints.title'))}</Th>
+									<Th>{String(t('pages.integration.endpoints.docs'))}</Th>
+									<Th>{String(t('pages.integration.endpoints.method'))}</Th>
 								</Tr>
 							</Tfoot>
 						</Table>
