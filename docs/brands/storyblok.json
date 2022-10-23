@@ -1,0 +1,105 @@
+{
+  "name": "Storyblok",
+  "domain": "storyblok.com",
+  "claimed": false,
+  "description": "Storyblok is the only Headless Content Management System with a Visual Editor. It provides developers with all the flexibility they need to build reliable and fast websites, while giving content creators with no coding skills the ability to edit content independently of the developer.",
+  "links": [
+    { "name": "twitter", "url": "https://twitter.com/storyblok" },
+    { "name": "linkedin", "url": "https://linkedin.com/company/storyblok" },
+    { "name": "instagram", "url": "https://instagram.com/storybloklife" }
+  ],
+  "logos": [
+    {
+      "type": "icon",
+      "theme": null,
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/id8uR4VFmV/id7a0IPhxD.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 400,
+          "width": 400,
+          "size": 7183
+        }
+      ]
+    },
+    {
+      "type": "logo",
+      "theme": null,
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/id8uR4VFmV/idgW1CPa1e.svg",
+          "background": "transparent",
+          "format": "svg",
+          "height": null,
+          "width": null,
+          "size": 5446
+        },
+        {
+          "src": "https://asset.brandfetch.io/id8uR4VFmV/idhXg7DH9W.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 174,
+          "width": 800,
+          "size": 13794
+        }
+      ]
+    },
+    {
+      "type": "symbol",
+      "theme": null,
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/id8uR4VFmV/idkRmrX01A.svg",
+          "background": "transparent",
+          "format": "svg",
+          "size": 2137
+        },
+        {
+          "src": "https://asset.brandfetch.io/id8uR4VFmV/idYmtg5czT.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 942,
+          "width": 800,
+          "size": 24315
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#1B243F", "type": "dark", "brightness": 36 },
+    { "hex": "#F7F8F9", "type": "light", "brightness": 248 },
+    { "hex": "#00B3B0", "type": "accent", "brightness": 141 }
+  ],
+  "fonts": [
+    {
+      "name": "system-ui",
+      "type": "body",
+      "origin": "system",
+      "originId": null,
+      "weights": []
+    },
+    {
+      "name": "Roboto",
+      "type": "title",
+      "origin": "google",
+      "originId": "Roboto",
+      "weights": []
+    }
+  ],
+  "images": [
+    {
+      "type": "banner",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/id8uR4VFmV/id7TXSGssP.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 256,
+          "width": 1265,
+          "size": 44827
+        }
+      ]
+    }
+  ]
+}

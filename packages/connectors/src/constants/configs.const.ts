@@ -166,6 +166,7 @@ import { Slack } from '../configs/slack.config'
 import { SpeechTextAI } from '../configs/speechtextai.config'
 import { Stackby } from '../configs/stackby.config'
 import { Statically } from '../configs/statically.config'
+import { Storyblok } from '../configs/storyblok.config'
 import { Supabase } from '../configs/supabase.config'
 import { Tenderly } from '../configs/tenderly.config'
 import { TheCompaniesApi } from '../configs/thecompaniesapi.config'
@@ -363,6 +364,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['speechtextai', SpeechTextAI.API],
 ['stackby', Stackby.API],
 ['statically', Statically.API],
+['storyblok', Storyblok.API],
 ['supabase', Supabase.API],
 ['tenderly', Tenderly.API],
 ['thecompaniesapi', TheCompaniesApi.API],
