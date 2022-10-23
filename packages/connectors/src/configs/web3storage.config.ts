@@ -20,6 +20,8 @@ export namespace Web3Storage {
       name: 'Web3Storage',
       url: 'https://web3.storage',
       docs: 'https://web3.storage/docs',
+      pricing: 'https://web3.storage/pricing/',
+      signup: 'https://web3.storage/login/',
       social: {
         twitter: 'filecoin',
       },

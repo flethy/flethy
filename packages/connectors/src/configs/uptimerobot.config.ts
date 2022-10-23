@@ -23,6 +23,8 @@ export namespace UptimeRobot {
       name: 'UptimeRobot',
       url: 'https://uptimerobot.com',
       docs: 'https://uptimerobot.com/api/',
+      pricing: 'https://uptimerobot.com/pricing/',
+      signup: 'https://uptimerobot.com/signUp',
       social: {
         twitter: 'uptimerobot',
       },

@@ -30,6 +30,8 @@ export namespace Twilio {
       name: 'Twilio',
       url: 'https://twilio.com',
       docs: 'https://www.twilio.com/docs',
+      pricing: 'https://www.twilio.com/pricing',
+      signup: 'https://www.twilio.com/try-twilio',
       social: {
         twitter: 'twilio',
       },

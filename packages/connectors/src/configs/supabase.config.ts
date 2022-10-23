@@ -39,6 +39,8 @@ export namespace Supabase {
       name: 'Supabase',
       url: 'https://supabase.com/',
       docs: 'https://supabase.com/docs/',
+      pricing: 'https://supabase.com/pricing',
+      signup: 'https://app.supabase.com/',
       social: {
         twitter: 'supabase',
         github: 'supabase',

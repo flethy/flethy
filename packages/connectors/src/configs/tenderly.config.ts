@@ -48,6 +48,8 @@ export namespace Tenderly {
       name: 'Tenderly',
       url: 'https://tenderly.co/',
       docs: 'https://docs-api.tenderly.co',
+      pricing: 'https://tenderly.co/pricing',
+      signup: 'https://dashboard.tenderly.co/register',
       tags: ['web3'],
       category: 'aggregation',
       type: 'indexer',

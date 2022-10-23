@@ -45,6 +45,8 @@ export namespace UrlScan {
       name: 'UrlScan',
       url: 'https://urlscan.io',
       docs: 'https://urlscan.io/docs',
+      pricing: 'https://urlscan.io/pricing/',
+      signup: 'https://urlscan.io/user/signup',
       social: {
         twitter: 'urlscanio',
       },

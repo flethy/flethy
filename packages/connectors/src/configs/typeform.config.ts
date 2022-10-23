@@ -250,6 +250,8 @@ export namespace Typeform {
       name: 'Typeform',
       url: 'https://typeform.com/',
       docs: 'https://developer.typeform.com/',
+      pricing: 'https://www.typeform.com/pricing/',
+      signup: 'https://www.typeform.com/signup',
       social: {
         twitter: 'typeform',
         instagram: 'typeform',
