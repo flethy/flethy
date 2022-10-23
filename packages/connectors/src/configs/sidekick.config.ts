@@ -38,6 +38,8 @@ export namespace SideKick {
       name: 'SideKick',
       url: 'https://www.runsidekick.com/',
       docs: 'https://docs.runsidekick.com/',
+      pricing: 'https://www.runsidekick.com/pricing',
+      signup: 'https://app.runsidekick.com/signup',
       tags: ['web2'],
       category: 'utils',
       type: 'logging',

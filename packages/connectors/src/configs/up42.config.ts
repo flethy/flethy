@@ -65,6 +65,8 @@ export namespace Up42 {
       name: 'Up42',
       url: 'https://up42.com',
       docs: 'https://docs.up42.com/',
+      pricing: 'https://up42.com/pricing',
+      signup: 'https://console.up42.com/sign-up',
       social: {
         twitter: 'up42_',
         instagram: 'up42official',

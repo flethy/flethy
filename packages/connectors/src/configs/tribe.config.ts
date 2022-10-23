@@ -22,6 +22,8 @@ export namespace Tribe {
       name: 'Tribe',
       url: 'https://tribeplatform.com',
       docs: 'https://partners.tribe.so/docs',
+      pricing: 'https://tribe.so/pricing/',
+      signup: 'https://tribe.so/create/',
       social: {
         twitter: 'tribeplatform',
         instagram: 'tribeplatform',

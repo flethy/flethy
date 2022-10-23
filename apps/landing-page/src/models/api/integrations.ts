@@ -86,6 +86,7 @@ export const Integrations = types
 						id: `navigateTo${integration.id}`,
 						title: config.name,
 						subtitle: `Details for ${config.name}`,
+						description: integration.description,
 						tags: [apiConfig.meta.category, apiConfig.meta.type],
 						action: () =>
 							getRouter().goTo(routes.integration, { id: integration.id }),

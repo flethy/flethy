@@ -8,6 +8,7 @@ interface QuickSearchAction {
 	id: string
 	title: string
 	subtitle?: string
+	description?: string
 	tags?: string[]
 	icon?: string
 	action: () => {}
@@ -134,7 +135,9 @@ export const QuickSearchComponent = types
 					(action.tags &&
 						action.tags.some((tag) =>
 							tag.toLowerCase().includes(searchTermLowerCase),
-						))
+						)) ||
+					(action.description &&
+						action.description.toLowerCase().includes(searchTermLowerCase))
 				) {
 					self.searchResults.push(action.id)
 				}

@@ -38,6 +38,8 @@ export namespace Slack {
       name: 'Slack',
       url: 'https://slack.com',
       docs: 'https://api.slack.com/',
+      pricing: 'https://slack.com/pricing',
+      signup: 'https://slack.com/get-started',
       config: 'https://api.slack.com/apps',
       social: {
         twitter: 'slackhq',

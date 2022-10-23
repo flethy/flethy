@@ -37,6 +37,7 @@ export namespace Unlayer {
       name: 'Unlayer',
       url: 'https://unlayer.com/',
       docs: 'https://docs.unlayer.com/reference/reference-getting-started',
+      signup: 'https://dashboard.unlayer.com/register',
       tags: ['web2'],
       category: 'marketing',
       type: 'email',

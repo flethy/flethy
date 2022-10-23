@@ -64,6 +64,8 @@ export namespace SerpStack {
       name: 'SerpStack',
       url: 'https://serpstack.com',
       docs: 'https://serpstack.com/documentation',
+      pricing: 'https://serpstack.com/product',
+      signup: 'https://serpstack.com/product',
       social: {
         twitter: 'apilayer',
         github: 'serpstack',

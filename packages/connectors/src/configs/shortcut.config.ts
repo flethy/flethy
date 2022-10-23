@@ -57,6 +57,8 @@ export namespace Shortcut {
       name: 'Shortcut',
       url: 'https://shortcut.com',
       docs: 'https://shortcut.com/api/rest/v3',
+      pricing: 'https://shortcut.com/pricing',
+      signup: 'https://shortcut.com/signup',
       social: {
         twitter: 'useshortcut',
         github: 'useshortcut',

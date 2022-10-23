@@ -31,6 +31,8 @@ export namespace Stackby {
       name: 'Stackby',
       url: 'https://stackby.com',
       docs: 'https://documenter.getpostman.com/view/7317658/SzmZbfQP?version=latest#5d63ae05-501a-4f7a-9f26-18ed9b9fda24',
+      pricing: 'https://stackby.com/pricing',
+      signup: 'https://stackby.com/signup',
       social: {
         twitter: 'stackbyhq',
         github: 'stackbyhq',

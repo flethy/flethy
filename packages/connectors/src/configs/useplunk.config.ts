@@ -25,6 +25,8 @@ export namespace UsePlunk {
       name: 'UsePlunk',
       url: 'https://useplunk.com',
       docs: 'https://docs.useplunk.com/',
+      pricing: 'https://www.useplunk.com/pricing',
+      signup: 'https://app.useplunk.com/auth/signup',
       social: {
         twitter: 'useplunk',
       },
