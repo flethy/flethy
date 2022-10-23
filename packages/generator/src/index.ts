@@ -189,6 +189,7 @@ import Cumul from '@flethy/connectors/src/configs/cumul.config'
 import Codat from '@flethy/connectors/src/configs/codat.config'
 import SpeechTextAI from '@flethy/connectors/src/configs/speechtextai.config'
 import Logz from '@flethy/connectors/src/configs/logz.config'
+import Storyblok from '@flethy/connectors/src/configs/storyblok.config'
 
 async function main() {
   const requestConfigs: {
@@ -2635,8 +2636,23 @@ async function main() {
       baseId: 'europe_fra',
       'auth:X-API-TOKEN': process.env.LOGZ_API_TOKEN,
     }),
+    storyblokGraphql: nao<Storyblok.GraphQLQuery>({
+      kind: 'storyblok.graphql.query',
+      'auth:Token': process.env.STORYBLOK_TOKEN_PREVIEW,
+      'header:Version': 'draft',
+      'body:query': `query { PageItems { items { name } } }`,
+    }),
+    storyblokListStories: nao<Storyblok.ListStories>({
+      kind: 'storyblok.stories.list',
+      'auth:token': process.env.STORYBLOK_TOKEN_PREVIEW,
+    }),
+    storyblokGetStory: nao<Storyblok.GetStory>({
+      kind: 'storyblok.stories.get',
+      'auth:token': process.env.STORYBLOK_TOKEN_PREVIEW,
+      'param:id': 'articles/can-anything-survive-on-venus',
+    }),
   }
-  const requestConfig = requestConfigs.logzUsers
+  const requestConfig = requestConfigs.storyblokGetStory
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

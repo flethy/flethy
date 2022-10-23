@@ -182,6 +182,7 @@ The following Endpoints are currently supported.
 * [SpeechTextAI](./api/speechtextai.md)
 * [Stackby](./api/stackby.md)
 * [Statically](./api/statically.md)
+* [Storyblok](./api/storyblok.md)
 * [Supabase](./api/supabase.md)
 * [TheCompaniesApi](./api/thecompaniesapi.md)
 * [TheStarWarsApi](./api/thestarwarsapi.md)

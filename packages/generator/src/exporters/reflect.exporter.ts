@@ -166,6 +166,7 @@ import { Slack } from '../../../connectors/src/configs/slack.config'
 import { SpeechTextAI } from '../../../connectors/src/configs/speechtextai.config'
 import { Stackby } from '../../../connectors/src/configs/stackby.config'
 import { Statically } from '../../../connectors/src/configs/statically.config'
+import { Storyblok } from '../../../connectors/src/configs/storyblok.config'
 import { Supabase } from '../../../connectors/src/configs/supabase.config'
 import { Tenderly } from '../../../connectors/src/configs/tenderly.config'
 import { TheCompaniesApi } from '../../../connectors/src/configs/thecompaniesapi.config'
@@ -569,6 +570,9 @@ configTypes.push({type: getType<Stackby.ListRows>(), id: 'stackby', name: 'Stack
 configTypes.push({type: getType<Statically.StaticZapGithub>(), id: 'statically', name: 'Statically', interface: 'StaticZapGithub'})
 configTypes.push({type: getType<Statically.StaticZapGitlab>(), id: 'statically', name: 'Statically', interface: 'StaticZapGitlab'})
 configTypes.push({type: getType<Statically.StaticZapBitbucket>(), id: 'statically', name: 'Statically', interface: 'StaticZapBitbucket'})
+configTypes.push({type: getType<Storyblok.GraphQLQuery>(), id: 'storyblok', name: 'Storyblok', interface: 'GraphQLQuery'})
+configTypes.push({type: getType<Storyblok.ListStories>(), id: 'storyblok', name: 'Storyblok', interface: 'ListStories'})
+configTypes.push({type: getType<Storyblok.GetStory>(), id: 'storyblok', name: 'Storyblok', interface: 'GetStory'})
 configTypes.push({type: getType<Supabase.InsertRows>(), id: 'supabase', name: 'Supabase', interface: 'InsertRows'})
 configTypes.push({type: getType<Supabase.ReadRows>(), id: 'supabase', name: 'Supabase', interface: 'ReadRows'})
 configTypes.push({type: getType<Tenderly.ExecuteTransactionSimulation>(), id: 'tenderly', name: 'Tenderly', interface: 'ExecuteTransactionSimulation'})
