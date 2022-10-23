@@ -39,6 +39,8 @@ export namespace Sentry {
       name: 'Sentry',
       url: 'https://sentry.io/',
       docs: 'https://docs.sentry.io/',
+      pricing: 'https://sentry.io/pricing/',
+      signup: 'https://sentry.io/signup/',
       social: {
         twitter: 'getsentry',
         github: 'getsentry',

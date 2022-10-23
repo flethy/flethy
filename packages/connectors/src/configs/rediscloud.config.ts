@@ -23,6 +23,8 @@ export namespace RedisCloud {
       name: 'RedisCloud',
       url: 'https://redis.com/',
       docs: 'https://docs.redis.com/',
+      pricing: 'https://redis.com/redis-enterprise-cloud/pricing/',
+      signup: 'https://redis.com/try-free/',
       social: {
         twitter: 'redisinc',
       },

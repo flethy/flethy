@@ -54,6 +54,8 @@ export namespace Render {
       name: 'Render',
       url: 'https://render.com/',
       docs: 'https://render.com/docs/api',
+      pricing: 'https://render.com/pricing',
+      signup: 'https://dashboard.render.com/register',
       tags: ['web2'],
       category: 'infra',
       type: 'serverless',

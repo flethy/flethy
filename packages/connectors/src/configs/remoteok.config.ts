@@ -18,6 +18,7 @@ export namespace RemoteOk {
       name: 'RemoteOk',
       url: 'https://remoteok.com',
       docs: 'https://remoteok.com',
+      signup: 'https://remoteok.com/sign-up',
       social: {
         twitter: 'remoteok',
       },
