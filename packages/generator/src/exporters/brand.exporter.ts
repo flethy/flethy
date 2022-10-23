@@ -133,12 +133,21 @@ export class BrandExporter {
       'unlayer',
       'up42',
     ]
-    const logoArray: Array<{ id: string; file: string; light?: boolean }> = []
+    const logoArray: Array<{
+      id: string
+      file: string
+      light?: boolean
+      description?: string
+    }> = []
     for (const fileName of logoMap.keys()) {
+      const brandJson: any = JSON.parse(
+        fs.readFileSync(`${BRANDS_DIR}/${fileName}.json`, 'utf8')
+      )
       logoArray.push({
         id: fileName,
         file: logoMap.get(fileName),
         light: lightBrands.includes(fileName),
+        description: brandJson.description,
       })
     }
     const integrationConstants = `export const INTEGRATIONS = ${JSON.stringify(
