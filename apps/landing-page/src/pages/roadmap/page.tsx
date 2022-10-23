@@ -1,4 +1,12 @@
-import { Box, Container, Heading, HStack, Stack, Text } from '@chakra-ui/react'
+import {
+	Box,
+	Container,
+	Heading,
+	HStack,
+	Stack,
+	Tag,
+	Text,
+} from '@chakra-ui/react'
 import { observer } from 'mobx-react-lite'
 import { useTranslation } from 'react-i18next'
 import roadmap from '../../../../../docs/meta/roadmap.json'
@@ -16,7 +24,7 @@ export default observer(() => {
 			<Stack mt={6} gap={2}>
 				{upcoming().length > 0 && (
 					<>
-						<Heading>{t('pages.roadmap.upcoming')}</Heading>
+						<Heading>{String(t('pages.roadmap.upcoming'))}</Heading>
 						{upcoming().map((item, index) => (
 							<Box key={index}>
 								<Text fontWeight={'bold'}>{item.title}</Text>
@@ -27,7 +35,7 @@ export default observer(() => {
 				)}
 				{past().length > 0 && (
 					<>
-						<Heading>{t('pages.roadmap.completed')}</Heading>
+						<Heading>{String(t('pages.roadmap.completed'))}</Heading>
 						{past().map((item, index) => (
 							<HStack key={index} gap={2}>
 								<Box textAlign={'center'} w={'5rem'}>
@@ -40,7 +48,14 @@ export default observer(() => {
 									</Text>
 								</Box>
 								<Box w={'25rem'}>
-									<Text fontWeight={'bold'}>{item.title}</Text>
+									<Text fontWeight={'bold'}>
+										{item.title}
+										{item.tags.map((tag, tagIndex) => (
+											<Tag key={tagIndex} mx={1}>
+												{tag}
+											</Tag>
+										))}
+									</Text>
 									<Text>{item.description}</Text>
 								</Box>
 							</HStack>
