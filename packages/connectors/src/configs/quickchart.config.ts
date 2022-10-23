@@ -26,6 +26,7 @@ export namespace QuickChart {
       name: 'QuickChart',
       url: 'https://quickchart.io/',
       docs: 'https://quickchart.io/documentation/',
+      pricing: 'https://quickchart.io/pricing/',
       tags: ['web2'],
       category: 'utils',
       type: 'image-processing',

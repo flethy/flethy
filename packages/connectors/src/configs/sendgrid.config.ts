@@ -131,6 +131,8 @@ export namespace SendGrid {
       name: 'SendGrid',
       url: 'https://sendgrid.com',
       docs: 'https://docs.sendgrid.com',
+      pricing: 'https://sendgrid.com/pricing/',
+      signup: 'https://signup.sendgrid.com/',
       social: {
         twitter: 'sendgrid',
         github: 'sendgrid',

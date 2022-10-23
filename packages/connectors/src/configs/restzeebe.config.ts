@@ -30,6 +30,7 @@ export namespace RestZeebe {
       name: 'RestZeebe',
       url: 'https://restzeebe.app/',
       docs: 'https://restzeebe.app/',
+      signup: 'https://restzeebe.app/',
       tags: ['web2'],
       category: 'utils',
       type: 'other',

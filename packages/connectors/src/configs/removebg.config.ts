@@ -41,6 +41,8 @@ export namespace RemoveBg {
       name: 'RemoveBg',
       url: 'https://www.remove.bg',
       docs: 'https://www.remove.bg/en/api',
+      pricing: 'https://www.remove.bg/pricing',
+      signup: 'https://www.remove.bg/users/sign_up',
       social: {
         twitter: 'remove_bg',
         instagram: 'removebg.official',

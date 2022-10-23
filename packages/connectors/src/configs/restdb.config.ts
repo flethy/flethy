@@ -24,6 +24,8 @@ export namespace RestDB {
       name: 'RestDB',
       url: 'https://restdb.io',
       docs: 'https://restdb.io/docs/rest-api',
+      pricing: 'https://restdb.io/pricing/',
+      signup: 'https://restdb.io/signup/',
       tags: ['web2'],
       category: 'infra',
       type: 'database',

@@ -45,6 +45,8 @@ export namespace SerpApi {
       name: 'SerpApi',
       url: 'https://serpapi.com',
       docs: 'https://serpapi.com/search-api',
+      pricing: 'https://serpapi.com/pricing',
+      signup: 'https://serpapi.com/users/sign_up',
       tags: ['web2'],
       category: 'search',
       type: 'serp',
