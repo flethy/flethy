@@ -5,7 +5,13 @@ export const IntegrationsPage = types
 	.model('IntegrationsPage', {})
 	.actions((self) => {
 		// INITIALIZATION
-		const initialisePage = () => {}
+		const initialisePage = () => {
+			const { api } = getRootStore(self)
+			api.helmet.updateTitle({
+				title: 'Integrations',
+				concatenateAppname: true,
+			})
+		}
 
 		return { initialisePage }
 	})

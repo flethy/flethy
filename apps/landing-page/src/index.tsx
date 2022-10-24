@@ -5,6 +5,7 @@ import { observer } from 'mobx-react-lite'
 import { startRouter } from 'mobx-router'
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
+import { Helmet, HelmetProvider } from 'react-helmet-async'
 import events, { LogLevel } from './events/events'
 import './i18n/config'
 import './index.scss'
@@ -59,9 +60,16 @@ const App = observer(() => {
 	})
 
 	return (
-		<ChakraProvider theme={theme}>
-			<AppPage />
-		</ChakraProvider>
+		<>
+			<HelmetProvider>
+				<Helmet>
+					{api.helmet.title ? <title>{api.helmet.title}</title> : null}
+				</Helmet>
+			</HelmetProvider>
+			<ChakraProvider theme={theme}>
+				<AppPage />
+			</ChakraProvider>
+		</>
 	)
 })
 

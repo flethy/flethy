@@ -1,5 +1,5 @@
 import { types } from 'mobx-state-tree'
-import { getRouter } from '../../models/helpers'
+import { getRootStore, getRouter } from '../../models/helpers'
 import routes from '../../routes'
 
 export const HomePage = types
@@ -10,6 +10,8 @@ export const HomePage = types
 	.actions((self) => ({
 		// INITIALIZATION
 		initialisePage(options?: { emailSubscription?: boolean }) {
+			const { api } = getRootStore(self)
+			api.helmet.defaultTitle()
 			if (options?.emailSubscription === true) {
 				const router = getRouter()
 				router.goTo(routes.home)

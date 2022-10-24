@@ -1,4 +1,5 @@
 import { types } from 'mobx-state-tree'
+import { getRootStore } from '../../models/helpers'
 
 export const NotFoundPage = types
 	.model('NotFoundPage', {
@@ -6,6 +7,9 @@ export const NotFoundPage = types
 	})
 	.actions((self) => ({
 		// INITIALIZATION
-		initialisePage() {},
+		initialisePage() {
+			const { api } = getRootStore(self)
+			api.helmet.updateTitle({ title: 'Sorry! :(', concatenateAppname: true })
+		},
 	}))
 	.views((self) => ({}))
