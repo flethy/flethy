@@ -30,7 +30,7 @@
     "@flethy/connectors": "0.0.191"
   },
   "devDependencies": {
-    "@types/node": "18.11.3",
+    "@types/node": "18.11.4",
     "@typescript-eslint/eslint-plugin": "^5.40.1",
     "@typescript-eslint/parser": "^5.40.1",
     "eslint": "^8.26.0",
