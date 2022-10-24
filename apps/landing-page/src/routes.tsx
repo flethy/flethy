@@ -20,11 +20,23 @@ export default {
 	pitch: new Route<RootStore>({
 		path: '/pitch',
 		component: <PitchDeckPage />,
+		onEnter(_route, _parameters, { root: { api } }) {
+			api.helmet.updateTitle({
+				title: 'Pitch Deck',
+				concatenateAppname: true,
+			})
+		},
 	}),
 
 	roadmap: new Route<RootStore>({
 		path: '/roadmap',
 		component: <RoadmapPage />,
+		onEnter(_route, _parameters, { root: { api } }) {
+			api.helmet.updateTitle({
+				title: 'Roadmap',
+				concatenateAppname: true,
+			})
+		},
 	}),
 
 	verification: new Route<RootStore>({

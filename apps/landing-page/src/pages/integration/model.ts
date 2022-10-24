@@ -18,6 +18,8 @@ export const IntegrationPage = types
 		// INITIALIZATION
 		const initialisePage = (id: string) => {
 			self.id = id
+			const { api } = getRootStore(self)
+			api.helmet.integration({ integration: id })
 		}
 
 		return { initialisePage }
