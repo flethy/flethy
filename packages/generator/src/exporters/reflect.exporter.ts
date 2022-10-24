@@ -100,6 +100,7 @@ import { Linear } from '../../../connectors/src/configs/linear.config'
 import { LinkedIn } from '../../../connectors/src/configs/linkedin.config'
 import { Logz } from '../../../connectors/src/configs/logz.config'
 import { Lokalise } from '../../../connectors/src/configs/lokalise.config'
+import { Lolo } from '../../../connectors/src/configs/lolo.config'
 import { Luabase } from '../../../connectors/src/configs/luabase.config'
 import { MailboxValidator } from '../../../connectors/src/configs/mailboxvalidator.config'
 import { MailCheckAi } from '../../../connectors/src/configs/mailcheckai.config'
@@ -437,6 +438,7 @@ configTypes.push({type: getType<Lokalise.CreateTask>(), id: 'lokalise', name: 'L
 configTypes.push({type: getType<Lokalise.ListTasks>(), id: 'lokalise', name: 'Lokalise', interface: 'ListTasks'})
 configTypes.push({type: getType<Lokalise.ListUsers>(), id: 'lokalise', name: 'Lokalise', interface: 'ListUsers'})
 configTypes.push({type: getType<Lokalise.ListTeams>(), id: 'lokalise', name: 'Lokalise', interface: 'ListTeams'})
+configTypes.push({type: getType<Lolo.ListAccounts>(), id: 'lolo', name: 'Lolo', interface: 'ListAccounts'})
 configTypes.push({type: getType<Luabase.RunQuery>(), id: 'luabase', name: 'Luabase', interface: 'RunQuery'})
 configTypes.push({type: getType<MailboxValidator.SingleEmailValidation>(), id: 'mailboxvalidator', name: 'MailboxValidator', interface: 'SingleEmailValidation'})
 configTypes.push({type: getType<MailboxValidator.DisposableEmail>(), id: 'mailboxvalidator', name: 'MailboxValidator', interface: 'DisposableEmail'})
