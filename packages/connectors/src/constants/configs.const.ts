@@ -100,6 +100,7 @@ import { Linear } from '../configs/linear.config'
 import { LinkedIn } from '../configs/linkedin.config'
 import { Logz } from '../configs/logz.config'
 import { Lokalise } from '../configs/lokalise.config'
+import { Lolo } from '../configs/lolo.config'
 import { Luabase } from '../configs/luabase.config'
 import { MailboxValidator } from '../configs/mailboxvalidator.config'
 import { MailCheckAi } from '../configs/mailcheckai.config'
@@ -298,6 +299,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['linkedin', LinkedIn.API],
 ['logz', Logz.API],
 ['lokalise', Lokalise.API],
+['lolo', Lolo.API],
 ['luabase', Luabase.API],
 ['mailboxvalidator', MailboxValidator.API],
 ['mailcheckai', MailCheckAi.API],

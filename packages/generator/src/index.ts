@@ -190,6 +190,7 @@ import Codat from '@flethy/connectors/src/configs/codat.config'
 import SpeechTextAI from '@flethy/connectors/src/configs/speechtextai.config'
 import Logz from '@flethy/connectors/src/configs/logz.config'
 import Storyblok from '@flethy/connectors/src/configs/storyblok.config'
+import Lolo from '@flethy/connectors/src/configs/lolo.config'
 
 async function main() {
   const requestConfigs: {
@@ -2651,8 +2652,12 @@ async function main() {
       'auth:token': process.env.STORYBLOK_TOKEN_PREVIEW,
       'param:id': 'articles/can-anything-survive-on-venus',
     }),
+    loloListAccounts: nao<Lolo.ListAccounts>({
+      kind: 'lolo.accounts.list',
+      'auth:Authorization': process.env.LOLO_API_KEY,
+    }),
   }
-  const requestConfig = requestConfigs.storyblokGetStory
+  const requestConfig = requestConfigs.loloListAccounts
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

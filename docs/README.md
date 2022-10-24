@@ -121,6 +121,7 @@ The following Endpoints are currently supported.
 * [LinkedIn](./api/linkedin.md)
 * [Logz](./api/logz.md)
 * [Lokalise](./api/lokalise.md)
+* [Lolo](./api/lolo.md)
 * [MailboxValidator](./api/mailboxvalidator.md)
 * [MailCheckAi](./api/mailcheckai.md)
 * [Mailchimp](./api/mailchimp.md)

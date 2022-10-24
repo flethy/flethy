@@ -1,0 +1,70 @@
+{
+  "name": "Lolo Code",
+  "domain": "lolo.co",
+  "claimed": false,
+  "description": "Lolo Code is a platform that allows you to build cloud agnostic serverless applications in a Node.js environment with one-click multi-cloud deploy.",
+  "links": [
+    { "name": "twitter", "url": "https://twitter.com/lolo_code" },
+    { "name": "github", "url": "https://github.com/lolocompany" },
+    { "name": "linkedin", "url": "https://linkedin.com/company/lolocompany" }
+  ],
+  "logos": [
+    {
+      "type": "logo",
+      "theme": null,
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idxJu0p9p8/idrN0tRNA5.png",
+          "background": null,
+          "format": "png",
+          "height": 200,
+          "width": 200,
+          "size": 42019
+        }
+      ]
+    },
+    {
+      "type": "icon",
+      "theme": null,
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idxJu0p9p8/idwktlqROZ.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 400,
+          "width": 400,
+          "size": 10199
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#ffb100", "type": "accent", "brightness": 181 },
+    { "hex": "#2f2f2f", "type": "dark", "brightness": 47 },
+    { "hex": "#ffffff", "type": "light", "brightness": 255 }
+  ],
+  "fonts": [
+    {
+      "name": "system-ui",
+      "type": "body",
+      "origin": "system",
+      "originId": null,
+      "weights": []
+    }
+  ],
+  "images": [
+    {
+      "type": "banner",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idxJu0p9p8/idkGORVJ1l.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 500,
+          "width": 1500,
+          "size": 30254
+        }
+      ]
+    }
+  ]
+}
