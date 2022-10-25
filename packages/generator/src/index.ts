@@ -191,6 +191,7 @@ import SpeechTextAI from '@flethy/connectors/src/configs/speechtextai.config'
 import Logz from '@flethy/connectors/src/configs/logz.config'
 import Storyblok from '@flethy/connectors/src/configs/storyblok.config'
 import Lolo from '@flethy/connectors/src/configs/lolo.config'
+import Stytch from '@flethy/connectors/src/configs/stytch.config'
 
 async function main() {
   const requestConfigs: {
@@ -2656,8 +2657,26 @@ async function main() {
       kind: 'lolo.accounts.list',
       'auth:Authorization': process.env.LOLO_API_KEY,
     }),
+    stytchSendMagicLink: nao<Stytch.SendMagicLink>({
+      kind: 'stytch.magicLinks.send',
+      baseId: 'test',
+      'auth:Authorization': {
+        username: process.env.STYTCH_PROJECT_ID,
+        password: process.env.STYTCH_SECRET,
+      },
+      'body:email': 'adam@flethy.com',
+    }),
+    stytchCreateUser: nao<Stytch.CreateUser>({
+      kind: 'stytch.users.create',
+      baseId: 'test',
+      'auth:Authorization': {
+        username: process.env.STYTCH_PROJECT_ID,
+        password: process.env.STYTCH_SECRET,
+      },
+      'body:email': 'adam@flethy.com',
+    }),
   }
-  const requestConfig = requestConfigs.loloListAccounts
+  const requestConfig = requestConfigs.stytchCreateUser
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

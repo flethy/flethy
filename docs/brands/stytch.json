@@ -1,0 +1,62 @@
+{
+  "name": "Stytch",
+  "domain": "stytch.com",
+  "claimed": false,
+  "description": "Stytch is a data analytics platform that provides business teams with everything they need to get more insights, faster.",
+  "links": [
+    { "name": "twitter", "url": "https://twitter.com/stytchhq" },
+    { "name": "facebook", "url": "https://facebook.com/stytchhq" },
+    { "name": "linkedin", "url": "https://linkedin.com/company/stytch-inc." }
+  ],
+  "logos": [
+    {
+      "type": "icon",
+      "theme": null,
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idfGgFYxqp/idybvDE3fO.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 400,
+          "width": 400,
+          "size": 9664
+        }
+      ]
+    },
+    {
+      "type": "logo",
+      "theme": null,
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idfGgFYxqp/id04B79FHw.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 250,
+          "width": 250,
+          "size": 5471
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#272822", "type": "dark", "brightness": 39 },
+    { "hex": "#f8f8f2", "type": "light", "brightness": 248 },
+    { "hex": "#106ee8", "type": "accent", "brightness": 99 }
+  ],
+  "fonts": [],
+  "images": [
+    {
+      "type": "banner",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idfGgFYxqp/idDkKQl_ls.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 500,
+          "width": 1500,
+          "size": 99164
+        }
+      ]
+    }
+  ]
+}

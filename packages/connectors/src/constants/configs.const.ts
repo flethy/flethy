@@ -168,6 +168,7 @@ import { SpeechTextAI } from '../configs/speechtextai.config'
 import { Stackby } from '../configs/stackby.config'
 import { Statically } from '../configs/statically.config'
 import { Storyblok } from '../configs/storyblok.config'
+import { Stytch } from '../configs/stytch.config'
 import { Supabase } from '../configs/supabase.config'
 import { Tenderly } from '../configs/tenderly.config'
 import { TheCompaniesApi } from '../configs/thecompaniesapi.config'
@@ -367,6 +368,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['stackby', Stackby.API],
 ['statically', Statically.API],
 ['storyblok', Storyblok.API],
+['stytch', Stytch.API],
 ['supabase', Supabase.API],
 ['tenderly', Tenderly.API],
 ['thecompaniesapi', TheCompaniesApi.API],
