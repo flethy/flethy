@@ -184,6 +184,7 @@ The following Endpoints are currently supported.
 * [Stackby](./api/stackby.md)
 * [Statically](./api/statically.md)
 * [Storyblok](./api/storyblok.md)
+* [Stytch](./api/stytch.md)
 * [Supabase](./api/supabase.md)
 * [TheCompaniesApi](./api/thecompaniesapi.md)
 * [TheStarWarsApi](./api/thestarwarsapi.md)
