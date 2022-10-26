@@ -1,0 +1,44 @@
+{
+  "name": "Robolly",
+  "domain": "robolly.com",
+  "claimed": false,
+  "description": "Use Robolly to automatically generate images for social media, promo banners, open graph, PDF certificates, and more.",
+  "links": [],
+  "logos": [
+    {
+      "type": "logo",
+      "theme": null,
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/id5ChYBsPc/idPhf2etez.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 820,
+          "width": 820,
+          "size": 70164
+        },
+        {
+          "src": "https://asset.brandfetch.io/id5ChYBsPc/idniLu9udu.svg",
+          "background": "transparent",
+          "format": "svg",
+          "size": 3082
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#524ce6", "type": "accent", "brightness": 88 },
+    { "hex": "#111828", "type": "dark", "brightness": 24 },
+    { "hex": "#bebbe8", "type": "light", "brightness": 191 }
+  ],
+  "fonts": [
+    {
+      "name": "system-ui",
+      "type": "body",
+      "origin": "system",
+      "originId": null,
+      "weights": []
+    }
+  ],
+  "images": []
+}

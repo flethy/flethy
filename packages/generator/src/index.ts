@@ -193,6 +193,7 @@ import Storyblok from '@flethy/connectors/src/configs/storyblok.config'
 import Lolo from '@flethy/connectors/src/configs/lolo.config'
 import Stytch from '@flethy/connectors/src/configs/stytch.config'
 import Prerender from '@flethy/connectors/src/configs/prerender.config'
+import Robolly from '@flethy/connectors/src/configs/robolly.config'
 
 async function main() {
   const requestConfigs: {
@@ -2681,8 +2682,15 @@ async function main() {
       'auth:prerenderToken': process.env.PRERENDER_TOKEN,
       'body:url': 'https://flethy.com',
     }),
+    robollyRender: nao<Robolly.Render>({
+      kind: 'robolly.core.render',
+      'auth:Authorization': process.env.ROBOLLY_API_KEY,
+      'param:format': 'jpg',
+      'param:templateId': process.env.ROBOLLY_TEMPLATE_ID,
+      'query:text vl0sae': 'flethy',
+    }),
   }
-  const requestConfig = requestConfigs.prerenderRecache
+  const requestConfig = requestConfigs.robollyRender
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)
