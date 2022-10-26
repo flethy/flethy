@@ -141,6 +141,7 @@ import { Pirsch } from '../configs/pirsch.config'
 import { Pixela } from '../configs/pixela.config'
 import { PolyScale } from '../configs/polyscale.config'
 import { PostHog } from '../configs/posthog.config'
+import { Prerender } from '../configs/prerender.config'
 import { ProductHunt } from '../configs/producthunt.config'
 import { PurgoMalum } from '../configs/purgomalum.config'
 import { QuickChart } from '../configs/quickchart.config'
@@ -341,6 +342,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['pixela', Pixela.API],
 ['polyscale', PolyScale.API],
 ['posthog', PostHog.API],
+['prerender', Prerender.API],
 ['producthunt', ProductHunt.API],
 ['purgomalum', PurgoMalum.API],
 ['quickchart', QuickChart.API],
