@@ -192,6 +192,7 @@ import Logz from '@flethy/connectors/src/configs/logz.config'
 import Storyblok from '@flethy/connectors/src/configs/storyblok.config'
 import Lolo from '@flethy/connectors/src/configs/lolo.config'
 import Stytch from '@flethy/connectors/src/configs/stytch.config'
+import Prerender from '@flethy/connectors/src/configs/prerender.config'
 
 async function main() {
   const requestConfigs: {
@@ -2675,8 +2676,13 @@ async function main() {
       },
       'body:email': 'adam@flethy.com',
     }),
+    prerenderRecache: nao<Prerender.Recache>({
+      kind: 'prerender.core.recache',
+      'auth:prerenderToken': process.env.PRERENDER_TOKEN,
+      'body:url': 'https://flethy.com',
+    }),
   }
-  const requestConfig = requestConfigs.stytchCreateUser
+  const requestConfig = requestConfigs.prerenderRecache
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

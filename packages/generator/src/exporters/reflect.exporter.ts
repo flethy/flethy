@@ -141,6 +141,7 @@ import { Pirsch } from '../../../connectors/src/configs/pirsch.config'
 import { Pixela } from '../../../connectors/src/configs/pixela.config'
 import { PolyScale } from '../../../connectors/src/configs/polyscale.config'
 import { PostHog } from '../../../connectors/src/configs/posthog.config'
+import { Prerender } from '../../../connectors/src/configs/prerender.config'
 import { ProductHunt } from '../../../connectors/src/configs/producthunt.config'
 import { PurgoMalum } from '../../../connectors/src/configs/purgomalum.config'
 import { QuickChart } from '../../../connectors/src/configs/quickchart.config'
@@ -525,6 +526,11 @@ configTypes.push({type: getType<Pixela.PostValue>(), id: 'pixela', name: 'Pixela
 configTypes.push({type: getType<PolyScale.GetCaches>(), id: 'polyscale', name: 'PolyScale', interface: 'GetCaches'})
 configTypes.push({type: getType<PolyScale.PurgeCache>(), id: 'polyscale', name: 'PolyScale', interface: 'PurgeCache'})
 configTypes.push({type: getType<PostHog.SendEvent>(), id: 'posthog', name: 'PostHog', interface: 'SendEvent'})
+configTypes.push({type: getType<Prerender.Recache>(), id: 'prerender', name: 'Prerender', interface: 'Recache'})
+configTypes.push({type: getType<Prerender.RecacheMultiple>(), id: 'prerender', name: 'Prerender', interface: 'RecacheMultiple'})
+configTypes.push({type: getType<Prerender.Search>(), id: 'prerender', name: 'Prerender', interface: 'Search'})
+configTypes.push({type: getType<Prerender.Sitemap>(), id: 'prerender', name: 'Prerender', interface: 'Sitemap'})
+configTypes.push({type: getType<Prerender.ClearCache>(), id: 'prerender', name: 'Prerender', interface: 'ClearCache'})
 configTypes.push({type: getType<ProductHunt.GetCollections>(), id: 'producthunt', name: 'ProductHunt', interface: 'GetCollections'})
 configTypes.push({type: getType<PurgoMalum.Profanity>(), id: 'purgomalum', name: 'PurgoMalum', interface: 'Profanity'})
 configTypes.push({type: getType<QuickChart.PlotChart>(), id: 'quickchart', name: 'QuickChart', interface: 'PlotChart'})

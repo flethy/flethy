@@ -1,0 +1,47 @@
+{
+  "name": "Prerender.io",
+  "domain": "prerender.io",
+  "claimed": false,
+  "description": "Prerender.io allows javascript websites to be crawled by search engines.",
+  "links": [
+    { "name": "twitter", "url": "https://twitter.com/prerender" },
+    { "name": "linkedin", "url": "https://linkedin.com/company/prerender" }
+  ],
+  "logos": [
+    {
+      "type": "logo",
+      "theme": null,
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idAdtPCP_I/idDEQl_GXI.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 32,
+          "width": 32,
+          "size": 3508
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#222222", "type": "dark", "brightness": 34 },
+    { "hex": "#ffffff", "type": "light", "brightness": 255 }
+  ],
+  "fonts": [
+    {
+      "name": "Lato",
+      "type": "title",
+      "origin": "google",
+      "originId": "Lato",
+      "weights": []
+    },
+    {
+      "name": "Helvetica Neue",
+      "type": "body",
+      "origin": "custom",
+      "originId": null,
+      "weights": []
+    }
+  ],
+  "images": []
+}
