@@ -154,6 +154,7 @@ import { RestCountries } from '../../../connectors/src/configs/restcountries.con
 import { RestDB } from '../../../connectors/src/configs/restdb.config'
 import { RestZeebe } from '../../../connectors/src/configs/restzeebe.config'
 import { Revue } from '../../../connectors/src/configs/revue.config'
+import { Robolly } from '../../../connectors/src/configs/robolly.config'
 import { Rye } from '../../../connectors/src/configs/rye.config'
 import { Semrush } from '../../../connectors/src/configs/semrush.config'
 import { SendGrid } from '../../../connectors/src/configs/sendgrid.config'
@@ -550,6 +551,7 @@ configTypes.push({type: getType<Revue.ListAllLists>(), id: 'revue', name: 'Revue
 configTypes.push({type: getType<Revue.GetList>(), id: 'revue', name: 'Revue', interface: 'GetList'})
 configTypes.push({type: getType<Revue.GetSubscribers>(), id: 'revue', name: 'Revue', interface: 'GetSubscribers'})
 configTypes.push({type: getType<Revue.AddSubscriber>(), id: 'revue', name: 'Revue', interface: 'AddSubscriber'})
+configTypes.push({type: getType<Robolly.Render>(), id: 'robolly', name: 'Robolly', interface: 'Render'})
 configTypes.push({type: getType<Rye.GraphQLQuery>(), id: 'rye', name: 'Rye', interface: 'GraphQLQuery'})
 configTypes.push({type: getType<Semrush.GetBacklinksOverview>(), id: 'semrush', name: 'Semrush', interface: 'GetBacklinksOverview'})
 configTypes.push({type: getType<SendGrid.SendMail>(), id: 'sendgrid', name: 'SendGrid', interface: 'SendMail'})

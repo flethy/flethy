@@ -170,6 +170,7 @@ The following Endpoints are currently supported.
 * [RestDB](./api/restdb.md)
 * [RestZeebe](./api/restzeebe.md)
 * [Revue](./api/revue.md)
+* [Robolly](./api/robolly.md)
 * [Rye](./api/rye.md)
 * [Semrush](./api/semrush.md)
 * [SendGrid](./api/sendgrid.md)
