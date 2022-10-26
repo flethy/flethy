@@ -167,33 +167,34 @@ import { nao } from '../../connectors/src/utils/Request.utils'
 import APIPoint from '@flethy/connectors/src/configs/apipoint.config'
 import ButtondownEmail from '@flethy/connectors/src/configs/buttondownemail.config'
 import CarbEngage from '@flethy/connectors/src/configs/carbengage.config'
+import Codat from '@flethy/connectors/src/configs/codat.config'
+import Cumul from '@flethy/connectors/src/configs/cumul.config'
 import Deepgram from '@flethy/connectors/src/configs/deepgram.config'
 import Flatfile from '@flethy/connectors/src/configs/flatfile.config'
 import GitLab from '@flethy/connectors/src/configs/gitlab.config'
+import Here from '@flethy/connectors/src/configs/here.config'
 import Imglab from '@flethy/connectors/src/configs/imglab.config'
 import Keen from '@flethy/connectors/src/configs/keen.config'
-import Luabase from '@flethy/connectors/src/configs/luabase.config'
-import Pirsch from '@flethy/connectors/src/configs/pirsch.config'
-import Rye from '@flethy/connectors/src/configs/rye.config'
-import Sheety from '@flethy/connectors/src/configs/sheety.config'
-import Twitter from '@flethy/connectors/src/configs/twitter.config'
-import Vantevo from '@flethy/connectors/src/configs/vantevo.config'
-import { HttpRequest } from './controllers/HttpRequest'
-import { logger } from './utils/Logger'
-import ORBIntelligence from '@flethy/connectors/src/configs/orbintelligence.config'
-import Vonage from '@flethy/connectors/src/configs/vonage.config'
-import Here from '@flethy/connectors/src/configs/here.config'
-import Phyllo from '@flethy/connectors/src/configs/phyllo.config'
 import LanguageLayer from '@flethy/connectors/src/configs/languagelayer.config'
-import Cumul from '@flethy/connectors/src/configs/cumul.config'
-import Codat from '@flethy/connectors/src/configs/codat.config'
-import SpeechTextAI from '@flethy/connectors/src/configs/speechtextai.config'
 import Logz from '@flethy/connectors/src/configs/logz.config'
-import Storyblok from '@flethy/connectors/src/configs/storyblok.config'
 import Lolo from '@flethy/connectors/src/configs/lolo.config'
-import Stytch from '@flethy/connectors/src/configs/stytch.config'
+import Luabase from '@flethy/connectors/src/configs/luabase.config'
+import ORBIntelligence from '@flethy/connectors/src/configs/orbintelligence.config'
+import Phyllo from '@flethy/connectors/src/configs/phyllo.config'
+import Pirsch from '@flethy/connectors/src/configs/pirsch.config'
 import Prerender from '@flethy/connectors/src/configs/prerender.config'
 import Robolly from '@flethy/connectors/src/configs/robolly.config'
+import Rye from '@flethy/connectors/src/configs/rye.config'
+import Sheety from '@flethy/connectors/src/configs/sheety.config'
+import SpeechTextAI from '@flethy/connectors/src/configs/speechtextai.config'
+import Storyblok from '@flethy/connectors/src/configs/storyblok.config'
+import Stytch from '@flethy/connectors/src/configs/stytch.config'
+import Twitter from '@flethy/connectors/src/configs/twitter.config'
+import Userfront from '@flethy/connectors/src/configs/userfront.config'
+import Vantevo from '@flethy/connectors/src/configs/vantevo.config'
+import Vonage from '@flethy/connectors/src/configs/vonage.config'
+import { HttpRequest } from './controllers/HttpRequest'
+import { logger } from './utils/Logger'
 
 async function main() {
   const requestConfigs: {
@@ -2689,8 +2690,37 @@ async function main() {
       'param:templateId': process.env.ROBOLLY_TEMPLATE_ID,
       'query:text vl0sae': 'flethy',
     }),
+    userfrontCreateUser: nao<Userfront.CreateUser>({
+      kind: 'userfront.users.create',
+      'auth:Authorization': process.env.USERFRONT_API_KEY,
+      'body:email': 'adam@flethy.com',
+    }),
+    userfrontSearchUsers: nao<Userfront.SearchUsers>({
+      kind: 'userfront.users.search',
+      'auth:Authorization': process.env.USERFRONT_API_KEY,
+      'body:filters': {
+        conjunction: 'and',
+        filterGroups: [
+          {
+            conjunction: 'and',
+            filters: [
+              {
+                attr: 'username',
+                type: 'string',
+                comparison: 'is',
+                value: 'gorgeous-tooth-d1ddnr',
+              },
+            ],
+          },
+        ],
+      },
+    }),
+    userfrontListRoles: nao<Userfront.ListRoles>({
+      kind: 'userfront.roles.list',
+      'auth:Authorization': process.env.USERFRONT_API_KEY,
+    }),
   }
-  const requestConfig = requestConfigs.robollyRender
+  const requestConfig = requestConfigs.userfrontListRoles
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

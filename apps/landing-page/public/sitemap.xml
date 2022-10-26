@@ -785,6 +785,10 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://flethy.com/integrations/userfront</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://flethy.com/integrations/vantevo</loc>
     <priority>0.8</priority>
   </url>

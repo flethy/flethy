@@ -205,6 +205,7 @@ The following Endpoints are currently supported.
 * [UptimeRobot](./api/uptimerobot.md)
 * [UrlScan](./api/urlscan.md)
 * [UsePlunk](./api/useplunk.md)
+* [Userfront](./api/userfront.md)
 * [Vantevo](./api/vantevo.md)
 * [Vonage](./api/vonage.md)
 * [WhoIsXMLApi](./api/whoisxmlapi.md)

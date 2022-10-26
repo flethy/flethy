@@ -1,0 +1,44 @@
+{
+  "name": "Userfront",
+  "domain": "userfront.com",
+  "claimed": false,
+  "description": "Authentication & access control without complexity.",
+  "links": [],
+  "logos": [
+    {
+      "type": "logo",
+      "theme": null,
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/id5zWut2eM/idsQ6mdKzQ.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 149,
+          "width": 820,
+          "size": 20378
+        },
+        {
+          "src": "https://asset.brandfetch.io/id5zWut2eM/idFFCBFdlQ.svg",
+          "background": "transparent",
+          "format": "svg",
+          "size": 7910
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#2b4cf2", "type": "accent", "brightness": 81 },
+    { "hex": "#182b4d", "type": "dark", "brightness": 41 },
+    { "hex": "#ffffff", "type": "light", "brightness": 255 }
+  ],
+  "fonts": [
+    {
+      "name": "Open Sans",
+      "type": "body",
+      "origin": "google",
+      "originId": "Open Sans",
+      "weights": []
+    }
+  ],
+  "images": []
+}

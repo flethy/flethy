@@ -191,6 +191,7 @@ import { Up42 } from '../../../connectors/src/configs/up42.config'
 import { UptimeRobot } from '../../../connectors/src/configs/uptimerobot.config'
 import { UrlScan } from '../../../connectors/src/configs/urlscan.config'
 import { UsePlunk } from '../../../connectors/src/configs/useplunk.config'
+import { Userfront } from '../../../connectors/src/configs/userfront.config'
 import { Vantevo } from '../../../connectors/src/configs/vantevo.config'
 import { Vonage } from '../../../connectors/src/configs/vonage.config'
 import { Web3Storage } from '../../../connectors/src/configs/web3storage.config'
@@ -628,6 +629,9 @@ configTypes.push({type: getType<UrlScan.Submission>(), id: 'urlscan', name: 'Url
 configTypes.push({type: getType<UrlScan.Result>(), id: 'urlscan', name: 'UrlScan', interface: 'Result'})
 configTypes.push({type: getType<UrlScan.Search>(), id: 'urlscan', name: 'UrlScan', interface: 'Search'})
 configTypes.push({type: getType<UsePlunk.PostEvent>(), id: 'useplunk', name: 'UsePlunk', interface: 'PostEvent'})
+configTypes.push({type: getType<Userfront.CreateUser>(), id: 'userfront', name: 'Userfront', interface: 'CreateUser'})
+configTypes.push({type: getType<Userfront.SearchUsers>(), id: 'userfront', name: 'Userfront', interface: 'SearchUsers'})
+configTypes.push({type: getType<Userfront.ListRoles>(), id: 'userfront', name: 'Userfront', interface: 'ListRoles'})
 configTypes.push({type: getType<Vantevo.SendEvent>(), id: 'vantevo', name: 'Vantevo', interface: 'SendEvent'})
 configTypes.push({type: getType<Vantevo.GetStatistics>(), id: 'vantevo', name: 'Vantevo', interface: 'GetStatistics'})
 configTypes.push({type: getType<Vantevo.GetEventStatistics>(), id: 'vantevo', name: 'Vantevo', interface: 'GetEventStatistics'})
