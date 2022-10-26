@@ -47,8 +47,8 @@ const ITEMS_2022_Q4: RoadmapEntry[] = [
 
 const FUTURE_MILESTONES: RoadmapEntry[] = [
   {
-    title: 'Integrate 200 services',
-    date: '2022-12-31',
+    title: '🚀 Integrate 200 services 🚀',
+    date: '2022-10-26',
     description:
       "That's a major milestone since an integration of enough services gives us the ability to build a lot of interesting use cases.",
     delivered: false,
