@@ -43,6 +43,15 @@ const ITEMS_2022_Q4: RoadmapEntry[] = [
     milestone: false,
     tags: [ROADMAP_TAGS.LANDINGPAGE],
   },
+  {
+    title: 'UTM Parameters',
+    date: '2022-10-27',
+    description:
+      'Finally adding UTM parameters to all links. This will help us to track where our users are coming from.',
+    delivered: true,
+    milestone: false,
+    tags: [ROADMAP_TAGS.LANDINGPAGE],
+  },
 ]
 
 const FUTURE_MILESTONES: RoadmapEntry[] = [

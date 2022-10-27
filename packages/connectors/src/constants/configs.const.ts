@@ -165,6 +165,7 @@ import { Sheety } from '../configs/sheety.config'
 import { Shortcut } from '../configs/shortcut.config'
 import { Shrtcode } from '../configs/shrtcode.config'
 import { SideKick } from '../configs/sidekick.config'
+import { Sidemail } from '../configs/sidemail.config'
 import { Slack } from '../configs/slack.config'
 import { SpeechTextAI } from '../configs/speechtextai.config'
 import { Stackby } from '../configs/stackby.config'
@@ -368,6 +369,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['shortcut', Shortcut.API],
 ['shrtcode', Shrtcode.API],
 ['sidekick', SideKick.API],
+['sidemail', Sidemail.API],
 ['slack', Slack.API],
 ['speechtextai', SpeechTextAI.API],
 ['stackby', Stackby.API],

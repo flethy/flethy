@@ -165,6 +165,7 @@ import { Sheety } from '../../../connectors/src/configs/sheety.config'
 import { Shortcut } from '../../../connectors/src/configs/shortcut.config'
 import { Shrtcode } from '../../../connectors/src/configs/shrtcode.config'
 import { SideKick } from '../../../connectors/src/configs/sidekick.config'
+import { Sidemail } from '../../../connectors/src/configs/sidemail.config'
 import { Slack } from '../../../connectors/src/configs/slack.config'
 import { SpeechTextAI } from '../../../connectors/src/configs/speechtextai.config'
 import { Stackby } from '../../../connectors/src/configs/stackby.config'
@@ -573,6 +574,7 @@ configTypes.push({type: getType<Shrtcode.Shorten>(), id: 'shrtcode', name: 'Shrt
 configTypes.push({type: getType<Shrtcode.Info>(), id: 'shrtcode', name: 'Shrtcode', interface: 'Info'})
 configTypes.push({type: getType<SideKick.ListApplications>(), id: 'sidekick', name: 'SideKick', interface: 'ListApplications'})
 configTypes.push({type: getType<SideKick.ListLogpoints>(), id: 'sidekick', name: 'SideKick', interface: 'ListLogpoints'})
+configTypes.push({type: getType<Sidemail.SendEmail>(), id: 'sidemail', name: 'Sidemail', interface: 'SendEmail'})
 configTypes.push({type: getType<Slack.IncomingWebhooksMessage>(), id: 'slack', name: 'Slack', interface: 'IncomingWebhooksMessage'})
 configTypes.push({type: getType<Slack.ChatPostMessage>(), id: 'slack', name: 'Slack', interface: 'ChatPostMessage'})
 configTypes.push({type: getType<Slack.ConversationsList>(), id: 'slack', name: 'Slack', interface: 'ConversationsList'})

@@ -1,0 +1,46 @@
+{
+  "name": "Sidemail",
+  "domain": "sidemail.io",
+  "claimed": false,
+  "description": "Sidemail is a set of email tools that internet businesses use for sending emails to their customers, users, and subscribers in the easiest way possible. Unlimited email list and API included.",
+  "links": [],
+  "logos": [
+    {
+      "type": "logo",
+      "theme": null,
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idLKHBwEJy/idmF5nkf9R.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 1276,
+          "width": 820,
+          "size": 57633
+        },
+        {
+          "src": "https://asset.brandfetch.io/idLKHBwEJy/idy1WtUiCH.svg",
+          "background": "transparent",
+          "format": "svg",
+          "height": null,
+          "width": null,
+          "size": 5720
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#102e4c", "type": "dark", "brightness": 42 },
+    { "hex": "#f8fafc", "type": "light", "brightness": 250 },
+    { "hex": "#c97ba2", "type": "accent", "brightness": 142 }
+  ],
+  "fonts": [
+    {
+      "name": "Avenir",
+      "type": "body",
+      "origin": "custom",
+      "originId": null,
+      "weights": []
+    }
+  ],
+  "images": []
+}

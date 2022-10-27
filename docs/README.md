@@ -181,6 +181,7 @@ The following Endpoints are currently supported.
 * [Shortcut](./api/shortcut.md)
 * [Shrtcode](./api/shrtcode.md)
 * [SideKick](./api/sidekick.md)
+* [Sidemail](./api/sidemail.md)
 * [Slack](./api/slack.md)
 * [SpeechTextAI](./api/speechtextai.md)
 * [Stackby](./api/stackby.md)

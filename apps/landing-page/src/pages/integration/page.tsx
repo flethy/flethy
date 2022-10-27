@@ -22,6 +22,7 @@ import { observer } from 'mobx-react-lite'
 import { useTranslation } from 'react-i18next'
 import FancyHeading from '../../components/molecules/fancy-heading/FancyHeading'
 import { formatDate } from '../../helpers/ui'
+import { UTMUtils } from '../../helpers/utm'
 import { useMst } from '../../models/root'
 
 export default observer(() => {
@@ -97,7 +98,12 @@ export default observer(() => {
 								px={2}
 								py={2}
 								rounded={'md'}
-								href={url.url}
+								href={UTMUtils.assign(url.url, {
+									utm_source: 'flethy',
+									utm_medium: 'landingpage',
+									utm_term: ['flethy', page.id],
+									utm_content: 'textlink',
+								})}
 								target={'_blank'}
 								_hover={{
 									textDecoration: 'none',

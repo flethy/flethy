@@ -195,6 +195,7 @@ import Vantevo from '@flethy/connectors/src/configs/vantevo.config'
 import Vonage from '@flethy/connectors/src/configs/vonage.config'
 import { HttpRequest } from './controllers/HttpRequest'
 import { logger } from './utils/Logger'
+import Sidemail from '@flethy/connectors/src/configs/sidemail.config'
 
 async function main() {
   const requestConfigs: {
@@ -2719,8 +2720,20 @@ async function main() {
       kind: 'userfront.roles.list',
       'auth:Authorization': process.env.USERFRONT_API_KEY,
     }),
+    sidemailSend: nao<Sidemail.SendEmail>({
+      kind: 'sidemail.email.send',
+      'auth:Authorization': process.env.SIDEMAIL_API_KEY,
+      'body:fromAddress': 'adam@flethy.com',
+      'body:toAddress': 'adam@flethy.com',
+      'body:subject': 'Hello from Flethy',
+      'body:templateId': process.env.SIDEMAIL_TEMPLATE_ID,
+      'body:templateProps': {
+        project_name: 'flethy',
+        url: 'https://flethy.com',
+      },
+    }),
   }
-  const requestConfig = requestConfigs.userfrontListRoles
+  const requestConfig = requestConfigs.sidemailSend
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)
