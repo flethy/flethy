@@ -14,6 +14,7 @@ import { ReactNode } from 'react'
 import { useTranslation } from 'react-i18next'
 import { FaTwitter } from 'react-icons/fa'
 import { EXTERNAL_LINKS } from '../constants/externallinks.const'
+import { UTMUtils } from '../helpers/utm'
 import { useMst } from '../models/root'
 import routes from '../routes'
 
@@ -75,7 +76,7 @@ export default observer(() => {
 				>
 					<Text>
 						© {new Date().getFullYear()}
-						{t('footer.allRightsReserved')}
+						{String(t('footer.allRightsReserved'))}
 					</Text>
 					<Link
 						px={2}
@@ -90,10 +91,17 @@ export default observer(() => {
 							router.goTo(routes.pitch)
 						}}
 					>
-						{t('footer.pitchdeck')}
+						{String(t('footer.pitchdeck'))}
 					</Link>
 					<Stack direction={'row'} spacing={6}>
-						<SocialButton label={'Twitter'} href={EXTERNAL_LINKS.TWITTER}>
+						<SocialButton
+							label={'Twitter'}
+							href={UTMUtils.assign(EXTERNAL_LINKS.TWITTER, {
+								utm_source: 'flethy',
+								utm_medium: 'landingpage',
+								utm_content: 'footerlink',
+							})}
+						>
 							<FaTwitter />
 						</SocialButton>
 						{/* <SocialButton label={'YouTube'} href={'#'}>

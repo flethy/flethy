@@ -12,6 +12,7 @@ import { observer } from 'mobx-react-lite'
 import { useTranslation } from 'react-i18next'
 import EmailSubscription from '../../components/email-subscription/EmailSubscription'
 import { EXTERNAL_LINKS } from '../../constants/externallinks.const'
+import { UTMUtils } from '../../helpers/utm'
 import { useMst } from '../../models/root'
 import routes from '../../routes'
 
@@ -53,15 +54,15 @@ export default observer(() => {
 									zIndex: -1,
 								}}
 							>
-								{t('pages.home.sections.connectors.heading1')}
+								{String(t('pages.home.sections.connectors.heading1'))}
 							</Text>
 							<br />
 							<Text as={'span'} color={'flethy.purple'}>
-								{t('pages.home.sections.connectors.heading2')}
+								{String(t('pages.home.sections.connectors.heading2'))}
 							</Text>
 						</Heading>
 						<Text color={'gray.500'}>
-							{t('pages.home.sections.connectors.description')}
+							{String(t('pages.home.sections.connectors.description'))}
 						</Text>
 						<Stack
 							spacing={{ base: 4, sm: 6 }}
@@ -76,7 +77,13 @@ export default observer(() => {
 								bg={'flethy.orange'}
 								_hover={{ bg: 'flethy.purple' }}
 								onClick={() =>
-									window.open(EXTERNAL_LINKS.FLETHY_CONNECTORS_NPM)
+									window.open(
+										UTMUtils.assign(EXTERNAL_LINKS.FLETHY_CONNECTORS_NPM, {
+											utm_source: 'flethy',
+											utm_medium: 'landingpage',
+											utm_content: 'buttonlink',
+										}),
+									)
 								}
 							>
 								Get started
@@ -170,15 +177,15 @@ export default observer(() => {
 									zIndex: -1,
 								}}
 							>
-								{t('pages.home.sections.flow.heading1')}
+								{String(t('pages.home.sections.flow.heading1'))}
 							</Text>
 							<br />
 							<Text as={'span'} color={'flethy.purple'}>
-								{t('pages.home.sections.flow.heading2')}
+								{String(t('pages.home.sections.flow.heading2'))}
 							</Text>
 						</Heading>
 						<Text color={'gray.500'}>
-							{t('pages.home.sections.flow.description')}
+							{String(t('pages.home.sections.flow.description'))}
 						</Text>
 						<Stack
 							spacing={{ base: 4, sm: 6 }}
@@ -192,7 +199,15 @@ export default observer(() => {
 								colorScheme={'orange'}
 								bg={'flethy.orange'}
 								_hover={{ bg: 'flethy.purple' }}
-								onClick={() => window.open(EXTERNAL_LINKS.FLETHY_FLOW_NPM)}
+								onClick={() =>
+									window.open(
+										UTMUtils.assign(EXTERNAL_LINKS.FLETHY_FLOW_NPM, {
+											utm_source: 'flethy',
+											utm_medium: 'landingpage',
+											utm_content: 'buttonlink',
+										}),
+									)
+								}
 							>
 								Get started
 							</Button>
@@ -230,15 +245,15 @@ export default observer(() => {
 									zIndex: -1,
 								}}
 							>
-								{t('pages.home.sections.saas.heading1')}
+								{String(t('pages.home.sections.saas.heading1'))}
 							</Text>
 							<br />
 							<Text as={'span'} color={'flethy.purple'}>
-								{t('pages.home.sections.saas.heading2')}
+								{String(t('pages.home.sections.saas.heading2'))}
 							</Text>
 						</Heading>
 						<Text color={'gray.500'}>
-							{t('pages.home.sections.saas.description')}
+							{String(t('pages.home.sections.saas.description'))}
 						</Text>
 					</Stack>
 					<Flex
@@ -294,11 +309,11 @@ export default observer(() => {
 									zIndex: -1,
 								}}
 							>
-								{t('pages.home.sections.subscription.heading1')}
+								{String(t('pages.home.sections.subscription.heading1'))}
 							</Text>
 							<br />
 							<Text as={'span'} color={'flethy.purple'}>
-								{t('pages.home.sections.subscription.heading2')}
+								{String(t('pages.home.sections.subscription.heading2'))}
 							</Text>
 						</Heading>
 					</Stack>
