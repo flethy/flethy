@@ -135,7 +135,7 @@ importers:
       '@emotion/react': ^11.10.5
       '@emotion/styled': ^11.10.5
       '@flethy/connectors': workspace:*
-      '@flethy/flow': ^0.0.202
+      '@flethy/flow': ^0.0.203
       '@fontsource/open-sans': ^4.5.13
       '@fontsource/raleway': ^4.5.11
       '@types/node': 18.11.7
@@ -179,7 +179,7 @@ importers:
       '@emotion/react': 11.10.5_5ihuxrpe4zse4p4tf6ubxcyzuu
       '@emotion/styled': 11.10.5_z7x6wqqd37fzu777gq3gq2bxru
       '@flethy/connectors': link:../../packages/connectors
-      '@flethy/flow': 0.0.202
+      '@flethy/flow': 0.0.203
       '@fontsource/open-sans': 4.5.13
       '@fontsource/raleway': 4.5.11
       framer-motion: 7.6.2_biqbaboplfbrettd7655fr4n2y
@@ -258,7 +258,7 @@ importers:
 
   packages/flow:
     specifiers:
-      '@flethy/connectors': 0.0.202
+      '@flethy/connectors': 0.0.203
       '@types/node': 18.11.7
       '@typescript-eslint/eslint-plugin': ^5.41.0
       '@typescript-eslint/parser': ^5.41.0
@@ -274,7 +274,7 @@ importers:
       tsconfig: workspace:*
       typescript: ^4.8.4
     dependencies:
-      '@flethy/connectors': 0.0.202
+      '@flethy/connectors': 0.0.203
       axios: 1.1.2
       jsonata: 1.8.6
     devDependencies:
@@ -2071,10 +2071,14 @@ packages:
     resolution: {integrity: sha512-dNEBJ+2KnDRW1nEyyFMj9vQDRbJd6kvggDEDnIpkXAgjdcySVjbRHsyGXlxf97FNXD/aan+Gg9AYWzC2Z6qD+Q==}
     dev: false
 
-  /@flethy/flow/0.0.202:
-    resolution: {integrity: sha512-G1xPO645+7YLBIGvwg/AaHatmuGuuEpaJEThkOz+pQbLIw3k20iyznYg9aF1uzinu48GFFPrKXFrRYNVuqPGtg==}
+  /@flethy/connectors/0.0.203:
+    resolution: {integrity: sha512-ap29lCKcxwlT4DLV2lIepu2oXTYd1erElnnpLJn4F7y7wjAG7Nappnyn++taVZKPQzwppL5gXbQSkwKeiyBBXg==}
+    dev: false
+
+  /@flethy/flow/0.0.203:
+    resolution: {integrity: sha512-lLh/VmYFN5Mc20kE9mtq2nNpEVdAoyJIJ6rnKjVHPVKsIzpsi+WBVrW7W3tkzMAWdNWmA40wJp4CENg0ghZWAg==}
     dependencies:
-      '@flethy/connectors': 0.0.200
+      '@flethy/connectors': 0.0.202
       axios: 1.1.2
       jsonata: 1.8.6
     transitivePeerDependencies:

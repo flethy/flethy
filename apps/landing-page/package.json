@@ -17,7 +17,7 @@
 		"@emotion/react": "^11.10.5",
 		"@emotion/styled": "^11.10.5",
 		"@flethy/connectors": "workspace:*",
-		"@flethy/flow": "^0.0.202",
+		"@flethy/flow": "^0.0.203",
 		"@fontsource/open-sans": "^4.5.13",
 		"@fontsource/raleway": "^4.5.11",
 		"framer-motion": "^7.6.2",
