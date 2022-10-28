@@ -1,4 +1,3 @@
-import { URLSearchParams } from 'url'
 import { FetchParams } from '../types/FetchParams.type'
 import { RequestOptions, RequestParams } from '../types/Request.types'
 import { Base64Utils } from './Base64.utils'
