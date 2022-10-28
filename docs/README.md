@@ -184,6 +184,7 @@ The following Endpoints are currently supported.
 * [Sidemail](./api/sidemail.md)
 * [Slack](./api/slack.md)
 * [SpeechTextAI](./api/speechtextai.md)
+* [Splitbee](./api/splitbee.md)
 * [Stackby](./api/stackby.md)
 * [Statically](./api/statically.md)
 * [Storyblok](./api/storyblok.md)

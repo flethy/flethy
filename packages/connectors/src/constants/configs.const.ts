@@ -168,6 +168,7 @@ import { SideKick } from '../configs/sidekick.config'
 import { Sidemail } from '../configs/sidemail.config'
 import { Slack } from '../configs/slack.config'
 import { SpeechTextAI } from '../configs/speechtextai.config'
+import { Splitbee } from '../configs/splitbee.config'
 import { Stackby } from '../configs/stackby.config'
 import { Statically } from '../configs/statically.config'
 import { Storyblok } from '../configs/storyblok.config'
@@ -372,6 +373,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['sidemail', Sidemail.API],
 ['slack', Slack.API],
 ['speechtextai', SpeechTextAI.API],
+['splitbee', Splitbee.API],
 ['stackby', Stackby.API],
 ['statically', Statically.API],
 ['storyblok', Storyblok.API],
