@@ -693,6 +693,10 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://flethy.com/integrations/splitbee</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://flethy.com/integrations/stackby</loc>
     <priority>0.8</priority>
   </url>

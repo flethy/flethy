@@ -168,6 +168,7 @@ import { SideKick } from '../../../connectors/src/configs/sidekick.config'
 import { Sidemail } from '../../../connectors/src/configs/sidemail.config'
 import { Slack } from '../../../connectors/src/configs/slack.config'
 import { SpeechTextAI } from '../../../connectors/src/configs/speechtextai.config'
+import { Splitbee } from '../../../connectors/src/configs/splitbee.config'
 import { Stackby } from '../../../connectors/src/configs/stackby.config'
 import { Statically } from '../../../connectors/src/configs/statically.config'
 import { Storyblok } from '../../../connectors/src/configs/storyblok.config'
@@ -580,6 +581,8 @@ configTypes.push({type: getType<Slack.ChatPostMessage>(), id: 'slack', name: 'Sl
 configTypes.push({type: getType<Slack.ConversationsList>(), id: 'slack', name: 'Slack', interface: 'ConversationsList'})
 configTypes.push({type: getType<SpeechTextAI.Recognize>(), id: 'speechtextai', name: 'SpeechTextAI', interface: 'Recognize'})
 configTypes.push({type: getType<SpeechTextAI.Results>(), id: 'speechtextai', name: 'SpeechTextAI', interface: 'Results'})
+configTypes.push({type: getType<Splitbee.TrackEvent>(), id: 'splitbee', name: 'Splitbee', interface: 'TrackEvent'})
+configTypes.push({type: getType<Splitbee.SetCustomUserData>(), id: 'splitbee', name: 'Splitbee', interface: 'SetCustomUserData'})
 configTypes.push({type: getType<Stackby.ListRows>(), id: 'stackby', name: 'Stackby', interface: 'ListRows'})
 configTypes.push({type: getType<Statically.StaticZapGithub>(), id: 'statically', name: 'Statically', interface: 'StaticZapGithub'})
 configTypes.push({type: getType<Statically.StaticZapGitlab>(), id: 'statically', name: 'Statically', interface: 'StaticZapGitlab'})

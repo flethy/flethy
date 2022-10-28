@@ -1,0 +1,72 @@
+{
+  "name": "Splitbee",
+  "domain": "splitbee.io",
+  "claimed": false,
+  "description": "Track and optimize your online business with Splitbee. Analytics, Funnels, Automations, A/B Testing and more.",
+  "links": [
+    { "name": "github", "url": "https://github.com/splitbee" },
+    { "name": "twitter", "url": "https://twitter.com/splitbee" }
+  ],
+  "logos": [
+    {
+      "type": "icon",
+      "theme": null,
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idBKl8aTPa/idM97Vxt1w.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 400,
+          "width": 400,
+          "size": 11073
+        }
+      ]
+    },
+    {
+      "type": "logo",
+      "theme": null,
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idBKl8aTPa/id-D5HCtQy.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 145,
+          "width": 145,
+          "size": 4765
+        }
+      ]
+    }
+  ],
+  "colors": [{ "hex": "#eef2f6", "type": "accent", "brightness": 241 }],
+  "fonts": [
+    {
+      "name": "Inter",
+      "type": "title",
+      "origin": "google",
+      "originId": "Inter",
+      "weights": []
+    },
+    {
+      "name": "Roboto",
+      "type": "body",
+      "origin": "google",
+      "originId": "Roboto",
+      "weights": []
+    }
+  ],
+  "images": [
+    {
+      "type": "banner",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idBKl8aTPa/idmQ9XP8tF.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 500,
+          "width": 1500,
+          "size": 35681
+        }
+      ]
+    }
+  ]
+}

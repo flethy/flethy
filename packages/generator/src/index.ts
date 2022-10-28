@@ -196,6 +196,7 @@ import Vonage from '@flethy/connectors/src/configs/vonage.config'
 import { HttpRequest } from './controllers/HttpRequest'
 import { logger } from './utils/Logger'
 import Sidemail from '@flethy/connectors/src/configs/sidemail.config'
+import Splitbee from '@flethy/connectors/src/configs/splitbee.config'
 
 async function main() {
   const requestConfigs: {
@@ -2732,8 +2733,25 @@ async function main() {
         url: 'https://flethy.com',
       },
     }),
+    splitbeeTrack: nao<Splitbee.TrackEvent>({
+      kind: 'splitbee.events.track',
+      'auth:sbp': process.env.SPLITBEE_PROJECT_TOKEN,
+      'header:userId': 'adam@flethy.com',
+      'body:event': 'onboarding',
+      'body:data': {
+        origin: 'flethy.com',
+      },
+    }),
+    splitbeeUser: nao<Splitbee.SetCustomUserData>({
+      kind: 'splitbee.users.set',
+      'auth:sbp': process.env.SPLITBEE_PROJECT_TOKEN,
+      'header:userId': 'adam@flethy.com',
+      'body:body': {
+        name: 'Adam',
+      },
+    }),
   }
-  const requestConfig = requestConfigs.sidemailSend
+  const requestConfig = requestConfigs.splitbeeUser
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)
