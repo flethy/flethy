@@ -27,7 +27,7 @@
   "dependencies": {
     "axios": "1.1.2",
     "jsonata": "^1.8.6",
-    "@flethy/connectors": "0.0.200"
+    "@flethy/connectors": "0.0.202"
   },
   "devDependencies": {
     "@types/node": "18.11.7",
