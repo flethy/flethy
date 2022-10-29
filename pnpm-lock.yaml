@@ -15,6 +15,7 @@ importers:
   apps/execution-platform:
     specifiers:
       '@cloudflare/workers-types': 3.18.0
+      '@tsndr/cloudflare-worker-jwt': ^2.1.2
       '@types/node': 18.11.3
       '@typescript-eslint/eslint-plugin': ^5.40.1
       '@typescript-eslint/parser': ^5.40.1
@@ -31,6 +32,7 @@ importers:
       wrangler: 2.1.13
     devDependencies:
       '@cloudflare/workers-types': 3.18.0
+      '@tsndr/cloudflare-worker-jwt': 2.1.2
       '@types/node': 18.11.3
       '@typescript-eslint/eslint-plugin': 5.40.1_c4zyna56jjjrggqkyejnaxjxfu
       '@typescript-eslint/parser': 5.40.1_wyqvi574yv7oiwfeinomdzmc3m
@@ -2666,6 +2668,10 @@ packages:
 
   /@tsconfig/node16/1.0.3:
     resolution: {integrity: sha512-yOlFc+7UtL/89t2ZhjPvvB/DeAr3r+Dq58IgzsFkOAvVC6NMJXmCGjbptdXdR9qsX7pKcTL+s87FtYREi2dEEQ==}
+    dev: true
+
+  /@tsndr/cloudflare-worker-jwt/2.1.2:
+    resolution: {integrity: sha512-O809LSXKJ57Ln0fU8SO1rS97gPQtU4gummfGbOk/S9EpoWQzfTrug25zz4xIpszwQgu26m9Sk6gTm9bVhZCzfA==}
     dev: true
 
   /@types/babel__core/7.1.19:

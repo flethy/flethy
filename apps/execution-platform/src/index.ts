@@ -1,5 +1,7 @@
 import { Router } from "worktop";
 import * as Cache from "worktop/cache";
+import { AuthController, TokenScope } from "./controllers/auth.controller";
+import { ErrorMiddleware } from "./utils/error.utils";
 // https://www.npmjs.com/package/worktop
 
 const API = new Router();
@@ -15,20 +17,22 @@ export interface Env {
   // MY_BUCKET: R2Bucket;
 }
 
-API.add("GET", "/messages/:id", async (req, res) => {
-  // Pre-parsed `req.params` object
-  const key = `messages::${req.params.id}`;
+API.add("GET", "/token", async (req, res) => {
+  try {
+    const token = await AuthController.createToken(
+      {
+        projectId: "123",
+        workspaceId: "456",
+        scopes: [TokenScope.WORKFLOW_CREATE, TokenScope.WORKFLOW_READ],
+      },
+      "flethy"
+    );
 
-  // Assumes JSON (can override)
-  const message = { text: "Hello from flethy with worktop", key };
-
-  // Alter response headers directly
-  res.setHeader("Cache-Control", "public, max-age=60");
-
-  // Smart `res.send()` helper
-  // ~> automatically stringifies JSON objects
-  // ~> auto-sets `Content-Type` & `Content-Length` headers
-  res.send(200, message);
+    res.send(200, { token });
+  } catch (error: any) {
+    const response = ErrorMiddleware.handle(error);
+    res.send(response.status, response.data);
+  }
 });
 
 API.add("GET", "/alive", (req, res) => {
