@@ -1,0 +1,45 @@
+{
+  "name": null,
+  "domain": "npoint.io",
+  "claimed": false,
+  "description": null,
+  "links": [],
+  "logos": [
+    {
+      "type": "logo",
+      "theme": null,
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/id0Xt0cOMV/id8b84Hcpc.png",
+          "background": null,
+          "format": "png",
+          "height": 180,
+          "width": 180,
+          "size": 6218
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#6574a6", "type": "accent", "brightness": 116 },
+    { "hex": "#3d3f45", "type": "dark", "brightness": 63 },
+    { "hex": "#eff0f5", "type": "light", "brightness": 240 }
+  ],
+  "fonts": [
+    {
+      "name": "Source Sans Pro",
+      "type": "title",
+      "origin": "google",
+      "originId": "Source+Sans+Pro",
+      "weights": []
+    },
+    {
+      "name": "Source Sans Pro",
+      "type": "body",
+      "origin": "google",
+      "originId": "Source+Sans+Pro",
+      "weights": []
+    }
+  ],
+  "images": []
+}

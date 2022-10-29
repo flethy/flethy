@@ -197,6 +197,7 @@ import { HttpRequest } from './controllers/HttpRequest'
 import { logger } from './utils/Logger'
 import Sidemail from '@flethy/connectors/src/configs/sidemail.config'
 import Splitbee from '@flethy/connectors/src/configs/splitbee.config'
+import Npoint from '@flethy/connectors/src/configs/npoint.config'
 
 async function main() {
   const requestConfigs: {
@@ -2750,8 +2751,12 @@ async function main() {
         name: 'Adam',
       },
     }),
+    npointBin: nao<Npoint.GetBin>({
+      kind: 'npoint.core.get',
+      'param:id': process.env.NPOINT_BIN_ID,
+    }),
   }
-  const requestConfig = requestConfigs.splitbeeUser
+  const requestConfig = requestConfigs.npointBin
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)
