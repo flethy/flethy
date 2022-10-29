@@ -121,6 +121,7 @@ import { Netlify } from '../../../connectors/src/configs/netlify.config'
 import { NewRelic } from '../../../connectors/src/configs/newrelic.config'
 import { NewsApi } from '../../../connectors/src/configs/newsapi.config'
 import { Notion } from '../../../connectors/src/configs/notion.config'
+import { Npoint } from '../../../connectors/src/configs/npoint.config'
 import { OCRSpace } from '../../../connectors/src/configs/ocrspace.config'
 import { OneInch } from '../../../connectors/src/configs/oneinch.config'
 import { OpenLibrary } from '../../../connectors/src/configs/openlibrary.config'
@@ -488,6 +489,7 @@ configTypes.push({type: getType<Netlify.GetEnvironmentVariables>(), id: 'netlify
 configTypes.push({type: getType<NewRelic.InsightsEvents>(), id: 'newrelic', name: 'NewRelic', interface: 'InsightsEvents'})
 configTypes.push({type: getType<NewsApi.SearchEverything>(), id: 'newsapi', name: 'NewsApi', interface: 'SearchEverything'})
 configTypes.push({type: getType<Notion.CreateDatabase>(), id: 'notion', name: 'Notion', interface: 'CreateDatabase'})
+configTypes.push({type: getType<Npoint.GetBin>(), id: 'npoint', name: 'Npoint', interface: 'GetBin'})
 configTypes.push({type: getType<OCRSpace.ParseURL>(), id: 'ocrspace', name: 'OCRSpace', interface: 'ParseURL'})
 configTypes.push({type: getType<OCRSpace.ParseBase64>(), id: 'ocrspace', name: 'OCRSpace', interface: 'ParseBase64'})
 configTypes.push({type: getType<OneInch.AggregationInfoTokens>(), id: '1inch', name: 'OneInch', interface: 'AggregationInfoTokens'})

@@ -121,6 +121,7 @@ import { Netlify } from '../configs/netlify.config'
 import { NewRelic } from '../configs/newrelic.config'
 import { NewsApi } from '../configs/newsapi.config'
 import { Notion } from '../configs/notion.config'
+import { Npoint } from '../configs/npoint.config'
 import { OCRSpace } from '../configs/ocrspace.config'
 import { OneInch } from '../configs/oneinch.config'
 import { OpenLibrary } from '../configs/openlibrary.config'
@@ -326,6 +327,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['newrelic', NewRelic.API],
 ['newsapi', NewsApi.API],
 ['notion', Notion.API],
+['npoint', Npoint.API],
 ['ocrspace', OCRSpace.API],
 ['1inch', OneInch.API],
 ['openlibrary', OpenLibrary.API],

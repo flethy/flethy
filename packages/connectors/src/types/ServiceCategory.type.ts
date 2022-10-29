@@ -111,6 +111,7 @@ export type UTILS_TYPE =
   | 'data-exchange'
   | 'language-detection'
   | 'code-detection'
+  | 'json'
 export type DEFI_TYPE = 'liquidity'
 export type BOOKS_TYPE = 'index'
 export type FINANCE_TYPE =

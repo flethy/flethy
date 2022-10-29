@@ -141,6 +141,7 @@ The following Endpoints are currently supported.
 * [NewRelic](./api/newrelic.md)
 * [NewsApi](./api/newsapi.md)
 * [Notion](./api/notion.md)
+* [Npoint](./api/npoint.md)
 * [OCRSpace](./api/ocrspace.md)
 * [OpenLibrary](./api/openlibrary.md)
 * [OpenWeatherMap](./api/openweathermap.md)
