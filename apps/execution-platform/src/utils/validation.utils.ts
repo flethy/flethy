@@ -6,6 +6,8 @@ export interface ValidationOptions {
     minStringLength?: number;
     numberGreaterEqualsThan?: number;
     arrayMinLength?: number;
+    arrayValuesInArrayValues?: any[];
+    stringEquals?: string;
   };
 }
 
@@ -72,6 +74,35 @@ export class ValidationUtils {
         ) {
           result.valid = false;
           result.message = `${options.parameter} must have at least ${options.checks.arrayMinLength} items`;
+          return result;
+        }
+      }
+
+      if (
+        ValidationUtils.existisValue(options.checks.arrayValuesInArrayValues)
+      ) {
+        if (!ValidationUtils.valueType(options.value, "array")) {
+          result.valid = false;
+          result.message = `${options.parameter} must be an array`;
+          return result;
+        } else {
+          for (const item of options.value) {
+            if (!options.checks.arrayValuesInArrayValues!.includes(item)) {
+              result.valid = false;
+              result.message = `${options.parameter} must have values in ${options.checks.arrayValuesInArrayValues}`;
+              return result;
+            }
+          }
+        }
+      }
+
+      if (ValidationUtils.existisValue(options.checks.stringEquals)) {
+        if (
+          !ValidationUtils.valueType(options.value, "string") ||
+          options.value !== options.checks.stringEquals!
+        ) {
+          result.valid = false;
+          result.message = `${options.parameter} must be equal to ${options.checks.stringEquals}`;
           return result;
         }
       }

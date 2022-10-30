@@ -18,7 +18,61 @@ export interface TokenRequest {
   expiration?: number;
 }
 
+export interface TokenVerificationRequest extends TokenRequest {
+  token: string;
+}
+
 export class AuthController {
+  public static async verifyToken(
+    request: TokenVerificationRequest,
+    secret: string
+  ) {
+    const tokenIsValid = await jwt.verify(request.token, secret);
+    if (!tokenIsValid) {
+      throw new FlethyError({
+        type: ErrorType.Unauthorized,
+        message: `Token is invalid`,
+        log: {
+          context: { origin: "auth.controller.ts", method: "verifyToken" },
+          message: `Validation error: Token is invalid`,
+        },
+      });
+    }
+    const { payload } = jwt.decode(request.token);
+    const validation = ValidationUtils.validateAll([
+      {
+        value: request.projectId,
+        parameter: "projectId",
+        checks: { required: true, stringEquals: payload.projectId },
+      },
+      {
+        value: request.workspaceId,
+        parameter: "workspaceId",
+        checks: { required: true, stringEquals: payload.workspaceId },
+      },
+      {
+        value: payload.scopes,
+        parameter: "scopes",
+        checks: { required: true, arrayValuesInArrayValues: request.scopes },
+      },
+      {
+        value: payload.expiration,
+        parameter: "expiration",
+        checks: { numberGreaterEqualsThan: Date.now() },
+      },
+    ]);
+    if (!validation.valid) {
+      throw new FlethyError({
+        type: ErrorType.Forbidden,
+        message: validation.message,
+        log: {
+          context: { origin: "auth.controller.ts", method: "verifyToken" },
+          message: `Validation error: ${validation.message}`,
+        },
+      });
+    }
+  }
+
   public static async createToken(
     request: TokenRequest,
     secret: string
