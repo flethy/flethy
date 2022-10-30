@@ -1,0 +1,51 @@
+# Dataddo
+
+## Links
+
+* URL: [https://www.dataddo.com/](https://www.dataddo.com/)
+* Documentation: [https://docs.dataddo.com/](https://docs.dataddo.com/)
+* Tags: web2
+* Category: data
+* Type: data-integration
+
+## API
+
+### Authentication
+
+* Authorization: header:bearer
+* email: body
+* password: body
+
+### services
+
+#### get
+
+##### Get Services
+
+* Description: Get Services
+* Docs: [https://headless.dataddo.com/#/service/serviceControllerList](https://headless.dataddo.com/#/service/serviceControllerList)
+
+#### create
+
+##### Create Services
+
+* Description: Create Services
+* Docs: [https://headless.dataddo.com/#/service/serviceControllerCreate](https://headless.dataddo.com/#/service/serviceControllerCreate)
+
+### sources
+
+#### get
+
+##### Get Sources
+
+* Description: Get Sources
+* Docs: [https://headless.dataddo.com/#/source/sourceControllerList](https://headless.dataddo.com/#/source/sourceControllerList)
+
+### auth
+
+#### getToken
+
+##### Obtaining the tokensServices
+
+* Description: Obtaining the tokens
+* Docs: [https://docs.dataddo.com/docs/dataddo-api-authorization](https://docs.dataddo.com/docs/dataddo-api-authorization)

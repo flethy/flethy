@@ -52,6 +52,7 @@ import { Covalent } from '../configs/covalent.config'
 import { Cronhooks } from '../configs/cronhooks.config'
 import { Cumul } from '../configs/cumul.config'
 import { CurrencyScoop } from '../configs/currencyscoop.config'
+import { Dataddo } from '../configs/dataddo.config'
 import { DataDog } from '../configs/datadog.config'
 import { DatoCMS } from '../configs/datocms.config'
 import { Deepgram } from '../configs/deepgram.config'
@@ -258,6 +259,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['cronhooks', Cronhooks.API],
 ['cumul', Cumul.API],
 ['currencyscoop', CurrencyScoop.API],
+['dataddo', Dataddo.API],
 ['datadog', DataDog.API],
 ['datocms', DatoCMS.API],
 ['deepgram', Deepgram.API],

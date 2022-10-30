@@ -74,6 +74,7 @@ The following Endpoints are currently supported.
 * [Courier](./api/courier.md)
 * [Cumul](./api/cumul.md)
 * [CurrencyScoop](./api/currencyscoop.md)
+* [Dataddo](./api/dataddo.md)
 * [DataDog](./api/datadog.md)
 * [DatoCMS](./api/datocms.md)
 * [Deepgram](./api/deepgram.md)

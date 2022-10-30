@@ -125,6 +125,7 @@ export class BrandExporter {
       'coinlayer',
       'courier',
       'covalent',
+      'dataddo',
       'directus',
       'mezmo',
       'ory',
