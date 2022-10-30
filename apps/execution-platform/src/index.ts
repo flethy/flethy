@@ -5,6 +5,7 @@ import { ErrorMiddleware } from "./utils/error.utils";
 // https://www.npmjs.com/package/worktop
 
 const API = new Router();
+const SECRET = "flethy";
 
 export interface Env {
   // Example binding to KV. Learn more at https://developers.cloudflare.com/workers/runtime-apis/kv/
@@ -25,10 +26,30 @@ API.add("GET", "/token", async (req, res) => {
         workspaceId: "456",
         scopes: [TokenScope.WORKFLOW_CREATE, TokenScope.WORKFLOW_READ],
       },
-      "flethy"
+      SECRET
     );
 
     res.send(200, { token });
+  } catch (error: any) {
+    const response = ErrorMiddleware.handle(error);
+    res.send(response.status, response.data);
+  }
+});
+
+API.add("GET", "/token/:token", async (req, res) => {
+  const { token } = req.params;
+  try {
+    await AuthController.verifyToken(
+      {
+        projectId: "1234",
+        workspaceId: "456",
+        scopes: [TokenScope.WORKFLOW_CREATE, TokenScope.WORKFLOW_READ],
+        token,
+      },
+      SECRET
+    );
+
+    res.send(200, { success: true });
   } catch (error: any) {
     const response = ErrorMiddleware.handle(error);
     res.send(response.status, response.data);
