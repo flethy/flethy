@@ -127,6 +127,7 @@ export type DATA_TYPE =
   | 'geo'
   | 'carbon-emmisions'
   | 'creator-data'
+  | 'data-integration'
 export type CLOUD_TYPE = 'services'
 export type SEARCH_TYPE = 'serp'
 export type NETWORK_TYPE = 'cdn'

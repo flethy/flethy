@@ -229,6 +229,10 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://flethy.com/integrations/dataddo</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://flethy.com/integrations/datadog</loc>
     <priority>0.8</priority>
   </url>

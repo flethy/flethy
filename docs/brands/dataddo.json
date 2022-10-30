@@ -1,0 +1,83 @@
+{
+  "name": "Dataddo",
+  "domain": "dataddo.com",
+  "claimed": false,
+  "description": "Data extraction, integration and analytics platform.",
+  "links": [
+    {
+      "name": "youtube",
+      "url": "https://youtube.com/channel/UC1PuCWNb9YQiEBdLz9zrYMA"
+    },
+    { "name": "twitter", "url": "https://twitter.com/dataddo" },
+    { "name": "instagram", "url": "https://instagram.com/dataddo_com" },
+    { "name": "linkedin", "url": "https://linkedin.com/company/dataddo-com" },
+    { "name": "facebook", "url": "https://facebook.com/dataddo" }
+  ],
+  "logos": [
+    {
+      "type": "icon",
+      "theme": null,
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idjQCT8Upn/idtyzB08KA.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 400,
+          "width": 400,
+          "size": 7877
+        }
+      ]
+    },
+    {
+      "type": "logo",
+      "theme": null,
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idjQCT8Upn/idK9Qqpzfk.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 212,
+          "width": 820,
+          "size": 16591
+        },
+        {
+          "src": "https://asset.brandfetch.io/idjQCT8Upn/idiZwQvj3P.svg",
+          "background": "transparent",
+          "format": "svg",
+          "height": null,
+          "width": null,
+          "size": 7288
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#1276bf", "type": "dark", "brightness": 102 },
+    { "hex": "#f3b436", "type": "light", "brightness": 184 },
+    { "hex": "#009ffd", "type": "accent", "brightness": 132 }
+  ],
+  "fonts": [
+    {
+      "name": "Roboto",
+      "type": "body",
+      "origin": "google",
+      "originId": "Roboto",
+      "weights": []
+    }
+  ],
+  "images": [
+    {
+      "type": "banner",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idjQCT8Upn/idIl6NE-Hw.png",
+          "background": null,
+          "format": "png",
+          "height": 800,
+          "width": 1920,
+          "size": 438682
+        }
+      ]
+    }
+  ]
+}

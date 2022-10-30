@@ -169,6 +169,7 @@ import ButtondownEmail from '@flethy/connectors/src/configs/buttondownemail.conf
 import CarbEngage from '@flethy/connectors/src/configs/carbengage.config'
 import Codat from '@flethy/connectors/src/configs/codat.config'
 import Cumul from '@flethy/connectors/src/configs/cumul.config'
+import Dataddo from '@flethy/connectors/src/configs/dataddo.config'
 import Deepgram from '@flethy/connectors/src/configs/deepgram.config'
 import Flatfile from '@flethy/connectors/src/configs/flatfile.config'
 import GitLab from '@flethy/connectors/src/configs/gitlab.config'
@@ -179,6 +180,7 @@ import LanguageLayer from '@flethy/connectors/src/configs/languagelayer.config'
 import Logz from '@flethy/connectors/src/configs/logz.config'
 import Lolo from '@flethy/connectors/src/configs/lolo.config'
 import Luabase from '@flethy/connectors/src/configs/luabase.config'
+import Npoint from '@flethy/connectors/src/configs/npoint.config'
 import ORBIntelligence from '@flethy/connectors/src/configs/orbintelligence.config'
 import Phyllo from '@flethy/connectors/src/configs/phyllo.config'
 import Pirsch from '@flethy/connectors/src/configs/pirsch.config'
@@ -186,7 +188,9 @@ import Prerender from '@flethy/connectors/src/configs/prerender.config'
 import Robolly from '@flethy/connectors/src/configs/robolly.config'
 import Rye from '@flethy/connectors/src/configs/rye.config'
 import Sheety from '@flethy/connectors/src/configs/sheety.config'
+import Sidemail from '@flethy/connectors/src/configs/sidemail.config'
 import SpeechTextAI from '@flethy/connectors/src/configs/speechtextai.config'
+import Splitbee from '@flethy/connectors/src/configs/splitbee.config'
 import Storyblok from '@flethy/connectors/src/configs/storyblok.config'
 import Stytch from '@flethy/connectors/src/configs/stytch.config'
 import Twitter from '@flethy/connectors/src/configs/twitter.config'
@@ -195,9 +199,6 @@ import Vantevo from '@flethy/connectors/src/configs/vantevo.config'
 import Vonage from '@flethy/connectors/src/configs/vonage.config'
 import { HttpRequest } from './controllers/HttpRequest'
 import { logger } from './utils/Logger'
-import Sidemail from '@flethy/connectors/src/configs/sidemail.config'
-import Splitbee from '@flethy/connectors/src/configs/splitbee.config'
-import Npoint from '@flethy/connectors/src/configs/npoint.config'
 
 async function main() {
   const requestConfigs: {
@@ -2755,8 +2756,33 @@ async function main() {
       kind: 'npoint.core.get',
       'param:id': process.env.NPOINT_BIN_ID,
     }),
+    dataddoGetToken: nao<Dataddo.GetToken>({
+      kind: 'dataddo.auth.getToken',
+      'auth:email': process.env.DATADDO_EMAIL,
+      'auth:password': process.env.DATADDO_PASSWORD,
+    }),
+    dataddoGetServices: nao<Dataddo.GetServices>({
+      kind: 'dataddo.services.get',
+      'auth:Authorization': process.env.DATADDO_JWT,
+      'header:X-provider': process.env.DATADDO_PROVIDER,
+      'header:X-realm-id': process.env.DATADDO_REALM,
+    }),
+    dataddoCreateService: nao<Dataddo.CreateService>({
+      kind: 'dataddo.services.create',
+      'auth:Authorization': process.env.DATADDO_JWT,
+      'header:X-provider': process.env.DATADDO_PROVIDER,
+      'header:X-realm-id': process.env.DATADDO_REALM,
+      'body:service': 'flethy',
+      'body:data': [{}],
+    }),
+    dataddoGetSources: nao<Dataddo.GetSources>({
+      kind: 'dataddo.sources.get',
+      'auth:Authorization': process.env.DATADDO_JWT,
+      'header:X-provider': process.env.DATADDO_PROVIDER,
+      'header:X-realm-id': process.env.DATADDO_REALM,
+    }),
   }
-  const requestConfig = requestConfigs.npointBin
+  const requestConfig = requestConfigs.dataddoCreateService
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)
