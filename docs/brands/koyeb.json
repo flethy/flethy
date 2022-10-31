@@ -1,0 +1,85 @@
+{
+  "name": "Koyeb",
+  "domain": "koyeb.com",
+  "claimed": false,
+  "description": "The fastest platform to deploy and run serverless data processing apps.",
+  "links": [
+    { "name": "github", "url": "https://github.com/koyeb" },
+    { "name": "twitter", "url": "https://twitter.com/gokoyeb" },
+    { "name": "linkedin", "url": "https://linkedin.com/company/koyeb" },
+    { "name": "facebook", "url": "https://facebook.com/gokoyeb" }
+  ],
+  "logos": [
+    {
+      "type": "icon",
+      "theme": null,
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/iddTrX9nxB/id1FUBrnHH.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 400,
+          "width": 400,
+          "size": 12038
+        }
+      ]
+    },
+    {
+      "type": "logo",
+      "theme": null,
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/iddTrX9nxB/idfYBCjZEK.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 173,
+          "width": 640,
+          "size": 47921
+        },
+        {
+          "src": "https://asset.brandfetch.io/iddTrX9nxB/idqkVgx89G.svg",
+          "background": "transparent",
+          "format": "svg",
+          "height": null,
+          "width": null,
+          "size": 4708
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#011627", "type": "dark", "brightness": 19 },
+    { "hex": "#ffffff", "type": "light", "brightness": 255 }
+  ],
+  "fonts": [
+    {
+      "name": "Roboto",
+      "type": "title",
+      "origin": "google",
+      "originId": "Roboto",
+      "weights": []
+    },
+    {
+      "name": "Roboto",
+      "type": "body",
+      "origin": "google",
+      "originId": "Roboto",
+      "weights": []
+    }
+  ],
+  "images": [
+    {
+      "type": "banner",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/iddTrX9nxB/idnsZhvpeN.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 500,
+          "width": 1500,
+          "size": 5040
+        }
+      ]
+    }
+  ]
+}

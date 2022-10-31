@@ -401,6 +401,10 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://flethy.com/integrations/koyeb</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://flethy.com/integrations/languagelayer</loc>
     <priority>0.8</priority>
   </url>

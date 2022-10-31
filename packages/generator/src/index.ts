@@ -176,6 +176,7 @@ import GitLab from '@flethy/connectors/src/configs/gitlab.config'
 import Here from '@flethy/connectors/src/configs/here.config'
 import Imglab from '@flethy/connectors/src/configs/imglab.config'
 import Keen from '@flethy/connectors/src/configs/keen.config'
+import Koyeb from '@flethy/connectors/src/configs/koyeb.config'
 import LanguageLayer from '@flethy/connectors/src/configs/languagelayer.config'
 import Logz from '@flethy/connectors/src/configs/logz.config'
 import Lolo from '@flethy/connectors/src/configs/lolo.config'
@@ -2781,8 +2782,16 @@ async function main() {
       'header:X-provider': process.env.DATADDO_PROVIDER,
       'header:X-realm-id': process.env.DATADDO_REALM,
     }),
+    koyebGetProfile: nao<Koyeb.GetCurrentUser>({
+      kind: 'koyeb.profile.get',
+      'auth:Authorization': process.env.KOYEB_API_KEY,
+    }),
+    koyebListApps: nao<Koyeb.ListApps>({
+      kind: 'koyeb.apps.list',
+      'auth:Authorization': process.env.KOYEB_API_KEY,
+    }),
   }
-  const requestConfig = requestConfigs.dataddoCreateService
+  const requestConfig = requestConfigs.koyebListApps
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

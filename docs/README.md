@@ -116,6 +116,7 @@ The following Endpoints are currently supported.
 * [Jira](./api/jira.md)
 * [Keen](./api/keen.md)
 * [Klaviyo](./api/klaviyo.md)
+* [Koyeb](./api/koyeb.md)
 * [LanguageLayer](./api/languagelayer.md)
 * [Lecto](./api/lecto.md)
 * [Linear](./api/linear.md)
