@@ -18,6 +18,8 @@
     "=============== L A N D I N G   P A G E =================": "===============",
     "start:landingpage": "pnpm --filter landing-page start",
     "build:landingpage": "pnpm --filter landing-page build:prod",
+    "=============== E X E C U T I O N   P L A T F O R M =================": "===============",
+    "start:ep": "pnpm --filter execution-platform dev",
     "=============== O T H E R ===============": "===============",
     "dev": "turbo run dev --parallel",
     "lint": "turbo run lint",

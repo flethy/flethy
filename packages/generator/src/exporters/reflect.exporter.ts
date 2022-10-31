@@ -95,6 +95,7 @@ import { IncidentIo } from '../../../connectors/src/configs/incidentio.config'
 import { Jira } from '../../../connectors/src/configs/jira.config'
 import { Keen } from '../../../connectors/src/configs/keen.config'
 import { Klaviyo } from '../../../connectors/src/configs/klaviyo.config'
+import { Koyeb } from '../../../connectors/src/configs/koyeb.config'
 import { LanguageLayer } from '../../../connectors/src/configs/languagelayer.config'
 import { Lecto } from '../../../connectors/src/configs/lecto.config'
 import { Linear } from '../../../connectors/src/configs/linear.config'
@@ -439,6 +440,8 @@ configTypes.push({type: getType<Klaviyo.TrackProfileActivity>(), id: 'klaviyo', 
 configTypes.push({type: getType<Klaviyo.IdentifyProfile>(), id: 'klaviyo', name: 'Klaviyo', interface: 'IdentifyProfile'})
 configTypes.push({type: getType<Klaviyo.GetProfileId>(), id: 'klaviyo', name: 'Klaviyo', interface: 'GetProfileId'})
 configTypes.push({type: getType<Klaviyo.GetProfile>(), id: 'klaviyo', name: 'Klaviyo', interface: 'GetProfile'})
+configTypes.push({type: getType<Koyeb.GetCurrentUser>(), id: 'koyeb', name: 'Koyeb', interface: 'GetCurrentUser'})
+configTypes.push({type: getType<Koyeb.ListApps>(), id: 'koyeb', name: 'Koyeb', interface: 'ListApps'})
 configTypes.push({type: getType<LanguageLayer.Detect>(), id: 'languagelayer', name: 'LanguageLayer', interface: 'Detect'})
 configTypes.push({type: getType<Lecto.TranslateText>(), id: 'lecto', name: 'Lecto', interface: 'TranslateText'})
 configTypes.push({type: getType<Lecto.TranslateJson>(), id: 'lecto', name: 'Lecto', interface: 'TranslateJson'})
