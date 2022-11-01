@@ -90,6 +90,7 @@ The following Endpoints are currently supported.
 * [EmailOctopus](./api/emailoctopus.md)
 * [Eventbrite](./api/eventbrite.md)
 * [Fauna](./api/fauna.md)
+* [Festdays](./api/festdays.md)
 * [Fibery](./api/fibery.md)
 * [Figma](./api/figma.md)
 * [Flatfile](./api/flatfile.md)
