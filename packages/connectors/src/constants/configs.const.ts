@@ -69,6 +69,7 @@ import { EmailOctopus } from '../configs/emailoctopus.config'
 import { Etherscan } from '../configs/etherscan.config'
 import { Eventbrite } from '../configs/eventbrite.config'
 import { Fauna } from '../configs/fauna.config'
+import { Festdays } from '../configs/festdays.config'
 import { Fibery } from '../configs/fibery.config'
 import { Figma } from '../configs/figma.config'
 import { Flatfile } from '../configs/flatfile.config'
@@ -277,6 +278,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['etherscan', Etherscan.API],
 ['eventbrite', Eventbrite.API],
 ['fauna', Fauna.API],
+['festdays', Festdays.API],
 ['fibery', Fibery.API],
 ['figma', Figma.API],
 ['flatfile', Flatfile.API],

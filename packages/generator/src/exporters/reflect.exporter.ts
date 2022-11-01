@@ -69,6 +69,7 @@ import { EmailOctopus } from '../../../connectors/src/configs/emailoctopus.confi
 import { Etherscan } from '../../../connectors/src/configs/etherscan.config'
 import { Eventbrite } from '../../../connectors/src/configs/eventbrite.config'
 import { Fauna } from '../../../connectors/src/configs/fauna.config'
+import { Festdays } from '../../../connectors/src/configs/festdays.config'
 import { Fibery } from '../../../connectors/src/configs/fibery.config'
 import { Figma } from '../../../connectors/src/configs/figma.config'
 import { Flatfile } from '../../../connectors/src/configs/flatfile.config'
@@ -372,6 +373,7 @@ configTypes.push({type: getType<Etherscan.AccountsBalanceSingleAddress>(), id: '
 configTypes.push({type: getType<Eventbrite.ListAttendeeByEventId>(), id: 'eventbrite', name: 'Eventbrite', interface: 'ListAttendeeByEventId'})
 configTypes.push({type: getType<Eventbrite.GetUserMe>(), id: 'eventbrite', name: 'Eventbrite', interface: 'GetUserMe'})
 configTypes.push({type: getType<Fauna.GraphQLQuery>(), id: 'fauna', name: 'Fauna', interface: 'GraphQLQuery'})
+configTypes.push({type: getType<Festdays.Holidays>(), id: 'festdays', name: 'Festdays', interface: 'Holidays'})
 configTypes.push({type: getType<Fibery.GetSchema>(), id: 'fibery', name: 'Fibery', interface: 'GetSchema'})
 configTypes.push({type: getType<Fibery.GraphQLQuery>(), id: 'fibery', name: 'Fibery', interface: 'GraphQLQuery'})
 configTypes.push({type: getType<Figma.GetFile>(), id: 'figma', name: 'Figma', interface: 'GetFile'})

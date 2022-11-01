@@ -200,6 +200,7 @@ import Vantevo from '@flethy/connectors/src/configs/vantevo.config'
 import Vonage from '@flethy/connectors/src/configs/vonage.config'
 import { HttpRequest } from './controllers/HttpRequest'
 import { logger } from './utils/Logger'
+import Festdays from '@flethy/connectors/src/configs/festdays.config'
 
 async function main() {
   const requestConfigs: {
@@ -2790,8 +2791,12 @@ async function main() {
       kind: 'koyeb.apps.list',
       'auth:Authorization': process.env.KOYEB_API_KEY,
     }),
+    festdays: nao<Festdays.Holidays>({
+      kind: 'festdays.core.holidays',
+      'auth:Authorization': process.env.FESTDAYS_API_TOKEN,
+    }),
   }
-  const requestConfig = requestConfigs.koyebListApps
+  const requestConfig = requestConfigs.festdays
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)
