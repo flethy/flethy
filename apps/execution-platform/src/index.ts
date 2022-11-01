@@ -6,7 +6,6 @@ import { AuthRoute } from "./routes/auth.route";
 import { Version1 } from "./routes/v1.route";
 import { ErrorMiddleware } from "./utils/error.utils";
 import { PermissionUtils } from "./utils/permission.utils";
-import { RoutingUtils } from "./utils/routing.utils";
 // https://www.npmjs.com/package/worktop
 
 const API = new Router();
@@ -28,14 +27,14 @@ API.add("GET", "/token", async (req, res) =>
 
 Version1.addRoutes(API);
 
-API.add("GET", "/p/:projectId/w/:workspaceId", async (req, res) =>
-  RoutingUtils.handle(req, res, [
-    async (req: any, res: any) =>
-      PermissionUtils.permissions(req, res, {
-        scopes: [TokenScope.WORKFLOW_READ],
-      }),
-  ])
-);
+// API.add("GET", "/p/:projectId/w/:workspaceId", async (req, res) =>
+//   RoutingUtils.handle(req, res, [
+//     async (req: any, res: any) =>
+//       PermissionUtils.permissions(req, res, {
+//         scopes: [TokenScope.WORKFLOW_READ],
+//       }),
+//   ])
+// );
 // API.add("GET", "/token", async (req, res) => {
 //   try {
 //     const token = await AuthController.createToken(

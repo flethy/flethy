@@ -6,6 +6,7 @@
   "main": "index.ts",
   "scripts": {
     "dev": "npx wrangler dev",
+    "local": "npx wrangler dev -l",
     "publish": "npx wrangler publish",
     "format": "prettier --write  '*.{json,js}' 'src/**/*.{js,ts}' 'test/**/*.{js,ts}'",
     "lint": "eslint --max-warnings=0 src && prettier --check '*.{json,js}' 'src/**/*.{js,ts}' 'test/**/*.{js,ts}'",

@@ -1,3 +1,4 @@
 name = "execution-platform"
 main = "src/index.ts"
 compatibility_date = "2022-10-27"
+workers_dev = true
