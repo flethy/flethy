@@ -5,14 +5,15 @@ import { AuthController, TokenScope } from "../controllers/auth.controller";
 
 export class AuthRoute {
   public static async createTokenRoute(
-    _req: ServerRequest,
+    req: ServerRequest,
     res: ServerResponse
   ) {
+    const body = await req.body<{ scopes: TokenScope[] }>();
     const token = await AuthController.createToken(
       {
-        projectId: "123",
-        workspaceId: "456",
-        scopes: [TokenScope.WORKFLOW_CREATE, TokenScope.WORKFLOW_READ],
+        projectId: req.params.projectId,
+        workspaceId: req.params.workspaceId,
+        scopes: body?.scopes,
       },
       SECRET
     );

@@ -14,7 +14,7 @@ export enum TokenScope {
 export interface TokenRequest {
   projectId: string;
   workspaceId: string;
-  scopes: TokenScope[];
+  scopes?: TokenScope[];
   expiration?: number;
 }
 
