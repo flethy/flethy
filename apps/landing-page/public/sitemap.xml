@@ -425,6 +425,10 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://flethy.com/integrations/linkpreview</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://flethy.com/integrations/logz</loc>
     <priority>0.8</priority>
   </url>
@@ -658,6 +662,10 @@
   </url>
   <url>
     <loc>https://flethy.com/integrations/rye</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://flethy.com/integrations/savepage</loc>
     <priority>0.8</priority>
   </url>
   <url>

@@ -1,0 +1,44 @@
+{
+  "name": null,
+  "domain": "savepage.io",
+  "claimed": false,
+  "description": "Capture snapshots of websites and save tham as images with our powerful API service.",
+  "links": [],
+  "logos": [
+    {
+      "type": "logo",
+      "theme": null,
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idgoCww8xx/idTZnZo5Mp.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 231,
+          "width": 820,
+          "size": 12198
+        },
+        {
+          "src": "https://asset.brandfetch.io/idgoCww8xx/idvOOTJ7_r.svg",
+          "background": "transparent",
+          "format": "svg",
+          "size": 11279
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#666666", "type": "accent", "brightness": 102 },
+    { "hex": "#202938", "type": "dark", "brightness": 40 },
+    { "hex": "#63d3c3", "type": "light", "brightness": 186 }
+  ],
+  "fonts": [
+    {
+      "name": "Nunito",
+      "type": "body",
+      "origin": "google",
+      "originId": "Nunito",
+      "weights": []
+    }
+  ],
+  "images": []
+}

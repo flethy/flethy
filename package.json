@@ -21,6 +21,8 @@
     "=============== E X E C U T I O N   P L A T F O R M =================": "===============",
     "start:ep:dev": "pnpm --filter execution-platform dev",
     "start:ep": "pnpm --filter execution-platform local",
+    "=============== M A R K E T I N G ===============": "===============",
+    "marketing": "pnpm --filter generator marketing",
     "=============== O T H E R ===============": "===============",
     "dev": "turbo run dev --parallel",
     "lint": "turbo run lint",
