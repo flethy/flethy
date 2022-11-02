@@ -2,6 +2,7 @@ import { Router } from "worktop";
 import * as Cache from "worktop/cache";
 import { SECRET } from "./constants/admin.const";
 import { AuthController, TokenScope } from "./controllers/auth.controller";
+import { SecretsController } from "./controllers/secrets.controller";
 import { AuthRoute } from "./routes/auth.route";
 import { Version1 } from "./routes/v1.route";
 import { ErrorMiddleware } from "./utils/error.utils";
@@ -52,6 +53,20 @@ Version1.addRoutes(API);
 //     res.send(response.status, response.data);
 //   }
 // });
+
+API.add("GET", "/key", async (req, res) => {
+  const success = await SecretsController.addSecret({
+    workspaceId: "123",
+    secretKey: "test",
+    secretValue: "test",
+  });
+  res.send(200, { success });
+});
+
+API.add("GET", "/dec", async (req, res) => {
+  const decrypted = await SecretsController.getSecret("123");
+  res.send(200, { decrypted });
+});
 
 API.add("GET", "/token/:token", async (req, res) => {
   const { token } = req.params;
