@@ -2,3 +2,6 @@ name = "execution-platform"
 main = "src/index.ts"
 compatibility_date = "2022-10-27"
 workers_dev = true
+kv_namespaces = [
+    { binding = "DATA", id = "e546ebf13b344824af4abc3a632988f5", preview_id = "f8a16c5c33aa4266a47089059ee45204" }
+]
