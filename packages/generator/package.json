@@ -6,6 +6,7 @@
   "main": "index.ts",
   "scripts": {
     "start": "NODE_ENV=local ts-node ./src/index.ts",
+    "marketing": "NODE_ENV=local ts-node ./src/controllers/NavigateToWebsites.ts",
     "export": "npm run exportexec && npm run reflectgen && npm run updateapicount",
     "exportexec": "NODE_ENV=local ts-node ./src/export.ts",
     "reflectgen": "NODE_ENV=local ts-node -P tsconfig-tt.json ./src/exporters/reflect.generator.ts",
@@ -19,6 +20,7 @@
     "dotenv": "^16.0.3",
     "node-fetch": "^3.2.10",
     "pino": "^8.7.0",
+    "puppeteer": "^19.2.0",
     "quicktype-core": "^6.1.0",
     "tst-reflect": "^0.12.0",
     "uuid": "^9.0.0"

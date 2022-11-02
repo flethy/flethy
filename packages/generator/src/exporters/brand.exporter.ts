@@ -130,6 +130,7 @@ export class BrandExporter {
       'mezmo',
       'ory',
       'restdb',
+      'savepage',
       'serpapi',
       'unlayer',
       'up42',

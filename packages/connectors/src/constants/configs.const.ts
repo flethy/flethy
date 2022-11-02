@@ -101,6 +101,7 @@ import { LanguageLayer } from '../configs/languagelayer.config'
 import { Lecto } from '../configs/lecto.config'
 import { Linear } from '../configs/linear.config'
 import { LinkedIn } from '../configs/linkedin.config'
+import { LinkPreview } from '../configs/linkpreview.config'
 import { Logz } from '../configs/logz.config'
 import { Lokalise } from '../configs/lokalise.config'
 import { Lolo } from '../configs/lolo.config'
@@ -160,6 +161,7 @@ import { RestZeebe } from '../configs/restzeebe.config'
 import { Revue } from '../configs/revue.config'
 import { Robolly } from '../configs/robolly.config'
 import { Rye } from '../configs/rye.config'
+import { Savepage } from '../configs/savepage.config'
 import { Semrush } from '../configs/semrush.config'
 import { SendGrid } from '../configs/sendgrid.config'
 import { Sentry } from '../configs/sentry.config'
@@ -310,6 +312,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['lecto', Lecto.API],
 ['linear', Linear.API],
 ['linkedin', LinkedIn.API],
+['linkpreview', LinkPreview.API],
 ['logz', Logz.API],
 ['lokalise', Lokalise.API],
 ['lolo', Lolo.API],
@@ -369,6 +372,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['revue', Revue.API],
 ['robolly', Robolly.API],
 ['rye', Rye.API],
+['savepage', Savepage.API],
 ['semrush', Semrush.API],
 ['sendgrid', SendGrid.API],
 ['sentry', Sentry.API],

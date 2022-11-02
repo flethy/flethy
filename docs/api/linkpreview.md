@@ -1,0 +1,24 @@
+# LinkPreview
+
+## Links
+
+* URL: [https://www.linkpreview.net/](https://www.linkpreview.net/)
+* Documentation: [https://docs.linkpreview.net/](https://docs.linkpreview.net/)
+* Tags: web2
+* Category: utils
+* Type: other
+
+## API
+
+### Authentication
+
+* key: body
+
+### core
+
+#### linkpreview
+
+##### LinkPreview
+
+* Description: LinkPreview
+* Docs: [https://docs.linkpreview.net/](https://docs.linkpreview.net/)

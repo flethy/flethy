@@ -201,6 +201,8 @@ import Vonage from '@flethy/connectors/src/configs/vonage.config'
 import { HttpRequest } from './controllers/HttpRequest'
 import { logger } from './utils/Logger'
 import Festdays from '@flethy/connectors/src/configs/festdays.config'
+import Savepage from '@flethy/connectors/src/configs/savepage.config'
+import LinkPreview from '@flethy/connectors/src/configs/linkpreview.config'
 
 async function main() {
   const requestConfigs: {
@@ -2795,8 +2797,18 @@ async function main() {
       kind: 'festdays.core.holidays',
       'auth:Authorization': process.env.FESTDAYS_API_TOKEN,
     }),
+    savepage: nao<Savepage.Screenshot>({
+      kind: 'savepage.core.screenshot',
+      'auth:key': process.env.SAVEPAGE_API_KEY,
+      'body:q': 'https://flethy.com',
+    }),
+    linkpreview: nao<LinkPreview.LinkPreview>({
+      kind: 'linkpreview.core.linkpreview',
+      'auth:key': process.env.LINKPREVIEW_API_KEY,
+      'body:q': 'https://flethy.com',
+    }),
   }
-  const requestConfig = requestConfigs.festdays
+  const requestConfig = requestConfigs.linkpreview
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

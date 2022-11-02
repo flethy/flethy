@@ -1,0 +1,51 @@
+{
+  "name": "LinkPreview",
+  "domain": "linkpreview.net",
+  "claimed": false,
+  "description": "Preview Web links with our reliable API service. Get Detailed JSON Response for any URL.",
+  "links": [],
+  "logos": [
+    {
+      "type": "logo",
+      "theme": null,
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idWN7286cq/idfsNCrQgg.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 176,
+          "width": 820,
+          "size": 13031
+        },
+        {
+          "src": "https://asset.brandfetch.io/idWN7286cq/idFhji7nQh.svg",
+          "background": "transparent",
+          "format": "svg",
+          "size": 3151
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#676767", "type": "accent", "brightness": 103 },
+    { "hex": "#445060", "type": "dark", "brightness": 79 },
+    { "hex": "#7fd3f8", "type": "light", "brightness": 196 }
+  ],
+  "fonts": [
+    {
+      "name": "Montserrat",
+      "type": "title",
+      "origin": "google",
+      "originId": "Montserrat",
+      "weights": []
+    },
+    {
+      "name": "Montserrat",
+      "type": "body",
+      "origin": "google",
+      "originId": "Montserrat",
+      "weights": []
+    }
+  ],
+  "images": []
+}
