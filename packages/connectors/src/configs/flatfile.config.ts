@@ -69,7 +69,7 @@ export namespace Flatfile {
       url: 'https://flatfile.com/',
       docs: 'https://flatfile.com/docs/api-reference/',
       signup: 'https://app.flatfile.com/login',
-      tags: ['web2'],
+      tags: ['web2', 'csv'],
       category: 'utils',
       type: 'data-exchange',
       social: {

@@ -203,6 +203,7 @@ import { logger } from './utils/Logger'
 import Festdays from '@flethy/connectors/src/configs/festdays.config'
 import Savepage from '@flethy/connectors/src/configs/savepage.config'
 import LinkPreview from '@flethy/connectors/src/configs/linkpreview.config'
+import CSVBox from '@flethy/connectors/src/configs/csvbox.config'
 
 async function main() {
   const requestConfigs: {
@@ -2807,8 +2808,17 @@ async function main() {
       'auth:key': process.env.LINKPREVIEW_API_KEY,
       'body:q': 'https://flethy.com',
     }),
+    csvbox: nao<CSVBox.ImportFile>({
+      kind: 'csvbox.core.import',
+      'auth:x-csvbox-api-key': process.env.CSVBOX_API_KEY,
+      'auth:sheet_license_key': process.env.CSVBOX_SHEET_LICENSE_KEY,
+      'body:import': {
+        public_file_url:
+          'https://stats.govt.nz/assets/Uploads/Annual-enterprise-survey/Annual-enterprise-survey-2021-financial-year-provisional/Download-data/annual-enterprise-survey-2021-financial-year-provisional-csv.csv',
+      },
+    }),
   }
-  const requestConfig = requestConfigs.linkpreview
+  const requestConfig = requestConfigs.csvbox
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

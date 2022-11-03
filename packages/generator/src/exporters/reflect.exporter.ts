@@ -17,6 +17,7 @@ import { BannerBear } from '../../../connectors/src/configs/bannerbear.config'
 import { BaseRow } from '../../../connectors/src/configs/baserow.config'
 import { Beehiiv } from '../../../connectors/src/configs/beehiiv.config'
 import { BigDataCloud } from '../../../connectors/src/configs/bigdatacloud.config'
+import { Bing } from '../../../connectors/src/configs/bing.config'
 import { Bitly } from '../../../connectors/src/configs/bitly.config'
 import { BooAPI } from '../../../connectors/src/configs/booapi.config'
 import { Brandfetch } from '../../../connectors/src/configs/brandfetch.config'
@@ -50,6 +51,7 @@ import { CountApi } from '../../../connectors/src/configs/countapi.config'
 import { Courier } from '../../../connectors/src/configs/courier.config'
 import { Covalent } from '../../../connectors/src/configs/covalent.config'
 import { Cronhooks } from '../../../connectors/src/configs/cronhooks.config'
+import { CSVBox } from '../../../connectors/src/configs/csvbox.config'
 import { Cumul } from '../../../connectors/src/configs/cumul.config'
 import { CurrencyScoop } from '../../../connectors/src/configs/currencyscoop.config'
 import { Dataddo } from '../../../connectors/src/configs/dataddo.config'
@@ -250,6 +252,7 @@ configTypes.push({type: getType<BaseRow.GetRows>(), id: 'baserow', name: 'BaseRo
 configTypes.push({type: getType<Beehiiv.CreateSubscriber>(), id: 'beehiiv', name: 'Beehiiv', interface: 'CreateSubscriber'})
 configTypes.push({type: getType<Beehiiv.GetPublications>(), id: 'beehiiv', name: 'Beehiiv', interface: 'GetPublications'})
 configTypes.push({type: getType<BigDataCloud.ReverseGeoCodeClient>(), id: 'bigdatacloud', name: 'BigDataCloud', interface: 'ReverseGeoCodeClient'})
+configTypes.push({type: getType<Bing.IndexNow>(), id: 'bing', name: 'Bing', interface: 'IndexNow'})
 configTypes.push({type: getType<Bitly.CreateShortLink>(), id: 'bitly', name: 'Bitly', interface: 'CreateShortLink'})
 configTypes.push({type: getType<BooAPI.UserBalance>(), id: 'booapi', name: 'BooAPI', interface: 'UserBalance'})
 configTypes.push({type: getType<BooAPI.CreateTask>(), id: 'booapi', name: 'BooAPI', interface: 'CreateTask'})
@@ -335,6 +338,7 @@ configTypes.push({type: getType<Covalent.ClassAGetTransactionsForAddress>(), id:
 configTypes.push({type: getType<Covalent.ClassBGetUniswapV3Pools>(), id: 'covalent', name: 'Covalent', interface: 'ClassBGetUniswapV3Pools'})
 configTypes.push({type: getType<Covalent.PricingGetHistoricalTokenPrices>(), id: 'covalent', name: 'Covalent', interface: 'PricingGetHistoricalTokenPrices'})
 configTypes.push({type: getType<Cronhooks.ScheduleNewWebhool>(), id: 'cronhooks', name: 'Cronhooks', interface: 'ScheduleNewWebhool'})
+configTypes.push({type: getType<CSVBox.ImportFile>(), id: 'csvbox', name: 'CSVBox', interface: 'ImportFile'})
 configTypes.push({type: getType<Cumul.Create>(), id: 'cumul', name: 'Cumul', interface: 'Create'})
 configTypes.push({type: getType<CurrencyScoop.Latest>(), id: 'currencyscoop', name: 'CurrencyScoop', interface: 'Latest'})
 configTypes.push({type: getType<CurrencyScoop.Historical>(), id: 'currencyscoop', name: 'CurrencyScoop', interface: 'Historical'})

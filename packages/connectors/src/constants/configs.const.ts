@@ -17,6 +17,7 @@ import { BannerBear } from '../configs/bannerbear.config'
 import { BaseRow } from '../configs/baserow.config'
 import { Beehiiv } from '../configs/beehiiv.config'
 import { BigDataCloud } from '../configs/bigdatacloud.config'
+import { Bing } from '../configs/bing.config'
 import { Bitly } from '../configs/bitly.config'
 import { BooAPI } from '../configs/booapi.config'
 import { Brandfetch } from '../configs/brandfetch.config'
@@ -50,6 +51,7 @@ import { CountApi } from '../configs/countapi.config'
 import { Courier } from '../configs/courier.config'
 import { Covalent } from '../configs/covalent.config'
 import { Cronhooks } from '../configs/cronhooks.config'
+import { CSVBox } from '../configs/csvbox.config'
 import { Cumul } from '../configs/cumul.config'
 import { CurrencyScoop } from '../configs/currencyscoop.config'
 import { Dataddo } from '../configs/dataddo.config'
@@ -228,6 +230,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['baserow', BaseRow.API],
 ['beehiiv', Beehiiv.API],
 ['bigdatacloud', BigDataCloud.API],
+['bing', Bing.API],
 ['bitly', Bitly.API],
 ['booapi', BooAPI.API],
 ['brandfetch', Brandfetch.API],
@@ -261,6 +264,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['courier', Courier.API],
 ['covalent', Covalent.API],
 ['cronhooks', Cronhooks.API],
+['csvbox', CSVBox.API],
 ['cumul', Cumul.API],
 ['currencyscoop', CurrencyScoop.API],
 ['dataddo', Dataddo.API],

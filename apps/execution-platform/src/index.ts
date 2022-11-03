@@ -54,6 +54,31 @@ Version1.addRoutes(API);
 //   }
 // });
 
+API.add("GET", "/hmac", async (req, res) => {
+  if (typeof crypto !== "undefined") {
+    const enc = new TextEncoder();
+
+    const thisAlgorithm = { name: "HMAC", hash: "SHA-256" };
+
+    const importKey = await crypto.subtle.importKey(
+      "raw",
+      enc.encode("keykeykey"),
+      thisAlgorithm,
+      false,
+      ["sign", "verify"]
+    );
+    const signature = await crypto.subtle.sign(
+      thisAlgorithm.name,
+      importKey,
+      enc.encode("basebasebase")
+    );
+    const digest = btoa(String.fromCharCode(...new Uint8Array(signature)));
+    res.send(200, { success: true, digest });
+  } else {
+    res.send(500, { success: false });
+  }
+});
+
 API.add("GET", "/key", async (req, res) => {
   const success = await SecretsController.addSecret({
     workspaceId: "123",
