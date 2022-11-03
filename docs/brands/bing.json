@@ -1,0 +1,85 @@
+{
+  "name": "Bing",
+  "domain": "bing.com",
+  "claimed": false,
+  "description": "Bing helps you turn information into action, making it faster and easier to go from searching to doing.",
+  "links": [
+    { "name": "crunchbase", "url": "https://crunchbase.com/organization/bing" },
+    { "name": "twitter", "url": "https://twitter.com/Bing" },
+    { "name": "facebook", "url": "https://facebook.com/Bing" }
+  ],
+  "logos": [
+    {
+      "type": "icon",
+      "theme": null,
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idpnoroUC4/idj9gSPeOH.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 1196,
+          "width": 1200,
+          "size": 246206
+        }
+      ]
+    },
+    {
+      "type": "logo",
+      "theme": null,
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idpnoroUC4/ide2MccC4F.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 125,
+          "width": 800,
+          "size": 15412
+        },
+        {
+          "src": "https://asset.brandfetch.io/idpnoroUC4/idR4uZ0usA.svg",
+          "background": "transparent",
+          "format": "svg",
+          "height": null,
+          "width": null,
+          "size": 5423
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#1b1b1b", "type": "dark", "brightness": 27 },
+    { "hex": "#ffffff", "type": "light", "brightness": 255 },
+    { "hex": "#00809d", "type": "accent", "brightness": 103 }
+  ],
+  "fonts": [
+    {
+      "name": "Roboto",
+      "type": "title",
+      "origin": "google",
+      "originId": "Roboto",
+      "weights": []
+    },
+    {
+      "name": "Roboto",
+      "type": "body",
+      "origin": "google",
+      "originId": "Roboto",
+      "weights": []
+    }
+  ],
+  "images": [
+    {
+      "type": "banner",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idpnoroUC4/idN59x3dVy.png",
+          "background": null,
+          "format": "png",
+          "height": 500,
+          "width": 1500,
+          "size": 395649
+        }
+      ]
+    }
+  ]
+}

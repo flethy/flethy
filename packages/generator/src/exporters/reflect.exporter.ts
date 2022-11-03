@@ -17,6 +17,7 @@ import { BannerBear } from '../../../connectors/src/configs/bannerbear.config'
 import { BaseRow } from '../../../connectors/src/configs/baserow.config'
 import { Beehiiv } from '../../../connectors/src/configs/beehiiv.config'
 import { BigDataCloud } from '../../../connectors/src/configs/bigdatacloud.config'
+import { Bing } from '../../../connectors/src/configs/bing.config'
 import { Bitly } from '../../../connectors/src/configs/bitly.config'
 import { BooAPI } from '../../../connectors/src/configs/booapi.config'
 import { Brandfetch } from '../../../connectors/src/configs/brandfetch.config'
@@ -250,6 +251,7 @@ configTypes.push({type: getType<BaseRow.GetRows>(), id: 'baserow', name: 'BaseRo
 configTypes.push({type: getType<Beehiiv.CreateSubscriber>(), id: 'beehiiv', name: 'Beehiiv', interface: 'CreateSubscriber'})
 configTypes.push({type: getType<Beehiiv.GetPublications>(), id: 'beehiiv', name: 'Beehiiv', interface: 'GetPublications'})
 configTypes.push({type: getType<BigDataCloud.ReverseGeoCodeClient>(), id: 'bigdatacloud', name: 'BigDataCloud', interface: 'ReverseGeoCodeClient'})
+configTypes.push({type: getType<Bing.IndexNow>(), id: 'bing', name: 'Bing', interface: 'IndexNow'})
 configTypes.push({type: getType<Bitly.CreateShortLink>(), id: 'bitly', name: 'Bitly', interface: 'CreateShortLink'})
 configTypes.push({type: getType<BooAPI.UserBalance>(), id: 'booapi', name: 'BooAPI', interface: 'UserBalance'})
 configTypes.push({type: getType<BooAPI.CreateTask>(), id: 'booapi', name: 'BooAPI', interface: 'CreateTask'})

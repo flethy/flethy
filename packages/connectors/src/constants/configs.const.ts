@@ -17,6 +17,7 @@ import { BannerBear } from '../configs/bannerbear.config'
 import { BaseRow } from '../configs/baserow.config'
 import { Beehiiv } from '../configs/beehiiv.config'
 import { BigDataCloud } from '../configs/bigdatacloud.config'
+import { Bing } from '../configs/bing.config'
 import { Bitly } from '../configs/bitly.config'
 import { BooAPI } from '../configs/booapi.config'
 import { Brandfetch } from '../configs/brandfetch.config'
@@ -228,6 +229,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['baserow', BaseRow.API],
 ['beehiiv', Beehiiv.API],
 ['bigdatacloud', BigDataCloud.API],
+['bing', Bing.API],
 ['bitly', Bitly.API],
 ['booapi', BooAPI.API],
 ['brandfetch', Brandfetch.API],
