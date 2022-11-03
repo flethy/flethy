@@ -51,6 +51,7 @@ import { CountApi } from '../../../connectors/src/configs/countapi.config'
 import { Courier } from '../../../connectors/src/configs/courier.config'
 import { Covalent } from '../../../connectors/src/configs/covalent.config'
 import { Cronhooks } from '../../../connectors/src/configs/cronhooks.config'
+import { CSVBox } from '../../../connectors/src/configs/csvbox.config'
 import { Cumul } from '../../../connectors/src/configs/cumul.config'
 import { CurrencyScoop } from '../../../connectors/src/configs/currencyscoop.config'
 import { Dataddo } from '../../../connectors/src/configs/dataddo.config'
@@ -337,6 +338,7 @@ configTypes.push({type: getType<Covalent.ClassAGetTransactionsForAddress>(), id:
 configTypes.push({type: getType<Covalent.ClassBGetUniswapV3Pools>(), id: 'covalent', name: 'Covalent', interface: 'ClassBGetUniswapV3Pools'})
 configTypes.push({type: getType<Covalent.PricingGetHistoricalTokenPrices>(), id: 'covalent', name: 'Covalent', interface: 'PricingGetHistoricalTokenPrices'})
 configTypes.push({type: getType<Cronhooks.ScheduleNewWebhool>(), id: 'cronhooks', name: 'Cronhooks', interface: 'ScheduleNewWebhool'})
+configTypes.push({type: getType<CSVBox.ImportFile>(), id: 'csvbox', name: 'CSVBox', interface: 'ImportFile'})
 configTypes.push({type: getType<Cumul.Create>(), id: 'cumul', name: 'Cumul', interface: 'Create'})
 configTypes.push({type: getType<CurrencyScoop.Latest>(), id: 'currencyscoop', name: 'CurrencyScoop', interface: 'Latest'})
 configTypes.push({type: getType<CurrencyScoop.Historical>(), id: 'currencyscoop', name: 'CurrencyScoop', interface: 'Historical'})

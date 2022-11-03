@@ -225,6 +225,10 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://flethy.com/integrations/csvbox</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://flethy.com/integrations/cumul</loc>
     <priority>0.8</priority>
   </url>

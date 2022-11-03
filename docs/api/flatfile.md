@@ -4,7 +4,7 @@
 
 * URL: [https://flatfile.com/](https://flatfile.com/)
 * Documentation: [https://flatfile.com/docs/api-reference/](https://flatfile.com/docs/api-reference/)
-* Tags: web2
+* Tags: web2, csv
 * Category: utils
 * Type: data-exchange
 

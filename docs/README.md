@@ -73,6 +73,7 @@ The following Endpoints are currently supported.
 * [ConvertKit](./api/convertkit.md)
 * [CountApi](./api/countapi.md)
 * [Courier](./api/courier.md)
+* [CSVBox](./api/csvbox.md)
 * [Cumul](./api/cumul.md)
 * [CurrencyScoop](./api/currencyscoop.md)
 * [Dataddo](./api/dataddo.md)

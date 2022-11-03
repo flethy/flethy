@@ -1,0 +1,34 @@
+{
+  "name": null,
+  "domain": "csvbox.io",
+  "claimed": false,
+  "description": "A drop-in CSV import widget to allow your users to upload spreadsheets, map columns, and validate data all with a few clicks. You receive clean and ready to use data in your web app.",
+  "links": [],
+  "logos": [
+    {
+      "type": "logo",
+      "theme": null,
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idrfBBcPNt/iddH7nv7E7.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 66,
+          "width": 66,
+          "size": 2683
+        }
+      ]
+    }
+  ],
+  "colors": [{ "hex": "#007bff", "type": "accent", "brightness": 106 }],
+  "fonts": [
+    {
+      "name": "Roboto",
+      "type": "body",
+      "origin": "google",
+      "originId": "Roboto",
+      "weights": []
+    }
+  ],
+  "images": []
+}

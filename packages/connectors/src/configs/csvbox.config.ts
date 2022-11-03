@@ -2,6 +2,7 @@ import {
   ApiDescription,
   ApiDescriptionEndpoint,
 } from '../types/ApiDescription.type'
+import { FetchParams } from '../types/FetchParams.type'
 import { RequestParams } from '../types/Request.types'
 
 export namespace CSVBox {
@@ -10,13 +11,14 @@ export namespace CSVBox {
 
   interface CSVBoxBase {
     'auth:x-csvbox-api-key': string
+    'auth:sheet_license_key': string
   }
 
   export interface ImportFile extends CSVBoxBase, RequestParams {
     kind: 'csvbox.core.import'
     'body:import': {
       public_file_url: string
-      sheet_license_key: string
+      // sheet_license_key: string
       user?: {
         user_id: string
       }
@@ -60,6 +62,12 @@ export namespace CSVBox {
     auth: {
       'x-csvbox-api-key': {
         type: 'header',
+      },
+      sheet_license_key: {
+        type: 'body',
+        authHandler: (fetchParams: FetchParams, authValue: string) => {
+          fetchParams.body.import.sheet_license_key = authValue
+        },
       },
     },
     api: {
