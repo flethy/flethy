@@ -1,0 +1,85 @@
+{
+  "name": "OpenAI",
+  "domain": "openai.com",
+  "claimed": false,
+  "description": "OpenAI is a non-profit artificial intelligence research company that discovers the path to safe artificial general intelligence.",
+  "links": [
+    { "name": "twitter", "url": "https://twitter.com/OpenAI" },
+    { "name": "facebook", "url": "https://facebook.com/openai.research" },
+    { "name": "linkedin", "url": "https://linkedin.com/company/11130470" }
+  ],
+  "logos": [
+    {
+      "type": "icon",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idR3duQxYl/idN8aVXgiT.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 400,
+          "width": 400,
+          "size": 18221
+        }
+      ]
+    },
+    {
+      "type": "logo",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idR3duQxYl/idAciKDuwX.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 155,
+          "width": 820,
+          "size": 15579
+        },
+        {
+          "src": "https://asset.brandfetch.io/idR3duQxYl/idd3lIeisJ.svg",
+          "background": "transparent",
+          "format": "svg",
+          "height": null,
+          "width": null,
+          "size": 2968
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#a3acb0", "type": "dark", "brightness": 170 },
+    { "hex": "#e6a2e4", "type": "light", "brightness": 181 },
+    { "hex": "#f4ac36", "type": "accent", "brightness": 179 }
+  ],
+  "fonts": [
+    {
+      "name": "ColfaxAI",
+      "type": "title",
+      "origin": "custom",
+      "originId": null,
+      "weights": []
+    },
+    {
+      "name": "Charter",
+      "type": "body",
+      "origin": "custom",
+      "originId": null,
+      "weights": []
+    }
+  ],
+  "images": [
+    {
+      "type": "banner",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idR3duQxYl/id1rVBvw5h.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 500,
+          "width": 1500,
+          "size": 101001
+        }
+      ]
+    }
+  ]
+}

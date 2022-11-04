@@ -123,6 +123,7 @@ import { Mixpanel } from '../configs/mixpanel.config'
 import { MJML } from '../configs/mjml.config'
 import { MojoAuth } from '../configs/mojoauth.config'
 import { Nasa } from '../configs/nasa.config'
+import { Neon } from '../configs/neon.config'
 import { Netlify } from '../configs/netlify.config'
 import { NewRelic } from '../configs/newrelic.config'
 import { NewsApi } from '../configs/newsapi.config'
@@ -130,6 +131,7 @@ import { Notion } from '../configs/notion.config'
 import { Npoint } from '../configs/npoint.config'
 import { OCRSpace } from '../configs/ocrspace.config'
 import { OneInch } from '../configs/oneinch.config'
+import { OpenAI } from '../configs/openai.config'
 import { OpenLibrary } from '../configs/openlibrary.config'
 import { OpenSea } from '../configs/opensea.config'
 import { OpenWeatherMap } from '../configs/openweathermap.config'
@@ -336,6 +338,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['mjml', MJML.API],
 ['mojoauth', MojoAuth.API],
 ['nasa', Nasa.API],
+['neon', Neon.API],
 ['netlify', Netlify.API],
 ['newrelic', NewRelic.API],
 ['newsapi', NewsApi.API],
@@ -343,6 +346,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['npoint', Npoint.API],
 ['ocrspace', OCRSpace.API],
 ['1inch', OneInch.API],
+['openai', OpenAI.API],
 ['openlibrary', OpenLibrary.API],
 ['opensea', OpenSea.API],
 ['openweathermap', OpenWeatherMap.API],

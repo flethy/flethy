@@ -123,6 +123,7 @@ import { Mixpanel } from '../../../connectors/src/configs/mixpanel.config'
 import { MJML } from '../../../connectors/src/configs/mjml.config'
 import { MojoAuth } from '../../../connectors/src/configs/mojoauth.config'
 import { Nasa } from '../../../connectors/src/configs/nasa.config'
+import { Neon } from '../../../connectors/src/configs/neon.config'
 import { Netlify } from '../../../connectors/src/configs/netlify.config'
 import { NewRelic } from '../../../connectors/src/configs/newrelic.config'
 import { NewsApi } from '../../../connectors/src/configs/newsapi.config'
@@ -130,6 +131,7 @@ import { Notion } from '../../../connectors/src/configs/notion.config'
 import { Npoint } from '../../../connectors/src/configs/npoint.config'
 import { OCRSpace } from '../../../connectors/src/configs/ocrspace.config'
 import { OneInch } from '../../../connectors/src/configs/oneinch.config'
+import { OpenAI } from '../../../connectors/src/configs/openai.config'
 import { OpenLibrary } from '../../../connectors/src/configs/openlibrary.config'
 import { OpenSea } from '../../../connectors/src/configs/opensea.config'
 import { OpenWeatherMap } from '../../../connectors/src/configs/openweathermap.config'
@@ -501,6 +503,9 @@ configTypes.push({type: getType<Mixpanel.ImportEvents>(), id: 'mixpanel', name: 
 configTypes.push({type: getType<MJML.RenderMJMLToHMTL>(), id: 'mjml', name: 'MJML', interface: 'RenderMJMLToHMTL'})
 configTypes.push({type: getType<MojoAuth.SendMagicLink>(), id: 'mojoauth', name: 'MojoAuth', interface: 'SendMagicLink'})
 configTypes.push({type: getType<Nasa.AstronomyPictureOfTheDay>(), id: 'nasa', name: 'Nasa', interface: 'AstronomyPictureOfTheDay'})
+configTypes.push({type: getType<Neon.GetOperations>(), id: 'neon', name: 'Neon', interface: 'GetOperations'})
+configTypes.push({type: getType<Neon.GetUser>(), id: 'neon', name: 'Neon', interface: 'GetUser'})
+configTypes.push({type: getType<Neon.GetProjects>(), id: 'neon', name: 'Neon', interface: 'GetProjects'})
 configTypes.push({type: getType<Netlify.ListSites>(), id: 'netlify', name: 'Netlify', interface: 'ListSites'})
 configTypes.push({type: getType<Netlify.GetEnvironmentVariables>(), id: 'netlify', name: 'Netlify', interface: 'GetEnvironmentVariables'})
 configTypes.push({type: getType<NewRelic.InsightsEvents>(), id: 'newrelic', name: 'NewRelic', interface: 'InsightsEvents'})
@@ -512,6 +517,8 @@ configTypes.push({type: getType<OCRSpace.ParseBase64>(), id: 'ocrspace', name: '
 configTypes.push({type: getType<OneInch.AggregationInfoTokens>(), id: '1inch', name: 'OneInch', interface: 'AggregationInfoTokens'})
 configTypes.push({type: getType<OneInch.AggregationQuote>(), id: '1inch', name: 'OneInch', interface: 'AggregationQuote'})
 configTypes.push({type: getType<OneInch.AggregationSwap>(), id: '1inch', name: 'OneInch', interface: 'AggregationSwap'})
+configTypes.push({type: getType<OpenAI.CreateImage>(), id: 'openai', name: 'OpenAI', interface: 'CreateImage'})
+configTypes.push({type: getType<OpenAI.ListModels>(), id: 'openai', name: 'OpenAI', interface: 'ListModels'})
 configTypes.push({type: getType<OpenLibrary.Books>(), id: 'openlibrary', name: 'OpenLibrary', interface: 'Books'})
 configTypes.push({type: getType<OpenSea.GetAssets>(), id: 'opensea', name: 'OpenSea', interface: 'GetAssets'})
 configTypes.push({type: getType<OpenSea.GetCollections>(), id: 'opensea', name: 'OpenSea', interface: 'GetCollections'})

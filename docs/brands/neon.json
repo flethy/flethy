@@ -1,0 +1,76 @@
+{
+  "name": "Neon",
+  "domain": "neon.tech",
+  "claimed": false,
+  "description": "Postgres made for developers. Easy to Use, Scalable, Cost efficient solution for your next project.",
+  "links": [
+    { "name": "twitter", "url": "https://twitter.com/neondatabase" },
+    { "name": "github", "url": "https://github.com/neondatabase" },
+    { "name": "linkedin", "url": "https://linkedin.com/company/neon-inc" }
+  ],
+  "logos": [
+    {
+      "type": "logo",
+      "theme": "light",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idOnqbOepc/idw90MNmGy.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 231,
+          "width": 820,
+          "size": 22539
+        },
+        {
+          "src": "https://asset.brandfetch.io/idOnqbOepc/idsBvDB0cC.svg",
+          "background": "transparent",
+          "format": "svg",
+          "size": 2688
+        }
+      ]
+    },
+    {
+      "type": "icon",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idOnqbOepc/idSAeDvOQ2.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 400,
+          "width": 400,
+          "size": 9104
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#12fff7", "type": "accent", "brightness": 204 },
+    { "hex": "#1a1a1a", "type": "dark", "brightness": 26 },
+    { "hex": "#ffffff", "type": "light", "brightness": 255 }
+  ],
+  "fonts": [
+    {
+      "name": "IBM Plex Sans",
+      "type": "body",
+      "origin": "google",
+      "originId": "IBM+Plex+Sans",
+      "weights": []
+    }
+  ],
+  "images": [
+    {
+      "type": "banner",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idOnqbOepc/id7pOZBIJd.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 500,
+          "width": 1500,
+          "size": 146090
+        }
+      ]
+    }
+  ]
+}
