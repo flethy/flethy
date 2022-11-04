@@ -35,7 +35,7 @@ export class CryptoUtils {
       const digest = btoa(String.fromCharCode(...new Uint8Array(signature)))
       return digest
       // *******************
-      throw new Error(`CryptoUtils | To be implemented with WebCrypto.`)
+      // throw new Error(`CryptoUtils | To be implemented with WebCrypto.`)
     } else {
       try {
         const crypto = require('crypto')
