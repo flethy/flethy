@@ -20,7 +20,7 @@ export class NavigateToWebsites {
       if (config) {
         const base = config.meta.url
         const url = `${base}?utm_source=flethy&utm_medium=landing_page&utm_content=textlink`
-        console.log(`${index}/${size} | Navigating to ${url}`)
+        console.log(`${index.all}/${size} | Navigating to ${url}`)
         try {
           await page.goto(url)
           index.success++
@@ -34,7 +34,7 @@ export class NavigateToWebsites {
     console.log(`Closing Browser`)
     await browser.close()
     console.log(
-      `Done | Success: ${index.success} | Failed: ${index.failed} | Sum: ${index.all}`
+      `Done | Success: ${index.success} | Failed: ${index.failed} | Sum: ${size}`
     )
     console.log(`Failed URLs: ${index.failedUrls.join(', ')}`)
   }
