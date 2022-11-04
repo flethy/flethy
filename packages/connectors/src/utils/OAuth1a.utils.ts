@@ -49,21 +49,22 @@ export class OAuth1Helper {
       .replace(/\)/g, '%29')
   }
 
-  protected hash(base: string, key: string) {
+  protected async hash(base: string, key: string) {
     let algorithm = 'sha1'
     switch (this.oauthSignature) {
       case 'HMAC-SHA256':
         algorithm = 'sha256'
         break
     }
-    return CryptoUtils.createHmacBase64(algorithm, key, base)
+    const hash = await CryptoUtils.createHmacBase64(algorithm, key, base)
+    return hash
   }
 
   setOauthSignature(signature: 'HMAC-SHA1' | 'HMAC-SHA256') {
     this.oauthSignature = signature
   }
 
-  authorize(
+  async authorize(
     request: OAuth1RequestOptions,
     accessTokens: Partial<OAuth1Tokens> = {},
   ) {
@@ -83,7 +84,7 @@ export class OAuth1Helper {
       request.data = {}
     }
 
-    oauthInfo.oauth_signature = this.getSignature(
+    oauthInfo.oauth_signature = await this.getSignature(
       request,
       accessTokens.secret,
       oauthInfo as OAuth1AuthInfo,
@@ -131,15 +132,16 @@ export class OAuth1Helper {
     return Math.trunc(new Date().getTime() / 1000)
   }
 
-  protected getSignature(
+  protected async getSignature(
     request: OAuth1RequestOptions,
     tokenSecret: string | undefined,
     oauthInfo: OAuth1AuthInfo,
   ) {
-    return this.hash(
+    const signature = await this.hash(
       this.getBaseString(request, oauthInfo),
       this.getSigningKey(tokenSecret),
     )
+    return signature
   }
 
   protected getSigningKey(tokenSecret: string | undefined) {

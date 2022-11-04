@@ -10,6 +10,23 @@ export function nao<Params extends RequestParams>(params: Params): FetchParams {
   )
 }
 
+export async function naoAsync<Params extends RequestParams>(
+  params: Params,
+): Promise<FetchParams> {
+  const requestOptions = await HttpRequestConfig.asyncPreparation(
+    HttpRequestConfig.requestOptions<Params>(params),
+  )
+  return HttpRequestConfig.requestConfig(requestOptions)
+}
+
+export function asyncPreparationNeeded<Params extends RequestParams>(
+  params: Params,
+): boolean {
+  return HttpRequestConfig.asyncPreparationNeeded(
+    HttpRequestConfig.requestOptions<Params>(params),
+  )
+}
+
 export class HttpRequestConfig {
   public static requestOptions<Params extends RequestParams>(
     params: Params,
@@ -18,9 +35,71 @@ export class HttpRequestConfig {
     return { params, api: config.api, endpoint: config.endpoint }
   }
 
-  public static requestConfig(options: RequestOptions<any>): FetchParams {
-    // VALIDATION
+  public static asyncPreparationNeeded(options: RequestOptions<any>): boolean {
+    // AUTH
+    if (options.endpoint.auth || options.api.auth) {
+      for (const paramKey of Object.keys(options.params)) {
+        const [type, keyname] = paramKey.split(':')
+        if (type === 'auth') {
+          const auth = options.endpoint.auth ?? options.api.auth
+          if (!auth) {
+            throw new Error(`Auth cannot be resolved.`)
+          }
+          const authConfig = auth[keyname]
+          switch (authConfig.type) {
+            case 'header:oauth1a':
+              return true
+          }
+        }
+      }
+    }
+    return false
+  }
 
+  public static async asyncPreparation(
+    options: RequestOptions<any>,
+  ): Promise<RequestOptions<any>> {
+    // AUTH
+    if (options.endpoint.auth || options.api.auth) {
+      for (const paramKey of Object.keys(options.params)) {
+        const [type, keyname] = paramKey.split(':')
+        if (type === 'auth') {
+          const auth = options.endpoint.auth ?? options.api.auth
+          if (!auth) {
+            throw new Error(`Auth cannot be resolved.`)
+          }
+          const authConfig = auth[keyname]
+          switch (authConfig.type) {
+            case 'header:oauth1a':
+              const url = HttpRequestConfig.getUrl(options)
+              const oauthhelper = new OAuth1Helper({
+                consumerKeys: {
+                  key: options.params[paramKey].consumerKey,
+                  secret: options.params[paramKey].consumerSecret,
+                },
+              })
+              const oauthInfo = await oauthhelper.authorize(
+                {
+                  url: url,
+                  method: options.endpoint.method,
+                  data: {},
+                },
+                {
+                  key: options.params[paramKey].accessKey,
+                  secret: options.params[paramKey].accessSecret,
+                },
+              )
+              const headerValue = oauthhelper.toHeader(oauthInfo)
+              options.params[`header:${keyname}`] = headerValue.Authorization
+              break
+          }
+        }
+      }
+    }
+    return options
+  }
+
+  private static getUrl(options: RequestOptions<any>): string {
     let url: string | undefined
     const base = options.endpoint.base ?? options.api.base
     if (Array.isArray(base)) {
@@ -32,6 +111,13 @@ export class HttpRequestConfig {
     if (!url) {
       throw new Error(`Cannot determine Base URL`)
     }
+    return url
+  }
+
+  public static requestConfig(options: RequestOptions<any>): FetchParams {
+    // VALIDATION
+
+    const url = HttpRequestConfig.getUrl(options)
 
     const config: FetchParams = {
       method: options.endpoint.method,
@@ -214,28 +300,7 @@ export class HttpRequestConfig {
               }
               break
             case 'header:oauth1a':
-              if (!config.headers) {
-                config.headers = {}
-              }
-              const oauthhelper = new OAuth1Helper({
-                consumerKeys: {
-                  key: options.params[paramKey].consumerKey,
-                  secret: options.params[paramKey].consumerSecret,
-                },
-              })
-              const oauthInfo = oauthhelper.authorize(
-                {
-                  url: config.url,
-                  method: options.endpoint.method,
-                  data: {},
-                },
-                {
-                  key: options.params[paramKey].accessKey,
-                  secret: options.params[paramKey].accessSecret,
-                },
-              )
-              const headerValue = oauthhelper.toHeader(oauthInfo)
-              config.headers[keyname] = headerValue.Authorization
+              // ignore: needs to be handled via async preparation
               break
             case 'body':
               if (authConfig.authHandler) {

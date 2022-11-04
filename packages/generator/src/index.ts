@@ -162,7 +162,7 @@ import WordSimi from '../../connectors/src/configs/wordsimi.config'
 import { ZeroX } from '../../connectors/src/configs/zerox.config'
 import Zora from '../../connectors/src/configs/zora.config'
 import { FetchParams } from '../../connectors/src/types/FetchParams.type'
-import { nao } from '../../connectors/src/utils/Request.utils'
+import { nao, naoAsync } from '../../connectors/src/utils/Request.utils'
 // import { nao } from '@flethy/connectors'
 import APIPoint from '@flethy/connectors/src/configs/apipoint.config'
 import ButtondownEmail from '@flethy/connectors/src/configs/buttondownemail.config'
@@ -2418,7 +2418,7 @@ async function main() {
         },
       },
     }),
-    twitterManagePostTweets: nao<Twitter.PostTweets>({
+    twitterManagePostTweets: await naoAsync<Twitter.PostTweets>({
       kind: 'twitter.manage.postTweets',
       'auth:Authorization': {
         consumerKey: process.env.CONSUMER_KEY,
@@ -2818,7 +2818,7 @@ async function main() {
       },
     }),
   }
-  const requestConfig = requestConfigs.csvbox
+  const requestConfig = requestConfigs.twitterManagePostTweets
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)
