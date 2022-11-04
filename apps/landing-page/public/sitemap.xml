@@ -513,6 +513,10 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://flethy.com/integrations/neon</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://flethy.com/integrations/netlify</loc>
     <priority>0.8</priority>
   </url>
@@ -538,6 +542,10 @@
   </url>
   <url>
     <loc>https://flethy.com/integrations/oneinch</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://flethy.com/integrations/openai</loc>
     <priority>0.8</priority>
   </url>
   <url>

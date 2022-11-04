@@ -8,9 +8,14 @@ export class NavigateToWebsites {
     const page = await browser.newPage()
     const allConfigs = ConfigUtils.getAllConfigs()
     const size = allConfigs.size
-    let index = 0
+    const index = {
+      all: 0,
+      success: 0,
+      failed: 0,
+      failedUrls: [],
+    }
     for (const key of allConfigs.keys()) {
-      index++
+      index.all++
       const config = allConfigs.get(key)
       if (config) {
         const base = config.meta.url
@@ -18,13 +23,20 @@ export class NavigateToWebsites {
         console.log(`${index}/${size} | Navigating to ${url}`)
         try {
           await page.goto(url)
+          index.success++
         } catch (error) {
           console.error(`Failed to navigate to ${base}`)
+          index.failed++
+          index.failedUrls.push(base)
         }
       }
     }
     console.log(`Closing Browser`)
     await browser.close()
+    console.log(
+      `Done | Success: ${index.success} | Failed: ${index.failed} | Sum: ${index.all}`
+    )
+    console.log(`Failed URLs: ${index.failedUrls.join(', ')}`)
   }
 }
 

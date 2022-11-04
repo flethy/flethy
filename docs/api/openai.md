@@ -1,0 +1,33 @@
+# OpenAI
+
+## Links
+
+* URL: [https://openai.com/](https://openai.com/)
+* Documentation: [https://beta.openai.com/docs/introduction](https://beta.openai.com/docs/introduction)
+* Tags: web3
+* Category: aggregation
+* Type: indexer
+
+## API
+
+### Authentication
+
+* Authorization: header:bearer
+
+### images
+
+#### create
+
+##### Create image
+
+* Description: Creates an image given a prompt.
+* Docs: [https://beta.openai.com/docs/api-reference/images/create](https://beta.openai.com/docs/api-reference/images/create)
+
+### models
+
+#### list
+
+##### List models
+
+* Description: Lists the currently available models, and provides basic information about each one such as the owner and availability.
+* Docs: [https://beta.openai.com/docs/api-reference/models/list](https://beta.openai.com/docs/api-reference/models/list)

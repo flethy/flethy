@@ -168,9 +168,11 @@ import APIPoint from '@flethy/connectors/src/configs/apipoint.config'
 import ButtondownEmail from '@flethy/connectors/src/configs/buttondownemail.config'
 import CarbEngage from '@flethy/connectors/src/configs/carbengage.config'
 import Codat from '@flethy/connectors/src/configs/codat.config'
+import CSVBox from '@flethy/connectors/src/configs/csvbox.config'
 import Cumul from '@flethy/connectors/src/configs/cumul.config'
 import Dataddo from '@flethy/connectors/src/configs/dataddo.config'
 import Deepgram from '@flethy/connectors/src/configs/deepgram.config'
+import Festdays from '@flethy/connectors/src/configs/festdays.config'
 import Flatfile from '@flethy/connectors/src/configs/flatfile.config'
 import GitLab from '@flethy/connectors/src/configs/gitlab.config'
 import Here from '@flethy/connectors/src/configs/here.config'
@@ -178,16 +180,20 @@ import Imglab from '@flethy/connectors/src/configs/imglab.config'
 import Keen from '@flethy/connectors/src/configs/keen.config'
 import Koyeb from '@flethy/connectors/src/configs/koyeb.config'
 import LanguageLayer from '@flethy/connectors/src/configs/languagelayer.config'
+import LinkPreview from '@flethy/connectors/src/configs/linkpreview.config'
 import Logz from '@flethy/connectors/src/configs/logz.config'
 import Lolo from '@flethy/connectors/src/configs/lolo.config'
 import Luabase from '@flethy/connectors/src/configs/luabase.config'
+import Neon from '@flethy/connectors/src/configs/neon.config'
 import Npoint from '@flethy/connectors/src/configs/npoint.config'
+import OpenAI from '@flethy/connectors/src/configs/openai.config'
 import ORBIntelligence from '@flethy/connectors/src/configs/orbintelligence.config'
 import Phyllo from '@flethy/connectors/src/configs/phyllo.config'
 import Pirsch from '@flethy/connectors/src/configs/pirsch.config'
 import Prerender from '@flethy/connectors/src/configs/prerender.config'
 import Robolly from '@flethy/connectors/src/configs/robolly.config'
 import Rye from '@flethy/connectors/src/configs/rye.config'
+import Savepage from '@flethy/connectors/src/configs/savepage.config'
 import Sheety from '@flethy/connectors/src/configs/sheety.config'
 import Sidemail from '@flethy/connectors/src/configs/sidemail.config'
 import SpeechTextAI from '@flethy/connectors/src/configs/speechtextai.config'
@@ -200,10 +206,6 @@ import Vantevo from '@flethy/connectors/src/configs/vantevo.config'
 import Vonage from '@flethy/connectors/src/configs/vonage.config'
 import { HttpRequest } from './controllers/HttpRequest'
 import { logger } from './utils/Logger'
-import Festdays from '@flethy/connectors/src/configs/festdays.config'
-import Savepage from '@flethy/connectors/src/configs/savepage.config'
-import LinkPreview from '@flethy/connectors/src/configs/linkpreview.config'
-import CSVBox from '@flethy/connectors/src/configs/csvbox.config'
 
 async function main() {
   const requestConfigs: {
@@ -2817,8 +2819,30 @@ async function main() {
           'https://stats.govt.nz/assets/Uploads/Annual-enterprise-survey/Annual-enterprise-survey-2021-financial-year-provisional/Download-data/annual-enterprise-survey-2021-financial-year-provisional-csv.csv',
       },
     }),
+    neonOperations: nao<Neon.GetOperations>({
+      kind: 'neon.operations.get',
+      'auth:Authorization': process.env.NEON_TECH_API_KEY,
+    }),
+    neonUser: nao<Neon.GetUser>({
+      kind: 'neon.users.me',
+      'auth:Authorization': process.env.NEON_TECH_API_KEY,
+    }),
+    neonProjects: nao<Neon.GetProjects>({
+      kind: 'neon.projects.get',
+      'auth:Authorization': process.env.NEON_TECH_API_KEY,
+    }),
+    openaiCreateImage: nao<OpenAI.CreateImage>({
+      kind: 'openai.images.create',
+      'auth:Authorization': process.env.OPENAI_API_KEY,
+      'body:prompt': 'an orange and purple earth from the moon',
+      'body:size': '256x256',
+    }),
+    openaiListModels: nao<OpenAI.ListModels>({
+      kind: 'openai.models.list',
+      'auth:Authorization': process.env.OPENAI_API_KEY,
+    }),
   }
-  const requestConfig = requestConfigs.csvbox
+  const requestConfig = requestConfigs.openaiListModels
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)
