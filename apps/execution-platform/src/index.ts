@@ -81,15 +81,15 @@ API.add("GET", "/hmac", async (req, res) => {
 
 API.add("GET", "/key", async (req, res) => {
   const success = await SecretsController.addSecret({
-    workspaceId: "123",
-    secretKey: "test",
-    secretValue: "test",
+    projectId: "123",
+    key: "test",
+    value: "test",
   });
   res.send(200, { success });
 });
 
 API.add("GET", "/dec", async (req, res) => {
-  const decrypted = await SecretsController.getSecret("123");
+  const decrypted = await SecretsController.getSecrets("123");
   res.send(200, { decrypted });
 });
 
