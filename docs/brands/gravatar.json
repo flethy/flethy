@@ -1,0 +1,38 @@
+{
+  "name": "Gravatar",
+  "domain": "gravatar.com",
+  "claimed": false,
+  "description": "Gravatar is a service for providing globally unique avatars.",
+  "links": [],
+  "logos": [
+    {
+      "type": "logo",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idiHisT4xL/idJWdOTWsi.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 55,
+          "width": 274,
+          "size": 5127
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#001133", "type": "dark", "brightness": 16 },
+    { "hex": "#78c8e6", "type": "light", "brightness": 185 },
+    { "hex": "#0e74b2", "type": "accent", "brightness": 99 }
+  ],
+  "fonts": [
+    {
+      "name": "proxima-nova-soft",
+      "type": "title",
+      "origin": "custom",
+      "originId": null,
+      "weights": []
+    }
+  ],
+  "images": []
+}

@@ -81,6 +81,7 @@ import { Github } from '../../../connectors/src/configs/github.config'
 import { GitLab } from '../../../connectors/src/configs/gitlab.config'
 import { GrafBase } from '../../../connectors/src/configs/grafbase.config'
 import { GraphJSON } from '../../../connectors/src/configs/graphjson.config'
+import { Gravatar } from '../../../connectors/src/configs/gravatar.config'
 import { Grist } from '../../../connectors/src/configs/grist.config'
 import { HackerNews } from '../../../connectors/src/configs/hackernews.config'
 import { Harvest } from '../../../connectors/src/configs/harvest.config'
@@ -410,6 +411,7 @@ configTypes.push({type: getType<GraphJSON.Log>(), id: 'graphjson', name: 'GraphJ
 configTypes.push({type: getType<GraphJSON.BulkLog>(), id: 'graphjson', name: 'GraphJSON', interface: 'BulkLog'})
 configTypes.push({type: getType<GraphJSON.Data>(), id: 'graphjson', name: 'GraphJSON', interface: 'Data'})
 configTypes.push({type: getType<GraphJSON.Visualization>(), id: 'graphjson', name: 'GraphJSON', interface: 'Visualization'})
+configTypes.push({type: getType<Gravatar.GetJSONProfileData>(), id: 'gravatar', name: 'Gravatar', interface: 'GetJSONProfileData'})
 configTypes.push({type: getType<Grist.AddRecords>(), id: 'grist', name: 'Grist', interface: 'AddRecords'})
 configTypes.push({type: getType<Grist.FetchRecords>(), id: 'grist', name: 'Grist', interface: 'FetchRecords'})
 configTypes.push({type: getType<Grist.DescribeDocument>(), id: 'grist', name: 'Grist', interface: 'DescribeDocument'})

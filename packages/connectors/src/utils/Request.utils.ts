@@ -126,7 +126,15 @@ export class HttpRequestConfig {
             paths.push(options.params[`param:${path.name}`])
             break
           case 'auth':
-            paths.push(options.params[`auth:${path.name}`])
+            const auth = options.endpoint.auth ?? options.api.auth
+            let authValue = options.params[`auth:${path.name}`]
+            if (auth) {
+              const authConfig = auth[path.name]
+              if (authConfig?.transform) {
+                authValue = authConfig.transform(authValue)
+              }
+            }
+            paths.push(authValue)
             break
         }
       }
