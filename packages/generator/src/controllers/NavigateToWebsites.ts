@@ -52,6 +52,7 @@ export class NavigateToWebsites {
   }
 
   public async navigateToAll() {
+    const start = Date.now()
     // integrations
     const allConfigs = ConfigUtils.getAllConfigs()
     const integrationProgress: NavigationProgress = {
@@ -98,6 +99,11 @@ export class NavigateToWebsites {
       )
       console.log(`Failed URLs: ${progress.failedUrls.join(', ')}`)
     }
+
+    const end = Date.now()
+    const seconds = Math.floor((end - start) / 1000)
+    const minutes = Math.floor((end - start) / 1000 / 60)
+    console.log(`Finished in ${minutes} minutes / ${seconds} seconds`)
   }
 }
 
