@@ -3,14 +3,35 @@ import { FlethyError, ErrorType } from "../utils/error.utils";
 import { ValidationUtils } from "../utils/validation.utils";
 import type { KV } from "worktop/kv";
 import { read, write } from "worktop/kv";
+import {
+  FlethyMetaDates,
+  FlethyMetaUser,
+  FlethyProject,
+} from "../types/general.type";
+import { KVUtils } from "../utils/kv.utils";
 
-declare var DATA: KV.Namespace;
+declare var SECRETS: KV.Namespace;
 
-export interface AddSecretRequest {
-  workspaceId: string;
-  projectId?: string;
-  secretKey: string;
-  secretValue: string;
+export interface FlethySecrets
+  extends FlethyMetaDates,
+    FlethyMetaUser,
+    FlethyProject {
+  secrets?: string;
+}
+
+export interface FlethySecretValues extends FlethySecrets {
+  values: FlethySecretsValues;
+}
+
+export interface FlethySecretsValues {
+  [key: string]: string;
+}
+
+// REQUESTS
+
+export interface AddSecretRequest extends FlethyProject {
+  key: string;
+  value: string;
 }
 
 const enc = new TextEncoder();
@@ -22,23 +43,18 @@ export class SecretsController {
   public static async addSecret(request: AddSecretRequest) {
     const validation = ValidationUtils.validateAll([
       {
-        value: request.workspaceId,
-        parameter: "workspaceId",
-        checks: { required: true, minStringLength: 1 },
-      },
-      {
         value: request.projectId,
         parameter: "projectId",
         checks: { minStringLength: 1 },
       },
       {
-        value: request.secretKey,
-        parameter: "secretKey",
+        value: request.key,
+        parameter: "key",
         checks: { required: true, minStringLength: 1 },
       },
       {
-        value: request.secretValue,
-        parameter: "secretValue",
+        value: request.value,
+        parameter: "value",
         checks: { required: true, minStringLength: 1 },
       },
     ]);
@@ -53,42 +69,90 @@ export class SecretsController {
       });
     }
 
-    const encryptedSecret = await SecretsController.encrypt(
-      JSON.stringify(request),
+    const secrets = await SecretsController.getSecrets(
+      KVUtils.secretsForProject(request.projectId)
+    );
+
+    if (secrets.values[request.key]) {
+      throw new FlethyError({
+        type: ErrorType.BadRequest,
+        message: `Secret ${request.key} already exists`,
+        log: {
+          context: { origin: "secrets.controller.ts", method: "addSecret" },
+          message: `Secret ${request.key} already exists`,
+        },
+      });
+    }
+
+    secrets.values[request.key] = request.value;
+
+    const encryptedSecrets = await SecretsController.encrypt(
+      JSON.stringify(secrets.values),
       SECRET
     );
 
-    const success = await write<string>(
-      DATA,
-      request.workspaceId,
-      encryptedSecret
+    const updatedSecrets: FlethySecrets = {
+      projectId: request.projectId,
+      createdAt: secrets.createdAt,
+      createdBy: secrets.createdBy,
+      updatedAt: Date.now(),
+      updatedBy: "",
+      secrets: encryptedSecrets,
+    };
+
+    const success = await write<FlethySecrets>(
+      SECRETS,
+      KVUtils.secretsForProject(request.projectId),
+      updatedSecrets
     );
     return success;
   }
 
-  public static async getSecret(workspaceId: string) {
+  public static async getSecrets(
+    projectId: string
+  ): Promise<FlethySecretValues> {
     try {
-      const encryptedSecret = await read<string>(DATA, workspaceId, "text");
-      console.log(`======================`);
-      console.log(encryptedSecret);
-      if (encryptedSecret) {
-        const decrypted = await SecretsController.decrypt(
-          encryptedSecret,
-          SECRET
-        );
-        return JSON.parse(decrypted);
+      const encryptedSecrets = await read<FlethySecrets>(
+        SECRETS,
+        KVUtils.secretsForProject(projectId),
+        "json"
+      );
+      if (encryptedSecrets) {
+        const secretValues: FlethySecretValues = {
+          projectId: encryptedSecrets.projectId,
+          createdAt: encryptedSecrets.createdAt,
+          updatedAt: encryptedSecrets.updatedAt,
+          createdBy: encryptedSecrets.createdBy,
+          updatedBy: encryptedSecrets.updatedBy,
+          values: {},
+        };
+        if (encryptedSecrets.secrets) {
+          const decrypted = await SecretsController.decrypt(
+            encryptedSecrets.secrets,
+            SECRET
+          );
+          secretValues.values = JSON.parse(decrypted);
+        }
+        return secretValues;
+      } else {
+        const secretValues: FlethySecretValues = {
+          projectId,
+          createdAt: Date.now(),
+          createdBy: "",
+          values: {},
+        };
+        return secretValues;
       }
     } catch (error) {
-      console.log(error);
+      throw new FlethyError({
+        type: ErrorType.Internal,
+        message: `Failed to get Secrets for project ${projectId}`,
+        log: {
+          context: { origin: "secrets.controller.ts", method: "getSecret" },
+          message: `Failed to get Secrets for project ${projectId}`,
+        },
+      });
     }
-    throw new FlethyError({
-      type: ErrorType.NotFound,
-      message: `Secret not found for workspaceId: ${workspaceId}`,
-      log: {
-        context: { origin: "secrets.controller.ts", method: "getSecret" },
-        message: `Secret not found for workspaceId: ${workspaceId}`,
-      },
-    });
   }
 
   private static getPasswordKey(password: string) {
