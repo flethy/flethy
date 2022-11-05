@@ -103,6 +103,7 @@ The following Endpoints are currently supported.
 * [GitLab](./api/gitlab.md)
 * [GrafBase](./api/grafbase.md)
 * [GraphJSON](./api/graphjson.md)
+* [Gravatar](./api/gravatar.md)
 * [Grist](./api/grist.md)
 * [HackerNews](./api/hackernews.md)
 * [Harvest](./api/harvest.md)

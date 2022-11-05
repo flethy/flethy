@@ -206,6 +206,7 @@ import Vantevo from '@flethy/connectors/src/configs/vantevo.config'
 import Vonage from '@flethy/connectors/src/configs/vonage.config'
 import { HttpRequest } from './controllers/HttpRequest'
 import { logger } from './utils/Logger'
+import Gravatar from '@flethy/connectors/src/configs/gravatar.config'
 
 async function main() {
   const requestConfigs: {
@@ -2841,8 +2842,12 @@ async function main() {
       kind: 'openai.models.list',
       'auth:Authorization': process.env.OPENAI_API_KEY,
     }),
+    gravatarJson: nao<Gravatar.GetJSONProfileData>({
+      kind: 'gravatar.core.json',
+      'auth:email': 'adam.urban@gmail.com',
+    }),
   }
-  const requestConfig = requestConfigs.openaiListModels
+  const requestConfig = requestConfigs.gravatarJson
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

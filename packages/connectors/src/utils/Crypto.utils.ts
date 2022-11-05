@@ -41,4 +41,17 @@ export class CryptoUtils {
       }
     }
   }
+
+  public static createMD5(data: string) {
+    if (typeof crypto !== 'undefined') {
+      throw new Error(`CryptoUtils | To be implemented with WebCrypto.`)
+    } else {
+      try {
+        const crypto = require('crypto')
+        return crypto.createHash('md5').update(data).digest('hex')
+      } catch (error) {
+        throw new Error(`CryptoUtils | Failed to load module 'crypto'.`)
+      }
+    }
+  }
 }

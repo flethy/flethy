@@ -84,6 +84,7 @@ export interface ApiDescriptionAuth {
     | 'body:form'
     | 'subdomain'
   authHandler?: (fetchParams: FetchParams, authValue: string) => void
+  transform?: (authValue: string) => string
   custom?: {
     prefix?: string
     postfix?: string

@@ -81,6 +81,7 @@ import { Github } from '../configs/github.config'
 import { GitLab } from '../configs/gitlab.config'
 import { GrafBase } from '../configs/grafbase.config'
 import { GraphJSON } from '../configs/graphjson.config'
+import { Gravatar } from '../configs/gravatar.config'
 import { Grist } from '../configs/grist.config'
 import { HackerNews } from '../configs/hackernews.config'
 import { Harvest } from '../configs/harvest.config'
@@ -296,6 +297,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['gitlab', GitLab.API],
 ['grafbase', GrafBase.API],
 ['graphjson', GraphJSON.API],
+['gravatar', Gravatar.API],
 ['grist', Grist.API],
 ['hackernews', HackerNews.API],
 ['harvest', Harvest.API],

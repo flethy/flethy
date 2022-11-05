@@ -345,6 +345,10 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://flethy.com/integrations/gravatar</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://flethy.com/integrations/grist</loc>
     <priority>0.8</priority>
   </url>
