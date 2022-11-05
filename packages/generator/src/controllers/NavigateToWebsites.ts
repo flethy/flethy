@@ -1,47 +1,109 @@
 import puppeteer from 'puppeteer'
 import { ConfigUtils } from '../../../connectors/src/utils/Config.utils'
+import { MARKETING_RESOURCES } from '../constants/marketing.const'
+
+type NavigationType = 'integration' | 'blog'
+
+interface NavigationProgress {
+  type: NavigationType
+  urls: string[]
+  size: number
+  success: number
+  failed: number
+  failedUrls: string[]
+  index: number
+}
 
 export class NavigateToWebsites {
-  public static async navigate() {
+  private browser: puppeteer.Browser | undefined
+  private page: puppeteer.Page | undefined
+  private navigationProgressMap: Map<NavigationType, NavigationProgress> =
+    new Map<NavigationType, NavigationProgress>()
+
+  public async init() {
     console.log(`Starting browser`)
-    const browser = await puppeteer.launch()
-    const page = await browser.newPage()
+    this.browser = await puppeteer.launch()
+    this.page = await this.browser.newPage()
+  }
+
+  public async close() {
+    if (this.browser) {
+      console.log(`Closing browser`)
+      await this.browser.close()
+    }
+  }
+
+  public async navigateTo(base: string, progress: NavigationProgress) {
+    if (this.page) {
+      progress.index++
+      const url = `${base}?utm_source=flethy&utm_medium=landing_page&utm_content=textlink`
+      console.log(
+        `| ${progress.type} | ${progress.index}/${progress.size} | Navigating to ${url}`
+      )
+      try {
+        await this.page.goto(url)
+        progress.success++
+      } catch (error) {
+        console.error(`Failed to navigate to ${base}`)
+        progress.failed++
+        progress.failedUrls.push(base)
+      }
+    }
+  }
+
+  public async navigateToAll() {
+    // integrations
     const allConfigs = ConfigUtils.getAllConfigs()
-    const size = allConfigs.size
-    const index = {
-      all: 0,
+    const integrationProgress: NavigationProgress = {
+      type: 'integration',
+      urls: [],
+      size: allConfigs.size,
       success: 0,
       failed: 0,
       failedUrls: [],
+      index: 0,
     }
     for (const key of allConfigs.keys()) {
-      index.all++
       const config = allConfigs.get(key)
       if (config) {
-        const base = config.meta.url
-        const url = `${base}?utm_source=flethy&utm_medium=landing_page&utm_content=textlink`
-        console.log(`${index.all}/${size} | Navigating to ${url}`)
-        try {
-          await page.goto(url)
-          index.success++
-        } catch (error) {
-          console.error(`Failed to navigate to ${base}`)
-          index.failed++
-          index.failedUrls.push(base)
-        }
+        integrationProgress.urls.push(config.meta.url)
       }
     }
-    console.log(`Closing Browser`)
-    await browser.close()
-    console.log(
-      `Done | Success: ${index.success} | Failed: ${index.failed} | Sum: ${size}`
-    )
-    console.log(`Failed URLs: ${index.failedUrls.join(', ')}`)
+
+    // marketing
+    const blogProgress: NavigationProgress = {
+      type: 'blog',
+      urls: MARKETING_RESOURCES.map((resource) => resource.url),
+      size: MARKETING_RESOURCES.length,
+      success: 0,
+      failed: 0,
+      failedUrls: [],
+      index: 0,
+    }
+
+    const progresses = [blogProgress, integrationProgress]
+
+    await this.init()
+    for (const progress of progresses) {
+      for (const url of progress.urls) {
+        await this.navigateTo(url, progress)
+      }
+    }
+    await this.close()
+
+    // summary
+    for (const progress of progresses) {
+      console.log(
+        `| ${progress.type} | Success: ${progress.success} | Failed: ${progress.failed} | Sum: ${progress.size}`
+      )
+      console.log(`Failed URLs: ${progress.failedUrls.join(', ')}`)
+    }
   }
 }
 
 async function main() {
-  await NavigateToWebsites.navigate()
+  const navigator = new NavigateToWebsites()
+  await navigator.navigateToAll()
 }
 
 main()
