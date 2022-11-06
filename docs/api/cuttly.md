@@ -1,0 +1,24 @@
+# Cuttly
+
+## Links
+
+* URL: [https://cutt.ly/](https://cutt.ly/)
+* Documentation: [https://cutt.ly/cuttly-api](https://cutt.ly/cuttly-api)
+* Tags: web2
+* Category: utils
+* Type: url-shortener
+
+## API
+
+### Authentication
+
+* key: query
+
+### links
+
+#### shorten
+
+##### Link shortening
+
+* Description: Link shortening
+* Docs: [https://cutt.ly/api-documentation/cuttly-links-api](https://cutt.ly/api-documentation/cuttly-links-api)
