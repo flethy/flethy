@@ -15,3 +15,7 @@ export interface FlethyMetaUser {
   createdBy: string;
   updatedBy?: string;
 }
+
+export interface FlethyRequest extends FlethyWorkspace, FlethyProject {
+  userId: string;
+}
