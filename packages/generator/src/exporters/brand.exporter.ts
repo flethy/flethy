@@ -1,9 +1,9 @@
 import { Brandfetch, nao } from '@flethy/connectors'
-import { HttpRequest } from '../controllers/HttpRequest'
 import * as fs from 'fs'
 import * as path from 'path'
-import { DOCS_BASE } from './docs.exporter'
+import { HttpRequest } from '../controllers/HttpRequest'
 import { logger } from '../utils/Logger'
+import { DOCS_BASE } from './docs.exporter'
 
 const BRANDS_DIR = `${DOCS_BASE}/brands`
 const BRAND_LOGOS = `${DOCS_BASE}/brand-logos`
@@ -121,6 +121,7 @@ export class BrandExporter {
       'bigdatacloud',
       'calendarific',
       'camunda',
+      'cuttly',
       'codedetection',
       'coinlayer',
       'courier',

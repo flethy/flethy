@@ -1,0 +1,78 @@
+{
+  "name": "cutt.ly",
+  "domain": "cutt.ly",
+  "claimed": false,
+  "description": "Free custom URL Shortener and branded URLs with advanced links tracking and Link Management Platform & API. Shorten and replace long URL to short link. Track your links. Use it to affiliate programs, ads, social websites, emails, text messages, flyers with QR code.",
+  "links": [
+    { "name": "twitter", "url": "https://twitter.com/cutt_ly" },
+    { "name": "facebook", "url": "https://facebook.com/cuttlyURL" },
+    { "name": "instagram", "url": "https://instagram.com/cutt.ly" }
+  ],
+  "logos": [
+    {
+      "type": "icon",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idz1SaE33y/idk1mVvREm.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 400,
+          "width": 400,
+          "size": 9772
+        }
+      ]
+    },
+    {
+      "type": "logo",
+      "theme": "light",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idz1SaE33y/idXrx6h-Mh.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 410,
+          "width": 820,
+          "size": 22542
+        },
+        {
+          "src": "https://asset.brandfetch.io/idz1SaE33y/idKXdKqLjt.svg",
+          "background": "transparent",
+          "format": "svg",
+          "height": null,
+          "width": null,
+          "size": 7391
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#002553", "type": "dark", "brightness": 32 },
+    { "hex": "#ffffff", "type": "light", "brightness": 255 },
+    { "hex": "#1076f7", "type": "accent", "brightness": 106 }
+  ],
+  "fonts": [
+    {
+      "name": "Ubuntu",
+      "type": "body",
+      "origin": "google",
+      "originId": "Ubuntu",
+      "weights": []
+    }
+  ],
+  "images": [
+    {
+      "type": "banner",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idz1SaE33y/idRoidLOb-.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 500,
+          "width": 1500,
+          "size": 30735
+        }
+      ]
+    }
+  ]
+}

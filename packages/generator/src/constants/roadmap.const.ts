@@ -52,6 +52,14 @@ const ITEMS_2022_Q4: RoadmapEntry[] = [
     milestone: false,
     tags: [ROADMAP_TAGS.LANDINGPAGE],
   },
+  {
+    title: 'Secret and Workflow Management',
+    date: '2022-11-06',
+    description: 'CRUD operations for secrets and workflows.',
+    delivered: true,
+    milestone: false,
+    tags: [ROADMAP_TAGS.EXECUTION],
+  },
 ]
 
 const FUTURE_MILESTONES: RoadmapEntry[] = [

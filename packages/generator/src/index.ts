@@ -207,6 +207,7 @@ import Vonage from '@flethy/connectors/src/configs/vonage.config'
 import { HttpRequest } from './controllers/HttpRequest'
 import { logger } from './utils/Logger'
 import Gravatar from '@flethy/connectors/src/configs/gravatar.config'
+import Cuttly from '@flethy/connectors/src/configs/cuttly.config'
 
 async function main() {
   const requestConfigs: {
@@ -2846,8 +2847,14 @@ async function main() {
       kind: 'gravatar.core.json',
       'auth:email': 'adam.urban@gmail.com',
     }),
+    cuttlyShorten: nao<Cuttly.ShortenLink>({
+      kind: 'cuttly.links.shorten',
+      'auth:key': process.env.CUTTLY_API_KEY,
+      'query:short': 'https://flethy.com/integrations',
+      'query:name': 'flethy',
+    }),
   }
-  const requestConfig = requestConfigs.gravatarJson
+  const requestConfig = requestConfigs.cuttlyShorten
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)
