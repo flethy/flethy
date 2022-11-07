@@ -76,7 +76,7 @@ export class SecretsController {
       });
     }
 
-    const secrets = await SecretsController.get({
+    const currentSecrets = await SecretsController.get({
       workspaceId: request.workspaceId,
       projectId: request.projectId,
       userId: request.userId,
@@ -90,17 +90,16 @@ export class SecretsController {
 
     let secretValues: FlethySecretsValues = {};
 
-    if (secrets) {
+    if (currentSecrets) {
       updatedSecrets.updatedAt = Date.now();
       updatedSecrets.updatedBy = request.userId;
-      updatedSecrets.createdAt = secrets.createdAt;
-      updatedSecrets.createdBy = secrets.createdBy;
-      if (secrets.values) {
-        const decrypted = await SecretsController.decrypt(
-          JSON.stringify(secrets.values),
-          SECRET
-        );
-        secretValues = JSON.parse(decrypted);
+      updatedSecrets.createdAt = currentSecrets.createdAt;
+      updatedSecrets.createdBy = currentSecrets.createdBy;
+      if (
+        currentSecrets.values &&
+        Object.keys(currentSecrets.values).length > 0
+      ) {
+        secretValues = currentSecrets.values;
       }
     }
 
@@ -123,7 +122,7 @@ export class SecretsController {
 
   public static async get(
     request: GetSecretsRequest
-  ): Promise<FlethySecretValues> {
+  ): Promise<FlethySecretValues | undefined> {
     try {
       const encryptedSecrets = await read<FlethySecrets>(
         SECRETS,
@@ -147,15 +146,8 @@ export class SecretsController {
           secretValues.values = JSON.parse(decrypted);
         }
         return secretValues;
-      } else {
-        const secretValues: FlethySecretValues = {
-          projectId: request.projectId,
-          createdAt: Date.now(),
-          createdBy: "",
-          values: {},
-        };
-        return secretValues;
       }
+      return undefined;
     } catch (error) {
       throw new FlethyError({
         type: ErrorType.Internal,
@@ -170,29 +162,20 @@ export class SecretsController {
 
   public static async delete(request: DeleteSecretRequest): Promise<boolean> {
     try {
-      const encryptedSecrets = await read<FlethySecrets>(
-        SECRETS,
-        KVUtils.secretsForProject(request.projectId),
-        "json"
-      );
-      if (encryptedSecrets) {
-        if (encryptedSecrets.secrets) {
-          const decrypted = await SecretsController.decrypt(
-            encryptedSecrets.secrets,
-            SECRET
-          );
-          const secrets = JSON.parse(decrypted);
-          if (secrets[request.key]) {
-            delete secrets[request.key];
+      const currentSecrets = await SecretsController.get(request);
+      if (currentSecrets) {
+        if (currentSecrets.values && currentSecrets.values[request.key]) {
+          if (currentSecrets.values[request.key]) {
+            delete currentSecrets.values[request.key];
             const encryptedUpdatedSecrets = await SecretsController.encrypt(
-              JSON.stringify(secrets),
+              JSON.stringify(currentSecrets.values),
               SECRET
             );
 
             const updatedSecrets: FlethySecrets = {
               projectId: request.projectId,
-              createdAt: encryptedSecrets.createdAt,
-              createdBy: encryptedSecrets.createdBy,
+              createdAt: currentSecrets.createdAt,
+              createdBy: currentSecrets.createdBy,
               updatedAt: Date.now(),
               updatedBy: request.userId,
               secrets: encryptedUpdatedSecrets,
@@ -205,24 +188,15 @@ export class SecretsController {
             return success;
           }
         }
-        throw new FlethyError({
-          type: ErrorType.NotFound,
-          message: `No secrets configured for project ${request.projectId}`,
-          log: {
-            context: { origin: "secrets.controller.ts", method: "delete" },
-            message: `No secrets configured for project ${request.projectId}`,
-          },
-        });
-      } else {
-        throw new FlethyError({
-          type: ErrorType.NotFound,
-          message: `No secrets configured for project ${request.projectId}`,
-          log: {
-            context: { origin: "secrets.controller.ts", method: "delete" },
-            message: `No secrets configured for project ${request.projectId}`,
-          },
-        });
       }
+      throw new FlethyError({
+        type: ErrorType.NotFound,
+        message: `No secrets with key ${request.key} configured for project ${request.projectId}`,
+        log: {
+          context: { origin: "secrets.controller.ts", method: "delete" },
+          message: `No secrets with key ${request.key} configured for project ${request.projectId}`,
+        },
+      });
     } catch (error) {
       throw new FlethyError({
         type: ErrorType.Internal,
