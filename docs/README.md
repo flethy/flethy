@@ -198,6 +198,7 @@ The following Endpoints are currently supported.
 * [SpeechTextAI](./api/speechtextai.md)
 * [Splitbee](./api/splitbee.md)
 * [Stackby](./api/stackby.md)
+* [Stackhawk](./api/stackhawk.md)
 * [Statically](./api/statically.md)
 * [Storyblok](./api/storyblok.md)
 * [Stytch](./api/stytch.md)

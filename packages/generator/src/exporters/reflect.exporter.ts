@@ -182,6 +182,7 @@ import { Slack } from '../../../connectors/src/configs/slack.config'
 import { SpeechTextAI } from '../../../connectors/src/configs/speechtextai.config'
 import { Splitbee } from '../../../connectors/src/configs/splitbee.config'
 import { Stackby } from '../../../connectors/src/configs/stackby.config'
+import { Stackhawk } from '../../../connectors/src/configs/stackhawk.config'
 import { Statically } from '../../../connectors/src/configs/statically.config'
 import { Storyblok } from '../../../connectors/src/configs/storyblok.config'
 import { Stytch } from '../../../connectors/src/configs/stytch.config'
@@ -615,6 +616,9 @@ configTypes.push({type: getType<SpeechTextAI.Results>(), id: 'speechtextai', nam
 configTypes.push({type: getType<Splitbee.TrackEvent>(), id: 'splitbee', name: 'Splitbee', interface: 'TrackEvent'})
 configTypes.push({type: getType<Splitbee.SetCustomUserData>(), id: 'splitbee', name: 'Splitbee', interface: 'SetCustomUserData'})
 configTypes.push({type: getType<Stackby.ListRows>(), id: 'stackby', name: 'Stackby', interface: 'ListRows'})
+configTypes.push({type: getType<Stackhawk.AccessToken>(), id: 'stackhawk', name: 'Stackhawk', interface: 'AccessToken'})
+configTypes.push({type: getType<Stackhawk.RefreshAccessToken>(), id: 'stackhawk', name: 'Stackhawk', interface: 'RefreshAccessToken'})
+configTypes.push({type: getType<Stackhawk.GetUser>(), id: 'stackhawk', name: 'Stackhawk', interface: 'GetUser'})
 configTypes.push({type: getType<Statically.StaticZapGithub>(), id: 'statically', name: 'Statically', interface: 'StaticZapGithub'})
 configTypes.push({type: getType<Statically.StaticZapGitlab>(), id: 'statically', name: 'Statically', interface: 'StaticZapGitlab'})
 configTypes.push({type: getType<Statically.StaticZapBitbucket>(), id: 'statically', name: 'Statically', interface: 'StaticZapBitbucket'})

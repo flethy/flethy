@@ -182,6 +182,7 @@ import { Slack } from '../configs/slack.config'
 import { SpeechTextAI } from '../configs/speechtextai.config'
 import { Splitbee } from '../configs/splitbee.config'
 import { Stackby } from '../configs/stackby.config'
+import { Stackhawk } from '../configs/stackhawk.config'
 import { Statically } from '../configs/statically.config'
 import { Storyblok } from '../configs/storyblok.config'
 import { Stytch } from '../configs/stytch.config'
@@ -399,6 +400,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['speechtextai', SpeechTextAI.API],
 ['splitbee', Splitbee.API],
 ['stackby', Stackby.API],
+['stackhawk', Stackhawk.API],
 ['statically', Statically.API],
 ['storyblok', Storyblok.API],
 ['stytch', Stytch.API],

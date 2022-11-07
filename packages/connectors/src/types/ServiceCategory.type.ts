@@ -112,6 +112,7 @@ export type UTILS_TYPE =
   | 'language-detection'
   | 'code-detection'
   | 'json'
+  | 'app-security'
 export type DEFI_TYPE = 'liquidity'
 export type BOOKS_TYPE = 'index'
 export type FINANCE_TYPE =
