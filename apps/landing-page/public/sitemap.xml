@@ -749,6 +749,10 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://flethy.com/integrations/stackhawk</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://flethy.com/integrations/statically</loc>
     <priority>0.8</priority>
   </url>

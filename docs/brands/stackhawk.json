@@ -1,0 +1,71 @@
+{
+  "name": "StackHawk",
+  "domain": "stackhawk.com",
+  "claimed": false,
+  "description": "StackHawk is a computer software company that specializes in website and software maintenance and detecting bugs.",
+  "links": [
+    { "name": "github", "url": "https://github.com/stackhawk" },
+    { "name": "twitter", "url": "https://twitter.com/stackhawk" },
+    { "name": "linkedin", "url": "https://linkedin.com/company/stackhawk-inc" },
+    { "name": "facebook", "url": "https://facebook.com/StackHawk" }
+  ],
+  "logos": [
+    {
+      "type": "icon",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idtOOp6uhV/idBcdqBjEL.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 400,
+          "width": 400,
+          "size": 20240
+        }
+      ]
+    },
+    {
+      "type": "logo",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idtOOp6uhV/idSP1k9JLE.png",
+          "background": null,
+          "format": "png",
+          "height": 180,
+          "width": 180,
+          "size": 18738
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#09968e", "type": "dark", "brightness": 119 },
+    { "hex": "#ffffff", "type": "light", "brightness": 255 },
+    { "hex": "#00cbc6", "type": "accent", "brightness": 159 }
+  ],
+  "fonts": [
+    {
+      "name": "Roboto",
+      "type": "body",
+      "origin": "google",
+      "originId": "Roboto",
+      "weights": []
+    }
+  ],
+  "images": [
+    {
+      "type": "banner",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idtOOp6uhV/id7QoDEyI3.png",
+          "background": null,
+          "format": "png",
+          "height": 924,
+          "width": 1640,
+          "size": 80190
+        }
+      ]
+    }
+  ]
+}

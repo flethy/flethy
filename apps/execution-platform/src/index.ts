@@ -80,7 +80,7 @@ API.add("GET", "/hmac", async (req, res) => {
 });
 
 API.add("GET", "/key", async (req, res) => {
-  const success = await SecretsController.addSecret({
+  const success = await SecretsController.put({
     projectId: "123",
     key: "test",
     value: "test",
@@ -89,7 +89,7 @@ API.add("GET", "/key", async (req, res) => {
 });
 
 API.add("GET", "/dec", async (req, res) => {
-  const decrypted = await SecretsController.getSecrets("123");
+  const decrypted = await SecretsController.get("123");
   res.send(200, { decrypted });
 });
 

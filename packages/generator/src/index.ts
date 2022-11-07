@@ -170,11 +170,13 @@ import CarbEngage from '@flethy/connectors/src/configs/carbengage.config'
 import Codat from '@flethy/connectors/src/configs/codat.config'
 import CSVBox from '@flethy/connectors/src/configs/csvbox.config'
 import Cumul from '@flethy/connectors/src/configs/cumul.config'
+import Cuttly from '@flethy/connectors/src/configs/cuttly.config'
 import Dataddo from '@flethy/connectors/src/configs/dataddo.config'
 import Deepgram from '@flethy/connectors/src/configs/deepgram.config'
 import Festdays from '@flethy/connectors/src/configs/festdays.config'
 import Flatfile from '@flethy/connectors/src/configs/flatfile.config'
 import GitLab from '@flethy/connectors/src/configs/gitlab.config'
+import Gravatar from '@flethy/connectors/src/configs/gravatar.config'
 import Here from '@flethy/connectors/src/configs/here.config'
 import Imglab from '@flethy/connectors/src/configs/imglab.config'
 import Keen from '@flethy/connectors/src/configs/keen.config'
@@ -198,6 +200,7 @@ import Sheety from '@flethy/connectors/src/configs/sheety.config'
 import Sidemail from '@flethy/connectors/src/configs/sidemail.config'
 import SpeechTextAI from '@flethy/connectors/src/configs/speechtextai.config'
 import Splitbee from '@flethy/connectors/src/configs/splitbee.config'
+import Stackhawk from '@flethy/connectors/src/configs/stackhawk.config'
 import Storyblok from '@flethy/connectors/src/configs/storyblok.config'
 import Stytch from '@flethy/connectors/src/configs/stytch.config'
 import Twitter from '@flethy/connectors/src/configs/twitter.config'
@@ -206,8 +209,6 @@ import Vantevo from '@flethy/connectors/src/configs/vantevo.config'
 import Vonage from '@flethy/connectors/src/configs/vonage.config'
 import { HttpRequest } from './controllers/HttpRequest'
 import { logger } from './utils/Logger'
-import Gravatar from '@flethy/connectors/src/configs/gravatar.config'
-import Cuttly from '@flethy/connectors/src/configs/cuttly.config'
 
 async function main() {
   const requestConfigs: {
@@ -2853,8 +2854,20 @@ async function main() {
       'query:short': 'https://flethy.com/integrations',
       'query:name': 'flethy',
     }),
+    stackhawkLogin: nao<Stackhawk.AccessToken>({
+      kind: 'stackhawk.auth.accessToken',
+      'auth:X-ApiKey': process.env.STACKHAWK_API_KEY,
+    }),
+    stackhawkRefresh: nao<Stackhawk.RefreshAccessToken>({
+      kind: 'stackhawk.auth.refresh',
+      'auth:Authorization': process.env.STACKHAWK_JWT,
+    }),
+    stackhawkGetUser: nao<Stackhawk.GetUser>({
+      kind: 'stackhawk.user.get',
+      'auth:Authorization': process.env.STACKHAWK_JWT,
+    }),
   }
-  const requestConfig = requestConfigs.cuttlyShorten
+  const requestConfig = requestConfigs.stackhawkGetUser
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)
