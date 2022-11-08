@@ -34,6 +34,21 @@ export default observer(() => {
 	} = useMst()
 	const bg = useColorModeValue('gray.200', 'gray.700')
 
+	const httpMethodTagBackground = (method: string) => {
+		switch (method.toLowerCase()) {
+			case 'get':
+				return 'green.500'
+			case 'post':
+			case 'put':
+			case 'patch':
+				return 'blue.500'
+			case 'delete':
+				return 'red.500'
+			default:
+				return 'gray.500'
+		}
+	}
+
 	let content = (
 		<FancyHeading textA={`${page.id} not available`} textB={`Sorry!`} />
 	)
@@ -151,7 +166,9 @@ export default observer(() => {
 											</Tag>
 										</Td>
 										<Td>
-											<Tag p={2}>{endpoint.method}</Tag>
+											<Tag p={2} bg={httpMethodTagBackground(endpoint.method)}>
+												{endpoint.method}
+											</Tag>
 										</Td>
 									</Tr>
 								))}

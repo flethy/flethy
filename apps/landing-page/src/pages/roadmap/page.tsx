@@ -50,11 +50,24 @@ export default observer(() => {
 								<Box w={'25rem'}>
 									<Text fontWeight={'bold'}>
 										{item.title}
-										{item.tags.map((tag, tagIndex) => (
-											<Tag key={tagIndex} mx={1}>
-												{tag}
-											</Tag>
-										))}
+										{item.tags.map((tag, tagIndex) => {
+											let bg = 'flethy.orange'
+											switch (tag) {
+												case 'flow':
+												case 'designer':
+												case 'execution':
+													bg = 'flethy.lightpurple'
+													break
+												case 'landingpage':
+													bg = 'flethy.purple'
+													break
+											}
+											return (
+												<Tag key={tagIndex} mx={1} bg={bg}>
+													{tag}
+												</Tag>
+											)
+										})}
 									</Text>
 									<Text>{item.description}</Text>
 								</Box>
