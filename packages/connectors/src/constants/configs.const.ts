@@ -132,6 +132,7 @@ import { NewsApi } from '../configs/newsapi.config'
 import { Notion } from '../configs/notion.config'
 import { Npoint } from '../configs/npoint.config'
 import { OCRSpace } from '../configs/ocrspace.config'
+import { Omnisend } from '../configs/omnisend.config'
 import { OneInch } from '../configs/oneinch.config'
 import { OpenAI } from '../configs/openai.config'
 import { OpenLibrary } from '../configs/openlibrary.config'
@@ -350,6 +351,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['notion', Notion.API],
 ['npoint', Npoint.API],
 ['ocrspace', OCRSpace.API],
+['omnisend', Omnisend.API],
 ['1inch', OneInch.API],
 ['openai', OpenAI.API],
 ['openlibrary', OpenLibrary.API],

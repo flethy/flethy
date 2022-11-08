@@ -1,0 +1,104 @@
+{
+  "name": "Omnisend",
+  "domain": "omnisend.com",
+  "claimed": false,
+  "description": "Omnisend is an ecommerce-tailored email & SMS marketing automation platform built to help nimble teams drive more revenue without increasing their workload.",
+  "links": [
+    { "name": "twitter", "url": "https://twitter.com/omnisend" },
+    { "name": "facebook", "url": "https://facebook.com/omnisend" },
+    { "name": "linkedin", "url": "https://linkedin.com/company/omnisend" }
+  ],
+  "logos": [
+    {
+      "type": "icon",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/id8EEjfKbN/idHA7u_Nfo.png",
+          "background": null,
+          "format": "png",
+          "height": 1000,
+          "width": 1000,
+          "size": 15565
+        }
+      ]
+    },
+    {
+      "type": "logo",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/id8EEjfKbN/idbasirN5-.svg",
+          "background": "transparent",
+          "format": "svg",
+          "size": 4124
+        },
+        {
+          "src": "https://asset.brandfetch.io/id8EEjfKbN/idfuB8bLRL.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 108,
+          "width": 800,
+          "size": 9489
+        }
+      ]
+    },
+    {
+      "type": "symbol",
+      "theme": null,
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/id8EEjfKbN/idtOtK5PhT.svg",
+          "background": "transparent",
+          "format": "svg",
+          "size": 608
+        },
+        {
+          "src": "https://asset.brandfetch.io/id8EEjfKbN/id_BtvOF5X.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 800,
+          "width": 800,
+          "size": 23092
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#097368", "type": "accent", "brightness": 92 },
+    { "hex": "#FFFFFF", "type": "light", "brightness": 255 },
+    { "hex": "#000000", "type": "dark", "brightness": 0 },
+    { "hex": "#F3EADF", "type": "brand", "brightness": 235 }
+  ],
+  "fonts": [
+    {
+      "name": "Roboto",
+      "type": "title",
+      "origin": "google",
+      "originId": "Roboto",
+      "weights": []
+    },
+    {
+      "name": "Roboto",
+      "type": "body",
+      "origin": "google",
+      "originId": "Roboto",
+      "weights": []
+    }
+  ],
+  "images": [
+    {
+      "type": "banner",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/id8EEjfKbN/idbgm0ooVD.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 500,
+          "width": 1500,
+          "size": 67060
+        }
+      ]
+    }
+  ]
+}
