@@ -132,6 +132,7 @@ import { NewsApi } from '../../../connectors/src/configs/newsapi.config'
 import { Notion } from '../../../connectors/src/configs/notion.config'
 import { Npoint } from '../../../connectors/src/configs/npoint.config'
 import { OCRSpace } from '../../../connectors/src/configs/ocrspace.config'
+import { Omnisend } from '../../../connectors/src/configs/omnisend.config'
 import { OneInch } from '../../../connectors/src/configs/oneinch.config'
 import { OpenAI } from '../../../connectors/src/configs/openai.config'
 import { OpenLibrary } from '../../../connectors/src/configs/openlibrary.config'
@@ -519,6 +520,9 @@ configTypes.push({type: getType<Notion.CreateDatabase>(), id: 'notion', name: 'N
 configTypes.push({type: getType<Npoint.GetBin>(), id: 'npoint', name: 'Npoint', interface: 'GetBin'})
 configTypes.push({type: getType<OCRSpace.ParseURL>(), id: 'ocrspace', name: 'OCRSpace', interface: 'ParseURL'})
 configTypes.push({type: getType<OCRSpace.ParseBase64>(), id: 'ocrspace', name: 'OCRSpace', interface: 'ParseBase64'})
+configTypes.push({type: getType<Omnisend.ListContacts>(), id: 'omnisend', name: 'Omnisend', interface: 'ListContacts'})
+configTypes.push({type: getType<Omnisend.CreateContact>(), id: 'omnisend', name: 'Omnisend', interface: 'CreateContact'})
+configTypes.push({type: getType<Omnisend.ListCustomEvents>(), id: 'omnisend', name: 'Omnisend', interface: 'ListCustomEvents'})
 configTypes.push({type: getType<OneInch.AggregationInfoTokens>(), id: '1inch', name: 'OneInch', interface: 'AggregationInfoTokens'})
 configTypes.push({type: getType<OneInch.AggregationQuote>(), id: '1inch', name: 'OneInch', interface: 'AggregationQuote'})
 configTypes.push({type: getType<OneInch.AggregationSwap>(), id: '1inch', name: 'OneInch', interface: 'AggregationSwap'})

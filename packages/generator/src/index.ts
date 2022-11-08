@@ -188,6 +188,7 @@ import Lolo from '@flethy/connectors/src/configs/lolo.config'
 import Luabase from '@flethy/connectors/src/configs/luabase.config'
 import Neon from '@flethy/connectors/src/configs/neon.config'
 import Npoint from '@flethy/connectors/src/configs/npoint.config'
+import Omnisend from '@flethy/connectors/src/configs/omnisend.config'
 import OpenAI from '@flethy/connectors/src/configs/openai.config'
 import ORBIntelligence from '@flethy/connectors/src/configs/orbintelligence.config'
 import Phyllo from '@flethy/connectors/src/configs/phyllo.config'
@@ -2866,8 +2867,31 @@ async function main() {
       kind: 'stackhawk.user.get',
       'auth:Authorization': process.env.STACKHAWK_JWT,
     }),
+    omnisendListContacts: nao<Omnisend.ListContacts>({
+      kind: 'omnisend.contacts.list',
+      'auth:X-API-KEY': process.env.OMNISEND_API_KEY,
+    }),
+    omnisendCreateContact: nao<Omnisend.CreateContact>({
+      kind: 'omnisend.contacts.create',
+      'auth:X-API-KEY': process.env.OMNISEND_API_KEY,
+      'body:identifiers': [
+        {
+          id: 'adam@flethy.com',
+          type: 'email',
+          channels: {
+            email: {
+              status: 'subscribed',
+            },
+          },
+        },
+      ],
+    }),
+    omnisendListEvents: nao<Omnisend.ListCustomEvents>({
+      kind: 'omnisend.events.list',
+      'auth:X-API-KEY': process.env.OMNISEND_API_KEY,
+    }),
   }
-  const requestConfig = requestConfigs.stackhawkGetUser
+  const requestConfig = requestConfigs.omnisendListEvents
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

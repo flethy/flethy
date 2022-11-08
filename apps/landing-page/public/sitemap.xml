@@ -549,6 +549,10 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://flethy.com/integrations/omnisend</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://flethy.com/integrations/oneinch</loc>
     <priority>0.8</priority>
   </url>
