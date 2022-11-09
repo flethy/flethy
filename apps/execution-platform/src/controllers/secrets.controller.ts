@@ -13,11 +13,15 @@ import { ValidationUtils } from "../utils/validation.utils";
 
 declare var SECRETS: KV.Namespace;
 
-export interface FlethySecrets
+export interface FlethySecrets {
+  secrets?: string;
+}
+
+export interface FlethySecretsMetadata
   extends FlethyMetaDates,
     FlethyMetaUser,
     FlethyProject {
-  secrets?: string;
+  keys: string[];
 }
 
 export interface FlethySecretValues extends FlethySecrets {
@@ -82,28 +86,30 @@ export class SecretsController {
       userId: request.userId,
     });
 
-    const updatedSecrets: FlethySecrets = {
+    const updatedSecrets: FlethySecrets = {};
+    let updatedSecretsMetadata: FlethySecretsMetadata = {
       projectId: request.projectId,
       createdAt: Date.now(),
       createdBy: request.userId,
+      keys: [],
     };
 
     let secretValues: FlethySecretsValues = {};
 
-    if (currentSecrets) {
-      updatedSecrets.updatedAt = Date.now();
-      updatedSecrets.updatedBy = request.userId;
-      updatedSecrets.createdAt = currentSecrets.createdAt;
-      updatedSecrets.createdBy = currentSecrets.createdBy;
+    if (currentSecrets?.secrets && currentSecrets?.metadata) {
+      updatedSecretsMetadata = currentSecrets.metadata;
+      updatedSecretsMetadata.updatedAt = Date.now();
+      updatedSecretsMetadata.updatedBy = request.userId;
       if (
-        currentSecrets.values &&
-        Object.keys(currentSecrets.values).length > 0
+        currentSecrets.secrets.values &&
+        Object.keys(currentSecrets.secrets.values).length > 0
       ) {
-        secretValues = currentSecrets.values;
+        secretValues = currentSecrets.secrets.values;
       }
     }
 
     secretValues[request.key] = request.value;
+    updatedSecretsMetadata.keys = Object.keys(secretValues);
 
     const encryptedSecrets = await SecretsController.encrypt(
       JSON.stringify(secretValues),
@@ -112,40 +118,39 @@ export class SecretsController {
 
     updatedSecrets.secrets = encryptedSecrets;
 
-    const success = await write<FlethySecrets>(
+    const success = await write<FlethySecrets, FlethySecretsMetadata>(
       SECRETS,
       KVUtils.secretsForProject(request.projectId),
-      updatedSecrets
+      updatedSecrets,
+      { metadata: updatedSecretsMetadata }
     );
     return success;
   }
 
   public static async get(
     request: GetSecretsRequest
-  ): Promise<FlethySecretValues | undefined> {
+  ): Promise<
+    { secrets: FlethySecretValues; metadata: FlethySecretsMetadata } | undefined
+  > {
     try {
-      const encryptedSecrets = await read<FlethySecrets>(
+      const encryptedSecrets = await read<FlethySecrets, FlethySecretsMetadata>(
         SECRETS,
         KVUtils.secretsForProject(request.projectId),
-        "json"
+        { metadata: true, type: "json" }
       );
-      if (encryptedSecrets) {
+      if (encryptedSecrets?.value && encryptedSecrets?.metadata) {
         const secretValues: FlethySecretValues = {
-          projectId: encryptedSecrets.projectId,
-          createdAt: encryptedSecrets.createdAt,
-          updatedAt: encryptedSecrets.updatedAt,
-          createdBy: encryptedSecrets.createdBy,
-          updatedBy: encryptedSecrets.updatedBy,
           values: {},
         };
-        if (encryptedSecrets.secrets) {
+        const secretMetadata: FlethySecretsMetadata = encryptedSecrets.metadata;
+        if (encryptedSecrets.value.secrets) {
           const decrypted = await SecretsController.decrypt(
-            encryptedSecrets.secrets,
+            encryptedSecrets.value.secrets,
             SECRET
           );
           secretValues.values = JSON.parse(decrypted);
         }
-        return secretValues;
+        return { secrets: secretValues, metadata: secretMetadata };
       }
       return undefined;
     } catch (error) {
@@ -163,30 +168,34 @@ export class SecretsController {
   public static async delete(request: DeleteSecretRequest): Promise<boolean> {
     try {
       const currentSecrets = await SecretsController.get(request);
-      if (currentSecrets) {
-        if (currentSecrets.values && currentSecrets.values[request.key]) {
-          if (currentSecrets.values[request.key]) {
-            delete currentSecrets.values[request.key];
-            const encryptedUpdatedSecrets = await SecretsController.encrypt(
-              JSON.stringify(currentSecrets.values),
-              SECRET
-            );
+      if (currentSecrets?.secrets && currentSecrets?.metadata) {
+        const updatedSecretsMetadata = currentSecrets.metadata;
+        if (
+          currentSecrets.secrets.values &&
+          currentSecrets.secrets.values[request.key]
+        ) {
+          delete currentSecrets.secrets.values[request.key];
+          updatedSecretsMetadata.keys = currentSecrets.metadata.keys.filter(
+            (key) => key !== request.key
+          );
+          const encryptedUpdatedSecrets = await SecretsController.encrypt(
+            JSON.stringify(currentSecrets.secrets.values),
+            SECRET
+          );
 
-            const updatedSecrets: FlethySecrets = {
-              projectId: request.projectId,
-              createdAt: currentSecrets.createdAt,
-              createdBy: currentSecrets.createdBy,
-              updatedAt: Date.now(),
-              updatedBy: request.userId,
-              secrets: encryptedUpdatedSecrets,
-            };
-            const success = await write<FlethySecrets>(
-              SECRETS,
-              KVUtils.secretsForProject(request.projectId),
-              updatedSecrets
-            );
-            return success;
-          }
+          const updatedSecrets: FlethySecrets = {
+            secrets: encryptedUpdatedSecrets,
+          };
+          updatedSecretsMetadata.updatedAt = Date.now();
+          updatedSecretsMetadata.updatedBy = request.userId;
+
+          const success = await write<FlethySecrets, FlethySecretsMetadata>(
+            SECRETS,
+            KVUtils.secretsForProject(request.projectId),
+            updatedSecrets,
+            { metadata: updatedSecretsMetadata }
+          );
+          return success;
         }
       }
       throw new FlethyError({

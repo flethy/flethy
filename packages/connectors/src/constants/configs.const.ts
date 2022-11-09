@@ -135,6 +135,7 @@ import { OCRSpace } from '../configs/ocrspace.config'
 import { Omnisend } from '../configs/omnisend.config'
 import { OneInch } from '../configs/oneinch.config'
 import { OpenAI } from '../configs/openai.config'
+import { Openflow } from '../configs/openflow.config'
 import { OpenLibrary } from '../configs/openlibrary.config'
 import { OpenSea } from '../configs/opensea.config'
 import { OpenWeatherMap } from '../configs/openweathermap.config'
@@ -354,6 +355,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['omnisend', Omnisend.API],
 ['1inch', OneInch.API],
 ['openai', OpenAI.API],
+['openflow', Openflow.API],
 ['openlibrary', OpenLibrary.API],
 ['opensea', OpenSea.API],
 ['openweathermap', OpenWeatherMap.API],

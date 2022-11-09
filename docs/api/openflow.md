@@ -1,0 +1,20 @@
+# Openflow
+
+## Links
+
+* URL: [https://getopenflow.com/](https://getopenflow.com/)
+* Documentation: [https://getopenflow.com/](https://getopenflow.com/)
+* Tags: web2
+* Category: automation
+* Type: workflows
+
+## API
+
+### triggers
+
+#### httpListener
+
+##### Trigger HTTP Listener
+
+* Description: Trigger HTTP Listener
+* Docs: [https://getopenflow.com/](https://getopenflow.com/)

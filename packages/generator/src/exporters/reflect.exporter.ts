@@ -135,6 +135,7 @@ import { OCRSpace } from '../../../connectors/src/configs/ocrspace.config'
 import { Omnisend } from '../../../connectors/src/configs/omnisend.config'
 import { OneInch } from '../../../connectors/src/configs/oneinch.config'
 import { OpenAI } from '../../../connectors/src/configs/openai.config'
+import { Openflow } from '../../../connectors/src/configs/openflow.config'
 import { OpenLibrary } from '../../../connectors/src/configs/openlibrary.config'
 import { OpenSea } from '../../../connectors/src/configs/opensea.config'
 import { OpenWeatherMap } from '../../../connectors/src/configs/openweathermap.config'
@@ -528,6 +529,7 @@ configTypes.push({type: getType<OneInch.AggregationQuote>(), id: '1inch', name: 
 configTypes.push({type: getType<OneInch.AggregationSwap>(), id: '1inch', name: 'OneInch', interface: 'AggregationSwap'})
 configTypes.push({type: getType<OpenAI.CreateImage>(), id: 'openai', name: 'OpenAI', interface: 'CreateImage'})
 configTypes.push({type: getType<OpenAI.ListModels>(), id: 'openai', name: 'OpenAI', interface: 'ListModels'})
+configTypes.push({type: getType<Openflow.TriggerHttpListener>(), id: 'openflow', name: 'Openflow', interface: 'TriggerHttpListener'})
 configTypes.push({type: getType<OpenLibrary.Books>(), id: 'openlibrary', name: 'OpenLibrary', interface: 'Books'})
 configTypes.push({type: getType<OpenSea.GetAssets>(), id: 'opensea', name: 'OpenSea', interface: 'GetAssets'})
 configTypes.push({type: getType<OpenSea.GetCollections>(), id: 'opensea', name: 'OpenSea', interface: 'GetCollections'})

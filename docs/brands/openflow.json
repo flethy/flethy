@@ -1,0 +1,38 @@
+{
+  "name": null,
+  "domain": "getopenflow.com",
+  "claimed": false,
+  "description": "The operating system of your business - Openflow",
+  "links": [],
+  "logos": [
+    {
+      "type": "logo",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/id2wmxQORQ/idy71kA-Ci.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 180,
+          "width": 180,
+          "size": 4506
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#8614f8", "type": "accent", "brightness": 61 },
+    { "hex": "#150426", "type": "dark", "brightness": 10 },
+    { "hex": "#ffffff", "type": "light", "brightness": 255 }
+  ],
+  "fonts": [
+    {
+      "name": "Matter",
+      "type": "body",
+      "origin": "custom",
+      "originId": null,
+      "weights": []
+    }
+  ],
+  "images": []
+}
