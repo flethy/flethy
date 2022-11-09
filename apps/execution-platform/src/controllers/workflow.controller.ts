@@ -15,16 +15,21 @@ declare var WORKFLOWS: KV.Namespace;
 
 // INTERFACES
 
-export interface FlethyWorkflow
+export interface FlethyWorkflow {
+  workflow: any;
+}
+
+export interface FlethyWorkflowMetadata
   extends FlethyMetaDates,
     FlethyMetaUser,
     FlethyProject {
   workflowId: string;
-  workflow: any;
+  name: string;
 }
 
 export interface PutWorkflowRequest extends FlethyRequest {
   workflowId?: string;
+  name: string;
   workflow: any;
 }
 
@@ -70,8 +75,11 @@ export class WorkflowController {
     }
 
     const workflow: FlethyWorkflow = {
-      workflowId: request.workflowId ?? crypto.randomUUID(),
       workflow: request.workflow,
+    };
+    const workflowMetadata: FlethyWorkflowMetadata = {
+      name: request.name,
+      workflowId: request.workflowId ?? crypto.randomUUID(),
       projectId: request.projectId,
       createdAt: Date.now(),
       createdBy: request.userId,
@@ -93,23 +101,28 @@ export class WorkflowController {
           },
         });
       }
-      workflow.createdAt = existingWorkflow.createdAt;
-      workflow.createdBy = existingWorkflow.createdBy;
-      workflow.updatedAt = Date.now();
-      workflow.updatedBy = request.userId;
+      workflowMetadata.createdAt = existingWorkflow.metadata.createdAt;
+      workflowMetadata.createdBy = existingWorkflow.metadata.createdBy;
+      workflowMetadata.updatedAt = Date.now();
+      workflowMetadata.updatedBy = request.userId;
     }
 
     const success = await write<FlethyWorkflow>(
       WORKFLOWS,
-      KVUtils.workflowKey(workflow.projectId, workflow.workflowId),
-      workflow
+      KVUtils.workflowKey(
+        workflowMetadata.projectId,
+        workflowMetadata.workflowId
+      ),
+      workflow,
+      { metadata: { name: request.name } }
     );
     return success;
   }
 
-  public static async get(
-    request: GetWorkflowRequest
-  ): Promise<FlethyWorkflow | null> {
+  public static async get(request: GetWorkflowRequest): Promise<{
+    workflow: FlethyWorkflow;
+    metadata: FlethyWorkflowMetadata;
+  } | null> {
     const validation = ValidationUtils.validateAll([
       {
         value: request.projectId,
@@ -133,12 +146,17 @@ export class WorkflowController {
         },
       });
     }
-    const workflow = await read<FlethyWorkflow>(
-      WORKFLOWS,
-      KVUtils.workflowKey(request.projectId, request.workflowId),
-      "json"
-    );
-    return workflow;
+    const { value, metadata } = await read<
+      FlethyWorkflow,
+      FlethyWorkflowMetadata
+    >(WORKFLOWS, KVUtils.workflowKey(request.projectId, request.workflowId), {
+      metadata: true,
+      type: "json",
+    });
+    if (!value || !metadata) {
+      return null;
+    }
+    return { workflow: value, metadata };
   }
 
   public static async list(request: ListWorkflowsRequest): Promise<string[]> {

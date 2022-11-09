@@ -561,6 +561,10 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://flethy.com/integrations/openflow</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://flethy.com/integrations/openlibrary</loc>
     <priority>0.8</priority>
   </url>

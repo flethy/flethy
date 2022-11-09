@@ -210,6 +210,7 @@ import Vantevo from '@flethy/connectors/src/configs/vantevo.config'
 import Vonage from '@flethy/connectors/src/configs/vonage.config'
 import { HttpRequest } from './controllers/HttpRequest'
 import { logger } from './utils/Logger'
+import Openflow from '@flethy/connectors/src/configs/openflow.config'
 
 async function main() {
   const requestConfigs: {
@@ -2890,8 +2891,12 @@ async function main() {
       kind: 'omnisend.events.list',
       'auth:X-API-KEY': process.env.OMNISEND_API_KEY,
     }),
+    openflowTrigger: nao<Openflow.TriggerHttpListener>({
+      kind: 'openflow.triggers.httpListener',
+      'auth:id': process.env.OPENFLOW_HTTPLISTENER_ID,
+    }),
   }
-  const requestConfig = requestConfigs.omnisendListEvents
+  const requestConfig = requestConfigs.openflowTrigger
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

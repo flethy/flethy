@@ -154,6 +154,7 @@ The following Endpoints are currently supported.
 * [Npoint](./api/npoint.md)
 * [OCRSpace](./api/ocrspace.md)
 * [Omnisend](./api/omnisend.md)
+* [Openflow](./api/openflow.md)
 * [OpenLibrary](./api/openlibrary.md)
 * [OpenWeatherMap](./api/openweathermap.md)
 * [ORBIntelligence](./api/orbintelligence.md)

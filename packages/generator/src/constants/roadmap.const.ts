@@ -60,6 +60,14 @@ const ITEMS_2022_Q4: RoadmapEntry[] = [
     milestone: false,
     tags: [ROADMAP_TAGS.EXECUTION],
   },
+  {
+    title: 'Refactored Model',
+    date: '2022-11-09',
+    description: 'Secrets and Workflow Model refactored',
+    delivered: true,
+    milestone: false,
+    tags: [ROADMAP_TAGS.EXECUTION],
+  },
 ]
 
 const FUTURE_MILESTONES: RoadmapEntry[] = [
