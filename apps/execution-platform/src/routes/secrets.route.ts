@@ -25,4 +25,16 @@ export class SecretsRoute {
 
     res.send(200, { ...data?.metadata });
   }
+
+  public static async del(req: ServerRequest, res: ServerResponse) {
+    const body = await req.body<{ key: string }>();
+    const success = await SecretsController.delete({
+      projectId: req.params.projectId,
+      workspaceId: req.params.workspaceId,
+      userId: "",
+      key: body?.key ?? "",
+    });
+
+    res.send(200, { success });
+  }
 }

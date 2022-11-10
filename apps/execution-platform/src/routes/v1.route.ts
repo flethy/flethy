@@ -42,5 +42,14 @@ export class Version1 {
         await SecretsRoute.get(req, res);
       },
     });
+
+    RouterUtils.createRoute({
+      API,
+      method: "DELETE",
+      route: new RouterPathUtils(1).w().p().s().gen(),
+      handler: async (req, res) => {
+        await SecretsRoute.del(req, res);
+      },
+    });
   }
 }
