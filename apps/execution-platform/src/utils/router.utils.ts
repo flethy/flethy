@@ -29,3 +29,49 @@ export class RouterUtils {
     });
   }
 }
+
+export class RouterPathUtils {
+  private path: string[] = ["api"];
+
+  constructor(version?: number) {
+    if (version) {
+      this.v(version);
+    }
+  }
+
+  public v(version: number) {
+    this.path.push(`v${version}`);
+    return this;
+  }
+
+  public p() {
+    this.path.push("p");
+    this.path.push(":projectId");
+    return this;
+  }
+
+  public w() {
+    this.path.push("w");
+    this.path.push(":workspaceId");
+    return this;
+  }
+
+  public s() {
+    this.path.push("s");
+    return this;
+  }
+
+  public t() {
+    this.path.push("token");
+    return this;
+  }
+
+  public custom(custom: string) {
+    this.path.push(custom);
+    return this;
+  }
+
+  public gen(): string {
+    return this.path.join("/");
+  }
+}
