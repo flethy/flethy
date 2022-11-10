@@ -166,56 +166,45 @@ export class SecretsController {
   }
 
   public static async delete(request: DeleteSecretRequest): Promise<boolean> {
-    try {
-      const currentSecrets = await SecretsController.get(request);
-      if (currentSecrets?.secrets && currentSecrets?.metadata) {
-        const updatedSecretsMetadata = currentSecrets.metadata;
-        if (
-          currentSecrets.secrets.values &&
-          currentSecrets.secrets.values[request.key]
-        ) {
-          delete currentSecrets.secrets.values[request.key];
-          updatedSecretsMetadata.keys = currentSecrets.metadata.keys.filter(
-            (key) => key !== request.key
-          );
-          const encryptedUpdatedSecrets = await SecretsController.encrypt(
-            JSON.stringify(currentSecrets.secrets.values),
-            SECRET
-          );
+    const currentSecrets = await SecretsController.get(request);
+    if (currentSecrets?.secrets && currentSecrets?.metadata) {
+      const updatedSecretsMetadata = currentSecrets.metadata;
+      if (
+        currentSecrets.secrets.values &&
+        currentSecrets.secrets.values[request.key]
+      ) {
+        delete currentSecrets.secrets.values[request.key];
+        updatedSecretsMetadata.keys = currentSecrets.metadata.keys.filter(
+          (key) => key !== request.key
+        );
+        const encryptedUpdatedSecrets = await SecretsController.encrypt(
+          JSON.stringify(currentSecrets.secrets.values),
+          SECRET
+        );
 
-          const updatedSecrets: FlethySecrets = {
-            secrets: encryptedUpdatedSecrets,
-          };
-          updatedSecretsMetadata.updatedAt = Date.now();
-          updatedSecretsMetadata.updatedBy = request.userId;
+        const updatedSecrets: FlethySecrets = {
+          secrets: encryptedUpdatedSecrets,
+        };
+        updatedSecretsMetadata.updatedAt = Date.now();
+        updatedSecretsMetadata.updatedBy = request.userId;
 
-          const success = await write<FlethySecrets, FlethySecretsMetadata>(
-            SECRETS,
-            KVUtils.secretsForProject(request.projectId),
-            updatedSecrets,
-            { metadata: updatedSecretsMetadata }
-          );
-          return success;
-        }
+        const success = await write<FlethySecrets, FlethySecretsMetadata>(
+          SECRETS,
+          KVUtils.secretsForProject(request.projectId),
+          updatedSecrets,
+          { metadata: updatedSecretsMetadata }
+        );
+        return success;
       }
-      throw new FlethyError({
-        type: ErrorType.NotFound,
-        message: `No secrets with key ${request.key} configured for project ${request.projectId}`,
-        log: {
-          context: { origin: "secrets.controller.ts", method: "delete" },
-          message: `No secrets with key ${request.key} configured for project ${request.projectId}`,
-        },
-      });
-    } catch (error) {
-      throw new FlethyError({
-        type: ErrorType.Internal,
-        message: `Failed to get Secrets for project ${request.projectId}`,
-        log: {
-          context: { origin: "secrets.controller.ts", method: "get" },
-          message: `Failed to get Secrets for project ${request.projectId}`,
-        },
-      });
     }
+    throw new FlethyError({
+      type: ErrorType.NotFound,
+      message: `No secrets with key ${request.key} configured for project ${request.projectId}`,
+      log: {
+        context: { origin: "secrets.controller.ts", method: "delete" },
+        message: `No secrets with key ${request.key} configured for project ${request.projectId}`,
+      },
+    });
   }
 
   // HELPER FUNCTIONS
