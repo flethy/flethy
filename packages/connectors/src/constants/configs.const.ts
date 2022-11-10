@@ -131,6 +131,7 @@ import { NewRelic } from '../configs/newrelic.config'
 import { NewsApi } from '../configs/newsapi.config'
 import { Notion } from '../configs/notion.config'
 import { Npoint } from '../configs/npoint.config'
+import { Ntfy } from '../configs/ntfy.config'
 import { OCRSpace } from '../configs/ocrspace.config'
 import { Omnisend } from '../configs/omnisend.config'
 import { OneInch } from '../configs/oneinch.config'
@@ -351,6 +352,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['newsapi', NewsApi.API],
 ['notion', Notion.API],
 ['npoint', Npoint.API],
+['ntfy', Ntfy.API],
 ['ocrspace', OCRSpace.API],
 ['omnisend', Omnisend.API],
 ['1inch', OneInch.API],

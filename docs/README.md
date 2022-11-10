@@ -152,6 +152,7 @@ The following Endpoints are currently supported.
 * [NewsApi](./api/newsapi.md)
 * [Notion](./api/notion.md)
 * [Npoint](./api/npoint.md)
+* [Ntfy](./api/ntfy.md)
 * [OCRSpace](./api/ocrspace.md)
 * [Omnisend](./api/omnisend.md)
 * [Openflow](./api/openflow.md)

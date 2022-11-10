@@ -211,6 +211,7 @@ import Vonage from '@flethy/connectors/src/configs/vonage.config'
 import { HttpRequest } from './controllers/HttpRequest'
 import { logger } from './utils/Logger'
 import Openflow from '@flethy/connectors/src/configs/openflow.config'
+import Ntfy from '@flethy/connectors/src/configs/ntfy.config'
 
 async function main() {
   const requestConfigs: {
@@ -2895,8 +2896,21 @@ async function main() {
       kind: 'openflow.triggers.httpListener',
       'auth:id': process.env.OPENFLOW_HTTPLISTENER_ID,
     }),
+    ntfyPublishJson: nao<Ntfy.PublishMessageAsJson>({
+      kind: 'ntfy.core.publishJson',
+      'auth:topic': process.env.NTFY_TOPIC,
+      'body:title': 'Hello World',
+      'body:message': 'Time to speed up!',
+      'body:actions': [
+        {
+          action: 'view',
+          label: 'Check website',
+          url: 'https://flethy.com',
+        },
+      ],
+    }),
   }
-  const requestConfig = requestConfigs.openflowTrigger
+  const requestConfig = requestConfigs.ntfyPublishJson
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

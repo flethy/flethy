@@ -545,6 +545,10 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://flethy.com/integrations/ntfy</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://flethy.com/integrations/ocrspace</loc>
     <priority>0.8</priority>
   </url>
