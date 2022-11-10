@@ -1,0 +1,24 @@
+# Ntfy
+
+## Links
+
+* URL: [https://ntfy.sh/](https://ntfy.sh/)
+* Documentation: [https://ntfy.sh/docs](https://ntfy.sh/docs)
+* Tags: web2
+* Category: utils
+* Type: other
+
+## API
+
+### core
+
+#### publishJson
+
+##### Authentication
+
+* topic: body
+
+##### Publish as JSON
+
+* Description: Publish as JSON
+* Docs: [https://ntfy.sh/docs/publish/#publish-as-json](https://ntfy.sh/docs/publish/#publish-as-json)
