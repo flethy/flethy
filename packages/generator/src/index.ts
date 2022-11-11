@@ -188,12 +188,15 @@ import Lolo from '@flethy/connectors/src/configs/lolo.config'
 import Luabase from '@flethy/connectors/src/configs/luabase.config'
 import Neon from '@flethy/connectors/src/configs/neon.config'
 import Npoint from '@flethy/connectors/src/configs/npoint.config'
+import Ntfy from '@flethy/connectors/src/configs/ntfy.config'
 import Omnisend from '@flethy/connectors/src/configs/omnisend.config'
 import OpenAI from '@flethy/connectors/src/configs/openai.config'
+import Openflow from '@flethy/connectors/src/configs/openflow.config'
 import ORBIntelligence from '@flethy/connectors/src/configs/orbintelligence.config'
 import Phyllo from '@flethy/connectors/src/configs/phyllo.config'
 import Pirsch from '@flethy/connectors/src/configs/pirsch.config'
 import Prerender from '@flethy/connectors/src/configs/prerender.config'
+import Rebrandly from '@flethy/connectors/src/configs/rebrandly.config'
 import Robolly from '@flethy/connectors/src/configs/robolly.config'
 import Rye from '@flethy/connectors/src/configs/rye.config'
 import Savepage from '@flethy/connectors/src/configs/savepage.config'
@@ -210,8 +213,6 @@ import Vantevo from '@flethy/connectors/src/configs/vantevo.config'
 import Vonage from '@flethy/connectors/src/configs/vonage.config'
 import { HttpRequest } from './controllers/HttpRequest'
 import { logger } from './utils/Logger'
-import Openflow from '@flethy/connectors/src/configs/openflow.config'
-import Ntfy from '@flethy/connectors/src/configs/ntfy.config'
 
 async function main() {
   const requestConfigs: {
@@ -2909,8 +2910,14 @@ async function main() {
         },
       ],
     }),
+    rebrandlyCreateLink: nao<Rebrandly.CreateLink>({
+      kind: 'rebrandly.links.post',
+      'auth:apikey': process.env.REBRANDLY_API_KEY,
+      'auth:workspace': process.env.REBRANDLY_WORKSPACE,
+      'body:destination': 'https://flethy.com/roadmap',
+    }),
   }
-  const requestConfig = requestConfigs.ntfyPublishJson
+  const requestConfig = requestConfigs.rebrandlyCreateLink
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

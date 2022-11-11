@@ -661,6 +661,10 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://flethy.com/integrations/rebrandly</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://flethy.com/integrations/rediscloud</loc>
     <priority>0.8</priority>
   </url>

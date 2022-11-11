@@ -3,6 +3,7 @@ import { TokenScope } from "../controllers/auth.controller";
 import { RouterPathUtils, RouterUtils } from "../utils/router.utils";
 import { AuthRoute } from "./auth.route";
 import { SecretsRoute } from "./secrets.route";
+import { WorkflowsRoute } from "./workflows.route";
 
 export class Version1 {
   public static addRoutes(API: Router) {
@@ -24,6 +25,8 @@ export class Version1 {
         await AuthRoute.createTokenRoute(req, res);
       },
     });
+
+    // SECRETS
 
     RouterUtils.createRoute({
       API,
@@ -49,6 +52,44 @@ export class Version1 {
       route: new RouterPathUtils(1).w().p().s().gen(),
       handler: async (req, res) => {
         await SecretsRoute.del(req, res);
+      },
+    });
+
+    // WORKFLOWS
+
+    RouterUtils.createRoute({
+      API,
+      method: "PUT",
+      route: new RouterPathUtils(1).w().p().wf().gen(),
+      handler: async (req, res) => {
+        await WorkflowsRoute.put(req, res);
+      },
+    });
+
+    RouterUtils.createRoute({
+      API,
+      method: "GET",
+      route: new RouterPathUtils(1).w().p().wf(true).gen(),
+      handler: async (req, res) => {
+        await WorkflowsRoute.get(req, res);
+      },
+    });
+
+    RouterUtils.createRoute({
+      API,
+      method: "GET",
+      route: new RouterPathUtils(1).w().p().wf().gen(),
+      handler: async (req, res) => {
+        await WorkflowsRoute.list(req, res);
+      },
+    });
+
+    RouterUtils.createRoute({
+      API,
+      method: "DELETE",
+      route: new RouterPathUtils(1).w().p().wf(true).gen(),
+      handler: async (req, res) => {
+        await WorkflowsRoute.del(req, res);
       },
     });
   }

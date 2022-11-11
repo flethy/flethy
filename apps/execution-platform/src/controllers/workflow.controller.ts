@@ -77,9 +77,10 @@ export class WorkflowController {
     const workflow: FlethyWorkflow = {
       workflow: request.workflow,
     };
+    const isNewWorkflow = !request.workflowId;
     const workflowMetadata: FlethyWorkflowMetadata = {
       name: request.name,
-      workflowId: request.workflowId ?? crypto.randomUUID(),
+      workflowId: isNewWorkflow ? crypto.randomUUID() : request.workflowId!,
       projectId: request.projectId,
       createdAt: Date.now(),
       createdBy: request.userId,
@@ -114,9 +115,9 @@ export class WorkflowController {
         workflowMetadata.workflowId
       ),
       workflow,
-      { metadata: { name: request.name } }
+      { metadata: { ...workflowMetadata } }
     );
-    return success;
+    return { success, workflowMetadata };
   }
 
   public static async get(request: GetWorkflowRequest): Promise<{
@@ -154,12 +155,19 @@ export class WorkflowController {
       type: "json",
     });
     if (!value || !metadata) {
-      return null;
+      throw new FlethyError({
+        type: ErrorType.NotFound,
+        message: `No workflow with key ${request.workflowId} found for project ${request.projectId}`,
+        log: {
+          context: { origin: "workflow.controller.ts", method: "get" },
+          message: `No workflow with key ${request.workflowId} found for project ${request.projectId}`,
+        },
+      });
     }
     return { workflow: value, metadata };
   }
 
-  public static async list(request: ListWorkflowsRequest): Promise<string[]> {
+  public static async list(request: ListWorkflowsRequest): Promise<any[]> {
     const validation = ValidationUtils.validateAll([
       {
         value: request.projectId,
@@ -178,12 +186,20 @@ export class WorkflowController {
         },
       });
     }
-    const foundWorkflowKeys = await paginate<string[]>(WORKFLOWS, {
-      prefix: KVUtils.workflowKeyPrefix(request.projectId),
-      limit: request.limit,
-      page: request.page,
-    });
-    return foundWorkflowKeys || [];
+    const foundWorkflowKeys = await paginate<FlethyWorkflowMetadata>(
+      WORKFLOWS,
+      {
+        prefix: KVUtils.workflowKeyPrefix(request.projectId),
+        limit: request.limit,
+        page: request.page,
+        metadata: true,
+      }
+    );
+    return (
+      foundWorkflowKeys
+        .filter((data) => data.metadata)
+        .map((data) => data.metadata) || []
+    );
   }
 
   public static async delete(request: DeleteWorkflowRequest): Promise<boolean> {

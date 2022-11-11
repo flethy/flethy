@@ -160,6 +160,7 @@ import { ProductHunt } from '../../../connectors/src/configs/producthunt.config'
 import { PurgoMalum } from '../../../connectors/src/configs/purgomalum.config'
 import { QuickChart } from '../../../connectors/src/configs/quickchart.config'
 import { RapidApi } from '../../../connectors/src/configs/rapidapi.config'
+import { Rebrandly } from '../../../connectors/src/configs/rebrandly.config'
 import { RedisCloud } from '../../../connectors/src/configs/rediscloud.config'
 import { RemoteOk } from '../../../connectors/src/configs/remoteok.config'
 import { RemoveBg } from '../../../connectors/src/configs/removebg.config'
@@ -578,6 +579,7 @@ configTypes.push({type: getType<ProductHunt.GetCollections>(), id: 'producthunt'
 configTypes.push({type: getType<PurgoMalum.Profanity>(), id: 'purgomalum', name: 'PurgoMalum', interface: 'Profanity'})
 configTypes.push({type: getType<QuickChart.PlotChart>(), id: 'quickchart', name: 'QuickChart', interface: 'PlotChart'})
 configTypes.push({type: getType<RapidApi.ArticleExtractor>(), id: 'rapidapi', name: 'RapidApi', interface: 'ArticleExtractor'})
+configTypes.push({type: getType<Rebrandly.CreateLink>(), id: 'rebrandly', name: 'Rebrandly', interface: 'CreateLink'})
 configTypes.push({type: getType<RedisCloud.GetCurrentAccount>(), id: 'rediscloud', name: 'RedisCloud', interface: 'GetCurrentAccount'})
 configTypes.push({type: getType<RemoteOk.GetListings>(), id: 'remoteok', name: 'RemoteOk', interface: 'GetListings'})
 configTypes.push({type: getType<RemoveBg.Remove>(), id: 'removebg', name: 'RemoveBg', interface: 'Remove'})
