@@ -1,0 +1,68 @@
+{
+  "name": "Rebrandly",
+  "domain": "rebrandly.com",
+  "claimed": false,
+  "description": "Rebrandly is the industry-leader for branded link management",
+  "links": [
+    {
+      "name": "youtube",
+      "url": "https://youtube.com/youtube.com/rebrandlybrandedlinks"
+    },
+    { "name": "twitter", "url": "https://twitter.com/RebrandlyBuzz" },
+    { "name": "instagram", "url": "https://instagram.com/rebrandlybuzz" },
+    { "name": "linkedin", "url": "https://linkedin.com/company/rebrandly" },
+    { "name": "facebook", "url": "https://facebook.com/Brandedlinks" }
+  ],
+  "logos": [
+    {
+      "type": "icon",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idctjasufz/idBjbWpxPa.png",
+          "background": null,
+          "format": "png",
+          "height": 400,
+          "width": 400,
+          "size": 21080
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#263849", "type": "dark", "brightness": 53 },
+    { "hex": "#f2b7a7", "type": "light", "brightness": 194 },
+    { "hex": "#2281c2", "type": "accent", "brightness": 113 }
+  ],
+  "fonts": [
+    {
+      "name": "Proximanova",
+      "type": "title",
+      "origin": "custom",
+      "originId": null,
+      "weights": []
+    },
+    {
+      "name": "Proximanova",
+      "type": "body",
+      "origin": "custom",
+      "originId": null,
+      "weights": []
+    }
+  ],
+  "images": [
+    {
+      "type": "banner",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idctjasufz/idgmw7wqKE.png",
+          "background": null,
+          "format": "png",
+          "height": 500,
+          "width": 1500,
+          "size": 68296
+        }
+      ]
+    }
+  ]
+}

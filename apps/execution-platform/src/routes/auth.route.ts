@@ -2,6 +2,7 @@ import { ServerRequest } from "worktop/request";
 import { ServerResponse } from "worktop/response";
 import { SECRET } from "../constants/admin.const";
 import { AuthController, TokenScope } from "../controllers/auth.controller";
+import { StatusCodeSuccess } from "../utils/router.utils";
 
 export class AuthRoute {
   public static async createTokenRoute(
@@ -18,6 +19,6 @@ export class AuthRoute {
       SECRET
     );
 
-    res.send(200, { token });
+    res.send(StatusCodeSuccess.OK, { token });
   }
 }

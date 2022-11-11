@@ -176,6 +176,7 @@ The following Endpoints are currently supported.
 * [PurgoMalum](./api/purgomalum.md)
 * [QuickChart](./api/quickchart.md)
 * [RapidApi](./api/rapidapi.md)
+* [Rebrandly](./api/rebrandly.md)
 * [RedisCloud](./api/rediscloud.md)
 * [RemoteOk](./api/remoteok.md)
 * [RemoveBg](./api/removebg.md)

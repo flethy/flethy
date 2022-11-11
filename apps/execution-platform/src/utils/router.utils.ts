@@ -5,12 +5,22 @@ import { TokenScope } from "../controllers/auth.controller";
 import { ErrorMiddleware } from "./error.utils";
 import { PermissionUtils } from "./permission.utils";
 
+export enum StatusCodeSuccess {
+  OK = 200,
+  CREATED = 201,
+  NO_CONTENT = 204,
+}
+
 export interface RouterOptions {
   API: Router;
   method: Method;
   route: string;
   scopes?: TokenScope[];
-  handler: (req: ServerRequest, res: ServerResponse) => Promise<void>;
+  handler: (
+    req: ServerRequest,
+    res: ServerResponse,
+    userId?: string
+  ) => Promise<void>;
 }
 
 export class RouterUtils {
@@ -58,6 +68,14 @@ export class RouterPathUtils {
 
   public s() {
     this.path.push("s");
+    return this;
+  }
+
+  public wf(withId: boolean = false) {
+    this.path.push("wf");
+    if (withId) {
+      this.path.push(":workflowId");
+    }
     return this;
   }
 

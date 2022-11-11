@@ -160,6 +160,7 @@ import { ProductHunt } from '../configs/producthunt.config'
 import { PurgoMalum } from '../configs/purgomalum.config'
 import { QuickChart } from '../configs/quickchart.config'
 import { RapidApi } from '../configs/rapidapi.config'
+import { Rebrandly } from '../configs/rebrandly.config'
 import { RedisCloud } from '../configs/rediscloud.config'
 import { RemoteOk } from '../configs/remoteok.config'
 import { RemoveBg } from '../configs/removebg.config'
@@ -381,6 +382,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['purgomalum', PurgoMalum.API],
 ['quickchart', QuickChart.API],
 ['rapidapi', RapidApi.API],
+['rebrandly', Rebrandly.API],
 ['rediscloud', RedisCloud.API],
 ['remoteok', RemoteOk.API],
 ['removebg', RemoveBg.API],
