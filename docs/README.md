@@ -102,6 +102,7 @@ The following Endpoints are currently supported.
 * [Geekflare](./api/geekflare.md)
 * [Github](./api/github.md)
 * [GitLab](./api/gitlab.md)
+* [GoDaddy](./api/godaddy.md)
 * [GrafBase](./api/grafbase.md)
 * [GraphJSON](./api/graphjson.md)
 * [Gravatar](./api/gravatar.md)

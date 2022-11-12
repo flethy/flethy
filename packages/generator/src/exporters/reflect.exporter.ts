@@ -80,6 +80,7 @@ import { Frankfurter } from '../../../connectors/src/configs/frankfurter.config'
 import { Geekflare } from '../../../connectors/src/configs/geekflare.config'
 import { Github } from '../../../connectors/src/configs/github.config'
 import { GitLab } from '../../../connectors/src/configs/gitlab.config'
+import { GoDaddy } from '../../../connectors/src/configs/godaddy.config'
 import { GrafBase } from '../../../connectors/src/configs/grafbase.config'
 import { GraphJSON } from '../../../connectors/src/configs/graphjson.config'
 import { Gravatar } from '../../../connectors/src/configs/gravatar.config'
@@ -413,6 +414,7 @@ configTypes.push({type: getType<Github.ListRepositoryIssues>(), id: 'github', na
 configTypes.push({type: getType<Github.RepositoriesGetContent>(), id: 'github', name: 'Github', interface: 'RepositoriesGetContent'})
 configTypes.push({type: getType<Github.GitDatabaseGetTree>(), id: 'github', name: 'Github', interface: 'GitDatabaseGetTree'})
 configTypes.push({type: getType<GitLab.GraphQLQuery>(), id: 'gitlab', name: 'GitLab', interface: 'GraphQLQuery'})
+configTypes.push({type: getType<GoDaddy.GetAvailableDomains>(), id: 'godaddy', name: 'GoDaddy', interface: 'GetAvailableDomains'})
 configTypes.push({type: getType<GrafBase.GraphQLQuery>(), id: 'grafbase', name: 'GrafBase', interface: 'GraphQLQuery'})
 configTypes.push({type: getType<GraphJSON.Log>(), id: 'graphjson', name: 'GraphJSON', interface: 'Log'})
 configTypes.push({type: getType<GraphJSON.BulkLog>(), id: 'graphjson', name: 'GraphJSON', interface: 'BulkLog'})

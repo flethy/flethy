@@ -210,16 +210,18 @@ export class HttpRequestConfig {
               if (!config.headers) {
                 config.headers = {}
               }
-              if (authConfig.custom?.prefix || authConfig.custom?.postfix) {
-                config.headers[keyname] = `${authConfig.custom?.prefix ?? ''}${
-                  options.params[paramKey]
-                }${authConfig.custom?.postfix ?? ''}`
-              }
+              let value = options.params[paramKey]
               if (authConfig.custom?.concat) {
-                config.headers[keyname] = authConfig.custom?.concat.keys
+                value = authConfig.custom?.concat.keys
                   .map((key) => options.params[paramKey][key])
                   .join(authConfig.custom?.concat.separator ?? '')
               }
+              if (authConfig.custom?.prefix || authConfig.custom?.postfix) {
+                value = `${authConfig.custom?.prefix ?? ''}${value}${
+                  authConfig.custom?.postfix ?? ''
+                }`
+              }
+              config.headers[keyname] = value
               break
             case 'header:oauth1a':
               if (!config.headers) {
