@@ -79,6 +79,14 @@ export class RouterPathUtils {
     return this;
   }
 
+  public i(withId: boolean = false) {
+    this.path.push("i");
+    if (withId) {
+      this.path.push(":instanceId");
+    }
+    return this;
+  }
+
   public t() {
     this.path.push("token");
     return this;

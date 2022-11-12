@@ -15,6 +15,7 @@ importers:
   apps/execution-platform:
     specifiers:
       '@cloudflare/workers-types': 3.18.0
+      '@flethy/flow': ^0.0.203
       '@tsndr/cloudflare-worker-jwt': ^2.1.2
       '@types/node': 18.11.9
       '@typescript-eslint/eslint-plugin': ^5.42.1
@@ -30,6 +31,8 @@ importers:
       typescript: ^4.8.4
       worktop: ^0.7.3
       wrangler: 2.1.15
+    dependencies:
+      '@flethy/flow': 0.0.203
     devDependencies:
       '@cloudflare/workers-types': 3.18.0
       '@tsndr/cloudflare-worker-jwt': 2.1.2
