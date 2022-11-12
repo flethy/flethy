@@ -1,0 +1,148 @@
+{
+  "name": "GoDaddy",
+  "domain": "godaddy.com",
+  "claimed": false,
+  "description": "GoDaddy is the world's largest services platform for entrepreneurs around the globe.",
+  "links": [
+    {
+      "name": "youtube",
+      "url": "https://youtube.com/channel/UCgH_SmWw9WianYyOB5Y6tEA"
+    },
+    { "name": "twitter", "url": "https://twitter.com/GoDaddy" },
+    { "name": "instagram", "url": "https://instagram.com/godaddy" },
+    { "name": "facebook", "url": "https://facebook.com/GoDaddy" }
+  ],
+  "logos": [
+    {
+      "type": "icon",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idKgLX8HGb/id3HmnCiMI.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 400,
+          "width": 400,
+          "size": 10746
+        }
+      ]
+    },
+    {
+      "type": "logo",
+      "theme": "light",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idKgLX8HGb/id5icBgFW1.svg",
+          "background": "transparent",
+          "format": "svg",
+          "size": 13485
+        },
+        {
+          "src": "https://asset.brandfetch.io/idKgLX8HGb/idMe9yD27B.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 165,
+          "width": 800,
+          "size": 14507
+        }
+      ]
+    },
+    {
+      "type": "logo",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idKgLX8HGb/idY04IMYMU.svg",
+          "background": "transparent",
+          "format": "svg",
+          "height": null,
+          "width": null,
+          "size": 13486
+        },
+        {
+          "src": "https://asset.brandfetch.io/idKgLX8HGb/idIwbKD6G5.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 165,
+          "width": 800,
+          "size": 17436
+        }
+      ]
+    },
+    {
+      "type": "symbol",
+      "theme": "light",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idKgLX8HGb/idggst_7hM.svg",
+          "background": "transparent",
+          "format": "svg",
+          "size": 5752
+        },
+        {
+          "src": "https://asset.brandfetch.io/idKgLX8HGb/id0GMaLrGt.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 710,
+          "width": 800,
+          "size": 29374
+        }
+      ]
+    },
+    {
+      "type": "symbol",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idKgLX8HGb/idUNHCFiEx.svg",
+          "background": "transparent",
+          "format": "svg",
+          "size": 5753
+        },
+        {
+          "src": "https://asset.brandfetch.io/idKgLX8HGb/idPvrPfV3A.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 710,
+          "width": 800,
+          "size": 38773
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#f5f7f8", "type": "light", "brightness": 247 },
+    { "hex": "#00a4a6", "type": "accent", "brightness": 129 }
+  ],
+  "fonts": [
+    {
+      "name": "gd-sage",
+      "type": "title",
+      "origin": "custom",
+      "originId": null,
+      "weights": []
+    },
+    {
+      "name": "gdsherpa",
+      "type": "body",
+      "origin": "custom",
+      "originId": null,
+      "weights": []
+    }
+  ],
+  "images": [
+    {
+      "type": "banner",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idKgLX8HGb/idTmjwC2NU.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 500,
+          "width": 1500,
+          "size": 84255
+        }
+      ]
+    }
+  ]
+}

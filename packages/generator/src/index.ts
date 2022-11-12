@@ -176,6 +176,7 @@ import Deepgram from '@flethy/connectors/src/configs/deepgram.config'
 import Festdays from '@flethy/connectors/src/configs/festdays.config'
 import Flatfile from '@flethy/connectors/src/configs/flatfile.config'
 import GitLab from '@flethy/connectors/src/configs/gitlab.config'
+import GoDaddy from '@flethy/connectors/src/configs/godaddy.config'
 import Gravatar from '@flethy/connectors/src/configs/gravatar.config'
 import Here from '@flethy/connectors/src/configs/here.config'
 import Imglab from '@flethy/connectors/src/configs/imglab.config'
@@ -2916,8 +2917,17 @@ async function main() {
       'auth:workspace': process.env.REBRANDLY_WORKSPACE,
       'body:destination': 'https://flethy.com/roadmap',
     }),
+    godaddyBaseId: nao<GoDaddy.GetAvailableDomains>({
+      kind: 'godaddy.domains.available',
+      baseId: 'ote',
+      'auth:Authorization': {
+        key: process.env.GODADDY_KEY,
+        secret: process.env.GODADDY_SECRET,
+      },
+      'query:domain': 'flethy.com',
+    }),
   }
-  const requestConfig = requestConfigs.rebrandlyCreateLink
+  const requestConfig = requestConfigs.godaddyBaseId
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

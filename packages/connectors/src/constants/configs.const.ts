@@ -80,6 +80,7 @@ import { Frankfurter } from '../configs/frankfurter.config'
 import { Geekflare } from '../configs/geekflare.config'
 import { Github } from '../configs/github.config'
 import { GitLab } from '../configs/gitlab.config'
+import { GoDaddy } from '../configs/godaddy.config'
 import { GrafBase } from '../configs/grafbase.config'
 import { GraphJSON } from '../configs/graphjson.config'
 import { Gravatar } from '../configs/gravatar.config'
@@ -302,6 +303,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['geekflare', Geekflare.API],
 ['github', Github.API],
 ['gitlab', GitLab.API],
+['godaddy', GoDaddy.API],
 ['grafbase', GrafBase.API],
 ['graphjson', GraphJSON.API],
 ['gravatar', Gravatar.API],
