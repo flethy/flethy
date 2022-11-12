@@ -33,7 +33,9 @@ export class ExecutionUtils {
           body: JSON.stringify(params.body),
         })
 
-        nodeResponse.data = await response.json()
+        if (!params.responseType || params.responseType === 'json') {
+          nodeResponse.data = await response.json()
+        }
       } else {
         const response = await axios(axiosConfig)
         nodeResponse.data = response.data
