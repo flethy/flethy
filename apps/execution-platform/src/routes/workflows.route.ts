@@ -44,6 +44,27 @@ export class WorkflowsRoute {
     });
   }
 
+  public static async start(
+    req: ServerRequest,
+    res: ServerResponse,
+    userId: string = ""
+  ) {
+    const body = await req.body<{
+      payload: any;
+    }>();
+    const response = await WorkflowController.start({
+      projectId: req.params.projectId,
+      workspaceId: req.params.workspaceId,
+      workflowId: req.params.workflowId,
+      userId,
+      payload: body?.payload,
+    });
+
+    res.send(StatusCodeSuccess.OK, {
+      response,
+    });
+  }
+
   public static async list(
     req: ServerRequest,
     res: ServerResponse,

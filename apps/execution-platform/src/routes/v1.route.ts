@@ -77,6 +77,15 @@ export class Version1 {
 
     RouterUtils.createRoute({
       API,
+      method: "POST",
+      route: new RouterPathUtils(1).w().p().wf(true).i().gen(),
+      handler: async (req, res) => {
+        await WorkflowsRoute.start(req, res);
+      },
+    });
+
+    RouterUtils.createRoute({
+      API,
       method: "GET",
       route: new RouterPathUtils(1).w().p().wf().gen(),
       handler: async (req, res) => {

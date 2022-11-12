@@ -2,6 +2,7 @@ name = "flethy"
 main = "src/index.ts"
 compatibility_date = "2022-10-27"
 workers_dev = true
+node_compat = true
 kv_namespaces = [
     { binding = "DATA", id = "e546ebf13b344824af4abc3a632988f5", preview_id = "f8a16c5c33aa4266a47089059ee45204" },
     { binding = "SECRETS", id = "d2c89f1e92234fa1acaba4b26dc2b97c", preview_id = "2999180112d743f798984b1a25f8afda" },

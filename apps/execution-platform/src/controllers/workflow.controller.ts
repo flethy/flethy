@@ -1,3 +1,4 @@
+import { FlowEngine } from "@flethy/flow";
 import { KV, paginate, read, remove, write } from "worktop/kv";
 import {
   FlethyMetaDates,
@@ -8,6 +9,7 @@ import {
 import { ErrorType, FlethyError } from "../utils/error.utils";
 import { KVUtils } from "../utils/kv.utils";
 import { ValidationUtils } from "../utils/validation.utils";
+import { SecretsController } from "./secrets.controller";
 
 // KV NAMESPACE
 
@@ -44,6 +46,11 @@ export interface DeleteWorkflowRequest extends FlethyRequest {
 export interface ListWorkflowsRequest extends FlethyRequest {
   limit?: number;
   page?: number;
+}
+
+export interface StartWorkflowRequest extends FlethyRequest {
+  workflowId: string;
+  payload?: any;
 }
 
 // CONTROLLER
@@ -123,7 +130,7 @@ export class WorkflowController {
   public static async get(request: GetWorkflowRequest): Promise<{
     workflow: FlethyWorkflow;
     metadata: FlethyWorkflowMetadata;
-  } | null> {
+  }> {
     const validation = ValidationUtils.validateAll([
       {
         value: request.projectId,
@@ -231,5 +238,57 @@ export class WorkflowController {
       KVUtils.workflowKey(request.projectId, request.workflowId)
     );
     return success;
+  }
+
+  public static async start(request: StartWorkflowRequest): Promise<boolean> {
+    const validation = ValidationUtils.validateAll([
+      {
+        value: request.projectId,
+        parameter: "projectId",
+        checks: { minStringLength: 1 },
+      },
+      {
+        value: request.workflowId,
+        parameter: "workflowId",
+        checks: { minStringLength: 1 },
+      },
+    ]);
+    if (!validation.valid) {
+      throw new FlethyError({
+        message: validation.message,
+        type: ErrorType.BadRequest,
+        log: {
+          message: validation.message,
+          context: { method: "start", origin: "workflow.controller.ts" },
+          data: { request },
+        },
+      });
+    }
+    const workflow = await WorkflowController.get(request);
+    const secrets = await SecretsController.get(request);
+
+    try {
+      const engine = new FlowEngine({
+        flow: workflow.workflow.workflow,
+        input: request.payload,
+        env: {
+          env: {},
+          secrets: secrets?.secrets.values ?? {},
+        },
+      });
+      await engine.start();
+    } catch (error: any) {
+      throw new FlethyError({
+        message: `Failed to execute workflow ${request.workflowId} for project ${request.projectId}: ${error.message}`,
+        type: ErrorType.Internal,
+        log: {
+          message: `Failed to execute workflow ${request.workflowId} for project ${request.projectId}: ${error.message}`,
+          context: { method: "start", origin: "workflow.controller.ts" },
+          data: { request },
+        },
+      });
+    }
+
+    return true;
   }
 }
