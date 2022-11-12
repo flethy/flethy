@@ -60,6 +60,7 @@ export namespace Slack {
           },
           base: `https://hooks.slack.com`,
           method: 'POST',
+          responseType: 'text',
           paths: [
             {
               name: 'services',

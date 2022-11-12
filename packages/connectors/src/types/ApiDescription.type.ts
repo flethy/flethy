@@ -1,4 +1,4 @@
-import { FetchMethod, FetchParams } from './FetchParams.type'
+import { FetchMethod, FetchParams, FetchResponseType } from './FetchParams.type'
 import { CATEGORY, TAG, TYPE } from './ServiceCategory.type'
 
 export interface ApiDescription<Entity, Endpoint> {
@@ -54,6 +54,7 @@ export interface ApiDescriptionEndpoint {
       value?: string
     }
   }
+  responseType?: FetchResponseType
 }
 
 export interface ApiDescriptionEndpointOptions {
