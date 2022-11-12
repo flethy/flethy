@@ -68,6 +68,14 @@ const ITEMS_2022_Q4: RoadmapEntry[] = [
     milestone: false,
     tags: [ROADMAP_TAGS.EXECUTION],
   },
+  {
+    title: 'Start Workflow Instances',
+    date: '2022-11-12',
+    description: 'Workflow Instances can be started via API.',
+    delivered: true,
+    milestone: false,
+    tags: [ROADMAP_TAGS.EXECUTION],
+  },
 ]
 
 const FUTURE_MILESTONES: RoadmapEntry[] = [
