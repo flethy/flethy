@@ -1,0 +1,47 @@
+{
+  "name": "TinyURL",
+  "domain": "tinyurl.com",
+  "claimed": false,
+  "description": "TinyURL is a web service providing short aliases for redirecting long URLs.",
+  "links": [
+    { "name": "twitter", "url": "https://twitter.com/TinyURL" },
+    { "name": "linkedin", "url": "https://linkedin.com/company/tinyurl" }
+  ],
+  "logos": [
+    {
+      "type": "icon",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/id_D00qTCg/ididY9EwPW.png",
+          "background": null,
+          "format": "png",
+          "height": 400,
+          "width": 400,
+          "size": 96849
+        }
+      ]
+    },
+    {
+      "type": "logo",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/id_D00qTCg/idxQ9Co2is.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 68,
+          "width": 156,
+          "size": 10272
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#0a2745", "type": "dark", "brightness": 35 },
+    { "hex": "#8fe3fd", "type": "light", "brightness": 211 },
+    { "hex": "#3366cc", "type": "accent", "brightness": 99 }
+  ],
+  "fonts": [],
+  "images": []
+}

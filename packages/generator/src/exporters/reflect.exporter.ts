@@ -197,6 +197,7 @@ import { TheCompaniesApi } from '../../../connectors/src/configs/thecompaniesapi
 import { TheGraph } from '../../../connectors/src/configs/thegraph.config'
 import { TheStarWarsApi } from '../../../connectors/src/configs/thestarwarsapi.config'
 import { Tinify } from '../../../connectors/src/configs/tinify.config'
+import { TinyURL } from '../../../connectors/src/configs/tinyurl.config'
 import { TMDB } from '../../../connectors/src/configs/tmdb.config'
 import { Trello } from '../../../connectors/src/configs/trello.config'
 import { Tribe } from '../../../connectors/src/configs/tribe.config'
@@ -654,6 +655,8 @@ configTypes.push({type: getType<TheGraph.QueryByName>(), id: 'thegraph', name: '
 configTypes.push({type: getType<TheStarWarsApi.GetEntities>(), id: 'thestarwarsapi', name: 'TheStarWarsApi', interface: 'GetEntities'})
 configTypes.push({type: getType<TheStarWarsApi.GetEntity>(), id: 'thestarwarsapi', name: 'TheStarWarsApi', interface: 'GetEntity'})
 configTypes.push({type: getType<Tinify.Shrink>(), id: 'tinify', name: 'Tinify', interface: 'Shrink'})
+configTypes.push({type: getType<TinyURL.CreateLink>(), id: 'tinyurl', name: 'TinyURL', interface: 'CreateLink'})
+configTypes.push({type: getType<TinyURL.TimelineAnalytics>(), id: 'tinyurl', name: 'TinyURL', interface: 'TimelineAnalytics'})
 configTypes.push({type: getType<TMDB.Trending>(), id: 'tmdb', name: 'TMDB', interface: 'Trending'})
 configTypes.push({type: getType<Trello.BoardGetLists>(), id: 'trello', name: 'Trello', interface: 'BoardGetLists'})
 configTypes.push({type: getType<Trello.CardsCreate>(), id: 'trello', name: 'Trello', interface: 'CardsCreate'})

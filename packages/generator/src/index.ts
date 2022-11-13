@@ -214,6 +214,7 @@ import Vantevo from '@flethy/connectors/src/configs/vantevo.config'
 import Vonage from '@flethy/connectors/src/configs/vonage.config'
 import { HttpRequest } from './controllers/HttpRequest'
 import { logger } from './utils/Logger'
+import TinyURL from '@flethy/connectors/src/configs/tinyurl.config'
 
 async function main() {
   const requestConfigs: {
@@ -2926,8 +2927,14 @@ async function main() {
       },
       'query:domain': 'flethy.com',
     }),
+    tinyurl: nao<TinyURL.CreateLink>({
+      kind: 'tinyurl.links.create',
+      'auth:Authorization': process.env.TINYURL_API_TOKEN,
+      'body:url': 'https://flethy.com/roadmap',
+      'body:domain': 'rotf.lol',
+    }),
   }
-  const requestConfig = requestConfigs.godaddyBaseId
+  const requestConfig = requestConfigs.tinyurl
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)
