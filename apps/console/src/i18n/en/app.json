@@ -1,0 +1,85 @@
+{
+	"title": "flethy",
+	"description": "time to speed up",
+	"navbar": {
+		"home": "Home"
+	},
+	"footer": {
+		"pitchdeck": "Pitch Deck",
+		"allRightsReserved": " flethy. All rights reserved"
+	},
+	"home": {
+		"stayTuned": "Subscribe for updates!",
+		"integrations": "Integrations!"
+	},
+	"general": {
+		"email": "Email",
+		"subscribe": "Subscribe",
+		"showMore": "Show more",
+		"showLess": "Show less",
+		"integrations": "Integrations"
+	},
+	"components": {
+		"emailSubscription": {
+			"thanks": "Thanks for subscribing!",
+			"error": "Sorry, something went wrong. Please try again later."
+		}
+	},
+	"pages": {
+		"verification": {
+			"heading": "You're ready to speed up!",
+			"loading": "Please wait while we're updating your subscription",
+			"thanks": "You're now subscribed to our newsletter!",
+			"error": "Sorry, something went wrong. Please try again later."
+		},
+		"home": {
+			"sections": {
+				"connectors": {
+					"heading1": "Import once,",
+					"heading2": "access hundreds of endpoints!",
+					"description": "Imagine you can connect hundreds of API endpoints with one package. flethy is a zero-dependency library that lets you integrate with popular APIs much faster."
+				},
+				"flow": {
+					"heading1": "Design the flow,",
+					"heading2": "and let the engine do the rest.",
+					"description": "Go a step further and design flows that make use of the ease of the above explained connectors. Use sequences, parallel and conditional paths and mappings of variables to embed as little as possible in code."
+				},
+				"saas": {
+					"heading1": "Deploy,",
+					"heading2": "and relax!",
+					"description": "If you don't want to run your flows yourself, you can leave it to us. Design, deploy, start! We are currently working on making the product available. Subscribe to our newsletter to stay up to date on this!"
+				},
+				"subscription": {
+					"heading1": "Subscribe,",
+					"heading2": "to get the latest news."
+				}
+			}
+		},
+		"integration": {
+			"subtitle": "Endpoints",
+			"url": "Website",
+			"docs": "Documentation",
+			"signup": "Signup",
+			"pricing": "Pricing",
+			"integratedOn": "Integrated on",
+			"endpoints": {
+				"title": "Endpoint",
+				"description": "Description",
+				"docs": "Docs",
+				"docslabel": "docs",
+				"method": "Method",
+				"generalDescription": "Overview of all integrated endpoints for this service. If you're missing an endpoint, please let us know!"
+			}
+		},
+		"pitchdeck": {
+			"title": "Pitch Deck",
+			"subtitle": ":)"
+		},
+		"roadmap": {
+			"title": "Roadmap",
+			"subtitle": "Always progress!",
+			"upcoming": "Upcoming",
+			"completed": "Done"
+		}
+	}
+}
