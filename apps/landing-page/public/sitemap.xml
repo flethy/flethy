@@ -809,6 +809,10 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://flethy.com/integrations/tinyurl</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://flethy.com/integrations/tmdb</loc>
     <priority>0.8</priority>
   </url>

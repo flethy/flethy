@@ -211,6 +211,7 @@ The following Endpoints are currently supported.
 * [TheCompaniesApi](./api/thecompaniesapi.md)
 * [TheStarWarsApi](./api/thestarwarsapi.md)
 * [Tinify](./api/tinify.md)
+* [TinyURL](./api/tinyurl.md)
 * [TMDB](./api/tmdb.md)
 * [Trello](./api/trello.md)
 * [Tribe](./api/tribe.md)
