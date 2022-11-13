@@ -1,3 +1,4 @@
+import { Auth0Provider } from '@auth0/auth0-react'
 import { ChakraProvider, extendTheme } from '@chakra-ui/react'
 import '@fontsource/open-sans/700.css'
 import '@fontsource/raleway/400.css'
@@ -13,6 +14,8 @@ import { Provider, rootStore, useMst } from './models/root'
 import AppPage from './pages/app/page'
 import routes from './routes'
 
+export const AUTH_DOMAIN = import.meta.env.VITE_AUTH_DOMAIN
+export const AUTH_CLIENT_ID = import.meta.env.VITE_AUTH_CLIENT_ID
 export const LOGLEVEL = import.meta.env.VITE_LOGLEVEL
 	? (String(import.meta.env.VITE_LOGLEVEL) as LogLevel)
 	: 'off'
@@ -66,7 +69,13 @@ const App = observer(() => {
 				</Helmet>
 			</HelmetProvider>
 			<ChakraProvider theme={theme}>
-				<AppPage />
+				<Auth0Provider
+					domain={AUTH_DOMAIN}
+					clientId={AUTH_CLIENT_ID}
+					redirectUri={window.location.origin}
+				>
+					<AppPage />
+				</Auth0Provider>
 			</ChakraProvider>
 		</>
 	)

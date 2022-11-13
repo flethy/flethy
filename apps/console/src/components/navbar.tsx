@@ -1,5 +1,6 @@
 import { EmailIcon, MoonIcon, SearchIcon, SunIcon } from '@chakra-ui/icons'
 import {
+	Avatar,
 	Box,
 	Button,
 	Flex,
@@ -16,6 +17,7 @@ import { useTranslation } from 'react-i18next'
 import { useMst } from '../models/root'
 import routes from '../routes'
 import Logo from './Logo'
+import { useAuth0 } from '@auth0/auth0-react'
 
 const NavbarLinks: any[] = [
 	// {
@@ -35,6 +37,8 @@ export default observer(() => {
 			components: { quickSearch },
 		},
 	} = useMst()
+	const { loginWithRedirect, logout, user, isAuthenticated, isLoading } =
+		useAuth0()
 
 	const bgLink = useColorModeValue('gray.200', 'gray.700')
 	const bgBox = useColorModeValue('gray.100', 'gray.900')
@@ -88,20 +92,23 @@ export default observer(() => {
 							<Button onClick={toggleColorMode}>
 								{colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
 							</Button>
-							<Text>Login...</Text>
-							{/* <Button
-								display={{ base: 'none', md: 'inline-flex' }}
-								fontSize={'sm'}
-								fontWeight={600}
-								color={'white'}
-								bg={'flethy.orange'}
-								_hover={{
-									bg: 'flethy.purple',
-								}}
-								onClick={() => home.initialisePage({ emailSubscription: true })}
-							>
-								Subscribe
-							</Button> */}
+							{isAuthenticated ? (
+								<Avatar size={'sm'} src={user?.picture} />
+							) : (
+								<Button
+									display={{ base: 'none', md: 'inline-flex' }}
+									fontSize={'sm'}
+									fontWeight={600}
+									color={'white'}
+									bg={'flethy.orange'}
+									_hover={{
+										bg: 'flethy.purple',
+									}}
+									onClick={() => loginWithRedirect()}
+								>
+									Login
+								</Button>
+							)}
 							{/* <Button
 								display={{ base: 'inline-flex', md: 'none' }}
 								fontSize={'sm'}
