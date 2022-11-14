@@ -1,0 +1,33 @@
+# LogSnag
+
+## Links
+
+* URL: [https://logsnag.com/](https://logsnag.com/)
+* Documentation: [https://docs.logsnag.com/](https://docs.logsnag.com/)
+* Tags: web2
+* Category: analytics
+* Type: webinsights
+
+## API
+
+### Authentication
+
+* Authorization: header:bearer
+
+### log
+
+#### publishEvent
+
+##### Publish an event to LogSnag.
+
+* Description: This route is used to publish your events to LogSnag. These events may be designed in any way that makes sense for your application.
+* Docs: [https://docs.logsnag.com/endpoints/log](https://docs.logsnag.com/endpoints/log)
+
+### insight
+
+#### publishInsight
+
+##### Publish an insight to LogSnag.
+
+* Description: Insights are real-time events such as KPI, performance, and other metrics that are not captured as a regular event. You can publish them periodically or as soon as they occur and the latest value will be stored in LogSnag.
+* Docs: [https://docs.logsnag.com/endpoints/insight](https://docs.logsnag.com/endpoints/insight)

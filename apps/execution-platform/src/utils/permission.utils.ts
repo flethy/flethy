@@ -8,11 +8,12 @@ export class PermissionUtils {
   public static async permissions(
     req: ServerRequest,
     _res: ServerResponse,
-    options: { scopes?: TokenScope[] }
+    options: { scopes?: TokenScope[]; isUserToken?: boolean }
   ) {
-    const { scopes } = options;
-    if (scopes) {
+    const { scopes, isUserToken } = options;
+    if (scopes || isUserToken === true) {
       const Authorization = req.headers.get("Authorization");
+      console.log(Authorization);
       const { projectId, workspaceId } = req.params;
       if (!Authorization) {
         throw new FlethyError({
@@ -28,10 +29,17 @@ export class PermissionUtils {
         });
       }
       const token = Authorization.replace("Bearer ", "");
-      await AuthController.verifyToken(
-        { token, projectId, workspaceId, scopes },
-        SECRET
-      );
+      if (isUserToken === true) {
+        const verificationResponse = await AuthController.verifyUserToken(
+          token
+        );
+        console.log({ verificationResponse });
+      } else {
+        await AuthController.verifyToken(
+          { token, projectId, workspaceId, scopes },
+          SECRET
+        );
+      }
     }
     return;
   }

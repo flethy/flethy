@@ -1,0 +1,74 @@
+{
+  "name": "LogSnag",
+  "domain": "logsnag.com",
+  "claimed": false,
+  "description": "LogSnag is a flexible event tracking tool that lets you stay on top of your product.",
+  "links": [
+    { "name": "twitter", "url": "https://twitter.com/logsnag" },
+    { "name": "github", "url": "https://github.com/logsnag" }
+  ],
+  "logos": [
+    {
+      "type": "logo",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idut-z8TzJ/ididl3vBSf.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 820,
+          "width": 820,
+          "size": 22896
+        },
+        {
+          "src": "https://asset.brandfetch.io/idut-z8TzJ/idLmmFRMJx.svg",
+          "background": "transparent",
+          "format": "svg",
+          "size": 2123
+        }
+      ]
+    },
+    {
+      "type": "icon",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idut-z8TzJ/idGbhnL7LL.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 400,
+          "width": 400,
+          "size": 6972
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#1c1d21", "type": "dark", "brightness": 29 },
+    { "hex": "#fefaf3", "type": "light", "brightness": 250 }
+  ],
+  "fonts": [
+    {
+      "name": "Inter var",
+      "type": "body",
+      "origin": "custom",
+      "originId": null,
+      "weights": []
+    }
+  ],
+  "images": [
+    {
+      "type": "banner",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idut-z8TzJ/id1fZg-CyH.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 500,
+          "width": 1500,
+          "size": 139446
+        }
+      ]
+    }
+  ]
+}

@@ -1,4 +1,3 @@
-import { Auth0Provider } from '@auth0/auth0-react'
 import { ChakraProvider, extendTheme } from '@chakra-ui/react'
 import '@fontsource/open-sans/700.css'
 import '@fontsource/raleway/400.css'
@@ -69,13 +68,7 @@ const App = observer(() => {
 				</Helmet>
 			</HelmetProvider>
 			<ChakraProvider theme={theme}>
-				<Auth0Provider
-					domain={AUTH_DOMAIN}
-					clientId={AUTH_CLIENT_ID}
-					redirectUri={window.location.origin}
-				>
-					<AppPage />
-				</Auth0Provider>
+				<AppPage />
 			</ChakraProvider>
 		</>
 	)

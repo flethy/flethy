@@ -215,6 +215,7 @@ import Vonage from '@flethy/connectors/src/configs/vonage.config'
 import { HttpRequest } from './controllers/HttpRequest'
 import { logger } from './utils/Logger'
 import TinyURL from '@flethy/connectors/src/configs/tinyurl.config'
+import LogSnag from '@flethy/connectors/src/configs/logsnag.config'
 
 async function main() {
   const requestConfigs: {
@@ -2933,8 +2934,26 @@ async function main() {
       'body:url': 'https://flethy.com/roadmap',
       'body:domain': 'rotf.lol',
     }),
+    logsnagEvent: nao<LogSnag.PublishEvent>({
+      kind: 'logsnag.log.publishEvent',
+      'auth:Authorization': process.env.LOGSNAG_API_TOKEN,
+      'body:project': 'flethy',
+      'body:channel': 'user-signups',
+      'body:event': 'user-signup',
+      'body:tags': {
+        'user-id': 'flethy123',
+        channel: 'landingpage',
+      },
+    }),
+    logsnagInsight: nao<LogSnag.PublishInsight>({
+      kind: 'logsnag.insight.publishInsight',
+      'auth:Authorization': process.env.LOGSNAG_API_TOKEN,
+      'body:project': 'flethy',
+      'body:title': 'New Insight!',
+      'body:value': 123,
+    }),
   }
-  const requestConfig = requestConfigs.tinyurl
+  const requestConfig = requestConfigs.logsnagInsight
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

@@ -17,7 +17,6 @@ import { useTranslation } from 'react-i18next'
 import { useMst } from '../models/root'
 import routes from '../routes'
 import Logo from './Logo'
-import { useAuth0 } from '@auth0/auth0-react'
 
 const NavbarLinks: any[] = [
 	// {
@@ -33,15 +32,19 @@ export default observer(() => {
 	const {
 		router,
 		root: {
+			auth,
+			api,
 			pages: { home },
 			components: { quickSearch },
 		},
 	} = useMst()
-	const { loginWithRedirect, logout, user, isAuthenticated, isLoading } =
-		useAuth0()
 
 	const bgLink = useColorModeValue('gray.200', 'gray.700')
 	const bgBox = useColorModeValue('gray.100', 'gray.900')
+
+	if (auth.isAuthenticated && auth.user) {
+		api.user.init(auth.user)
+	}
 
 	return (
 		<>
@@ -92,8 +95,14 @@ export default observer(() => {
 							<Button onClick={toggleColorMode}>
 								{colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
 							</Button>
-							{isAuthenticated ? (
-								<Avatar size={'sm'} src={user?.picture} />
+							{/* ORIGINAL */}
+							{/* {api.user.isAuthenticated ? (
+								<Avatar
+									size={'sm'}
+									src={api.user.picture}
+									onClick={() => logout()}
+									cursor={'pointer'}
+								/>
 							) : (
 								<Button
 									display={{ base: 'none', md: 'inline-flex' }}
@@ -108,7 +117,31 @@ export default observer(() => {
 								>
 									Login
 								</Button>
+							)} */}
+
+							{auth.isAuthenticated === true && api.user.picture ? (
+								<Avatar
+									size={'sm'}
+									src={api.user.picture ?? undefined}
+									onClick={() => auth.logout()}
+									cursor={'pointer'}
+								/>
+							) : (
+								<Button
+									display={{ base: 'none', md: 'inline-flex' }}
+									fontSize={'sm'}
+									fontWeight={600}
+									color={'white'}
+									bg={'flethy.orange'}
+									_hover={{
+										bg: 'flethy.purple',
+									}}
+									onClick={() => auth.loginWithRedirect()}
+								>
+									Login
+								</Button>
 							)}
+
 							{/* <Button
 								display={{ base: 'inline-flex', md: 'none' }}
 								fontSize={'sm'}

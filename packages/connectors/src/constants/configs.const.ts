@@ -107,6 +107,7 @@ import { Lecto } from '../configs/lecto.config'
 import { Linear } from '../configs/linear.config'
 import { LinkedIn } from '../configs/linkedin.config'
 import { LinkPreview } from '../configs/linkpreview.config'
+import { LogSnag } from '../configs/logsnag.config'
 import { Logz } from '../configs/logz.config'
 import { Lokalise } from '../configs/lokalise.config'
 import { Lolo } from '../configs/lolo.config'
@@ -331,6 +332,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['linear', Linear.API],
 ['linkedin', LinkedIn.API],
 ['linkpreview', LinkPreview.API],
+['logsnag', LogSnag.API],
 ['logz', Logz.API],
 ['lokalise', Lokalise.API],
 ['lolo', Lolo.API],
