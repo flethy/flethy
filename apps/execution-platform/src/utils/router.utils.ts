@@ -16,6 +16,7 @@ export interface RouterOptions {
   method: Method;
   route: string;
   scopes?: TokenScope[];
+  isUserToken?: boolean;
   handler: (
     req: ServerRequest,
     res: ServerResponse,
@@ -30,6 +31,7 @@ export class RouterUtils {
         res.setHeader("Content-Type", "application/json");
         await PermissionUtils.permissions(req, res, {
           scopes: options.scopes,
+          isUserToken: options.isUserToken,
         });
         await options.handler(req, res);
       } catch (error) {
@@ -98,6 +100,6 @@ export class RouterPathUtils {
   }
 
   public gen(): string {
-    return this.path.join("/");
+    return `/${this.path.join("/")}`;
   }
 }

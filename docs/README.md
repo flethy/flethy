@@ -129,6 +129,7 @@ The following Endpoints are currently supported.
 * [Linear](./api/linear.md)
 * [LinkedIn](./api/linkedin.md)
 * [LinkPreview](./api/linkpreview.md)
+* [LogSnag](./api/logsnag.md)
 * [Logz](./api/logz.md)
 * [Lokalise](./api/lokalise.md)
 * [Lolo](./api/lolo.md)

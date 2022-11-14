@@ -1,5 +1,6 @@
 import jwt from "@tsndr/cloudflare-worker-jwt";
 import { HOUR } from "../constants/duration.const";
+import { JWK_DEV } from "../constants/jwks.const";
 import { ErrorType, FlethyError } from "../utils/error.utils";
 import { ValidationUtils } from "../utils/validation.utils";
 
@@ -115,4 +116,43 @@ export class AuthController {
     const token = await jwt.sign(request, secret);
     return token;
   }
+
+  public static async verifyUserToken(encodedToken: string): Promise<boolean> {
+    const token = decodeJwt(encodedToken);
+    const encoder = new TextEncoder();
+    const data = encoder.encode(
+      [token.raw.header, token.raw.payload].join(".")
+    );
+    const signature = new Uint8Array(
+      Array.from(token.signature).map((c) => c.charCodeAt(0))
+    );
+
+    const key = await crypto.subtle.importKey(
+      "jwk",
+      JWK_DEV,
+      { name: "RSASSA-PKCS1-v1_5", hash: "SHA-256" },
+      false,
+      ["verify"]
+    );
+    const verificationResult = await crypto.subtle.verify(
+      "RSASSA-PKCS1-v1_5",
+      key,
+      signature,
+      data
+    );
+    return verificationResult;
+  }
+}
+
+function decodeJwt(token: string) {
+  const parts = token.split(".");
+  const header = JSON.parse(atob(parts[0]));
+  const payload = JSON.parse(atob(parts[1]));
+  const signature = atob(parts[2].replace(/_/g, "/").replace(/-/g, "+"));
+  return {
+    header: header,
+    payload: payload,
+    signature: signature,
+    raw: { header: parts[0], payload: parts[1], signature: parts[2] },
+  };
 }
