@@ -1,5 +1,6 @@
 import { Router } from "worktop";
 import * as Cache from "worktop/cache";
+import * as CORS from "worktop/cors";
 import { SECRET } from "./constants/admin.const";
 import { AuthController, TokenScope } from "./controllers/auth.controller";
 import { SecretsController } from "./controllers/secrets.controller";
@@ -11,6 +12,12 @@ import { PermissionUtils } from "./utils/permission.utils";
 // https://www.npmjs.com/package/worktop
 
 const API = new Router();
+API.prepare = CORS.preflight({
+  origin: "*",
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  headers: ["Cache-Control", "Content-Type", "Authorization"],
+  credentials: true,
+});
 
 export interface Env {
   // Example binding to KV. Learn more at https://developers.cloudflare.com/workers/runtime-apis/kv/

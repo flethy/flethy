@@ -13,7 +13,6 @@ export class PermissionUtils {
     const { scopes, isUserToken } = options;
     if (scopes || isUserToken === true) {
       const Authorization = req.headers.get("Authorization");
-      console.log(Authorization);
       const { projectId, workspaceId } = req.params;
       if (!Authorization) {
         throw new FlethyError({
@@ -30,10 +29,7 @@ export class PermissionUtils {
       }
       const token = Authorization.replace("Bearer ", "");
       if (isUserToken === true) {
-        const verificationResponse = await AuthController.verifyUserToken(
-          token
-        );
-        console.log({ verificationResponse });
+        await AuthController.verifyUserToken(token);
       } else {
         await AuthController.verifyToken(
           { token, projectId, workspaceId, scopes },

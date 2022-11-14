@@ -1,4 +1,7 @@
 import events, { LogLevel } from '../events/events'
+import { rootStore } from '../models/root'
+
+export const FLETHY_BACKEND = import.meta.env.VITE_FLETHY_BACKEND
 
 export class HttpError extends Error {
 	public status: number
@@ -8,7 +11,7 @@ export class HttpError extends Error {
 	}
 }
 
-export type HttpBase = 'origin' | 'test'
+export type HttpBase = 'origin' | 'flethy'
 
 export interface RequestPayload {
 	base?: HttpBase
@@ -23,8 +26,12 @@ export interface RequestPayload {
 
 export async function request(payload: RequestPayload): Promise<any> {
 	let headers: { [key: string]: string } = payload.headers || {}
+	let token
 	if (payload.auth === undefined || payload.auth === true) {
-		// auth?
+		token = await rootStore.root.auth.getTokenSilently()
+	}
+	if (token) {
+		headers.Authorization = `Bearer ${token}`
 	}
 	const type = payload.type ?? 'json'
 	if (type) {
@@ -47,8 +54,8 @@ export async function request(payload: RequestPayload): Promise<any> {
 			case 'origin':
 				base = window.location.origin
 				break
-			case 'test':
-				base = `https://test`
+			case 'flethy':
+				base = String(FLETHY_BACKEND)
 				break
 		}
 	}
