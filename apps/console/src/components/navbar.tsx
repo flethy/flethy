@@ -1,4 +1,4 @@
-import { EmailIcon, MoonIcon, SearchIcon, SunIcon } from '@chakra-ui/icons'
+import { MoonIcon, SearchIcon, SunIcon } from '@chakra-ui/icons'
 import {
 	Avatar,
 	Box,
@@ -95,66 +95,13 @@ export default observer(() => {
 							<Button onClick={toggleColorMode}>
 								{colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
 							</Button>
-							{/* ORIGINAL */}
-							{/* {api.user.isAuthenticated ? (
-								<Avatar
-									size={'sm'}
-									src={api.user.picture}
-									onClick={() => logout()}
-									cursor={'pointer'}
-								/>
-							) : (
-								<Button
-									display={{ base: 'none', md: 'inline-flex' }}
-									fontSize={'sm'}
-									fontWeight={600}
-									color={'white'}
-									bg={'flethy.orange'}
-									_hover={{
-										bg: 'flethy.purple',
-									}}
-									onClick={() => loginWithRedirect()}
-								>
-									Login
-								</Button>
-							)} */}
 
-							{auth.isAuthenticated === true && api.user.picture ? (
-								<Avatar
-									size={'sm'}
-									src={api.user.picture ?? undefined}
-									onClick={() => auth.logout()}
-									cursor={'pointer'}
-								/>
-							) : (
-								<Button
-									display={{ base: 'none', md: 'inline-flex' }}
-									fontSize={'sm'}
-									fontWeight={600}
-									color={'white'}
-									bg={'flethy.orange'}
-									_hover={{
-										bg: 'flethy.purple',
-									}}
-									onClick={() => auth.loginWithRedirect()}
-								>
-									Login
-								</Button>
-							)}
-
-							{/* <Button
-								display={{ base: 'inline-flex', md: 'none' }}
-								fontSize={'sm'}
-								fontWeight={600}
-								color={'white'}
-								bg={'flethy.orange'}
-								_hover={{
-									bg: 'flethy.purple',
-								}}
-								onClick={() => home.initialisePage({ emailSubscription: true })}
-							>
-								<EmailIcon />
-							</Button> */}
+							<Avatar
+								size={'sm'}
+								src={api.user.picture ?? undefined}
+								onClick={() => auth.logout()}
+								cursor={'pointer'}
+							/>
 						</Stack>
 					</Flex>
 				</Flex>

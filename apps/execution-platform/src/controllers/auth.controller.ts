@@ -117,7 +117,7 @@ export class AuthController {
     return token;
   }
 
-  public static async verifyUserToken(encodedToken: string): Promise<boolean> {
+  public static async verifyUserToken(encodedToken: string): Promise<void> {
     const token = decodeJwt(encodedToken);
     const encoder = new TextEncoder();
     const data = encoder.encode(
@@ -140,7 +140,16 @@ export class AuthController {
       signature,
       data
     );
-    return verificationResult;
+    if (!verificationResult) {
+      throw new FlethyError({
+        type: ErrorType.Unauthorized,
+        message: `Token is invalid`,
+        log: {
+          context: { origin: "auth.controller.ts", method: "verifyUserToken" },
+          message: `Token is invalid`,
+        },
+      });
+    }
   }
 }
 

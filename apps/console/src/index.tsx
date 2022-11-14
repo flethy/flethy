@@ -1,4 +1,4 @@
-import { ChakraProvider, extendTheme } from '@chakra-ui/react'
+import { ChakraProvider, Container, extendTheme } from '@chakra-ui/react'
 import '@fontsource/open-sans/700.css'
 import '@fontsource/raleway/400.css'
 import { observer } from 'mobx-react-lite'
@@ -13,21 +13,18 @@ import { Provider, rootStore, useMst } from './models/root'
 import AppPage from './pages/app/page'
 import routes from './routes'
 
-export const AUTH_DOMAIN = import.meta.env.VITE_AUTH_DOMAIN
-export const AUTH_CLIENT_ID = import.meta.env.VITE_AUTH_CLIENT_ID
 export const LOGLEVEL = import.meta.env.VITE_LOGLEVEL
 	? (String(import.meta.env.VITE_LOGLEVEL) as LogLevel)
 	: 'off'
 events.init(LOGLEVEL)
 
+const AppLoading = <Container>Loading...</Container>
+let initialized = false
+
 const App = observer(() => {
 	const {
-		root: { components, api },
+		root: { components, api, auth },
 	} = useMst()
-
-	startRouter(routes, rootStore, {
-		notfound: () => rootStore.router.goTo(routes.notFound),
-	})
 
 	components.quickSearch.initialise()
 
@@ -60,18 +57,50 @@ const App = observer(() => {
 		},
 	})
 
-	return (
-		<>
-			<HelmetProvider>
-				<Helmet>
-					{api.helmet.title ? <title>{api.helmet.title}</title> : null}
-				</Helmet>
-			</HelmetProvider>
-			<ChakraProvider theme={theme}>
-				<AppPage />
-			</ChakraProvider>
-		</>
-	)
+	let app
+
+	if (auth.isAuthenticated === null) {
+		app = AppLoading
+	} else if (auth.isAuthenticated && auth.user) {
+		if (!initialized) {
+			startRouter(routes, rootStore, {
+				notfound: () => rootStore.router.goTo(routes.notFound),
+			})
+			initialized = true
+		}
+		app = (
+			<>
+				<HelmetProvider>
+					<Helmet>
+						{api.helmet.title ? <title>{api.helmet.title}</title> : null}
+					</Helmet>
+				</HelmetProvider>
+				<ChakraProvider theme={theme}>
+					<AppPage />
+				</ChakraProvider>
+			</>
+		)
+	} else {
+		app = AppLoading
+		if (!auth.isAuthenticated) {
+			const path =
+				window.location.pathname?.length > 0
+					? window.location.pathname.substring(1)
+					: ''
+			const query = window.location.search
+			setTimeout(() => {
+				auth.loginWithRedirect({
+					appState: {
+						target: `${path}${query}`,
+					},
+				})
+			}, 500)
+		} else {
+			auth.fetchUser()
+		}
+	}
+
+	return app
 })
 
 const container = document.getElementById('root')
