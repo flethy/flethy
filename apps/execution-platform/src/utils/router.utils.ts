@@ -39,6 +39,11 @@ export class RouterUtils {
         res.send(response.status, response.data);
       }
     });
+
+    // options.API.add("OPTIONS", options.route, async (req, res) => {
+    //   res.setHeader("Content-Type", "application/json");
+    //   res.send(200);
+    // });
   }
 }
 

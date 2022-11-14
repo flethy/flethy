@@ -11,7 +11,7 @@ export default observer(() => {
 		<>
 			<QuickSearch />
 			<Navbar />
-			<Box p={4} minHeight={{ md: 'calc(100vh - 415px)' }}>
+			<Box p={4} minHeight={{ md: 'calc(100vh - 130px)' }}>
 				<MobxRouter store={rootStore} />
 			</Box>
 			<Footer />

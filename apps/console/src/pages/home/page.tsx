@@ -1,4 +1,4 @@
-import { Container, Stack, Text } from '@chakra-ui/react'
+import { Button, Container, Stack, Text } from '@chakra-ui/react'
 import { observer } from 'mobx-react-lite'
 import { useTranslation } from 'react-i18next'
 import { useMst } from '../../models/root'
@@ -8,6 +8,7 @@ export default observer(() => {
 	const {
 		router,
 		root: {
+			api,
 			pages: { home: page },
 		},
 	} = useMst()
@@ -22,6 +23,7 @@ export default observer(() => {
 					direction={{ base: 'column', md: 'row' }}
 				>
 					<Text>todo...</Text>
+					<Button onClick={() => api.flethy.test()}>Nice</Button>
 				</Stack>
 			</Container>
 		</>
