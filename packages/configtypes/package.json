@@ -1,0 +1,41 @@
+{
+  "name": "@flethy/configtypes",
+  "version": "0.0.1",
+  "description": "@flethy/configtypes",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc --p tsconfig.json"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": "github:flethy/flethy",
+  "author": "adam@flethy.com",
+  "license": "MIT",
+  "keywords": [
+    "web3",
+    "http",
+    "ipfs",
+    "etherscan",
+    "alchemy"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "@types/node": "18.11.9",
+    "@typescript-eslint/eslint-plugin": "^5.42.1",
+    "@typescript-eslint/parser": "^5.42.1",
+    "eslint": "^8.27.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "prettier": "2.7.1",
+    "ts-node": "^10.9.1",
+    "tsconfig": "workspace:*",
+    "typescript": "^4.8.4"
+  }
+}

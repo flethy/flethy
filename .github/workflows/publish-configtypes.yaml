@@ -1,0 +1,15 @@
+name: "Publish Config Types"
+
+# on: [push]
+on:
+  release:
+    types: [published]
+
+jobs:
+  publish-connectors:
+    uses: ./.github/workflows/template-publish-npm-package.yaml
+    with:
+      packageDir: ./packages/configtypes
+      packageScope: "@flethy/configtypes"
+    secrets:
+      npm_token: ${{ secrets.NPM_TOKEN }}

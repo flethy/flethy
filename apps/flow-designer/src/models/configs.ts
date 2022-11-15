@@ -1,5 +1,5 @@
 import { Instance, types, cast } from 'mobx-state-tree'
-import { CONFIG_TYPES } from '@flethy/connectors'
+import { CONFIG_TYPES } from '../../../../packages/configtypes/src/configTypes/configTypes.const'
 
 export const ConfigProperty = types.model({
 	name: types.string,

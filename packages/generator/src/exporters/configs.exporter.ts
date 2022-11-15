@@ -106,9 +106,6 @@ export class ConfigsExporter {
       `export { HttpRequestConfig, nao } from './utils/Request.utils'`
     )
     exports.push(`export type { ConfigType } from './types/ConfigType.type'`)
-    exports.push(
-      `export { CONFIG_TYPES } from './configTypes/configTypes.const'`
-    )
     exports.push(`export { ConfigUtils } from './utils/Config.utils'`)
     const constantContent: string[] = [...imports, '']
     constantContent.push(

@@ -9,13 +9,13 @@ import { LANDINGPAGE_CONSTANTS } from './brand.exporter'
 import { configTypes as exportedConfigTypes } from './reflect.exporter'
 
 const CONFIGSTYPES_DIR_NAME = 'configTypes'
-const HTTP_CONFIGS_DIR_NAME = 'connectors'
+const PACKAGE_CONFIGTYPES_DIR_NAME = 'configtypes'
 const CONFIGSTYPES_DIR = path.join(
   __dirname,
   '..',
   '..',
   '..',
-  HTTP_CONFIGS_DIR_NAME,
+  PACKAGE_CONFIGTYPES_DIR_NAME,
   'src',
   CONFIGSTYPES_DIR_NAME
 )
