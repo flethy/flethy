@@ -10,4 +10,8 @@ export class KVUtils {
   public static workflowKeyPrefix(projectId: string): string {
     return `${projectId}:`;
   }
+
+  public static workspaceKey(workspaceId: string): string {
+    return `workspace-${workspaceId}`;
+  }
 }

@@ -4,6 +4,12 @@ import { SECRET } from "../constants/admin.const";
 import { AuthController, TokenScope } from "../controllers/auth.controller";
 import { ErrorType, FlethyError } from "./error.utils";
 
+export interface PermissionsResponse {
+  valid: boolean;
+  userId: string;
+  userTokenPayload?: any;
+}
+
 export class PermissionUtils {
   public static async permissions(
     req: ServerRequest,
@@ -11,6 +17,10 @@ export class PermissionUtils {
     options: { scopes?: TokenScope[]; isUserToken?: boolean }
   ) {
     const { scopes, isUserToken } = options;
+    let response: PermissionsResponse = {
+      valid: true,
+      userId: "",
+    };
     if (scopes || isUserToken === true) {
       const Authorization = req.headers.get("Authorization");
       const { projectId, workspaceId } = req.params;
@@ -27,16 +37,29 @@ export class PermissionUtils {
           },
         });
       }
+      response.valid = false;
       const token = Authorization.replace("Bearer ", "");
       if (isUserToken === true) {
-        await AuthController.verifyUserToken(token);
+        const options =
+          projectId || workspaceId
+            ? { projectId, workspaceId, scopes: scopes ?? [] }
+            : undefined;
+        const verificationResponse = await AuthController.verifyUserToken(
+          token,
+          options
+        );
+        response.userId = verificationResponse.payload?.sub ?? "unknown";
+        response.valid = true;
+        response.userTokenPayload = verificationResponse.payload;
       } else {
         await AuthController.verifyToken(
           { token, projectId, workspaceId, scopes },
           SECRET
         );
+        response.userId = "m2m";
+        response.valid = true;
       }
     }
-    return;
+    return response;
   }
 }

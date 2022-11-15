@@ -32,8 +32,8 @@ export class Version1 {
       API,
       method: "PUT",
       route: new RouterPathUtils(1).w().p().s().gen(),
-      handler: async (req, res) => {
-        await SecretsRoute.put(req, res);
+      handler: async (req, res, userId) => {
+        await SecretsRoute.put(req, res, userId);
       },
     });
 
@@ -41,8 +41,8 @@ export class Version1 {
       API,
       method: "GET",
       route: new RouterPathUtils(1).w().p().s().gen(),
-      handler: async (req, res) => {
-        await SecretsRoute.get(req, res);
+      handler: async (req, res, userId) => {
+        await SecretsRoute.get(req, res, userId);
       },
     });
 
@@ -50,8 +50,8 @@ export class Version1 {
       API,
       method: "DELETE",
       route: new RouterPathUtils(1).w().p().s().gen(),
-      handler: async (req, res) => {
-        await SecretsRoute.del(req, res);
+      handler: async (req, res, userId) => {
+        await SecretsRoute.del(req, res, userId);
       },
     });
 
@@ -61,8 +61,8 @@ export class Version1 {
       API,
       method: "PUT",
       route: new RouterPathUtils(1).w().p().wf().gen(),
-      handler: async (req, res) => {
-        await WorkflowsRoute.put(req, res);
+      handler: async (req, res, userId) => {
+        await WorkflowsRoute.put(req, res, userId);
       },
     });
 
@@ -70,8 +70,8 @@ export class Version1 {
       API,
       method: "GET",
       route: new RouterPathUtils(1).w().p().wf(true).gen(),
-      handler: async (req, res) => {
-        await WorkflowsRoute.get(req, res);
+      handler: async (req, res, userId) => {
+        await WorkflowsRoute.get(req, res, userId);
       },
     });
 
@@ -79,8 +79,8 @@ export class Version1 {
       API,
       method: "POST",
       route: new RouterPathUtils(1).w().p().wf(true).i().gen(),
-      handler: async (req, res) => {
-        await WorkflowsRoute.start(req, res);
+      handler: async (req, res, userId) => {
+        await WorkflowsRoute.start(req, res, userId);
       },
     });
 
@@ -88,8 +88,8 @@ export class Version1 {
       API,
       method: "GET",
       route: new RouterPathUtils(1).w().p().wf().gen(),
-      handler: async (req, res) => {
-        await WorkflowsRoute.list(req, res);
+      handler: async (req, res, userId) => {
+        await WorkflowsRoute.list(req, res, userId);
       },
     });
 
@@ -97,8 +97,8 @@ export class Version1 {
       API,
       method: "DELETE",
       route: new RouterPathUtils(1).w().p().wf(true).gen(),
-      handler: async (req, res) => {
-        await WorkflowsRoute.del(req, res);
+      handler: async (req, res, userId) => {
+        await WorkflowsRoute.del(req, res, userId);
       },
     });
   }

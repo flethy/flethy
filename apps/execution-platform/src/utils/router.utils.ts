@@ -3,7 +3,7 @@ import { Method, ServerRequest } from "worktop/request";
 import { ServerResponse } from "worktop/response";
 import { TokenScope } from "../controllers/auth.controller";
 import { ErrorMiddleware } from "./error.utils";
-import { PermissionUtils } from "./permission.utils";
+import { PermissionsResponse, PermissionUtils } from "./permission.utils";
 
 export enum StatusCodeSuccess {
   OK = 200,
@@ -20,7 +20,8 @@ export interface RouterOptions {
   handler: (
     req: ServerRequest,
     res: ServerResponse,
-    userId?: string
+    userId: string,
+    permissionsResponse?: PermissionsResponse
   ) => Promise<void>;
 }
 
@@ -29,21 +30,16 @@ export class RouterUtils {
     options.API.add(options.method, options.route, async (req, res) => {
       try {
         res.setHeader("Content-Type", "application/json");
-        await PermissionUtils.permissions(req, res, {
+        const response = await PermissionUtils.permissions(req, res, {
           scopes: options.scopes,
           isUserToken: options.isUserToken,
         });
-        await options.handler(req, res);
+        await options.handler(req, res, response.userId, response);
       } catch (error) {
         const response = ErrorMiddleware.handle(error);
         res.send(response.status, response.data);
       }
     });
-
-    // options.API.add("OPTIONS", options.route, async (req, res) => {
-    //   res.setHeader("Content-Type", "application/json");
-    //   res.send(200);
-    // });
   }
 }
 

@@ -211,6 +211,7 @@ import { Unlayer } from '../../../connectors/src/configs/unlayer.config'
 import { Unsplash } from '../../../connectors/src/configs/unsplash.config'
 import { Up42 } from '../../../connectors/src/configs/up42.config'
 import { UptimeRobot } from '../../../connectors/src/configs/uptimerobot.config'
+import { UrlBae } from '../../../connectors/src/configs/urlbae.config'
 import { UrlScan } from '../../../connectors/src/configs/urlscan.config'
 import { UsePlunk } from '../../../connectors/src/configs/useplunk.config'
 import { Userfront } from '../../../connectors/src/configs/userfront.config'
@@ -683,6 +684,7 @@ configTypes.push({type: getType<Up42.AuthRequest>(), id: 'up42', name: 'Up42', i
 configTypes.push({type: getType<Up42.CreditsBalance>(), id: 'up42', name: 'Up42', interface: 'CreditsBalance'})
 configTypes.push({type: getType<Up42.CatalogSearch>(), id: 'up42', name: 'Up42', interface: 'CatalogSearch'})
 configTypes.push({type: getType<UptimeRobot.GetMonitors>(), id: 'uptimerobot', name: 'UptimeRobot', interface: 'GetMonitors'})
+configTypes.push({type: getType<UrlBae.ShortenLink>(), id: 'urlbae', name: 'UrlBae', interface: 'ShortenLink'})
 configTypes.push({type: getType<UrlScan.Submission>(), id: 'urlscan', name: 'UrlScan', interface: 'Submission'})
 configTypes.push({type: getType<UrlScan.Result>(), id: 'urlscan', name: 'UrlScan', interface: 'Result'})
 configTypes.push({type: getType<UrlScan.Search>(), id: 'urlscan', name: 'UrlScan', interface: 'Search'})

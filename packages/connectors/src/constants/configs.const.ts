@@ -211,6 +211,7 @@ import { Unlayer } from '../configs/unlayer.config'
 import { Unsplash } from '../configs/unsplash.config'
 import { Up42 } from '../configs/up42.config'
 import { UptimeRobot } from '../configs/uptimerobot.config'
+import { UrlBae } from '../configs/urlbae.config'
 import { UrlScan } from '../configs/urlscan.config'
 import { UsePlunk } from '../configs/useplunk.config'
 import { Userfront } from '../configs/userfront.config'
@@ -436,6 +437,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['unsplash', Unsplash.API],
 ['up42', Up42.API],
 ['uptimerobot', UptimeRobot.API],
+['urlbae', UrlBae.API],
 ['urlscan', UrlScan.API],
 ['useplunk', UsePlunk.API],
 ['userfront', Userfront.API],

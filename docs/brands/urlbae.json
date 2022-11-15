@@ -1,0 +1,23 @@
+{
+  "name": "UrlBae",
+  "domain": "urlbae.com",
+  "claimed": false,
+  "description": "Most Advanced Free Url Shortener 2022 | Instagram Bio Links Page Generator | QR Code Generator + so much more (Completely free)",
+  "links": [],
+  "logos": [],
+  "colors": [
+    { "hex": "#e01ad3", "type": "accent", "brightness": 81 },
+    { "hex": "#9400b4", "type": "dark", "brightness": 44 },
+    { "hex": "#ffffff", "type": "light", "brightness": 255 }
+  ],
+  "fonts": [
+    {
+      "name": "var(--bs-font-sans-serif)",
+      "type": "body",
+      "origin": "custom",
+      "originId": null,
+      "weights": []
+    }
+  ],
+  "images": []
+}
