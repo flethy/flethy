@@ -1,0 +1,24 @@
+# UrlBae
+
+## Links
+
+* URL: [https://urlbae.com/](https://urlbae.com/)
+* Documentation: [https://urlbae.com/developers](https://urlbae.com/developers)
+* Tags: web2
+* Category: utils
+* Type: url-shortener
+
+## API
+
+### Authentication
+
+* Authorization: header:bearer
+
+### url
+
+#### add
+
+##### Shorten a Link
+
+* Description: To shorten a link, you need to send a valid data in JSON via a POST request. The data must be sent as the raw body of your request as shown below. The example below shows all the parameters you can send but you are not required to send all (See table for more info).
+* Docs: [https://urlbae.com/developers#shorten-a-link](https://urlbae.com/developers#shorten-a-link)

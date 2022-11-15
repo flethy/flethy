@@ -216,6 +216,7 @@ import { HttpRequest } from './controllers/HttpRequest'
 import { logger } from './utils/Logger'
 import TinyURL from '@flethy/connectors/src/configs/tinyurl.config'
 import LogSnag from '@flethy/connectors/src/configs/logsnag.config'
+import UrlBae from '@flethy/connectors/src/configs/urlbae.config'
 
 async function main() {
   const requestConfigs: {
@@ -2952,8 +2953,13 @@ async function main() {
       'body:title': 'New Insight!',
       'body:value': 123,
     }),
+    urlbaeShorten: nao<UrlBae.ShortenLink>({
+      kind: 'urlbae.url.add',
+      'auth:Authorization': process.env.URLBAE_API_KEY,
+      'body:url': 'https://flethy.com/roadmap',
+    }),
   }
-  const requestConfig = requestConfigs.logsnagInsight
+  const requestConfig = requestConfigs.urlbaeShorten
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

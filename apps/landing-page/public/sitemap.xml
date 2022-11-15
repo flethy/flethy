@@ -865,6 +865,10 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://flethy.com/integrations/urlbae</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://flethy.com/integrations/urlscan</loc>
     <priority>0.8</priority>
   </url>

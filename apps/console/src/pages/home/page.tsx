@@ -23,7 +23,16 @@ export default observer(() => {
 					direction={{ base: 'column', md: 'row' }}
 				>
 					<Text>todo...</Text>
-					<Button onClick={() => api.flethy.test()}>Nice</Button>
+					<Button
+						onClick={() =>
+							api.flethy.onboard({
+								workspaceName: 'first workspace',
+								projectName: 'first project',
+							})
+						}
+					>
+						Nice
+					</Button>
 				</Stack>
 			</Container>
 		</>

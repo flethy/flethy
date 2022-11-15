@@ -225,6 +225,7 @@ The following Endpoints are currently supported.
 * [Unsplash](./api/unsplash.md)
 * [Up42](./api/up42.md)
 * [UptimeRobot](./api/uptimerobot.md)
+* [UrlBae](./api/urlbae.md)
 * [UrlScan](./api/urlscan.md)
 * [UsePlunk](./api/useplunk.md)
 * [Userfront](./api/userfront.md)
