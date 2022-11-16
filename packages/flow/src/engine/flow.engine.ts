@@ -1,13 +1,19 @@
-import { FlowInstanceStartConfig, FlowNode } from '../types/flow.types'
+import {
+  EngineOptions,
+  FlowInstanceStartConfig,
+  FlowNode,
+} from '../types/flow.types'
 import { ExecutionUtils } from '../utils/execution.utils'
 import { FlowUtils } from '../utils/flow.utils'
 import { Logger } from '../utils/logger.utils'
 
 export class FlowEngine {
   private utils: FlowUtils
+  private engineOptions: EngineOptions | undefined
 
   constructor(config: FlowInstanceStartConfig) {
     this.utils = new FlowUtils(config)
+    this.engineOptions = config.options
     this.utils.checkInstancePreconditions()
   }
 
@@ -16,14 +22,12 @@ export class FlowEngine {
     while (this.utils.shouldRun()) {
       // if just started: update state to running
       this.utils.updateState()
-      Logger.info(this.utils.getInstanceContext())
+      this.debug(this.utils.getInstanceContext())
       await Promise.all(
         this.utils.nextNodes().map((nextNode) => this.execute(nextNode)),
       )
     }
-    Logger.info(this.utils.getInstanceContext())
-    // console.log(this.instanceContext)
-    // console.log(JSON.stringify(this.instanceContext))
+    this.debug(this.utils.getInstanceContext())
   }
 
   public getContent(type: 'all' | 'instanceContext' = 'instanceContext') {
@@ -74,5 +78,11 @@ export class FlowEngine {
     this.utils.removeExecutingNodeId(node.id)
     await this.utils.addNextNodes(node)
     this.utils.addLog({ id: node.id, type: 'out' })
+  }
+
+  private debug(message: any) {
+    if (this.engineOptions?.debug === true) {
+      Logger.info(message)
+    }
   }
 }
