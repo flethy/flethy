@@ -739,6 +739,26 @@ async function main() {
       'body:client_secret': process.env.AUTH0_CLIENT_SECRET,
       'subdomain:tenant': process.env.AUTH0_TENANT,
     }),
+    auth0UpdateUser: nao<Auth0.UpdateUser>({
+      kind: 'auth0.users.update',
+      'auth:Authorization': process.env.AUTH0_JWT,
+      'param:id': process.env.AUTH0_USER_ID,
+      'subdomain:tenant': process.env.AUTH0_TENANT,
+      'body:app_metadata': {
+        ws: [
+          {
+            id: '123',
+            r: ['o'],
+            p: [
+              {
+                id: '456',
+                r: ['o'],
+              },
+            ],
+          },
+        ],
+      },
+    }),
     auth0SearchUsers: nao<Auth0.ListOrSearchUsers>({
       kind: 'auth0.users.listOrSearch',
       'auth:Authorization': process.env.AUTH0_JWT,
@@ -2959,7 +2979,7 @@ async function main() {
       'body:url': 'https://flethy.com/roadmap',
     }),
   }
-  const requestConfig = requestConfigs.urlbaeShorten
+  const requestConfig = requestConfigs.auth0UpdateUser
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

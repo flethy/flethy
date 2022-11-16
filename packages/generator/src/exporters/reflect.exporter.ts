@@ -252,6 +252,7 @@ configTypes.push({type: getType<Auth0.GetUsersByEmail>(), id: 'auth0', name: 'Au
 configTypes.push({type: getType<Auth0.ListOrSearchUsers>(), id: 'auth0', name: 'Auth0', interface: 'ListOrSearchUsers'})
 configTypes.push({type: getType<Auth0.GetUser>(), id: 'auth0', name: 'Auth0', interface: 'GetUser'})
 configTypes.push({type: getType<Auth0.CreateUser>(), id: 'auth0', name: 'Auth0', interface: 'CreateUser'})
+configTypes.push({type: getType<Auth0.UpdateUser>(), id: 'auth0', name: 'Auth0', interface: 'UpdateUser'})
 configTypes.push({type: getType<Auth0.DeleteUser>(), id: 'auth0', name: 'Auth0', interface: 'DeleteUser'})
 configTypes.push({type: getType<Auth0.GetConnections>(), id: 'auth0', name: 'Auth0', interface: 'GetConnections'})
 configTypes.push({type: getType<Auth0.GetRoles>(), id: 'auth0', name: 'Auth0', interface: 'GetRoles'})

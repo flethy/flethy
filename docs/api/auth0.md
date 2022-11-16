@@ -67,6 +67,17 @@
 * Description: Create a new user for a given database or passwordless connection.
 * Docs: [https://auth0.com/docs/api/management/v2#!/Users/post_users](https://auth0.com/docs/api/management/v2#!/Users/post_users)
 
+#### update
+
+##### Authentication
+
+* Authorization: header:bearer
+
+##### Update a User
+
+* Description: Update a user.
+* Docs: [https://auth0.com/docs/api/management/v2#!/Users/patch_users_by_id](https://auth0.com/docs/api/management/v2#!/Users/patch_users_by_id)
+
 #### delete
 
 ##### Authentication

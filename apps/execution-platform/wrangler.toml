@@ -9,3 +9,9 @@ kv_namespaces = [
     { binding = "WORKFLOWS", id = "bf07de1d15824dce961dca2a5e659508", preview_id = "5e8d33044ed64dbb85dbbabb4491c160" },
     { binding = "WORKSPACES", id = "asd", preview_id = "asd2" }
 ]
+
+[vars]
+SECRET_AUTH_CLIENT_ID = ""
+SECRET_AUTH_CLIENT_SECRET = ""
+SECRET_AUTH_AUDIENCE = ""
+SECRET_AUTH_TENANT = ""

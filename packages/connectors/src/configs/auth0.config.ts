@@ -19,6 +19,7 @@ export namespace Auth0 {
         listOrSearch: ApiDescriptionEndpoint
         get: ApiDescriptionEndpoint
         create: ApiDescriptionEndpoint
+        update: ApiDescriptionEndpoint
         delete: ApiDescriptionEndpoint
       }
     | { get: ApiDescriptionEndpoint }
@@ -77,6 +78,28 @@ export namespace Auth0 {
 
   export interface CreateUser extends ManagementApiBase, RequestParams {
     kind: 'auth0.users.create'
+    'body:email'?: string
+    'body:phone_number'?: string
+    'body:user_metadata'?: any
+    'body:blocked'?: boolean
+    'body:email_verified'?: boolean
+    'body:phone_verified'?: boolean
+    'body:app_metadata'?: any
+    'body:given_name'?: string
+    'body:family_name'?: string
+    'body:name'?: string
+    'body:nickname'?: string
+    'body:picture'?: string
+    'body:user_id'?: string
+    'body:connection'?: string
+    'body:password'?: string
+    'body:verify_email'?: boolean
+    'body:username'?: string
+  }
+
+  export interface UpdateUser extends ManagementApiBase, RequestParams {
+    kind: 'auth0.users.update'
+    'param:id': string
     'body:email'?: string
     'body:phone_number'?: string
     'body:user_metadata'?: any
@@ -258,6 +281,34 @@ export namespace Auth0 {
             {
               name: 'users',
               type: 'static',
+            },
+          ],
+        },
+        update: {
+          interface: 'UpdateUser',
+          meta: {
+            title: 'Update a User',
+            description: 'Update a user.',
+            docs: 'https://auth0.com/docs/api/management/v2#!/Users/patch_users_by_id',
+          },
+          auth: ManagementApiAuth,
+          method: 'PATCH',
+          paths: [
+            {
+              name: 'api',
+              type: 'static',
+            },
+            {
+              name: 'v2',
+              type: 'static',
+            },
+            {
+              name: 'users',
+              type: 'static',
+            },
+            {
+              name: 'id',
+              type: 'param',
             },
           ],
         },
