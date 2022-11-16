@@ -1,0 +1,38 @@
+{
+  "name": "Merge",
+  "domain": "merge.dev",
+  "claimed": false,
+  "description": "Quickly add native integrations to your products. One API to add all HR platforms.",
+  "links": [],
+  "logos": [
+    {
+      "type": "logo",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idfmcu6uIh/id6WZHSyyM.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 129,
+          "width": 312,
+          "size": 9854
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#423d4b", "type": "dark", "brightness": 63 },
+    { "hex": "#ffffff", "type": "light", "brightness": 255 },
+    { "hex": "#3d63eb", "type": "accent", "brightness": 101 }
+  ],
+  "fonts": [
+    {
+      "name": "Mukta",
+      "type": "body",
+      "origin": "google",
+      "originId": "Mukta",
+      "weights": []
+    }
+  ],
+  "images": []
+}

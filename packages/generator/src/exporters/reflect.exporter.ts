@@ -119,6 +119,7 @@ import { MailerSend } from '../../../connectors/src/configs/mailersend.config'
 import { MailJet } from '../../../connectors/src/configs/mailjet.config'
 import { MailPace } from '../../../connectors/src/configs/mailpace.config'
 import { Medium } from '../../../connectors/src/configs/medium.config'
+import { MergeApi } from '../../../connectors/src/configs/mergeapi.config'
 import { Mergent } from '../../../connectors/src/configs/mergent.config'
 import { Mezmo } from '../../../connectors/src/configs/mezmo.config'
 import { MicroDev } from '../../../connectors/src/configs/microdev.config'
@@ -496,6 +497,7 @@ configTypes.push({type: getType<Medium.GetPublications>(), id: 'medium', name: '
 configTypes.push({type: getType<Medium.CreatePost>(), id: 'medium', name: 'Medium', interface: 'CreatePost'})
 configTypes.push({type: getType<Medium.CreatePostUnderPublication>(), id: 'medium', name: 'Medium', interface: 'CreatePostUnderPublication'})
 configTypes.push({type: getType<Medium.GetContributorsOfPublication>(), id: 'medium', name: 'Medium', interface: 'GetContributorsOfPublication'})
+configTypes.push({type: getType<MergeApi.BankInfoGetAll>(), id: 'mergeapi', name: 'MergeApi', interface: 'BankInfoGetAll'})
 configTypes.push({type: getType<Mergent.CreateTask>(), id: 'mergent', name: 'Mergent', interface: 'CreateTask'})
 configTypes.push({type: getType<Mezmo.IngestLogs>(), id: 'mezmo', name: 'Mezmo', interface: 'IngestLogs'})
 configTypes.push({type: getType<MicroDev.StorageDbCreateRecord>(), id: 'microdev', name: 'MicroDev', interface: 'StorageDbCreateRecord'})

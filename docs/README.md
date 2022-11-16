@@ -140,6 +140,7 @@ The following Endpoints are currently supported.
 * [MailJet](./api/mailjet.md)
 * [MailPace](./api/mailpace.md)
 * [Medium](./api/medium.md)
+* [MergeApi](./api/mergeapi.md)
 * [Mergent](./api/mergent.md)
 * [Mezmo](./api/mezmo.md)
 * [MicroDev](./api/microdev.md)
