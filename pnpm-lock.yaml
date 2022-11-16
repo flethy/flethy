@@ -112,7 +112,7 @@ importers:
   apps/execution-platform:
     specifiers:
       '@cloudflare/workers-types': 3.18.0
-      '@flethy/flow': ^0.0.222
+      '@flethy/flow': ^0.0.228
       '@tsndr/cloudflare-worker-jwt': ^2.1.2
       '@types/node': 18.11.9
       '@typescript-eslint/eslint-plugin': ^5.42.1
@@ -129,7 +129,7 @@ importers:
       worktop: ^0.7.3
       wrangler: 2.2.1
     dependencies:
-      '@flethy/flow': 0.0.222
+      '@flethy/flow': 0.0.228
     devDependencies:
       '@cloudflare/workers-types': 3.18.0
       '@tsndr/cloudflare-worker-jwt': 2.1.2
@@ -3122,10 +3122,6 @@ packages:
     resolution: {integrity: sha512-dNEBJ+2KnDRW1nEyyFMj9vQDRbJd6kvggDEDnIpkXAgjdcySVjbRHsyGXlxf97FNXD/aan+Gg9AYWzC2Z6qD+Q==}
     dev: false
 
-  /@flethy/connectors/0.0.221:
-    resolution: {integrity: sha512-BB7IXgRgb7s8ov49w/eD5bxAPekOrX1BO6OAm/RUbEceRik8E1Z6k173SS7OaVWlyDeh9AZZEGy0VJCGcdVAFg==}
-    dev: false
-
   /@flethy/connectors/0.0.222:
     resolution: {integrity: sha512-IQxSQHncwffRcerTsHLodmCVzhtOQyQaKE5OjbzKIK/B79W/M9H3ph4wlyIVjImk+ciKnt/68/w/pu7UC9BUMg==}
     dev: false
@@ -3144,10 +3140,10 @@ packages:
       - debug
     dev: false
 
-  /@flethy/flow/0.0.222:
-    resolution: {integrity: sha512-k6tnWgNj0RCn7ihqM8OFjneX0SFXkcTfZ9CD5Nb5tKB4siacuwrb2N9xKckp1F0hN//kzYMhiUjYmiZO5KUAcQ==}
+  /@flethy/flow/0.0.228:
+    resolution: {integrity: sha512-CZnBheRjr6b2ez+/AnagrNYJv8myolczS4n+ThflkCwMvFACMDhXCHACW6CsH4d2gXX1dXxWqSwNgPNIhSBhQA==}
     dependencies:
-      '@flethy/connectors': 0.0.221
+      '@flethy/connectors': 0.0.227
       axios: 1.1.2
       jsonata: 1.8.6
     transitivePeerDependencies:

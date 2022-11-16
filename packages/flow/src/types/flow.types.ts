@@ -40,6 +40,10 @@ export interface FlowNodeLog {
 
 export type FlowState = 'stopped' | 'started' | 'running' | 'error'
 
+export interface EngineOptions {
+  debug?: boolean
+}
+
 export interface FlowContext {
   state: FlowState
   context: any
@@ -55,6 +59,7 @@ export interface FlowInstanceStartConfig {
   input?: any
   instanceContext?: FlowContext
   env: FlowEnvironment
+  options?: EngineOptions
 }
 
 export interface FlowEnvironment {
