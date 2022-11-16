@@ -4,6 +4,7 @@ import { ErrorType, FlethyError } from "../utils/error.utils";
 import { KVUtils } from "../utils/kv.utils";
 import { ValidationUtils } from "../utils/validation.utils";
 import { ProjectRole, WorkspaceRole } from "./auth.controller";
+import { FlethyFlowController } from "./flethyflow.controller";
 
 // KV NAMESPACE
 
@@ -103,6 +104,14 @@ export class WorkspaceController {
       workspace,
       { metadata: { ...workspaceMetadata } }
     );
+
+    if (success) {
+      await FlethyFlowController.onboardUser({
+        userId: request.userId,
+        workspace,
+      });
+    }
+
     return { success, workspaceMetadata };
   }
 }
