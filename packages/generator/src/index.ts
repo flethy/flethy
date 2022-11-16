@@ -2979,7 +2979,7 @@ async function main() {
       'body:url': 'https://flethy.com/roadmap',
     }),
   }
-  const requestConfig = requestConfigs.auth0UpdateUser
+  const requestConfig = requestConfigs.auth0Token
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)
