@@ -119,6 +119,7 @@ import { MailerSend } from '../configs/mailersend.config'
 import { MailJet } from '../configs/mailjet.config'
 import { MailPace } from '../configs/mailpace.config'
 import { Medium } from '../configs/medium.config'
+import { MergeApi } from '../configs/mergeapi.config'
 import { Mergent } from '../configs/mergent.config'
 import { Mezmo } from '../configs/mezmo.config'
 import { MicroDev } from '../configs/microdev.config'
@@ -345,6 +346,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['mailjet', MailJet.API],
 ['mailpace', MailPace.API],
 ['medium', Medium.API],
+['mergeapi', MergeApi.API],
 ['mergent', Mergent.API],
 ['mezmo', Mezmo.API],
 ['microdev', MicroDev.API],

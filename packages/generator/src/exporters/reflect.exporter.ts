@@ -119,6 +119,7 @@ import { MailerSend } from '../../../connectors/src/configs/mailersend.config'
 import { MailJet } from '../../../connectors/src/configs/mailjet.config'
 import { MailPace } from '../../../connectors/src/configs/mailpace.config'
 import { Medium } from '../../../connectors/src/configs/medium.config'
+import { MergeApi } from '../../../connectors/src/configs/mergeapi.config'
 import { Mergent } from '../../../connectors/src/configs/mergent.config'
 import { Mezmo } from '../../../connectors/src/configs/mezmo.config'
 import { MicroDev } from '../../../connectors/src/configs/microdev.config'
@@ -251,6 +252,7 @@ configTypes.push({type: getType<Auth0.GetUsersByEmail>(), id: 'auth0', name: 'Au
 configTypes.push({type: getType<Auth0.ListOrSearchUsers>(), id: 'auth0', name: 'Auth0', interface: 'ListOrSearchUsers'})
 configTypes.push({type: getType<Auth0.GetUser>(), id: 'auth0', name: 'Auth0', interface: 'GetUser'})
 configTypes.push({type: getType<Auth0.CreateUser>(), id: 'auth0', name: 'Auth0', interface: 'CreateUser'})
+configTypes.push({type: getType<Auth0.UpdateUser>(), id: 'auth0', name: 'Auth0', interface: 'UpdateUser'})
 configTypes.push({type: getType<Auth0.DeleteUser>(), id: 'auth0', name: 'Auth0', interface: 'DeleteUser'})
 configTypes.push({type: getType<Auth0.GetConnections>(), id: 'auth0', name: 'Auth0', interface: 'GetConnections'})
 configTypes.push({type: getType<Auth0.GetRoles>(), id: 'auth0', name: 'Auth0', interface: 'GetRoles'})
@@ -496,6 +498,7 @@ configTypes.push({type: getType<Medium.GetPublications>(), id: 'medium', name: '
 configTypes.push({type: getType<Medium.CreatePost>(), id: 'medium', name: 'Medium', interface: 'CreatePost'})
 configTypes.push({type: getType<Medium.CreatePostUnderPublication>(), id: 'medium', name: 'Medium', interface: 'CreatePostUnderPublication'})
 configTypes.push({type: getType<Medium.GetContributorsOfPublication>(), id: 'medium', name: 'Medium', interface: 'GetContributorsOfPublication'})
+configTypes.push({type: getType<MergeApi.BankInfoGetAll>(), id: 'mergeapi', name: 'MergeApi', interface: 'BankInfoGetAll'})
 configTypes.push({type: getType<Mergent.CreateTask>(), id: 'mergent', name: 'Mergent', interface: 'CreateTask'})
 configTypes.push({type: getType<Mezmo.IngestLogs>(), id: 'mezmo', name: 'Mezmo', interface: 'IngestLogs'})
 configTypes.push({type: getType<MicroDev.StorageDbCreateRecord>(), id: 'microdev', name: 'MicroDev', interface: 'StorageDbCreateRecord'})

@@ -3,12 +3,10 @@ import * as Cache from "worktop/cache";
 import * as CORS from "worktop/cors";
 import { SECRET } from "./constants/admin.const";
 import { AuthController, TokenScope } from "./controllers/auth.controller";
-import { SecretsController } from "./controllers/secrets.controller";
 import { AuthRoute } from "./routes/auth.route";
 import { FrontendRoute } from "./routes/frontend.route";
 import { Version1 } from "./routes/v1.route";
 import { ErrorMiddleware } from "./utils/error.utils";
-import { PermissionUtils } from "./utils/permission.utils";
 // https://www.npmjs.com/package/worktop
 
 const API = new Router();
