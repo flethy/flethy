@@ -88,6 +88,7 @@ import { Grist } from '../configs/grist.config'
 import { HackerNews } from '../configs/hackernews.config'
 import { Harvest } from '../configs/harvest.config'
 import { Hashnode } from '../configs/hashnode.config'
+import { Hasura } from '../configs/hasura.config'
 import { HeapAnalytics } from '../configs/heapanalytics.config'
 import { HelloSign } from '../configs/hellosign.config'
 import { Here } from '../configs/here.config'
@@ -315,6 +316,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['hackernews', HackerNews.API],
 ['harvest', Harvest.API],
 ['hashnode', Hashnode.API],
+['hasura', Hasura.API],
 ['heapanalytics', HeapAnalytics.API],
 ['hellosign', HelloSign.API],
 ['here', Here.API],

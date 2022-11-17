@@ -217,6 +217,7 @@ import { logger } from './utils/Logger'
 import TinyURL from '@flethy/connectors/src/configs/tinyurl.config'
 import LogSnag from '@flethy/connectors/src/configs/logsnag.config'
 import UrlBae from '@flethy/connectors/src/configs/urlbae.config'
+import Hasura from '@flethy/connectors/src/configs/hasura.config'
 
 async function main() {
   const requestConfigs: {
@@ -2978,8 +2979,30 @@ async function main() {
       'auth:Authorization': process.env.URLBAE_API_KEY,
       'body:url': 'https://flethy.com/roadmap',
     }),
+    hasuraGraphql: nao<Hasura.GraphQLQuery>({
+      kind: 'hasura.graphql.query',
+      'auth:x-hasura-admin-secret': process.env.HASURA_API_KEY,
+      'subdomain:project': process.env.HASURA_PROJECT,
+      'body:query': `query lookupCustomerOrder {
+        customer {
+          id
+          first_name
+          last_name
+          username
+          email
+          phone
+          orders {
+            id
+            order_date
+            product
+            purchase_price
+            discount_price
+          }
+        }
+      }`,
+    }),
   }
-  const requestConfig = requestConfigs.auth0Token
+  const requestConfig = requestConfigs.hasuraGraphql
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

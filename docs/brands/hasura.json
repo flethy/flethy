@@ -1,0 +1,153 @@
+{
+  "name": "Hasura",
+  "domain": "hasura.io",
+  "claimed": false,
+  "description": "Blazing fast, instant realtime GraphQL APIs and eventing on Postgres with fine grained access control",
+  "links": [
+    {
+      "name": "youtube",
+      "url": "https://youtube.com/channel/UCZo1ciR8pZvdD3Wxp9aSNhQ"
+    },
+    {
+      "name": "crunchbase",
+      "url": "https://crunchbase.com/organization/hasura"
+    },
+    { "name": "github", "url": "https://github.com/hasura" },
+    { "name": "twitter", "url": "https://twitter.com/hasurahq" },
+    { "name": "facebook", "url": "https://facebook.com/hasurahq" },
+    { "name": "instagram", "url": "https://instagram.com/hasurahq" },
+    { "name": "linkedin", "url": "https://linkedin.com/company/hasura" }
+  ],
+  "logos": [
+    {
+      "type": "logo",
+      "theme": "light",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idP2XuN3gk/idkBt4zXwl.svg",
+          "background": "transparent",
+          "format": "svg",
+          "size": 4530
+        },
+        {
+          "src": "https://asset.brandfetch.io/idP2XuN3gk/idO9Kt_7Yj.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 273,
+          "width": 800,
+          "size": 30976
+        }
+      ]
+    },
+    {
+      "type": "logo",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idP2XuN3gk/idKY_Qa0rU.svg",
+          "background": "transparent",
+          "format": "svg",
+          "size": 4530
+        },
+        {
+          "src": "https://asset.brandfetch.io/idP2XuN3gk/idMHUOOl9L.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 273,
+          "width": 800,
+          "size": 24730
+        }
+      ]
+    },
+    {
+      "type": "symbol",
+      "theme": "light",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idP2XuN3gk/idKohMm_gM.svg",
+          "background": "transparent",
+          "format": "svg",
+          "size": 2059
+        },
+        {
+          "src": "https://asset.brandfetch.io/idP2XuN3gk/idlk8QS2KT.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 826,
+          "width": 800,
+          "size": 52986
+        }
+      ]
+    },
+    {
+      "type": "symbol",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idP2XuN3gk/id4_j-WTFS.svg",
+          "background": "transparent",
+          "format": "svg",
+          "size": 2059
+        },
+        {
+          "src": "https://asset.brandfetch.io/idP2XuN3gk/idcw9yaWJ_.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 826,
+          "width": 800,
+          "size": 95090
+        }
+      ]
+    },
+    {
+      "type": "icon",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idP2XuN3gk/idf2jzv-p5.png",
+          "background": null,
+          "format": "png",
+          "height": 400,
+          "width": 400,
+          "size": 51876
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#1b2638", "type": "dark", "brightness": 37 },
+    { "hex": "#f8f8f8", "type": "light", "brightness": 248 },
+    { "hex": "#1eb4d4", "type": "accent", "brightness": 150 }
+  ],
+  "fonts": [
+    {
+      "name": "Darker Grotesque",
+      "type": "title",
+      "origin": "google",
+      "originId": "Darker+Grotesque",
+      "weights": []
+    },
+    {
+      "name": "Darker Grotesque",
+      "type": "body",
+      "origin": "google",
+      "originId": "Darker+Grotesque",
+      "weights": []
+    }
+  ],
+  "images": [
+    {
+      "type": "banner",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idP2XuN3gk/idqm6St9Ix.png",
+          "background": null,
+          "format": "png",
+          "height": 500,
+          "width": 1500,
+          "size": 399220
+        }
+      ]
+    }
+  ]
+}
