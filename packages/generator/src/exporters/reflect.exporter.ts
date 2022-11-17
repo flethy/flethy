@@ -88,6 +88,7 @@ import { Grist } from '../../../connectors/src/configs/grist.config'
 import { HackerNews } from '../../../connectors/src/configs/hackernews.config'
 import { Harvest } from '../../../connectors/src/configs/harvest.config'
 import { Hashnode } from '../../../connectors/src/configs/hashnode.config'
+import { Hasura } from '../../../connectors/src/configs/hasura.config'
 import { HeapAnalytics } from '../../../connectors/src/configs/heapanalytics.config'
 import { HelloSign } from '../../../connectors/src/configs/hellosign.config'
 import { Here } from '../../../connectors/src/configs/here.config'
@@ -434,6 +435,7 @@ configTypes.push({type: getType<HackerNews.GetUser>(), id: 'hackernews', name: '
 configTypes.push({type: getType<HackerNews.GetLive>(), id: 'hackernews', name: 'HackerNews', interface: 'GetLive'})
 configTypes.push({type: getType<Harvest.ListProjects>(), id: 'harvest', name: 'Harvest', interface: 'ListProjects'})
 configTypes.push({type: getType<Hashnode.GraphQLQuery>(), id: 'hashnode', name: 'Hashnode', interface: 'GraphQLQuery'})
+configTypes.push({type: getType<Hasura.GraphQLQuery>(), id: 'hasura', name: 'Hasura', interface: 'GraphQLQuery'})
 configTypes.push({type: getType<HeapAnalytics.ServerSideTrack>(), id: 'heapanalytics', name: 'HeapAnalytics', interface: 'ServerSideTrack'})
 configTypes.push({type: getType<HelloSign.GetAccount>(), id: 'hellosign', name: 'HelloSign', interface: 'GetAccount'})
 configTypes.push({type: getType<HelloSign.SendSignatureRequest>(), id: 'hellosign', name: 'HelloSign', interface: 'SendSignatureRequest'})

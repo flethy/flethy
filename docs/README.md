@@ -110,6 +110,7 @@ The following Endpoints are currently supported.
 * [HackerNews](./api/hackernews.md)
 * [Harvest](./api/harvest.md)
 * [Hashnode](./api/hashnode.md)
+* [Hasura](./api/hasura.md)
 * [HeapAnalytics](./api/heapanalytics.md)
 * [HelloSign](./api/hellosign.md)
 * [Here](./api/here.md)

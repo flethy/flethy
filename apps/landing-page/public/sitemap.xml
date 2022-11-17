@@ -373,6 +373,10 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://flethy.com/integrations/hasura</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://flethy.com/integrations/heapanalytics</loc>
     <priority>0.8</priority>
   </url>
