@@ -55,31 +55,8 @@
 				}
 			}
 		},
-		"integration": {
-			"subtitle": "Endpoints",
-			"url": "Website",
-			"docs": "Documentation",
-			"signup": "Signup",
-			"pricing": "Pricing",
-			"integratedOn": "Integrated on",
-			"endpoints": {
-				"title": "Endpoint",
-				"description": "Description",
-				"docs": "Docs",
-				"docslabel": "docs",
-				"method": "Method",
-				"generalDescription": "Overview of all integrated endpoints for this service. If you're missing an endpoint, please let us know!"
-			}
-		},
-		"pitchdeck": {
-			"title": "Pitch Deck",
-			"subtitle": ":)"
-		},
-		"roadmap": {
-			"title": "Roadmap",
-			"subtitle": "Always progress!",
-			"upcoming": "Upcoming",
-			"completed": "Done"
+		"workflowEditor": {
+			"title": "Workflow Editor"
 		}
 	}
 }

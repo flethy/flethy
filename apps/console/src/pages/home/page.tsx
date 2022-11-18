@@ -1,8 +1,7 @@
-import { Button, Container, Stack, Text, useColorMode } from '@chakra-ui/react'
+import { Button, Container, Stack, Text } from '@chakra-ui/react'
 import { observer } from 'mobx-react-lite'
 import { useTranslation } from 'react-i18next'
 import { useMst } from '../../models/root'
-import Editor, { DiffEditor, useMonaco, loader } from '@monaco-editor/react'
 
 export default observer(() => {
 	const { t } = useTranslation('app')
@@ -13,7 +12,6 @@ export default observer(() => {
 			pages: { home: page },
 		},
 	} = useMst()
-	const { colorMode } = useColorMode()
 
 	return (
 		<>
@@ -35,18 +33,6 @@ export default observer(() => {
 					>
 						Nice
 					</Button>
-				</Stack>
-				<Stack>
-					<Editor
-						height="90vh"
-						theme={colorMode === 'light' ? 'vs-light' : 'vs-dark'}
-						defaultLanguage="json"
-						defaultValue={`{ "hallo": "world" }`}
-						onChange={(value, event) => {
-							console.log(value)
-							console.log(event)
-						}}
-					/>
 				</Stack>
 			</Container>
 		</>
