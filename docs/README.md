@@ -178,6 +178,7 @@ The following Endpoints are currently supported.
 * [Prerender](./api/prerender.md)
 * [ProductHunt](./api/producthunt.md)
 * [PurgoMalum](./api/purgomalum.md)
+* [PurpleAir](./api/purpleair.md)
 * [QuickChart](./api/quickchart.md)
 * [RapidApi](./api/rapidapi.md)
 * [Rebrandly](./api/rebrandly.md)

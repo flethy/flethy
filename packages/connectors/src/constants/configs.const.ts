@@ -162,6 +162,7 @@ import { PostHog } from '../configs/posthog.config'
 import { Prerender } from '../configs/prerender.config'
 import { ProductHunt } from '../configs/producthunt.config'
 import { PurgoMalum } from '../configs/purgomalum.config'
+import { PurpleAir } from '../configs/purpleair.config'
 import { QuickChart } from '../configs/quickchart.config'
 import { RapidApi } from '../configs/rapidapi.config'
 import { Rebrandly } from '../configs/rebrandly.config'
@@ -390,6 +391,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['prerender', Prerender.API],
 ['producthunt', ProductHunt.API],
 ['purgomalum', PurgoMalum.API],
+['purpleair', PurpleAir.API],
 ['quickchart', QuickChart.API],
 ['rapidapi', RapidApi.API],
 ['rebrandly', Rebrandly.API],

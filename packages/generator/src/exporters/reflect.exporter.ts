@@ -162,6 +162,7 @@ import { PostHog } from '../../../connectors/src/configs/posthog.config'
 import { Prerender } from '../../../connectors/src/configs/prerender.config'
 import { ProductHunt } from '../../../connectors/src/configs/producthunt.config'
 import { PurgoMalum } from '../../../connectors/src/configs/purgomalum.config'
+import { PurpleAir } from '../../../connectors/src/configs/purpleair.config'
 import { QuickChart } from '../../../connectors/src/configs/quickchart.config'
 import { RapidApi } from '../../../connectors/src/configs/rapidapi.config'
 import { Rebrandly } from '../../../connectors/src/configs/rebrandly.config'
@@ -589,6 +590,8 @@ configTypes.push({type: getType<Prerender.Sitemap>(), id: 'prerender', name: 'Pr
 configTypes.push({type: getType<Prerender.ClearCache>(), id: 'prerender', name: 'Prerender', interface: 'ClearCache'})
 configTypes.push({type: getType<ProductHunt.GetCollections>(), id: 'producthunt', name: 'ProductHunt', interface: 'GetCollections'})
 configTypes.push({type: getType<PurgoMalum.Profanity>(), id: 'purgomalum', name: 'PurgoMalum', interface: 'Profanity'})
+configTypes.push({type: getType<PurpleAir.GetSensorsData>(), id: 'purpleair', name: 'PurpleAir', interface: 'GetSensorsData'})
+configTypes.push({type: getType<PurpleAir.GetSensorData>(), id: 'purpleair', name: 'PurpleAir', interface: 'GetSensorData'})
 configTypes.push({type: getType<QuickChart.PlotChart>(), id: 'quickchart', name: 'QuickChart', interface: 'PlotChart'})
 configTypes.push({type: getType<RapidApi.ArticleExtractor>(), id: 'rapidapi', name: 'RapidApi', interface: 'ArticleExtractor'})
 configTypes.push({type: getType<Rebrandly.CreateLink>(), id: 'rebrandly', name: 'Rebrandly', interface: 'CreateLink'})

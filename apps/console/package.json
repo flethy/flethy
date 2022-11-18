@@ -21,6 +21,7 @@
 		"@flethy/flow": "^0.0.203",
 		"@fontsource/open-sans": "^4.5.13",
 		"@fontsource/raleway": "^4.5.11",
+		"@monaco-editor/react": "^4.4.6",
 		"framer-motion": "^7.6.2",
 		"i18next": "^22.0.3",
 		"mobx": "6.6.2",
