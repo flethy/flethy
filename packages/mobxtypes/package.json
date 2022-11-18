@@ -7,7 +7,7 @@
 		"build": "tsc --p ./tsconfig.json"
 	},
 	"dependencies": {
-		"mobx": "6.6.2",
+		"mobx": "6.7.0",
 		"mobx-state-tree": "5.1.6"
 	},
 	"devDependencies": {

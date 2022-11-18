@@ -22,7 +22,7 @@
 		"@fontsource/raleway": "^4.5.11",
 		"framer-motion": "^7.6.2",
 		"i18next": "^22.0.3",
-		"mobx": "6.6.2",
+		"mobx": "6.7.0",
 		"mobx-react": "7.5.3",
 		"mobx-react-lite": "^3.4.0",
 		"mobx-router": "1.0.0",
