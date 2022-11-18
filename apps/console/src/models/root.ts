@@ -4,6 +4,7 @@ import { createContext, useContext } from 'react'
 import { QuickSearchComponent } from '../components/quicksearch/model'
 import { NotFoundPage } from '../pages/404/model'
 import { HomePage } from '../pages/home/model'
+import { WorkflowEditorPage } from '../pages/workflow-editor/model'
 import ApiStore, { APIType } from './api'
 import { AuthStore } from './api/auth'
 
@@ -14,6 +15,9 @@ export const AUTH_AUDIENCE = import.meta.env.VITE_AUTH_AUDIENCE
 const PagesStore = types.model('Pages', {
 	notFound: types.optional(NotFoundPage, () => NotFoundPage.create()),
 	home: types.optional(HomePage, () => HomePage.create()),
+	workflowEditor: types.optional(WorkflowEditorPage, () =>
+		WorkflowEditorPage.create(),
+	),
 })
 
 const ComponentsStore = types.model('Components', {
