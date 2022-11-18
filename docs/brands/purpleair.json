@@ -1,0 +1,38 @@
+{
+  "name": "PurpleAir",
+  "domain": "purpleair.com",
+  "claimed": false,
+  "description": "A low cost air quality sensor network providing real time measurement of air quality on a public map. Useful to citizen scientists or air quality professionals alike, PurpleAir sensors are easy to install, requiring only a power outlet and WiFi.",
+  "links": [],
+  "logos": [
+    {
+      "type": "logo",
+      "theme": "light",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/id5yGrL6Rj/idF24A3bWt.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 547,
+          "width": 820,
+          "size": 20750
+        },
+        {
+          "src": "https://asset.brandfetch.io/id5yGrL6Rj/id8ZazsfQ3.svg",
+          "background": "transparent",
+          "format": "svg",
+          "height": null,
+          "width": null,
+          "size": 1431
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#8f194b", "type": "dark", "brightness": 54 },
+    { "hex": "#ee8534", "type": "light", "brightness": 149 },
+    { "hex": "#aa44aa", "type": "accent", "brightness": 97 }
+  ],
+  "fonts": [],
+  "images": []
+}

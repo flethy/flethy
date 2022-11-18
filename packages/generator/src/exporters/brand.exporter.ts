@@ -130,6 +130,7 @@ export class BrandExporter {
       'directus',
       'mezmo',
       'ory',
+      'purpleair',
       'restdb',
       'savepage',
       'serpapi',

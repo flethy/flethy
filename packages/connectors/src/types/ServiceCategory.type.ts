@@ -127,6 +127,7 @@ export type DATA_TYPE =
   | 'brands'
   | 'geo'
   | 'carbon-emmisions'
+  | 'air-quality'
   | 'creator-data'
   | 'data-integration'
 export type CLOUD_TYPE = 'services'

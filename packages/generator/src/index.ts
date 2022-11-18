@@ -218,6 +218,7 @@ import TinyURL from '@flethy/connectors/src/configs/tinyurl.config'
 import LogSnag from '@flethy/connectors/src/configs/logsnag.config'
 import UrlBae from '@flethy/connectors/src/configs/urlbae.config'
 import Hasura from '@flethy/connectors/src/configs/hasura.config'
+import PurpleAir from '@flethy/connectors/src/configs/purpleair.config'
 
 async function main() {
   const requestConfigs: {
@@ -3001,8 +3002,13 @@ async function main() {
         }
       }`,
     }),
+    purpleairSensorsData: nao<PurpleAir.GetSensorsData>({
+      kind: 'purpleair.sensors.getAll',
+      'auth:X-API-Key': process.env.PURPLEAIR_READ_KEY,
+      'query:fields': 'name,model,location_type',
+    }),
   }
-  const requestConfig = requestConfigs.hasuraGraphql
+  const requestConfig = requestConfigs.purpleairSensorsData
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)
