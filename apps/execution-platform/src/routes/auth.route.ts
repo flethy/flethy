@@ -1,6 +1,6 @@
 import { ServerRequest } from "worktop/request";
 import { ServerResponse } from "worktop/response";
-import { SECRET } from "../constants/admin.const";
+import { ENVVARS } from "../constants/envvar.const";
 import { AuthController, TokenScope } from "../controllers/auth.controller";
 import { StatusCodeSuccess } from "../utils/router.utils";
 
@@ -16,7 +16,7 @@ export class AuthRoute {
         workspaceId: req.params.workspaceId,
         scopes: body?.scopes,
       },
-      SECRET
+      ENVVARS.config.stage
     );
 
     res.send(StatusCodeSuccess.OK, { token });

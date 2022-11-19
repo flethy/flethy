@@ -1,7 +1,7 @@
 import jwt from "@tsndr/cloudflare-worker-jwt";
 import { CLAIM_WORKSPACES } from "../constants/admin.const";
 import { HOUR } from "../constants/duration.const";
-import { JWK_DEV } from "../constants/jwks.const";
+import { getJwks, JWK_DEV } from "../constants/jwks.const";
 import { ErrorType, FlethyError } from "../utils/error.utils";
 import { ValidationUtils } from "../utils/validation.utils";
 import { Workspace } from "./workspace.controller";
@@ -154,7 +154,7 @@ export class AuthController {
 
     const key = await crypto.subtle.importKey(
       "jwk",
-      JWK_DEV,
+      getJwks(),
       { name: "RSASSA-PKCS1-v1_5", hash: "SHA-256" },
       false,
       ["verify"]

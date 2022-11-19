@@ -1,6 +1,6 @@
 import type { KV } from "worktop/kv";
 import { read, write } from "worktop/kv";
-import { SECRET } from "../constants/admin.const";
+import { ENVVARS } from "../constants/envvar.const";
 import {
   FlethyMetaDates,
   FlethyMetaUser,
@@ -113,7 +113,7 @@ export class SecretsController {
 
     const encryptedSecrets = await SecretsController.encrypt(
       JSON.stringify(secretValues),
-      SECRET
+      ENVVARS.config.stage
     );
 
     updatedSecrets.secrets = encryptedSecrets;
@@ -146,7 +146,7 @@ export class SecretsController {
         if (encryptedSecrets.value.secrets) {
           const decrypted = await SecretsController.decrypt(
             encryptedSecrets.value.secrets,
-            SECRET
+            ENVVARS.config.stage
           );
           secretValues.values = JSON.parse(decrypted);
         }
@@ -179,7 +179,7 @@ export class SecretsController {
         );
         const encryptedUpdatedSecrets = await SecretsController.encrypt(
           JSON.stringify(currentSecrets.secrets.values),
-          SECRET
+          ENVVARS.config.stage
         );
 
         const updatedSecrets: FlethySecrets = {

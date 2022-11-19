@@ -1,7 +1,7 @@
 import { Router } from "worktop";
 import * as Cache from "worktop/cache";
 import * as CORS from "worktop/cors";
-import { SECRET } from "./constants/admin.const";
+import { ENVVARS } from "./constants/envvar.const";
 import { AuthController, TokenScope } from "./controllers/auth.controller";
 import { AuthRoute } from "./routes/auth.route";
 import { FrontendRoute } from "./routes/frontend.route";
@@ -70,7 +70,7 @@ API.add("GET", "/token/:token", async (req, res) => {
         scopes: [TokenScope.WORKFLOW_CREATE, TokenScope.WORKFLOW_READ],
         token,
       },
-      SECRET
+      ENVVARS.config.stage
     );
 
     res.send(200, { success: true });
