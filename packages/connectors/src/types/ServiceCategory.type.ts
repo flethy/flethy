@@ -120,6 +120,7 @@ export type FINANCE_TYPE =
   | 'payment'
   | 'subscription-management'
   | 'stocks'
+  | 'metal-prices'
 export type DATA_TYPE =
   | 'validation'
   | 'resolution'

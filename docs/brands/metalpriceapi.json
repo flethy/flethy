@@ -1,0 +1,45 @@
+{
+  "name": "MetalpriceAPI",
+  "domain": "metalpriceapi.com",
+  "claimed": false,
+  "description": "Free API for Real Time and historical precious metals and foreign exchange (FOREX) rates for your business. Live Gold, Silver, Platinum, Palladium & more spot prices",
+  "links": [{ "name": "github", "url": "https://github.com/metalpriceapi" }],
+  "logos": [
+    {
+      "type": "logo",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idk2EWlohq/idxstvmE17.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 70,
+          "width": 382,
+          "size": 5976
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#f29c20", "type": "accent", "brightness": 165 },
+    { "hex": "#2c3034", "type": "dark", "brightness": 47 },
+    { "hex": "#f1f3f9", "type": "light", "brightness": 243 }
+  ],
+  "fonts": [
+    {
+      "name": "Nunito",
+      "type": "title",
+      "origin": "google",
+      "originId": "Nunito",
+      "weights": []
+    },
+    {
+      "name": "Source Code Pro",
+      "type": "body",
+      "origin": "google",
+      "originId": "Source+Code+Pro",
+      "weights": []
+    }
+  ],
+  "images": []
+}

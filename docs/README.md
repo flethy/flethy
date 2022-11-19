@@ -143,6 +143,7 @@ The following Endpoints are currently supported.
 * [Medium](./api/medium.md)
 * [MergeApi](./api/mergeapi.md)
 * [Mergent](./api/mergent.md)
+* [MetalpriceAPI](./api/metalpriceapi.md)
 * [Mezmo](./api/mezmo.md)
 * [MicroDev](./api/microdev.md)
 * [Microlink](./api/microlink.md)

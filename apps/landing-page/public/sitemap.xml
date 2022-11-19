@@ -509,6 +509,10 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://flethy.com/integrations/metalpriceapi</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://flethy.com/integrations/mezmo</loc>
     <priority>0.8</priority>
   </url>
