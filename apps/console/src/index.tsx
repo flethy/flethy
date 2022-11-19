@@ -1,4 +1,4 @@
-import { ChakraProvider, Container, extendTheme } from '@chakra-ui/react'
+import { ChakraProvider, extendTheme } from '@chakra-ui/react'
 import '@fontsource/open-sans/700.css'
 import '@fontsource/raleway/400.css'
 import { observer } from 'mobx-react-lite'
@@ -6,6 +6,7 @@ import { startRouter } from 'mobx-router'
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { Helmet, HelmetProvider } from 'react-helmet-async'
+import AppLoading from './components/Loading'
 import events, { LogLevel } from './events/events'
 import './i18n/config'
 import './index.scss'
@@ -18,8 +19,9 @@ export const LOGLEVEL = import.meta.env.VITE_LOGLEVEL
 	: 'off'
 events.init(LOGLEVEL)
 
-const AppLoading = <Container>Loading...</Container>
 let initialized = false
+
+// APP
 
 const App = observer(() => {
 	const {
@@ -28,39 +30,10 @@ const App = observer(() => {
 
 	components.quickSearch.initialise()
 
-	const theme = extendTheme({
-		styles: {
-			global: {
-				body: {
-					// bg: 'black',
-				},
-			},
-		},
-		config: {
-			initialColorMode: 'dark',
-			useSystemColorMode: false,
-		},
-		colors: {
-			flethy: {
-				darkbg: '#1A202C',
-				orange: '#EE7524',
-				lightpurple: '#CC3F6B',
-				purple: '#A33792',
-				bannerbg:
-					'linear-gradient(30deg, rgba(238,117,36,1) 0%, rgba(204,63,107,1) 35%, rgba(163,55,146,1) 100%)',
-				900: 'yellow',
-			},
-		},
-		fonts: {
-			heading: `'Open Sans', sans-serif`,
-			body: `'Raleway', sans-serif`,
-		},
-	})
-
 	let app
 
 	if (auth.isAuthenticated === null) {
-		app = AppLoading
+		app = <AppLoading />
 	} else if (auth.isAuthenticated && auth.user) {
 		if (!initialized) {
 			startRouter(routes, rootStore, {
@@ -75,13 +48,11 @@ const App = observer(() => {
 						{api.helmet.title ? <title>{api.helmet.title}</title> : null}
 					</Helmet>
 				</HelmetProvider>
-				<ChakraProvider theme={theme}>
-					<AppPage />
-				</ChakraProvider>
+				<AppPage />
 			</>
 		)
 	} else {
-		app = AppLoading
+		app = <AppLoading />
 		if (!auth.isAuthenticated) {
 			const path =
 				window.location.pathname?.length > 0
@@ -103,13 +74,46 @@ const App = observer(() => {
 	return app
 })
 
+// ROOT
+
+const theme = extendTheme({
+	styles: {
+		global: {
+			body: {
+				// bg: 'black',
+			},
+		},
+	},
+	config: {
+		initialColorMode: 'dark',
+		useSystemColorMode: false,
+	},
+	colors: {
+		flethy: {
+			darkbg: '#1A202C',
+			orange: '#EE7524',
+			lightpurple: '#CC3F6B',
+			purple: '#A33792',
+			bannerbg:
+				'linear-gradient(30deg, rgba(238,117,36,1) 0%, rgba(204,63,107,1) 35%, rgba(163,55,146,1) 100%)',
+			900: 'yellow',
+		},
+	},
+	fonts: {
+		heading: `'Open Sans', sans-serif`,
+		body: `'Raleway', sans-serif`,
+	},
+})
+
 const container = document.getElementById('root')
 if (container) {
 	const root = createRoot(container)
 	root.render(
 		<StrictMode>
 			<Provider value={rootStore}>
-				<App />
+				<ChakraProvider theme={theme}>
+					<App />
+				</ChakraProvider>
 			</Provider>
 		</StrictMode>,
 	)

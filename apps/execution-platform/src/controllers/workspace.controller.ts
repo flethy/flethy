@@ -1,4 +1,5 @@
 import { KV, write } from "worktop/kv";
+import { ENVVARS } from "../constants/envvar.const";
 import { FlethyMetaDates, FlethyMetaUser } from "../types/general.type";
 import { ErrorType, FlethyError } from "../utils/error.utils";
 import { KVUtils } from "../utils/kv.utils";
@@ -79,6 +80,14 @@ export class WorkspaceController {
       });
     }
 
+    // TODO: remove this as soon as local tests are done
+    const isTest =
+      ENVVARS.config.stage === "dev" &&
+      ENVVARS.config.testUserId === request.userId;
+    const projectId = isTest
+      ? ENVVARS.config.testUserProjectId
+      : crypto.randomUUID();
+
     const workspaceMetadata: FlethyWorkspaceMetadata = {
       workspaceId: request.workspaceId,
       name: request.name,
@@ -91,7 +100,7 @@ export class WorkspaceController {
       r: [WorkspaceRole.OWNER],
       p: [
         {
-          id: crypto.randomUUID(),
+          id: projectId,
           r: [ProjectRole.OWNER],
           name: request.project.name,
         },
@@ -105,7 +114,7 @@ export class WorkspaceController {
       { metadata: { ...workspaceMetadata } }
     );
 
-    if (success) {
+    if (success && !isTest) {
       await FlethyFlowController.onboardUser({
         userId: request.userId,
         workspace,

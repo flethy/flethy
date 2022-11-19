@@ -1,6 +1,6 @@
 import { ServerRequest } from "worktop/request";
 import { ServerResponse } from "worktop/response";
-import { SECRET } from "../constants/admin.const";
+import { ENVVARS } from "../constants/envvar.const";
 import { AuthController, TokenScope } from "../controllers/auth.controller";
 import { ErrorType, FlethyError } from "./error.utils";
 
@@ -54,7 +54,7 @@ export class PermissionUtils {
       } else {
         await AuthController.verifyToken(
           { token, projectId, workspaceId, scopes },
-          SECRET
+          ENVVARS.config.stage
         );
         response.userId = "m2m";
         response.valid = true;
