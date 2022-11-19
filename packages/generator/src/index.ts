@@ -178,15 +178,18 @@ import Flatfile from '@flethy/connectors/src/configs/flatfile.config'
 import GitLab from '@flethy/connectors/src/configs/gitlab.config'
 import GoDaddy from '@flethy/connectors/src/configs/godaddy.config'
 import Gravatar from '@flethy/connectors/src/configs/gravatar.config'
+import Hasura from '@flethy/connectors/src/configs/hasura.config'
 import Here from '@flethy/connectors/src/configs/here.config'
 import Imglab from '@flethy/connectors/src/configs/imglab.config'
 import Keen from '@flethy/connectors/src/configs/keen.config'
 import Koyeb from '@flethy/connectors/src/configs/koyeb.config'
 import LanguageLayer from '@flethy/connectors/src/configs/languagelayer.config'
 import LinkPreview from '@flethy/connectors/src/configs/linkpreview.config'
+import LogSnag from '@flethy/connectors/src/configs/logsnag.config'
 import Logz from '@flethy/connectors/src/configs/logz.config'
 import Lolo from '@flethy/connectors/src/configs/lolo.config'
 import Luabase from '@flethy/connectors/src/configs/luabase.config'
+import MetalpriceAPI from '@flethy/connectors/src/configs/metalpriceapi.config'
 import Neon from '@flethy/connectors/src/configs/neon.config'
 import Npoint from '@flethy/connectors/src/configs/npoint.config'
 import Ntfy from '@flethy/connectors/src/configs/ntfy.config'
@@ -197,6 +200,7 @@ import ORBIntelligence from '@flethy/connectors/src/configs/orbintelligence.conf
 import Phyllo from '@flethy/connectors/src/configs/phyllo.config'
 import Pirsch from '@flethy/connectors/src/configs/pirsch.config'
 import Prerender from '@flethy/connectors/src/configs/prerender.config'
+import PurpleAir from '@flethy/connectors/src/configs/purpleair.config'
 import Rebrandly from '@flethy/connectors/src/configs/rebrandly.config'
 import Robolly from '@flethy/connectors/src/configs/robolly.config'
 import Rye from '@flethy/connectors/src/configs/rye.config'
@@ -208,17 +212,14 @@ import Splitbee from '@flethy/connectors/src/configs/splitbee.config'
 import Stackhawk from '@flethy/connectors/src/configs/stackhawk.config'
 import Storyblok from '@flethy/connectors/src/configs/storyblok.config'
 import Stytch from '@flethy/connectors/src/configs/stytch.config'
+import TinyURL from '@flethy/connectors/src/configs/tinyurl.config'
 import Twitter from '@flethy/connectors/src/configs/twitter.config'
+import UrlBae from '@flethy/connectors/src/configs/urlbae.config'
 import Userfront from '@flethy/connectors/src/configs/userfront.config'
 import Vantevo from '@flethy/connectors/src/configs/vantevo.config'
 import Vonage from '@flethy/connectors/src/configs/vonage.config'
 import { HttpRequest } from './controllers/HttpRequest'
 import { logger } from './utils/Logger'
-import TinyURL from '@flethy/connectors/src/configs/tinyurl.config'
-import LogSnag from '@flethy/connectors/src/configs/logsnag.config'
-import UrlBae from '@flethy/connectors/src/configs/urlbae.config'
-import Hasura from '@flethy/connectors/src/configs/hasura.config'
-import PurpleAir from '@flethy/connectors/src/configs/purpleair.config'
 
 async function main() {
   const requestConfigs: {
@@ -3007,8 +3008,18 @@ async function main() {
       'auth:X-API-Key': process.env.PURPLEAIR_READ_KEY,
       'query:fields': 'name,model,location_type',
     }),
+    metalpriceSymbols: nao<MetalpriceAPI.SupportedSymbols>({
+      kind: 'metalpriceapi.core.symbols',
+      'auth:api_key': process.env.METALPRICEAPI_KEY,
+    }),
+    metalpriceLatest: nao<MetalpriceAPI.LiveRates>({
+      kind: 'metalpriceapi.core.liverates',
+      'auth:api_key': process.env.METALPRICEAPI_KEY,
+      'query:base': 'USD',
+      'query:currencies': 'EUR,XAU,XAG',
+    }),
   }
-  const requestConfig = requestConfigs.purpleairSensorsData
+  const requestConfig = requestConfigs.metalpriceLatest
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

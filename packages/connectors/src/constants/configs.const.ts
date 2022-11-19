@@ -122,6 +122,7 @@ import { MailPace } from '../configs/mailpace.config'
 import { Medium } from '../configs/medium.config'
 import { MergeApi } from '../configs/mergeapi.config'
 import { Mergent } from '../configs/mergent.config'
+import { MetalpriceAPI } from '../configs/metalpriceapi.config'
 import { Mezmo } from '../configs/mezmo.config'
 import { MicroDev } from '../configs/microdev.config'
 import { Microlink } from '../configs/microlink.config'
@@ -351,6 +352,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['medium', Medium.API],
 ['mergeapi', MergeApi.API],
 ['mergent', Mergent.API],
+['metalpriceapi', MetalpriceAPI.API],
 ['mezmo', Mezmo.API],
 ['microdev', MicroDev.API],
 ['microlink', Microlink.API],

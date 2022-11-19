@@ -122,6 +122,7 @@ import { MailPace } from '../../../connectors/src/configs/mailpace.config'
 import { Medium } from '../../../connectors/src/configs/medium.config'
 import { MergeApi } from '../../../connectors/src/configs/mergeapi.config'
 import { Mergent } from '../../../connectors/src/configs/mergent.config'
+import { MetalpriceAPI } from '../../../connectors/src/configs/metalpriceapi.config'
 import { Mezmo } from '../../../connectors/src/configs/mezmo.config'
 import { MicroDev } from '../../../connectors/src/configs/microdev.config'
 import { Microlink } from '../../../connectors/src/configs/microlink.config'
@@ -503,6 +504,9 @@ configTypes.push({type: getType<Medium.CreatePostUnderPublication>(), id: 'mediu
 configTypes.push({type: getType<Medium.GetContributorsOfPublication>(), id: 'medium', name: 'Medium', interface: 'GetContributorsOfPublication'})
 configTypes.push({type: getType<MergeApi.BankInfoGetAll>(), id: 'mergeapi', name: 'MergeApi', interface: 'BankInfoGetAll'})
 configTypes.push({type: getType<Mergent.CreateTask>(), id: 'mergent', name: 'Mergent', interface: 'CreateTask'})
+configTypes.push({type: getType<MetalpriceAPI.SupportedSymbols>(), id: 'metalpriceapi', name: 'MetalpriceAPI', interface: 'SupportedSymbols'})
+configTypes.push({type: getType<MetalpriceAPI.LiveRates>(), id: 'metalpriceapi', name: 'MetalpriceAPI', interface: 'LiveRates'})
+configTypes.push({type: getType<MetalpriceAPI.HistoricalRates>(), id: 'metalpriceapi', name: 'MetalpriceAPI', interface: 'HistoricalRates'})
 configTypes.push({type: getType<Mezmo.IngestLogs>(), id: 'mezmo', name: 'Mezmo', interface: 'IngestLogs'})
 configTypes.push({type: getType<MicroDev.StorageDbCreateRecord>(), id: 'microdev', name: 'MicroDev', interface: 'StorageDbCreateRecord'})
 configTypes.push({type: getType<MicroDev.StorageDbReadRecord>(), id: 'microdev', name: 'MicroDev', interface: 'StorageDbReadRecord'})
