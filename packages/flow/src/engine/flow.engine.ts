@@ -38,6 +38,11 @@ export class FlowEngine {
     }
   }
 
+  // map attributes to _flethyresponse if they should be returned
+  public getResponse() {
+    this.utils.getInstanceContext().context._flethyresponse ?? {}
+  }
+
   private async execute(node: FlowNode) {
     if (this.utils.waitForIncoming(node)) {
       // need to wait for all incoming nodes
