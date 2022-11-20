@@ -2,6 +2,7 @@ import { Button, Container, Stack, Text } from '@chakra-ui/react'
 import { observer } from 'mobx-react-lite'
 import { useTranslation } from 'react-i18next'
 import { useMst } from '../../models/root'
+import routes from '../../routes'
 
 export default observer(() => {
 	const { t } = useTranslation('app')
@@ -31,7 +32,17 @@ export default observer(() => {
 							})
 						}
 					>
-						Nice
+						Onboard
+					</Button>
+					<Button
+						onClick={() =>
+							router.goTo(routes.secrets, {
+								workspaceId: api.user.workspaces[0].id,
+								projectId: api.user.workspaces[0].projects[0].id,
+							})
+						}
+					>
+						Secrets
 					</Button>
 				</Stack>
 			</Container>

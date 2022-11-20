@@ -114,7 +114,7 @@ importers:
   apps/execution-platform:
     specifiers:
       '@cloudflare/workers-types': 3.18.0
-      '@flethy/flow': ^0.0.228
+      '@flethy/flow': ^0.0.232
       '@tsndr/cloudflare-worker-jwt': ^2.1.2
       '@types/node': 18.11.9
       '@typescript-eslint/eslint-plugin': ^5.42.1
@@ -131,7 +131,7 @@ importers:
       worktop: ^0.7.3
       wrangler: 2.2.1
     dependencies:
-      '@flethy/flow': 0.0.228
+      '@flethy/flow': 0.0.232
     devDependencies:
       '@cloudflare/workers-types': 3.18.0
       '@tsndr/cloudflare-worker-jwt': 2.1.2
@@ -3142,8 +3142,8 @@ packages:
       - debug
     dev: false
 
-  /@flethy/flow/0.0.228:
-    resolution: {integrity: sha512-CZnBheRjr6b2ez+/AnagrNYJv8myolczS4n+ThflkCwMvFACMDhXCHACW6CsH4d2gXX1dXxWqSwNgPNIhSBhQA==}
+  /@flethy/flow/0.0.232:
+    resolution: {integrity: sha512-vXyh81HBsHB9BJ2B0XKxVEK1P6cInP9gI737U4gtb8R6faU11tV8C7MNL4k7+sUmsecXlZp7w4A6lLbuhR/LqQ==}
     dependencies:
       '@flethy/connectors': 0.0.227
       axios: 1.1.2

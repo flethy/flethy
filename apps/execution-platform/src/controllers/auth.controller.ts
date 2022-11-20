@@ -1,7 +1,7 @@
 import jwt from "@tsndr/cloudflare-worker-jwt";
 import { CLAIM_WORKSPACES } from "../constants/admin.const";
 import { HOUR } from "../constants/duration.const";
-import { getJwks, JWK_DEV } from "../constants/jwks.const";
+import { getJwks } from "../constants/jwks.const";
 import { ErrorType, FlethyError } from "../utils/error.utils";
 import { ValidationUtils } from "../utils/validation.utils";
 import { Workspace } from "./workspace.controller";
@@ -32,6 +32,10 @@ export enum TokenScope {
   PROJECT_READ = "project:read",
   PROJECT_UPDATE = "project:update",
   PROJECT_DELETE = "project:delete",
+  SECRET_CREATE = "secret:create",
+  SECRET_READ = "secret:read",
+  SECRET_UPDATE = "secret:update",
+  SECRET_DELETE = "secret:delete",
 }
 
 export interface TokenRequest {
@@ -240,6 +244,10 @@ export class AuthController {
           scopes.add(TokenScope.WORKFLOW_UPDATE);
           scopes.add(TokenScope.WORKFLOW_DELETE);
           scopes.add(TokenScope.INSTANCE_CREATE);
+          scopes.add(TokenScope.SECRET_CREATE);
+          scopes.add(TokenScope.SECRET_READ);
+          scopes.add(TokenScope.SECRET_UPDATE);
+          scopes.add(TokenScope.SECRET_DELETE);
         }
         if (foundProject.r.includes(ProjectRole.MEMBER)) {
           scopes.add(TokenScope.PROJECT_READ);

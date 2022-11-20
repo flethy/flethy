@@ -57,15 +57,15 @@ export class RouterPathUtils {
     return this;
   }
 
-  public p() {
+  public p(projectId?: string) {
     this.path.push("p");
-    this.path.push(":projectId");
+    this.path.push(projectId ?? ":projectId");
     return this;
   }
 
-  public w() {
+  public w(workspaceId?: string) {
     this.path.push("w");
-    this.path.push(":workspaceId");
+    this.path.push(workspaceId ?? ":workspaceId");
     return this;
   }
 
