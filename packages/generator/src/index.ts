@@ -199,6 +199,7 @@ import Openflow from '@flethy/connectors/src/configs/openflow.config'
 import ORBIntelligence from '@flethy/connectors/src/configs/orbintelligence.config'
 import Phyllo from '@flethy/connectors/src/configs/phyllo.config'
 import Pirsch from '@flethy/connectors/src/configs/pirsch.config'
+import Prepr from '@flethy/connectors/src/configs/prepr.config'
 import Prerender from '@flethy/connectors/src/configs/prerender.config'
 import PurpleAir from '@flethy/connectors/src/configs/purpleair.config'
 import Rebrandly from '@flethy/connectors/src/configs/rebrandly.config'
@@ -3018,8 +3019,22 @@ async function main() {
       'query:base': 'USD',
       'query:currencies': 'EUR,XAU,XAG',
     }),
+    preprGraphql: nao<Prepr.GraphQLQuery>({
+      kind: 'prepr.graphql.query',
+      'auth:access_token': process.env.PREPR_ACCESS_TOKEN,
+      'body:query': `query ExampleQuery {
+        Author {
+          name
+        }
+      }`,
+    }),
+    preprSingleItems: nao<Prepr.SingleItems>({
+      kind: 'prepr.items.singleItems',
+      'auth:Authorization': process.env.PREPR_ACCESS_TOKEN,
+      'param:contentItemId': process.env.PREPR_CONTENT_ITEM_ID,
+    }),
   }
-  const requestConfig = requestConfigs.metalpriceLatest
+  const requestConfig = requestConfigs.preprSingleItems
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)
