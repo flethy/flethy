@@ -176,6 +176,7 @@ The following Endpoints are currently supported.
 * [Pixela](./api/pixela.md)
 * [PolyScale](./api/polyscale.md)
 * [PostHog](./api/posthog.md)
+* [Prepr](./api/prepr.md)
 * [Prerender](./api/prerender.md)
 * [ProductHunt](./api/producthunt.md)
 * [PurgoMalum](./api/purgomalum.md)

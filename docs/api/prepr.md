@@ -1,0 +1,37 @@
+# Prepr
+
+## Links
+
+* URL: [https://prepr.io/](https://prepr.io/)
+* Documentation: [https://docs.prepr.io/](https://docs.prepr.io/)
+* Tags: web2
+* Category: marketing
+* Type: content
+
+## API
+
+### Authentication
+
+* Authorization: header:bearer
+
+### graphql
+
+#### query
+
+##### Authentication
+
+* access_token: path
+
+##### GraphQL API
+
+* Description: GraphQL API reference
+* Docs: [https://docs.prepr.io/reference/graphql/v1/introduction](https://docs.prepr.io/reference/graphql/v1/introduction)
+
+### items
+
+#### singleItems
+
+##### Fetching single items
+
+* Description: When you want to fetch just one content item of a given model you can use the single content item request.
+* Docs: [https://docs.prepr.io/reference/rest/v1/fetching-single-items](https://docs.prepr.io/reference/rest/v1/fetching-single-items)

@@ -1,0 +1,78 @@
+{
+  "name": "Prepr",
+  "domain": "prepr.io",
+  "claimed": false,
+  "description": "Prepr is a modern toolset for media and entertainment companies to streamline content management, manage audience data and activate people.",
+  "links": [
+    { "name": "twitter", "url": "https://twitter.com/prepr_io" },
+    { "name": "instagram", "url": "https://instagram.com/prepr.io" },
+    { "name": "linkedin", "url": "https://linkedin.com/company/graphlr" }
+  ],
+  "logos": [
+    {
+      "type": "icon",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idbsrajgM1/idX8rV25gk.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 400,
+          "width": 400,
+          "size": 9257
+        }
+      ]
+    },
+    {
+      "type": "logo",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idbsrajgM1/idvu0u5hYI.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 222,
+          "width": 820,
+          "size": 13870
+        },
+        {
+          "src": "https://asset.brandfetch.io/idbsrajgM1/idhzPJYbGX.svg",
+          "background": "transparent",
+          "format": "svg",
+          "height": null,
+          "width": null,
+          "size": 3745
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#060a65", "type": "dark", "brightness": 16 },
+    { "hex": "#b5c8ff", "type": "light", "brightness": 200 },
+    { "hex": "#701e8c", "type": "accent", "brightness": 55 }
+  ],
+  "fonts": [
+    {
+      "name": "Rubik",
+      "type": "body",
+      "origin": "google",
+      "originId": "Rubik",
+      "weights": []
+    }
+  ],
+  "images": [
+    {
+      "type": "banner",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idbsrajgM1/idyNj_QbaE.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 500,
+          "width": 1500,
+          "size": 80553
+        }
+      ]
+    }
+  ]
+}
