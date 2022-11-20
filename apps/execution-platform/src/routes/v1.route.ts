@@ -2,7 +2,6 @@ import { Router } from "worktop";
 import { TokenScope } from "../controllers/auth.controller";
 import { RouterPathUtils, RouterUtils } from "../utils/router.utils";
 import { AuthRoute } from "./auth.route";
-import { SecretsRoute } from "./secrets.route";
 import { WorkflowsRoute } from "./workflows.route";
 
 export class Version1 {
@@ -23,35 +22,6 @@ export class Version1 {
       route: new RouterPathUtils(1).w().p().t().gen(),
       handler: async (req, res) => {
         await AuthRoute.createTokenRoute(req, res);
-      },
-    });
-
-    // SECRETS
-
-    RouterUtils.createRoute({
-      API,
-      method: "PUT",
-      route: new RouterPathUtils(1).w().p().s().gen(),
-      handler: async (req, res, userId) => {
-        await SecretsRoute.put(req, res, userId);
-      },
-    });
-
-    RouterUtils.createRoute({
-      API,
-      method: "GET",
-      route: new RouterPathUtils(1).w().p().s().gen(),
-      handler: async (req, res, userId) => {
-        await SecretsRoute.get(req, res, userId);
-      },
-    });
-
-    RouterUtils.createRoute({
-      API,
-      method: "DELETE",
-      route: new RouterPathUtils(1).w().p().s().gen(),
-      handler: async (req, res, userId) => {
-        await SecretsRoute.del(req, res, userId);
       },
     });
 

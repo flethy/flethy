@@ -57,6 +57,14 @@
 		},
 		"workflowEditor": {
 			"title": "Workflow Editor"
+		},
+		"secrets": {
+			"title": "Project Secrets",
+			"subtitle": "These secrets can be used in your workflows.",
+			"emptyState": {
+				"heading": "No secrets yet",
+				"description": "You can add secrets to your project here. They can be used in your workflows."
+			}
 		}
 	}
 }

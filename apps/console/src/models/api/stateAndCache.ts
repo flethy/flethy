@@ -5,7 +5,7 @@ import events from '../../events/events'
 const DEFAULT_CACHE_TTL = 15 * MINUTE
 
 export interface StateAndCacheKey {
-	api: 'emailSubscription'
+	api: 'secrets' | 'workflows'
 	operation: string
 	id?: string
 }

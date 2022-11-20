@@ -4,6 +4,7 @@ import { createContext, useContext } from 'react'
 import { QuickSearchComponent } from '../components/quicksearch/model'
 import { NotFoundPage } from '../pages/404/model'
 import { HomePage } from '../pages/home/model'
+import { SecretsPage } from '../pages/secrets/model'
 import { WorkflowEditorPage } from '../pages/workflow-editor/model'
 import ApiStore, { APIType } from './api'
 import { AuthStore } from './api/auth'
@@ -18,6 +19,7 @@ const PagesStore = types.model('Pages', {
 	workflowEditor: types.optional(WorkflowEditorPage, () =>
 		WorkflowEditorPage.create(),
 	),
+	secrets: types.optional(SecretsPage, () => SecretsPage.create()),
 })
 
 const ComponentsStore = types.model('Components', {
