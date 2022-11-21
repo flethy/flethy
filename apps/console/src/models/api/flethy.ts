@@ -1,10 +1,11 @@
 import { flow, types } from 'mobx-state-tree'
 import { request } from '../../helpers/api'
+import { FlethyContext } from '../flethy.types'
 import { getRootStore } from '../helpers'
 
 export const FlethyModel = types
 	.model('FlethyModel', {
-		testdata: types.optional(types.string, ''),
+		context: types.optional(FlethyContext, {}),
 	})
 	.actions((self) => {
 		const onboard = flow(function* (options: {
@@ -27,7 +28,8 @@ export const FlethyModel = types
 				auth.getTokenSilently().then((response) => {
 					console.log('new token')
 				})
-				console.log(response)
+				self.context.workspaceId = api.user.workspaces[0].id
+				self.context.projectId = api.user.workspaces[0].projects[0].id
 			} catch (error) {
 				console.log(error)
 			}

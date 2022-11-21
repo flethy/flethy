@@ -25,9 +25,7 @@ import DataTable, {
 import i18n from '../../i18n/config'
 import PageWithTitle from '../../layouts/PageWithTitle'
 import { useMst } from '../../models/root'
-
-// https://github.com/suren-atoyan/monaco-react
-// https://monaco-react.surenatoyan.com/
+import routes from '../../routes'
 
 export default observer(() => {
 	const { t } = useTranslation('app')
@@ -35,68 +33,62 @@ export default observer(() => {
 		router,
 		root: {
 			api,
-			pages: { secrets: page },
+			pages: { workflows: page },
 			modals: { secretsCreate, secretsDelete },
 		},
 	} = useMst()
 	const { colorMode } = useColorMode()
 
+	let content
+
 	const addButton = (
 		<Button
-			onClick={() =>
-				secretsCreate.open({
+			onClick={() => {
+				router.goTo(routes.workflowNew, {
 					workspaceId: page.context.workspaceId,
 					projectId: page.context.projectId,
 				})
-			}
+			}}
 		>
 			Add
 		</Button>
 	)
 
-	let content
-
 	if (page.isLoading()) {
 		content = <Spinner />
-	} else if (page.secretsAvailable()) {
-		const secrets = page.getSecrets()
+	} else if (page.workflowsAvailable()) {
+		const workflows = page.getWorkflows()
 		const dataTableProps: DataTableProps = {
 			headers: [
 				{
-					id: 'key',
-					value: 'Key',
+					id: 'name',
+					value: 'Name',
 				},
 				{
-					id: 'value',
-					value: 'Value',
+					id: 'id',
+					value: 'ID',
 				},
 				{
 					id: 'delete',
 					value: '',
 				},
 			],
-			content: secrets.keys.map((secretKey) => {
+			content: workflows.map((workflow) => {
 				const cells: DataTableCell[] = [
 					{
-						id: 'key',
-						value: secretKey,
-						clipboard: true,
+						id: 'name',
+						value: workflow.name,
 					},
 					{
-						id: 'value',
-						value: '********',
+						id: 'id',
+						value: workflow.workflowId,
+						clipboard: true,
 					},
 					{
 						id: 'delete',
 						value: 'delete-secret',
 						type: 'MenuDelete',
-						onClick: () => {
-							secretsDelete.open({
-								workspaceId: page.context.workspaceId,
-								projectId: page.context.projectId,
-								key: secretKey,
-							})
-						},
+						onClick: () => {},
 					},
 				]
 				return cells
@@ -115,15 +107,15 @@ export default observer(() => {
 		content = (
 			<>
 				{addButton}
-				<Text>{t('app:pages.secrets.emptyState.heading')}</Text>
+				<Text>{t('app:pages.workflows.emptyState.heading')}</Text>
 			</>
 		)
 	}
 
 	const component = (
 		<PageWithTitle
-			title={t('app:pages.secrets.title')}
-			subtitle={t('app:pages.secrets.subtitle')}
+			title={t('app:pages.workflows.title')}
+			subtitle={t('app:pages.workflows.subtitle')}
 		>
 			<VStack>{content}</VStack>
 		</PageWithTitle>

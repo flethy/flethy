@@ -35,14 +35,14 @@ export default observer(() => {
 						Onboard
 					</Button>
 					<Button
-						onClick={() =>
-							router.goTo(routes.secrets, {
-								workspaceId: api.user.workspaces[0].id,
-								projectId: api.user.workspaces[0].projects[0].id,
-							})
-						}
+						onClick={() => router.goTo(routes.secrets, page.getContext())}
 					>
 						Secrets
+					</Button>
+					<Button
+						onClick={() => router.goTo(routes.workflows, page.getContext())}
+					>
+						Workflows
 					</Button>
 				</Stack>
 			</Container>
