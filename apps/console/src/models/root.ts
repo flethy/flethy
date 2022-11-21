@@ -1,6 +1,8 @@
 import { RouterStore } from 'mobx-router'
 import { Instance, types } from 'mobx-state-tree'
 import { createContext, useContext } from 'react'
+import { CreateSecretsModal } from '../components/modals/secrets/create/model'
+import { DeleteSecretsModal } from '../components/modals/secrets/delete/model'
 import { QuickSearchComponent } from '../components/quicksearch/model'
 import { NotFoundPage } from '../pages/404/model'
 import { HomePage } from '../pages/home/model'
@@ -28,6 +30,15 @@ const ComponentsStore = types.model('Components', {
 	),
 })
 
+const ModalsStore = types.model('Modals', {
+	secretsCreate: types.optional(CreateSecretsModal, () =>
+		CreateSecretsModal.create(),
+	),
+	secretsDelete: types.optional(DeleteSecretsModal, () =>
+		DeleteSecretsModal.create(),
+	),
+})
+
 export const RealRootModel = types.model('Root', {
 	auth: types.optional(AuthStore, () =>
 		AuthStore.create({
@@ -44,6 +55,7 @@ export const RealRootModel = types.model('Root', {
 	api: types.optional(ApiStore, () => ApiStore.create()),
 	pages: types.optional(PagesStore, () => PagesStore.create()),
 	components: types.optional(ComponentsStore, () => ComponentsStore.create()),
+	modals: types.optional(ModalsStore, () => ModalsStore.create()),
 })
 
 export type RealRootModelInstance = Instance<{
@@ -51,6 +63,7 @@ export type RealRootModelInstance = Instance<{
 	api: APIType
 	pages: Instance<typeof PagesStore>
 	components: Instance<typeof ComponentsStore>
+	modals: Instance<typeof ModalsStore>
 }>
 
 export class RootStore {
@@ -60,6 +73,7 @@ export class RootStore {
 		api: Instance<typeof ApiStore>
 		pages: Instance<typeof PagesStore>
 		components: Instance<typeof ComponentsStore>
+		modals: Instance<typeof ModalsStore>
 	}
 
 	constructor() {

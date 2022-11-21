@@ -1,0 +1,57 @@
+{
+  "name": "Warrant",
+  "domain": "warrant.dev",
+  "claimed": false,
+  "description": "A fully managed solution for application authorization. Manage your users, roles & permissions via API and an easy-to-use dashboard.",
+  "links": [
+    { "name": "github", "url": "https://github.com/warrant-dev" },
+    { "name": "twitter", "url": "https://twitter.com/warrant_dev" }
+  ],
+  "logos": [
+    {
+      "type": "icon",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idfvsZYaxn/ideVvk1b6D.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 400,
+          "width": 400,
+          "size": 7902
+        }
+      ]
+    },
+    {
+      "type": "logo",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idfvsZYaxn/idCxRZMsgn.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 1200,
+          "width": 2130,
+          "size": 44226
+        }
+      ]
+    }
+  ],
+  "colors": [],
+  "fonts": [],
+  "images": [
+    {
+      "type": "banner",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idfvsZYaxn/id6O8FTBfr.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 500,
+          "width": 1500,
+          "size": 5607
+        }
+      ]
+    }
+  ]
+}

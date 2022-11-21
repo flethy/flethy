@@ -1,0 +1,42 @@
+# WarrantDev
+
+## Links
+
+* URL: [https://warrant.dev/](https://warrant.dev/)
+* Documentation: [https://docs.warrant.dev/objecttypes/get-all-object-types/](https://docs.warrant.dev/objecttypes/get-all-object-types/)
+* Tags: web2
+* Category: identity
+* Type: identitymanagement
+
+## API
+
+### Authentication
+
+* Authorization: header:custom
+
+### objectTypes
+
+#### list
+
+##### Get Object Types
+
+* Description: Get list of all object types.
+* Docs: [https://docs.warrant.dev/objecttypes/get-all-object-types/](https://docs.warrant.dev/objecttypes/get-all-object-types/)
+
+### users
+
+#### create
+
+##### Create a User
+
+* Description: Create a new user.
+* Docs: [https://docs.warrant.dev/users/create-a-user/](https://docs.warrant.dev/users/create-a-user/)
+
+### tenants
+
+#### getUsers
+
+##### Get Users by Tenant
+
+* Description: Get the users associated with a specific tenant.
+* Docs: [https://docs.warrant.dev/users/get-users-by-tenant/](https://docs.warrant.dev/users/get-users-by-tenant/)

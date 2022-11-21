@@ -56,7 +56,64 @@ export const SecretsModel = types
 			}
 		})
 
-		return { get }
+		const put = flow(function* (options: {
+			workspaceId: string
+			projectId: string
+			key: string
+			value: string
+		}) {
+			yield request({
+				base: 'flethy',
+				method: 'put',
+				auth: true,
+				url: new RouterPathUtils()
+					.w(options.workspaceId)
+					.p(options.projectId)
+					.s()
+					.gen(),
+				body: {
+					key: options.key,
+					value: options.value,
+				},
+			})
+			const currentSecrets = self.secrets.get(options.projectId)
+			if (currentSecrets) {
+				currentSecrets.keys.push(options.key)
+			} else {
+				const { api } = getRootStore(self)
+				self.secrets.set(options.projectId, {
+					createdBy: api.user.userId,
+					createdAt: Date.now(),
+					keys: [options.key],
+				})
+			}
+		})
+
+		const del = flow(function* (options: {
+			workspaceId: string
+			projectId: string
+			key: string
+		}) {
+			yield request({
+				base: 'flethy',
+				method: 'delete',
+				auth: true,
+				url: new RouterPathUtils()
+					.w(options.workspaceId)
+					.p(options.projectId)
+					.s()
+					.gen(),
+				body: {
+					key: options.key,
+				},
+			})
+			const currentSecrets = self.secrets.get(options.projectId)
+			if (currentSecrets) {
+				currentSecrets.keys.remove(options.key)
+			}
+		})
+
+		return { put, get, del }
 	})
 	.views((self) => {
 		const getFromStore = (options: {
