@@ -1,4 +1,4 @@
-import { types } from 'mobx-state-tree'
+import { flow, types } from 'mobx-state-tree'
 import { FlethyContext } from '../../models/flethy.types'
 import { getRootStore } from '../../models/helpers'
 
@@ -22,25 +22,39 @@ const WORKFLOW_EXAMPLE = `{
 export const WorkflowEditorPage = types
 	.model('WorkflowEditorPage', {
 		context: types.optional(FlethyContext, {}),
-		id: types.optional(types.string, ''),
+		workflowId: types.optional(types.string, ''),
 		name: types.optional(types.string, ''),
 		workflow: types.optional(types.string, ''),
 	})
 	.actions((self) => {
 		// INITIALIZATION
-		const initialisePage = (options: {
-			id?: string
+		const initialisePage = flow(function* (options: {
+			workflowId?: string
 			workspaceId: string
 			projectId: string
-		}) => {
-			if (options.id) {
-				self.id = options.id
-			}
+		}) {
 			self.context.projectId = options.projectId
 			self.context.workspaceId = options.workspaceId
-			self.name = 'Workflow Name'
-			self.workflow = WORKFLOW_EXAMPLE
-		}
+			self.workflowId = options.workflowId || ''
+
+			if (options.workflowId) {
+				self.workflowId = options.workflowId
+				const { api } = getRootStore(self)
+				const response = yield api.workflows.get({
+					workspaceId: options.workspaceId,
+					projectId: options.projectId,
+					workflowId: options.workflowId,
+				})
+				self.workflow = JSON.stringify({
+					name: response.name,
+					workflow: response.workflow.workflow,
+				})
+				self.name = response.name
+			} else {
+				self.name = 'Workflow Name'
+				self.workflow = WORKFLOW_EXAMPLE
+			}
+		})
 
 		const updateWorkflow = (value: string) => {
 			self.workflow = value

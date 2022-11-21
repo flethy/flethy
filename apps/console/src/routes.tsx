@@ -106,6 +106,19 @@ export default {
 		},
 	}),
 
+	workflowExisting: new Route<RootStore>({
+		path: new RouterPathUtils().w().p().wf(true).gen(),
+		component: <WorkflowEditorPage />,
+		onEnter(_route, parameters, { root: { pages } }) {
+			const { projectId, workspaceId, workflowId } = parameters as any
+			pages.workflowEditor.initialisePage({
+				projectId,
+				workspaceId,
+				workflowId,
+			})
+		},
+	}),
+
 	notFound: new Route<RootStore>({
 		path: '/404',
 		component: <NotFoundPage />,

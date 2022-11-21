@@ -41,9 +41,11 @@ export class RouterPathUtils {
 		return this
 	}
 
-	public wf(withId: boolean = false) {
+	public wf(withId: boolean | string = false) {
 		this.path.push('wf')
-		if (withId) {
+		if (typeof withId === 'string') {
+			this.path.push(withId)
+		} else if (withId) {
 			this.path.push(':workflowId')
 		}
 		return this

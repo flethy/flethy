@@ -55,6 +55,45 @@ export const WorkflowsModel = types
 			}
 		})
 
+		const get = flow(function* (options: {
+			workspaceId: string
+			projectId: string
+			workflowId: string
+			useCache?: boolean
+		}) {
+			const { api } = getRootStore(self)
+			const useCache = options.useCache ?? true
+
+			const stateAndCacheKey: StateAndCacheKey = {
+				api: `workflows`,
+				operation: `get`,
+				id: options.workflowId,
+			}
+			if (!api.stateAndCache.shouldFetch(stateAndCacheKey, useCache)) {
+				return
+			}
+
+			api.stateAndCache.updateToPending(stateAndCacheKey)
+
+			try {
+				const response: any = yield request({
+					base: 'flethy',
+					method: 'get',
+					auth: true,
+					url: new RouterPathUtils()
+						.w(options.workspaceId)
+						.p(options.projectId)
+						.wf(options.workflowId)
+						.gen(),
+				})
+				api.stateAndCache.updateToDone(stateAndCacheKey)
+				return response
+			} catch (error) {
+				console.log(error)
+				api.stateAndCache.updateToFailure(stateAndCacheKey)
+			}
+		})
+
 		const put = flow(function* (options: {
 			workspaceId: string
 			projectId: string
@@ -79,7 +118,27 @@ export const WorkflowsModel = types
 			}
 		})
 
-		return { list, put }
+		const start = flow(function* (options: {
+			workspaceId: string
+			projectId: string
+			workflowId: string
+			payload?: any
+		}) {
+			yield request({
+				base: 'flethy',
+				method: 'post',
+				auth: true,
+				url: new RouterPathUtils()
+					.w(options.workspaceId)
+					.p(options.projectId)
+					.wf(options.workflowId)
+					.i()
+					.gen(),
+				body: { payload: options.payload },
+			})
+		})
+
+		return { list, put, start, get }
 	})
 	.views((self) => {
 		const getFromStore = (options: {

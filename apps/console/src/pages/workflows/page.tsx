@@ -72,12 +72,24 @@ export default observer(() => {
 					id: 'delete',
 					value: '',
 				},
+				{
+					id: 'play',
+					value: '',
+				},
 			],
 			content: workflows.map((workflow) => {
 				const cells: DataTableCell[] = [
 					{
 						id: 'name',
 						value: workflow.name,
+						route: {
+							route: routes.workflowExisting,
+							params: {
+								workspaceId: page.context.workspaceId,
+								projectId: page.context.projectId,
+								workflowId: workflow.workflowId,
+							},
+						},
 					},
 					{
 						id: 'id',
@@ -86,9 +98,22 @@ export default observer(() => {
 					},
 					{
 						id: 'delete',
-						value: 'delete-secret',
+						value: 'delete-workflow',
 						type: 'MenuDelete',
 						onClick: () => {},
+					},
+					{
+						id: 'play',
+						value: 'play-workflow',
+						type: 'MenuPlay',
+						onClick: () => {
+							api.workflows.start({
+								workspaceId: page.context.workspaceId,
+								projectId: page.context.projectId,
+								workflowId: workflow.workflowId,
+								payload: {},
+							})
+						},
 					},
 				]
 				return cells
