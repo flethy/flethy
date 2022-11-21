@@ -1,4 +1,4 @@
-import { CopyIcon, DeleteIcon } from '@chakra-ui/icons'
+import { CopyIcon, DeleteIcon, ArrowForwardIcon } from '@chakra-ui/icons'
 import {
 	IconButton,
 	Table,
@@ -12,13 +12,20 @@ import {
 	useClipboard,
 } from '@chakra-ui/react'
 import { observer } from 'mobx-react-lite'
+import { Link } from 'mobx-router'
+import { getRouter } from '../models/helpers'
+import { useMst } from '../models/root'
 
 export interface DataTableCell {
 	id: string
 	value: any
+	route?: {
+		route: any
+		params?: any
+	}
 	clipboard?: boolean
 	isNumeric?: boolean
-	type?: 'value' | 'MenuDelete'
+	type?: 'value' | 'MenuDelete' | 'MenuPlay'
 	onClick?: () => void
 }
 
@@ -29,6 +36,7 @@ export interface DataTableProps {
 }
 
 export default observer((props: DataTableProps) => {
+	const { router } = useMst()
 	const { onCopy, setValue, hasCopied } = useClipboard('')
 	const headers = props.headers.map((header) => (
 		<Th key={header.id} isNumeric={header.isNumeric}>
@@ -42,7 +50,17 @@ export default observer((props: DataTableProps) => {
 		if (!currentCell.type || currentCell.type === 'value') {
 			return (
 				<>
-					{currentCell.value}
+					{currentCell.route ? (
+						<Link
+							router={router}
+							route={currentCell.route.route}
+							params={currentCell.route.params}
+						>
+							{currentCell.value}
+						</Link>
+					) : (
+						<>{currentCell.value}</>
+					)}
 					{currentCell.clipboard && (
 						<IconButton
 							mx={1}
@@ -67,6 +85,15 @@ export default observer((props: DataTableProps) => {
 							aria-label="Delete"
 							size="sm"
 							icon={<DeleteIcon />}
+							onClick={currentCell.onClick}
+						/>
+					)
+				case 'MenuPlay':
+					return (
+						<IconButton
+							aria-label="Play"
+							size="sm"
+							icon={<ArrowForwardIcon />}
 							onClick={currentCell.onClick}
 						/>
 					)

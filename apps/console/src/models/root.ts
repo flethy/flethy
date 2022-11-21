@@ -8,6 +8,7 @@ import { NotFoundPage } from '../pages/404/model'
 import { HomePage } from '../pages/home/model'
 import { SecretsPage } from '../pages/secrets/model'
 import { WorkflowEditorPage } from '../pages/workflow-editor/model'
+import { WorkflowsPage } from '../pages/workflows/model'
 import ApiStore, { APIType } from './api'
 import { AuthStore } from './api/auth'
 
@@ -22,6 +23,7 @@ const PagesStore = types.model('Pages', {
 		WorkflowEditorPage.create(),
 	),
 	secrets: types.optional(SecretsPage, () => SecretsPage.create()),
+	workflows: types.optional(WorkflowsPage, () => WorkflowsPage.create()),
 })
 
 const ComponentsStore = types.model('Components', {

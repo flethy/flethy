@@ -92,6 +92,14 @@
 				"heading": "No secrets yet",
 				"description": "You can add secrets to your project here. They can be used in your workflows."
 			}
+		},
+		"workflows": {
+			"title": "Your Workflows",
+			"subtitle": "These have been created.",
+			"emptyState": {
+				"heading": "No workflows yet",
+				"description": "You can add workflows to your project here."
+			}
 		}
 	}
 }

@@ -30,4 +30,16 @@ export const HomePage = types
 			self.showMore = !self.showMore
 		},
 	}))
-	.views((self) => ({}))
+	.views((self) => {
+		const getContext = () => {
+			const { api } = getRootStore(self)
+			const context = {
+				workspaceId: api.flethy.context.workspaceId,
+				projectId: api.flethy.context.projectId,
+			}
+			console.log(context)
+			return context
+		}
+
+		return { getContext }
+	})

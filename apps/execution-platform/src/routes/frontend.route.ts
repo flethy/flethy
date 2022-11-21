@@ -2,6 +2,7 @@ import { Router } from "worktop";
 import { TokenScope } from "../controllers/auth.controller";
 import { RouterPathUtils, RouterUtils } from "../utils/router.utils";
 import { SecretsRoute } from "./secrets.route";
+import { WorkflowsRoute } from "./workflows.route";
 import { WorkspacesRoute } from "./workspace.route";
 
 export class FrontendRoute {
@@ -49,6 +50,63 @@ export class FrontendRoute {
       scopes: [TokenScope.SECRET_DELETE],
       handler: async (req, res, userId) => {
         await SecretsRoute.del(req, res, userId);
+      },
+    });
+
+    // WORKFLOWS
+
+    RouterUtils.createRoute({
+      API,
+      method: "PUT",
+      route: new RouterPathUtils().w().p().wf().gen(),
+      isUserToken: true,
+      scopes: [TokenScope.WORKFLOW_CREATE],
+      handler: async (req, res, userId) => {
+        await WorkflowsRoute.put(req, res, userId);
+      },
+    });
+
+    RouterUtils.createRoute({
+      API,
+      method: "GET",
+      route: new RouterPathUtils().w().p().wf(true).gen(),
+      isUserToken: true,
+      scopes: [TokenScope.WORKFLOW_READ],
+      handler: async (req, res, userId) => {
+        await WorkflowsRoute.get(req, res, userId);
+      },
+    });
+
+    RouterUtils.createRoute({
+      API,
+      method: "POST",
+      route: new RouterPathUtils().w().p().wf(true).i().gen(),
+      isUserToken: true,
+      scopes: [TokenScope.INSTANCE_CREATE],
+      handler: async (req, res, userId) => {
+        await WorkflowsRoute.start(req, res, userId);
+      },
+    });
+
+    RouterUtils.createRoute({
+      API,
+      method: "GET",
+      route: new RouterPathUtils().w().p().wf().gen(),
+      isUserToken: true,
+      scopes: [TokenScope.WORKFLOW_READ],
+      handler: async (req, res, userId) => {
+        await WorkflowsRoute.list(req, res, userId);
+      },
+    });
+
+    RouterUtils.createRoute({
+      API,
+      method: "DELETE",
+      route: new RouterPathUtils().w().p().wf(true).gen(),
+      isUserToken: true,
+      scopes: [TokenScope.WORKFLOW_DELETE],
+      handler: async (req, res, userId) => {
+        await WorkflowsRoute.del(req, res, userId);
       },
     });
   }

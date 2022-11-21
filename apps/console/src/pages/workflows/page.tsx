@@ -25,9 +25,7 @@ import DataTable, {
 import i18n from '../../i18n/config'
 import PageWithTitle from '../../layouts/PageWithTitle'
 import { useMst } from '../../models/root'
-
-// https://github.com/suren-atoyan/monaco-react
-// https://monaco-react.surenatoyan.com/
+import routes from '../../routes'
 
 export default observer(() => {
 	const { t } = useTranslation('app')
@@ -35,66 +33,85 @@ export default observer(() => {
 		router,
 		root: {
 			api,
-			pages: { secrets: page },
+			pages: { workflows: page },
 			modals: { secretsCreate, secretsDelete },
 		},
 	} = useMst()
 	const { colorMode } = useColorMode()
 
+	let content
+
 	const addButton = (
 		<Button
-			onClick={() =>
-				secretsCreate.open({
+			onClick={() => {
+				router.goTo(routes.workflowNew, {
 					workspaceId: page.context.workspaceId,
 					projectId: page.context.projectId,
 				})
-			}
+			}}
 		>
 			Add
 		</Button>
 	)
 
-	let content
-
 	if (page.isLoading()) {
 		content = <Spinner />
-	} else if (page.secretsAvailable()) {
-		const secrets = page.getSecrets()
+	} else if (page.workflowsAvailable()) {
+		const workflows = page.getWorkflows()
 		const dataTableProps: DataTableProps = {
 			headers: [
 				{
-					id: 'key',
-					value: 'Key',
+					id: 'name',
+					value: 'Name',
 				},
 				{
-					id: 'value',
-					value: 'Value',
+					id: 'id',
+					value: 'ID',
 				},
 				{
 					id: 'delete',
 					value: '',
 				},
+				{
+					id: 'play',
+					value: '',
+				},
 			],
-			content: secrets.keys.map((secretKey) => {
+			content: workflows.map((workflow) => {
 				const cells: DataTableCell[] = [
 					{
-						id: 'key',
-						value: secretKey,
+						id: 'name',
+						value: workflow.name,
+						route: {
+							route: routes.workflowExisting,
+							params: {
+								workspaceId: page.context.workspaceId,
+								projectId: page.context.projectId,
+								workflowId: workflow.workflowId,
+							},
+						},
+					},
+					{
+						id: 'id',
+						value: workflow.workflowId,
 						clipboard: true,
 					},
 					{
-						id: 'value',
-						value: '********',
+						id: 'delete',
+						value: 'delete-workflow',
+						type: 'MenuDelete',
+						onClick: () => {},
 					},
 					{
-						id: 'delete',
-						value: 'delete-secret',
-						type: 'MenuDelete',
+						id: 'play',
+						value: 'play-workflow',
+						type: 'MenuPlay',
 						onClick: () => {
-							secretsDelete.open({
+							api.workflows.start({
 								workspaceId: page.context.workspaceId,
 								projectId: page.context.projectId,
-								key: secretKey,
+								workflowId: workflow.workflowId,
+								payload: {},
 							})
 						},
 					},
@@ -115,15 +132,15 @@ export default observer(() => {
 		content = (
 			<>
 				{addButton}
-				<Text>{t('app:pages.secrets.emptyState.heading')}</Text>
+				<Text>{t('app:pages.workflows.emptyState.heading')}</Text>
 			</>
 		)
 	}
 
 	const component = (
 		<PageWithTitle
-			title={t('app:pages.secrets.title')}
-			subtitle={t('app:pages.secrets.subtitle')}
+			title={t('app:pages.workflows.title')}
+			subtitle={t('app:pages.workflows.subtitle')}
 		>
 			<VStack>{content}</VStack>
 		</PageWithTitle>

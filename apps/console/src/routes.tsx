@@ -4,6 +4,7 @@ import NotFoundPage from './pages/404/page'
 import HomePage from './pages/home/page'
 import SecretsPage from './pages/secrets/page'
 import WorkflowEditorPage from './pages/workflow-editor/page'
+import WorkflowsPage from './pages/workflows/page'
 
 export class RouterPathUtils {
 	private path: string[] = []
@@ -72,8 +73,9 @@ export default {
 	workflowEditor: new Route<RootStore>({
 		path: '/workflow-editor',
 		component: <WorkflowEditorPage />,
-		onEnter(_route, _parameters, { root: { pages } }) {
-			pages.workflowEditor.initialisePage({ id: '123' })
+		onEnter(_route, parameters, { root: { pages } }) {
+			const { projectId, workspaceId } = parameters as any
+			pages.workflowEditor.initialisePage({ projectId, workspaceId })
 		},
 	}),
 
@@ -83,6 +85,37 @@ export default {
 		onEnter(_route, parameters, { root: { pages } }) {
 			const { projectId, workspaceId } = parameters as any
 			pages.secrets.initialisePage({ projectId, workspaceId })
+		},
+	}),
+
+	workflows: new Route<RootStore>({
+		path: new RouterPathUtils().w().p().wf().gen(),
+		component: <WorkflowsPage />,
+		onEnter(_route, parameters, { root: { pages } }) {
+			const { projectId, workspaceId } = parameters as any
+			pages.workflows.initialisePage({ projectId, workspaceId })
+		},
+	}),
+
+	workflowNew: new Route<RootStore>({
+		path: new RouterPathUtils().w().p().wf().custom('new').gen(),
+		component: <WorkflowEditorPage />,
+		onEnter(_route, parameters, { root: { pages } }) {
+			const { projectId, workspaceId } = parameters as any
+			pages.workflowEditor.initialisePage({ projectId, workspaceId })
+		},
+	}),
+
+	workflowExisting: new Route<RootStore>({
+		path: new RouterPathUtils().w().p().wf(true).gen(),
+		component: <WorkflowEditorPage />,
+		onEnter(_route, parameters, { root: { pages } }) {
+			const { projectId, workspaceId, workflowId } = parameters as any
+			pages.workflowEditor.initialisePage({
+				projectId,
+				workspaceId,
+				workflowId,
+			})
 		},
 	}),
 

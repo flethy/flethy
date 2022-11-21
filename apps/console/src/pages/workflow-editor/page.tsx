@@ -1,4 +1,4 @@
-import { Box, useColorMode } from '@chakra-ui/react'
+import { Box, Button, useColorMode } from '@chakra-ui/react'
 import Editor from '@monaco-editor/react'
 import { observer } from 'mobx-react-lite'
 import { useTranslation } from 'react-i18next'
@@ -25,6 +25,7 @@ export default observer(() => {
 			title={i18n.t('app:pages.workflowEditor.title')}
 			subtitle={page.name}
 		>
+			<Button onClick={() => page.save()}>Save</Button>
 			<Box w={'full'} borderColor={'flethy.orange'} border={'2px'}>
 				<Editor
 					height="50vh"
