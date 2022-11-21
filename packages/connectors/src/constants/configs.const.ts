@@ -222,6 +222,7 @@ import { UsePlunk } from '../configs/useplunk.config'
 import { Userfront } from '../configs/userfront.config'
 import { Vantevo } from '../configs/vantevo.config'
 import { Vonage } from '../configs/vonage.config'
+import { WarrantDev } from '../configs/warrantdev.config'
 import { Web3Storage } from '../configs/web3storage.config'
 import { WhoIsXMLApi } from '../configs/whoisxmlapi.config'
 import { WordSimi } from '../configs/wordsimi.config'
@@ -453,6 +454,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['userfront', Userfront.API],
 ['vantevo', Vantevo.API],
 ['vonage', Vonage.API],
+['warrantdev', WarrantDev.API],
 ['web3storage', Web3Storage.API],
 ['whoisxmlapi', WhoIsXMLApi.API],
 ['wordsimi', WordSimi.API],

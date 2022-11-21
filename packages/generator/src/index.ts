@@ -219,6 +219,7 @@ import UrlBae from '@flethy/connectors/src/configs/urlbae.config'
 import Userfront from '@flethy/connectors/src/configs/userfront.config'
 import Vantevo from '@flethy/connectors/src/configs/vantevo.config'
 import Vonage from '@flethy/connectors/src/configs/vonage.config'
+import WarrantDev from '@flethy/connectors/src/configs/warrantdev.config'
 import { HttpRequest } from './controllers/HttpRequest'
 import { logger } from './utils/Logger'
 
@@ -3033,8 +3034,17 @@ async function main() {
       'auth:Authorization': process.env.PREPR_ACCESS_TOKEN,
       'param:contentItemId': process.env.PREPR_CONTENT_ITEM_ID,
     }),
+    warrantDevObjectTypes: nao<WarrantDev.ListObjectTypes>({
+      kind: 'warrantdev.objectTypes.list',
+      'auth:Authorization': process.env.WARRANTDEV_API_KEY,
+    }),
+    warrantDevCreateUser: nao<WarrantDev.CreateUser>({
+      kind: 'warrantdev.users.create',
+      'auth:Authorization': process.env.WARRANTDEV_API_KEY,
+      'body:email': 'adam@flethy.com',
+    }),
   }
-  const requestConfig = requestConfigs.preprSingleItems
+  const requestConfig = requestConfigs.warrantDevCreateUser
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

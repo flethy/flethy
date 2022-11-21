@@ -25,6 +25,33 @@
 			"error": "Sorry, something went wrong. Please try again later."
 		}
 	},
+	"modals": {
+		"secrets": {
+			"create": {
+				"title": "Add a new Secret",
+				"submit": "Add",
+				"cancel": "Cancel",
+				"form": {
+					"key": {
+						"label": "Key",
+						"placeholder": "Key",
+						"helperText": "The key of the secret"
+					},
+					"value": {
+						"label": "Value",
+						"placeholder": "Value",
+						"helperText": "The value of the secret"
+					}
+				}
+			},
+			"delete": {
+				"title": "Delete Secret",
+				"submit": "Delete",
+				"cancel": "Cancel",
+				"description": "Are you sure you want to delete this secret?"
+			}
+		}
+	},
 	"pages": {
 		"verification": {
 			"heading": "You're ready to speed up!",

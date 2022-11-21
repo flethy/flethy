@@ -33,10 +33,13 @@ export const SecretsPage = types
 
 		secretsAvailable() {
 			const { api } = getRootStore(self)
-			return (
-				api.secrets.getFromStore({ projectId: self.context.projectId }) !==
-				undefined
-			)
+			const foundSecrets = api.secrets.getFromStore({
+				projectId: self.context.projectId,
+			})
+			if (foundSecrets) {
+				return foundSecrets.keys.length > 0
+			}
+			return false
 		},
 
 		getSecrets(): Instance<typeof SecretsDataModel> {

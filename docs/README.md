@@ -236,6 +236,7 @@ The following Endpoints are currently supported.
 * [Userfront](./api/userfront.md)
 * [Vantevo](./api/vantevo.md)
 * [Vonage](./api/vonage.md)
+* [WarrantDev](./api/warrantdev.md)
 * [WhoIsXMLApi](./api/whoisxmlapi.md)
 * [WordSimi](./api/wordsimi.md)
 * [YahooFinance](./api/yahoofinance.md)
