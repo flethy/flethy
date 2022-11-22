@@ -45,6 +45,7 @@ The following Endpoints are currently supported.
 * [BannerBear](./api/bannerbear.md)
 * [BaseRow](./api/baserow.md)
 * [Beehiiv](./api/beehiiv.md)
+* [Beew](./api/beew.md)
 * [BigDataCloud](./api/bigdatacloud.md)
 * [Bing](./api/bing.md)
 * [Bitly](./api/bitly.md)

@@ -222,6 +222,7 @@ import Vonage from '@flethy/connectors/src/configs/vonage.config'
 import WarrantDev from '@flethy/connectors/src/configs/warrantdev.config'
 import { HttpRequest } from './controllers/HttpRequest'
 import { logger } from './utils/Logger'
+import Beew from '@flethy/connectors/src/configs/beew.config'
 
 async function main() {
   const requestConfigs: {
@@ -3043,8 +3044,23 @@ async function main() {
       'auth:Authorization': process.env.WARRANTDEV_API_KEY,
       'body:email': 'adam@flethy.com',
     }),
+    beewCreateSchedule: nao<Beew.CreateSchedule>({
+      kind: 'beew.schedule.create',
+      'auth:X-API-KEY': process.env.BEEW_API_KEY,
+      'body:name': 'flethy',
+      'body:desc': 'flethy.com',
+      'body:url': 'https://webhook.site/535e0ed8-2ff7-4ff9-b24d-ea87d41fce9c',
+      'body:type': 'ONE_TIME',
+      'body:method': 'POST',
+      'body:responseType': 'json',
+      'body:headers': [],
+      'body:trigger': '2022-11-22T06:20:33.505Z',
+      'body:timezone': 'Europe/London',
+      'body:notifyOnError': false,
+      'body:payload': '',
+    }),
   }
-  const requestConfig = requestConfigs.warrantDevCreateUser
+  const requestConfig = requestConfigs.beewCreateSchedule
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

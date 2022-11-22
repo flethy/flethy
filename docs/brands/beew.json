@@ -1,0 +1,64 @@
+{
+  "name": "Beew",
+  "domain": "beew.io",
+  "claimed": false,
+  "description": "Schedule HTTP requests to any URL through our UI or REST API.",
+  "links": [{ "name": "twitter", "url": "https://twitter.com/@beew_io" }],
+  "logos": [
+    {
+      "type": "logo",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/id3-AXIcK6/idwru_Lb1A.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 820,
+          "width": 820,
+          "size": 58301
+        },
+        {
+          "src": "https://asset.brandfetch.io/id3-AXIcK6/idNcFZhbGs.svg",
+          "background": "transparent",
+          "format": "svg",
+          "size": 1863
+        }
+      ]
+    },
+    {
+      "type": "icon",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/id3-AXIcK6/idgeSwId_l.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 168,
+          "width": 168,
+          "size": 19311
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#ff654d", "type": "accent", "brightness": 132 },
+    { "hex": "#6b7280", "type": "dark", "brightness": 114 },
+    { "hex": "#ff9191", "type": "light", "brightness": 168 }
+  ],
+  "fonts": [],
+  "images": [
+    {
+      "type": "banner",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/id3-AXIcK6/idnYrttuBi.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 500,
+          "width": 1500,
+          "size": 35208
+        }
+      ]
+    }
+  ]
+}

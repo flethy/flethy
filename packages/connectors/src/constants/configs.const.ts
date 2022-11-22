@@ -16,6 +16,7 @@ import { BambooHR } from '../configs/bamboohr.config'
 import { BannerBear } from '../configs/bannerbear.config'
 import { BaseRow } from '../configs/baserow.config'
 import { Beehiiv } from '../configs/beehiiv.config'
+import { Beew } from '../configs/beew.config'
 import { BigDataCloud } from '../configs/bigdatacloud.config'
 import { Bing } from '../configs/bing.config'
 import { Bitly } from '../configs/bitly.config'
@@ -248,6 +249,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['bannerbear', BannerBear.API],
 ['baserow', BaseRow.API],
 ['beehiiv', Beehiiv.API],
+['beew', Beew.API],
 ['bigdatacloud', BigDataCloud.API],
 ['bing', Bing.API],
 ['bitly', Bitly.API],
