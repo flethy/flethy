@@ -85,6 +85,10 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://flethy.com/integrations/beew</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://flethy.com/integrations/bigdatacloud</loc>
     <priority>0.8</priority>
   </url>
