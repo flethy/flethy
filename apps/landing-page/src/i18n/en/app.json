@@ -80,6 +80,10 @@
 			"subtitle": "Always progress!",
 			"upcoming": "Upcoming",
 			"completed": "Done"
+		},
+		"useCases": {
+			"title": "flethy Use Cases",
+			"subtitle": "Endless possibilities"
 		}
 	}
 }

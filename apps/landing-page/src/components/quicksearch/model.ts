@@ -1,4 +1,5 @@
 import { types } from 'mobx-state-tree'
+import { USECASES } from '../../constants/usecases.const'
 import { getRouter } from '../../models/helpers'
 import routes from '../../routes'
 
@@ -68,6 +69,15 @@ export const QuickSearchComponent = types
 					title: 'Roadmap',
 					subtitle: 'Always progress!',
 					action: () => getRouter().goTo(routes.roadmap),
+				})
+				USECASES.forEach((useCase) => {
+					this.addAction({
+						id: useCase.id,
+						title: useCase.title,
+						subtitle: 'flethy Use Case',
+						tags: useCase.tags,
+						action: () => getRouter().goTo(routes.useCase, { id: useCase.id }),
+					})
 				})
 
 				self.initStatus = 'success'

@@ -6,6 +6,8 @@ import IntegrationPage from './pages/integration/page'
 import IntegrationsPage from './pages/integrations/page'
 import PitchDeckPage from './pages/pitchdeck/page'
 import RoadmapPage from './pages/roadmap/page'
+import UseCasePage from './pages/use-case/page'
+import UseCasesPage from './pages/use-cases/page'
 import VerificationPage from './pages/verification/page'
 
 export default {
@@ -65,6 +67,20 @@ export default {
 		onParamsChange(_router, parameters, { root: { pages } }) {
 			const id = (parameters?.id as string) ?? ''
 			pages.integration.initialisePage(id)
+		},
+	}),
+
+	useCases: new Route<RootStore>({
+		path: '/use-cases',
+		component: <UseCasesPage />,
+	}),
+
+	useCase: new Route<RootStore>({
+		path: '/use-cases/:id',
+		component: <UseCasePage />,
+		onEnter(_route, parameters, { root: { pages } }) {
+			const { id } = parameters!
+			pages.useCase.initialisePage(id as string)
 		},
 	}),
 

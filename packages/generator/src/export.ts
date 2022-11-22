@@ -8,8 +8,8 @@ async function main() {
   await ConfigsExporter.export()
   await DocsExporter.export()
   await TypesExporter.export()
-  await SitemapExporter.export()
   await UseCasesExporter.export()
+  await SitemapExporter.export()
 }
 
 main()

@@ -8,39 +8,41 @@ import { useMst } from '../models/root'
 
 const SyntaxHighlighter = React.lazy(() => import('react-syntax-highlighter'))
 
-export default observer((props: { code: string }) => {
-	const { t } = useTranslation('app')
-	const {
-		router,
-		root: {},
-	} = useMst()
+export default observer(
+	(props: { code: string; language?: 'typescript' | 'json' }) => {
+		const { t } = useTranslation('app')
+		const {
+			router,
+			root: {},
+		} = useMst()
 
-	const codeBox = (fontSize?: string) => (
-		<Suspense>
-			<SyntaxHighlighter
-				language="typescript"
-				style={anOldHope}
-				customStyle={{
-					borderRadius: BOX.borderRadius,
-					borderColor: BOX.borderColor,
-					borderWidth: BOX.borderWidth,
-					margin: '2px',
-					fontSize,
-				}}
-			>
-				{props.code}
-			</SyntaxHighlighter>
-		</Suspense>
-	)
+		const codeBox = (fontSize?: string) => (
+			<Suspense>
+				<SyntaxHighlighter
+					language={props.language || 'typescript'}
+					style={anOldHope}
+					customStyle={{
+						borderRadius: BOX.borderRadius,
+						borderColor: BOX.borderColor,
+						borderWidth: BOX.borderWidth,
+						margin: '2px',
+						fontSize,
+					}}
+				>
+					{props.code}
+				</SyntaxHighlighter>
+			</Suspense>
+		)
 
-	return (
-		<>
-			<Show above="sm">
-				<Box textAlign={'left'}>{codeBox()}</Box>
-			</Show>
-			<Show below="sm">
-				<Box textAlign={'left'}>{codeBox(FONT_SIZE.sm)}</Box>
-			</Show>
-		</>
-	)
-})
+		return (
+			<>
+				<Show above="sm">
+					<Box textAlign={'left'}>{codeBox()}</Box>
+				</Show>
+				<Show below="sm">
+					<Box textAlign={'left'}>{codeBox(FONT_SIZE.sm)}</Box>
+				</Show>
+			</>
+		)
+	},
+)

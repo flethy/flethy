@@ -1,5 +1,6 @@
 import * as fs from 'fs'
 import * as path from 'path'
+import { USECASES } from '../use-cases/usecases.const'
 import { logger } from '../utils/Logger'
 import { LANDINGPAGE_PUBLIC } from './brand.exporter'
 
@@ -37,6 +38,10 @@ export class SitemapExporter {
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://flethy.com/use-cases</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://flethy.com/roadmap</loc>
     <priority>0.9</priority>
   </url>`,
@@ -44,6 +49,12 @@ export class SitemapExporter {
     ids.forEach((id) => {
       sitemap.push(`  <url>
     <loc>https://flethy.com/integrations/${id}</loc>
+    <priority>0.8</priority>
+  </url>`)
+    })
+    USECASES.forEach((useCase) => {
+      sitemap.push(`  <url>
+    <loc>https://flethy.com/use-cases/${useCase.id}</loc>
     <priority>0.8</priority>
   </url>`)
     })
