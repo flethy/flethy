@@ -28,6 +28,11 @@ const NavbarLinks = [
 		name: 'Roadmap',
 		route: routes.roadmap,
 	},
+	{
+		id: 'usecases',
+		name: 'Use Cases',
+		route: routes.useCases,
+	},
 ]
 
 export default observer(() => {
