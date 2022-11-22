@@ -765,6 +765,14 @@ async function main() {
         ],
       },
     }),
+    auth0CreateUser: nao<Auth0.CreateUser>({
+      kind: 'auth0.users.create',
+      'auth:Authorization': process.env.AUTH0_JWT,
+      'subdomain:tenant': process.env.AUTH0_TENANT,
+      'body:email': '',
+      'body:family_name': '',
+      'body:given_name': '',
+    }),
     auth0SearchUsers: nao<Auth0.ListOrSearchUsers>({
       kind: 'auth0.users.listOrSearch',
       'auth:Authorization': process.env.AUTH0_JWT,

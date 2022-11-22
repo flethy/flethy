@@ -1,6 +1,7 @@
 import * as fs from 'fs'
 import markdownJson from 'markdown-json'
 import * as path from 'path'
+import { FLOWS } from '../use-cases/flows.const'
 import { logger } from '../utils/Logger'
 import { LANDINGPAGE_CONSTANTS } from './brand.exporter'
 
@@ -14,6 +15,7 @@ interface UseCase {
   services: string[]
   kinds: string[]
   tags: string[]
+  flow?: any
   hero?: string
 }
 
@@ -42,6 +44,7 @@ export class UseCasesExporter {
     const useCases: UseCase[] = []
 
     for (const item of data.data) {
+      const flow = FLOWS[item.id]
       useCases.push({
         id: item.id,
         title: item.title,
@@ -49,12 +52,14 @@ export class UseCasesExporter {
         services: item.services,
         kinds: item.kinds,
         tags: item.tags,
+        flow,
         hero: item.hero,
       })
     }
 
     const CONSTANT = `export const USECASES = ${JSON.stringify(useCases)}`
     fs.writeFileSync(`${LANDINGPAGE_CONSTANTS}/usecases.const.ts`, CONSTANT)
+    fs.writeFileSync(`${USECASES_DIR}/usecases.const.ts`, CONSTANT)
 
     fs.unlinkSync(USECASES_OUTPUT)
   }
@@ -67,7 +72,20 @@ export class UseCasesExporter {
     const splitted = value
       .split('\n')
       .filter((line) => line !== '')
-      .map((line: string) => UseCasesExporter.replaceTags(line, 'p'))
+      .map((line: string) =>
+        UseCasesExporter.replaceEscapeCharacters(
+          UseCasesExporter.replaceTags(line, 'p')
+        )
+      )
     return splitted
+  }
+
+  private static replaceEscapeCharacters(value: string): string {
+    let updated = value.replace(/&lt;/g, '<')
+    updated = updated.replace(/&gt;/g, '>')
+    updated = updated.replace(/&quot;/g, '"')
+    updated = updated.replace(/&#39;/g, "'")
+    updated = updated.replace(/&amp;/g, '&')
+    return updated
   }
 }
