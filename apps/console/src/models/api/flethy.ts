@@ -37,3 +37,34 @@ export const FlethyModel = types
 
 		return { onboard }
 	})
+	.views((self) => {
+		const getContext = () => {
+			const context = {
+				workspaceId: self.context.workspaceId,
+				projectId: self.context.projectId,
+			}
+			return context
+		}
+
+		const getEnrichedContext = () => {
+			const { api } = getRootStore(self)
+			const workspace = api.user.workspaceById(
+				api.flethy.getContext().workspaceId,
+			)
+			if (workspace) {
+				const project = api.user.projectById(
+					workspace.id,
+					api.flethy.getContext().projectId,
+				)
+				if (project) {
+					return {
+						workspace,
+						project,
+					}
+				}
+			}
+			return undefined
+		}
+
+		return { getContext, getEnrichedContext }
+	})
