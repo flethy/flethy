@@ -185,6 +185,7 @@ import { SendGrid } from '../../../connectors/src/configs/sendgrid.config'
 import { Sentry } from '../../../connectors/src/configs/sentry.config'
 import { SerpApi } from '../../../connectors/src/configs/serpapi.config'
 import { SerpStack } from '../../../connectors/src/configs/serpstack.config'
+import { Sheetson } from '../../../connectors/src/configs/sheetson.config'
 import { Sheety } from '../../../connectors/src/configs/sheety.config'
 import { Shortcut } from '../../../connectors/src/configs/shortcut.config'
 import { Shrtcode } from '../../../connectors/src/configs/shrtcode.config'
@@ -630,6 +631,10 @@ configTypes.push({type: getType<Sentry.QueryDiscoverEvents>(), id: 'sentry', nam
 configTypes.push({type: getType<Sentry.ListProjects>(), id: 'sentry', name: 'Sentry', interface: 'ListProjects'})
 configTypes.push({type: getType<SerpApi.Search>(), id: 'serpapi', name: 'SerpApi', interface: 'Search'})
 configTypes.push({type: getType<SerpStack.Search>(), id: 'serpstack', name: 'SerpStack', interface: 'Search'})
+configTypes.push({type: getType<Sheetson.ReadData>(), id: 'sheetson', name: 'Sheetson', interface: 'ReadData'})
+configTypes.push({type: getType<Sheetson.AddData>(), id: 'sheetson', name: 'Sheetson', interface: 'AddData'})
+configTypes.push({type: getType<Sheetson.DeleteData>(), id: 'sheetson', name: 'Sheetson', interface: 'DeleteData'})
+configTypes.push({type: getType<Sheetson.UpdateData>(), id: 'sheetson', name: 'Sheetson', interface: 'UpdateData'})
 configTypes.push({type: getType<Sheety.Get>(), id: 'sheety', name: 'Sheety', interface: 'Get'})
 configTypes.push({type: getType<Sheety.Post>(), id: 'sheety', name: 'Sheety', interface: 'Post'})
 configTypes.push({type: getType<Sheety.Put>(), id: 'sheety', name: 'Sheety', interface: 'Put'})

@@ -223,6 +223,7 @@ import WarrantDev from '@flethy/connectors/src/configs/warrantdev.config'
 import { HttpRequest } from './controllers/HttpRequest'
 import { logger } from './utils/Logger'
 import Beew from '@flethy/connectors/src/configs/beew.config'
+import Sheetson from '@flethy/connectors/src/configs/sheetson.config'
 
 async function main() {
   const requestConfigs: {
@@ -3067,8 +3068,26 @@ async function main() {
       'body:notifyOnError': false,
       'body:payload': '',
     }),
+    sheetsonGet: nao<Sheetson.ReadData>({
+      kind: 'sheetson.manage.read',
+      'auth:Authorization': process.env.SHEETSON_API_KEY,
+      'auth:X-Spreadsheet-Id': process.env.SHEETSON_SPREADSHEET_ID,
+      'param:sheetTab': 'Sheet1',
+      'param:rowIndex': 3,
+    }),
+    sheetsonAdd: nao<Sheetson.AddData>({
+      kind: 'sheetson.manage.add',
+      'auth:Authorization': process.env.SHEETSON_API_KEY,
+      'auth:X-Spreadsheet-Id': process.env.SHEETSON_SPREADSHEET_ID,
+      'param:sheetTab': 'Sheet1',
+      'body:body': {
+        sheety: 'is awesome',
+        asd: 'is awesome',
+        asd2: 'is awesome',
+      },
+    }),
   }
-  const requestConfig = requestConfigs.beewCreateSchedule
+  const requestConfig = requestConfigs.sheetsonAdd
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)
