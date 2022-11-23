@@ -14,6 +14,7 @@ import FancyHeading from '../../components/molecules/fancy-heading/FancyHeading'
 import SyntaxHighlight from '../../components/SyntaxHighlight'
 import { USECASES } from '../../constants/usecases.const'
 import { useMst } from '../../models/root'
+import routes from '../../routes'
 
 export default observer(() => {
 	const { t } = useTranslation('app')
@@ -21,6 +22,7 @@ export default observer(() => {
 		root: {
 			pages: { useCase: page },
 		},
+		router,
 	} = useMst()
 
 	const content = page.getContent()
@@ -37,6 +39,21 @@ export default observer(() => {
 			</Center>
 		)
 	}
+
+	const otherUseCases = (
+		<>
+			{USECASES.filter((useCase) => useCase.id !== content.id).map(
+				(useCase) => (
+					<Button
+						variant="link"
+						onClick={() => router.goTo(routes.useCase, { id: useCase.id })}
+					>
+						{useCase.title}
+					</Button>
+				),
+			)}
+		</>
+	)
 
 	return (
 		<Center>
@@ -67,6 +84,12 @@ export default observer(() => {
 									/>
 								</VStack>
 							)}
+							<VStack gap={2}>
+								<Heading size={'md'} as={'h3'}>
+									Other use cases for flethy
+								</Heading>
+								{otherUseCases}
+							</VStack>
 						</VStack>
 					</Container>
 				</Center>

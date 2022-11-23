@@ -185,6 +185,7 @@ import { SendGrid } from '../configs/sendgrid.config'
 import { Sentry } from '../configs/sentry.config'
 import { SerpApi } from '../configs/serpapi.config'
 import { SerpStack } from '../configs/serpstack.config'
+import { Sheetson } from '../configs/sheetson.config'
 import { Sheety } from '../configs/sheety.config'
 import { Shortcut } from '../configs/shortcut.config'
 import { Shrtcode } from '../configs/shrtcode.config'
@@ -418,6 +419,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['sentry', Sentry.API],
 ['serpapi', SerpApi.API],
 ['serpstack', SerpStack.API],
+['sheetson', Sheetson.API],
 ['sheety', Sheety.API],
 ['shortcut', Shortcut.API],
 ['shrtcode', Shrtcode.API],

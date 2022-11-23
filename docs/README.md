@@ -201,6 +201,7 @@ The following Endpoints are currently supported.
 * [Sentry](./api/sentry.md)
 * [SerpApi](./api/serpapi.md)
 * [SerpStack](./api/serpstack.md)
+* [Sheetson](./api/sheetson.md)
 * [Sheety](./api/sheety.md)
 * [Shortcut](./api/shortcut.md)
 * [Shrtcode](./api/shrtcode.md)

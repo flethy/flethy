@@ -1,0 +1,46 @@
+# Sheetson
+
+## Links
+
+* URL: [https://sheetson.com/](https://sheetson.com/)
+* Documentation: [https://docs.sheetson.com](https://docs.sheetson.com)
+* Tags: web2
+* Category: utils
+* Type: spreadsheet
+
+## API
+
+### Authentication
+
+* Authorization: header:bearer
+* X-Spreadsheet-Id: header
+
+### manage
+
+#### read
+
+##### Retrieving Rows
+
+* Description: Retrieving Rows
+* Docs: [https://docs.sheetson.com/manage-data/retrieve-rows/](https://docs.sheetson.com/manage-data/retrieve-rows/)
+
+#### add
+
+##### Creating Rows
+
+* Description: Creating Rows
+* Docs: [https://docs.sheetson.com/manage-data/create-rows/](https://docs.sheetson.com/manage-data/create-rows/)
+
+#### delete
+
+##### Deleting Rows
+
+* Description: Deleting Rows
+* Docs: [https://docs.sheetson.com/manage-data/delete-rows/](https://docs.sheetson.com/manage-data/delete-rows/)
+
+#### update
+
+##### Updating Rows
+
+* Description: Updating Rows
+* Docs: [https://docs.sheetson.com/manage-data/update-rows/](https://docs.sheetson.com/manage-data/update-rows/)

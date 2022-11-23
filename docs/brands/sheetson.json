@@ -1,0 +1,29 @@
+{
+  "name": "Sheetson",
+  "domain": "sheetson.com",
+  "claimed": false,
+  "description": "Build instant APIs from Google Sheets for free",
+  "links": [],
+  "logos": [],
+  "colors": [
+    { "hex": "#273238", "type": "dark", "brightness": 48 },
+    { "hex": "#ffbe9e", "type": "light", "brightness": 202 }
+  ],
+  "fonts": [
+    {
+      "name": "Inter",
+      "type": "title",
+      "origin": "google",
+      "originId": "Inter",
+      "weights": []
+    },
+    {
+      "name": "sans-serif",
+      "type": "body",
+      "origin": "custom",
+      "originId": null,
+      "weights": []
+    }
+  ],
+  "images": []
+}
