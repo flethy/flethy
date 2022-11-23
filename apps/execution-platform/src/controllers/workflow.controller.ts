@@ -275,7 +275,7 @@ export class WorkflowController {
     const workflow = await WorkflowController.get(request);
     const secrets = await SecretsController.get(request);
 
-    const response = {
+    const response: StartWorkflowResponse = {
       success: false,
       response: {},
     };
@@ -293,11 +293,11 @@ export class WorkflowController {
 
       response.success = true;
 
-      // response.success = engine.hasErrors().
-      // if (engine.hasErrors()) {
-      //   response.errors = engine.getErrors();
-      // }
-      // response.response = engine.getResponse()
+      response.success = engine.hasErrors();
+      if (engine.hasErrors()) {
+        response.errors = engine.getErrors();
+      }
+      response.response = engine.getResponse();
     } catch (error: any) {
       throw new FlethyError({
         message: `Failed to execute workflow ${request.workflowId} for project ${request.projectId}: ${error.message}`,
@@ -310,6 +310,6 @@ export class WorkflowController {
       });
     }
 
-    return true;
+    return response;
   }
 }
