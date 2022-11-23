@@ -7,6 +7,8 @@ import { WorkspacesRoute } from "./workspace.route";
 
 export class FrontendRoute {
   public static addRoutes(API: Router) {
+    // WORKSPACES
+
     RouterUtils.createRoute({
       API,
       method: "POST",
@@ -15,6 +17,17 @@ export class FrontendRoute {
       scopes: [TokenScope.WORKSPACE_CREATE],
       handler: async (req, res, userId, _response) => {
         await WorkspacesRoute.onboard(req, res, userId);
+      },
+    });
+
+    RouterUtils.createRoute({
+      API,
+      method: "GET",
+      route: new RouterPathUtils().w().custom("my").gen(),
+      isUserToken: true,
+      scopes: [TokenScope.WORKSPACE_READ],
+      handler: async (req, res, userId, response) => {
+        await WorkspacesRoute.get(req, res, userId, response);
       },
     });
 

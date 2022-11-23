@@ -1,4 +1,4 @@
-import { KV, write } from "worktop/kv";
+import { KV, read, write } from "worktop/kv";
 import { ENVVARS } from "../constants/envvar.const";
 import { FlethyMetaDates, FlethyMetaUser } from "../types/general.type";
 import { ErrorType, FlethyError } from "../utils/error.utils";
@@ -40,6 +40,10 @@ export interface OnboardWorkspaceRequest {
     name: string;
   };
   userId: string;
+}
+
+export interface GetWorkspacesRequest {
+  workspaceIds: string[];
 }
 
 // CONTROLLER
@@ -122,5 +126,42 @@ export class WorkspaceController {
     }
 
     return { success, workspaceMetadata };
+  }
+
+  public static async get(request: GetWorkspacesRequest) {
+    const validation = ValidationUtils.validateAll([
+      {
+        value: request.workspaceIds,
+        parameter: "workspaceIds",
+        checks: { required: true, arrayMinLength: 1 },
+      },
+    ]);
+    if (!validation.valid) {
+      throw new FlethyError({
+        message: validation.message,
+        type: ErrorType.BadRequest,
+        log: {
+          message: validation.message,
+          context: { method: "get", origin: "workspace.controller.ts" },
+          data: { request },
+        },
+      });
+    }
+
+    const promises = request.workspaceIds.map((workspaceId) => {
+      return read<Workspace, FlethyWorkspaceMetadata>(
+        WORKSPACES,
+        KVUtils.workspaceKey(workspaceId),
+        { metadata: true, type: "json" }
+      );
+    });
+
+    const responses = await Promise.all(promises);
+
+    const workspaces = responses.map((response) => {
+      return response.value;
+    });
+
+    return { workspaces };
   }
 }
