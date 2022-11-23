@@ -952,4 +952,8 @@
     <loc>https://flethy.com/use-cases/create-a-new-user-with-auth0</loc>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://flethy.com/use-cases/update-users-app-metadata-with-auth0</loc>
+    <priority>0.8</priority>
+  </url>
 </urlset>
