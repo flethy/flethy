@@ -53,6 +53,12 @@ export interface StartWorkflowRequest extends FlethyRequest {
   payload?: any;
 }
 
+export interface StartWorkflowResponse {
+  success: boolean;
+  errors?: any[];
+  response: any;
+}
+
 // CONTROLLER
 
 export class WorkflowController {
@@ -240,7 +246,9 @@ export class WorkflowController {
     return success;
   }
 
-  public static async start(request: StartWorkflowRequest): Promise<boolean> {
+  public static async start(
+    request: StartWorkflowRequest
+  ): Promise<StartWorkflowResponse> {
     const validation = ValidationUtils.validateAll([
       {
         value: request.projectId,
@@ -267,6 +275,11 @@ export class WorkflowController {
     const workflow = await WorkflowController.get(request);
     const secrets = await SecretsController.get(request);
 
+    const response = {
+      success: false,
+      response: {},
+    };
+
     try {
       const engine = new FlowEngine({
         flow: workflow.workflow.workflow,
@@ -277,6 +290,14 @@ export class WorkflowController {
         },
       });
       await engine.start();
+
+      response.success = true;
+
+      // response.success = engine.hasErrors().
+      // if (engine.hasErrors()) {
+      //   response.errors = engine.getErrors();
+      // }
+      // response.response = engine.getResponse()
     } catch (error: any) {
       throw new FlethyError({
         message: `Failed to execute workflow ${request.workflowId} for project ${request.projectId}: ${error.message}`,

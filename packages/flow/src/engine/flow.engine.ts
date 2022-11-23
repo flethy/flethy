@@ -1,5 +1,6 @@
 import {
   EngineOptions,
+  FlowContext,
   FlowInstanceStartConfig,
   FlowNode,
 } from '../types/flow.types'
@@ -30,17 +31,27 @@ export class FlowEngine {
     this.debug(this.utils.getInstanceContext())
   }
 
-  public getContent(type: 'all' | 'instanceContext' = 'instanceContext') {
-    if (type === 'all') {
-      return this.utils.getInstanceContext()
-    } else {
-      return this.utils.getInstanceContext().context
-    }
+  public hasErrors(): boolean {
+    return this.utils.getInstanceContext().errors.length > 0
+  }
+
+  public getErrors(): Array<{ id?: string; error: any }> {
+    return this.utils.getInstanceContext().errors.map((error) => {
+      return { id: error.id, error: error.error }
+    })
+  }
+
+  public getInstanceContext(): FlowContext {
+    return this.utils.getInstanceContext()
+  }
+
+  public getContext(): any {
+    return this.utils.getInstanceContext().context
   }
 
   // map attributes to _flethyresponse if they should be returned
   public getResponse() {
-    this.utils.getInstanceContext().context._flethyresponse ?? {}
+    return this.utils.getInstanceContext().context._flethyresponse ?? {}
   }
 
   private async execute(node: FlowNode) {
