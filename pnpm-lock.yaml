@@ -9,7 +9,7 @@ importers:
       turbo: latest
     devDependencies:
       eslint-config-custom: link:packages/eslint-config-custom
-      prettier: 2.7.1
+      prettier: 2.8.0
       turbo: 1.6.3
 
   apps/console:
@@ -114,7 +114,7 @@ importers:
   apps/execution-platform:
     specifiers:
       '@cloudflare/workers-types': 3.18.0
-      '@flethy/flow': ^0.0.233
+      '@flethy/flow': ^0.0.236
       '@tsndr/cloudflare-worker-jwt': ^2.1.2
       '@types/node': 18.11.9
       '@typescript-eslint/eslint-plugin': ^5.42.1
@@ -131,7 +131,7 @@ importers:
       worktop: ^0.7.3
       wrangler: 2.2.1
     dependencies:
-      '@flethy/flow': 0.0.233
+      '@flethy/flow': 0.0.236
     devDependencies:
       '@cloudflare/workers-types': 3.18.0
       '@tsndr/cloudflare-worker-jwt': 2.1.2
@@ -3130,10 +3130,6 @@ packages:
     resolution: {integrity: sha512-IQxSQHncwffRcerTsHLodmCVzhtOQyQaKE5OjbzKIK/B79W/M9H3ph4wlyIVjImk+ciKnt/68/w/pu7UC9BUMg==}
     dev: false
 
-  /@flethy/connectors/0.0.227:
-    resolution: {integrity: sha512-zeIhqjM/l1CmMVPXZ4MffHBOujeNhoEvI7VWo2bTTAQnMfmsPJGIqbq/6mqEEp26t0ikI71qHa8bu2KwIKF8hQ==}
-    dev: false
-
   /@flethy/connectors/0.0.233:
     resolution: {integrity: sha512-zpNUbQVjL+v3gfzy7i70NmrDHNv9cLOBoHF8wPAiGSff3pAn3e/D3jI4szMsvyeIpJXWUp6KoCt8FUcdMYP8Wg==}
     dev: false
@@ -3148,10 +3144,10 @@ packages:
       - debug
     dev: false
 
-  /@flethy/flow/0.0.233:
-    resolution: {integrity: sha512-oyTLGt9KNxiMdZ57vDTVMzAbkuwp4So7BSqGOk28WEbtM4ztydgmUYZN6U8BiA5OIRn68esWJ0UTXEMRxf4q0w==}
+  /@flethy/flow/0.0.236:
+    resolution: {integrity: sha512-v/goxb65KXw48sJmtc2NvNLX5rCstrfqNmz36OV63wMJNCi0cokHxPWMDU7emSmhtr3d+HpDGUccIW2dBlkifA==}
     dependencies:
-      '@flethy/connectors': 0.0.227
+      '@flethy/connectors': 0.0.233
       axios: 1.1.2
       jsonata: 1.8.6
     transitivePeerDependencies:
@@ -8660,6 +8656,12 @@ packages:
 
   /prettier/2.7.1:
     resolution: {integrity: sha512-ujppO+MkdPqoVINuDFDRLClm7D78qbDt0/NR+wp5FqEZOoTNAjPHWj17QRhu7geIHJfcNhRk1XVQmF8Bp3ye+g==}
+    engines: {node: '>=10.13.0'}
+    hasBin: true
+    dev: true
+
+  /prettier/2.8.0:
+    resolution: {integrity: sha512-9Lmg8hTFZKG0Asr/kW9Bp8tJjRVluO8EJQVfY2T7FMw9T5jy4I/Uvx0Rca/XWf50QQ1/SS48+6IJWnrb+2yemA==}
     engines: {node: '>=10.13.0'}
     hasBin: true
     dev: true
