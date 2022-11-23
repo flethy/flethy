@@ -291,9 +291,7 @@ export class WorkflowController {
       });
       await engine.start();
 
-      response.success = true;
-
-      response.success = engine.hasErrors();
+      response.success = !engine.hasErrors();
       if (engine.hasErrors()) {
         response.errors = engine.getErrors();
       }

@@ -5,6 +5,8 @@ import {
 	Button,
 	Flex,
 	HStack,
+	Icon,
+	IconButton,
 	Kbd,
 	Link,
 	Stack,
@@ -12,6 +14,7 @@ import {
 	useColorMode,
 	useColorModeValue,
 } from '@chakra-ui/react'
+import { CgMenuGridR } from 'react-icons/cg'
 import { observer } from 'mobx-react-lite'
 import { useTranslation } from 'react-i18next'
 import { useMst } from '../models/root'
@@ -35,7 +38,7 @@ export default observer(() => {
 			auth,
 			api,
 			pages: { home },
-			components: { quickSearch },
+			components: { quickSearch, menu },
 		},
 	} = useMst()
 
@@ -55,8 +58,23 @@ export default observer(() => {
 							style={{ cursor: 'pointer' }}
 							onClick={() => router.goTo(routes.home)}
 						>
+							<IconButton
+								aria-label="Open menu"
+								icon={<Icon width={'8'} height={'8'} as={CgMenuGridR} />}
+								onClick={() => menu.toggle()}
+							/>
+
 							<Logo width={'12'} />
 							<Text fontWeight={'bold'}>{t('title')}</Text>
+							{api.flethy.getEnrichedContext() && (
+								<Text>
+									{api.flethy
+										.getEnrichedContext()
+										?.workspace.id.substring(0, 5)}{' '}
+									/{' '}
+									{api.flethy.getEnrichedContext()?.project.id.substring(0, 5)}
+								</Text>
+							)}
 						</HStack>
 						<HStack
 							as={'nav'}

@@ -52,3 +52,17 @@ export const UserModel = types
 
 		return { init }
 	})
+	.views((self) => {
+		const workspaceById = (id: string) => {
+			const workspace = self.workspaces.find((workspace) => workspace.id === id)
+			return workspace
+		}
+
+		const projectById = (workspaceId: string, id: string) => {
+			const workspace = workspaceById(workspaceId)
+			const project = workspace?.projects.find((project) => project.id === id)
+			return project
+		}
+
+		return { workspaceById, projectById }
+	})

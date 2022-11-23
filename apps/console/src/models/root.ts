@@ -1,6 +1,7 @@
 import { RouterStore } from 'mobx-router'
 import { Instance, types } from 'mobx-state-tree'
 import { createContext, useContext } from 'react'
+import { MenuComponent } from '../components/menu/model'
 import { CreateSecretsModal } from '../components/modals/secrets/create/model'
 import { DeleteSecretsModal } from '../components/modals/secrets/delete/model'
 import { QuickSearchComponent } from '../components/quicksearch/model'
@@ -30,6 +31,7 @@ const ComponentsStore = types.model('Components', {
 	quickSearch: types.optional(QuickSearchComponent, () =>
 		QuickSearchComponent.create(),
 	),
+	menu: types.optional(MenuComponent, () => MenuComponent.create()),
 })
 
 const ModalsStore = types.model('Modals', {

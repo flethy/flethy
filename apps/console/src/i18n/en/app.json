@@ -1,8 +1,17 @@
 {
 	"title": "flethy",
 	"description": "time to speed up",
+	"buttons": {
+		"close": "Close"
+	},
 	"navbar": {
 		"home": "Home"
+	},
+	"menu": {
+		"title": "Automate!",
+		"home": "Home",
+		"secrets": "Secrets",
+		"workflows": "Workflows"
 	},
 	"footer": {
 		"pitchdeck": "Pitch Deck",
