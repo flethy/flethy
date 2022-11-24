@@ -2466,16 +2466,6 @@ async function main() {
         },
       },
     }),
-    twitterManagePostTweets: nao<Twitter.PostTweets>({
-      kind: 'twitter.manage.postTweets',
-      'auth:Authorization': {
-        consumerKey: process.env.CONSUMER_KEY,
-        consumerSecret: process.env.CONSUMER_SECRET,
-        accessKey: process.env.ACCESS_TOKEN,
-        accessSecret: process.env.ACCESS_TOKEN_SECRET,
-      },
-      'body:text': 'gmfrens',
-    }),
     deepgramListen: nao<Deepgram.TranscribePrerecordedAudio>({
       kind: 'deepgram.transcription.preRecordedAudio',
       'auth:Authorization': process.env.DEEPGRAM_API_KEY,
@@ -3086,8 +3076,18 @@ async function main() {
         asd2: 'is awesome',
       },
     }),
+    twitterManagePostTweets: nao<Twitter.PostTweets>({
+      kind: 'twitter.manage.postTweets',
+      'auth:Authorization': {
+        consumerKey: process.env.CONSUMER_KEY,
+        consumerSecret: process.env.CONSUMER_SECRET,
+        accessKey: process.env.ACCESS_TOKEN,
+        accessSecret: process.env.ACCESS_TOKEN_SECRET,
+      },
+      'body:text': 'gmfrens',
+    }),
   }
-  const requestConfig = requestConfigs.sheetsonAdd
+  const requestConfig = requestConfigs.twitterManagePostTweets
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

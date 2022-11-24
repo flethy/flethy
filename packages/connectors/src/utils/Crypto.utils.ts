@@ -1,5 +1,13 @@
+// import { HMACSHA256Base64 } from './HMAC.utils'
+
 export class CryptoUtils {
   public static createHmacBase64(algorithm: string, key: string, base: string) {
+    // switch (algorithm) {
+    //   case 'sha256':
+    //     return HMACSHA256Base64(key, base)
+    //   default:
+    //     throw new Error(`Unsupported algorithm: ${algorithm}`)
+    // }
     if (typeof crypto !== 'undefined') {
       // Check: native implementation: https://github.com/junkurihara/jscu/blob/develop/packages/js-crypto-hash/src/hash.ts
       // TODO: check web crypto implementation

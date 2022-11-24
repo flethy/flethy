@@ -1,5 +1,5 @@
 export class Base64Utils {
-  public static encode(value: string) {
+  public static encode(value: any) {
     if (typeof btoa === 'function') {
       return btoa(value)
     }
