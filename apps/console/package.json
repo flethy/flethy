@@ -42,7 +42,7 @@
 	},
 	"devDependencies": {
 		"@babel/core": "7.20.2",
-		"@cloudflare/workers-types": "3.18.0",
+		"@cloudflare/workers-types": "4.20221111.1",
 		"@types/node": "18.11.9",
 		"@types/react": "18.0.25",
 		"@types/react-dom": "18.0.9",

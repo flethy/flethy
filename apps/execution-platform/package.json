@@ -15,7 +15,7 @@
   "author": "adam@flethy.com",
   "license": "ISC",
   "devDependencies": {
-    "@cloudflare/workers-types": "3.18.0",
+    "@cloudflare/workers-types": "4.20221111.1",
     "@tsndr/cloudflare-worker-jwt": "^2.1.2",
     "@types/node": "18.11.9",
     "@typescript-eslint/eslint-plugin": "^5.44.0",
