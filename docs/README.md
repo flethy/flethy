@@ -240,5 +240,6 @@ The following Endpoints are currently supported.
 * [Vonage](./api/vonage.md)
 * [WarrantDev](./api/warrantdev.md)
 * [WhoIsXMLApi](./api/whoisxmlapi.md)
+* [WordsAPI](./api/wordsapi.md)
 * [WordSimi](./api/wordsimi.md)
 * [YahooFinance](./api/yahoofinance.md)

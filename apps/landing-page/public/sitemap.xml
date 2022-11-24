@@ -933,6 +933,10 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://flethy.com/integrations/wordsapi</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://flethy.com/integrations/wordsimi</loc>
     <priority>0.8</priority>
   </url>

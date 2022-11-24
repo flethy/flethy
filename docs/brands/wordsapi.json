@@ -1,0 +1,61 @@
+{
+  "name": "WordsAPI",
+  "domain": "wordsapi.com",
+  "claimed": false,
+  "description": "WordsAPI is An API for the English language.",
+  "links": [
+    { "name": "github", "url": "https://github.com/wordsapi" },
+    { "name": "twitter", "url": "https://twitter.com/WordsAPI" }
+  ],
+  "logos": [
+    {
+      "type": "icon",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idVTBSyA-8/idldpG4ikD.png",
+          "background": null,
+          "format": "png",
+          "height": 185,
+          "width": 185,
+          "size": 10627
+        }
+      ]
+    },
+    {
+      "type": "logo",
+      "theme": "light",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idVTBSyA-8/idDtzoAO50.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 72,
+          "width": 277,
+          "size": 4298
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#313848", "type": "dark", "brightness": 56 },
+    { "hex": "#feffff", "type": "light", "brightness": 255 }
+  ],
+  "fonts": [
+    {
+      "name": "Roboto",
+      "type": "title",
+      "origin": "google",
+      "originId": "Roboto",
+      "weights": []
+    },
+    {
+      "name": "Roboto",
+      "type": "body",
+      "origin": "google",
+      "originId": "Roboto",
+      "weights": []
+    }
+  ],
+  "images": []
+}
