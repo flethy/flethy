@@ -227,6 +227,7 @@ import { Vonage } from '../../../connectors/src/configs/vonage.config'
 import { WarrantDev } from '../../../connectors/src/configs/warrantdev.config'
 import { Web3Storage } from '../../../connectors/src/configs/web3storage.config'
 import { WhoIsXMLApi } from '../../../connectors/src/configs/whoisxmlapi.config'
+import { WordsAPI } from '../../../connectors/src/configs/wordsapi.config'
 import { WordSimi } from '../../../connectors/src/configs/wordsimi.config'
 import { YahooFinance } from '../../../connectors/src/configs/yahoofinance.config'
 import { ZeroX } from '../../../connectors/src/configs/zerox.config'
@@ -725,6 +726,8 @@ configTypes.push({type: getType<WarrantDev.CreateUser>(), id: 'warrantdev', name
 configTypes.push({type: getType<WarrantDev.GetUsersByTenant>(), id: 'warrantdev', name: 'WarrantDev', interface: 'GetUsersByTenant'})
 configTypes.push({type: getType<Web3Storage.UploadContent>(), id: 'web3storage', name: 'Web3Storage', interface: 'UploadContent'})
 configTypes.push({type: getType<WhoIsXMLApi.DomainAvailability>(), id: 'whoisxmlapi', name: 'WhoIsXMLApi', interface: 'DomainAvailability'})
+configTypes.push({type: getType<WordsAPI.GetAWord>(), id: 'wordsapi', name: 'WordsAPI', interface: 'GetAWord'})
+configTypes.push({type: getType<WordsAPI.GetWordDetails>(), id: 'wordsapi', name: 'WordsAPI', interface: 'GetWordDetails'})
 configTypes.push({type: getType<WordSimi.MostSimilarWords>(), id: 'wordsimi', name: 'WordSimi', interface: 'MostSimilarWords'})
 configTypes.push({type: getType<YahooFinance.GetQuote>(), id: 'yahoofinance', name: 'YahooFinance', interface: 'GetQuote'})
 configTypes.push({type: getType<YahooFinance.GetRecommendations>(), id: 'yahoofinance', name: 'YahooFinance', interface: 'GetRecommendations'})

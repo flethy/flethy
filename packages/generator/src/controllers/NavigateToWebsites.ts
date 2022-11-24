@@ -1,4 +1,4 @@
-import puppeteer from 'puppeteer'
+import puppeteer, { Browser, Page } from 'puppeteer'
 import { ConfigUtils } from '../../../connectors/src/utils/Config.utils'
 import { MARKETING_RESOURCES } from '../constants/marketing.const'
 
@@ -15,8 +15,8 @@ interface NavigationProgress {
 }
 
 export class NavigateToWebsites {
-  private browser: puppeteer.Browser | undefined
-  private page: puppeteer.Page | undefined
+  private browser: Browser | undefined
+  private page: Page | undefined
   private navigationProgressMap: Map<NavigationType, NavigationProgress> =
     new Map<NavigationType, NavigationProgress>()
 
@@ -82,7 +82,7 @@ export class NavigateToWebsites {
       index: 0,
     }
 
-    const progresses = [blogProgress, integrationProgress]
+    const progresses = [integrationProgress, blogProgress]
 
     await this.init()
     for (const progress of progresses) {
