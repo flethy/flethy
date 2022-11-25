@@ -15,6 +15,7 @@ interface UseCase {
   services: string[]
   kinds: string[]
   tags: string[]
+  ts: string
   flow?: any
   hero?: string
 }
@@ -45,15 +46,17 @@ export class UseCasesExporter {
 
     for (const item of data.data) {
       const flow = FLOWS[item.id]
+      let kinds = flow?.map((node) => node.kind) || []
       useCases.push({
         id: item.id,
         title: item.title,
         contents: UseCasesExporter.contentStringToContentArray(item.contents),
         services: item.services,
-        kinds: item.kinds,
+        kinds,
         tags: item.tags,
         flow,
         hero: item.hero,
+        ts: item.ts,
       })
     }
 

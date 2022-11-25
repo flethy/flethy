@@ -60,4 +60,24 @@ export const FLOWS = {
       'body:app_metadata': '->context.appMetadata->any',
     },
   ],
+  'add-analytics-event-with-mixpanel': [
+    {
+      id: 'mixpanelSignupEvent',
+      config: {
+        namespace: 'mixpanel',
+      },
+      kind: 'mixpanel.events.track',
+      'auth:token': '==>secrets==>MIXPANEL_TOKEN',
+      baseId: 'api',
+      'body:body': [
+        {
+          properties: {
+            distinct_id: '->context.email->string',
+            time: '->context.time->number',
+          },
+          event: 'signup',
+        },
+      ],
+    },
+  ],
 }

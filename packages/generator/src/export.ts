@@ -5,10 +5,10 @@ import { TypesExporter } from './exporters/types.exporter'
 import { UseCasesExporter } from './exporters/usecases.exporter'
 
 async function main() {
+  await UseCasesExporter.export()
   await ConfigsExporter.export()
   await DocsExporter.export()
   await TypesExporter.export()
-  await UseCasesExporter.export()
   await SitemapExporter.export()
 }
 

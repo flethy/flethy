@@ -224,6 +224,7 @@ import { HttpRequest } from './controllers/HttpRequest'
 import { logger } from './utils/Logger'
 import Beew from '@flethy/connectors/src/configs/beew.config'
 import Sheetson from '@flethy/connectors/src/configs/sheetson.config'
+import MailboxLayer from '@flethy/connectors/src/configs/mailboxlayer.config'
 
 async function main() {
   const requestConfigs: {
@@ -3086,8 +3087,13 @@ async function main() {
       },
       'body:text': 'gmfrens',
     }),
+    mailboxlayerCheck: nao<MailboxLayer.CheckEmail>({
+      kind: 'mailboxlayer.core.check',
+      'auth:apikey': process.env.MAILBOXLAYER_API_KEY,
+      'param:email': 'adam@flethy.com',
+    }),
   }
-  const requestConfig = requestConfigs.twitterManagePostTweets
+  const requestConfig = requestConfigs.mailboxlayerCheck
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

@@ -14,6 +14,7 @@ export default observer(() => {
 		<>
 			{USECASES.map((useCase) => (
 				<Button
+					key={useCase.id}
 					variant="link"
 					onClick={() => router.goTo(routes.useCase, { id: useCase.id })}
 				>

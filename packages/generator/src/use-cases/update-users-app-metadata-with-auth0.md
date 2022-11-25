@@ -3,12 +3,10 @@ section: Identity
 title: Update Users App Metadata with Auth0
 services:
   - auth0
-kinds:
-  - auth0.auth.accesstoken
-  - auth0.users.update
 tags:
   - identity
   - usermanagement
+ts: 2022-11-23
 ---
 
 When building a product or service that requires a user sign-up, it's necessary to interact with an identity management system. Identity is such a critical asset so you should rely on a mature and proven system.

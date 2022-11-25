@@ -1,0 +1,41 @@
+{
+  "name": "mailboxlayer",
+  "domain": "mailboxlayer.com",
+  "claimed": false,
+  "description": "Simple and powerful email verification JSON API using SMTP, typo checks, syntax validation, and free and disposable provider filtering. Free for personal use.",
+  "links": [],
+  "logos": [
+    {
+      "type": "logo",
+      "theme": "light",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idIyZHlrTi/id0UUCaJm-.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 24,
+          "width": 154,
+          "size": 1392
+        }
+      ]
+    }
+  ],
+  "colors": [],
+  "fonts": [
+    {
+      "name": "Helevetica Neue",
+      "type": "title",
+      "origin": "custom",
+      "originId": null,
+      "weights": []
+    },
+    {
+      "name": "Helevetica Neue",
+      "type": "body",
+      "origin": "custom",
+      "originId": null,
+      "weights": []
+    }
+  ],
+  "images": []
+}

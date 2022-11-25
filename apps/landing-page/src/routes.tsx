@@ -82,6 +82,10 @@ export default {
 			const { id } = parameters!
 			pages.useCase.initialisePage(id as string)
 		},
+		onParamsChange(_router, parameters, { root: { pages } }) {
+			const { id } = parameters!
+			pages.useCase.initialisePage(id as string)
+		},
 	}),
 
 	notFound: new Route<RootStore>({

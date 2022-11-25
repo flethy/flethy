@@ -114,6 +114,7 @@ import { Logz } from '../../../connectors/src/configs/logz.config'
 import { Lokalise } from '../../../connectors/src/configs/lokalise.config'
 import { Lolo } from '../../../connectors/src/configs/lolo.config'
 import { Luabase } from '../../../connectors/src/configs/luabase.config'
+import { MailboxLayer } from '../../../connectors/src/configs/mailboxlayer.config'
 import { MailboxValidator } from '../../../connectors/src/configs/mailboxvalidator.config'
 import { MailCheckAi } from '../../../connectors/src/configs/mailcheckai.config'
 import { Mailchimp } from '../../../connectors/src/configs/mailchimp.config'
@@ -495,6 +496,7 @@ configTypes.push({type: getType<Lokalise.ListUsers>(), id: 'lokalise', name: 'Lo
 configTypes.push({type: getType<Lokalise.ListTeams>(), id: 'lokalise', name: 'Lokalise', interface: 'ListTeams'})
 configTypes.push({type: getType<Lolo.ListAccounts>(), id: 'lolo', name: 'Lolo', interface: 'ListAccounts'})
 configTypes.push({type: getType<Luabase.RunQuery>(), id: 'luabase', name: 'Luabase', interface: 'RunQuery'})
+configTypes.push({type: getType<MailboxLayer.CheckEmail>(), id: 'mailboxlayer', name: 'MailboxLayer', interface: 'CheckEmail'})
 configTypes.push({type: getType<MailboxValidator.SingleEmailValidation>(), id: 'mailboxvalidator', name: 'MailboxValidator', interface: 'SingleEmailValidation'})
 configTypes.push({type: getType<MailboxValidator.DisposableEmail>(), id: 'mailboxvalidator', name: 'MailboxValidator', interface: 'DisposableEmail'})
 configTypes.push({type: getType<MailboxValidator.FreeEmail>(), id: 'mailboxvalidator', name: 'MailboxValidator', interface: 'FreeEmail'})

@@ -2,6 +2,7 @@ import * as fs from 'fs'
 import * as path from 'path'
 import metaBirthdays from '../../../../docs/meta/birthdays.json'
 import { ROADMAP, ROADMAP_TAGS } from '../constants/roadmap.const'
+import { USECASES } from '../use-cases/usecases.const'
 import { logger } from '../utils/Logger'
 import { BrandExporter } from './brand.exporter'
 import { DOCS_BASE } from './docs.exporter'
@@ -140,6 +141,25 @@ export class ConfigsExporter {
         milestone: false,
         tags: [ROADMAP_TAGS.CONNECTORS],
         link: `https://flethy.com/integrations/${birthday.id}`,
+        route: {
+          type: 'integration',
+          id: birthday.id,
+        },
+      })
+    })
+    USECASES.forEach((usecase) => {
+      roadmap.push({
+        title: `New Use Case`,
+        description: `Described a new use case: ${usecase.title}`,
+        date: usecase.ts,
+        delivered: true,
+        milestone: false,
+        tags: [ROADMAP_TAGS.USECASE],
+        link: `https://flethy.com/use-cases/${usecase.id}`,
+        route: {
+          type: 'usecase',
+          id: usecase.id,
+        },
       })
     })
     fs.writeFileSync(`${DOCS_BASE}/meta/roadmap.json`, JSON.stringify(roadmap))
