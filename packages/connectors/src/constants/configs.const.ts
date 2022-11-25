@@ -114,6 +114,7 @@ import { Logz } from '../configs/logz.config'
 import { Lokalise } from '../configs/lokalise.config'
 import { Lolo } from '../configs/lolo.config'
 import { Luabase } from '../configs/luabase.config'
+import { MailboxLayer } from '../configs/mailboxlayer.config'
 import { MailboxValidator } from '../configs/mailboxvalidator.config'
 import { MailCheckAi } from '../configs/mailcheckai.config'
 import { Mailchimp } from '../configs/mailchimp.config'
@@ -349,6 +350,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['lokalise', Lokalise.API],
 ['lolo', Lolo.API],
 ['luabase', Luabase.API],
+['mailboxlayer', MailboxLayer.API],
 ['mailboxvalidator', MailboxValidator.API],
 ['mailcheckai', MailCheckAi.API],
 ['mailchimp', Mailchimp.API],

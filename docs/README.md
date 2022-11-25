@@ -135,6 +135,7 @@ The following Endpoints are currently supported.
 * [Logz](./api/logz.md)
 * [Lokalise](./api/lokalise.md)
 * [Lolo](./api/lolo.md)
+* [MailboxLayer](./api/mailboxlayer.md)
 * [MailboxValidator](./api/mailboxvalidator.md)
 * [MailCheckAi](./api/mailcheckai.md)
 * [Mailchimp](./api/mailchimp.md)
