@@ -3,12 +3,10 @@ section: Identity
 title: Create a new User with Auth0
 services:
   - auth0
-kinds:
-  - auth0.auth.accesstoken
-  - auth0.users.create
 tags:
   - identity
   - usermanagement
+ts: 2022-11-22
 ---
 
 When building a product or service that requires a user sign-up, it's necessary to interact with an identity management system. Identity is such a critical asset so you should rely on a mature and proven system.

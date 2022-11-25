@@ -12,7 +12,7 @@
 
 ### Authentication
 
-* access_key: query
+* apikey: header
 
 ### core
 

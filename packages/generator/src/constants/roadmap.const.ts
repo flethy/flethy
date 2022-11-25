@@ -6,7 +6,10 @@ export interface RoadmapEntry {
   milestone: boolean
   tags: string[]
   link?: string
-  route?: string
+  route?: {
+    type: 'integration' | 'usecase'
+    id: string
+  }
 }
 
 export enum ROADMAP_TAGS {
@@ -15,6 +18,7 @@ export enum ROADMAP_TAGS {
   FLOW = 'flow',
   DESIGNER = 'designer',
   LANDINGPAGE = 'landingpage',
+  USECASE = 'usecase',
 }
 
 const ITEMS_2022_Q4: RoadmapEntry[] = [
