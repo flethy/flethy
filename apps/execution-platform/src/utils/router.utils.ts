@@ -63,9 +63,15 @@ export class RouterPathUtils {
     return this;
   }
 
-  public w(workspaceId?: string) {
+  public w(workspaceId?: string | boolean) {
     this.path.push("w");
-    this.path.push(workspaceId ?? ":workspaceId");
+    if (typeof workspaceId === "boolean") {
+      if (workspaceId === true) {
+        this.path.push(":workspaceId");
+      }
+    } else {
+      this.path.push(workspaceId ?? ":workspaceId");
+    }
     return this;
   }
 

@@ -5,6 +5,7 @@ import { SecretsModel } from './secrets'
 import { StateAndCache } from './stateAndCache'
 import { UserModel } from './user'
 import { WorkflowsModel } from './workflows'
+import { WorkspacesModel } from './workspaces'
 
 export default types.model('API', {
 	stateAndCache: types.optional(StateAndCache, () => StateAndCache.create()),
@@ -13,6 +14,7 @@ export default types.model('API', {
 	flethy: types.optional(FlethyModel, () => FlethyModel.create()),
 	secrets: types.optional(SecretsModel, () => SecretsModel.create()),
 	workflows: types.optional(WorkflowsModel, () => WorkflowsModel.create()),
+	workspaces: types.optional(WorkspacesModel, () => WorkspacesModel.create()),
 })
 
 export type APIType = Instance<{
@@ -22,4 +24,5 @@ export type APIType = Instance<{
 	flethy: Instance<typeof FlethyModel>
 	secrets: Instance<typeof SecretsModel>
 	workflows: Instance<typeof WorkflowsModel>
+	workspaces: Instance<typeof WorkspacesModel>
 }>

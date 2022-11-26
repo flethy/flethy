@@ -41,6 +41,7 @@ const App = observer(() => {
 			})
 			initialized = true
 		}
+		api.workspaces.getMy({})
 		app = (
 			<>
 				<HelmetProvider>
