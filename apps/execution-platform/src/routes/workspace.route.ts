@@ -42,7 +42,7 @@ export class WorkspacesRoute {
         type: ErrorType.NotFound,
         message: `No Workspaces found`,
         log: {
-          context: { origin: "workflow.route.ts", method: "get" },
+          context: { origin: "workspace.route.ts", method: "get" },
           message: `No Workspaces found`,
         },
       });

@@ -23,7 +23,7 @@ export class FrontendRoute {
     RouterUtils.createRoute({
       API,
       method: "GET",
-      route: new RouterPathUtils().w().custom("my").gen(),
+      route: new RouterPathUtils().w(false).custom("my").gen(),
       isUserToken: true,
       scopes: [TokenScope.WORKSPACE_READ],
       handler: async (req, res, userId, response) => {
