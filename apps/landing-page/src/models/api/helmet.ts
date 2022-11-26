@@ -20,6 +20,15 @@ export const HelmetModel = types
 			console.log(self.title)
 		},
 
+		usecase(options: { usesCaseServices: string[] }) {
+			const titleParts: string[] = [
+				i18next.t('title'),
+				...options.usesCaseServices,
+			]
+			self.title = titleParts.join(' + ')
+			console.log(self.title)
+		},
+
 		defaultTitle() {
 			self.title = `${i18next.t('title')} | ${i18next.t('description')}`
 		},

@@ -73,6 +73,12 @@ export default {
 	useCases: new Route<RootStore>({
 		path: '/use-cases',
 		component: <UseCasesPage />,
+		onEnter(_route, _parameters, { root: { api } }) {
+			api.helmet.updateTitle({
+				title: 'Use Cases',
+				concatenateAppname: true,
+			})
+		},
 	}),
 
 	useCase: new Route<RootStore>({

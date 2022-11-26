@@ -80,4 +80,17 @@ export const FLOWS = {
       ],
     },
   ],
+  'create-new-contact-in-hubspot': [
+    {
+      kind: 'hubspot.contacts.createOrUpdate',
+      'auth:Authorization': '==>secrets==>HUBSPOT_TOKEN',
+      'param:contact_email': '->context.email->string',
+      'body:properties': [
+        {
+          property: 'firstname',
+          value: '->context.first->string',
+        },
+      ],
+    },
+  ],
 }

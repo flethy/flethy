@@ -1,5 +1,6 @@
 import { types } from 'mobx-state-tree'
 import { USECASES } from '../../constants/usecases.const'
+import { getRootStore } from '../../models/helpers'
 
 export const UseCasePage = types
 	.model('UseCasePage', {
@@ -9,6 +10,10 @@ export const UseCasePage = types
 		// INITIALIZATION
 		const initialisePage = (useCaseId: string) => {
 			self.id = useCaseId
+			const useCase = USECASES.find((useCase) => useCase.id === self.id)
+			const services = useCase?.services ?? []
+			const { api } = getRootStore(self)
+			api.helmet.usecase({ usesCaseServices: services })
 		}
 
 		return { initialisePage }
