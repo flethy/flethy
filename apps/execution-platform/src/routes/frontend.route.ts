@@ -27,7 +27,7 @@ export class FrontendRoute {
       isUserToken: true,
       scopes: [TokenScope.WORKSPACE_READ],
       handler: async (req, res, userId, response) => {
-        await WorkspacesRoute.get(req, res, userId, response);
+        await WorkspacesRoute.get(req, res, userId, response!);
       },
     });
 

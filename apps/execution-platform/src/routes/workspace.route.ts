@@ -1,5 +1,6 @@
 import { ServerRequest } from "worktop/request";
 import { ServerResponse } from "worktop/response";
+import { CLAIM_WORKSPACES } from "../constants/admin.const";
 import { WorkspaceController } from "../controllers/workspace.controller";
 import { ErrorType, FlethyError } from "../utils/error.utils";
 import { PermissionsResponse } from "../utils/permission.utils";
@@ -34,7 +35,7 @@ export class WorkspacesRoute {
     permissionsResponse: PermissionsResponse
   ) {
     const workspaceIds = permissionsResponse.userTokenPayload[
-      "https://flethy.com/ws"
+      CLAIM_WORKSPACES
     ]?.map((workspace: any) => workspace.id);
     if (!workspaceIds) {
       throw new FlethyError({

@@ -113,9 +113,9 @@ importers:
 
   apps/execution-platform:
     specifiers:
-      '@cloudflare/workers-types': 3.18.0
-      '@flethy/flow': ^0.0.236
-      '@tsndr/cloudflare-worker-jwt': ^2.1.2
+      '@cloudflare/workers-types': 4.20221111.1
+      '@flethy/flow': ^0.0.240
+      '@tsndr/cloudflare-worker-jwt': ^2.1.3
       '@types/node': 18.11.9
       '@typescript-eslint/eslint-plugin': ^5.44.0
       '@typescript-eslint/parser': ^5.44.0
@@ -131,10 +131,10 @@ importers:
       worktop: ^0.7.3
       wrangler: 2.4.4
     dependencies:
-      '@flethy/flow': 0.0.236
+      '@flethy/flow': 0.0.240
     devDependencies:
-      '@cloudflare/workers-types': 3.18.0
-      '@tsndr/cloudflare-worker-jwt': 2.1.2
+      '@cloudflare/workers-types': 4.20221111.1
+      '@tsndr/cloudflare-worker-jwt': 2.1.3
       '@types/node': 18.11.9
       '@typescript-eslint/eslint-plugin': 5.44.0_fnsv2sbzcckq65bwfk7a5xwslu
       '@typescript-eslint/parser': 5.44.0_hsf322ms6xhhd4b5ne6lb74y4a
@@ -2009,6 +2009,10 @@ packages:
     resolution: {integrity: sha512-ehKOJVLMeR+tZkYhWEaLYQxl0TaIZu/kE86HF3/RidR8Xv5LuQxpbh+XXAoKVqsaphWLhIgBhgnlN5HGdheXSQ==}
     dev: true
 
+  /@cloudflare/workers-types/4.20221111.1:
+    resolution: {integrity: sha512-BNV2wN8V6Zduvo7UzxcdjBbLQ906D2KhS804PDufLgx/sanGJCHVJMOIaLvS/b61JKtot1U7P/l1fjrjZ7/E3A==}
+    dev: true
+
   /@cspotcode/source-map-support/0.8.1:
     resolution: {integrity: sha512-IchNf6dN4tHoMFIn/7OE8LWZ19Y6q/67Bmf6vnGREv8RSbBVb9LPJxEcnwrcwX6ixSvaiGoomAUvu4YSxXrVgw==}
     engines: {node: '>=12'}
@@ -2226,6 +2230,16 @@ packages:
     resolution: {integrity: sha512-v/goxb65KXw48sJmtc2NvNLX5rCstrfqNmz36OV63wMJNCi0cokHxPWMDU7emSmhtr3d+HpDGUccIW2dBlkifA==}
     dependencies:
       '@flethy/connectors': 0.0.233
+      axios: 1.1.2
+      jsonata: 1.8.6
+    transitivePeerDependencies:
+      - debug
+    dev: false
+
+  /@flethy/flow/0.0.240:
+    resolution: {integrity: sha512-NOwpsgcyx18y8IfsG07Mvzfk2dddzayfPNqI+8qCeBKwybc0pBx+5+YvnheXSDe7sfOCIvGoL4+qBDHn8ly7Iw==}
+    dependencies:
+      '@flethy/connectors': 0.0.236
       axios: 1.1.2
       jsonata: 1.8.6
     transitivePeerDependencies:
@@ -2831,8 +2845,8 @@ packages:
     resolution: {integrity: sha512-yOlFc+7UtL/89t2ZhjPvvB/DeAr3r+Dq58IgzsFkOAvVC6NMJXmCGjbptdXdR9qsX7pKcTL+s87FtYREi2dEEQ==}
     dev: true
 
-  /@tsndr/cloudflare-worker-jwt/2.1.2:
-    resolution: {integrity: sha512-O809LSXKJ57Ln0fU8SO1rS97gPQtU4gummfGbOk/S9EpoWQzfTrug25zz4xIpszwQgu26m9Sk6gTm9bVhZCzfA==}
+  /@tsndr/cloudflare-worker-jwt/2.1.3:
+    resolution: {integrity: sha512-n/sJJTQzp29LJRkWj4Ome22NFGqXXby/f3XqP0yQQRNm0Vz6pfvt36OhRP29aunQTlFlbuCA4QePUuHt7zSwPg==}
     dev: true
 
   /@types/babel__core/7.1.19:
