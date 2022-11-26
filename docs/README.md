@@ -184,6 +184,7 @@ The following Endpoints are currently supported.
 * [PurgoMalum](./api/purgomalum.md)
 * [PurpleAir](./api/purpleair.md)
 * [QuickChart](./api/quickchart.md)
+* [QuoteGarden](./api/quotegarden.md)
 * [RapidApi](./api/rapidapi.md)
 * [Rebrandly](./api/rebrandly.md)
 * [RedisCloud](./api/rediscloud.md)
