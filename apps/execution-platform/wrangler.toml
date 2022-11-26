@@ -7,7 +7,7 @@ kv_namespaces = [
     { binding = "DATA", id = "e546ebf13b344824af4abc3a632988f5", preview_id = "f8a16c5c33aa4266a47089059ee45204" },
     { binding = "SECRETS", id = "d2c89f1e92234fa1acaba4b26dc2b97c", preview_id = "2999180112d743f798984b1a25f8afda" },
     { binding = "WORKFLOWS", id = "bf07de1d15824dce961dca2a5e659508", preview_id = "5e8d33044ed64dbb85dbbabb4491c160" },
-    { binding = "WORKSPACES", id = "asd", preview_id = "asd2" }
+    { binding = "WORKSPACES", id = "f2b65963ac5c4c33a6d15ed9ae51cdd5", preview_id = "9e8e08dd6f5c4edaa49c97b5af8d95bc" }
 ]
 
 [vars]
