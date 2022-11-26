@@ -168,6 +168,7 @@ import { ProductHunt } from '../configs/producthunt.config'
 import { PurgoMalum } from '../configs/purgomalum.config'
 import { PurpleAir } from '../configs/purpleair.config'
 import { QuickChart } from '../configs/quickchart.config'
+import { QuoteGarden } from '../configs/quotegarden.config'
 import { RapidApi } from '../configs/rapidapi.config'
 import { Rebrandly } from '../configs/rebrandly.config'
 import { RedisCloud } from '../configs/rediscloud.config'
@@ -404,6 +405,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['purgomalum', PurgoMalum.API],
 ['purpleair', PurpleAir.API],
 ['quickchart', QuickChart.API],
+['quotegarden', QuoteGarden.API],
 ['rapidapi', RapidApi.API],
 ['rebrandly', Rebrandly.API],
 ['rediscloud', RedisCloud.API],

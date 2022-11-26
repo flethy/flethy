@@ -168,6 +168,7 @@ import { ProductHunt } from '../../../connectors/src/configs/producthunt.config'
 import { PurgoMalum } from '../../../connectors/src/configs/purgomalum.config'
 import { PurpleAir } from '../../../connectors/src/configs/purpleair.config'
 import { QuickChart } from '../../../connectors/src/configs/quickchart.config'
+import { QuoteGarden } from '../../../connectors/src/configs/quotegarden.config'
 import { RapidApi } from '../../../connectors/src/configs/rapidapi.config'
 import { Rebrandly } from '../../../connectors/src/configs/rebrandly.config'
 import { RedisCloud } from '../../../connectors/src/configs/rediscloud.config'
@@ -608,6 +609,10 @@ configTypes.push({type: getType<PurgoMalum.Profanity>(), id: 'purgomalum', name:
 configTypes.push({type: getType<PurpleAir.GetSensorsData>(), id: 'purpleair', name: 'PurpleAir', interface: 'GetSensorsData'})
 configTypes.push({type: getType<PurpleAir.GetSensorData>(), id: 'purpleair', name: 'PurpleAir', interface: 'GetSensorData'})
 configTypes.push({type: getType<QuickChart.PlotChart>(), id: 'quickchart', name: 'QuickChart', interface: 'PlotChart'})
+configTypes.push({type: getType<QuoteGarden.GetQuotes>(), id: 'quotegarden', name: 'QuoteGarden', interface: 'GetQuotes'})
+configTypes.push({type: getType<QuoteGarden.GetRandomQuote>(), id: 'quotegarden', name: 'QuoteGarden', interface: 'GetRandomQuote'})
+configTypes.push({type: getType<QuoteGarden.GetGenres>(), id: 'quotegarden', name: 'QuoteGarden', interface: 'GetGenres'})
+configTypes.push({type: getType<QuoteGarden.GetAuthors>(), id: 'quotegarden', name: 'QuoteGarden', interface: 'GetAuthors'})
 configTypes.push({type: getType<RapidApi.ArticleExtractor>(), id: 'rapidapi', name: 'RapidApi', interface: 'ArticleExtractor'})
 configTypes.push({type: getType<Rebrandly.CreateLink>(), id: 'rebrandly', name: 'Rebrandly', interface: 'CreateLink'})
 configTypes.push({type: getType<RedisCloud.GetCurrentAccount>(), id: 'rediscloud', name: 'RedisCloud', interface: 'GetCurrentAccount'})

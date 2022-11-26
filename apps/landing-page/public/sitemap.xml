@@ -697,6 +697,10 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://flethy.com/integrations/quotegarden</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://flethy.com/integrations/rapidapi</loc>
     <priority>0.8</priority>
   </url>

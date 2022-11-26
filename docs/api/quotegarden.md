@@ -1,0 +1,41 @@
+# QuoteGarden
+
+## Links
+
+* URL: [https://pprathameshmore.github.io/QuoteGarden/](https://pprathameshmore.github.io/QuoteGarden/)
+* Documentation: [https://pprathameshmore.github.io/QuoteGarden/](https://pprathameshmore.github.io/QuoteGarden/)
+* Tags: web2, quotes
+* Category: utils
+* Type: other
+
+## API
+
+### core
+
+#### quotes
+
+##### Get Quotes
+
+* Description: Get Quotes
+* Docs: [https://pprathameshmore.github.io/QuoteGarden/#get-quotes](https://pprathameshmore.github.io/QuoteGarden/#get-quotes)
+
+#### random
+
+##### Get Random Quote
+
+* Description: Get Random Quote
+* Docs: [https://pprathameshmore.github.io/QuoteGarden/#get-a-random-quote](https://pprathameshmore.github.io/QuoteGarden/#get-a-random-quote)
+
+#### genres
+
+##### Get Genres
+
+* Description: Get Genres
+* Docs: [https://pprathameshmore.github.io/QuoteGarden/#get-all-genres](https://pprathameshmore.github.io/QuoteGarden/#get-all-genres)
+
+#### authors
+
+##### Get Authors
+
+* Description: Get Authors
+* Docs: [https://pprathameshmore.github.io/QuoteGarden/#get-all-authors](https://pprathameshmore.github.io/QuoteGarden/#get-all-authors)

@@ -225,6 +225,7 @@ import { logger } from './utils/Logger'
 import Beew from '@flethy/connectors/src/configs/beew.config'
 import Sheetson from '@flethy/connectors/src/configs/sheetson.config'
 import MailboxLayer from '@flethy/connectors/src/configs/mailboxlayer.config'
+import QuoteGarden from '@flethy/connectors/src/configs/quotegarden.config'
 
 async function main() {
   const requestConfigs: {
@@ -3092,8 +3093,11 @@ async function main() {
       'auth:apikey': process.env.MAILBOXLAYER_API_KEY,
       'param:email': 'adam@flethy.com',
     }),
+    quoteGardenQuote: nao<QuoteGarden.GetQuotes>({
+      kind: 'quotegarden.core.quotes',
+    }),
   }
-  const requestConfig = requestConfigs.mailboxlayerCheck
+  const requestConfig = requestConfigs.quoteGardenQuote
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)
