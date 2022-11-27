@@ -34,9 +34,16 @@ export class WorkspacesRoute {
     _userId: string = "",
     permissionsResponse: PermissionsResponse
   ) {
-    const workspaceIds = permissionsResponse.userTokenPayload[
-      CLAIM_WORKSPACES
-    ]?.map((workspace: any) => workspace.id);
+    const workspaces = permissionsResponse.userTokenPayload[CLAIM_WORKSPACES];
+    const workspaceIds = workspaces?.map((workspace: any) => workspace.id);
+    const projectIds: string[] = [];
+    workspaces?.forEach((workspace: any) => {
+      if (workspace) {
+        workspace.p.forEach((project: any) => {
+          projectIds.push(project.id);
+        });
+      }
+    });
     if (!workspaceIds) {
       throw new FlethyError({
         type: ErrorType.NotFound,
@@ -49,6 +56,7 @@ export class WorkspacesRoute {
     }
     const response = await WorkspaceController.get({
       workspaceIds,
+      projectIds,
     });
 
     res.send(StatusCodeSuccess.OK, { ...response });

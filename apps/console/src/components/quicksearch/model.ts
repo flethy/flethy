@@ -1,5 +1,5 @@
 import { types } from 'mobx-state-tree'
-import { getRouter } from '../../models/helpers'
+import { getRootStore, getRouter } from '../../models/helpers'
 import routes from '../../routes'
 
 export const SEARCH_ID = '_search_'
@@ -37,6 +37,7 @@ export const QuickSearchComponent = types
 	.actions((self) => ({
 		// INITIALIZATION
 		initialise() {
+			const { api } = getRootStore(self)
 			self.isOpen = false
 			self.searchTerm = ''
 			self.selectedId = SEARCH_ID
@@ -50,6 +51,36 @@ export const QuickSearchComponent = types
 					title: 'Home',
 					subtitle: 'Go back to Home Screen',
 					action: () => getRouter().goTo(routes.home),
+				})
+				this.addAction({
+					id: 'navigateSecrets',
+					title: 'Secrets',
+					subtitle: 'Go to Secrets',
+					tags: ['secrets'],
+					action: () =>
+						getRouter().goTo(routes.secrets, {
+							...api.workspaces.getContext(),
+						}),
+				})
+				this.addAction({
+					id: 'navigateWorkflows',
+					title: 'Workflows',
+					subtitle: 'Go to Workflows',
+					tags: ['workflows'],
+					action: () =>
+						getRouter().goTo(routes.workflows, {
+							...api.workspaces.getContext(),
+						}),
+				})
+				this.addAction({
+					id: 'navigateWorkflowNew',
+					title: 'New Workflow',
+					subtitle: 'Create a new Workflow',
+					tags: ['workflows'],
+					action: () =>
+						getRouter().goTo(routes.workflowNew, {
+							...api.workspaces.getContext(),
+						}),
 				})
 
 				self.initStatus = 'success'

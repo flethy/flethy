@@ -38,19 +38,19 @@ export default observer(() => {
 			id: 'home',
 			label: t('menu.home'),
 			route: routes.home,
-			params: api.flethy.getContext(),
+			params: api.workspaces.getContext(),
 		},
 		{
 			id: 'secrets',
 			label: t('menu.secrets'),
 			route: routes.secrets,
-			params: api.flethy.getContext(),
+			params: api.workspaces.getContext(),
 		},
 		{
 			id: 'workflows',
 			label: t('menu.workflows'),
 			route: routes.workflows,
-			params: api.flethy.getContext(),
+			params: api.workspaces.getContext(),
 		},
 	]
 

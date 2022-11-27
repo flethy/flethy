@@ -1,5 +1,6 @@
 import { flow, Instance, types } from 'mobx-state-tree'
 import { request } from '../../helpers/api'
+import { FlethyContext } from '../flethy.types'
 import { getRootStore, RouterPathUtils } from '../helpers'
 import { StateAndCacheKey } from './stateAndCache'
 
@@ -12,13 +13,14 @@ export const ProjectModel = types.model('ProjectModel', {
 export const WorkspaceModel = types.model('WorkspaceModel', {
 	id: types.string,
 	name: types.string,
-	projects: types.array(ProjectModel),
+	p: types.array(ProjectModel),
 	r: types.array(types.string),
 })
 
 export const WorkspacesModel = types
 	.model('WorkspacesModel', {
 		workspaces: types.map(WorkspaceModel),
+		context: types.optional(FlethyContext, {}),
 	})
 	.actions((self) => {
 		const getMy = flow(function* (options: { useCache?: boolean }) {
@@ -44,9 +46,13 @@ export const WorkspacesModel = types
 				})
 				if (response?.workspaces) {
 					response.workspaces.forEach((workspace: any) => {
-						self.workspaces.set(workspace.id, workspace)
+						if (workspace?.id) {
+							self.workspaces.set(workspace.id, workspace)
+						}
 					})
 				}
+				self.context.workspaceId = api.user.workspaces[0].id
+				self.context.projectId = api.user.workspaces[0].projects[0].id
 				api.stateAndCache.updateToDone(stateAndCacheKey)
 			} catch (error) {
 				console.log(error)
@@ -54,7 +60,33 @@ export const WorkspacesModel = types
 			}
 		})
 
-		return { getMy }
+		const onboard = flow(function* (options: {
+			workspaceName: string
+			projectName: string
+		}) {
+			const { api, auth } = getRootStore(self)
+			const workspaceId = api.user.workspaces[0].id
+			try {
+				const response = yield request({
+					base: 'flethy',
+					method: 'post',
+					auth: true,
+					url: `api/w/${workspaceId}/onboard`,
+					body: {
+						name: options.workspaceName,
+						projectName: options.projectName,
+					},
+				})
+				yield auth.getTokenSilently()
+				getMy({ useCache: false })
+				self.context.workspaceId = api.user.workspaces[0].id
+				self.context.projectId = api.user.workspaces[0].projects[0].id
+			} catch (error) {
+				console.log(error)
+			}
+		})
+
+		return { getMy, onboard }
 	})
 	.views((self) => {
 		const getFromStore = (options: {
@@ -63,5 +95,29 @@ export const WorkspacesModel = types
 			return self.workspaces.get(options.workspaceId)
 		}
 
-		return { getFromStore }
+		const getContext = () => {
+			const context = {
+				workspaceId: self.context.workspaceId,
+				projectId: self.context.projectId,
+			}
+			return context
+		}
+
+		const getEnrichedContext = () => {
+			const workspace = self.workspaces.get(self.context.workspaceId)
+			if (workspace) {
+				const project = workspace.p.find(
+					(project) => project.id === self.context.projectId,
+				)
+				if (project) {
+					return {
+						workspace,
+						project,
+					}
+				}
+			}
+			return undefined
+		}
+
+		return { getFromStore, getContext, getEnrichedContext }
 	})

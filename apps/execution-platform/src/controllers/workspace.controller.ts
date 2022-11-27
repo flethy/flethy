@@ -44,6 +44,7 @@ export interface OnboardWorkspaceRequest {
 
 export interface GetWorkspacesRequest {
   workspaceIds: string[];
+  projectIds: string[];
 }
 
 // CONTROLLER
@@ -135,6 +136,11 @@ export class WorkspaceController {
         parameter: "workspaceIds",
         checks: { required: true, arrayMinLength: 1 },
       },
+      {
+        value: request.projectIds,
+        parameter: "projectIds",
+        checks: { required: true, arrayMinLength: 1 },
+      },
     ]);
     if (!validation.valid) {
       throw new FlethyError({
@@ -161,6 +167,14 @@ export class WorkspaceController {
     const workspaces = responses.map((response) => {
       return response.value;
     });
+
+    for (const workspace of workspaces) {
+      if (workspace) {
+        workspace.p = workspace.p.filter((project) =>
+          request.projectIds.includes(project.id)
+        );
+      }
+    }
 
     return { workspaces };
   }
