@@ -26,7 +26,7 @@ export default observer(() => {
 					<Text>todo...</Text>
 					<Button
 						onClick={() =>
-							api.flethy.onboard({
+							api.workspaces.onboard({
 								workspaceName: 'first workspace',
 								projectName: 'first project',
 							})
@@ -35,12 +35,16 @@ export default observer(() => {
 						Onboard
 					</Button>
 					<Button
-						onClick={() => router.goTo(routes.secrets, page.getContext())}
+						onClick={() =>
+							router.goTo(routes.secrets, api.workspaces.getContext())
+						}
 					>
 						Secrets
 					</Button>
 					<Button
-						onClick={() => router.goTo(routes.workflows, page.getContext())}
+						onClick={() =>
+							router.goTo(routes.workflows, api.workspaces.getContext())
+						}
 					>
 						Workflows
 					</Button>

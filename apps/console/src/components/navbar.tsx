@@ -66,13 +66,10 @@ export default observer(() => {
 
 							<Logo width={'12'} />
 							<Text fontWeight={'bold'}>{t('title')}</Text>
-							{api.flethy.getEnrichedContext() && (
+							{api.workspaces.getEnrichedContext() && (
 								<Text>
-									{api.flethy
-										.getEnrichedContext()
-										?.workspace.id.substring(0, 5)}{' '}
-									/{' '}
-									{api.flethy.getEnrichedContext()?.project.id.substring(0, 5)}
+									{api.workspaces.getEnrichedContext()?.workspace.name} /{' '}
+									{api.workspaces.getEnrichedContext()?.project.name}
 								</Text>
 							)}
 						</HStack>
