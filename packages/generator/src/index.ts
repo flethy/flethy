@@ -165,6 +165,7 @@ import { FetchParams } from '../../connectors/src/types/FetchParams.type'
 import { nao } from '../../connectors/src/utils/Request.utils'
 // import { nao } from '@flethy/connectors'
 import APIPoint from '@flethy/connectors/src/configs/apipoint.config'
+import Beew from '@flethy/connectors/src/configs/beew.config'
 import ButtondownEmail from '@flethy/connectors/src/configs/buttondownemail.config'
 import CarbEngage from '@flethy/connectors/src/configs/carbengage.config'
 import Codat from '@flethy/connectors/src/configs/codat.config'
@@ -189,6 +190,7 @@ import LogSnag from '@flethy/connectors/src/configs/logsnag.config'
 import Logz from '@flethy/connectors/src/configs/logz.config'
 import Lolo from '@flethy/connectors/src/configs/lolo.config'
 import Luabase from '@flethy/connectors/src/configs/luabase.config'
+import MailboxLayer from '@flethy/connectors/src/configs/mailboxlayer.config'
 import MetalpriceAPI from '@flethy/connectors/src/configs/metalpriceapi.config'
 import Neon from '@flethy/connectors/src/configs/neon.config'
 import Npoint from '@flethy/connectors/src/configs/npoint.config'
@@ -202,10 +204,13 @@ import Pirsch from '@flethy/connectors/src/configs/pirsch.config'
 import Prepr from '@flethy/connectors/src/configs/prepr.config'
 import Prerender from '@flethy/connectors/src/configs/prerender.config'
 import PurpleAir from '@flethy/connectors/src/configs/purpleair.config'
+import QuoteGarden from '@flethy/connectors/src/configs/quotegarden.config'
 import Rebrandly from '@flethy/connectors/src/configs/rebrandly.config'
 import Robolly from '@flethy/connectors/src/configs/robolly.config'
 import Rye from '@flethy/connectors/src/configs/rye.config'
 import Savepage from '@flethy/connectors/src/configs/savepage.config'
+import Sendinblue from '@flethy/connectors/src/configs/sendinblue.config'
+import Sheetson from '@flethy/connectors/src/configs/sheetson.config'
 import Sheety from '@flethy/connectors/src/configs/sheety.config'
 import Sidemail from '@flethy/connectors/src/configs/sidemail.config'
 import SpeechTextAI from '@flethy/connectors/src/configs/speechtextai.config'
@@ -222,10 +227,6 @@ import Vonage from '@flethy/connectors/src/configs/vonage.config'
 import WarrantDev from '@flethy/connectors/src/configs/warrantdev.config'
 import { HttpRequest } from './controllers/HttpRequest'
 import { logger } from './utils/Logger'
-import Beew from '@flethy/connectors/src/configs/beew.config'
-import Sheetson from '@flethy/connectors/src/configs/sheetson.config'
-import MailboxLayer from '@flethy/connectors/src/configs/mailboxlayer.config'
-import QuoteGarden from '@flethy/connectors/src/configs/quotegarden.config'
 
 async function main() {
   const requestConfigs: {
@@ -3096,8 +3097,17 @@ async function main() {
     quoteGardenQuote: nao<QuoteGarden.GetQuotes>({
       kind: 'quotegarden.core.quotes',
     }),
+    sendinblueCreate: nao<Sendinblue.CreateContact>({
+      kind: 'sendinblue.contacts.create',
+      'auth:api-key': process.env.SENDINBLUE_API_KEY,
+      'body:email': 'adam@flethy.com',
+    }),
+    sendinblueList: nao<Sendinblue.ListContacts>({
+      kind: 'sendinblue.contacts.list',
+      'auth:api-key': process.env.SENDINBLUE_API_KEY,
+    }),
   }
-  const requestConfig = requestConfigs.quoteGardenQuote
+  const requestConfig = requestConfigs.sendinblueList
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

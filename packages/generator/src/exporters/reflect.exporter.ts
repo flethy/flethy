@@ -184,6 +184,7 @@ import { Rye } from '../../../connectors/src/configs/rye.config'
 import { Savepage } from '../../../connectors/src/configs/savepage.config'
 import { Semrush } from '../../../connectors/src/configs/semrush.config'
 import { SendGrid } from '../../../connectors/src/configs/sendgrid.config'
+import { Sendinblue } from '../../../connectors/src/configs/sendinblue.config'
 import { Sentry } from '../../../connectors/src/configs/sentry.config'
 import { SerpApi } from '../../../connectors/src/configs/serpapi.config'
 import { SerpStack } from '../../../connectors/src/configs/serpstack.config'
@@ -635,6 +636,8 @@ configTypes.push({type: getType<Rye.GraphQLQuery>(), id: 'rye', name: 'Rye', int
 configTypes.push({type: getType<Savepage.Screenshot>(), id: 'savepage', name: 'Savepage', interface: 'Screenshot'})
 configTypes.push({type: getType<Semrush.GetBacklinksOverview>(), id: 'semrush', name: 'Semrush', interface: 'GetBacklinksOverview'})
 configTypes.push({type: getType<SendGrid.SendMail>(), id: 'sendgrid', name: 'SendGrid', interface: 'SendMail'})
+configTypes.push({type: getType<Sendinblue.CreateContact>(), id: 'sendinblue', name: 'Sendinblue', interface: 'CreateContact'})
+configTypes.push({type: getType<Sendinblue.ListContacts>(), id: 'sendinblue', name: 'Sendinblue', interface: 'ListContacts'})
 configTypes.push({type: getType<Sentry.QueryDiscoverEvents>(), id: 'sentry', name: 'Sentry', interface: 'QueryDiscoverEvents'})
 configTypes.push({type: getType<Sentry.ListProjects>(), id: 'sentry', name: 'Sentry', interface: 'ListProjects'})
 configTypes.push({type: getType<SerpApi.Search>(), id: 'serpapi', name: 'SerpApi', interface: 'Search'})

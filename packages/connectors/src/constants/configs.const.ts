@@ -184,6 +184,7 @@ import { Rye } from '../configs/rye.config'
 import { Savepage } from '../configs/savepage.config'
 import { Semrush } from '../configs/semrush.config'
 import { SendGrid } from '../configs/sendgrid.config'
+import { Sendinblue } from '../configs/sendinblue.config'
 import { Sentry } from '../configs/sentry.config'
 import { SerpApi } from '../configs/serpapi.config'
 import { SerpStack } from '../configs/serpstack.config'
@@ -421,6 +422,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['savepage', Savepage.API],
 ['semrush', Semrush.API],
 ['sendgrid', SendGrid.API],
+['sendinblue', Sendinblue.API],
 ['sentry', Sentry.API],
 ['serpapi', SerpApi.API],
 ['serpstack', SerpStack.API],

@@ -761,6 +761,10 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://flethy.com/integrations/sendinblue</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://flethy.com/integrations/sentry</loc>
     <priority>0.8</priority>
   </url>
@@ -966,6 +970,14 @@
   </url>
   <url>
     <loc>https://flethy.com/use-cases/create-a-new-user-with-auth0</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://flethy.com/use-cases/create-new-contact-in-hubspot</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://flethy.com/use-cases/create-new-contact-in-sendinblue</loc>
     <priority>0.8</priority>
   </url>
   <url>
