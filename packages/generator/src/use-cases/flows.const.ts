@@ -93,4 +93,14 @@ export const FLOWS = {
       ],
     },
   ],
+  'create-new-contact-in-sendinblue': [
+    {
+      kind: 'sendinblue.contacts.create',
+      'auth:api-key': '==>secrets==>SENDINBLUE_API_KEY',
+      'body:email': '->context.email->string',
+      'body:attributes': {
+        FIRSTNAME: '->context.first->string',
+      },
+    },
+  ],
 }

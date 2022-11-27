@@ -1,0 +1,103 @@
+{
+  "name": "Sendinblue",
+  "domain": "sendinblue.com",
+  "claimed": false,
+  "description": "Sendinblue is the only all-in-one digital marketing platform that empowers businesses to build customer relationships through end to end digital marketing campaigns, transactional messaging, and marketing automation.",
+  "links": [
+    { "name": "twitter", "url": "https://twitter.com/sendinblue" },
+    { "name": "facebook", "url": "https://facebook.com/Sendinblue" },
+    { "name": "linkedin", "url": "https://linkedin.com/company/sendinblue" }
+  ],
+  "logos": [
+    {
+      "type": "icon",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/id87KI8yDJ/idOu8mhWkw.png",
+          "background": null,
+          "format": "png",
+          "height": 400,
+          "width": 400,
+          "size": 6127
+        }
+      ]
+    },
+    {
+      "type": "logo",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/id87KI8yDJ/id2OXQBis8.svg",
+          "background": "transparent",
+          "format": "svg",
+          "size": 5104
+        },
+        {
+          "src": "https://asset.brandfetch.io/id87KI8yDJ/idFiWCb5kp.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 116,
+          "width": 800,
+          "size": 15318
+        }
+      ]
+    },
+    {
+      "type": "symbol",
+      "theme": null,
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/id87KI8yDJ/idxGGJxwfk.svg",
+          "background": "transparent",
+          "format": "svg",
+          "size": 1773
+        },
+        {
+          "src": "https://asset.brandfetch.io/id87KI8yDJ/id_qc4-Brc.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 859,
+          "width": 800,
+          "size": 45178
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#0092FF", "type": "accent", "brightness": 123 },
+    { "hex": "#FFFFFF", "type": "light", "brightness": 255 },
+    { "hex": "#091E3F", "type": "dark", "brightness": 28 }
+  ],
+  "fonts": [
+    {
+      "name": "PublicoHeadline-Bold-Web",
+      "type": "title",
+      "origin": "custom",
+      "originId": null,
+      "weights": []
+    },
+    {
+      "name": "OpenSans",
+      "type": "body",
+      "origin": "google",
+      "originId": "OpenSans",
+      "weights": []
+    }
+  ],
+  "images": [
+    {
+      "type": "banner",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/id87KI8yDJ/id09PY2uzC.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 500,
+          "width": 1500,
+          "size": 38405
+        }
+      ]
+    }
+  ]
+}

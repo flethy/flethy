@@ -200,6 +200,7 @@ The following Endpoints are currently supported.
 * [Savepage](./api/savepage.md)
 * [Semrush](./api/semrush.md)
 * [SendGrid](./api/sendgrid.md)
+* [Sendinblue](./api/sendinblue.md)
 * [Sentry](./api/sentry.md)
 * [SerpApi](./api/serpapi.md)
 * [SerpStack](./api/serpstack.md)
