@@ -39,7 +39,7 @@
 		"shared-types": "workspace:*"
 	},
 	"devDependencies": {
-		"@babel/core": "7.20.2",
+		"@babel/core": "7.20.5",
 		"@cloudflare/workers-types": "3.18.0",
 		"@types/node": "18.11.9",
 		"@types/react": "18.0.25",
