@@ -227,6 +227,7 @@ import Vonage from '@flethy/connectors/src/configs/vonage.config'
 import WarrantDev from '@flethy/connectors/src/configs/warrantdev.config'
 import { HttpRequest } from './controllers/HttpRequest'
 import { logger } from './utils/Logger'
+import Vimeo from '@flethy/connectors/src/configs/vimeo.config'
 
 async function main() {
   const requestConfigs: {
@@ -3106,8 +3107,21 @@ async function main() {
       kind: 'sendinblue.contacts.list',
       'auth:api-key': process.env.SENDINBLUE_API_KEY,
     }),
+    vimeoMe: nao<Vimeo.GetUser>({
+      kind: 'vimeo.users.me',
+      'auth:Authorization': process.env.VIMEO_API_TOKEN,
+    }),
+    vimeoAppearancesMe: nao<Vimeo.GetMyAppearances>({
+      kind: 'vimeo.videos.appearancesMe',
+      'auth:Authorization': process.env.VIMEO_API_TOKEN,
+    }),
+    vimeoAppearances: nao<Vimeo.GetAppearances>({
+      kind: 'vimeo.videos.appearances',
+      'auth:Authorization': process.env.VIMEO_API_TOKEN,
+      'param:userId': process.env.VIMEO_USER_ID,
+    }),
   }
-  const requestConfig = requestConfigs.sendinblueList
+  const requestConfig = requestConfigs.vimeoAppearances
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

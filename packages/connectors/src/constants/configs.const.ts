@@ -226,6 +226,7 @@ import { UrlScan } from '../configs/urlscan.config'
 import { UsePlunk } from '../configs/useplunk.config'
 import { Userfront } from '../configs/userfront.config'
 import { Vantevo } from '../configs/vantevo.config'
+import { Vimeo } from '../configs/vimeo.config'
 import { Vonage } from '../configs/vonage.config'
 import { WarrantDev } from '../configs/warrantdev.config'
 import { Web3Storage } from '../configs/web3storage.config'
@@ -464,6 +465,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['useplunk', UsePlunk.API],
 ['userfront', Userfront.API],
 ['vantevo', Vantevo.API],
+['vimeo', Vimeo.API],
 ['vonage', Vonage.API],
 ['warrantdev', WarrantDev.API],
 ['web3storage', Web3Storage.API],

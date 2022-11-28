@@ -1,0 +1,128 @@
+{
+  "name": "Vimeo",
+  "domain": "vimeo.com",
+  "claimed": false,
+  "description": "Vimeo is the world’s leading professional video platform. We provide powerful tools to create and market high-quality, impactful video.",
+  "links": [
+    {
+      "name": "crunchbase",
+      "url": "https://crunchbase.com/organization/vimeo"
+    },
+    { "name": "twitter", "url": "https://twitter.com/Vimeo" },
+    { "name": "instagram", "url": "https://instagram.com/vimeo" },
+    { "name": "linkedin", "url": "https://linkedin.com/company/vimeo" },
+    { "name": "facebook", "url": "https://facebook.com/Vimeo" }
+  ],
+  "logos": [
+    {
+      "type": "logo",
+      "theme": "light",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idheAw_tFb/idDzogm31M.svg",
+          "background": "transparent",
+          "format": "svg",
+          "size": 3849
+        },
+        {
+          "src": "https://asset.brandfetch.io/idheAw_tFb/ido4HwDTrl.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 450,
+          "width": 800,
+          "size": 10829
+        }
+      ]
+    },
+    {
+      "type": "logo",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idheAw_tFb/idnnT4u--8.svg",
+          "background": "transparent",
+          "format": "svg",
+          "size": 3849
+        },
+        {
+          "src": "https://asset.brandfetch.io/idheAw_tFb/idzfiu8c_V.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 450,
+          "width": 800,
+          "size": 13889
+        }
+      ]
+    },
+    {
+      "type": "symbol",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idheAw_tFb/id8Y40IQ90.svg",
+          "background": "transparent",
+          "format": "svg",
+          "size": 959
+        },
+        {
+          "src": "https://asset.brandfetch.io/idheAw_tFb/idTALGOwVG.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 800,
+          "width": 800,
+          "size": 29765
+        }
+      ]
+    },
+    {
+      "type": "icon",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idheAw_tFb/idGYqTVYVz.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 400,
+          "width": 400,
+          "size": 7323
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#162221", "type": "dark", "brightness": 31 },
+    { "hex": "#ffffff", "type": "light", "brightness": 255 },
+    { "hex": "#1ab7ea", "type": "accent", "brightness": 153 }
+  ],
+  "fonts": [
+    {
+      "name": "Helvetica Neue",
+      "type": "title",
+      "origin": "custom",
+      "originId": null,
+      "weights": []
+    },
+    {
+      "name": "Helvetica Neue",
+      "type": "body",
+      "origin": "custom",
+      "originId": null,
+      "weights": []
+    }
+  ],
+  "images": [
+    {
+      "type": "banner",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idheAw_tFb/idbpzBcI-L.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 500,
+          "width": 1500,
+          "size": 52436
+        }
+      ]
+    }
+  ]
+}

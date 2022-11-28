@@ -226,6 +226,7 @@ import { UrlScan } from '../../../connectors/src/configs/urlscan.config'
 import { UsePlunk } from '../../../connectors/src/configs/useplunk.config'
 import { Userfront } from '../../../connectors/src/configs/userfront.config'
 import { Vantevo } from '../../../connectors/src/configs/vantevo.config'
+import { Vimeo } from '../../../connectors/src/configs/vimeo.config'
 import { Vonage } from '../../../connectors/src/configs/vonage.config'
 import { WarrantDev } from '../../../connectors/src/configs/warrantdev.config'
 import { Web3Storage } from '../../../connectors/src/configs/web3storage.config'
@@ -730,6 +731,9 @@ configTypes.push({type: getType<Userfront.ListRoles>(), id: 'userfront', name: '
 configTypes.push({type: getType<Vantevo.SendEvent>(), id: 'vantevo', name: 'Vantevo', interface: 'SendEvent'})
 configTypes.push({type: getType<Vantevo.GetStatistics>(), id: 'vantevo', name: 'Vantevo', interface: 'GetStatistics'})
 configTypes.push({type: getType<Vantevo.GetEventStatistics>(), id: 'vantevo', name: 'Vantevo', interface: 'GetEventStatistics'})
+configTypes.push({type: getType<Vimeo.GetUser>(), id: 'vimeo', name: 'Vimeo', interface: 'GetUser'})
+configTypes.push({type: getType<Vimeo.GetMyAppearances>(), id: 'vimeo', name: 'Vimeo', interface: 'GetMyAppearances'})
+configTypes.push({type: getType<Vimeo.GetAppearances>(), id: 'vimeo', name: 'Vimeo', interface: 'GetAppearances'})
 configTypes.push({type: getType<Vonage.SendMessageToChannel>(), id: 'vonage', name: 'Vonage', interface: 'SendMessageToChannel'})
 configTypes.push({type: getType<WarrantDev.ListObjectTypes>(), id: 'warrantdev', name: 'WarrantDev', interface: 'ListObjectTypes'})
 configTypes.push({type: getType<WarrantDev.CreateUser>(), id: 'warrantdev', name: 'WarrantDev', interface: 'CreateUser'})

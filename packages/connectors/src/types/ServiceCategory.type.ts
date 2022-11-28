@@ -125,6 +125,7 @@ export type DATA_TYPE =
   | 'validation'
   | 'resolution'
   | 'image-provider'
+  | 'video-provider'
   | 'brands'
   | 'geo'
   | 'carbon-emmisions'

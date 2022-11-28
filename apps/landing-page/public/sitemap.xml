@@ -929,6 +929,10 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://flethy.com/integrations/vimeo</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://flethy.com/integrations/vonage</loc>
     <priority>0.8</priority>
   </url>
@@ -978,6 +982,10 @@
   </url>
   <url>
     <loc>https://flethy.com/use-cases/create-new-contact-in-sendinblue</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://flethy.com/use-cases/get-all-vimeos-in-which-the-user-appears</loc>
     <priority>0.8</priority>
   </url>
   <url>

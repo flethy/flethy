@@ -136,6 +136,7 @@ export class BrandExporter {
       'serpapi',
       'unlayer',
       'up42',
+      'vimeo',
     ]
     const logoArray: Array<{
       id: string
