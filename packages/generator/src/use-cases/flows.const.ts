@@ -103,4 +103,10 @@ export const FLOWS = {
       },
     },
   ],
+  'get-all-vimeos-in-which-the-user-appears': [
+    {
+      kind: 'vimeo.videos.appearancesMe',
+      'auth:Authorization': '==>secrets==>VIMEO_ACCESS_TOKEN',
+    },
+  ],
 }

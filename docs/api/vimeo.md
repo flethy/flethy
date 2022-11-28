@@ -1,0 +1,40 @@
+# Vimeo
+
+## Links
+
+* URL: [https://vimeo.com/](https://vimeo.com/)
+* Documentation: [https://developer.vimeo.com/](https://developer.vimeo.com/)
+* Tags: web2
+* Category: data
+* Type: video-provider
+
+## API
+
+### Authentication
+
+* Authorization: header:bearer
+
+### users
+
+#### me
+
+##### Get the user
+
+* Description: Get the user
+* Docs: [https://developer.vimeo.com/api/reference/users#get_user](https://developer.vimeo.com/api/reference/users#get_user)
+
+### videos
+
+#### appearancesMe
+
+##### Get all the videos in which the user appears
+
+* Description: Get all the videos in which the user appears
+* Docs: [https://developer.vimeo.com/api/reference/videos#get_appearances](https://developer.vimeo.com/api/reference/videos#get_appearances)
+
+#### appearances
+
+##### Get all the videos in which the user appears
+
+* Description: Get all the videos in which the user appears
+* Docs: [https://developer.vimeo.com/api/reference/videos#get_appearances](https://developer.vimeo.com/api/reference/videos#get_appearances)

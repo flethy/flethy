@@ -13,4 +13,4 @@ A product should always solve a customer problem. During development, however, i
 
 One service in this category is Mixpanel. Mixpanel can receive events from a web application as well as from a backend system. It is all about sending relevant events to Mixpanel. In addition, additional attributes can be stored as context, and an event can be assigned to a specific entity, such as a user.
 
-flethy provide a very simple way to send events to the Mixpanel API. Just configure the node accordingly with the event information and the API key and the flethy engine takes care of the rest.
+flethy provides a very simple way to send events to the Mixpanel API. Just configure the node accordingly with the event information and the API key and the flethy engine takes care of the rest.
