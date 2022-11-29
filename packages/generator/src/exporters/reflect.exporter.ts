@@ -206,6 +206,7 @@ import { Supabase } from '../../../connectors/src/configs/supabase.config'
 import { Tenderly } from '../../../connectors/src/configs/tenderly.config'
 import { TheCompaniesApi } from '../../../connectors/src/configs/thecompaniesapi.config'
 import { TheGraph } from '../../../connectors/src/configs/thegraph.config'
+import { TheNounProject } from '../../../connectors/src/configs/thenounproject.config'
 import { TheStarWarsApi } from '../../../connectors/src/configs/thestarwarsapi.config'
 import { Tinify } from '../../../connectors/src/configs/tinify.config'
 import { TinyURL } from '../../../connectors/src/configs/tinyurl.config'
@@ -692,6 +693,8 @@ configTypes.push({type: getType<TheCompaniesApi.EnrichBusinessEmail>(), id: 'the
 configTypes.push({type: getType<TheCompaniesApi.SearchCities>(), id: 'thecompaniesapi', name: 'TheCompaniesApi', interface: 'SearchCities'})
 configTypes.push({type: getType<TheGraph.QueryById>(), id: 'thegraph', name: 'TheGraph', interface: 'QueryById'})
 configTypes.push({type: getType<TheGraph.QueryByName>(), id: 'thegraph', name: 'TheGraph', interface: 'QueryByName'})
+configTypes.push({type: getType<TheNounProject.GetCollectionIconsById>(), id: 'thenounproject', name: 'TheNounProject', interface: 'GetCollectionIconsById'})
+configTypes.push({type: getType<TheNounProject.ListCollections>(), id: 'thenounproject', name: 'TheNounProject', interface: 'ListCollections'})
 configTypes.push({type: getType<TheStarWarsApi.GetEntities>(), id: 'thestarwarsapi', name: 'TheStarWarsApi', interface: 'GetEntities'})
 configTypes.push({type: getType<TheStarWarsApi.GetEntity>(), id: 'thestarwarsapi', name: 'TheStarWarsApi', interface: 'GetEntity'})
 configTypes.push({type: getType<Tinify.Shrink>(), id: 'tinify', name: 'Tinify', interface: 'Shrink'})

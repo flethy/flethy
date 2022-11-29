@@ -13,4 +13,4 @@ Media is an essential part of today's marketing efforts. Video platforms allow y
 
 One service in this category is Vimeo. To display all videos in which a user appears, the Vimeo API can be used.
 
-flethy provides a very simple way to send events to the Vimeo API. Just configure the node accordingly with the event information and the Access Token and the flethy engine takes care of the rest.
+flethy provides a very simple way to retrieve videos from the Vimeo API. Just configure the node accordingly and the Access Token and the flethy engine takes care of the rest.

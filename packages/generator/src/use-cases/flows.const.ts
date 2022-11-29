@@ -109,4 +109,14 @@ export const FLOWS = {
       'auth:Authorization': '==>secrets==>VIMEO_ACCESS_TOKEN',
     },
   ],
+  'get-icons-of-a-collection-from-the-noun-project': [
+    {
+      kind: 'thenounproject.collections.iconsById',
+      'auth:Authorization': {
+        consumerKey: '==>secrets==>NOUNPROJECT_KEY',
+        consumerSecret: '==>secrets==>NOUNPROJECT_SECRET',
+      },
+      'param:collectionId': '->context.collectionId->number',
+    },
+  ],
 }

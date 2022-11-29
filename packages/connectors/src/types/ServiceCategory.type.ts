@@ -132,6 +132,7 @@ export type DATA_TYPE =
   | 'air-quality'
   | 'creator-data'
   | 'data-integration'
+  | 'icons'
 export type CLOUD_TYPE = 'services'
 export type SEARCH_TYPE = 'serp'
 export type NETWORK_TYPE = 'cdn'

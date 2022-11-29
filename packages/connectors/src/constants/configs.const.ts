@@ -206,6 +206,7 @@ import { Supabase } from '../configs/supabase.config'
 import { Tenderly } from '../configs/tenderly.config'
 import { TheCompaniesApi } from '../configs/thecompaniesapi.config'
 import { TheGraph } from '../configs/thegraph.config'
+import { TheNounProject } from '../configs/thenounproject.config'
 import { TheStarWarsApi } from '../configs/thestarwarsapi.config'
 import { Tinify } from '../configs/tinify.config'
 import { TinyURL } from '../configs/tinyurl.config'
@@ -445,6 +446,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['tenderly', Tenderly.API],
 ['thecompaniesapi', TheCompaniesApi.API],
 ['thegraph', TheGraph.API],
+['thenounproject', TheNounProject.API],
 ['thestarwarsapi', TheStarWarsApi.API],
 ['tinify', Tinify.API],
 ['tinyurl', TinyURL.API],
