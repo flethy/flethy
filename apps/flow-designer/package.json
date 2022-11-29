@@ -31,7 +31,7 @@
 		"react-dom": "18.2.0",
 		"react-flow-renderer": "^10.3.17",
 		"react-i18next": "^12.0.0",
-		"react-icons": "4.6.0",
+		"react-icons": "4.7.1",
 		"shared-types": "workspace:*"
 	},
 	"devDependencies": {
