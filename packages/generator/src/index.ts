@@ -218,16 +218,17 @@ import Splitbee from '@flethy/connectors/src/configs/splitbee.config'
 import Stackhawk from '@flethy/connectors/src/configs/stackhawk.config'
 import Storyblok from '@flethy/connectors/src/configs/storyblok.config'
 import Stytch from '@flethy/connectors/src/configs/stytch.config'
+import TheNounProject from '@flethy/connectors/src/configs/thenounproject.config'
 import TinyURL from '@flethy/connectors/src/configs/tinyurl.config'
 import Twitter from '@flethy/connectors/src/configs/twitter.config'
 import UrlBae from '@flethy/connectors/src/configs/urlbae.config'
 import Userfront from '@flethy/connectors/src/configs/userfront.config'
 import Vantevo from '@flethy/connectors/src/configs/vantevo.config'
+import Vimeo from '@flethy/connectors/src/configs/vimeo.config'
 import Vonage from '@flethy/connectors/src/configs/vonage.config'
 import WarrantDev from '@flethy/connectors/src/configs/warrantdev.config'
 import { HttpRequest } from './controllers/HttpRequest'
 import { logger } from './utils/Logger'
-import Vimeo from '@flethy/connectors/src/configs/vimeo.config'
 
 async function main() {
   const requestConfigs: {
@@ -3120,8 +3121,24 @@ async function main() {
       'auth:Authorization': process.env.VIMEO_API_TOKEN,
       'param:userId': process.env.VIMEO_USER_ID,
     }),
+    nounprojectGetCollectionIconsById:
+      nao<TheNounProject.GetCollectionIconsById>({
+        kind: 'thenounproject.collections.iconsById',
+        'auth:Authorization': {
+          consumerKey: process.env.NOUNPROJECT_KEY,
+          consumerSecret: process.env.NOUNPROJECT_SECRET,
+        },
+        'param:collectionId': 95921,
+      }),
+    nounprojectListCollections: nao<TheNounProject.ListCollections>({
+      kind: 'thenounproject.collections.list',
+      'auth:Authorization': {
+        consumerKey: process.env.NOUNPROJECT_KEY,
+        consumerSecret: process.env.NOUNPROJECT_SECRET,
+      },
+    }),
   }
-  const requestConfig = requestConfigs.vimeoAppearances
+  const requestConfig = requestConfigs.nounprojectListCollections
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

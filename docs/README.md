@@ -220,6 +220,7 @@ The following Endpoints are currently supported.
 * [Stytch](./api/stytch.md)
 * [Supabase](./api/supabase.md)
 * [TheCompaniesApi](./api/thecompaniesapi.md)
+* [TheNounProject](./api/thenounproject.md)
 * [TheStarWarsApi](./api/thestarwarsapi.md)
 * [Tinify](./api/tinify.md)
 * [TinyURL](./api/tinyurl.md)

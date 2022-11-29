@@ -1,0 +1,80 @@
+{
+  "name": "The Noun Project",
+  "domain": "thenounproject.com",
+  "claimed": false,
+  "description": "The Noun Project is a platform where the world’s visual language can be shared.",
+  "links": [{ "name": "twitter", "url": "https://twitter.com/nounproject" }],
+  "logos": [
+    {
+      "type": "icon",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idpjyhLB28/idYBc6tgRa.png",
+          "background": null,
+          "format": "png",
+          "height": 400,
+          "width": 400,
+          "size": 8945
+        }
+      ]
+    },
+    {
+      "type": "logo",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idpjyhLB28/id1X6eDvkJ.png",
+          "background": null,
+          "format": "png",
+          "height": 820,
+          "width": 820,
+          "size": 12458
+        },
+        {
+          "src": "https://asset.brandfetch.io/idpjyhLB28/idPIbofNGD.svg",
+          "background": "transparent",
+          "format": "svg",
+          "height": null,
+          "width": null,
+          "size": 268
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#000000", "type": "dark", "brightness": 0 },
+    { "hex": "#fafafa", "type": "light", "brightness": 250 }
+  ],
+  "fonts": [
+    {
+      "name": "Medium-65",
+      "type": "title",
+      "origin": "custom",
+      "originId": null,
+      "weights": []
+    },
+    {
+      "name": "Medium-65",
+      "type": "body",
+      "origin": "custom",
+      "originId": null,
+      "weights": []
+    }
+  ],
+  "images": [
+    {
+      "type": "banner",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idpjyhLB28/idAKnZJLS2.png",
+          "background": null,
+          "format": "png",
+          "height": 500,
+          "width": 1500,
+          "size": 48801
+        }
+      ]
+    }
+  ]
+}
