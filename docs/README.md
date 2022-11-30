@@ -142,6 +142,7 @@ The following Endpoints are currently supported.
 * [MailerSend](./api/mailersend.md)
 * [MailJet](./api/mailjet.md)
 * [MailPace](./api/mailpace.md)
+* [MailTM](./api/mailtm.md)
 * [Medium](./api/medium.md)
 * [MergeApi](./api/mergeapi.md)
 * [Mergent](./api/mergent.md)

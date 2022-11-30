@@ -121,6 +121,7 @@ import { Mailchimp } from '../../../connectors/src/configs/mailchimp.config'
 import { MailerSend } from '../../../connectors/src/configs/mailersend.config'
 import { MailJet } from '../../../connectors/src/configs/mailjet.config'
 import { MailPace } from '../../../connectors/src/configs/mailpace.config'
+import { MailTM } from '../../../connectors/src/configs/mailtm.config'
 import { Medium } from '../../../connectors/src/configs/medium.config'
 import { MergeApi } from '../../../connectors/src/configs/mergeapi.config'
 import { Mergent } from '../../../connectors/src/configs/mergent.config'
@@ -510,6 +511,9 @@ configTypes.push({type: getType<Mailchimp.ListCampaigns>(), id: 'mailchimp', nam
 configTypes.push({type: getType<MailerSend.EmailSend>(), id: 'mailersend', name: 'MailerSend', interface: 'EmailSend'})
 configTypes.push({type: getType<MailJet.SendBasicEmail>(), id: 'mailjet', name: 'MailJet', interface: 'SendBasicEmail'})
 configTypes.push({type: getType<MailPace.Send>(), id: 'mailpace', name: 'MailPace', interface: 'Send'})
+configTypes.push({type: getType<MailTM.GetToken>(), id: 'mailtm', name: 'MailTM', interface: 'GetToken'})
+configTypes.push({type: getType<MailTM.GetDomains>(), id: 'mailtm', name: 'MailTM', interface: 'GetDomains'})
+configTypes.push({type: getType<MailTM.GetDomainbyId>(), id: 'mailtm', name: 'MailTM', interface: 'GetDomainbyId'})
 configTypes.push({type: getType<Medium.Me>(), id: 'medium', name: 'Medium', interface: 'Me'})
 configTypes.push({type: getType<Medium.GetPublications>(), id: 'medium', name: 'Medium', interface: 'GetPublications'})
 configTypes.push({type: getType<Medium.CreatePost>(), id: 'medium', name: 'Medium', interface: 'CreatePost'})

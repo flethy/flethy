@@ -229,6 +229,7 @@ import Vonage from '@flethy/connectors/src/configs/vonage.config'
 import WarrantDev from '@flethy/connectors/src/configs/warrantdev.config'
 import { HttpRequest } from './controllers/HttpRequest'
 import { logger } from './utils/Logger'
+import MailTM from '@flethy/connectors/src/configs/mailtm.config'
 
 async function main() {
   const requestConfigs: {
@@ -3137,8 +3138,17 @@ async function main() {
         consumerSecret: process.env.NOUNPROJECT_SECRET,
       },
     }),
+    mailtmAuth: nao<MailTM.GetToken>({
+      kind: 'mailtm.auth.token',
+      'body:address': process.env.MAILTM_ADDRESS,
+      'body:password': process.env.MAILTM_PASSWORD,
+    }),
+    mailtmDomains: nao<MailTM.GetDomains>({
+      kind: 'mailtm.core.domains',
+      'auth:Authorization': process.env.MAILTM_TOKEN,
+    }),
   }
-  const requestConfig = requestConfigs.nounprojectListCollections
+  const requestConfig = requestConfigs.mailtmDomains
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

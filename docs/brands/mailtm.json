@@ -1,0 +1,38 @@
+{
+  "name": "Mail",
+  "domain": "mail.tm",
+  "claimed": false,
+  "description": "Feel free to use temporary email to register on dubious sites, forums or social networks. Protect your personal email address from spam.",
+  "links": [],
+  "logos": [
+    {
+      "type": "logo",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idBLhozKb7/idlnBY5dxM.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 512,
+          "width": 512,
+          "size": 32992
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#4e555f", "type": "dark", "brightness": 84 },
+    { "hex": "#f3f4f6", "type": "light", "brightness": 244 },
+    { "hex": "#6875f5", "type": "accent", "brightness": 123 }
+  ],
+  "fonts": [
+    {
+      "name": "Roboto",
+      "type": "body",
+      "origin": "google",
+      "originId": "Roboto",
+      "weights": []
+    }
+  ],
+  "images": []
+}
