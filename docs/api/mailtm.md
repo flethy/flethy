@@ -1,0 +1,40 @@
+# MailTM
+
+## Links
+
+* URL: [https://mail.tm/](https://mail.tm/)
+* Documentation: [https://docs.mail.tm/](https://docs.mail.tm/)
+* Tags: web2
+* Category: utils
+* Type: other
+
+## API
+
+### Authentication
+
+* Authorization: header:bearer
+
+### auth
+
+#### token
+
+##### Authentication
+
+* Description: Authentication
+* Docs: [https://docs.mail.tm/#authentication](https://docs.mail.tm/#authentication)
+
+### core
+
+#### domains
+
+##### Domains
+
+* Description: Domains
+* Docs: [https://docs.mail.tm/#get-domains](https://docs.mail.tm/#get-domains)
+
+#### domainById
+
+##### Domain by Id
+
+* Description: Domain by Id
+* Docs: [https://docs.mail.tm/#get-domainsid](https://docs.mail.tm/#get-domainsid)
