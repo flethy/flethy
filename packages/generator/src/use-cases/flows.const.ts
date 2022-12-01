@@ -119,4 +119,13 @@ export const FLOWS = {
       'param:collectionId': '->context.collectionId->number',
     },
   ],
+  'get-content-from-contentful': [
+    {
+      kind: 'contentful.graphql.queryBySpace',
+      baseId: 'graphql',
+      'auth:Authorization': '==>secrets==>CONTENTFUL_DELIVERY_API_KEY',
+      'param:spaceId': '==>env==>CONTENTFUL_SPACE_ID',
+      'body:query': '->context.query->string',
+    },
+  ],
 }

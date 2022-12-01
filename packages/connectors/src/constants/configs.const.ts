@@ -165,6 +165,7 @@ import { PolyScale } from '../configs/polyscale.config'
 import { PostHog } from '../configs/posthog.config'
 import { Prepr } from '../configs/prepr.config'
 import { Prerender } from '../configs/prerender.config'
+import { Prismic } from '../configs/prismic.config'
 import { ProductHunt } from '../configs/producthunt.config'
 import { PurgoMalum } from '../configs/purgomalum.config'
 import { PurpleAir } from '../configs/purpleair.config'
@@ -406,6 +407,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['posthog', PostHog.API],
 ['prepr', Prepr.API],
 ['prerender', Prerender.API],
+['prismic', Prismic.API],
 ['producthunt', ProductHunt.API],
 ['purgomalum', PurgoMalum.API],
 ['purpleair', PurpleAir.API],

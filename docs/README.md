@@ -181,6 +181,7 @@ The following Endpoints are currently supported.
 * [PostHog](./api/posthog.md)
 * [Prepr](./api/prepr.md)
 * [Prerender](./api/prerender.md)
+* [Prismic](./api/prismic.md)
 * [ProductHunt](./api/producthunt.md)
 * [PurgoMalum](./api/purgomalum.md)
 * [PurpleAir](./api/purpleair.md)
