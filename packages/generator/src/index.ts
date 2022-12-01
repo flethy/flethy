@@ -230,6 +230,7 @@ import WarrantDev from '@flethy/connectors/src/configs/warrantdev.config'
 import { HttpRequest } from './controllers/HttpRequest'
 import { logger } from './utils/Logger'
 import MailTM from '@flethy/connectors/src/configs/mailtm.config'
+import Prismic from '@flethy/connectors/src/configs/prismic.config'
 
 async function main() {
   const requestConfigs: {
@@ -3147,8 +3148,12 @@ async function main() {
       kind: 'mailtm.core.domains',
       'auth:Authorization': process.env.MAILTM_TOKEN,
     }),
+    prismicEntries: nao<Prismic.ListEntries>({
+      kind: 'prismic.entries.list',
+      'subdomain:repo': 'flethy',
+    }),
   }
-  const requestConfig = requestConfigs.mailtmDomains
+  const requestConfig = requestConfigs.prismicEntries
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

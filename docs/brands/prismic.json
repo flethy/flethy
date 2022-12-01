@@ -1,0 +1,74 @@
+{
+  "name": "Prismic",
+  "domain": "prismic.io",
+  "claimed": false,
+  "description": "Headless CMS with an API, CDN and a Writing Room",
+  "links": [
+    {
+      "name": "youtube",
+      "url": "https://youtube.com/UCJq6AEgtWeZt7ziQ-fLKOeA/videos"
+    },
+    { "name": "github", "url": "https://github.com/prismicio" },
+    { "name": "twitter", "url": "https://twitter.com/prismicio" },
+    { "name": "linkedin", "url": "https://linkedin.com/company/prismic-io" }
+  ],
+  "logos": [
+    {
+      "type": "icon",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idiklpk0tN/idFycwHKh2.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 400,
+          "width": 400,
+          "size": 9528
+        }
+      ]
+    },
+    {
+      "type": "logo",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idiklpk0tN/idJxuZ22HF.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 210,
+          "width": 820,
+          "size": 23582
+        },
+        {
+          "src": "https://asset.brandfetch.io/idiklpk0tN/idy4XsZRmS.svg",
+          "background": "transparent",
+          "format": "svg",
+          "height": null,
+          "width": null,
+          "size": 7299
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#212735", "type": "dark", "brightness": 39 },
+    { "hex": "#ffffff", "type": "light", "brightness": 255 },
+    { "hex": "#5163ba", "type": "accent", "brightness": 101 }
+  ],
+  "fonts": [],
+  "images": [
+    {
+      "type": "banner",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idiklpk0tN/id2dRHJKMD.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 500,
+          "width": 1500,
+          "size": 40483
+        }
+      ]
+    }
+  ]
+}

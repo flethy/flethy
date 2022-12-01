@@ -685,6 +685,10 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://flethy.com/integrations/prismic</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://flethy.com/integrations/producthunt</loc>
     <priority>0.8</priority>
   </url>
@@ -994,6 +998,10 @@
   </url>
   <url>
     <loc>https://flethy.com/use-cases/get-all-vimeos-in-which-the-user-appears</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://flethy.com/use-cases/get-content-from-contentful</loc>
     <priority>0.8</priority>
   </url>
   <url>
