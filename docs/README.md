@@ -99,6 +99,7 @@ The following Endpoints are currently supported.
 * [Fibery](./api/fibery.md)
 * [Figma](./api/figma.md)
 * [Flatfile](./api/flatfile.md)
+* [FootballPredictionAPI](./api/footballpredictionapi.md)
 * [Frankfurter](./api/frankfurter.md)
 * [Geekflare](./api/geekflare.md)
 * [Github](./api/github.md)

@@ -77,6 +77,7 @@ import { Festdays } from '../configs/festdays.config'
 import { Fibery } from '../configs/fibery.config'
 import { Figma } from '../configs/figma.config'
 import { Flatfile } from '../configs/flatfile.config'
+import { FootballPredictionAPI } from '../configs/footballpredictionapi.config'
 import { Frankfurter } from '../configs/frankfurter.config'
 import { Geekflare } from '../configs/geekflare.config'
 import { Github } from '../configs/github.config'
@@ -319,6 +320,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['fibery', Fibery.API],
 ['figma', Figma.API],
 ['flatfile', Flatfile.API],
+['footballpredictionapi', FootballPredictionAPI.API],
 ['frankfurter', Frankfurter.API],
 ['geekflare', Geekflare.API],
 ['github', Github.API],

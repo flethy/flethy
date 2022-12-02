@@ -231,6 +231,7 @@ import { HttpRequest } from './controllers/HttpRequest'
 import { logger } from './utils/Logger'
 import MailTM from '@flethy/connectors/src/configs/mailtm.config'
 import Prismic from '@flethy/connectors/src/configs/prismic.config'
+import FootballPredictionAPI from '@flethy/connectors/src/configs/footballpredictionapi.config'
 
 async function main() {
   const requestConfigs: {
@@ -3152,8 +3153,13 @@ async function main() {
       kind: 'prismic.entries.list',
       'subdomain:repo': 'flethy',
     }),
+    footballpredictionapi: nao<FootballPredictionAPI.Predictions>({
+      kind: 'footballpredictionapi.forecasting.predictions',
+      'auth:X-RapidAPI-Key': process.env.FOOTBALLPREDICTIONAPI_API_KEY,
+      'header:X-RapidAPI-Host': 'football-prediction-api.p.rapidapi.com',
+    }),
   }
-  const requestConfig = requestConfigs.prismicEntries
+  const requestConfig = requestConfigs.footballpredictionapi
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

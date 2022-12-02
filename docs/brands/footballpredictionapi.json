@@ -1,0 +1,45 @@
+{
+  "name": "Boggio Analytics",
+  "domain": "boggio-analytics.com",
+  "claimed": false,
+  "description": "Boggio Analytics is an IT consulting partner that can help you develop innovative solutions which will make you stay ahead of the competition.\n\tApp development, Big data analysis and Machine Learning are just a few of the things we can help you with.",
+  "links": [],
+  "logos": [
+    {
+      "type": "logo",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idPXhTGFk0/idxTe9Rriq.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 294,
+          "width": 300,
+          "size": 50586
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#da5c53", "type": "accent", "brightness": 118 },
+    { "hex": "#1a1a1a", "type": "dark", "brightness": 26 },
+    { "hex": "#ff9674", "type": "light", "brightness": 170 }
+  ],
+  "fonts": [
+    {
+      "name": "Roboto",
+      "type": "title",
+      "origin": "google",
+      "originId": "Roboto",
+      "weights": []
+    },
+    {
+      "name": "Roboto",
+      "type": "body",
+      "origin": "google",
+      "originId": "Roboto",
+      "weights": []
+    }
+  ],
+  "images": []
+}

@@ -333,6 +333,10 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://flethy.com/integrations/footballpredictionapi</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://flethy.com/integrations/frankfurter</loc>
     <priority>0.8</priority>
   </url>
