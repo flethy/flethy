@@ -1,0 +1,48 @@
+# WebhookSite
+
+## Links
+
+* URL: [https://webhook.site/](https://webhook.site/)
+* Documentation: [https://docs.webhook.site/](https://docs.webhook.site/)
+* Tags: web2
+* Category: utils
+* Type: other
+
+## API
+
+### core
+
+#### get
+
+##### Get Request
+
+* Description: Get Request
+* Docs: [https://docs.webhook.site/api/about.html](https://docs.webhook.site/api/about.html)
+
+#### post
+
+##### Post Request
+
+* Description: Post Request
+* Docs: [https://docs.webhook.site/api/about.html](https://docs.webhook.site/api/about.html)
+
+#### patch
+
+##### Patch Request
+
+* Description: Patch Request
+* Docs: [https://docs.webhook.site/api/about.html](https://docs.webhook.site/api/about.html)
+
+#### put
+
+##### Put Request
+
+* Description: Put Request
+* Docs: [https://docs.webhook.site/api/about.html](https://docs.webhook.site/api/about.html)
+
+#### delete
+
+##### Delete Request
+
+* Description: Delete Request
+* Docs: [https://docs.webhook.site/api/about.html](https://docs.webhook.site/api/about.html)

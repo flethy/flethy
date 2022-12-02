@@ -231,6 +231,8 @@ import { HttpRequest } from './controllers/HttpRequest'
 import { logger } from './utils/Logger'
 import MailTM from '@flethy/connectors/src/configs/mailtm.config'
 import Prismic from '@flethy/connectors/src/configs/prismic.config'
+import FootballPredictionAPI from '@flethy/connectors/src/configs/footballpredictionapi.config'
+import WebhookSite from '@flethy/connectors/src/configs/webhooksite.config'
 
 async function main() {
   const requestConfigs: {
@@ -3152,8 +3154,32 @@ async function main() {
       kind: 'prismic.entries.list',
       'subdomain:repo': 'flethy',
     }),
+    footballpredictionapi: nao<FootballPredictionAPI.Predictions>({
+      kind: 'footballpredictionapi.forecasting.predictions',
+      'auth:X-RapidAPI-Key': process.env.FOOTBALLPREDICTIONAPI_API_KEY,
+      'header:X-RapidAPI-Host': 'football-prediction-api.p.rapidapi.com',
+    }),
+    webhooksiteGET: nao<WebhookSite.CoreGet>({
+      kind: 'webhooksite.core.get',
+      'param:uuid': process.env.WEBHOOKSITE_UUID,
+      'header:x-test-header': 'flethy',
+    }),
+    webhooksitePOST: nao<WebhookSite.CorePost>({
+      kind: 'webhooksite.core.post',
+      'param:uuid': process.env.WEBHOOKSITE_UUID,
+      'header:x-test-header': 'flethy',
+      'body:body': {
+        time: 'to speed up',
+      },
+    }),
+    webhooksiteDELETE: nao<WebhookSite.CoreDelete>({
+      kind: 'webhooksite.core.delete',
+      'param:uuid': process.env.WEBHOOKSITE_UUID,
+      'header:x-test-header': 'flethy',
+      'query:testQueryParam': 'flethy',
+    }),
   }
-  const requestConfig = requestConfigs.prismicEntries
+  const requestConfig = requestConfigs.webhooksiteDELETE
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

@@ -77,6 +77,7 @@ import { Festdays } from '../../../connectors/src/configs/festdays.config'
 import { Fibery } from '../../../connectors/src/configs/fibery.config'
 import { Figma } from '../../../connectors/src/configs/figma.config'
 import { Flatfile } from '../../../connectors/src/configs/flatfile.config'
+import { FootballPredictionAPI } from '../../../connectors/src/configs/footballpredictionapi.config'
 import { Frankfurter } from '../../../connectors/src/configs/frankfurter.config'
 import { Geekflare } from '../../../connectors/src/configs/geekflare.config'
 import { Github } from '../../../connectors/src/configs/github.config'
@@ -233,6 +234,7 @@ import { Vimeo } from '../../../connectors/src/configs/vimeo.config'
 import { Vonage } from '../../../connectors/src/configs/vonage.config'
 import { WarrantDev } from '../../../connectors/src/configs/warrantdev.config'
 import { Web3Storage } from '../../../connectors/src/configs/web3storage.config'
+import { WebhookSite } from '../../../connectors/src/configs/webhooksite.config'
 import { WhoIsXMLApi } from '../../../connectors/src/configs/whoisxmlapi.config'
 import { WordsAPI } from '../../../connectors/src/configs/wordsapi.config'
 import { WordSimi } from '../../../connectors/src/configs/wordsimi.config'
@@ -424,6 +426,7 @@ configTypes.push({type: getType<Flatfile.ListWorkspaces>(), id: 'flatfile', name
 configTypes.push({type: getType<Flatfile.DownloadUpload>(), id: 'flatfile', name: 'Flatfile', interface: 'DownloadUpload'})
 configTypes.push({type: getType<Flatfile.DeleteUpload>(), id: 'flatfile', name: 'Flatfile', interface: 'DeleteUpload'})
 configTypes.push({type: getType<Flatfile.BulkDeleteUploads>(), id: 'flatfile', name: 'Flatfile', interface: 'BulkDeleteUploads'})
+configTypes.push({type: getType<FootballPredictionAPI.Predictions>(), id: 'footballpredictionapi', name: 'FootballPredictionAPI', interface: 'Predictions'})
 configTypes.push({type: getType<Frankfurter.Latest>(), id: 'frankfurter', name: 'Frankfurter', interface: 'Latest'})
 configTypes.push({type: getType<Frankfurter.Historical>(), id: 'frankfurter', name: 'Frankfurter', interface: 'Historical'})
 configTypes.push({type: getType<Frankfurter.TimeSeries>(), id: 'frankfurter', name: 'Frankfurter', interface: 'TimeSeries'})
@@ -749,6 +752,11 @@ configTypes.push({type: getType<WarrantDev.ListObjectTypes>(), id: 'warrantdev',
 configTypes.push({type: getType<WarrantDev.CreateUser>(), id: 'warrantdev', name: 'WarrantDev', interface: 'CreateUser'})
 configTypes.push({type: getType<WarrantDev.GetUsersByTenant>(), id: 'warrantdev', name: 'WarrantDev', interface: 'GetUsersByTenant'})
 configTypes.push({type: getType<Web3Storage.UploadContent>(), id: 'web3storage', name: 'Web3Storage', interface: 'UploadContent'})
+configTypes.push({type: getType<WebhookSite.CoreGet>(), id: 'webhooksite', name: 'WebhookSite', interface: 'CoreGet'})
+configTypes.push({type: getType<WebhookSite.CorePost>(), id: 'webhooksite', name: 'WebhookSite', interface: 'CorePost'})
+configTypes.push({type: getType<WebhookSite.CorePatch>(), id: 'webhooksite', name: 'WebhookSite', interface: 'CorePatch'})
+configTypes.push({type: getType<WebhookSite.CorePut>(), id: 'webhooksite', name: 'WebhookSite', interface: 'CorePut'})
+configTypes.push({type: getType<WebhookSite.CoreDelete>(), id: 'webhooksite', name: 'WebhookSite', interface: 'CoreDelete'})
 configTypes.push({type: getType<WhoIsXMLApi.DomainAvailability>(), id: 'whoisxmlapi', name: 'WhoIsXMLApi', interface: 'DomainAvailability'})
 configTypes.push({type: getType<WordsAPI.GetAWord>(), id: 'wordsapi', name: 'WordsAPI', interface: 'GetAWord'})
 configTypes.push({type: getType<WordsAPI.GetWordDetails>(), id: 'wordsapi', name: 'WordsAPI', interface: 'GetWordDetails'})
