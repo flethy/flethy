@@ -40,7 +40,8 @@ export class WorkflowsRoute {
 
     res.send(StatusCodeSuccess.OK, {
       ...data?.metadata,
-      workflow: data?.workflow,
+      workflow: data?.workflow.workflow,
+      env: data?.workflow.env,
     });
   }
 

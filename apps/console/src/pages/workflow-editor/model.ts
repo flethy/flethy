@@ -1,4 +1,5 @@
 import { flow, types } from 'mobx-state-tree'
+import { WORKFLOW_TUTORIALS } from '../../constants/tutorials.const'
 import { FlethyContext } from '../../models/flethy.types'
 import { getRootStore } from '../../models/helpers'
 
@@ -51,8 +52,14 @@ export const WorkflowEditorPage = types
 				})
 				self.name = response.name
 			} else {
-				self.name = 'Workflow Name'
-				self.workflow = WORKFLOW_EXAMPLE
+				const tutorial = WORKFLOW_TUTORIALS.WebhookSite
+				self.name = tutorial.name
+				const workflow = {
+					name: tutorial.name,
+					workflow: tutorial.workflow,
+					env: tutorial.env,
+				}
+				self.workflow = JSON.stringify(workflow, null, 2)
 			}
 		})
 
