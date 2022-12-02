@@ -234,6 +234,7 @@ import { Vimeo } from '../../../connectors/src/configs/vimeo.config'
 import { Vonage } from '../../../connectors/src/configs/vonage.config'
 import { WarrantDev } from '../../../connectors/src/configs/warrantdev.config'
 import { Web3Storage } from '../../../connectors/src/configs/web3storage.config'
+import { WebhookSite } from '../../../connectors/src/configs/webhooksite.config'
 import { WhoIsXMLApi } from '../../../connectors/src/configs/whoisxmlapi.config'
 import { WordsAPI } from '../../../connectors/src/configs/wordsapi.config'
 import { WordSimi } from '../../../connectors/src/configs/wordsimi.config'
@@ -751,6 +752,11 @@ configTypes.push({type: getType<WarrantDev.ListObjectTypes>(), id: 'warrantdev',
 configTypes.push({type: getType<WarrantDev.CreateUser>(), id: 'warrantdev', name: 'WarrantDev', interface: 'CreateUser'})
 configTypes.push({type: getType<WarrantDev.GetUsersByTenant>(), id: 'warrantdev', name: 'WarrantDev', interface: 'GetUsersByTenant'})
 configTypes.push({type: getType<Web3Storage.UploadContent>(), id: 'web3storage', name: 'Web3Storage', interface: 'UploadContent'})
+configTypes.push({type: getType<WebhookSite.CoreGet>(), id: 'webhooksite', name: 'WebhookSite', interface: 'CoreGet'})
+configTypes.push({type: getType<WebhookSite.CorePost>(), id: 'webhooksite', name: 'WebhookSite', interface: 'CorePost'})
+configTypes.push({type: getType<WebhookSite.CorePatch>(), id: 'webhooksite', name: 'WebhookSite', interface: 'CorePatch'})
+configTypes.push({type: getType<WebhookSite.CorePut>(), id: 'webhooksite', name: 'WebhookSite', interface: 'CorePut'})
+configTypes.push({type: getType<WebhookSite.CoreDelete>(), id: 'webhooksite', name: 'WebhookSite', interface: 'CoreDelete'})
 configTypes.push({type: getType<WhoIsXMLApi.DomainAvailability>(), id: 'whoisxmlapi', name: 'WhoIsXMLApi', interface: 'DomainAvailability'})
 configTypes.push({type: getType<WordsAPI.GetAWord>(), id: 'wordsapi', name: 'WordsAPI', interface: 'GetAWord'})
 configTypes.push({type: getType<WordsAPI.GetWordDetails>(), id: 'wordsapi', name: 'WordsAPI', interface: 'GetWordDetails'})

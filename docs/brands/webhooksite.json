@@ -1,0 +1,38 @@
+{
+  "name": "webhook",
+  "domain": "webhook.site",
+  "claimed": false,
+  "description": "Instantly generate a free, unique URL and email address to test, inspect, and automate (with a visual workflow editor and scripts) incoming HTTP requests and emails",
+  "links": [],
+  "logos": [
+    {
+      "type": "logo",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idtU_cypqO/idnOhHxxQa.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 256,
+          "width": 256,
+          "size": 25635
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#222222", "type": "dark", "brightness": 34 },
+    { "hex": "#ffffff", "type": "light", "brightness": 255 },
+    { "hex": "#7f7f7e", "type": "accent", "brightness": 127 }
+  ],
+  "fonts": [
+    {
+      "name": "Helvetica Neue",
+      "type": "body",
+      "origin": "custom",
+      "originId": null,
+      "weights": []
+    }
+  ],
+  "images": []
+}

@@ -961,6 +961,10 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://flethy.com/integrations/webhooksite</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://flethy.com/integrations/whoisxmlapi</loc>
     <priority>0.8</priority>
   </url>

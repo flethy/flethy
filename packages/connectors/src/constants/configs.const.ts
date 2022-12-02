@@ -234,6 +234,7 @@ import { Vimeo } from '../configs/vimeo.config'
 import { Vonage } from '../configs/vonage.config'
 import { WarrantDev } from '../configs/warrantdev.config'
 import { Web3Storage } from '../configs/web3storage.config'
+import { WebhookSite } from '../configs/webhooksite.config'
 import { WhoIsXMLApi } from '../configs/whoisxmlapi.config'
 import { WordsAPI } from '../configs/wordsapi.config'
 import { WordSimi } from '../configs/wordsimi.config'
@@ -477,6 +478,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['vonage', Vonage.API],
 ['warrantdev', WarrantDev.API],
 ['web3storage', Web3Storage.API],
+['webhooksite', WebhookSite.API],
 ['whoisxmlapi', WhoIsXMLApi.API],
 ['wordsapi', WordsAPI.API],
 ['wordsimi', WordSimi.API],
