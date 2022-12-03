@@ -1,3 +1,4 @@
+import { FlowNode } from '@flethy/flow'
 import { flow, Instance, types } from 'mobx-state-tree'
 import { request } from '../../helpers/api'
 import { getRootStore, RouterPathUtils } from '../helpers'
@@ -10,6 +11,7 @@ export const WorkflowDataModel = types.model('WorkflowDataModel', {
 	updatedAt: types.maybeNull(types.number),
 	workflowId: types.optional(types.string, ''),
 	name: types.optional(types.string, ''),
+	workflow: types.optional(types.string, ''),
 })
 
 export const WorkflowsModel = types
@@ -86,6 +88,7 @@ export const WorkflowsModel = types
 						.wf(options.workflowId)
 						.gen(),
 				})
+				// TODO: fix persisting of workflows
 				api.stateAndCache.updateToDone(stateAndCacheKey)
 				return response
 			} catch (error) {
@@ -95,9 +98,12 @@ export const WorkflowsModel = types
 		})
 
 		const put = flow(function* (options: {
+			workflowId?: string
 			workspaceId: string
 			projectId: string
-			workflow: any
+			workflow: FlowNode[]
+			name: string
+			env?: { [key: string]: string }
 		}) {
 			const response: { workflowMetadata: any } = yield request({
 				base: 'flethy',
@@ -108,14 +114,25 @@ export const WorkflowsModel = types
 					.p(options.projectId)
 					.wf()
 					.gen(),
-				body: options.workflow,
+				body: {
+					name: options.name,
+					workflow: options.workflow,
+					env: options.env,
+				},
 			})
 			const currentWorkflows = self.workflows.get(options.projectId)
 			if (currentWorkflows) {
-				currentWorkflows.push(response.workflowMetadata)
+				const foundWorkflow = currentWorkflows.find(
+					(workflow) =>
+						workflow.workflowId === response.workflowMetadata.workflowId,
+				)
+				if (!foundWorkflow) {
+					currentWorkflows.push(response.workflowMetadata)
+				}
 			} else {
 				self.workflows.set(options.projectId, [response.workflowMetadata])
 			}
+			return response.workflowMetadata
 		})
 
 		const start = flow(function* (options: {
