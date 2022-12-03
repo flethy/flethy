@@ -134,6 +134,7 @@ export class BrandExporter {
       'restdb',
       'savepage',
       'serpapi',
+      'uber',
       'unlayer',
       'up42',
       'vimeo',

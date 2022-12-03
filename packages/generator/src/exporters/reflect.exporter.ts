@@ -219,6 +219,7 @@ import { Tribe } from '../../../connectors/src/configs/tribe.config'
 import { Twilio } from '../../../connectors/src/configs/twilio.config'
 import { Twitter } from '../../../connectors/src/configs/twitter.config'
 import { Typeform } from '../../../connectors/src/configs/typeform.config'
+import { Uber } from '../../../connectors/src/configs/uber.config'
 import { Umami } from '../../../connectors/src/configs/umami.config'
 import { Unavatar } from '../../../connectors/src/configs/unavatar.config'
 import { Unlayer } from '../../../connectors/src/configs/unlayer.config'
@@ -720,6 +721,8 @@ configTypes.push({type: getType<Twitter.AuthOAuth2AuthorizationCode>(), id: 'twi
 configTypes.push({type: getType<Twitter.PostTweets>(), id: 'twitter', name: 'Twitter', interface: 'PostTweets'})
 configTypes.push({type: getType<Twitter.StatusUpdate>(), id: 'twitter', name: 'Twitter', interface: 'StatusUpdate'})
 configTypes.push({type: getType<Typeform.CreateApiCreateForm>(), id: 'typeform', name: 'Typeform', interface: 'CreateApiCreateForm'})
+configTypes.push({type: getType<Uber.ServerToken>(), id: 'uber', name: 'Uber', interface: 'ServerToken'})
+configTypes.push({type: getType<Uber.RidePriceEstimates>(), id: 'uber', name: 'Uber', interface: 'RidePriceEstimates'})
 configTypes.push({type: getType<Umami.AuthLogin>(), id: 'umami', name: 'Umami', interface: 'AuthLogin'})
 configTypes.push({type: getType<Umami.CreateWebsite>(), id: 'umami', name: 'Umami', interface: 'CreateWebsite'})
 configTypes.push({type: getType<Umami.ListWebsites>(), id: 'umami', name: 'Umami', interface: 'ListWebsites'})

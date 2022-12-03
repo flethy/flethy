@@ -233,6 +233,7 @@ The following Endpoints are currently supported.
 * [Twilio](./api/twilio.md)
 * [Twitter](./api/twitter.md)
 * [Typeform](./api/typeform.md)
+* [Uber](./api/uber.md)
 * [Umami](./api/umami.md)
 * [Unavatar](./api/unavatar.md)
 * [Unlayer](./api/unlayer.md)

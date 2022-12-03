@@ -219,6 +219,7 @@ import { Tribe } from '../configs/tribe.config'
 import { Twilio } from '../configs/twilio.config'
 import { Twitter } from '../configs/twitter.config'
 import { Typeform } from '../configs/typeform.config'
+import { Uber } from '../configs/uber.config'
 import { Umami } from '../configs/umami.config'
 import { Unavatar } from '../configs/unavatar.config'
 import { Unlayer } from '../configs/unlayer.config'
@@ -463,6 +464,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['twilio', Twilio.API],
 ['twitter', Twitter.API],
 ['typeform', Typeform.API],
+['uber', Uber.API],
 ['umami', Umami.API],
 ['unavatar', Unavatar.API],
 ['unlayer', Unlayer.API],
