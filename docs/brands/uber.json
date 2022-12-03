@@ -1,0 +1,105 @@
+{
+  "name": "Uber",
+  "domain": "uber.com",
+  "claimed": false,
+  "description": "Uber develops, markets, and operates a ride-sharing mobile application that allows consumers to submit a trip request.",
+  "links": [
+    { "name": "crunchbase", "url": "https://crunchbase.com/organization/uber" },
+    { "name": "twitter", "url": "https://twitter.com/uber" },
+    { "name": "instagram", "url": "https://instagram.com/uber" },
+    { "name": "linkedin", "url": "https://linkedin.com/company/uber-com" },
+    { "name": "facebook", "url": "https://facebook.com/UberEU" }
+  ],
+  "logos": [
+    {
+      "type": "logo",
+      "theme": "light",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/ididNbiiOd/idztTfMB5j.svg",
+          "background": "transparent",
+          "format": "svg",
+          "size": 1134
+        },
+        {
+          "src": "https://asset.brandfetch.io/ididNbiiOd/id9e8Q-A9w.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 267,
+          "width": 800,
+          "size": 12334
+        }
+      ]
+    },
+    {
+      "type": "logo",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/ididNbiiOd/idwIoriw8o.svg",
+          "background": "transparent",
+          "format": "svg",
+          "size": 1065
+        },
+        {
+          "src": "https://asset.brandfetch.io/ididNbiiOd/id_k3r_1Du.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 267,
+          "width": 800,
+          "size": 12880
+        }
+      ]
+    },
+    {
+      "type": "icon",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/ididNbiiOd/id3NUBDc8S.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 399,
+          "width": 399,
+          "size": 7885
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#000000", "type": "dark", "brightness": 0 },
+    { "hex": "#ffffff", "type": "light", "brightness": 255 },
+    { "hex": "#276ef1", "type": "accent", "brightness": 104 }
+  ],
+  "fonts": [
+    {
+      "name": "Uber Move Display",
+      "type": "title",
+      "origin": "custom",
+      "originId": null,
+      "weights": []
+    },
+    {
+      "name": "Uber Move Text",
+      "type": "body",
+      "origin": "custom",
+      "originId": null,
+      "weights": []
+    }
+  ],
+  "images": [
+    {
+      "type": "banner",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/ididNbiiOd/idTeLZt4O_.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 500,
+          "width": 1500,
+          "size": 54476
+        }
+      ]
+    }
+  ]
+}
