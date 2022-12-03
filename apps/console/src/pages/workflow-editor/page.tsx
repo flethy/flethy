@@ -1,4 +1,12 @@
-import { Box, Button, useColorMode } from '@chakra-ui/react'
+import {
+	Box,
+	Button,
+	HStack,
+	Input,
+	Stack,
+	Text,
+	useColorMode,
+} from '@chakra-ui/react'
 import Editor from '@monaco-editor/react'
 import { observer } from 'mobx-react-lite'
 import { useTranslation } from 'react-i18next'
@@ -26,6 +34,35 @@ export default observer(() => {
 			subtitle={page.name}
 		>
 			<Button onClick={() => page.save()}>Save</Button>
+			<Stack>
+				<Text>Name:</Text>
+				<Input
+					placeholder="Name"
+					value={page.name}
+					onChange={(event) => page.updateName(event.target.value)}
+				/>
+			</Stack>
+			<Stack>
+				<Button onClick={() => page.addEnv()}>Add Environment Variable</Button>
+				{page.envs.map((env) => (
+					<HStack key={env.id}>
+						<Input
+							placeholder="Key"
+							value={env.key}
+							onChange={(event) =>
+								page.updateEnv({ id: env.id, key: event.target.value })
+							}
+						/>
+						<Input
+							placeholder="Value"
+							value={env.value}
+							onChange={(event) =>
+								page.updateEnv({ id: env.id, value: event.target.value })
+							}
+						/>
+					</HStack>
+				))}
+			</Stack>
 			<Box w={'full'} borderColor={'flethy.orange'} border={'2px'}>
 				<Editor
 					height="50vh"

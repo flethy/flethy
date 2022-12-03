@@ -13,6 +13,7 @@ export class WorkflowsRoute {
       name: string;
       workflow: any;
       workflowId?: string;
+      env?: { [key: string]: string };
     }>();
     const response = await WorkflowController.put({
       projectId: req.params.projectId,
@@ -20,6 +21,7 @@ export class WorkflowsRoute {
       name: body?.name ?? "",
       workflowId: body?.workflowId,
       workflow: body?.workflow,
+      env: body?.env,
       userId,
     });
 
