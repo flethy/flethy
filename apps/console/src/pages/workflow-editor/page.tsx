@@ -63,17 +63,19 @@ export default observer(() => {
 					</HStack>
 				))}
 			</Stack>
-			<Box w={'full'} borderColor={'flethy.orange'} border={'2px'}>
-				<Editor
-					height="50vh"
-					theme={colorMode === 'light' ? 'vs-light' : 'vs-dark'}
-					defaultLanguage="json"
-					defaultValue={page.workflow}
-					onChange={(value: string | undefined, _event) => {
-						page.updateWorkflow(value ?? '')
-					}}
-				/>
-			</Box>
+			{page.state === 'idle' && (
+				<Box w={'full'} borderColor={'flethy.orange'} border={'2px'}>
+					<Editor
+						height="50vh"
+						theme={colorMode === 'light' ? 'vs-light' : 'vs-dark'}
+						defaultLanguage="json"
+						defaultValue={page.workflow}
+						onChange={(value: string | undefined, _event) => {
+							page.updateWorkflow(value ?? '')
+						}}
+					/>
+				</Box>
+			)}
 		</PageWithTitle>
 	)
 
