@@ -1,0 +1,55 @@
+{
+  "name": "Cronhub",
+  "domain": "cronhub.io",
+  "claimed": false,
+  "description": "Cronhub helps you to easily schedule and monitor any recurring tasks. It's built for developers who don't like managing servers and working with cron jobs.",
+  "links": [
+    { "name": "twitter", "url": "https://twitter.com/cronhubio" },
+    { "name": "github", "url": "https://github.com/cronhub" }
+  ],
+  "logos": [
+    {
+      "type": "logo",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/iddLiTavVO/idn5gOFH0x.png",
+          "background": null,
+          "format": "png",
+          "height": 32,
+          "width": 32,
+          "size": 555
+        }
+      ]
+    },
+    {
+      "type": "icon",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/iddLiTavVO/idho2G-Knr.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 400,
+          "width": 400,
+          "size": 6931
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#17123b", "type": "accent", "brightness": 22 },
+    { "hex": "#9ca3af", "type": "dark", "brightness": 162 },
+    { "hex": "#ffffff", "type": "light", "brightness": 255 }
+  ],
+  "fonts": [
+    {
+      "name": "Inter var",
+      "type": "body",
+      "origin": "custom",
+      "originId": null,
+      "weights": []
+    }
+  ],
+  "images": []
+}
