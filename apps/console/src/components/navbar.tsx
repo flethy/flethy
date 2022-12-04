@@ -54,16 +54,15 @@ export default observer(() => {
 			<Box bg={bgBox} px={4}>
 				<Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
 					<HStack>
+						<IconButton
+							aria-label="Open menu"
+							icon={<Icon width={'8'} height={'8'} as={CgMenuGridR} />}
+							onClick={() => menu.toggle()}
+						/>
 						<HStack
 							style={{ cursor: 'pointer' }}
 							onClick={() => router.goTo(routes.home)}
 						>
-							<IconButton
-								aria-label="Open menu"
-								icon={<Icon width={'8'} height={'8'} as={CgMenuGridR} />}
-								onClick={() => menu.toggle()}
-							/>
-
 							<Logo width={'12'} />
 							<Text fontWeight={'bold'}>{t('title')}</Text>
 							{api.workspaces.getEnrichedContext() && (

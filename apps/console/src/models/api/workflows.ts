@@ -211,7 +211,31 @@ export const WorkflowsModel = types
 			})
 		})
 
-		return { list, put, start, get }
+		const del = flow(function* (options: {
+			workspaceId: string
+			projectId: string
+			workflowId: string
+		}) {
+			yield request({
+				base: 'flethy',
+				method: 'delete',
+				auth: true,
+				url: new RouterPathUtils()
+					.w(options.workspaceId)
+					.p(options.projectId)
+					.wf(options.workflowId)
+					.gen(),
+			})
+			const currentWorkflows = self.workflows.get(options.projectId)
+			if (currentWorkflows) {
+				const foundWorkflow = self.getWorkflowFormStore(options)
+				if (foundWorkflow) {
+					currentWorkflows.remove(foundWorkflow)
+				}
+			}
+		})
+
+		return { list, put, start, get, del }
 	})
 	.views((self) => {
 		const getFromStore = (options: {
