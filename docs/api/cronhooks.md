@@ -4,9 +4,9 @@
 
 * URL: [https://cronhooks.io/](https://cronhooks.io/)
 * Documentation: [https://docs.cronhooks.io/](https://docs.cronhooks.io/)
-* Tags: web3
-* Category: aggregation
-* Type: indexer
+* Tags: web2
+* Category: tools
+* Type: cron
 
 ## API
 

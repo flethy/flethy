@@ -233,6 +233,7 @@ import MailTM from '@flethy/connectors/src/configs/mailtm.config'
 import Prismic from '@flethy/connectors/src/configs/prismic.config'
 import FootballPredictionAPI from '@flethy/connectors/src/configs/footballpredictionapi.config'
 import WebhookSite from '@flethy/connectors/src/configs/webhooksite.config'
+import Cronhub from '@flethy/connectors/src/configs/cronhub.config'
 
 async function main() {
   const requestConfigs: {
@@ -3178,8 +3179,20 @@ async function main() {
       'header:x-test-header': 'flethy',
       'query:testQueryParam': 'flethy',
     }),
+    cronhubCreate: nao<Cronhub.CreateScheduler>({
+      kind: 'cronhub.schedulers.create',
+      'auth:X-Api-Key': process.env.CRONHUB_API_KEY,
+      'body:name': 'flethy',
+      'body:type': 'cron',
+      'body:http_method': 'get',
+      'body:url': 'https://webhook.site/d823f174-67d5-43bf-aa5d-b1379ab38b67',
+      'body:schedule': '* * * * *',
+      'body:timezone': 'UTC',
+      'body:is_monitoring_enabled': false,
+      'body:failure_threshold': 1,
+    }),
   }
-  const requestConfig = requestConfigs.webhooksiteDELETE
+  const requestConfig = requestConfigs.cronhubCreate
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

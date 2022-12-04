@@ -37,9 +37,9 @@ export namespace Cronhooks {
       docs: 'https://docs.cronhooks.io/',
       signup: 'https://app.cronhooks.io/#/account/register',
       pricing: 'https://cronhooks.io/#pricing',
-      tags: ['web3'],
-      category: 'aggregation',
-      type: 'indexer',
+      tags: ['web2'],
+      category: 'tools',
+      type: 'cron',
       social: {
         github: 'cronhooks',
         twitter: 'cronhooks',

@@ -52,6 +52,7 @@ import { CountApi } from '../configs/countapi.config'
 import { Courier } from '../configs/courier.config'
 import { Covalent } from '../configs/covalent.config'
 import { Cronhooks } from '../configs/cronhooks.config'
+import { Cronhub } from '../configs/cronhub.config'
 import { CSVBox } from '../configs/csvbox.config'
 import { Cumul } from '../configs/cumul.config'
 import { CurrencyScoop } from '../configs/currencyscoop.config'
@@ -297,6 +298,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['courier', Courier.API],
 ['covalent', Covalent.API],
 ['cronhooks', Cronhooks.API],
+['cronhub', Cronhub.API],
 ['csvbox', CSVBox.API],
 ['cumul', Cumul.API],
 ['currencyscoop', CurrencyScoop.API],
