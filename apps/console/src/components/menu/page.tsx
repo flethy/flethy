@@ -71,7 +71,10 @@ export default observer(() => {
 							<Box w={'full'} key={item.id}>
 								<Button
 									variant={'link'}
-									onClick={() => router.goTo(item.route, item.params)}
+									onClick={() => {
+										router.goTo(item.route, item.params)
+										component.toggle(false)
+									}}
 								>
 									{item.label}
 								</Button>

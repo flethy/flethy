@@ -1,28 +1,10 @@
-import {
-	Box,
-	Spinner,
-	useColorMode,
-	VStack,
-	Text,
-	Table,
-	TableCaption,
-	TableContainer,
-	Tbody,
-	Td,
-	Tfoot,
-	Th,
-	Thead,
-	Tr,
-	Button,
-} from '@chakra-ui/react'
-import Editor from '@monaco-editor/react'
+import { Button, Spinner, Text, useColorMode, VStack } from '@chakra-ui/react'
 import { observer } from 'mobx-react-lite'
 import { useTranslation } from 'react-i18next'
 import DataTable, {
 	DataTableCell,
 	DataTableProps,
 } from '../../components/DataTable'
-import i18n from '../../i18n/config'
 import PageWithTitle from '../../layouts/PageWithTitle'
 import { useMst } from '../../models/root'
 import routes from '../../routes'
@@ -100,7 +82,13 @@ export default observer(() => {
 						id: 'delete',
 						value: 'delete-workflow',
 						type: 'MenuDelete',
-						onClick: () => {},
+						onClick: () => {
+							api.workflows.del({
+								workspaceId: page.context.workspaceId,
+								projectId: page.context.projectId,
+								workflowId: workflow.workflowId,
+							})
+						},
 					},
 					{
 						id: 'play',
@@ -140,7 +128,7 @@ export default observer(() => {
 	const component = (
 		<PageWithTitle
 			title={t('app:pages.workflows.title')}
-			subtitle={t('app:pages.workflows.subtitle')}
+			subtitle={t('app:pages.workflows.subtitle')!}
 		>
 			<VStack>{content}</VStack>
 		</PageWithTitle>

@@ -1,5 +1,6 @@
-import { flow, types } from 'mobx-state-tree'
+import { flow, Instance, types } from 'mobx-state-tree'
 import { WORKFLOW_TUTORIALS } from '../../constants/tutorials.const'
+import { WorkflowDataModel } from '../../models/api/workflows'
 import { FlethyContext } from '../../models/flethy.types'
 import { getRootStore, getRouter } from '../../models/helpers'
 import routes from '../../routes'
@@ -35,6 +36,10 @@ export const WorkflowEditorPage = types
 			}),
 		),
 		envsIndex: types.optional(types.number, 0),
+		state: types.optional(
+			types.enumeration(['idle', 'loading', 'saving']),
+			'idle',
+		),
 	})
 	.actions((self) => {
 		// INITIALIZATION
@@ -43,6 +48,7 @@ export const WorkflowEditorPage = types
 			workspaceId: string
 			projectId: string
 		}) {
+			self.state = 'loading'
 			self.context.projectId = options.projectId
 			self.context.workspaceId = options.workspaceId
 			self.workflowId = options.workflowId || ''
@@ -54,16 +60,17 @@ export const WorkflowEditorPage = types
 			if (options.workflowId) {
 				self.workflowId = options.workflowId
 				const { api } = getRootStore(self)
-				const response = yield api.workflows.get({
-					workspaceId: options.workspaceId,
-					projectId: options.projectId,
-					workflowId: options.workflowId,
-				})
-				self.workflow = JSON.stringify(response.workflow, null, 2)
-				self.name = response.name
-				if (response.env) {
-					for (const envKey of Object.keys(response.env)) {
-						addEnv({ key: envKey, value: response.env[envKey] })
+				const workflow: Instance<typeof WorkflowDataModel> =
+					yield api.workflows.get({
+						workspaceId: options.workspaceId,
+						projectId: options.projectId,
+						workflowId: options.workflowId,
+					})
+				self.workflow = workflow.workflow ?? ''
+				self.name = workflow.name
+				if (workflow.envs) {
+					for (const envKey of workflow.envs.keys()) {
+						addEnv({ key: envKey, value: workflow.envs.get(envKey) ?? '' })
 					}
 				}
 			} else {
@@ -76,6 +83,7 @@ export const WorkflowEditorPage = types
 				}
 				self.workflow = JSON.stringify(tutorial.workflow, null, 2)
 			}
+			self.state = 'idle'
 		})
 
 		const updateWorkflow = (value: string) => {

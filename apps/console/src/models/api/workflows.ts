@@ -11,12 +11,30 @@ export const WorkflowDataModel = types.model('WorkflowDataModel', {
 	updatedAt: types.maybeNull(types.number),
 	workflowId: types.optional(types.string, ''),
 	name: types.optional(types.string, ''),
-	workflow: types.optional(types.string, ''),
+	workflow: types.maybe(types.string),
+	envs: types.map(types.string),
 })
 
 export const WorkflowsModel = types
 	.model('WorkflowsModel', {
 		workflows: types.map(types.array(WorkflowDataModel)),
+	})
+	.views((self) => {
+		const getWorkflowFormStore = (options: {
+			projectId: string
+			workflowId: string
+		}) => {
+			let foundWorkflow
+			const workflows = self.workflows.get(options.projectId)
+			if (workflows) {
+				foundWorkflow = workflows.find(
+					(workflow) => workflow.workflowId === options.workflowId,
+				)
+			}
+			return foundWorkflow
+		}
+
+		return { getWorkflowFormStore }
 	})
 	.actions((self) => {
 		const list = flow(function* (options: {
@@ -49,7 +67,24 @@ export const WorkflowsModel = types
 						.wf()
 						.gen(),
 				})
-				self.workflows.set(options.projectId, response.data)
+				if (!self.workflows.has(options.projectId)) {
+					self.workflows.set(options.projectId, response.data)
+				} else {
+					const workflows = self.workflows.get(options.projectId)
+					for (const workflow of response.data) {
+						const foundWorkflow = self.getWorkflowFormStore({
+							projectId: options.projectId,
+							workflowId: workflow.workflowId,
+						})
+						if (foundWorkflow) {
+							foundWorkflow.updatedAt = workflow.updatedAt
+							foundWorkflow.updatedBy = workflow.updatedBy
+						} else {
+							workflows!.push(workflow)
+						}
+					}
+				}
+
 				api.stateAndCache.updateToDone(stateAndCacheKey)
 			} catch (error) {
 				console.log(error)
@@ -72,12 +107,13 @@ export const WorkflowsModel = types
 				id: options.workflowId,
 			}
 			if (!api.stateAndCache.shouldFetch(stateAndCacheKey, useCache)) {
-				return
+				return self.getWorkflowFormStore(options)
 			}
 
 			api.stateAndCache.updateToPending(stateAndCacheKey)
 
 			try {
+				yield list(options)
 				const response: any = yield request({
 					base: 'flethy',
 					method: 'get',
@@ -88,9 +124,19 @@ export const WorkflowsModel = types
 						.wf(options.workflowId)
 						.gen(),
 				})
-				// TODO: fix persisting of workflows
+				const foundWorkflow = self.getWorkflowFormStore(options)
+				if (foundWorkflow) {
+					foundWorkflow.workflowId = response.workflowId
+					foundWorkflow.workflow = JSON.stringify(response.workflow, null, 2)
+					if (response.env) {
+						for (const key of Object.keys(response.env)) {
+							foundWorkflow.envs.set(key, response.env[key])
+						}
+					}
+				}
+
 				api.stateAndCache.updateToDone(stateAndCacheKey)
-				return response
+				return foundWorkflow
 			} catch (error) {
 				console.log(error)
 				api.stateAndCache.updateToFailure(stateAndCacheKey)
@@ -118,6 +164,7 @@ export const WorkflowsModel = types
 					name: options.name,
 					workflow: options.workflow,
 					env: options.env,
+					workflowId: options.workflowId,
 				},
 			})
 			const currentWorkflows = self.workflows.get(options.projectId)
@@ -128,6 +175,15 @@ export const WorkflowsModel = types
 				)
 				if (!foundWorkflow) {
 					currentWorkflows.push(response.workflowMetadata)
+				} else {
+					foundWorkflow.name = options.name
+					foundWorkflow.workflow = JSON.stringify(options.workflow)
+					foundWorkflow.envs.clear()
+					if (options.env) {
+						for (const key of Object.keys(options.env)) {
+							foundWorkflow.envs.set(key, options.env[key])
+						}
+					}
 				}
 			} else {
 				self.workflows.set(options.projectId, [response.workflowMetadata])
@@ -155,7 +211,31 @@ export const WorkflowsModel = types
 			})
 		})
 
-		return { list, put, start, get }
+		const del = flow(function* (options: {
+			workspaceId: string
+			projectId: string
+			workflowId: string
+		}) {
+			yield request({
+				base: 'flethy',
+				method: 'delete',
+				auth: true,
+				url: new RouterPathUtils()
+					.w(options.workspaceId)
+					.p(options.projectId)
+					.wf(options.workflowId)
+					.gen(),
+			})
+			const currentWorkflows = self.workflows.get(options.projectId)
+			if (currentWorkflows) {
+				const foundWorkflow = self.getWorkflowFormStore(options)
+				if (foundWorkflow) {
+					currentWorkflows.remove(foundWorkflow)
+				}
+			}
+		})
+
+		return { list, put, start, get, del }
 	})
 	.views((self) => {
 		const getFromStore = (options: {
