@@ -1,0 +1,42 @@
+{
+  "name": "ButterCMS",
+  "domain": "buttercms.com",
+  "claimed": false,
+  "description": "Add a blog or CMS to your website in minutes. ButterCMS is a headless CMS and blogging platform built for developers.",
+  "links": [
+    { "name": "github", "url": "https://github.com/buttercms" },
+    { "name": "twitter", "url": "https://twitter.com/buttercms" },
+    { "name": "linkedin", "url": "https://linkedin.com/company/17877149" }
+  ],
+  "logos": [
+    {
+      "type": "icon",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idSVZdijbw/id0bTcnt9G.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 240,
+          "width": 240,
+          "size": 7979
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#18214c", "type": "dark", "brightness": 34 },
+    { "hex": "#968fef", "type": "light", "brightness": 151 },
+    { "hex": "#fed700", "type": "accent", "brightness": 208 }
+  ],
+  "fonts": [
+    {
+      "name": "Proxima Nova",
+      "type": "body",
+      "origin": "custom",
+      "originId": null,
+      "weights": []
+    }
+  ],
+  "images": []
+}

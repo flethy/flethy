@@ -52,6 +52,7 @@ The following Endpoints are currently supported.
 * [Brandfetch](./api/brandfetch.md)
 * [BrowsersFyi](./api/browsersfyi.md)
 * [Bruzu](./api/bruzu.md)
+* [ButterCMS](./api/buttercms.md)
 * [ButtondownEmail](./api/buttondownemail.md)
 * [CalCom](./api/calcom.md)
 * [Calendarific](./api/calendarific.md)

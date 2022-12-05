@@ -128,4 +128,11 @@ export const FLOWS = {
       'body:query': '->context.query->string',
     },
   ],
+  'get-content-from-buttercms': [
+    {
+      kind: 'buttercms.pages.getMultiple',
+      'auth:auth_token': '==>secrets==>BUTTERCMS_API_TOKEN',
+      'param:page_type': '->context.pageSlug->string',
+    },
+  ],
 }

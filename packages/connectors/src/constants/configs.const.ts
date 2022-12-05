@@ -24,6 +24,7 @@ import { BooAPI } from '../configs/booapi.config'
 import { Brandfetch } from '../configs/brandfetch.config'
 import { BrowsersFyi } from '../configs/browsersfyi.config'
 import { Bruzu } from '../configs/bruzu.config'
+import { ButterCMS } from '../configs/buttercms.config'
 import { ButtondownEmail } from '../configs/buttondownemail.config'
 import { CalCom } from '../configs/calcom.config'
 import { Calendarific } from '../configs/calendarific.config'
@@ -270,6 +271,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['brandfetch', Brandfetch.API],
 ['browsersfyi', BrowsersFyi.API],
 ['bruzu', Bruzu.API],
+['buttercms', ButterCMS.API],
 ['buttondownemail', ButtondownEmail.API],
 ['calcom', CalCom.API],
 ['calendarific', Calendarific.API],

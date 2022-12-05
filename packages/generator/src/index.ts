@@ -234,6 +234,7 @@ import Prismic from '@flethy/connectors/src/configs/prismic.config'
 import FootballPredictionAPI from '@flethy/connectors/src/configs/footballpredictionapi.config'
 import WebhookSite from '@flethy/connectors/src/configs/webhooksite.config'
 import Cronhub from '@flethy/connectors/src/configs/cronhub.config'
+import ButterCMS from '@flethy/connectors/src/configs/buttercms.config'
 
 async function main() {
   const requestConfigs: {
@@ -3191,8 +3192,13 @@ async function main() {
       'body:is_monitoring_enabled': false,
       'body:failure_threshold': 1,
     }),
+    buttercmsGetMultiple: nao<ButterCMS.GetMultiplePages>({
+      kind: 'buttercms.pages.getMultiple',
+      'auth:auth_token': process.env.BUTTERCMS_API_TOKEN,
+      'param:page_type': '*',
+    }),
   }
-  const requestConfig = requestConfigs.cronhubCreate
+  const requestConfig = requestConfigs.buttercmsGetMultiple
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)
