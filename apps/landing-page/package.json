@@ -26,7 +26,7 @@
 		"mobx-react": "7.6.0",
 		"mobx-react-lite": "^3.4.0",
 		"mobx-router": "1.0.0",
-		"mobx-state-tree": "5.1.6",
+		"mobx-state-tree": "5.1.7",
 		"mobxtypes": "workspace:*",
 		"mst-middlewares": "5.1.6",
 		"react": "18.2.0",
