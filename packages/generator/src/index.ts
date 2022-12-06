@@ -166,9 +166,11 @@ import { nao } from '../../connectors/src/utils/Request.utils'
 // import { nao } from '@flethy/connectors'
 import APIPoint from '@flethy/connectors/src/configs/apipoint.config'
 import Beew from '@flethy/connectors/src/configs/beew.config'
+import ButterCMS from '@flethy/connectors/src/configs/buttercms.config'
 import ButtondownEmail from '@flethy/connectors/src/configs/buttondownemail.config'
 import CarbEngage from '@flethy/connectors/src/configs/carbengage.config'
 import Codat from '@flethy/connectors/src/configs/codat.config'
+import Cronhub from '@flethy/connectors/src/configs/cronhub.config'
 import CSVBox from '@flethy/connectors/src/configs/csvbox.config'
 import Cumul from '@flethy/connectors/src/configs/cumul.config'
 import Cuttly from '@flethy/connectors/src/configs/cuttly.config'
@@ -176,6 +178,7 @@ import Dataddo from '@flethy/connectors/src/configs/dataddo.config'
 import Deepgram from '@flethy/connectors/src/configs/deepgram.config'
 import Festdays from '@flethy/connectors/src/configs/festdays.config'
 import Flatfile from '@flethy/connectors/src/configs/flatfile.config'
+import FootballPredictionAPI from '@flethy/connectors/src/configs/footballpredictionapi.config'
 import GitLab from '@flethy/connectors/src/configs/gitlab.config'
 import GoDaddy from '@flethy/connectors/src/configs/godaddy.config'
 import Gravatar from '@flethy/connectors/src/configs/gravatar.config'
@@ -183,6 +186,7 @@ import Hasura from '@flethy/connectors/src/configs/hasura.config'
 import Here from '@flethy/connectors/src/configs/here.config'
 import Imglab from '@flethy/connectors/src/configs/imglab.config'
 import Keen from '@flethy/connectors/src/configs/keen.config'
+import KontentAI from '@flethy/connectors/src/configs/kontentai.config'
 import Koyeb from '@flethy/connectors/src/configs/koyeb.config'
 import LanguageLayer from '@flethy/connectors/src/configs/languagelayer.config'
 import LinkPreview from '@flethy/connectors/src/configs/linkpreview.config'
@@ -191,6 +195,7 @@ import Logz from '@flethy/connectors/src/configs/logz.config'
 import Lolo from '@flethy/connectors/src/configs/lolo.config'
 import Luabase from '@flethy/connectors/src/configs/luabase.config'
 import MailboxLayer from '@flethy/connectors/src/configs/mailboxlayer.config'
+import MailTM from '@flethy/connectors/src/configs/mailtm.config'
 import MetalpriceAPI from '@flethy/connectors/src/configs/metalpriceapi.config'
 import Neon from '@flethy/connectors/src/configs/neon.config'
 import Npoint from '@flethy/connectors/src/configs/npoint.config'
@@ -203,6 +208,7 @@ import Phyllo from '@flethy/connectors/src/configs/phyllo.config'
 import Pirsch from '@flethy/connectors/src/configs/pirsch.config'
 import Prepr from '@flethy/connectors/src/configs/prepr.config'
 import Prerender from '@flethy/connectors/src/configs/prerender.config'
+import Prismic from '@flethy/connectors/src/configs/prismic.config'
 import PurpleAir from '@flethy/connectors/src/configs/purpleair.config'
 import QuoteGarden from '@flethy/connectors/src/configs/quotegarden.config'
 import Rebrandly from '@flethy/connectors/src/configs/rebrandly.config'
@@ -227,14 +233,9 @@ import Vantevo from '@flethy/connectors/src/configs/vantevo.config'
 import Vimeo from '@flethy/connectors/src/configs/vimeo.config'
 import Vonage from '@flethy/connectors/src/configs/vonage.config'
 import WarrantDev from '@flethy/connectors/src/configs/warrantdev.config'
+import WebhookSite from '@flethy/connectors/src/configs/webhooksite.config'
 import { HttpRequest } from './controllers/HttpRequest'
 import { logger } from './utils/Logger'
-import MailTM from '@flethy/connectors/src/configs/mailtm.config'
-import Prismic from '@flethy/connectors/src/configs/prismic.config'
-import FootballPredictionAPI from '@flethy/connectors/src/configs/footballpredictionapi.config'
-import WebhookSite from '@flethy/connectors/src/configs/webhooksite.config'
-import Cronhub from '@flethy/connectors/src/configs/cronhub.config'
-import ButterCMS from '@flethy/connectors/src/configs/buttercms.config'
 
 async function main() {
   const requestConfigs: {
@@ -3197,8 +3198,18 @@ async function main() {
       'auth:auth_token': process.env.BUTTERCMS_API_TOKEN,
       'param:page_type': '*',
     }),
+    kontentaiGetItems: nao<KontentAI.GetDeliveryItems>({
+      kind: 'kontentai.delivery.items',
+      'auth:projectId': process.env.KONTENT_AI_PROJECT_ID,
+    }),
+    kontentaiGraphQL: nao<KontentAI.GraphQLQuery>({
+      kind: 'kontentai.delivery.graphql',
+      'auth:projectId': process.env.KONTENT_AI_PROJECT_ID,
+      'header:content-type': 'application/graphql',
+      'body:body': `{article(codename:"my_article"){title}}`,
+    }),
   }
-  const requestConfig = requestConfigs.buttercmsGetMultiple
+  const requestConfig = requestConfigs.kontentaiGraphQL
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

@@ -449,6 +449,10 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://flethy.com/integrations/kontentai</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://flethy.com/integrations/koyeb</loc>
     <priority>0.8</priority>
   </url>
@@ -1026,6 +1030,10 @@
   </url>
   <url>
     <loc>https://flethy.com/use-cases/get-content-from-contentful</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://flethy.com/use-cases/get-content-from-kontentai</loc>
     <priority>0.8</priority>
   </url>
   <url>

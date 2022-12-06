@@ -1,0 +1,83 @@
+{
+  "name": "Kontent",
+  "domain": "kontent.ai",
+  "claimed": false,
+  "description": "Kontent is a creative agency that offers online marketing solutions to enhance business growth for organizations.",
+  "links": [
+    { "name": "youtube", "url": "https://youtube.com/c/kenticokontent" },
+    { "name": "github", "url": "https://github.com/topics" },
+    { "name": "twitter", "url": "https://twitter.com/KenticoCloud" },
+    {
+      "name": "linkedin",
+      "url": "https://linkedin.com/company/kenticokontent"
+    },
+    { "name": "facebook", "url": "https://facebook.com/KenticoKontent" }
+  ],
+  "logos": [
+    {
+      "type": "icon",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/ida21nMXDv/idTawt3Lkt.png",
+          "background": null,
+          "format": "png",
+          "height": 200,
+          "width": 200,
+          "size": 8340
+        }
+      ]
+    },
+    {
+      "type": "logo",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/ida21nMXDv/idXgOjnrS9.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 250,
+          "width": 820,
+          "size": 11906
+        },
+        {
+          "src": "https://asset.brandfetch.io/ida21nMXDv/idfoW8tNf5.svg",
+          "background": "transparent",
+          "format": "svg",
+          "height": null,
+          "width": null,
+          "size": 2062
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#231f20", "type": "dark", "brightness": 32 },
+    { "hex": "#ffffff", "type": "light", "brightness": 255 },
+    { "hex": "#f05a22", "type": "accent", "brightness": 118 }
+  ],
+  "fonts": [
+    {
+      "name": "Consolas",
+      "type": "body",
+      "origin": "custom",
+      "originId": null,
+      "weights": []
+    }
+  ],
+  "images": [
+    {
+      "type": "banner",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/ida21nMXDv/idxdGsYmTq.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 500,
+          "width": 1500,
+          "size": 134576
+        }
+      ]
+    }
+  ]
+}
