@@ -20,6 +20,7 @@
     "build:landingpage": "pnpm --filter landing-page build:prod",
     "=============== C O N S O L E =================": "===============",
     "start:console": "pnpm --filter console start",
+    "build:console:dev": "pnpm --filter console build:dev",
     "build:console": "pnpm --filter console build:prod",
     "=============== E X E C U T I O N   P L A T F O R M =================": "===============",
     "start:ep:dev": "pnpm --filter execution-platform dev",

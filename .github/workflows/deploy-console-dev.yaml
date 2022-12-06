@@ -1,4 +1,4 @@
-name: "Deploy Landing Page"
+name: "Deploy Console DEV"
 
 # on: [push]
 on:
@@ -6,14 +6,14 @@ on:
     types: [published]
 
 jobs:
-  publish-landing-page:
+  publish-console-dev:
     uses: ./.github/workflows/template-deploy-to-cloudflare.yaml
     with:
-      buildTarget: build:landingpage
-      rootDir: ./apps/landing-page
+      buildTarget: build:console:dev
+      rootDir: ./apps/console
       distDir: ./dist
       branchName: main
-      cfPagesName: flethy
+      cfPagesName: flethy-console-dev
     secrets:
       cf_account_id: ${{ secrets.CF_ACCOUNT_ID }}
       cf_api_token: ${{ secrets.CF_API_TOKEN }}

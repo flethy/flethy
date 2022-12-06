@@ -1,0 +1,15 @@
+name: "Deploy Console DEV"
+
+# on: [push]
+on:
+  release:
+    types: [published]
+
+jobs:
+  publish-console-dev:
+    uses: ./.github/workflows/template-deploy-workers-to-cloudflare.yaml
+    with:
+      rootDir: ./apps/execution-platform
+    secrets:
+      cf_account_id: ${{ secrets.CF_ACCOUNT_ID }}
+      cf_api_token: ${{ secrets.CF_API_TOKEN_WORKERS }}

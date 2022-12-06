@@ -1,0 +1,59 @@
+name: "Deploy Workers To CloudFlare"
+
+on:
+  workflow_call:
+    inputs:
+      rootDir:
+        required: true
+        type: string
+    secrets:
+      cf_account_id:
+        required: true
+      cf_api_token:
+        required: true
+
+jobs:
+  deploy-workers-to-cloudflare:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Compute metadata
+        id: meta
+        run: |
+          export SHA_SHORT="$(git rev-parse --short=8 ${{ github.sha }})"
+          echo "::set-output name=sha_short::$SHA_SHORT"
+
+      - name: Extract branch name
+        shell: bash
+        run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
+        id: extract_branch
+
+      - uses: pnpm/action-setup@v2.2.2
+        name: Install pnpm
+        id: pnpm-install
+        with:
+          version: 7
+          run_install: false
+
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: "pnpm"
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Publish
+        id: publish
+        run: |
+          npm i -g wrangler
+          cd ${{ env.ROOT_DIRECTORY }}
+          wrangler publish
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.cf_api_token }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.cf_account_id }}
+          ROOT_DIRECTORY: ${{ inputs.rootDir }}

@@ -1,21 +1,19 @@
 name = "flethy"
 main = "src/index.ts"
 compatibility_date = "2022-10-27"
-workers_dev = true
-node_compat = true
+# workers_dev = true
+# node_compat = true
+route = { pattern = "dev.api.flethy.com", custom_domain = true, zone_name = "flethy.com" }
 kv_namespaces = [
     { binding = "DATA", id = "e546ebf13b344824af4abc3a632988f5", preview_id = "f8a16c5c33aa4266a47089059ee45204" },
     { binding = "SECRETS", id = "d2c89f1e92234fa1acaba4b26dc2b97c", preview_id = "2999180112d743f798984b1a25f8afda" },
     { binding = "WORKFLOWS", id = "bf07de1d15824dce961dca2a5e659508", preview_id = "5e8d33044ed64dbb85dbbabb4491c160" },
-    { binding = "WORKSPACES", id = "f2b65963ac5c4c33a6d15ed9ae51cdd5", preview_id = "9e8e08dd6f5c4edaa49c97b5af8d95bc" }
+    { binding = "WORKSPACES", id = "f2b65963ac5c4c33a6d15ed9ae51cdd5", preview_id = "9e8e08dd6f5c4edaa49c97b5af8d95bc" },
 ]
+vars = { ENV_STAGE = "dev", ENV_TEST_USERID = "google-oauth2|106455104515802155518", ENV_TEST_USER_PROJECTID = "a49b0737-b74e-46fe-9d06-66d9653670f7", SECRET_SECRET = "flethy", SECRET_AUTH_CLIENT_ID = "", SECRET_AUTH_CLIENT_SECRET = "", SECRET_AUTH_AUDIENCE = "", SECRET_AUTH_TENANT = "" }
 
-[vars]
-ENV_STAGE = "dev"
-ENV_TEST_USERID = "google-oauth2|106455104515802155518"
-ENV_TEST_USER_PROJECTID = "a49b0737-b74e-46fe-9d06-66d9653670f7"
-SECRET_SECRET = "flethy"
-SECRET_AUTH_CLIENT_ID = ""
-SECRET_AUTH_CLIENT_SECRET = ""
-SECRET_AUTH_AUDIENCE = ""
-SECRET_AUTH_TENANT = ""
+[env.int]
+route = { pattern = "https://int.api.flethy.com", custom_domain = true, zone_name = "flethy.com" }
+
+[env.production]
+route = { pattern = "https://api.flethy.com", custom_domain = true, zone_name = "flethy.com" }
