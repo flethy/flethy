@@ -177,7 +177,7 @@ export const WorkflowsModel = types
 					currentWorkflows.push(response.workflowMetadata)
 				} else {
 					foundWorkflow.name = options.name
-					foundWorkflow.workflow = JSON.stringify(options.workflow)
+					foundWorkflow.workflow = JSON.stringify(options.workflow, null, 2)
 					foundWorkflow.envs.clear()
 					if (options.env) {
 						for (const key of Object.keys(options.env)) {
