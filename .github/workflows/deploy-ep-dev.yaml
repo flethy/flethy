@@ -1,4 +1,4 @@
-name: "Deploy Console DEV"
+name: "Deploy Workers DEV"
 
 # on: [push]
 on:
@@ -6,7 +6,7 @@ on:
     types: [published]
 
 jobs:
-  publish-console-dev:
+  publish-workers-dev:
     uses: ./.github/workflows/template-deploy-workers-to-cloudflare.yaml
     with:
       rootDir: ./apps/execution-platform
