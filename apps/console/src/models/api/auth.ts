@@ -81,7 +81,9 @@ export const AuthStore = types
 				const isAuthenticated = await client.isAuthenticated()
 				if (!isAuthenticated) {
 					try {
-						const token = await client.getTokenSilently()
+						const token = await client.getTokenSilently({
+							cacheMode: 'off',
+						})
 						this.setToken(token)
 						return token
 					} catch (_error) {
@@ -101,6 +103,17 @@ export const AuthStore = types
 					}
 				}),
 			)
+		},
+
+		async fetchUserAsync() {
+			const client = await self.client
+			if (client) {
+				const user = await client.getUser()
+				if (user) {
+					console.log(user)
+					this.updateUser(user)
+				}
+			}
 		},
 
 		updateUser(user: any) {

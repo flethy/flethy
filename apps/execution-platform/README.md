@@ -18,3 +18,11 @@ kv_namespaces = [
     { binding = "NAME", id = "...", preview_id = "..." },
 ]
 ```
+
+Secrets
+
+Secrets need to be created/updated first for an environment before publishing workers.
+
+```bash
+wrangler secret:bulk flethy.secrets.dev.json
+```

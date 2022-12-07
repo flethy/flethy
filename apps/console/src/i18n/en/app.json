@@ -59,6 +59,31 @@
 				"cancel": "Cancel",
 				"description": "Are you sure you want to delete this secret?"
 			}
+		},
+		"onboarding": {
+			"firstLaunch": {
+				"title": "Setup your Workspace",
+				"submit": "Let me in",
+				"cancel": "Cancel",
+				"form": {
+					"workspaceName": {
+						"label": "Workspace Name",
+						"placeholder": "Workspace Name",
+						"helperText": "The name of your Workspace"
+					},
+					"projectName": {
+						"label": "Project Name",
+						"placeholder": "Project Name",
+						"helperText": "The name of your Project"
+					}
+				}
+			},
+			"delete": {
+				"title": "Delete Secret",
+				"submit": "Delete",
+				"cancel": "Cancel",
+				"description": "Are you sure you want to delete this secret?"
+			}
 		}
 	},
 	"pages": {

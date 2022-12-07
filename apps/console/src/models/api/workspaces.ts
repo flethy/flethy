@@ -77,10 +77,10 @@ export const WorkspacesModel = types
 						projectName: options.projectName,
 					},
 				})
-				yield auth.getTokenSilently()
-				getMy({ useCache: false })
-				self.context.workspaceId = api.user.workspaces[0].id
-				self.context.projectId = api.user.workspaces[0].projects[0].id
+				yield new Promise((resolve) => {
+					setTimeout(resolve, 1000)
+				})
+				window.location.reload()
 			} catch (error) {
 				console.log(error)
 			}
@@ -103,6 +103,13 @@ export const WorkspacesModel = types
 			return context
 		}
 
+		const isOnboarded = () => {
+			return (
+				self.context.workspaceId?.length > 0 &&
+				self.context.projectId?.length > 0
+			)
+		}
+
 		const getEnrichedContext = () => {
 			const workspace = self.workspaces.get(self.context.workspaceId)
 			if (workspace) {
@@ -119,5 +126,5 @@ export const WorkspacesModel = types
 			return undefined
 		}
 
-		return { getFromStore, getContext, getEnrichedContext }
+		return { getFromStore, getContext, getEnrichedContext, isOnboarded }
 	})

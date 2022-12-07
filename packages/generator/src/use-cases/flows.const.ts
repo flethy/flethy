@@ -150,4 +150,14 @@ export const FLOWS = {
       'body:body': '->context.input.query->string',
     },
   ],
+  'get-content-from-contentchef': [
+    {
+      id: 'contentchef',
+      kind: 'contentchef.live.content',
+      'auth:X-Chef-Key': '==>secrets==>CONTENTCHEF_API_KEY',
+      'param:spaceId': '==>env==>CONTENTCHEF_SPACE_ID',
+      'param:publishingChannel': '==>env==>CONTENTCHEF_CHANNEL',
+      'query:publicId': '->context.input.publicId->string',
+    },
+  ],
 }
