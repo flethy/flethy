@@ -50,8 +50,7 @@ export const SecretsModel = types
 					self.secrets.set(options.projectId, response)
 				}
 				api.stateAndCache.updateToDone(stateAndCacheKey)
-			} catch (error) {
-				console.log(error)
+			} catch (error: any) {
 				api.stateAndCache.updateToFailure(stateAndCacheKey)
 			}
 		})

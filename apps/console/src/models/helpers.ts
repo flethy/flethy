@@ -1,5 +1,6 @@
 import { RouterStore } from 'mobx-router'
 import { getRoot, IAnyStateTreeNode } from 'mobx-state-tree'
+import routes from '../routes'
 import { RealRootModelInstance, RootStore, rootStore } from './root'
 
 export function getRootStore(node: IAnyStateTreeNode): RealRootModelInstance {
@@ -8,6 +9,12 @@ export function getRootStore(node: IAnyStateTreeNode): RealRootModelInstance {
 
 export function getRouter(): RouterStore<RootStore> {
 	return rootStore.router
+}
+
+export function unsufficientPermissionsHandling(status: number) {
+	if (status === 403) {
+		getRouter().goTo(routes.unsufficientPermissions)
+	}
 }
 
 export class RouterPathUtils {
