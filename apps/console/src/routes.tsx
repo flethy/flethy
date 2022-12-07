@@ -1,5 +1,6 @@
 import { Route } from 'mobx-router'
 import { RootStore } from './models/root'
+import UnsufficientPermissionsPage from './pages/403/page'
 import NotFoundPage from './pages/404/page'
 import HomePage from './pages/home/page'
 import SecretsPage from './pages/secrets/page'
@@ -116,6 +117,14 @@ export default {
 				workspaceId,
 				workflowId,
 			})
+		},
+	}),
+
+	unsufficientPermissions: new Route<RootStore>({
+		path: '/403',
+		component: <UnsufficientPermissionsPage />,
+		onEnter(_route, _parameters, { root: { pages } }) {
+			pages.unsufficientPermissions.initialisePage({})
 		},
 	}),
 

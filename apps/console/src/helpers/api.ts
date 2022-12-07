@@ -1,4 +1,5 @@
 import events, { LogLevel } from '../events/events'
+import { unsufficientPermissionsHandling } from '../models/helpers'
 import { rootStore } from '../models/root'
 
 export const FLETHY_BACKEND = import.meta.env.VITE_FLETHY_BACKEND
@@ -85,6 +86,7 @@ export async function request(payload: RequestPayload): Promise<any> {
 	})
 
 	if (!success) {
+		unsufficientPermissionsHandling(response.status)
 		throw new HttpError(response.statusText, response.status)
 	}
 

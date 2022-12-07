@@ -4,7 +4,7 @@ import routes from '../../routes'
 
 export const SEARCH_ID = '_search_'
 
-interface QuickSearchAction {
+export interface QuickSearchAction {
 	id: string
 	title: string
 	subtitle?: string
@@ -14,14 +14,7 @@ interface QuickSearchAction {
 	action: () => {}
 }
 
-const ACTIONS: QuickSearchAction[] = []
-
-export const QuickSearchActionModel = types.model({
-	title: types.string,
-	subtitle: types.maybe(types.string),
-	icon: types.maybe(types.string),
-	action: types.frozen<any>(),
-})
+export const ACTIONS: QuickSearchAction[] = []
 
 export const QuickSearchComponent = types
 	.model('QuickSearchComponent', {

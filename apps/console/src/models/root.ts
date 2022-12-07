@@ -5,6 +5,7 @@ import { MenuComponent } from '../components/menu/model'
 import { CreateSecretsModal } from '../components/modals/secrets/create/model'
 import { DeleteSecretsModal } from '../components/modals/secrets/delete/model'
 import { QuickSearchComponent } from '../components/quicksearch/model'
+import { UnsufficientPermissionsPage } from '../pages/403/model'
 import { NotFoundPage } from '../pages/404/model'
 import { HomePage } from '../pages/home/model'
 import { SecretsPage } from '../pages/secrets/model'
@@ -19,6 +20,9 @@ export const AUTH_AUDIENCE = import.meta.env.VITE_AUTH_AUDIENCE
 
 const PagesStore = types.model('Pages', {
 	notFound: types.optional(NotFoundPage, () => NotFoundPage.create()),
+	unsufficientPermissions: types.optional(UnsufficientPermissionsPage, () =>
+		UnsufficientPermissionsPage.create(),
+	),
 	home: types.optional(HomePage, () => HomePage.create()),
 	workflowEditor: types.optional(WorkflowEditorPage, () =>
 		WorkflowEditorPage.create(),
@@ -28,10 +32,10 @@ const PagesStore = types.model('Pages', {
 })
 
 const ComponentsStore = types.model('Components', {
+	menu: types.optional(MenuComponent, () => MenuComponent.create()),
 	quickSearch: types.optional(QuickSearchComponent, () =>
 		QuickSearchComponent.create(),
 	),
-	menu: types.optional(MenuComponent, () => MenuComponent.create()),
 })
 
 const ModalsStore = types.model('Modals', {
