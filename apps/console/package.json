@@ -3,6 +3,7 @@
 	"version": "0.0.1",
 	"scripts": {
 		"start": "vite --mode dev",
+		"start:local": "vite --mode devlocal",
 		"dev": "vite ",
 		"build": "vite build --mode dev",
 		"build:dev": "vite build --mode dev",

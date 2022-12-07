@@ -47,6 +47,7 @@ import { Coinlayer } from '../../../connectors/src/configs/coinlayer.config'
 import { CoinMarketCap } from '../../../connectors/src/configs/coinmarketcap.config'
 import { ConfigCat } from '../../../connectors/src/configs/configcat.config'
 import { CongressGov } from '../../../connectors/src/configs/congressgov.config'
+import { Contentchef } from '../../../connectors/src/configs/contentchef.config'
 import { ContentFul } from '../../../connectors/src/configs/contentful.config'
 import { ConvertKit } from '../../../connectors/src/configs/convertkit.config'
 import { CountApi } from '../../../connectors/src/configs/countapi.config'
@@ -359,6 +360,7 @@ configTypes.push({type: getType<CoinMarketCap.CryptocurrencyListingsLatest>(), i
 configTypes.push({type: getType<ConfigCat.FeatureFlagGetValue>(), id: 'configcat', name: 'ConfigCat', interface: 'FeatureFlagGetValue'})
 configTypes.push({type: getType<CongressGov.ListBills>(), id: 'congressgov', name: 'CongressGov', interface: 'ListBills'})
 configTypes.push({type: getType<CongressGov.ListAmendments>(), id: 'congressgov', name: 'CongressGov', interface: 'ListAmendments'})
+configTypes.push({type: getType<Contentchef.GetPublishedContent>(), id: 'contentchef', name: 'Contentchef', interface: 'GetPublishedContent'})
 configTypes.push({type: getType<ContentFul.ContentGetSpace>(), id: 'contentful', name: 'ContentFul', interface: 'ContentGetSpace'})
 configTypes.push({type: getType<ContentFul.ContentGetSpaceContentModel>(), id: 'contentful', name: 'ContentFul', interface: 'ContentGetSpaceContentModel'})
 configTypes.push({type: getType<ContentFul.ContentGetSpaceSingleContentType>(), id: 'contentful', name: 'ContentFul', interface: 'ContentGetSpaceSingleContentType'})

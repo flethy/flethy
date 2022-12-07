@@ -6,10 +6,17 @@ export const HomePage = types
 	.model('HomePage', {
 		codeExample: types.optional(types.number, 0),
 		showMore: types.optional(types.boolean, false),
+		onboarding: types.optional(
+			types.model({
+				workspaceName: types.optional(types.string, ''),
+				projectName: types.optional(types.string, ''),
+			}),
+			{},
+		),
 	})
-	.actions((self) => ({
+	.actions((self) => {
 		// INITIALIZATION
-		initialisePage(options?: { emailSubscription?: boolean }) {
+		const initialisePage = (options?: { emailSubscription?: boolean }) => {
 			const { api } = getRootStore(self)
 			api.helmet.defaultTitle()
 			if (options?.emailSubscription === true) {
@@ -24,12 +31,20 @@ export const HomePage = types
 					}
 				}, 100)
 			}
-		},
+		}
 
-		toggleShowMore() {
+		const toggleShowMore = () => {
 			self.showMore = !self.showMore
-		},
-	}))
+		}
+
+		const updateOnboarding = (
+			params: Partial<{ workspaceName: string; projectName: string }>,
+		) => {
+			self.onboarding = { ...self.onboarding, ...params }
+		}
+
+		return { initialisePage, toggleShowMore, updateOnboarding }
+	})
 	.views((self) => {
 		return {}
 	})

@@ -1,0 +1,30 @@
+{
+  "name": null,
+  "domain": "contentchef.io",
+  "claimed": false,
+  "description": null,
+  "links": [],
+  "logos": [
+    {
+      "type": "icon",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/id_Kx2gJwP/ideTruvSkb.png",
+          "background": null,
+          "format": "png",
+          "height": 180,
+          "width": 180,
+          "size": 4989
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#19262c", "type": "dark", "brightness": 36 },
+    { "hex": "#fafafa", "type": "light", "brightness": 250 },
+    { "hex": "#47ceff", "type": "accent", "brightness": 181 }
+  ],
+  "fonts": [],
+  "images": []
+}

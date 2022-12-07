@@ -47,6 +47,7 @@ import { Coinlayer } from '../configs/coinlayer.config'
 import { CoinMarketCap } from '../configs/coinmarketcap.config'
 import { ConfigCat } from '../configs/configcat.config'
 import { CongressGov } from '../configs/congressgov.config'
+import { Contentchef } from '../configs/contentchef.config'
 import { ContentFul } from '../configs/contentful.config'
 import { ConvertKit } from '../configs/convertkit.config'
 import { CountApi } from '../configs/countapi.config'
@@ -295,6 +296,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['coinmarketcap', CoinMarketCap.API],
 ['configcat', ConfigCat.API],
 ['congressgov', CongressGov.API],
+['contentchef', Contentchef.API],
 ['contentful', ContentFul.API],
 ['convertkit', ConvertKit.API],
 ['countapi', CountApi.API],

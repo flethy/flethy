@@ -71,6 +71,7 @@ The following Endpoints are currently supported.
 * [CodeDetection](./api/codedetection.md)
 * [ConfigCat](./api/configcat.md)
 * [CongressGov](./api/congressgov.md)
+* [Contentchef](./api/contentchef.md)
 * [ContentFul](./api/contentful.md)
 * [ConvertKit](./api/convertkit.md)
 * [CountApi](./api/countapi.md)

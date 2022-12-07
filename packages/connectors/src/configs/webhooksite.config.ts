@@ -93,6 +93,7 @@ export namespace WebhookSite {
               type: 'param',
             },
           ],
+          responseType: 'text',
         },
         post: {
           interface: 'CorePost',
@@ -108,6 +109,7 @@ export namespace WebhookSite {
               type: 'param',
             },
           ],
+          responseType: 'text',
         },
         patch: {
           interface: 'CorePatch',
@@ -123,6 +125,7 @@ export namespace WebhookSite {
               type: 'param',
             },
           ],
+          responseType: 'text',
         },
         put: {
           interface: 'CorePut',
@@ -138,6 +141,7 @@ export namespace WebhookSite {
               type: 'param',
             },
           ],
+          responseType: 'text',
         },
         delete: {
           interface: 'CoreDelete',
@@ -153,6 +157,7 @@ export namespace WebhookSite {
               type: 'param',
             },
           ],
+          responseType: 'text',
         },
       },
     },

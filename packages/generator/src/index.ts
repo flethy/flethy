@@ -236,6 +236,7 @@ import WarrantDev from '@flethy/connectors/src/configs/warrantdev.config'
 import WebhookSite from '@flethy/connectors/src/configs/webhooksite.config'
 import { HttpRequest } from './controllers/HttpRequest'
 import { logger } from './utils/Logger'
+import Contentchef from '@flethy/connectors/src/configs/contentchef.config'
 
 async function main() {
   const requestConfigs: {
@@ -3208,8 +3209,15 @@ async function main() {
       'header:content-type': 'application/graphql',
       'body:body': `{article(codename:"my_article"){title}}`,
     }),
+    contentchefGetContent: nao<Contentchef.GetPublishedContent>({
+      kind: 'contentchef.live.content',
+      'auth:X-Chef-Key': process.env.CONTENTCHEF_API_KEY,
+      'param:spaceId': process.env.CONTENTCHEF_SPACE_ID,
+      'param:publishingChannel': process.env.CONTENTCHEF_CHANNEL,
+      'query:publicId': process.env.CONTENTCHEF_PUBLIC_ID,
+    }),
   }
-  const requestConfig = requestConfigs.kontentaiGraphQL
+  const requestConfig = requestConfigs.contentchefGetContent
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

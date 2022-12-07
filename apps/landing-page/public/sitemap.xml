@@ -213,6 +213,10 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://flethy.com/integrations/contentchef</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://flethy.com/integrations/contentful</loc>
     <priority>0.8</priority>
   </url>
@@ -1026,6 +1030,10 @@
   </url>
   <url>
     <loc>https://flethy.com/use-cases/get-content-from-buttercms</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://flethy.com/use-cases/get-content-from-contentchef</loc>
     <priority>0.8</priority>
   </url>
   <url>
