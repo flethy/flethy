@@ -28,7 +28,7 @@
 		"mobx-router": "1.0.0",
 		"mobx-state-tree": "5.1.6",
 		"mobxtypes": "workspace:*",
-		"mst-middlewares": "5.1.6",
+		"mst-middlewares": "5.1.7",
 		"react": "18.2.0",
 		"react-dom": "18.2.0",
 		"react-helmet-async": "^1.3.0",
