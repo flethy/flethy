@@ -4,6 +4,7 @@ import { HOUR } from "../constants/duration.const";
 import { getJwks } from "../constants/jwks.const";
 import { ErrorType, FlethyError } from "../utils/error.utils";
 import { ValidationUtils } from "../utils/validation.utils";
+import { Token, TokenController } from "./token.controller";
 import { Workspace } from "./workspace.controller";
 
 export enum WorkspaceRole {
@@ -36,13 +37,28 @@ export enum TokenScope {
   SECRET_READ = "secret:read",
   SECRET_UPDATE = "secret:update",
   SECRET_DELETE = "secret:delete",
+  TOKEN_CREATE = "token:create",
+  TOKEN_READ = "token:read",
+  TOKEN_DELETE = "token:delete",
 }
 
 export interface TokenRequest {
   projectId: string;
   workspaceId: string;
-  scopes?: TokenScope[];
+  name: string;
+  scopes: TokenScope[];
   expiration?: number;
+}
+
+export interface TokenPayload extends TokenRequest {
+  id: string;
+}
+
+export interface TokenResponse {
+  access_token: string;
+  token_type: "Bearer";
+  success: boolean;
+  tokens: Token[];
 }
 
 export interface TokenVerificationRequest extends TokenRequest {
@@ -103,7 +119,7 @@ export class AuthController {
   public static async createToken(
     request: TokenRequest,
     secret: string
-  ): Promise<string> {
+  ): Promise<TokenResponse> {
     // validation
     const validation = ValidationUtils.validateAll([
       {
@@ -114,6 +130,11 @@ export class AuthController {
       {
         value: request.workspaceId,
         parameter: "workspaceId",
+        checks: { required: true, minStringLength: 1 },
+      },
+      {
+        value: request.name,
+        parameter: "name",
         checks: { required: true, minStringLength: 1 },
       },
       {
@@ -139,8 +160,27 @@ export class AuthController {
     }
 
     // create token
-    const token = await jwt.sign(request, secret);
-    return token;
+    const payload: TokenPayload = {
+      ...request,
+      id: crypto.randomUUID(),
+    };
+    const access_token = await jwt.sign(payload, secret);
+
+    const response = await TokenController.put({
+      workspaceId: request.workspaceId,
+      projectId: request.projectId,
+      token: {
+        id: payload.id,
+        name: request.name,
+      },
+    });
+
+    return {
+      access_token,
+      token_type: "Bearer",
+      success: response.success,
+      tokens: response.tokens,
+    };
   }
 
   public static async verifyUserToken(
@@ -248,6 +288,9 @@ export class AuthController {
           scopes.add(TokenScope.SECRET_READ);
           scopes.add(TokenScope.SECRET_UPDATE);
           scopes.add(TokenScope.SECRET_DELETE);
+          scopes.add(TokenScope.TOKEN_CREATE);
+          scopes.add(TokenScope.TOKEN_READ);
+          scopes.add(TokenScope.TOKEN_DELETE);
         }
         if (foundProject.r.includes(ProjectRole.MEMBER)) {
           scopes.add(TokenScope.PROJECT_READ);

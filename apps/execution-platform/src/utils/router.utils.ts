@@ -96,8 +96,11 @@ export class RouterPathUtils {
     return this;
   }
 
-  public t() {
+  public t(withId: boolean = false) {
     this.path.push("token");
+    if (withId) {
+      this.path.push(":tokenId");
+    }
     return this;
   }
 
