@@ -33,6 +33,6 @@
     "wrangler": "2.6.1"
   },
   "dependencies": {
-    "@flethy/flow": "^0.0.254"
+    "@flethy/flow": "^0.0.255"
   }
 }
