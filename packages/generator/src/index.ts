@@ -237,6 +237,7 @@ import WebhookSite from '@flethy/connectors/src/configs/webhooksite.config'
 import { HttpRequest } from './controllers/HttpRequest'
 import { logger } from './utils/Logger'
 import Contentchef from '@flethy/connectors/src/configs/contentchef.config'
+import Permitio from '@flethy/connectors/src/configs/permitio.config'
 
 async function main() {
   const requestConfigs: {
@@ -3216,8 +3217,24 @@ async function main() {
       'param:publishingChannel': process.env.CONTENTCHEF_CHANNEL,
       'query:publicId': process.env.CONTENTCHEF_PUBLIC_ID,
     }),
+    permitioListOrgs: nao<Permitio.ListOrganizations>({
+      kind: 'permitio.organizations.list',
+      'auth:Authorization': process.env.PERMITIO_API_KEY,
+    }),
+    permitioListResources: nao<Permitio.ListResources>({
+      kind: 'permitio.resources.list',
+      'auth:Authorization': process.env.PERMITIO_API_KEY,
+      'param:proj_id': 'default',
+      'param:env_id': 'dev',
+    }),
+    permitioListUsers: nao<Permitio.ListUsers>({
+      kind: 'permitio.users.list',
+      'auth:Authorization': process.env.PERMITIO_API_KEY,
+      'param:proj_id': 'default',
+      'param:env_id': 'dev',
+    }),
   }
-  const requestConfig = requestConfigs.contentchefGetContent
+  const requestConfig = requestConfigs.permitioListUsers
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

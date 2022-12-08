@@ -177,6 +177,7 @@ The following Endpoints are currently supported.
 * [PayPal](./api/paypal.md)
 * [Peekalink](./api/peekalink.md)
 * [PeopleDataLabs](./api/peopledatalabs.md)
+* [Permitio](./api/permitio.md)
 * [Personio](./api/personio.md)
 * [Phyllo](./api/phyllo.md)
 * [Pipedream](./api/pipedream.md)

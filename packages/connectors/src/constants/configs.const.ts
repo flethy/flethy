@@ -160,6 +160,7 @@ import { Parsiq } from '../configs/parsiq.config'
 import { PayPal } from '../configs/paypal.config'
 import { Peekalink } from '../configs/peekalink.config'
 import { PeopleDataLabs } from '../configs/peopledatalabs.config'
+import { Permitio } from '../configs/permitio.config'
 import { Personio } from '../configs/personio.config'
 import { Phyllo } from '../configs/phyllo.config'
 import { Pinata } from '../configs/pinata.config'
@@ -409,6 +410,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['paypal', PayPal.API],
 ['peekalink', Peekalink.API],
 ['peopledatalabs', PeopleDataLabs.API],
+['permitio', Permitio.API],
 ['personio', Personio.API],
 ['phyllo', Phyllo.API],
 ['pinata', Pinata.API],

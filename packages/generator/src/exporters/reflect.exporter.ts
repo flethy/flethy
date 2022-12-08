@@ -160,6 +160,7 @@ import { Parsiq } from '../../../connectors/src/configs/parsiq.config'
 import { PayPal } from '../../../connectors/src/configs/paypal.config'
 import { Peekalink } from '../../../connectors/src/configs/peekalink.config'
 import { PeopleDataLabs } from '../../../connectors/src/configs/peopledatalabs.config'
+import { Permitio } from '../../../connectors/src/configs/permitio.config'
 import { Personio } from '../../../connectors/src/configs/personio.config'
 import { Phyllo } from '../../../connectors/src/configs/phyllo.config'
 import { Pinata } from '../../../connectors/src/configs/pinata.config'
@@ -605,6 +606,9 @@ configTypes.push({type: getType<PayPal.AuthRequest>(), id: 'paypal', name: 'PayP
 configTypes.push({type: getType<Peekalink.Preview>(), id: 'peekalink', name: 'Peekalink', interface: 'Preview'})
 configTypes.push({type: getType<Peekalink.IsAvailable>(), id: 'peekalink', name: 'Peekalink', interface: 'IsAvailable'})
 configTypes.push({type: getType<PeopleDataLabs.CompanyEnrichment>(), id: 'peopledatalabs', name: 'PeopleDataLabs', interface: 'CompanyEnrichment'})
+configTypes.push({type: getType<Permitio.ListOrganizations>(), id: 'permitio', name: 'Permitio', interface: 'ListOrganizations'})
+configTypes.push({type: getType<Permitio.ListResources>(), id: 'permitio', name: 'Permitio', interface: 'ListResources'})
+configTypes.push({type: getType<Permitio.ListUsers>(), id: 'permitio', name: 'Permitio', interface: 'ListUsers'})
 configTypes.push({type: getType<Personio.AuthRequest>(), id: 'personio', name: 'Personio', interface: 'AuthRequest'})
 configTypes.push({type: getType<Personio.EmployeesGet>(), id: 'personio', name: 'Personio', interface: 'EmployeesGet'})
 configTypes.push({type: getType<Personio.AbsencesGet>(), id: 'personio', name: 'Personio', interface: 'AbsencesGet'})
