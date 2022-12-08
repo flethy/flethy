@@ -1,7 +1,6 @@
 import { Router } from "worktop";
 import { TokenScope } from "../controllers/auth.controller";
 import { RouterPathUtils, RouterUtils } from "../utils/router.utils";
-import { AuthRoute } from "./auth.route";
 import { WorkflowsRoute } from "./workflows.route";
 
 export class Version1 {
@@ -13,15 +12,6 @@ export class Version1 {
       scopes: [TokenScope.WORKFLOW_READ],
       handler: async (_req, res) => {
         res.send(200, { nice: "nice" });
-      },
-    });
-
-    RouterUtils.createRoute({
-      API,
-      method: "POST",
-      route: new RouterPathUtils(1).w().p().t().gen(),
-      handler: async (req, res) => {
-        await AuthRoute.createTokenRoute(req, res);
       },
     });
 
