@@ -160,4 +160,49 @@ export const FLOWS = {
       'query:publicId': '->context.input.publicId->string',
     },
   ],
+  'get-feature-flags-with-permitio': [
+    {
+      id: 'permitio',
+      kind: 'permitio.users.list',
+      'auth:Authorization': '==>secrets==>PERMITIO_API_KEY',
+      'param:proj_id': '->context.input.projectId->string',
+      'param:env_id': '->context.input.environmentId->string',
+    },
+  ],
+  'get-feature-flags-with-configcat': [
+    {
+      id: 'configcat',
+      kind: 'configcat.featureflagValue.get',
+      'auth:Authorization': {
+        username: '==>secrets==>CONFIGCAT_BASIC_USERNAME',
+        password: '==>secrets==>CONFIGCAT_BASIC_PASSWORD',
+      },
+      'auth:X-CONFIGCAT-SDKKEY': '==>secrets==>CONFIGCAT_SDK_KEY',
+      'param:settingKeyOrId': '->context.input.settingKey->string',
+    },
+  ],
+  'get-feature-flags-with-devcycle': [
+    {
+      id: 'requestToken',
+      config: {
+        namespace: 'token',
+      },
+      next: [
+        {
+          id: 'listFeatures',
+        },
+      ],
+      kind: 'devcycle.auth.token',
+      'body:audience': 'https://api.devcycle.com/',
+      'body:grant_type': 'client_credentials',
+      'body:client_id': '==>secrets==>DEVCYCLE_CLIENT_ID',
+      'body:client_secret': '==>secrets==>DEVCYCLE_CLIENT_SECRET',
+    },
+    {
+      id: 'listFeatures',
+      kind: 'devcycle.features.list',
+      'auth:Authorization': '->context.token.access_token->string',
+      'param:projectId': '->context.input.projectId->string',
+    },
+  ],
 }

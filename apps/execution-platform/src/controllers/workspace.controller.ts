@@ -6,10 +6,6 @@ import { ValidationUtils } from "../utils/validation.utils";
 import { ProjectRole, WorkspaceRole } from "./auth.controller";
 import { FlethyFlowController } from "./flethyflow.controller";
 
-// KV NAMESPACE
-
-declare var WORKSPACES: KV.Namespace;
-
 // INTERFACES
 
 export interface Project {
@@ -106,7 +102,7 @@ export class WorkspaceController {
     };
 
     const success = await write<Workspace>(
-      WORKSPACES,
+      KVUtils.getKV().workspaces,
       KVUtils.workspaceKey(workspaceMetadata.workspaceId),
       workspace,
       { metadata: { ...workspaceMetadata } }
@@ -149,7 +145,7 @@ export class WorkspaceController {
 
     const promises = request.workspaceIds.map((workspaceId) => {
       return read<Workspace, FlethyWorkspaceMetadata>(
-        WORKSPACES,
+        KVUtils.getKV().workspaces,
         KVUtils.workspaceKey(workspaceId),
         { metadata: true, type: "json" }
       );

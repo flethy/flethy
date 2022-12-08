@@ -1,0 +1,60 @@
+{
+  "name": "Permit.io",
+  "domain": "permit.io",
+  "claimed": false,
+  "description": "Easily bake-in access control in minutes regardless of previous experience or expertise. Based on OPA and OPAL. Treat policy as code to make Auth-z easy.",
+  "links": [
+    {
+      "name": "youtube",
+      "url": "https://youtube.com/channel/UCWUHX5q_fFPBhrJF_J-NTbg"
+    },
+    { "name": "twitter", "url": "https://twitter.com/permit_io" },
+    { "name": "github", "url": "https://github.com/permitio" },
+    { "name": "linkedin", "url": "https://linkedin.com/company/permitio" }
+  ],
+  "logos": [
+    {
+      "type": "icon",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/id1RV47nSL/idpGLVD4kx.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 400,
+          "width": 400,
+          "size": 13890
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#815bd2", "type": "accent", "brightness": 108 },
+    { "hex": "#000000", "type": "dark", "brightness": 0 },
+    { "hex": "#c496f9", "type": "light", "brightness": 167 }
+  ],
+  "fonts": [
+    {
+      "name": "ui-sans-serif",
+      "type": "body",
+      "origin": "custom",
+      "originId": null,
+      "weights": []
+    }
+  ],
+  "images": [
+    {
+      "type": "banner",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/id1RV47nSL/idEO4Baeav.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 500,
+          "width": 1500,
+          "size": 66699
+        }
+      ]
+    }
+  ]
+}

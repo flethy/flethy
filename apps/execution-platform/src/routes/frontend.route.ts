@@ -2,6 +2,7 @@ import { Router } from "worktop";
 import { TokenScope } from "../controllers/auth.controller";
 import { RouterPathUtils, RouterUtils } from "../utils/router.utils";
 import { SecretsRoute } from "./secrets.route";
+import { TokensRoute } from "./tokens.route";
 import { WorkflowsRoute } from "./workflows.route";
 import { WorkspacesRoute } from "./workspace.route";
 
@@ -63,6 +64,41 @@ export class FrontendRoute {
       scopes: [TokenScope.SECRET_DELETE],
       handler: async (req, res, userId) => {
         await SecretsRoute.del(req, res, userId);
+      },
+    });
+
+    // TOKENS
+
+    RouterUtils.createRoute({
+      API,
+      method: "POST",
+      route: new RouterPathUtils().w().p().t().gen(),
+      isUserToken: true,
+      scopes: [TokenScope.TOKEN_CREATE],
+      handler: async (req, res, userId) => {
+        await TokensRoute.create(req, res, userId);
+      },
+    });
+
+    RouterUtils.createRoute({
+      API,
+      method: "GET",
+      route: new RouterPathUtils().w().p().t().gen(),
+      isUserToken: true,
+      scopes: [TokenScope.TOKEN_READ],
+      handler: async (req, res, userId) => {
+        await TokensRoute.get(req, res, userId);
+      },
+    });
+
+    RouterUtils.createRoute({
+      API,
+      method: "DELETE",
+      route: new RouterPathUtils().w().p().t(true).gen(),
+      isUserToken: true,
+      scopes: [TokenScope.TOKEN_DELETE],
+      handler: async (req, res, userId) => {
+        await TokensRoute.del(req, res, userId);
       },
     });
 

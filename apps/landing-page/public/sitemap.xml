@@ -665,6 +665,10 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://flethy.com/integrations/permitio</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://flethy.com/integrations/personio</loc>
     <priority>0.8</priority>
   </url>
@@ -1042,6 +1046,18 @@
   </url>
   <url>
     <loc>https://flethy.com/use-cases/get-content-from-kontentai</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://flethy.com/use-cases/get-feature-flags-with-configcat</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://flethy.com/use-cases/get-feature-flags-with-devcycle</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://flethy.com/use-cases/get-feature-flags-with-permitio</loc>
     <priority>0.8</priority>
   </url>
   <url>
