@@ -1,6 +1,14 @@
 import { KV } from "worktop/kv";
 
 declare var WORKSPACES: KV.Namespace;
+declare var SECRETS: KV.Namespace;
+declare var WORKFLOWS: KV.Namespace;
+
+export interface KVNamespaces {
+  workspaces: KV.Namespace;
+  secrets: KV.Namespace;
+  workflows: KV.Namespace;
+}
 
 export class KVUtils {
   public static secretsForProject(projectId: string): string {
@@ -23,7 +31,7 @@ export class KVUtils {
     return `token-${workspaceId}-${projectId}`;
   }
 
-  public static getKV() {
-    return { workspaces: WORKSPACES };
+  public static getKV(): KVNamespaces {
+    return { workspaces: WORKSPACES, secrets: SECRETS, workflows: WORKFLOWS };
   }
 }

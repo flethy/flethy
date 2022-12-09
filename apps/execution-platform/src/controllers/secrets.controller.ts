@@ -1,4 +1,3 @@
-import type { KV } from "worktop/kv";
 import { read, write } from "worktop/kv";
 import { ENVVARS } from "../constants/envvar.const";
 import {
@@ -10,8 +9,6 @@ import {
 import { ErrorType, FlethyError } from "../utils/error.utils";
 import { KVUtils } from "../utils/kv.utils";
 import { ValidationUtils } from "../utils/validation.utils";
-
-declare var SECRETS: KV.Namespace;
 
 export interface FlethySecrets {
   secrets?: string;
@@ -119,7 +116,7 @@ export class SecretsController {
     updatedSecrets.secrets = encryptedSecrets;
 
     const success = await write<FlethySecrets, FlethySecretsMetadata>(
-      SECRETS,
+      KVUtils.getKV().secrets,
       KVUtils.secretsForProject(request.projectId),
       updatedSecrets,
       { metadata: updatedSecretsMetadata }
@@ -134,7 +131,7 @@ export class SecretsController {
   > {
     try {
       const encryptedSecrets = await read<FlethySecrets, FlethySecretsMetadata>(
-        SECRETS,
+        KVUtils.getKV().secrets,
         KVUtils.secretsForProject(request.projectId),
         { metadata: true, type: "json" }
       );
@@ -189,7 +186,7 @@ export class SecretsController {
         updatedSecretsMetadata.updatedBy = request.userId;
 
         const success = await write<FlethySecrets, FlethySecretsMetadata>(
-          SECRETS,
+          KVUtils.getKV().secrets,
           KVUtils.secretsForProject(request.projectId),
           updatedSecrets,
           { metadata: updatedSecretsMetadata }

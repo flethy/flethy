@@ -11,10 +11,6 @@ import { KVUtils } from "../utils/kv.utils";
 import { ValidationUtils } from "../utils/validation.utils";
 import { SecretsController } from "./secrets.controller";
 
-// KV NAMESPACE
-
-declare var WORKFLOWS: KV.Namespace;
-
 // INTERFACES
 
 export interface FlethyWorkflow {
@@ -127,7 +123,7 @@ export class WorkflowController {
     }
 
     const success = await write<FlethyWorkflow>(
-      WORKFLOWS,
+      KVUtils.getKV().workflows,
       KVUtils.workflowKey(
         workflowMetadata.projectId,
         workflowMetadata.workflowId
@@ -168,10 +164,14 @@ export class WorkflowController {
     const { value, metadata } = await read<
       FlethyWorkflow,
       FlethyWorkflowMetadata
-    >(WORKFLOWS, KVUtils.workflowKey(request.projectId, request.workflowId), {
-      metadata: true,
-      type: "json",
-    });
+    >(
+      KVUtils.getKV().workflows,
+      KVUtils.workflowKey(request.projectId, request.workflowId),
+      {
+        metadata: true,
+        type: "json",
+      }
+    );
     if (!value || !metadata) {
       throw new FlethyError({
         type: ErrorType.NotFound,
@@ -205,7 +205,7 @@ export class WorkflowController {
       });
     }
     const foundWorkflowKeys = await paginate<FlethyWorkflowMetadata>(
-      WORKFLOWS,
+      KVUtils.getKV().workflows,
       {
         prefix: KVUtils.workflowKeyPrefix(request.projectId),
         limit: request.limit,
@@ -245,7 +245,7 @@ export class WorkflowController {
       });
     }
     const success = await remove(
-      WORKFLOWS,
+      KVUtils.getKV().workflows,
       KVUtils.workflowKey(request.projectId, request.workflowId)
     );
     return success;
