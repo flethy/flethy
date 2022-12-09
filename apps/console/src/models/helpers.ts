@@ -72,8 +72,13 @@ export class RouterPathUtils {
 		return this
 	}
 
-	public t() {
+	public t(withId: boolean | string = false) {
 		this.path.push('token')
+		if (typeof withId === 'string') {
+			this.path.push(withId)
+		} else if (withId) {
+			this.path.push(':tokenId')
+		}
 		return this
 	}
 
