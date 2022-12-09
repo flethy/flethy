@@ -14,6 +14,7 @@ import { Auth0 } from '../configs/auth0.config'
 import { Ayrshare } from '../configs/ayrshare.config'
 import { BambooHR } from '../configs/bamboohr.config'
 import { BannerBear } from '../configs/bannerbear.config'
+import { BasementDev } from '../configs/basementdev.config'
 import { BaseRow } from '../configs/baserow.config'
 import { Beehiiv } from '../configs/beehiiv.config'
 import { Beew } from '../configs/beew.config'
@@ -264,6 +265,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['ayrshare', Ayrshare.API],
 ['bamboohr', BambooHR.API],
 ['bannerbear', BannerBear.API],
+['basementdev', BasementDev.API],
 ['baserow', BaseRow.API],
 ['beehiiv', Beehiiv.API],
 ['beew', Beew.API],

@@ -238,6 +238,7 @@ import { HttpRequest } from './controllers/HttpRequest'
 import { logger } from './utils/Logger'
 import Contentchef from '@flethy/connectors/src/configs/contentchef.config'
 import Permitio from '@flethy/connectors/src/configs/permitio.config'
+import BasementDev from '@flethy/connectors/src/configs/basementdev.config'
 
 async function main() {
   const requestConfigs: {
@@ -3233,8 +3234,32 @@ async function main() {
       'param:proj_id': 'default',
       'param:env_id': 'dev',
     }),
+    basementdevGraphql: nao<BasementDev.GraphQLQuery>({
+      kind: 'basementdev.graphql.query',
+      'header:Content-Type': 'application/graphql',
+      'body:body': `query Erc721Token {
+        token(
+          contract: "0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D"
+          tokenId: "660"
+        ) {
+          name
+          description
+          image {
+            url
+            thumbnailUrl
+          }
+          tokenUri
+          owner {
+            address
+            reverseProfile {
+              name
+            }
+          }
+        }
+      }`,
+    }),
   }
-  const requestConfig = requestConfigs.permitioListUsers
+  const requestConfig = requestConfigs.basementdevGraphql
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

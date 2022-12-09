@@ -81,6 +81,10 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://flethy.com/integrations/basementdev</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://flethy.com/integrations/baserow</loc>
     <priority>0.8</priority>
   </url>
@@ -1026,6 +1030,10 @@
   </url>
   <url>
     <loc>https://flethy.com/use-cases/create-new-contact-in-sendinblue</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://flethy.com/use-cases/fetch-nft-data-with-basementdev</loc>
     <priority>0.8</priority>
   </url>
   <url>

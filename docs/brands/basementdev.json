@@ -1,0 +1,69 @@
+{
+  "name": "Basement",
+  "domain": "basement.dev",
+  "claimed": false,
+  "description": "Fast and reliable infrastructure for builders in web3. Get access to a wide range of on-chain data on Ethereum.",
+  "links": [
+    { "name": "twitter", "url": "https://twitter.com/basementapp_xyz" },
+    { "name": "github", "url": "https://github.com/basementdev" }
+  ],
+  "logos": [
+    {
+      "type": "logo",
+      "theme": "light",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idFasQIBye/idhuj-8ozj.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 32,
+          "width": 32,
+          "size": 438
+        }
+      ]
+    },
+    {
+      "type": "icon",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idFasQIBye/idmUGmkrBl.png",
+          "background": null,
+          "format": "png",
+          "height": 400,
+          "width": 400,
+          "size": 791
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#4715b4", "type": "accent", "brightness": 43 },
+    { "hex": "#000000", "type": "dark", "brightness": 0 },
+    { "hex": "#ffffff", "type": "light", "brightness": 255 }
+  ],
+  "fonts": [
+    {
+      "name": "sans-serif",
+      "type": "body",
+      "origin": "custom",
+      "originId": null,
+      "weights": []
+    }
+  ],
+  "images": [
+    {
+      "type": "banner",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idFasQIBye/id3PnDtpxJ.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 500,
+          "width": 1500,
+          "size": 191388
+        }
+      ]
+    }
+  ]
+}
