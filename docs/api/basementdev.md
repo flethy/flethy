@@ -1,0 +1,24 @@
+# BasementDev
+
+## Links
+
+* URL: [https://basement.dev/](https://basement.dev/)
+* Documentation: [https://docs.basement.dev/](https://docs.basement.dev/)
+* Tags: web3
+* Category: aggregation
+* Type: indexer
+
+## API
+
+### Authentication
+
+* X-Basement-API-Key: header
+
+### graphql
+
+#### query
+
+##### GraphQL API
+
+* Description: GraphQL API
+* Docs: [https://docs.basement.dev/api/](https://docs.basement.dev/api/)

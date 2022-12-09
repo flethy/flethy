@@ -7,6 +7,7 @@ import {
 	Container,
 	Heading,
 	Tag,
+	Box,
 } from '@chakra-ui/react'
 import { observer } from 'mobx-react-lite'
 import { useTranslation } from 'react-i18next'
@@ -41,10 +42,11 @@ export default observer(() => {
 	}
 
 	const otherUseCases = (
-		<>
+		<VStack>
 			{USECASES.filter((useCase) => useCase.id !== content.id).map(
 				(useCase) => (
 					<Button
+						key={useCase.id}
 						variant="link"
 						onClick={() => router.goTo(routes.useCase, { id: useCase.id })}
 					>
@@ -52,15 +54,15 @@ export default observer(() => {
 					</Button>
 				),
 			)}
-		</>
+		</VStack>
 	)
 
 	return (
-		<Center>
-			<Stack textAlign={'center'}>
-				<FancyHeading textA={content.title} textB="with flethy" />
-				<Center py={5}>
-					<Container>
+		<Container>
+			<Center>
+				<Stack textAlign={'center'}>
+					<FancyHeading textA={content.title} textB="with flethy" />
+					<Center py={5}>
 						<VStack gap={5} textAlign={'left'}>
 							{content.contents.map((item, index) => (
 								<Text key={index}>{item}</Text>
@@ -91,9 +93,9 @@ export default observer(() => {
 								{otherUseCases}
 							</VStack>
 						</VStack>
-					</Container>
-				</Center>
-			</Stack>
-		</Center>
+					</Center>
+				</Stack>
+			</Center>
+		</Container>
 	)
 })

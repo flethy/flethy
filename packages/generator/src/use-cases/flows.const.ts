@@ -205,4 +205,12 @@ export const FLOWS = {
       'param:projectId': '->context.input.projectId->string',
     },
   ],
+  'fetch-nft-data-with-basementdev': [
+    {
+      id: 'basementdev',
+      kind: 'basementdev.graphql.query',
+      'header:Content-Type': 'application/graphql',
+      'body:body': '->context.input.query->string',
+    },
+  ],
 }

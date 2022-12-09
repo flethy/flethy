@@ -14,6 +14,7 @@ import { Auth0 } from '../../../connectors/src/configs/auth0.config'
 import { Ayrshare } from '../../../connectors/src/configs/ayrshare.config'
 import { BambooHR } from '../../../connectors/src/configs/bamboohr.config'
 import { BannerBear } from '../../../connectors/src/configs/bannerbear.config'
+import { BasementDev } from '../../../connectors/src/configs/basementdev.config'
 import { BaseRow } from '../../../connectors/src/configs/baserow.config'
 import { Beehiiv } from '../../../connectors/src/configs/beehiiv.config'
 import { Beew } from '../../../connectors/src/configs/beew.config'
@@ -285,6 +286,7 @@ configTypes.push({type: getType<BambooHR.EmployeesDirectory>(), id: 'bamboohr', 
 configTypes.push({type: getType<BannerBear.CreateImage>(), id: 'bannerbear', name: 'BannerBear', interface: 'CreateImage'})
 configTypes.push({type: getType<BannerBear.RetrieveImage>(), id: 'bannerbear', name: 'BannerBear', interface: 'RetrieveImage'})
 configTypes.push({type: getType<BannerBear.ListImages>(), id: 'bannerbear', name: 'BannerBear', interface: 'ListImages'})
+configTypes.push({type: getType<BasementDev.GraphQLQuery>(), id: 'basementdev', name: 'BasementDev', interface: 'GraphQLQuery'})
 configTypes.push({type: getType<BaseRow.CreateRow>(), id: 'baserow', name: 'BaseRow', interface: 'CreateRow'})
 configTypes.push({type: getType<BaseRow.GetRows>(), id: 'baserow', name: 'BaseRow', interface: 'GetRows'})
 configTypes.push({type: getType<Beehiiv.CreateSubscriber>(), id: 'beehiiv', name: 'Beehiiv', interface: 'CreateSubscriber'})
