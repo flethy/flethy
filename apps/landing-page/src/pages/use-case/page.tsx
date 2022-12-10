@@ -72,7 +72,7 @@ export default observer(() => {
 									Use the following kinds
 								</Heading>
 								{content.kinds.map((item, index) => (
-									<Tag>{item}</Tag>
+									<Tag key={item.replaceAll(':', '-')}>{item}</Tag>
 								))}
 							</VStack>
 							{content.flow && (
