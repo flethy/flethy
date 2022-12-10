@@ -80,6 +80,14 @@ const ITEMS_2022_Q4: RoadmapEntry[] = [
     milestone: false,
     tags: [ROADMAP_TAGS.EXECUTION],
   },
+  {
+    title: '🚀 Integrate 250 services 🚀',
+    date: '2022-12-10',
+    description: 'woop woop!',
+    delivered: true,
+    milestone: false,
+    tags: [ROADMAP_TAGS.CONNECTORS],
+  },
 ]
 
 const FUTURE_MILESTONES: RoadmapEntry[] = [

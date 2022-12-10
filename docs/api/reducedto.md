@@ -1,0 +1,20 @@
+# ReducedTo
+
+## Links
+
+* URL: [https://reduced.to](https://reduced.to)
+* Documentation: [https://reduced.to](https://reduced.to)
+* Tags: web2
+* Category: utils
+* Type: url-shortener
+
+## API
+
+### core
+
+#### shorten
+
+##### Shorten URL
+
+* Description: Shorten URL
+* Docs: [https://reduced.to](https://reduced.to)

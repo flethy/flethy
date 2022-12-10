@@ -239,6 +239,7 @@ import { logger } from './utils/Logger'
 import Contentchef from '@flethy/connectors/src/configs/contentchef.config'
 import Permitio from '@flethy/connectors/src/configs/permitio.config'
 import BasementDev from '@flethy/connectors/src/configs/basementdev.config'
+import ReducedTo from '@flethy/connectors/src/configs/reducedto.config'
 
 async function main() {
   const requestConfigs: {
@@ -3258,8 +3259,12 @@ async function main() {
         }
       }`,
     }),
+    reducedTo: nao<ReducedTo.ShortenURL>({
+      kind: 'reducedto.core.shorten',
+      'body:originalUrl': 'https://flethy.com/roadmap',
+    }),
   }
-  const requestConfig = requestConfigs.basementdevGraphql
+  const requestConfig = requestConfigs.reducedTo
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

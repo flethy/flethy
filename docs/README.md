@@ -197,6 +197,7 @@ The following Endpoints are currently supported.
 * [RapidApi](./api/rapidapi.md)
 * [Rebrandly](./api/rebrandly.md)
 * [RedisCloud](./api/rediscloud.md)
+* [ReducedTo](./api/reducedto.md)
 * [RemoteOk](./api/remoteok.md)
 * [RemoveBg](./api/removebg.md)
 * [Render](./api/render.md)
