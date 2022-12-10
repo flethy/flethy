@@ -49,7 +49,7 @@
 		"@types/react-dom": "18.0.9",
 		"@types/react-slick": "^0.23.10",
 		"@types/react-syntax-highlighter": "^15.5.5",
-		"@vitejs/plugin-react": "2.2.0",
+		"@vitejs/plugin-react": "3.0.0",
 		"autoprefixer": "^10.4.13",
 		"eslint-config-custom": "workspace:*",
 		"postcss": "8.4.19",
