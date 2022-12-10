@@ -1,5 +1,6 @@
 import { cast, flow, types } from 'mobx-state-tree'
 import { FormValidationModel } from '../../../../models/api/formValidation'
+import { TokenScope } from '../../../../models/api/tokens'
 import { getRootStore } from '../../../../models/helpers'
 
 export const CreateTokenModal = types
@@ -18,6 +19,8 @@ export const CreateTokenModal = types
 			}),
 			{},
 		),
+		state: types.optional(types.enumeration(['create', 'show']), 'create'),
+		token: types.optional(types.string, ''),
 		formValidation: types.optional(FormValidationModel, {}),
 		isOpen: types.optional(types.boolean, false),
 		valid: types.optional(types.boolean, true),
@@ -27,7 +30,10 @@ export const CreateTokenModal = types
 		const open = (params: { workspaceId: string; projectId: string }) => {
 			self.context.workspaceId = params.workspaceId
 			self.context.projectId = params.projectId
+			self.state = 'create'
 			self.form.name = ''
+			self.token = ''
+			self.form.scopes.clear()
 
 			const { api } = getRootStore(self)
 			const currentTokens = api.tokens.getTokensFormStore({
@@ -64,17 +70,19 @@ export const CreateTokenModal = types
 			}
 		}
 
-		const updateScopes = (scope: string) => {
+		const updateScopes = (scope: string, checked: boolean) => {
 			const foundScope = self.form.scopes.find(
 				(currentScope) => currentScope === scope,
 			)
-			if (foundScope) {
+			if (foundScope && !checked) {
 				self.form.scopes.remove(foundScope)
-			} else {
+			}
+			if (!foundScope && checked) {
 				self.form.scopes.push(scope)
 			}
-			self.formValidation.update('scopes', self.form.scopes.join(','))
-			self.formValidation.validate('scopes')
+			const scopesString =
+				self.form.scopes.length > 0 ? self.form.scopes.join(',') : ''
+			self.formValidation.update('scopes', scopesString)
 		}
 
 		const close = () => {
@@ -88,13 +96,14 @@ export const CreateTokenModal = types
 			}
 			const { api } = getRootStore(self)
 			try {
-				yield api.tokens.create({
+				const response = yield api.tokens.create({
 					workspaceId: self.context.workspaceId,
 					projectId: self.context.projectId,
 					name: self.form.name,
-					scopes: [],
+					scopes: (self.form.scopes as TokenScope[]) ?? [],
 				})
-				self.isOpen = false
+				self.token = response.access_token
+				self.state = 'show'
 			} catch (error) {
 				console.log(error)
 			}

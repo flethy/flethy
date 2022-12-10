@@ -11,7 +11,8 @@
 		"title": "Automate!",
 		"home": "Home",
 		"secrets": "Secrets",
-		"workflows": "Workflows"
+		"workflows": "Workflows",
+		"tokens": "Access Tokens"
 	},
 	"footer": {
 		"pitchdeck": "Pitch Deck",
@@ -64,6 +65,7 @@
 			"create": {
 				"title": "Create a new access token",
 				"submit": "Create",
+				"close": "Close",
 				"cancel": "Cancel",
 				"form": {
 					"name": {
@@ -76,6 +78,9 @@
 						"placeholder": "Scopes",
 						"helperText": "Access Token Scopes"
 					}
+				},
+				"show": {
+					"notice": "This token will not be shown again. Please copy it now."
 				}
 			},
 			"delete": {

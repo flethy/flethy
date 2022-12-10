@@ -1,16 +1,21 @@
 import {
 	Checkbox,
+	Code,
 	FormControl,
 	FormErrorMessage,
 	FormHelperText,
 	FormLabel,
+	IconButton,
 	Input,
+	Text,
+	useClipboard,
 	VStack,
 } from '@chakra-ui/react'
 import { observer } from 'mobx-react-lite'
 import { useTranslation } from 'react-i18next'
 import { useMst } from '../../../../models/root'
 import ModalWrapper from '../../ModalWrapper'
+import { CopyIcon, DeleteIcon, ArrowForwardIcon } from '@chakra-ui/icons'
 
 export default observer(() => {
 	const { t } = useTranslation('app')
@@ -21,8 +26,9 @@ export default observer(() => {
 			modals: { tokensCreate },
 		},
 	} = useMst()
+	const { onCopy, setValue, hasCopied } = useClipboard('')
 
-	const form = (
+	let form = (
 		<VStack>
 			<FormControl isInvalid={!tokensCreate.formValidation.isValid('name')}>
 				<FormLabel>{t('modals.tokens.create.form.name.label')}</FormLabel>
@@ -49,18 +55,13 @@ export default observer(() => {
 					<Checkbox
 						key={scope.replaceAll(':', '-')}
 						isChecked={tokensCreate.isScopeChecked(scope)}
-						onChange={() => tokensCreate.updateScopes(scope)}
+						onChange={(event) =>
+							tokensCreate.updateScopes(scope, event.target.checked)
+						}
 					>
 						{scope}
 					</Checkbox>
 				))}
-				<Input
-					type={'text'}
-					value={tokensCreate.form.name}
-					onChange={(event) =>
-						tokensCreate.update({ name: event.target.value })
-					}
-				/>
 				{!tokensCreate.formValidation.isValid('scopes') ? (
 					<FormErrorMessage>
 						{tokensCreate.formValidation.errorMessage('scopes')}
@@ -74,6 +75,29 @@ export default observer(() => {
 		</VStack>
 	)
 
+	let submitLabel = t('modals.tokens.create.submit') ?? ''
+
+	if (tokensCreate.state === 'show') {
+		submitLabel = t('modals.tokens.create.close') ?? ''
+		form = (
+			<VStack>
+				<Text>{t('modals.tokens.create.show.notice')}</Text>
+				<Code maxW={'100%'}>{tokensCreate.token}</Code>
+				<IconButton
+					mx={1}
+					aria-label="Copy to Clipboard"
+					icon={<CopyIcon />}
+					disabled={hasCopied}
+					size={'xs'}
+					onClick={() => {
+						setValue(tokensCreate.token)
+						onCopy()
+					}}
+				/>
+			</VStack>
+		)
+	}
+
 	const component = (
 		<ModalWrapper
 			title={t('modals.tokens.create.title')}
@@ -86,10 +110,14 @@ export default observer(() => {
 				},
 			}}
 			submit={{
-				label: t('modals.tokens.create.submit') ?? '',
+				label: submitLabel,
 				disabled: !tokensCreate.formValidation.valid,
 				onClick: () => {
-					tokensCreate.submit()
+					if (tokensCreate.state === 'show') {
+						tokensCreate.close()
+					} else {
+						tokensCreate.submit()
+					}
 				},
 			}}
 		/>

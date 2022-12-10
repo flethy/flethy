@@ -22,14 +22,16 @@ export const FormValidationModel = types
 		const update = (key: string, value?: string | number) => {
 			if (value) {
 				self.inputs.get(key)!.value = value
+			} else {
+				self.inputs.get(key)!.value = ''
 			}
 		}
 
-		const validate = (key: string) => {
+		const validate = (key: string): boolean => {
 			self.valid = true
 			const input = self.inputs.get(key)
 			if (!input) {
-				return
+				return false
 			}
 			input.valid = true
 			input.errorMessage = ''
@@ -38,6 +40,7 @@ export const FormValidationModel = types
 					self.valid = false
 					input.valid = false
 					input.errorMessage = 'This value must be unique'
+					return false
 				}
 			}
 			if (input.minLength) {
@@ -45,13 +48,17 @@ export const FormValidationModel = types
 					self.valid = false
 					input.valid = false
 					input.errorMessage = `This value must be at least ${input.minLength} characters`
+					return false
 				}
 			}
+			return true
 		}
 
 		const validateAll = () => {
 			for (const key of self.inputs.keys()) {
-				validate(key)
+				if (!validate(key)) {
+					return
+				}
 			}
 		}
 

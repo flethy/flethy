@@ -1,8 +1,30 @@
 import { flow, types } from 'mobx-state-tree'
-import { TokenScope } from '../../../../execution-platform/src/controllers/auth.controller'
 import { request } from '../../helpers/api'
 import { getRootStore, RouterPathUtils } from '../helpers'
 import { StateAndCacheKey } from './stateAndCache'
+
+export enum TokenScope {
+	WORKFLOW_CREATE = 'workflow:create',
+	WORKFLOW_READ = 'workflow:read',
+	WORKFLOW_UPDATE = 'workflow:update',
+	WORKFLOW_DELETE = 'workflow:delete',
+	INSTANCE_CREATE = 'instance:create',
+	WORKSPACE_CREATE = 'workspace:create',
+	WORKSPACE_READ = 'workspace:read',
+	WORKSPACE_UPDATE = 'workspace:update',
+	WORKSPACE_DELETE = 'workspace:delete',
+	PROJECT_CREATE = 'project:create',
+	PROJECT_READ = 'project:read',
+	PROJECT_UPDATE = 'project:update',
+	PROJECT_DELETE = 'project:delete',
+	SECRET_CREATE = 'secret:create',
+	SECRET_READ = 'secret:read',
+	SECRET_UPDATE = 'secret:update',
+	SECRET_DELETE = 'secret:delete',
+	TOKEN_CREATE = 'token:create',
+	TOKEN_READ = 'token:read',
+	TOKEN_DELETE = 'token:delete',
+}
 
 export const TokenDataModel = types.model('TokenModel', {
 	id: types.string,
@@ -51,7 +73,7 @@ export const TokensModel = types
 			api.stateAndCache.updateToPending(stateAndCacheKey)
 
 			try {
-				const response: { data: { tokens: any[] } } = yield request({
+				const response: { tokens?: any[] } = yield request({
 					base: 'flethy',
 					method: 'get',
 					auth: true,
@@ -61,7 +83,7 @@ export const TokensModel = types
 						.t()
 						.gen(),
 				})
-				self.tokens.set(options.projectId, response.data.tokens)
+				self.tokens.set(options.projectId, response.tokens ?? [])
 
 				api.stateAndCache.updateToDone(stateAndCacheKey)
 			} catch (error) {

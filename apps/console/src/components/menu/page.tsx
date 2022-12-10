@@ -52,6 +52,12 @@ export default observer(() => {
 			route: routes.workflows,
 			params: api.workspaces.getContext(),
 		},
+		{
+			id: 'tokens',
+			label: t('menu.tokens'),
+			route: routes.tokens,
+			params: api.workspaces.getContext(),
+		},
 	]
 
 	const menu = (
