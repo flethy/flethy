@@ -4,11 +4,14 @@ import { createContext, useContext } from 'react'
 import { MenuComponent } from '../components/menu/model'
 import { CreateSecretsModal } from '../components/modals/secrets/create/model'
 import { DeleteSecretsModal } from '../components/modals/secrets/delete/model'
+import { CreateTokenModal } from '../components/modals/tokens/create/model'
+import { DeleteTokenModal } from '../components/modals/tokens/delete/model'
 import { QuickSearchComponent } from '../components/quicksearch/model'
 import { UnsufficientPermissionsPage } from '../pages/403/model'
 import { NotFoundPage } from '../pages/404/model'
 import { HomePage } from '../pages/home/model'
 import { SecretsPage } from '../pages/secrets/model'
+import { TokensPage } from '../pages/tokens/model'
 import { WorkflowEditorPage } from '../pages/workflow-editor/model'
 import { WorkflowsPage } from '../pages/workflows/model'
 import ApiStore, { APIType } from './api'
@@ -28,6 +31,7 @@ const PagesStore = types.model('Pages', {
 		WorkflowEditorPage.create(),
 	),
 	secrets: types.optional(SecretsPage, () => SecretsPage.create()),
+	tokens: types.optional(TokensPage, () => TokensPage.create()),
 	workflows: types.optional(WorkflowsPage, () => WorkflowsPage.create()),
 })
 
@@ -44,6 +48,12 @@ const ModalsStore = types.model('Modals', {
 	),
 	secretsDelete: types.optional(DeleteSecretsModal, () =>
 		DeleteSecretsModal.create(),
+	),
+	tokensCreate: types.optional(CreateTokenModal, () =>
+		CreateTokenModal.create(),
+	),
+	tokensDelete: types.optional(DeleteTokenModal, () =>
+		DeleteTokenModal.create(),
 	),
 })
 

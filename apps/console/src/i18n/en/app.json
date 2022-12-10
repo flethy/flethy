@@ -11,7 +11,8 @@
 		"title": "Automate!",
 		"home": "Home",
 		"secrets": "Secrets",
-		"workflows": "Workflows"
+		"workflows": "Workflows",
+		"tokens": "Access Tokens"
 	},
 	"footer": {
 		"pitchdeck": "Pitch Deck",
@@ -58,6 +59,35 @@
 				"submit": "Delete",
 				"cancel": "Cancel",
 				"description": "Are you sure you want to delete this secret?"
+			}
+		},
+		"tokens": {
+			"create": {
+				"title": "Create a new access token",
+				"submit": "Create",
+				"close": "Close",
+				"cancel": "Cancel",
+				"form": {
+					"name": {
+						"label": "Name",
+						"placeholder": "Name",
+						"helperText": "The name of the access token"
+					},
+					"scopes": {
+						"label": "Scopes",
+						"placeholder": "Scopes",
+						"helperText": "Access Token Scopes"
+					}
+				},
+				"show": {
+					"notice": "This token will not be shown again. Please copy it now."
+				}
+			},
+			"delete": {
+				"title": "Delete Access Token",
+				"submit": "Delete",
+				"cancel": "Cancel",
+				"description": "Are you sure you want to delete this token?"
 			}
 		},
 		"onboarding": {
@@ -125,6 +155,14 @@
 			"emptyState": {
 				"heading": "No secrets yet",
 				"description": "You can add secrets to your project here. They can be used in your workflows."
+			}
+		},
+		"tokens": {
+			"title": "Project Access Tokens",
+			"subtitle": "These access tokens can be used to interact with the flethy API.",
+			"emptyState": {
+				"heading": "No tokens yet",
+				"description": "You can add access tokens to your project here."
 			}
 		},
 		"workflows": {

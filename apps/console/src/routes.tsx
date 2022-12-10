@@ -4,6 +4,7 @@ import UnsufficientPermissionsPage from './pages/403/page'
 import NotFoundPage from './pages/404/page'
 import HomePage from './pages/home/page'
 import SecretsPage from './pages/secrets/page'
+import TokensPage from './pages/tokens/page'
 import WorkflowEditorPage from './pages/workflow-editor/page'
 import WorkflowsPage from './pages/workflows/page'
 
@@ -86,6 +87,15 @@ export default {
 		onEnter(_route, parameters, { root: { pages } }) {
 			const { projectId, workspaceId } = parameters as any
 			pages.secrets.initialisePage({ projectId, workspaceId })
+		},
+	}),
+
+	tokens: new Route<RootStore>({
+		path: new RouterPathUtils().w().p().t().gen(),
+		component: <TokensPage />,
+		onEnter(_route, parameters, { root: { pages } }) {
+			const { projectId, workspaceId } = parameters as any
+			pages.tokens.initialisePage({ projectId, workspaceId })
 		},
 	}),
 

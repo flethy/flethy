@@ -53,7 +53,7 @@ export class TokenController {
       });
     }
 
-    const foundWorkflowKeys = await paginate<TokenMetadata>(
+    const foundTokens = await paginate<TokenMetadata>(
       KVUtils.getKV().workspaces,
       {
         prefix: KVUtils.tokenKey(request.workspaceId, request.projectId),
@@ -62,11 +62,14 @@ export class TokenController {
         metadata: true,
       }
     );
-    return (
-      foundWorkflowKeys
-        .filter((data) => data.metadata !== undefined)
-        .map((data) => data.metadata) || { tokens: [] }
-    );
+    const filteredTokens = foundTokens
+      .filter((data) => data.metadata !== undefined)
+      .map((data) => data.metadata);
+    if (filteredTokens.length === 0) {
+      return { tokens: [] };
+    } else {
+      return filteredTokens[0];
+    }
   }
 
   public static async put(request: PutTokenRequest) {
@@ -105,7 +108,7 @@ export class TokenController {
     }
 
     let currentTokens: any = await this.get(request);
-    if (!currentTokens) {
+    if (!currentTokens || currentTokens?.length === 0) {
       currentTokens = { tokens: [] };
     }
     currentTokens.tokens.push(request.token);
