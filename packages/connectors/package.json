@@ -1,14 +1,16 @@
 {
   "name": "@flethy/connectors",
   "version": "0.0.1",
-  "description": "@flethy/connectors",
+  "description": "time to speed up! integrate with over 200 services with this one library",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
     "dist"
   ],
   "scripts": {
-    "build": "tsc --p tsconfig.json"
+    "build:cleanup": "rm -rf dist/wip && rm -rf dist/templates",
+    "build:package": "tsc --p tsconfig.json",
+    "build": "npm run build:package && npm run build:cleanup"
   },
   "publishConfig": {
     "access": "public"
@@ -20,8 +22,14 @@
     "web3",
     "http",
     "ipfs",
-    "etherscan",
-    "alchemy"
+    "cms",
+    "content",
+    "database",
+    "images",
+    "data",
+    "integrations",
+    "workflows",
+    "connect"
   ],
   "dependencies": {},
   "devDependencies": {

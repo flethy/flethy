@@ -8,3 +8,8 @@ assets
 .npmrc
 prettier.config.js
 yarn-error.log
+
+# custom
+
+dist/wip
+dist/templates

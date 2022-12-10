@@ -10,7 +10,7 @@
     "export": "npm run exportexec && npm run reflectgen && npm run updateapicount",
     "exportexec": "NODE_ENV=local ts-node ./src/export.ts",
     "reflectgen": "NODE_ENV=local ts-node -P tsconfig-tt.json ./src/exporters/reflect.generator.ts",
-    "updateapicount": "mustache data.json ../connectors/README.md.template > ../connectors/README.md"
+    "updateapicount": "mustache data.json ./src/docs/connectors.README.md.template > ../connectors/README.md"
   },
   "author": "adam@flethy.com",
   "license": "ISC",
