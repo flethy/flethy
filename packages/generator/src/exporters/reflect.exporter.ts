@@ -181,6 +181,7 @@ import { QuoteGarden } from '../../../connectors/src/configs/quotegarden.config'
 import { RapidApi } from '../../../connectors/src/configs/rapidapi.config'
 import { Rebrandly } from '../../../connectors/src/configs/rebrandly.config'
 import { RedisCloud } from '../../../connectors/src/configs/rediscloud.config'
+import { ReducedTo } from '../../../connectors/src/configs/reducedto.config'
 import { RemoteOk } from '../../../connectors/src/configs/remoteok.config'
 import { RemoveBg } from '../../../connectors/src/configs/removebg.config'
 import { Render } from '../../../connectors/src/configs/render.config'
@@ -650,6 +651,7 @@ configTypes.push({type: getType<QuoteGarden.GetAuthors>(), id: 'quotegarden', na
 configTypes.push({type: getType<RapidApi.ArticleExtractor>(), id: 'rapidapi', name: 'RapidApi', interface: 'ArticleExtractor'})
 configTypes.push({type: getType<Rebrandly.CreateLink>(), id: 'rebrandly', name: 'Rebrandly', interface: 'CreateLink'})
 configTypes.push({type: getType<RedisCloud.GetCurrentAccount>(), id: 'rediscloud', name: 'RedisCloud', interface: 'GetCurrentAccount'})
+configTypes.push({type: getType<ReducedTo.ShortenURL>(), id: 'reducedto', name: 'ReducedTo', interface: 'ShortenURL'})
 configTypes.push({type: getType<RemoteOk.GetListings>(), id: 'remoteok', name: 'RemoteOk', interface: 'GetListings'})
 configTypes.push({type: getType<RemoveBg.Remove>(), id: 'removebg', name: 'RemoveBg', interface: 'Remove'})
 configTypes.push({type: getType<Render.ListServices>(), id: 'render', name: 'Render', interface: 'ListServices'})

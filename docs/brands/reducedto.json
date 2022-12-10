@@ -1,0 +1,37 @@
+{
+  "name": null,
+  "domain": "reduced.to",
+  "claimed": false,
+  "description": "Reduced.to is the FREE, Modern, and Open-Source URL Shortener. Convert those ugly and long URLs into short, easy to manage links and QR-Codes.",
+  "links": [],
+  "logos": [
+    {
+      "type": "logo",
+      "theme": "light",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idNQ9Sdei-/id8l7ndfuC.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 73,
+          "width": 410,
+          "size": 17510
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#000000", "type": "dark", "brightness": 0 },
+    { "hex": "#ffffff", "type": "light", "brightness": 255 }
+  ],
+  "fonts": [
+    {
+      "name": "ui-sans-serif",
+      "type": "body",
+      "origin": "custom",
+      "originId": null,
+      "weights": []
+    }
+  ],
+  "images": []
+}

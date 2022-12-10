@@ -181,6 +181,7 @@ import { QuoteGarden } from '../configs/quotegarden.config'
 import { RapidApi } from '../configs/rapidapi.config'
 import { Rebrandly } from '../configs/rebrandly.config'
 import { RedisCloud } from '../configs/rediscloud.config'
+import { ReducedTo } from '../configs/reducedto.config'
 import { RemoteOk } from '../configs/remoteok.config'
 import { RemoveBg } from '../configs/removebg.config'
 import { Render } from '../configs/render.config'
@@ -432,6 +433,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['rapidapi', RapidApi.API],
 ['rebrandly', Rebrandly.API],
 ['rediscloud', RedisCloud.API],
+['reducedto', ReducedTo.API],
 ['remoteok', RemoteOk.API],
 ['removebg', RemoveBg.API],
 ['render', Render.API],
