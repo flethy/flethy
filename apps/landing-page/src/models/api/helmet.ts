@@ -17,7 +17,6 @@ export const HelmetModel = types
 		integration(options: { integration: string }) {
 			const titleParts: string[] = [i18next.t('title'), options.integration]
 			self.title = titleParts.join(' + ')
-			console.log(self.title)
 		},
 
 		usecase(options: { usesCaseServices: string[] }) {
@@ -26,7 +25,6 @@ export const HelmetModel = types
 				...options.usesCaseServices,
 			]
 			self.title = titleParts.join(' + ')
-			console.log(self.title)
 		},
 
 		defaultTitle() {
