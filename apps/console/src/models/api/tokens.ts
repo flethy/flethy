@@ -4,14 +4,14 @@ import { request } from '../../helpers/api'
 import { getRootStore, RouterPathUtils } from '../helpers'
 import { StateAndCacheKey } from './stateAndCache'
 
-export const TokenModel = types.model('TokenModel', {
+export const TokenDataModel = types.model('TokenModel', {
 	id: types.string,
 	name: types.string,
 })
 
-export const WorkflowsModel = types
+export const TokensModel = types
 	.model('WorkflowsModel', {
-		tokens: types.map(types.array(TokenModel)),
+		tokens: types.map(types.array(TokenDataModel)),
 	})
 	.views((self) => {
 		const getTokensFormStore = (options: { projectId: string }) => {
@@ -19,7 +19,16 @@ export const WorkflowsModel = types
 			return tokens
 		}
 
-		return { getTokensFormStore }
+		const availableScopes = (): TokenScope[] => {
+			return [
+				TokenScope.WORKFLOW_CREATE,
+				TokenScope.WORKFLOW_DELETE,
+				TokenScope.WORKFLOW_UPDATE,
+				TokenScope.WORKFLOW_READ,
+			]
+		}
+
+		return { getTokensFormStore, availableScopes }
 	})
 	.actions((self) => {
 		const list = flow(function* (options: {
