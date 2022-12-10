@@ -52,7 +52,7 @@
 		"postcss": "8.4.19",
 		"prettier": "2.8.0",
 		"rollup-plugin-analyzer": "4.0.0",
-		"sass": "1.56.1",
+		"sass": "1.56.2",
 		"tailwindcss": "^3.2.4",
 		"tsconfig": "workspace:*",
 		"typescript": "^4.9.3",
