@@ -114,6 +114,26 @@ export class AuthController {
         },
       });
     }
+    const tokenId = payload.id;
+    const tokens = await TokenController.get({
+      projectId: request.projectId,
+      workspaceId: request.workspaceId,
+    });
+    if (
+      !tokens ||
+      !tokens.tokens ||
+      tokens.tokens.length === 0 ||
+      !tokens.tokens.find((token) => token.id === tokenId)
+    ) {
+      throw new FlethyError({
+        type: ErrorType.Forbidden,
+        message: "Invalid Token",
+        log: {
+          context: { origin: "auth.controller.ts", method: "verifyToken" },
+          message: `Invalid Token`,
+        },
+      });
+    }
   }
 
   public static async createToken(
