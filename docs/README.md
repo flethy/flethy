@@ -259,4 +259,5 @@ The following Endpoints are currently supported.
 * [WhoIsXMLApi](./api/whoisxmlapi.md)
 * [WordsAPI](./api/wordsapi.md)
 * [WordSimi](./api/wordsimi.md)
+* [WorkOS](./api/workos.md)
 * [YahooFinance](./api/yahoofinance.md)

@@ -246,6 +246,7 @@ import { WebhookSite } from '../configs/webhooksite.config'
 import { WhoIsXMLApi } from '../configs/whoisxmlapi.config'
 import { WordsAPI } from '../configs/wordsapi.config'
 import { WordSimi } from '../configs/wordsimi.config'
+import { WorkOS } from '../configs/workos.config'
 import { YahooFinance } from '../configs/yahoofinance.config'
 import { ZeroX } from '../configs/zerox.config'
 import { Zora } from '../configs/zora.config'
@@ -498,6 +499,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['whoisxmlapi', WhoIsXMLApi.API],
 ['wordsapi', WordsAPI.API],
 ['wordsimi', WordSimi.API],
+['workos', WorkOS.API],
 ['yahoofinance', YahooFinance.API],
 ['0x', ZeroX.API],
 ['zora', Zora.API],
