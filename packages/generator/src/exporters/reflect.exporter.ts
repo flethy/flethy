@@ -246,6 +246,7 @@ import { WebhookSite } from '../../../connectors/src/configs/webhooksite.config'
 import { WhoIsXMLApi } from '../../../connectors/src/configs/whoisxmlapi.config'
 import { WordsAPI } from '../../../connectors/src/configs/wordsapi.config'
 import { WordSimi } from '../../../connectors/src/configs/wordsimi.config'
+import { WorkOS } from '../../../connectors/src/configs/workos.config'
 import { YahooFinance } from '../../../connectors/src/configs/yahoofinance.config'
 import { ZeroX } from '../../../connectors/src/configs/zerox.config'
 import { Zora } from '../../../connectors/src/configs/zora.config'
@@ -786,6 +787,12 @@ configTypes.push({type: getType<WhoIsXMLApi.DomainAvailability>(), id: 'whoisxml
 configTypes.push({type: getType<WordsAPI.GetAWord>(), id: 'wordsapi', name: 'WordsAPI', interface: 'GetAWord'})
 configTypes.push({type: getType<WordsAPI.GetWordDetails>(), id: 'wordsapi', name: 'WordsAPI', interface: 'GetWordDetails'})
 configTypes.push({type: getType<WordSimi.MostSimilarWords>(), id: 'wordsimi', name: 'WordSimi', interface: 'MostSimilarWords'})
+configTypes.push({type: getType<WorkOS.ListDirectories>(), id: 'workos', name: 'WorkOS', interface: 'ListDirectories'})
+configTypes.push({type: getType<WorkOS.DeleteDirectory>(), id: 'workos', name: 'WorkOS', interface: 'DeleteDirectory'})
+configTypes.push({type: getType<WorkOS.ListOrganizations>(), id: 'workos', name: 'WorkOS', interface: 'ListOrganizations'})
+configTypes.push({type: getType<WorkOS.DeleteOrganization>(), id: 'workos', name: 'WorkOS', interface: 'DeleteOrganization'})
+configTypes.push({type: getType<WorkOS.CreateOrganization>(), id: 'workos', name: 'WorkOS', interface: 'CreateOrganization'})
+configTypes.push({type: getType<WorkOS.UpdateOrganization>(), id: 'workos', name: 'WorkOS', interface: 'UpdateOrganization'})
 configTypes.push({type: getType<YahooFinance.GetQuote>(), id: 'yahoofinance', name: 'YahooFinance', interface: 'GetQuote'})
 configTypes.push({type: getType<YahooFinance.GetRecommendations>(), id: 'yahoofinance', name: 'YahooFinance', interface: 'GetRecommendations'})
 configTypes.push({type: getType<YahooFinance.GetInsights>(), id: 'yahoofinance', name: 'YahooFinance', interface: 'GetInsights'})

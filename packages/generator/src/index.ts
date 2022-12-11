@@ -240,6 +240,7 @@ import Contentchef from '@flethy/connectors/src/configs/contentchef.config'
 import Permitio from '@flethy/connectors/src/configs/permitio.config'
 import BasementDev from '@flethy/connectors/src/configs/basementdev.config'
 import ReducedTo from '@flethy/connectors/src/configs/reducedto.config'
+import WorkOS from '@flethy/connectors/src/configs/workos.config'
 
 async function main() {
   const requestConfigs: {
@@ -3263,8 +3264,18 @@ async function main() {
       kind: 'reducedto.core.shorten',
       'body:originalUrl': 'https://flethy.com/roadmap',
     }),
+    workos: nao<WorkOS.ListOrganizations>({
+      kind: 'workos.organizations.list',
+      'auth:Authorization': process.env.WORKOS_API_KEY,
+    }),
+    workosCreateOrg: nao<WorkOS.CreateOrganization>({
+      kind: 'workos.organizations.create',
+      'auth:Authorization': process.env.WORKOS_API_KEY,
+      'body:name': 'flethy',
+      'body:domains': ['flethy.com'],
+    }),
   }
-  const requestConfig = requestConfigs.reducedTo
+  const requestConfig = requestConfigs.workosCreateOrg
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

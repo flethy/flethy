@@ -1,0 +1,142 @@
+{
+  "name": "WorkOS",
+  "domain": "workos.com",
+  "claimed": false,
+  "description": "WorkOS provides APIs to make your app enterprise-ready, with pre-built features and integrations required by IT admins.",
+  "links": [
+    { "name": "twitter", "url": "https://twitter.com/workos" },
+    { "name": "linkedin", "url": "https://linkedin.com/company/workos-inc" }
+  ],
+  "logos": [
+    {
+      "type": "icon",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idOegYOz05/idKGmyuULH.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 400,
+          "width": 400,
+          "size": 9706
+        }
+      ]
+    },
+    {
+      "type": "logo",
+      "theme": "light",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idOegYOz05/idRWnR8pHE.svg",
+          "background": "transparent",
+          "format": "svg",
+          "size": 2441
+        },
+        {
+          "src": "https://asset.brandfetch.io/idOegYOz05/idrfm9csj6.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 153,
+          "width": 800,
+          "size": 15059
+        }
+      ]
+    },
+    {
+      "type": "logo",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idOegYOz05/idTzP6_CtQ.svg",
+          "background": "transparent",
+          "format": "svg",
+          "size": 2441
+        },
+        {
+          "src": "https://asset.brandfetch.io/idOegYOz05/idu_ZTq8m4.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 153,
+          "width": 800,
+          "size": 17765
+        }
+      ]
+    },
+    {
+      "type": "symbol",
+      "theme": "light",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idOegYOz05/idXZA_T_pV.svg",
+          "background": "transparent",
+          "format": "svg",
+          "size": 1053
+        },
+        {
+          "src": "https://asset.brandfetch.io/idOegYOz05/idkw7lpv8P.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 694,
+          "width": 800,
+          "size": 19233
+        }
+      ]
+    },
+    {
+      "type": "symbol",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idOegYOz05/idW7T2qggW.svg",
+          "background": "transparent",
+          "format": "svg",
+          "size": 1053
+        },
+        {
+          "src": "https://asset.brandfetch.io/idOegYOz05/idwufUg3iU.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 694,
+          "width": 800,
+          "size": 29536
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#030527", "type": "dark", "brightness": 7 },
+    { "hex": "#F9F9FB", "type": "light", "brightness": 249 },
+    { "hex": "#6363F1", "type": "accent", "brightness": 109 }
+  ],
+  "fonts": [
+    {
+      "name": "Untitled sans",
+      "type": "body",
+      "origin": "custom",
+      "originId": null,
+      "weights": []
+    },
+    {
+      "name": "Untitled sans",
+      "type": "title",
+      "origin": "custom",
+      "originId": null,
+      "weights": []
+    }
+  ],
+  "images": [
+    {
+      "type": "banner",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idOegYOz05/idTH7yRB03.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 256,
+          "width": 1265,
+          "size": 35927
+        }
+      ]
+    }
+  ]
+}
