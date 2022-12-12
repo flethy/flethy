@@ -129,6 +129,7 @@ export class BrandExporter {
       'dataddo',
       'directus',
       'mezmo',
+      'onesignal',
       'ory',
       'purpleair',
       'restdb',

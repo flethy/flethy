@@ -169,6 +169,7 @@ The following Endpoints are currently supported.
 * [Ntfy](./api/ntfy.md)
 * [OCRSpace](./api/ocrspace.md)
 * [Omnisend](./api/omnisend.md)
+* [OneSignal](./api/onesignal.md)
 * [Openflow](./api/openflow.md)
 * [OpenLibrary](./api/openlibrary.md)
 * [OpenWeatherMap](./api/openweathermap.md)

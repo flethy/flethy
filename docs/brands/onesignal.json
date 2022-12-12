@@ -1,0 +1,105 @@
+{
+  "name": "OneSignal",
+  "domain": "onesignal.com",
+  "claimed": false,
+  "description": "OneSignal is an easy for developers to add personalized mobile push notifications or web push notifications to their apps.",
+  "links": [
+    { "name": "github", "url": "https://github.com/OneSignal" },
+    { "name": "twitter", "url": "https://twitter.com/onesignal" },
+    { "name": "instagram", "url": "https://instagram.com/onesignal" },
+    { "name": "linkedin", "url": "https://linkedin.com/company/onesignal" },
+    { "name": "facebook", "url": "https://facebook.com/onesignalapp" }
+  ],
+  "logos": [
+    {
+      "type": "logo",
+      "theme": "light",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idMxb-yaSz/idA1bp6ji-.svg",
+          "background": "transparent",
+          "format": "svg",
+          "size": 5573
+        },
+        {
+          "src": "https://asset.brandfetch.io/idMxb-yaSz/idoay1M9iN.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 191,
+          "width": 800,
+          "size": 14519
+        }
+      ]
+    },
+    {
+      "type": "logo",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idMxb-yaSz/ido3-kkGSm.svg",
+          "background": "transparent",
+          "format": "svg",
+          "size": 5560
+        },
+        {
+          "src": "https://asset.brandfetch.io/idMxb-yaSz/idYQbQzsCu.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 191,
+          "width": 800,
+          "size": 18103
+        }
+      ]
+    },
+    {
+      "type": "icon",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idMxb-yaSz/id24fPb69Q.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 400,
+          "width": 400,
+          "size": 15863
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#0e426d", "type": "dark", "brightness": 58 },
+    { "hex": "#e29941", "type": "light", "brightness": 162 },
+    { "hex": "#e54b4d", "type": "accent", "brightness": 108 }
+  ],
+  "fonts": [
+    {
+      "name": "Nunito Sans",
+      "type": "title",
+      "origin": "google",
+      "originId": "Nunito+Sans",
+      "weights": []
+    },
+    {
+      "name": "Nunito Sans",
+      "type": "body",
+      "origin": "google",
+      "originId": "Nunito+Sans",
+      "weights": []
+    }
+  ],
+  "images": [
+    {
+      "type": "banner",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idMxb-yaSz/idiC2jWFn8.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 500,
+          "width": 1500,
+          "size": 31918
+        }
+      ]
+    }
+  ]
+}

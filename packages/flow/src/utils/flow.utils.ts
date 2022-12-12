@@ -1,5 +1,6 @@
 import { JQ_TYPE_SEPARATOR, INTERNAL_EXCHANGE } from '../constants/flow.const'
 import {
+  EngineOptions,
   FlowContext,
   FlowEnvironment,
   FlowInstanceStartConfig,
@@ -23,10 +24,12 @@ export class FlowUtils {
   }
   private flow: FlowNode[]
   private env: FlowEnvironment
+  private engineOptions: EngineOptions | undefined
 
   constructor(config: FlowInstanceStartConfig) {
     this.flow = config.flow
     this.env = config.env
+    this.engineOptions = config.options
     if (config.instanceContext) {
       this.instanceContext = config.instanceContext
     } else {
@@ -263,6 +266,9 @@ export class FlowUtils {
   }
 
   public async replaceReferencedVariables(object: any) {
+    if (this.engineOptions?.resolveMappings === false) {
+      return
+    }
     for (const key of Object.keys(object)) {
       if (typeof object[key] === 'string') {
         const stringValue: string = object[key]
