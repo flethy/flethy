@@ -165,11 +165,13 @@ import { FetchParams } from '../../connectors/src/types/FetchParams.type'
 import { nao } from '../../connectors/src/utils/Request.utils'
 // import { nao } from '@flethy/connectors'
 import APIPoint from '@flethy/connectors/src/configs/apipoint.config'
+import BasementDev from '@flethy/connectors/src/configs/basementdev.config'
 import Beew from '@flethy/connectors/src/configs/beew.config'
 import ButterCMS from '@flethy/connectors/src/configs/buttercms.config'
 import ButtondownEmail from '@flethy/connectors/src/configs/buttondownemail.config'
 import CarbEngage from '@flethy/connectors/src/configs/carbengage.config'
 import Codat from '@flethy/connectors/src/configs/codat.config'
+import Contentchef from '@flethy/connectors/src/configs/contentchef.config'
 import Cronhub from '@flethy/connectors/src/configs/cronhub.config'
 import CSVBox from '@flethy/connectors/src/configs/csvbox.config'
 import Cumul from '@flethy/connectors/src/configs/cumul.config'
@@ -201,9 +203,11 @@ import Neon from '@flethy/connectors/src/configs/neon.config'
 import Npoint from '@flethy/connectors/src/configs/npoint.config'
 import Ntfy from '@flethy/connectors/src/configs/ntfy.config'
 import Omnisend from '@flethy/connectors/src/configs/omnisend.config'
+import OneSignal from '@flethy/connectors/src/configs/onesignal.config'
 import OpenAI from '@flethy/connectors/src/configs/openai.config'
 import Openflow from '@flethy/connectors/src/configs/openflow.config'
 import ORBIntelligence from '@flethy/connectors/src/configs/orbintelligence.config'
+import Permitio from '@flethy/connectors/src/configs/permitio.config'
 import Phyllo from '@flethy/connectors/src/configs/phyllo.config'
 import Pirsch from '@flethy/connectors/src/configs/pirsch.config'
 import Prepr from '@flethy/connectors/src/configs/prepr.config'
@@ -212,6 +216,7 @@ import Prismic from '@flethy/connectors/src/configs/prismic.config'
 import PurpleAir from '@flethy/connectors/src/configs/purpleair.config'
 import QuoteGarden from '@flethy/connectors/src/configs/quotegarden.config'
 import Rebrandly from '@flethy/connectors/src/configs/rebrandly.config'
+import ReducedTo from '@flethy/connectors/src/configs/reducedto.config'
 import Robolly from '@flethy/connectors/src/configs/robolly.config'
 import Rye from '@flethy/connectors/src/configs/rye.config'
 import Savepage from '@flethy/connectors/src/configs/savepage.config'
@@ -234,13 +239,9 @@ import Vimeo from '@flethy/connectors/src/configs/vimeo.config'
 import Vonage from '@flethy/connectors/src/configs/vonage.config'
 import WarrantDev from '@flethy/connectors/src/configs/warrantdev.config'
 import WebhookSite from '@flethy/connectors/src/configs/webhooksite.config'
+import WorkOS from '@flethy/connectors/src/configs/workos.config'
 import { HttpRequest } from './controllers/HttpRequest'
 import { logger } from './utils/Logger'
-import Contentchef from '@flethy/connectors/src/configs/contentchef.config'
-import Permitio from '@flethy/connectors/src/configs/permitio.config'
-import BasementDev from '@flethy/connectors/src/configs/basementdev.config'
-import ReducedTo from '@flethy/connectors/src/configs/reducedto.config'
-import WorkOS from '@flethy/connectors/src/configs/workos.config'
 
 async function main() {
   const requestConfigs: {
@@ -3274,8 +3275,21 @@ async function main() {
       'body:name': 'flethy',
       'body:domains': ['flethy.com'],
     }),
+    onesignalViewApps: nao<OneSignal.ListApps>({
+      kind: 'onesignal.apps.list',
+      'auth:Authorization': process.env.ONESIGNAL_USER_AUTH_KEY,
+    }),
+    onesignalCreateNotification: nao<OneSignal.CreateNotification>({
+      kind: 'onesignal.notifications.create',
+      'auth:Authorization': process.env.ONESIGNAL_API_KEY,
+      'body:app_id': process.env.ONESIGNAL_APP_ID,
+      'body:contents': {
+        en: 'Hello flethy!',
+      },
+      'body:included_segments': ['Subscribed Users'],
+    }),
   }
-  const requestConfig = requestConfigs.workosCreateOrg
+  const requestConfig = requestConfigs.onesignalCreateNotification
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

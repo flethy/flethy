@@ -75,18 +75,22 @@ export class FlowEngine {
       return
     }
     this.utils.addLog({ id: node.id, type: 'prepared' })
-    const response = await ExecutionUtils.execute(node)
-    if (response.error) {
-      this.utils.addError({
-        data: response.data,
-        error: response.error,
-        id: node.id,
-        type: response.type,
-      })
-      this.utils.removeExecutingNodeId(node.id)
-      return
+    if (this.engineOptions?.dryRun === true) {
+      // dry run: just update context
+    } else {
+      const response = await ExecutionUtils.execute(node)
+      if (response.error) {
+        this.utils.addError({
+          data: response.data,
+          error: response.error,
+          id: node.id,
+          type: response.type,
+        })
+        this.utils.removeExecutingNodeId(node.id)
+        return
+      }
+      this.utils.updateContext(node, response.data)
     }
-    this.utils.updateContext(node, response.data)
     // post cleanup (1) remove current node from next, (2) update incoming nodes
     this.utils.removeNodeIdFromNext(node.id)
     this.utils.updateIncomingFlowForNode(node)

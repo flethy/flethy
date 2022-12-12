@@ -42,6 +42,8 @@ export type FlowState = 'stopped' | 'started' | 'running' | 'error'
 
 export interface EngineOptions {
   debug?: boolean
+  dryRun?: boolean
+  resolveMappings?: boolean
 }
 
 export interface FlowContext {

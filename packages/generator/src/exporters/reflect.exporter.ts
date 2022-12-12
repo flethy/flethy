@@ -149,6 +149,7 @@ import { Ntfy } from '../../../connectors/src/configs/ntfy.config'
 import { OCRSpace } from '../../../connectors/src/configs/ocrspace.config'
 import { Omnisend } from '../../../connectors/src/configs/omnisend.config'
 import { OneInch } from '../../../connectors/src/configs/oneinch.config'
+import { OneSignal } from '../../../connectors/src/configs/onesignal.config'
 import { OpenAI } from '../../../connectors/src/configs/openai.config'
 import { Openflow } from '../../../connectors/src/configs/openflow.config'
 import { OpenLibrary } from '../../../connectors/src/configs/openlibrary.config'
@@ -588,6 +589,7 @@ configTypes.push({type: getType<Omnisend.ListCustomEvents>(), id: 'omnisend', na
 configTypes.push({type: getType<OneInch.AggregationInfoTokens>(), id: '1inch', name: 'OneInch', interface: 'AggregationInfoTokens'})
 configTypes.push({type: getType<OneInch.AggregationQuote>(), id: '1inch', name: 'OneInch', interface: 'AggregationQuote'})
 configTypes.push({type: getType<OneInch.AggregationSwap>(), id: '1inch', name: 'OneInch', interface: 'AggregationSwap'})
+configTypes.push({type: getType<OneSignal.ListApps>(), id: 'onesignal', name: 'OneSignal', interface: 'ListApps'})
 configTypes.push({type: getType<OpenAI.CreateImage>(), id: 'openai', name: 'OpenAI', interface: 'CreateImage'})
 configTypes.push({type: getType<OpenAI.ListModels>(), id: 'openai', name: 'OpenAI', interface: 'ListModels'})
 configTypes.push({type: getType<Openflow.TriggerHttpListener>(), id: 'openflow', name: 'Openflow', interface: 'TriggerHttpListener'})
