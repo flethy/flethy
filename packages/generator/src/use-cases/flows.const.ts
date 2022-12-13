@@ -213,4 +213,13 @@ export const FLOWS = {
       'body:body': '->context.input.query->string',
     },
   ],
+  'publish-status-to-mastodon': [
+    {
+      id: 'mastodon',
+      kind: 'mastodon.statuses.publish',
+      'auth:Authorization': '==>secrets==>MASTODON_TOKEN',
+      'subdomain:mastodoninstance': '==>env==>MASTODON_INSTANCE',
+      'body:status': '->context.input.status->string',
+    },
+  ],
 }
