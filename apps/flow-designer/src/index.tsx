@@ -7,7 +7,8 @@ import Navbar from './components/navbar'
 import events, { LogLevel } from './events/events'
 import './i18n/config'
 import './index.scss'
-import { Provider, rootStore, useMst } from './models/root'
+import { Provider } from './models/provider'
+import { rootStore, useMst } from './models/root'
 import routes from './routes'
 
 export const LOGLEVEL = import.meta.env.VITE_LOGLEVEL

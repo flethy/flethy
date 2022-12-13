@@ -242,6 +242,7 @@ import WebhookSite from '@flethy/connectors/src/configs/webhooksite.config'
 import WorkOS from '@flethy/connectors/src/configs/workos.config'
 import { HttpRequest } from './controllers/HttpRequest'
 import { logger } from './utils/Logger'
+import Mastodon from '@flethy/connectors/src/configs/mastodon.config'
 
 async function main() {
   const requestConfigs: {
@@ -3288,8 +3289,14 @@ async function main() {
       },
       'body:included_segments': ['Subscribed Users'],
     }),
+    mastodonPublishStatus: nao<Mastodon.PublishStatus>({
+      kind: 'mastodon.statuses.publish',
+      'auth:Authorization': process.env.MASTODON_TOKEN,
+      'subdomain:mastodoninstance': process.env.MASTODON_INSTANCE,
+      'body:status': 'Hello world!',
+    }),
   }
-  const requestConfig = requestConfigs.onesignalCreateNotification
+  const requestConfig = requestConfigs.mastodonPublishStatus
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

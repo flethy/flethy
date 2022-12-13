@@ -5,7 +5,7 @@ import routes from '../../routes'
 
 export const SEARCH_ID = '_search_'
 
-interface QuickSearchAction {
+export interface QuickSearchAction {
 	id: string
 	title: string
 	subtitle?: string

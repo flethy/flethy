@@ -1,0 +1,24 @@
+# Mastodon
+
+## Links
+
+* URL: [https://joinmastodon.org](https://joinmastodon.org)
+* Documentation: [https://docs.joinmastodon.org](https://docs.joinmastodon.org)
+* Tags: web2
+* Category: marketing
+* Type: socialmedia
+
+## API
+
+### Authentication
+
+* Authorization: header:bearer
+
+### statuses
+
+#### publish
+
+##### Publish Status
+
+* Description: Publish Status
+* Docs: [https://docs.joinmastodon.org/methods/statuses/#create](https://docs.joinmastodon.org/methods/statuses/#create)

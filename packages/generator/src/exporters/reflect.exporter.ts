@@ -128,6 +128,7 @@ import { MailerSend } from '../../../connectors/src/configs/mailersend.config'
 import { MailJet } from '../../../connectors/src/configs/mailjet.config'
 import { MailPace } from '../../../connectors/src/configs/mailpace.config'
 import { MailTM } from '../../../connectors/src/configs/mailtm.config'
+import { Mastodon } from '../../../connectors/src/configs/mastodon.config'
 import { Medium } from '../../../connectors/src/configs/medium.config'
 import { MergeApi } from '../../../connectors/src/configs/mergeapi.config'
 import { Mergent } from '../../../connectors/src/configs/mergent.config'
@@ -539,6 +540,7 @@ configTypes.push({type: getType<MailPace.Send>(), id: 'mailpace', name: 'MailPac
 configTypes.push({type: getType<MailTM.GetToken>(), id: 'mailtm', name: 'MailTM', interface: 'GetToken'})
 configTypes.push({type: getType<MailTM.GetDomains>(), id: 'mailtm', name: 'MailTM', interface: 'GetDomains'})
 configTypes.push({type: getType<MailTM.GetDomainbyId>(), id: 'mailtm', name: 'MailTM', interface: 'GetDomainbyId'})
+configTypes.push({type: getType<Mastodon.PublishStatus>(), id: 'mastodon', name: 'Mastodon', interface: 'PublishStatus'})
 configTypes.push({type: getType<Medium.Me>(), id: 'medium', name: 'Medium', interface: 'Me'})
 configTypes.push({type: getType<Medium.GetPublications>(), id: 'medium', name: 'Medium', interface: 'GetPublications'})
 configTypes.push({type: getType<Medium.CreatePost>(), id: 'medium', name: 'Medium', interface: 'CreatePost'})
@@ -590,6 +592,7 @@ configTypes.push({type: getType<OneInch.AggregationInfoTokens>(), id: '1inch', n
 configTypes.push({type: getType<OneInch.AggregationQuote>(), id: '1inch', name: 'OneInch', interface: 'AggregationQuote'})
 configTypes.push({type: getType<OneInch.AggregationSwap>(), id: '1inch', name: 'OneInch', interface: 'AggregationSwap'})
 configTypes.push({type: getType<OneSignal.ListApps>(), id: 'onesignal', name: 'OneSignal', interface: 'ListApps'})
+configTypes.push({type: getType<OneSignal.CreateNotification>(), id: 'onesignal', name: 'OneSignal', interface: 'CreateNotification'})
 configTypes.push({type: getType<OpenAI.CreateImage>(), id: 'openai', name: 'OpenAI', interface: 'CreateImage'})
 configTypes.push({type: getType<OpenAI.ListModels>(), id: 'openai', name: 'OpenAI', interface: 'ListModels'})
 configTypes.push({type: getType<Openflow.TriggerHttpListener>(), id: 'openflow', name: 'Openflow', interface: 'TriggerHttpListener'})

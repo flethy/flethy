@@ -1,6 +1,6 @@
 import { RouterStore } from 'mobx-router'
 import { Instance, types } from 'mobx-state-tree'
-import { createContext, useContext } from 'react'
+import { useContext } from 'react'
 import { EmailSubscriptionModel } from '../components/email-subscription/EmailSubscriptionModel'
 import { QuickSearchComponent } from '../components/quicksearch/model'
 import { NotFoundPage } from '../pages/404/model'
@@ -10,6 +10,7 @@ import { IntegrationsPage } from '../pages/integrations/model'
 import { UseCasePage } from '../pages/use-case/model'
 import { VerificationPage } from '../pages/verification/model'
 import ApiStore, { APIType } from './api'
+import { RootStoreContext } from './context'
 
 const PagesStore = types.model('Pages', {
 	notFound: types.optional(NotFoundPage, () => NotFoundPage.create()),
@@ -60,10 +61,6 @@ export class RootStore {
 }
 
 export const rootStore = new RootStore()
-
-const RootStoreContext = createContext<null | RootStore>(null)
-
-export const Provider = RootStoreContext.Provider
 
 export function useMst() {
 	const store = useContext(RootStoreContext)
