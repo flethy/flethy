@@ -1,0 +1,83 @@
+{
+  "name": "Mastodon",
+  "domain": "joinmastodon.org",
+  "claimed": false,
+  "description": "Mastodon is an open source decentralized social network - by the people for the people. Join the federation and take back control of your social media!",
+  "links": [
+    { "name": "twitter", "url": "https://twitter.com/@MastodonProject" }
+  ],
+  "logos": [
+    {
+      "type": "icon",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idGvEdUogO/id3zNra0ZA.png",
+          "background": null,
+          "format": "png",
+          "height": 280,
+          "width": 280,
+          "size": 9294
+        }
+      ]
+    },
+    {
+      "type": "logo",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idGvEdUogO/id55mJvCVQ.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 879,
+          "width": 820,
+          "size": 32603
+        },
+        {
+          "src": "https://asset.brandfetch.io/idGvEdUogO/idUNzhpdPj.svg",
+          "background": "transparent",
+          "format": "svg",
+          "height": null,
+          "width": null,
+          "size": 1405
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#303644", "type": "dark", "brightness": 54 },
+    { "hex": "#b3bfcd", "type": "light", "brightness": 189 },
+    { "hex": "#2b90d9", "type": "accent", "brightness": 128 }
+  ],
+  "fonts": [
+    {
+      "name": "Montserrat",
+      "type": "title",
+      "origin": "google",
+      "originId": "Montserrat",
+      "weights": []
+    },
+    {
+      "name": "Roboto",
+      "type": "body",
+      "origin": "google",
+      "originId": "Roboto",
+      "weights": []
+    }
+  ],
+  "images": [
+    {
+      "type": "banner",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idGvEdUogO/idHWV8XMPO.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 500,
+          "width": 1500,
+          "size": 59896
+        }
+      ]
+    }
+  ]
+}

@@ -22,3 +22,12 @@
 
 * Description: View apps
 * Docs: [https://documentation.onesignal.com/reference/view-apps-apps](https://documentation.onesignal.com/reference/view-apps-apps)
+
+### notifications
+
+#### create
+
+##### Create notification
+
+* Description: Create notification
+* Docs: [https://documentation.onesignal.com/reference/create-notification](https://documentation.onesignal.com/reference/create-notification)

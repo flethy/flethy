@@ -1,6 +1,6 @@
 import { RouterStore } from 'mobx-router'
 import { Instance, types } from 'mobx-state-tree'
-import { createContext, useContext } from 'react'
+import { useContext } from 'react'
 import { MenuComponent } from '../components/menu/model'
 import { CreateSecretsModal } from '../components/modals/secrets/create/model'
 import { DeleteSecretsModal } from '../components/modals/secrets/delete/model'
@@ -16,6 +16,7 @@ import { WorkflowEditorPage } from '../pages/workflow-editor/model'
 import { WorkflowsPage } from '../pages/workflows/model'
 import ApiStore, { APIType } from './api'
 import { AuthStore } from './api/auth'
+import { RootStoreContext } from './context'
 
 export const AUTH_DOMAIN = import.meta.env.VITE_AUTH_DOMAIN
 export const AUTH_CLIENT_ID = import.meta.env.VITE_AUTH_CLIENT_ID
@@ -101,10 +102,6 @@ export class RootStore {
 }
 
 export const rootStore = new RootStore()
-
-const RootStoreContext = createContext<null | RootStore>(null)
-
-export const Provider = RootStoreContext.Provider
 
 export function useMst() {
 	const store = useContext(RootStoreContext)
