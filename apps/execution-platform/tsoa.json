@@ -1,0 +1,24 @@
+{
+  "entryFile": "src/index.ts",
+  "noImplicitAdditionalProperties": "throw-on-extras",
+  "controllerPathGlobs": ["src/controllers/openapi/**/*"],
+  "spec": {
+    "outputDirectory": "openapi",
+    "specVersion": 3,
+    "spec": {
+      "servers": [
+        {
+          "url": "https://api.flethy.com",
+          "description": "Flethy API"
+        }
+      ]
+    },
+    "securityDefinitions": {
+      "bearer": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      }
+    }
+  }
+}
