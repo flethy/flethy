@@ -64,7 +64,7 @@ export interface ApiDescriptionEndpointOptions {
 export interface ApiDescriptionEndpointParam {
   type: 'enum' | 'string' | 'number' | 'any'
   required: boolean
-  paramType: 'query' | 'path' | 'body'
+  paramType: 'query' | 'path' | 'body' | 'bodyform'
   values?: string[]
   description?: string
 }

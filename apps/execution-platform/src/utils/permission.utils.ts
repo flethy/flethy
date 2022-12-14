@@ -1,6 +1,6 @@
 import { ServerRequest } from "worktop/request";
 import { ServerResponse } from "worktop/response";
-import { ENVVARS } from "../constants/envvar.const";
+import { SECRETS } from "../constants/envvar.const";
 import { AuthController, TokenScope } from "../controllers/auth.controller";
 import { ErrorType, FlethyError } from "./error.utils";
 
@@ -18,7 +18,7 @@ export class PermissionUtils {
   ) {
     const { scopes, isUserToken } = options;
     let response: PermissionsResponse = {
-      valid: true,
+      valid: false,
       userId: "",
     };
     if (scopes || isUserToken === true) {
@@ -53,8 +53,8 @@ export class PermissionUtils {
         response.userTokenPayload = verificationResponse.payload;
       } else {
         await AuthController.verifyToken(
-          { token, projectId, workspaceId, scopes },
-          ENVVARS.config.stage
+          { token, projectId, workspaceId, scopes: scopes ?? [], name: "" },
+          SECRETS.config.secret
         );
         response.userId = "m2m";
         response.valid = true;

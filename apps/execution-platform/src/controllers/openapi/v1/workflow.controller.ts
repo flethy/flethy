@@ -9,13 +9,26 @@ import {
   Response,
   Route,
   Security,
+  Tags,
+  OperationId,
 } from "tsoa";
 import { WorkflowController as RealWorkflowController } from "../../workflow.controller";
 
 @Route("v1/w/:workspaceId/p/:projectId/wf")
+@Tags("Workflows")
 export class WorkflowController {
+  /**
+   * Add or update a workflow in a project
+   *
+   * @summary Add or update a workflow
+   *
+   * @param workspaceId The ID of the workspace the workflow belongs to
+   * @param projectId The ID of the project the workflow belongs to
+   * @param workflowId The ID of the workflow
+   */
   @Security("bearer")
   @Put("/")
+  @OperationId("AddOrUpdateWorkflow")
   @Response("400", "Bad Request")
   @Response("404", "Workflow not found")
   public static async put(
@@ -41,8 +54,18 @@ export class WorkflowController {
     });
   }
 
+  /**
+   * Get a workflow in a project
+   *
+   * @summary Get Workflow
+   *
+   * @param workspaceId The ID of the workspace the workflow belongs to
+   * @param projectId The ID of the project the workflow belongs to
+   * @param workflowId The ID of the workflow
+   */
   @Security("bearer")
   @Get("/:workflowId")
+  @OperationId("GetWorkflow")
   @Response("404", "Workflow not found")
   public static async get(
     @Path() workspaceId: string,
@@ -58,8 +81,17 @@ export class WorkflowController {
     });
   }
 
+  /**
+   * List workflows in a project
+   *
+   * @summary List Workflows
+   *
+   * @param workspaceId The ID of the workspace the workflow belongs to
+   * @param projectId The ID of the project the workflow belongs to
+   */
   @Security("bearer")
   @Get("/")
+  @OperationId("ListWorkflows")
   public static async list(
     @Path() workspaceId: string,
     @Path() projectId: string,
@@ -72,8 +104,18 @@ export class WorkflowController {
     });
   }
 
+  /**
+   * Delete a workflow in a project
+   *
+   * @summary Delete Workflow
+   *
+   * @param workspaceId The ID of the workspace the workflow belongs to
+   * @param projectId The ID of the project the workflow belongs to
+   * @param workflowId The ID of the workflow
+   */
   @Security("bearer")
   @Delete("/:workflowId")
+  @OperationId("DeleteWorkflow")
   @Response("404", "Workflow not found")
   public static async delete(
     @Path() workspaceId: string,
@@ -89,8 +131,18 @@ export class WorkflowController {
     });
   }
 
+  /**
+   * Start instance for workflow
+   *
+   * @summary Start instance
+   *
+   * @param workspaceId The ID of the workspace the workflow belongs to
+   * @param projectId The ID of the project the workflow belongs to
+   * @param workflowId The ID of the workflow
+   */
   @Security("bearer")
   @Post("/:workflowId/i")
+  @OperationId("StartInstance")
   @Response("404", "Workflow not found")
   public static async start(
     @Path() workspaceId: string,

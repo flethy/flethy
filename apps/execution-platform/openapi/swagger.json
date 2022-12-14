@@ -214,6 +214,11 @@
 						"description": "Workflow not found"
 					}
 				},
+				"description": "Add or update a workflow in a project",
+				"summary": "Add or update a workflow",
+				"tags": [
+					"Workflows"
+				],
 				"security": [
 					{
 						"bearer": []
@@ -221,6 +226,7 @@
 				],
 				"parameters": [
 					{
+						"description": "The ID of the workspace the workflow belongs to",
 						"in": "path",
 						"name": "workspaceId",
 						"required": true,
@@ -229,6 +235,7 @@
 						}
 					},
 					{
+						"description": "The ID of the project the workflow belongs to",
 						"in": "path",
 						"name": "projectId",
 						"required": true,
@@ -283,6 +290,11 @@
 						}
 					}
 				},
+				"description": "List workflows in a project",
+				"summary": "List Workflows",
+				"tags": [
+					"Workflows"
+				],
 				"security": [
 					{
 						"bearer": []
@@ -290,6 +302,7 @@
 				],
 				"parameters": [
 					{
+						"description": "The ID of the workspace the workflow belongs to",
 						"in": "path",
 						"name": "workspaceId",
 						"required": true,
@@ -298,6 +311,7 @@
 						}
 					},
 					{
+						"description": "The ID of the project the workflow belongs to",
 						"in": "path",
 						"name": "projectId",
 						"required": true,
@@ -338,6 +352,11 @@
 						"description": "Workflow not found"
 					}
 				},
+				"description": "Get a workflow in a project",
+				"summary": "Get Workflow",
+				"tags": [
+					"Workflows"
+				],
 				"security": [
 					{
 						"bearer": []
@@ -345,6 +364,7 @@
 				],
 				"parameters": [
 					{
+						"description": "The ID of the workspace the workflow belongs to",
 						"in": "path",
 						"name": "workspaceId",
 						"required": true,
@@ -353,6 +373,7 @@
 						}
 					},
 					{
+						"description": "The ID of the project the workflow belongs to",
 						"in": "path",
 						"name": "projectId",
 						"required": true,
@@ -387,6 +408,11 @@
 						"description": "Workflow not found"
 					}
 				},
+				"description": "Delete a workflow in a project",
+				"summary": "Delete Workflow",
+				"tags": [
+					"Workflows"
+				],
 				"security": [
 					{
 						"bearer": []
@@ -394,6 +420,7 @@
 				],
 				"parameters": [
 					{
+						"description": "The ID of the workspace the workflow belongs to",
 						"in": "path",
 						"name": "workspaceId",
 						"required": true,
@@ -402,6 +429,7 @@
 						}
 					},
 					{
+						"description": "The ID of the project the workflow belongs to",
 						"in": "path",
 						"name": "projectId",
 						"required": true,
@@ -438,6 +466,11 @@
 						"description": "Workflow not found"
 					}
 				},
+				"description": "Start instance for workflow",
+				"summary": "Start instance",
+				"tags": [
+					"Workflows"
+				],
 				"security": [
 					{
 						"bearer": []
@@ -445,6 +478,7 @@
 				],
 				"parameters": [
 					{
+						"description": "The ID of the workspace the workflow belongs to",
 						"in": "path",
 						"name": "workspaceId",
 						"required": true,
@@ -453,6 +487,7 @@
 						}
 					},
 					{
+						"description": "The ID of the project the workflow belongs to",
 						"in": "path",
 						"name": "projectId",
 						"required": true,

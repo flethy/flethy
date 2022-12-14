@@ -222,4 +222,13 @@ export const FLOWS = {
       'body:status': '->context.input.status->string',
     },
   ],
+  'update-openapi-spec-to-readme': [
+    {
+      id: 'readme',
+      kind: 'readme.apispec.update',
+      'auth:Authorization': '==>secrets==>README_KEY',
+      'param:id': '->context.input.apiSpecId->string',
+      'body:spec': '->context.input.apiSpec->string',
+    },
+  ],
 }

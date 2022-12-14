@@ -198,6 +198,7 @@ import Lolo from '@flethy/connectors/src/configs/lolo.config'
 import Luabase from '@flethy/connectors/src/configs/luabase.config'
 import MailboxLayer from '@flethy/connectors/src/configs/mailboxlayer.config'
 import MailTM from '@flethy/connectors/src/configs/mailtm.config'
+import Mastodon from '@flethy/connectors/src/configs/mastodon.config'
 import MetalpriceAPI from '@flethy/connectors/src/configs/metalpriceapi.config'
 import Neon from '@flethy/connectors/src/configs/neon.config'
 import Npoint from '@flethy/connectors/src/configs/npoint.config'
@@ -215,6 +216,7 @@ import Prerender from '@flethy/connectors/src/configs/prerender.config'
 import Prismic from '@flethy/connectors/src/configs/prismic.config'
 import PurpleAir from '@flethy/connectors/src/configs/purpleair.config'
 import QuoteGarden from '@flethy/connectors/src/configs/quotegarden.config'
+import ReadMe from '@flethy/connectors/src/configs/readme.config'
 import Rebrandly from '@flethy/connectors/src/configs/rebrandly.config'
 import ReducedTo from '@flethy/connectors/src/configs/reducedto.config'
 import Robolly from '@flethy/connectors/src/configs/robolly.config'
@@ -242,7 +244,6 @@ import WebhookSite from '@flethy/connectors/src/configs/webhooksite.config'
 import WorkOS from '@flethy/connectors/src/configs/workos.config'
 import { HttpRequest } from './controllers/HttpRequest'
 import { logger } from './utils/Logger'
-import Mastodon from '@flethy/connectors/src/configs/mastodon.config'
 
 async function main() {
   const requestConfigs: {
@@ -3295,8 +3296,37 @@ async function main() {
       'subdomain:mastodoninstance': process.env.MASTODON_INSTANCE,
       'body:status': 'Hello world!',
     }),
+    readmeGetMetadata: nao<ReadMe.APISpecGetMetadata>({
+      kind: 'readme.apispec.getMetadata',
+      'auth:Authorization': process.env.README_KEY,
+    }),
+    readmeUpload: nao<ReadMe.APISpecUpdate>({
+      kind: 'readme.apispec.update',
+      'auth:Authorization': process.env.README_KEY,
+      'param:id': '...',
+      'body:spec': `...`,
+    }),
+    readmeDelete: nao<ReadMe.APISpecDelete>({
+      kind: 'readme.apispec.delete',
+      'auth:Authorization': process.env.README_KEY,
+      'param:id': '',
+    }),
+    readmeListCategories: nao<ReadMe.ListCategories>({
+      kind: 'readme.categories.list',
+      'auth:Authorization': process.env.README_KEY,
+    }),
+    readmeDocsCreate: nao<ReadMe.CreateDoc>({
+      kind: 'readme.docs.create',
+      'auth:Authorization': process.env.README_KEY,
+      'body:title': 'Integrations',
+      'body:category': '...',
+      'body:type': 'basic',
+      'body:bodyattribute': `# Integrations
+
+Here you find all the available integrations`,
+    }),
   }
-  const requestConfig = requestConfigs.mastodonPublishStatus
+  const requestConfig = requestConfigs.readmeDocsCreate
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

@@ -1,0 +1,104 @@
+{
+  "name": "ReadMe",
+  "domain": "readme.com",
+  "claimed": false,
+  "description": "ReadMe transforms your API docs into interactive hubs that help developers succeed.",
+  "links": [
+    { "name": "twitter", "url": "https://twitter.com/readme" },
+    { "name": "linkedin", "url": "https://linkedin.com/company/readme" }
+  ],
+  "logos": [
+    {
+      "type": "icon",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idwfAsk5Iv/id2IHQbyKz.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 200,
+          "width": 200,
+          "size": 4442
+        }
+      ]
+    },
+    {
+      "type": "logo",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idwfAsk5Iv/idAR5zX8Qj.svg",
+          "background": "transparent",
+          "format": "svg",
+          "height": null,
+          "width": null,
+          "size": 4806
+        },
+        {
+          "src": "https://asset.brandfetch.io/idwfAsk5Iv/id6x5Th-Fr.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 145,
+          "width": 800,
+          "size": 12919
+        }
+      ]
+    },
+    {
+      "type": "symbol",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idwfAsk5Iv/id0nDVslZR.svg",
+          "background": "transparent",
+          "format": "svg",
+          "size": 1752
+        },
+        {
+          "src": "https://asset.brandfetch.io/idwfAsk5Iv/idjR9phhQe.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 591,
+          "width": 800,
+          "size": 40031
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#003290", "type": "dark", "brightness": 46 },
+    { "hex": "#FFFFFF", "type": "light", "brightness": 255 },
+    { "hex": "#118CFD", "type": "accent", "brightness": 122 }
+  ],
+  "fonts": [
+    {
+      "name": "Marfa",
+      "type": "title",
+      "origin": "custom",
+      "originId": null,
+      "weights": []
+    },
+    {
+      "name": "Marfa",
+      "type": "body",
+      "origin": "custom",
+      "originId": null,
+      "weights": []
+    }
+  ],
+  "images": [
+    {
+      "type": "banner",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idwfAsk5Iv/idsFy-wpsa.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 256,
+          "width": 1265,
+          "size": 55692
+        }
+      ]
+    }
+  ]
+}

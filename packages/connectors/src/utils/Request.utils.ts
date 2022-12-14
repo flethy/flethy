@@ -62,7 +62,9 @@ export class HttpRequestConfig {
           if (['GET'].includes(options.endpoint.method)) {
             throw new Error(`Body not allowed for GET method`)
           }
-          if (keyname === 'body') {
+          if (keyname === 'bodyattribute') {
+            config.body['body'] = options.params[paramKey]
+          } else if (keyname === 'body') {
             config.body = options.params[paramKey]
           } else {
             // BODY TRANSFORMATION

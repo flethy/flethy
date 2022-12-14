@@ -181,6 +181,7 @@ import { PurpleAir } from '../../../connectors/src/configs/purpleair.config'
 import { QuickChart } from '../../../connectors/src/configs/quickchart.config'
 import { QuoteGarden } from '../../../connectors/src/configs/quotegarden.config'
 import { RapidApi } from '../../../connectors/src/configs/rapidapi.config'
+import { ReadMe } from '../../../connectors/src/configs/readme.config'
 import { Rebrandly } from '../../../connectors/src/configs/rebrandly.config'
 import { RedisCloud } from '../../../connectors/src/configs/rediscloud.config'
 import { ReducedTo } from '../../../connectors/src/configs/reducedto.config'
@@ -655,6 +656,12 @@ configTypes.push({type: getType<QuoteGarden.GetRandomQuote>(), id: 'quotegarden'
 configTypes.push({type: getType<QuoteGarden.GetGenres>(), id: 'quotegarden', name: 'QuoteGarden', interface: 'GetGenres'})
 configTypes.push({type: getType<QuoteGarden.GetAuthors>(), id: 'quotegarden', name: 'QuoteGarden', interface: 'GetAuthors'})
 configTypes.push({type: getType<RapidApi.ArticleExtractor>(), id: 'rapidapi', name: 'RapidApi', interface: 'ArticleExtractor'})
+configTypes.push({type: getType<ReadMe.APISpecGetMetadata>(), id: 'readme', name: 'ReadMe', interface: 'APISpecGetMetadata'})
+configTypes.push({type: getType<ReadMe.APISpecUpload>(), id: 'readme', name: 'ReadMe', interface: 'APISpecUpload'})
+configTypes.push({type: getType<ReadMe.APISpecDelete>(), id: 'readme', name: 'ReadMe', interface: 'APISpecDelete'})
+configTypes.push({type: getType<ReadMe.APISpecUpdate>(), id: 'readme', name: 'ReadMe', interface: 'APISpecUpdate'})
+configTypes.push({type: getType<ReadMe.CreateDoc>(), id: 'readme', name: 'ReadMe', interface: 'CreateDoc'})
+configTypes.push({type: getType<ReadMe.ListCategories>(), id: 'readme', name: 'ReadMe', interface: 'ListCategories'})
 configTypes.push({type: getType<Rebrandly.CreateLink>(), id: 'rebrandly', name: 'Rebrandly', interface: 'CreateLink'})
 configTypes.push({type: getType<RedisCloud.GetCurrentAccount>(), id: 'rediscloud', name: 'RedisCloud', interface: 'GetCurrentAccount'})
 configTypes.push({type: getType<ReducedTo.ShortenURL>(), id: 'reducedto', name: 'ReducedTo', interface: 'ShortenURL'})
