@@ -197,6 +197,7 @@ The following Endpoints are currently supported.
 * [QuickChart](./api/quickchart.md)
 * [QuoteGarden](./api/quotegarden.md)
 * [RapidApi](./api/rapidapi.md)
+* [ReadMe](./api/readme.md)
 * [Rebrandly](./api/rebrandly.md)
 * [RedisCloud](./api/rediscloud.md)
 * [ReducedTo](./api/reducedto.md)

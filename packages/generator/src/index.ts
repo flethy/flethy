@@ -243,6 +243,7 @@ import WorkOS from '@flethy/connectors/src/configs/workos.config'
 import { HttpRequest } from './controllers/HttpRequest'
 import { logger } from './utils/Logger'
 import Mastodon from '@flethy/connectors/src/configs/mastodon.config'
+import ReadMe from '@flethy/connectors/src/configs/readme.config'
 
 async function main() {
   const requestConfigs: {
@@ -3295,8 +3296,12 @@ async function main() {
       'subdomain:mastodoninstance': process.env.MASTODON_INSTANCE,
       'body:status': 'Hello world!',
     }),
+    readmeGetMetadata: nao<ReadMe.APISpecGetMetadata>({
+      kind: 'readme.apispec.getMetadata',
+      'auth:Authorization': process.env.README_KEY,
+    }),
   }
-  const requestConfig = requestConfigs.mastodonPublishStatus
+  const requestConfig = requestConfigs.readmeGetMetadata
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

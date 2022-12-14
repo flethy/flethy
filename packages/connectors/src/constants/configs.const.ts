@@ -181,6 +181,7 @@ import { PurpleAir } from '../configs/purpleair.config'
 import { QuickChart } from '../configs/quickchart.config'
 import { QuoteGarden } from '../configs/quotegarden.config'
 import { RapidApi } from '../configs/rapidapi.config'
+import { ReadMe } from '../configs/readme.config'
 import { Rebrandly } from '../configs/rebrandly.config'
 import { RedisCloud } from '../configs/rediscloud.config'
 import { ReducedTo } from '../configs/reducedto.config'
@@ -436,6 +437,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['quickchart', QuickChart.API],
 ['quotegarden', QuoteGarden.API],
 ['rapidapi', RapidApi.API],
+['readme', ReadMe.API],
 ['rebrandly', Rebrandly.API],
 ['rediscloud', RedisCloud.API],
 ['reducedto', ReducedTo.API],
