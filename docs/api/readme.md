@@ -43,3 +43,21 @@
 
 * Description: Update specification
 * Docs: [https://docs.readme.com/main/reference/updateapispecification](https://docs.readme.com/main/reference/updateapispecification)
+
+### docs
+
+#### create
+
+##### Create doc
+
+* Description: Create doc
+* Docs: [https://docs.readme.com/main/reference/createdoc](https://docs.readme.com/main/reference/createdoc)
+
+### categories
+
+#### list
+
+##### Get all categories
+
+* Description: Get all categories
+* Docs: [https://docs.readme.com/main/reference/getcategories](https://docs.readme.com/main/reference/getcategories)

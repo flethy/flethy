@@ -660,6 +660,8 @@ configTypes.push({type: getType<ReadMe.APISpecGetMetadata>(), id: 'readme', name
 configTypes.push({type: getType<ReadMe.APISpecUpload>(), id: 'readme', name: 'ReadMe', interface: 'APISpecUpload'})
 configTypes.push({type: getType<ReadMe.APISpecDelete>(), id: 'readme', name: 'ReadMe', interface: 'APISpecDelete'})
 configTypes.push({type: getType<ReadMe.APISpecUpdate>(), id: 'readme', name: 'ReadMe', interface: 'APISpecUpdate'})
+configTypes.push({type: getType<ReadMe.CreateDoc>(), id: 'readme', name: 'ReadMe', interface: 'CreateDoc'})
+configTypes.push({type: getType<ReadMe.ListCategories>(), id: 'readme', name: 'ReadMe', interface: 'ListCategories'})
 configTypes.push({type: getType<Rebrandly.CreateLink>(), id: 'rebrandly', name: 'Rebrandly', interface: 'CreateLink'})
 configTypes.push({type: getType<RedisCloud.GetCurrentAccount>(), id: 'rediscloud', name: 'RedisCloud', interface: 'GetCurrentAccount'})
 configTypes.push({type: getType<ReducedTo.ShortenURL>(), id: 'reducedto', name: 'ReducedTo', interface: 'ShortenURL'})

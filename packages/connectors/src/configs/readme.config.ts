@@ -5,13 +5,20 @@ import {
 import { RequestParams } from '../types/Request.types'
 
 export namespace ReadMe {
-  export type Entity = { apispec: any }
-  export type Endpoint = {
-    getMetadata: ApiDescriptionEndpoint
-    upload: ApiDescriptionEndpoint
-    delete: ApiDescriptionEndpoint
-    update: ApiDescriptionEndpoint
-  }
+  export type Entity = { apispec: any; docs: any; categories: any }
+  export type Endpoint =
+    | {
+        getMetadata: ApiDescriptionEndpoint
+        upload: ApiDescriptionEndpoint
+        delete: ApiDescriptionEndpoint
+        update: ApiDescriptionEndpoint
+      }
+    | {
+        create: ApiDescriptionEndpoint
+      }
+    | {
+        list: ApiDescriptionEndpoint
+      }
 
   interface ReadMeBase {
     'auth:Authorization': string
@@ -39,6 +46,28 @@ export namespace ReadMe {
     kind: 'readme.apispec.update'
     'param:id': string
     'body:spec': string
+  }
+
+  export interface CreateDoc extends ReadMeBase, RequestParams {
+    kind: 'readme.docs.create'
+    'body:title': string
+    'body:type'?: 'basic' | 'error' | 'link'
+    'body:bodyattribute'?: string
+    'body:category': string
+    'body:hidden'?: boolean
+    'body:order'?: number
+    'body:parentDoc'?: string
+    'body:error'?: {
+      code: string
+    }
+    'header:x-readme-version'?: string
+  }
+
+  export interface ListCategories extends ReadMeBase, RequestParams {
+    kind: 'readme.categories.list'
+    'query:perPage'?: number
+    'query:page'?: number
+    'header:x-readme-version'?: string
   }
 
   export const API: ApiDescription<Entity, Endpoint> = {
@@ -129,6 +158,40 @@ export namespace ReadMe {
             {
               name: 'id',
               type: 'param',
+            },
+          ],
+        },
+      },
+      docs: {
+        create: {
+          interface: 'CreateDoc',
+          meta: {
+            title: 'Create doc',
+            description: `Create doc`,
+            docs: 'https://docs.readme.com/main/reference/createdoc',
+          },
+          method: 'POST',
+          paths: [
+            {
+              name: 'docs',
+              type: 'static',
+            },
+          ],
+        },
+      },
+      categories: {
+        list: {
+          interface: 'ListCategories',
+          meta: {
+            title: 'Get all categories',
+            description: `Get all categories`,
+            docs: 'https://docs.readme.com/main/reference/getcategories',
+          },
+          method: 'GET',
+          paths: [
+            {
+              name: 'categories',
+              type: 'static',
             },
           ],
         },

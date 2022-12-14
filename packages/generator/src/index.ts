@@ -3311,8 +3311,22 @@ async function main() {
       'auth:Authorization': process.env.README_KEY,
       'param:id': '',
     }),
+    readmeListCategories: nao<ReadMe.ListCategories>({
+      kind: 'readme.categories.list',
+      'auth:Authorization': process.env.README_KEY,
+    }),
+    readmeDocsCreate: nao<ReadMe.CreateDoc>({
+      kind: 'readme.docs.create',
+      'auth:Authorization': process.env.README_KEY,
+      'body:title': 'Integrations',
+      'body:category': '...',
+      'body:type': 'basic',
+      'body:bodyattribute': `# Integrations
+
+Here you find all the available integrations`,
+    }),
   }
-  const requestConfig = requestConfigs.readmeUpload
+  const requestConfig = requestConfigs.readmeDocsCreate
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)
