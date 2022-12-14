@@ -198,6 +198,7 @@ import Lolo from '@flethy/connectors/src/configs/lolo.config'
 import Luabase from '@flethy/connectors/src/configs/luabase.config'
 import MailboxLayer from '@flethy/connectors/src/configs/mailboxlayer.config'
 import MailTM from '@flethy/connectors/src/configs/mailtm.config'
+import Mastodon from '@flethy/connectors/src/configs/mastodon.config'
 import MetalpriceAPI from '@flethy/connectors/src/configs/metalpriceapi.config'
 import Neon from '@flethy/connectors/src/configs/neon.config'
 import Npoint from '@flethy/connectors/src/configs/npoint.config'
@@ -215,6 +216,7 @@ import Prerender from '@flethy/connectors/src/configs/prerender.config'
 import Prismic from '@flethy/connectors/src/configs/prismic.config'
 import PurpleAir from '@flethy/connectors/src/configs/purpleair.config'
 import QuoteGarden from '@flethy/connectors/src/configs/quotegarden.config'
+import ReadMe from '@flethy/connectors/src/configs/readme.config'
 import Rebrandly from '@flethy/connectors/src/configs/rebrandly.config'
 import ReducedTo from '@flethy/connectors/src/configs/reducedto.config'
 import Robolly from '@flethy/connectors/src/configs/robolly.config'
@@ -242,8 +244,6 @@ import WebhookSite from '@flethy/connectors/src/configs/webhooksite.config'
 import WorkOS from '@flethy/connectors/src/configs/workos.config'
 import { HttpRequest } from './controllers/HttpRequest'
 import { logger } from './utils/Logger'
-import Mastodon from '@flethy/connectors/src/configs/mastodon.config'
-import ReadMe from '@flethy/connectors/src/configs/readme.config'
 
 async function main() {
   const requestConfigs: {
@@ -3300,8 +3300,19 @@ async function main() {
       kind: 'readme.apispec.getMetadata',
       'auth:Authorization': process.env.README_KEY,
     }),
+    readmeUpload: nao<ReadMe.APISpecUpdate>({
+      kind: 'readme.apispec.update',
+      'auth:Authorization': process.env.README_KEY,
+      'param:id': '...',
+      'body:spec': `...`,
+    }),
+    readmeDelete: nao<ReadMe.APISpecDelete>({
+      kind: 'readme.apispec.delete',
+      'auth:Authorization': process.env.README_KEY,
+      'param:id': '',
+    }),
   }
-  const requestConfig = requestConfigs.readmeGetMetadata
+  const requestConfig = requestConfigs.readmeUpload
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)
