@@ -22,3 +22,24 @@
 
 * Description: Get API specification metadata.
 * Docs: [https://docs.readme.com/main/reference/getapispecification](https://docs.readme.com/main/reference/getapispecification)
+
+#### upload
+
+##### Upload specification
+
+* Description: Upload specification
+* Docs: [https://docs.readme.com/main/reference/uploadapispecification](https://docs.readme.com/main/reference/uploadapispecification)
+
+#### delete
+
+##### Delete specification
+
+* Description: Delete specification
+* Docs: [https://docs.readme.com/main/reference/deleteapispecification](https://docs.readme.com/main/reference/deleteapispecification)
+
+#### update
+
+##### Update specification
+
+* Description: Update specification
+* Docs: [https://docs.readme.com/main/reference/updateapispecification](https://docs.readme.com/main/reference/updateapispecification)
