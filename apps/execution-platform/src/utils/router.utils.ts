@@ -48,6 +48,7 @@ export class RouterPathUtils {
 
   constructor(version?: number) {
     if (version) {
+      this.path = [];
       this.v(version);
     }
   }

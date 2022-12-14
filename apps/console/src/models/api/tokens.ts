@@ -47,6 +47,7 @@ export const TokensModel = types
 				TokenScope.WORKFLOW_DELETE,
 				TokenScope.WORKFLOW_UPDATE,
 				TokenScope.WORKFLOW_READ,
+				TokenScope.INSTANCE_CREATE,
 			]
 		}
 
