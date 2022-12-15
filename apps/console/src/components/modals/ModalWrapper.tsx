@@ -13,6 +13,10 @@ import { observer } from 'mobx-react-lite'
 export interface ModalProps {
 	title: string
 	isOpen: boolean
+	isSubmitting: {
+		loading: boolean
+		loadingText: string
+	}
 	close: {
 		label?: string
 		variant?: string
@@ -21,6 +25,7 @@ export interface ModalProps {
 	submit: {
 		label?: string
 		variant?: string
+		isLoading?: boolean
 		disabled?: boolean
 		onClick: () => void
 	}
@@ -42,12 +47,18 @@ export default observer((props: ModalProps) => {
 						mr={3}
 						variant={props.submit.variant}
 						onClick={props.submit.onClick}
-						disabled={props.submit.disabled}
+						disabled={props.submit.disabled || props.isSubmitting.loading}
+						isLoading={props.isSubmitting.loading}
+						loadingText={props.isSubmitting.loadingText}
 					>
 						{props.submit.label}
 					</Button>
 					{props.close.label && (
-						<Button variant={props.close.variant} onClick={props.close.onClick}>
+						<Button
+							variant={props.close.variant}
+							onClick={props.close.onClick}
+							disabled={props.isSubmitting.loading}
+						>
 							{props.close.label}
 						</Button>
 					)}

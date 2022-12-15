@@ -26,14 +26,18 @@ export default observer(() => {
 			title={t('modals.secrets.delete.title')}
 			isOpen={secretsDelete.isOpen}
 			children={form}
+			isSubmitting={{
+				loading: secretsDelete.isSubmitting,
+				loadingText: t('modals.secrets.delete.submitting'),
+			}}
 			close={{
-				label: t('modals.secrets.delete.cancel'),
+				label: t('modals.secrets.delete.cancel') ?? '',
 				onClick: () => {
 					secretsDelete.close()
 				},
 			}}
 			submit={{
-				label: t('modals.secrets.delete.submit'),
+				label: t('modals.secrets.delete.submit') ?? '',
 				onClick: () => {
 					secretsDelete.submit()
 				},

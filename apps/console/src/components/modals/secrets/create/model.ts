@@ -21,11 +21,13 @@ export const CreateSecretsModal = types
 		),
 		formValidation: types.optional(FormValidationModel, {}),
 		isOpen: types.optional(types.boolean, false),
+		isSubmitting: types.optional(types.boolean, false),
 		valid: types.optional(types.boolean, true),
 	})
 	.actions((self) => {
 		// INITIALIZATION
 		const open = (params: { workspaceId: string; projectId: string }) => {
+			self.isSubmitting = false
 			self.context.workspaceId = params.workspaceId
 			self.context.projectId = params.projectId
 			self.form.key = ''
@@ -79,6 +81,7 @@ export const CreateSecretsModal = types
 			if (!self.formValidation.valid) {
 				return
 			}
+			self.isSubmitting = true
 			const { api } = getRootStore(self)
 			try {
 				yield api.secrets.put({
@@ -88,7 +91,9 @@ export const CreateSecretsModal = types
 					value: self.form.value,
 				})
 				self.isOpen = false
+				self.isSubmitting = false
 			} catch (error) {
+				self.isSubmitting = false
 				console.log(error)
 			}
 		})

@@ -26,6 +26,10 @@ export default observer(() => {
 			title={t('modals.tokens.delete.title')}
 			isOpen={tokensDelete.isOpen}
 			children={form}
+			isSubmitting={{
+				loading: tokensDelete.isSubmitting,
+				loadingText: t('modals.tokens.delete.submitting'),
+			}}
 			close={{
 				label: t('modals.tokens.delete.cancel') ?? '',
 				onClick: () => {
