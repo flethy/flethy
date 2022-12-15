@@ -1,0 +1,79 @@
+{
+  "name": "WonderPush",
+  "domain": "wonderpush.com",
+  "claimed": false,
+  "description": "WonderPush provides brands with a complete solution for sending targeted push notifications to their websites and mobile apps' users.",
+  "links": [
+    { "name": "twitter", "url": "https://twitter.com/wonderpush" },
+    {
+      "name": "facebook",
+      "url": "https://facebook.com/website.push.notifications.by.wonderpush"
+    }
+  ],
+  "logos": [
+    {
+      "type": "icon",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idJdM5oI4O/idTaFq5j0x.png",
+          "background": null,
+          "format": "png",
+          "height": 200,
+          "width": 200,
+          "size": 7919
+        }
+      ]
+    },
+    {
+      "type": "logo",
+      "theme": "light",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idJdM5oI4O/idddEbGCTh.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 54,
+          "width": 288,
+          "size": 5270
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#1f2f44", "type": "dark", "brightness": 45 },
+    { "hex": "#efefef", "type": "light", "brightness": 239 },
+    { "hex": "#ff6f61", "type": "accent", "brightness": 141 }
+  ],
+  "fonts": [
+    {
+      "name": "Montserrat",
+      "type": "title",
+      "origin": "google",
+      "originId": "Montserrat",
+      "weights": []
+    },
+    {
+      "name": "Montserrat",
+      "type": "body",
+      "origin": "google",
+      "originId": "Montserrat",
+      "weights": []
+    }
+  ],
+  "images": [
+    {
+      "type": "banner",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idJdM5oI4O/idhf6gP-Nw.png",
+          "background": null,
+          "format": "png",
+          "height": 290,
+          "width": 897,
+          "size": 57959
+        }
+      ]
+    }
+  ]
+}

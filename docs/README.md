@@ -260,6 +260,7 @@ The following Endpoints are currently supported.
 * [WarrantDev](./api/warrantdev.md)
 * [WebhookSite](./api/webhooksite.md)
 * [WhoIsXMLApi](./api/whoisxmlapi.md)
+* [WonderPush](./api/wonderpush.md)
 * [WordsAPI](./api/wordsapi.md)
 * [WordSimi](./api/wordsimi.md)
 * [WorkOS](./api/workos.md)

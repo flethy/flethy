@@ -244,6 +244,7 @@ import WebhookSite from '@flethy/connectors/src/configs/webhooksite.config'
 import WorkOS from '@flethy/connectors/src/configs/workos.config'
 import { HttpRequest } from './controllers/HttpRequest'
 import { logger } from './utils/Logger'
+import WonderPush from '@flethy/connectors/src/configs/wonderpush.config'
 
 async function main() {
   const requestConfigs: {
@@ -3325,8 +3326,12 @@ async function main() {
 
 Here you find all the available integrations`,
     }),
+    wonderpushListUsers: nao<WonderPush.ListUsers>({
+      kind: 'wonderpush.users.list',
+      'auth:accessToken': process.env.WONDERPUSH_ACCESS_TOKEN,
+    }),
   }
-  const requestConfig = requestConfigs.readmeDocsCreate
+  const requestConfig = requestConfigs.wonderpushListUsers
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)
