@@ -65,7 +65,9 @@ export default observer(() => {
 					<Center py={5}>
 						<VStack gap={5} textAlign={'left'}>
 							{content.contents.map((item, index) => (
-								<Text key={index}>{item}</Text>
+								<Container key={index}>
+									<Text>{item}</Text>
+								</Container>
 							))}
 							<VStack gap={2}>
 								<Heading size={'md'} as={'h3'}>
