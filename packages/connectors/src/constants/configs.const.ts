@@ -247,6 +247,7 @@ import { WarrantDev } from '../configs/warrantdev.config'
 import { Web3Storage } from '../configs/web3storage.config'
 import { WebhookSite } from '../configs/webhooksite.config'
 import { WhoIsXMLApi } from '../configs/whoisxmlapi.config'
+import { WonderPush } from '../configs/wonderpush.config'
 import { WordsAPI } from '../configs/wordsapi.config'
 import { WordSimi } from '../configs/wordsimi.config'
 import { WorkOS } from '../configs/workos.config'
@@ -503,6 +504,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['web3storage', Web3Storage.API],
 ['webhooksite', WebhookSite.API],
 ['whoisxmlapi', WhoIsXMLApi.API],
+['wonderpush', WonderPush.API],
 ['wordsapi', WordsAPI.API],
 ['wordsimi', WordSimi.API],
 ['workos', WorkOS.API],

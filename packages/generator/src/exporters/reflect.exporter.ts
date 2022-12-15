@@ -247,6 +247,7 @@ import { WarrantDev } from '../../../connectors/src/configs/warrantdev.config'
 import { Web3Storage } from '../../../connectors/src/configs/web3storage.config'
 import { WebhookSite } from '../../../connectors/src/configs/webhooksite.config'
 import { WhoIsXMLApi } from '../../../connectors/src/configs/whoisxmlapi.config'
+import { WonderPush } from '../../../connectors/src/configs/wonderpush.config'
 import { WordsAPI } from '../../../connectors/src/configs/wordsapi.config'
 import { WordSimi } from '../../../connectors/src/configs/wordsimi.config'
 import { WorkOS } from '../../../connectors/src/configs/workos.config'
@@ -796,6 +797,8 @@ configTypes.push({type: getType<WebhookSite.CorePatch>(), id: 'webhooksite', nam
 configTypes.push({type: getType<WebhookSite.CorePut>(), id: 'webhooksite', name: 'WebhookSite', interface: 'CorePut'})
 configTypes.push({type: getType<WebhookSite.CoreDelete>(), id: 'webhooksite', name: 'WebhookSite', interface: 'CoreDelete'})
 configTypes.push({type: getType<WhoIsXMLApi.DomainAvailability>(), id: 'whoisxmlapi', name: 'WhoIsXMLApi', interface: 'DomainAvailability'})
+configTypes.push({type: getType<WonderPush.ListUsers>(), id: 'wonderpush', name: 'WonderPush', interface: 'ListUsers'})
+configTypes.push({type: getType<WonderPush.ListNotifications>(), id: 'wonderpush', name: 'WonderPush', interface: 'ListNotifications'})
 configTypes.push({type: getType<WordsAPI.GetAWord>(), id: 'wordsapi', name: 'WordsAPI', interface: 'GetAWord'})
 configTypes.push({type: getType<WordsAPI.GetWordDetails>(), id: 'wordsapi', name: 'WordsAPI', interface: 'GetWordDetails'})
 configTypes.push({type: getType<WordSimi.MostSimilarWords>(), id: 'wordsimi', name: 'WordSimi', interface: 'MostSimilarWords'})
