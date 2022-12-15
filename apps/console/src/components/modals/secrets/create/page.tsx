@@ -69,14 +69,18 @@ export default observer(() => {
 			title={t('modals.secrets.create.title')}
 			isOpen={secretsCreate.isOpen}
 			children={form}
+			isSubmitting={{
+				loading: secretsCreate.isSubmitting,
+				loadingText: t('modals.secrets.create.submitting'),
+			}}
 			close={{
-				label: t('modals.secrets.create.cancel'),
+				label: t('modals.secrets.create.cancel') ?? '',
 				onClick: () => {
 					secretsCreate.close()
 				},
 			}}
 			submit={{
-				label: t('modals.secrets.create.submit'),
+				label: t('modals.secrets.create.submit') ?? '',
 				disabled: !secretsCreate.formValidation.valid,
 				onClick: () => {
 					secretsCreate.submit()

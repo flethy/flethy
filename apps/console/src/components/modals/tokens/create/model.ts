@@ -23,6 +23,7 @@ export const CreateTokenModal = types
 		token: types.optional(types.string, ''),
 		formValidation: types.optional(FormValidationModel, {}),
 		isOpen: types.optional(types.boolean, false),
+		isSubmitting: types.optional(types.boolean, false),
 		valid: types.optional(types.boolean, true),
 	})
 	.actions((self) => {
@@ -30,6 +31,7 @@ export const CreateTokenModal = types
 		const open = (params: { workspaceId: string; projectId: string }) => {
 			self.context.workspaceId = params.workspaceId
 			self.context.projectId = params.projectId
+			self.isSubmitting = false
 			self.state = 'create'
 			self.form.name = ''
 			self.token = ''
@@ -94,6 +96,7 @@ export const CreateTokenModal = types
 			if (!self.formValidation.valid) {
 				return
 			}
+			self.isSubmitting = true
 			const { api } = getRootStore(self)
 			try {
 				const response = yield api.tokens.create({
@@ -103,8 +106,10 @@ export const CreateTokenModal = types
 					scopes: (self.form.scopes as TokenScope[]) ?? [],
 				})
 				self.token = response.access_token
+				self.isSubmitting = false
 				self.state = 'show'
 			} catch (error) {
+				self.isSubmitting = false
 				console.log(error)
 			}
 		})

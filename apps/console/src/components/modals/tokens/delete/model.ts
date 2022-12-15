@@ -18,6 +18,7 @@ export const DeleteTokenModal = types
 			{},
 		),
 		isOpen: types.optional(types.boolean, false),
+		isSubmitting: types.optional(types.boolean, false),
 	})
 	.actions((self) => {
 		// INITIALIZATION
@@ -27,6 +28,7 @@ export const DeleteTokenModal = types
 			tokenId: string
 			name: string
 		}) => {
+			self.isSubmitting = false
 			self.context.workspaceId = params.workspaceId
 			self.context.projectId = params.projectId
 			self.form.tokenId = params.tokenId
@@ -40,6 +42,7 @@ export const DeleteTokenModal = types
 
 		const submit = flow(function* () {
 			const { api } = getRootStore(self)
+			self.isSubmitting = true
 			try {
 				yield api.tokens.del({
 					workspaceId: self.context.workspaceId,
@@ -47,7 +50,9 @@ export const DeleteTokenModal = types
 					tokenId: self.form.tokenId,
 				})
 				self.isOpen = false
+				self.isSubmitting = false
 			} catch (error) {
+				self.isSubmitting = false
 				console.log(error)
 			}
 		})

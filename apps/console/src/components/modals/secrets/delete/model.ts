@@ -17,6 +17,7 @@ export const DeleteSecretsModal = types
 			{},
 		),
 		isOpen: types.optional(types.boolean, false),
+		isSubmitting: types.optional(types.boolean, false),
 	})
 	.actions((self) => {
 		// INITIALIZATION
@@ -25,6 +26,7 @@ export const DeleteSecretsModal = types
 			projectId: string
 			key: string
 		}) => {
+			self.isSubmitting = false
 			self.context.workspaceId = params.workspaceId
 			self.context.projectId = params.projectId
 			self.form.key = params.key
@@ -36,6 +38,7 @@ export const DeleteSecretsModal = types
 		}
 
 		const submit = flow(function* () {
+			self.isSubmitting = true
 			const { api } = getRootStore(self)
 			try {
 				yield api.secrets.del({
@@ -44,7 +47,9 @@ export const DeleteSecretsModal = types
 					key: self.form.key,
 				})
 				self.isOpen = false
+				self.isSubmitting = false
 			} catch (error) {
+				self.isSubmitting = false
 				console.log(error)
 			}
 		})
