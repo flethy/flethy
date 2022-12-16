@@ -80,6 +80,7 @@ import { Fauna } from '../../../connectors/src/configs/fauna.config'
 import { Festdays } from '../../../connectors/src/configs/festdays.config'
 import { Fibery } from '../../../connectors/src/configs/fibery.config'
 import { Figma } from '../../../connectors/src/configs/figma.config'
+import { FireHydrant } from '../../../connectors/src/configs/firehydrant.config'
 import { Flatfile } from '../../../connectors/src/configs/flatfile.config'
 import { FootballPredictionAPI } from '../../../connectors/src/configs/footballpredictionapi.config'
 import { Frankfurter } from '../../../connectors/src/configs/frankfurter.config'
@@ -443,6 +444,7 @@ configTypes.push({type: getType<Figma.GetFile>(), id: 'figma', name: 'Figma', in
 configTypes.push({type: getType<Figma.GetFileNodes>(), id: 'figma', name: 'Figma', interface: 'GetFileNodes'})
 configTypes.push({type: getType<Figma.GetImages>(), id: 'figma', name: 'Figma', interface: 'GetImages'})
 configTypes.push({type: getType<Figma.GetImageFills>(), id: 'figma', name: 'Figma', interface: 'GetImageFills'})
+configTypes.push({type: getType<FireHydrant.ListIncidents>(), id: 'firehydrant', name: 'FireHydrant', interface: 'ListIncidents'})
 configTypes.push({type: getType<Flatfile.ExchangeAccessKey>(), id: 'flatfile', name: 'Flatfile', interface: 'ExchangeAccessKey'})
 configTypes.push({type: getType<Flatfile.ListWorkspaces>(), id: 'flatfile', name: 'Flatfile', interface: 'ListWorkspaces'})
 configTypes.push({type: getType<Flatfile.DownloadUpload>(), id: 'flatfile', name: 'Flatfile', interface: 'DownloadUpload'})

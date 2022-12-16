@@ -1,0 +1,68 @@
+{
+  "name": "FireHydrant",
+  "domain": "firehydrant.com",
+  "claimed": false,
+  "description": "The FireHydrant platform includes Incident Response, Status Pages, Retrospectives, and Deploy Events so you can take control of your complex system, reduce downtime, and work better together.",
+  "links": [
+    {
+      "name": "crunchbase",
+      "url": "https://crunchbase.com/organization/firehydrant"
+    },
+    { "name": "twitter", "url": "https://twitter.com/firehydrantio" },
+    { "name": "linkedin", "url": "https://linkedin.com/company/firehydrant" },
+    { "name": "facebook", "url": "https://facebook.com/firehydrantio" }
+  ],
+  "logos": [
+    {
+      "type": "icon",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idteiU4mVt/idMBc9Q16C.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 400,
+          "width": 400,
+          "size": 30252
+        }
+      ]
+    },
+    {
+      "type": "logo",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idteiU4mVt/idTxBr4rms.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 132,
+          "width": 800,
+          "size": 19555
+        },
+        {
+          "src": "https://asset.brandfetch.io/idteiU4mVt/idVYGd9kPk.svg",
+          "background": "transparent",
+          "format": "svg",
+          "height": null,
+          "width": null,
+          "size": 8516
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#2d3e50", "type": "dark", "brightness": 60 },
+    { "hex": "#f9f5f0", "type": "light", "brightness": 245 },
+    { "hex": "#f1592a", "type": "accent", "brightness": 118 }
+  ],
+  "fonts": [
+    {
+      "name": "Open Sans",
+      "type": "body",
+      "origin": "google",
+      "originId": "Open+Sans",
+      "weights": []
+    }
+  ],
+  "images": []
+}

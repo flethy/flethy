@@ -80,6 +80,7 @@ import { Fauna } from '../configs/fauna.config'
 import { Festdays } from '../configs/festdays.config'
 import { Fibery } from '../configs/fibery.config'
 import { Figma } from '../configs/figma.config'
+import { FireHydrant } from '../configs/firehydrant.config'
 import { Flatfile } from '../configs/flatfile.config'
 import { FootballPredictionAPI } from '../configs/footballpredictionapi.config'
 import { Frankfurter } from '../configs/frankfurter.config'
@@ -337,6 +338,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['festdays', Festdays.API],
 ['fibery', Fibery.API],
 ['figma', Figma.API],
+['firehydrant', FireHydrant.API],
 ['flatfile', Flatfile.API],
 ['footballpredictionapi', FootballPredictionAPI.API],
 ['frankfurter', Frankfurter.API],
