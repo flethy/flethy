@@ -245,6 +245,7 @@ import WorkOS from '@flethy/connectors/src/configs/workos.config'
 import { HttpRequest } from './controllers/HttpRequest'
 import { logger } from './utils/Logger'
 import WonderPush from '@flethy/connectors/src/configs/wonderpush.config'
+import FireHydrant from '@flethy/connectors/src/configs/firehydrant.config'
 
 async function main() {
   const requestConfigs: {
@@ -3330,8 +3331,17 @@ Here you find all the available integrations`,
       kind: 'wonderpush.users.list',
       'auth:accessToken': process.env.WONDERPUSH_ACCESS_TOKEN,
     }),
+    firehydrantListIncidents: nao<FireHydrant.ListIncidents>({
+      kind: 'firehydrant.incidents.list',
+      'auth:Authorization': process.env.FIREHYDRANT_TOKEN,
+    }),
+    firehydrantCreateIncident: nao<FireHydrant.CreateIncident>({
+      kind: 'firehydrant.incidents.create',
+      'auth:Authorization': process.env.FIREHYDRANT_TOKEN,
+      'body:name': 'Test incident',
+    }),
   }
-  const requestConfig = requestConfigs.wonderpushListUsers
+  const requestConfig = requestConfigs.firehydrantCreateIncident
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

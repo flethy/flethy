@@ -345,6 +345,10 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://flethy.com/integrations/firehydrant</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://flethy.com/integrations/flatfile</loc>
     <priority>0.8</priority>
   </url>
@@ -1049,6 +1053,10 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://flethy.com/use-cases/create-incident-with-firehydrant</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://flethy.com/use-cases/create-new-contact-in-hubspot</loc>
     <priority>0.8</priority>
   </url>
@@ -1094,6 +1102,10 @@
   </url>
   <url>
     <loc>https://flethy.com/use-cases/get-icons-of-a-collection-from-the-noun-project</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://flethy.com/use-cases/list-incidents-with-incidentio</loc>
     <priority>0.8</priority>
   </url>
   <url>

@@ -102,6 +102,7 @@ The following Endpoints are currently supported.
 * [Festdays](./api/festdays.md)
 * [Fibery](./api/fibery.md)
 * [Figma](./api/figma.md)
+* [FireHydrant](./api/firehydrant.md)
 * [Flatfile](./api/flatfile.md)
 * [FootballPredictionAPI](./api/footballpredictionapi.md)
 * [Frankfurter](./api/frankfurter.md)
