@@ -107,7 +107,7 @@ export class TokenController {
       });
     }
 
-    let currentTokens: any = await this.get(request);
+    let currentTokens: any = await TokenController.get(request);
     if (!currentTokens || currentTokens?.length === 0) {
       currentTokens = { tokens: [] };
     }
@@ -153,7 +153,7 @@ export class TokenController {
       });
     }
 
-    let currentTokens: any = await this.get(request);
+    let currentTokens: any = await TokenController.get(request);
     if (!currentTokens) {
       currentTokens = { tokens: [] };
     }
