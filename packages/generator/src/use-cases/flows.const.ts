@@ -231,4 +231,19 @@ export const FLOWS = {
       'body:spec': '->context.input.apiSpec->string',
     },
   ],
+  'create-incident-with-firehydrant': [
+    {
+      id: 'firehydrant',
+      kind: 'firehydrant.incidents.create',
+      'auth:Authorization': '==>secrets==>FIREHYDRANT_TOKEN',
+      'body:name': '->context.input.name->string',
+    },
+  ],
+  'list-incidents-with-incidentio': [
+    {
+      id: 'incidentio',
+      kind: 'incidentio.incidents.list',
+      'auth:Authorization': '==>secrets==>INCIDENTIO_API_KEY',
+    },
+  ],
 }

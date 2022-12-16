@@ -22,3 +22,10 @@
 
 * Description: List all incidents
 * Docs: [https://developers.firehydrant.io/docs/api/bbaafb37d6b26-list-all-incidents](https://developers.firehydrant.io/docs/api/bbaafb37d6b26-list-all-incidents)
+
+#### create
+
+##### Create an incident
+
+* Description: Create an incident
+* Docs: [https://developers.firehydrant.io/docs/api/e0ca05be2811d-create-an-incident](https://developers.firehydrant.io/docs/api/e0ca05be2811d-create-an-incident)
