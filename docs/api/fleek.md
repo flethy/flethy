@@ -1,0 +1,24 @@
+# Fleek
+
+## Links
+
+* URL: [https://fleek.co/](https://fleek.co/)
+* Documentation: [https://docs.fleek.co/](https://docs.fleek.co/)
+* Tags: web3
+* Category: infra
+* Type: hosting
+
+## API
+
+### Authentication
+
+* Authorization: header
+
+### graphql
+
+#### query
+
+##### GraphQL Query
+
+* Description: GraphQL Query
+* Docs: [https://docs.fleek.co/fleek-api/overview/](https://docs.fleek.co/fleek-api/overview/)

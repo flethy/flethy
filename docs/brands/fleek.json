@@ -1,0 +1,80 @@
+{
+  "name": "Fleek",
+  "domain": "fleek.co",
+  "claimed": false,
+  "description": "Fleek is a platform that builds sites and applications on IPFS.",
+  "links": [
+    {
+      "name": "youtube",
+      "url": "https://youtube.com/channel/UCBzlwYM0JjZpjDZ52-SLUmw"
+    },
+    { "name": "twitter", "url": "https://twitter.com/fleekhq" },
+    { "name": "linkedin", "url": "https://linkedin.com/company/fleekhq" }
+  ],
+  "logos": [
+    {
+      "type": "icon",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idnDZVIA-S/id3qq7qGiT.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 265,
+          "width": 265,
+          "size": 4721
+        }
+      ]
+    },
+    {
+      "type": "logo",
+      "theme": "light",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idnDZVIA-S/id9A2AKAQf.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 612,
+          "width": 1388,
+          "size": 67756
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#171717", "type": "dark", "brightness": 23 },
+    { "hex": "#ffffff", "type": "light", "brightness": 255 },
+    { "hex": "#006eff", "type": "accent", "brightness": 97 }
+  ],
+  "fonts": [
+    {
+      "name": "Century Gothic",
+      "type": "title",
+      "origin": "custom",
+      "originId": null,
+      "weights": []
+    },
+    {
+      "name": "Nunito Sans",
+      "type": "body",
+      "origin": "google",
+      "originId": "Nunito+Sans",
+      "weights": []
+    }
+  ],
+  "images": [
+    {
+      "type": "banner",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idnDZVIA-S/id6Cu3e7qs.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 500,
+          "width": 1500,
+          "size": 24011
+        }
+      ]
+    }
+  ]
+}

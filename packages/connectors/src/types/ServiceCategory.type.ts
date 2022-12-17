@@ -147,6 +147,7 @@ export type INFRA_TYPE =
   | 'secret-management'
   | 'incident-management'
   | 'streaming'
+  | 'hosting'
 export type MACHINE_LEARNING_TYPE = 'platform'
 export type COMMUNITY_TYPE = 'user-feedback'
 export type BUSINESS_TYPE = 'subscription-analytics'

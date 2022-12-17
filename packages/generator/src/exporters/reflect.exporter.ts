@@ -82,6 +82,7 @@ import { Fibery } from '../../../connectors/src/configs/fibery.config'
 import { Figma } from '../../../connectors/src/configs/figma.config'
 import { FireHydrant } from '../../../connectors/src/configs/firehydrant.config'
 import { Flatfile } from '../../../connectors/src/configs/flatfile.config'
+import { Fleek } from '../../../connectors/src/configs/fleek.config'
 import { FootballPredictionAPI } from '../../../connectors/src/configs/footballpredictionapi.config'
 import { Frankfurter } from '../../../connectors/src/configs/frankfurter.config'
 import { Geekflare } from '../../../connectors/src/configs/geekflare.config'
@@ -451,6 +452,7 @@ configTypes.push({type: getType<Flatfile.ListWorkspaces>(), id: 'flatfile', name
 configTypes.push({type: getType<Flatfile.DownloadUpload>(), id: 'flatfile', name: 'Flatfile', interface: 'DownloadUpload'})
 configTypes.push({type: getType<Flatfile.DeleteUpload>(), id: 'flatfile', name: 'Flatfile', interface: 'DeleteUpload'})
 configTypes.push({type: getType<Flatfile.BulkDeleteUploads>(), id: 'flatfile', name: 'Flatfile', interface: 'BulkDeleteUploads'})
+configTypes.push({type: getType<Fleek.GraphQLQuery>(), id: 'fleek', name: 'Fleek', interface: 'GraphQLQuery'})
 configTypes.push({type: getType<FootballPredictionAPI.Predictions>(), id: 'footballpredictionapi', name: 'FootballPredictionAPI', interface: 'Predictions'})
 configTypes.push({type: getType<Frankfurter.Latest>(), id: 'frankfurter', name: 'Frankfurter', interface: 'Latest'})
 configTypes.push({type: getType<Frankfurter.Historical>(), id: 'frankfurter', name: 'Frankfurter', interface: 'Historical'})

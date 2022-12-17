@@ -246,6 +246,7 @@ import { HttpRequest } from './controllers/HttpRequest'
 import { logger } from './utils/Logger'
 import WonderPush from '@flethy/connectors/src/configs/wonderpush.config'
 import FireHydrant from '@flethy/connectors/src/configs/firehydrant.config'
+import Fleek from '@flethy/connectors/src/configs/fleek.config'
 
 async function main() {
   const requestConfigs: {
@@ -3340,8 +3341,30 @@ Here you find all the available integrations`,
       'auth:Authorization': process.env.FIREHYDRANT_TOKEN,
       'body:name': 'Test incident',
     }),
+    fleek: nao<Fleek.GraphQLQuery>({
+      kind: 'fleek.graphql.query',
+      'auth:Authorization': process.env.FLEEK_HOSTING_API_KEY,
+      'body:query': `query {
+        getSiteBySlug(slug: "royal-bar-0766") {
+            id
+            name
+            platform
+            publishedDeploy {
+                id
+                status
+                ipfsHash
+                log
+                completedAt
+            }
+            team {
+                id
+                name
+            }
+        }
+    }`,
+    }),
   }
-  const requestConfig = requestConfigs.firehydrantCreateIncident
+  const requestConfig = requestConfigs.fleek
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)
