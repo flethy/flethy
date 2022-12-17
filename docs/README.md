@@ -14,6 +14,7 @@ The following Endpoints are currently supported.
 * [CoinMarketCap](./api/coinmarketcap.md)
 * [Covalent](./api/covalent.md)
 * [Etherscan](./api/etherscan.md)
+* [Fleek](./api/fleek.md)
 * [Luabase](./api/luabase.md)
 * [MicroDev](./api/microdev.md)
 * [OneInch](./api/1inch.md)

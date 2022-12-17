@@ -82,6 +82,7 @@ import { Fibery } from '../configs/fibery.config'
 import { Figma } from '../configs/figma.config'
 import { FireHydrant } from '../configs/firehydrant.config'
 import { Flatfile } from '../configs/flatfile.config'
+import { Fleek } from '../configs/fleek.config'
 import { FootballPredictionAPI } from '../configs/footballpredictionapi.config'
 import { Frankfurter } from '../configs/frankfurter.config'
 import { Geekflare } from '../configs/geekflare.config'
@@ -340,6 +341,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['figma', Figma.API],
 ['firehydrant', FireHydrant.API],
 ['flatfile', Flatfile.API],
+['fleek', Fleek.API],
 ['footballpredictionapi', FootballPredictionAPI.API],
 ['frankfurter', Frankfurter.API],
 ['geekflare', Geekflare.API],
