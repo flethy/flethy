@@ -128,6 +128,7 @@ export class BrandExporter {
       'covalent',
       'dataddo',
       'directus',
+      'fleek',
       'mezmo',
       'onesignal',
       'ory',
