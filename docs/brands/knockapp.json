@@ -1,0 +1,48 @@
+{
+  "name": "Knock",
+  "domain": "knock.app",
+  "claimed": false,
+  "description": "Knock is a hosted API for turning user activity into product notifications.",
+  "links": [{ "name": "twitter", "url": "https://twitter.com/KnockLabs" }],
+  "logos": [
+    {
+      "type": "icon",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idRG7-XTCv/idA41vaHGi.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 400,
+          "width": 400,
+          "size": 9846
+        }
+      ]
+    },
+    {
+      "type": "logo",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idRG7-XTCv/idPkwMEQxi.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 820,
+          "width": 820,
+          "size": 26314
+        },
+        {
+          "src": "https://asset.brandfetch.io/idRG7-XTCv/idbtFDv6Y7.svg",
+          "background": "transparent",
+          "format": "svg",
+          "height": null,
+          "width": null,
+          "size": 298
+        }
+      ]
+    }
+  ],
+  "colors": [],
+  "fonts": [],
+  "images": []
+}

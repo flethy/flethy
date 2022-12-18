@@ -110,6 +110,7 @@ import { IncidentIo } from '../../../connectors/src/configs/incidentio.config'
 import { Jira } from '../../../connectors/src/configs/jira.config'
 import { Keen } from '../../../connectors/src/configs/keen.config'
 import { Klaviyo } from '../../../connectors/src/configs/klaviyo.config'
+import { KnockApp } from '../../../connectors/src/configs/knockapp.config'
 import { KontentAI } from '../../../connectors/src/configs/kontentai.config'
 import { Koyeb } from '../../../connectors/src/configs/koyeb.config'
 import { LanguageLayer } from '../../../connectors/src/configs/languagelayer.config'
@@ -514,6 +515,7 @@ configTypes.push({type: getType<Klaviyo.TrackProfileActivity>(), id: 'klaviyo', 
 configTypes.push({type: getType<Klaviyo.IdentifyProfile>(), id: 'klaviyo', name: 'Klaviyo', interface: 'IdentifyProfile'})
 configTypes.push({type: getType<Klaviyo.GetProfileId>(), id: 'klaviyo', name: 'Klaviyo', interface: 'GetProfileId'})
 configTypes.push({type: getType<Klaviyo.GetProfile>(), id: 'klaviyo', name: 'Klaviyo', interface: 'GetProfile'})
+configTypes.push({type: getType<KnockApp.IdentifyUser>(), id: 'knockapp', name: 'KnockApp', interface: 'IdentifyUser'})
 configTypes.push({type: getType<KontentAI.GetDeliveryItems>(), id: 'kontentai', name: 'KontentAI', interface: 'GetDeliveryItems'})
 configTypes.push({type: getType<KontentAI.GraphQLQuery>(), id: 'kontentai', name: 'KontentAI', interface: 'GraphQLQuery'})
 configTypes.push({type: getType<Koyeb.GetCurrentUser>(), id: 'koyeb', name: 'Koyeb', interface: 'GetCurrentUser'})

@@ -247,6 +247,7 @@ import { logger } from './utils/Logger'
 import WonderPush from '@flethy/connectors/src/configs/wonderpush.config'
 import FireHydrant from '@flethy/connectors/src/configs/firehydrant.config'
 import Fleek from '@flethy/connectors/src/configs/fleek.config'
+import KnockApp from '@flethy/connectors/src/configs/knockapp.config'
 
 async function main() {
   const requestConfigs: {
@@ -3363,8 +3364,17 @@ Here you find all the available integrations`,
         }
     }`,
     }),
+    knockIdentifyUser: nao<KnockApp.IdentifyUser>({
+      kind: 'knockapp.users.identify',
+      'auth:Authorization': process.env.KNOCKAPP_SECRET_KEY,
+      'param:userId': '1',
+      'body:body': {
+        name: 'Adam',
+        email: 'adam@flethy.com',
+      },
+    }),
   }
-  const requestConfig = requestConfigs.fleek
+  const requestConfig = requestConfigs.knockIdentifyUser
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)
