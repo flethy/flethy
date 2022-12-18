@@ -110,6 +110,7 @@ import { IncidentIo } from '../configs/incidentio.config'
 import { Jira } from '../configs/jira.config'
 import { Keen } from '../configs/keen.config'
 import { Klaviyo } from '../configs/klaviyo.config'
+import { KnockApp } from '../configs/knockapp.config'
 import { KontentAI } from '../configs/kontentai.config'
 import { Koyeb } from '../configs/koyeb.config'
 import { LanguageLayer } from '../configs/languagelayer.config'
@@ -369,6 +370,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['jira', Jira.API],
 ['keen', Keen.API],
 ['klaviyo', Klaviyo.API],
+['knockapp', KnockApp.API],
 ['kontentai', KontentAI.API],
 ['koyeb', Koyeb.API],
 ['languagelayer', LanguageLayer.API],

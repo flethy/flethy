@@ -132,6 +132,7 @@ The following Endpoints are currently supported.
 * [Jira](./api/jira.md)
 * [Keen](./api/keen.md)
 * [Klaviyo](./api/klaviyo.md)
+* [KnockApp](./api/knockapp.md)
 * [KontentAI](./api/kontentai.md)
 * [Koyeb](./api/koyeb.md)
 * [LanguageLayer](./api/languagelayer.md)
