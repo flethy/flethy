@@ -1,3 +1,32 @@
+<h1 align="center">
+  <br>
+  <a href="http://www.flethy.com"><img src="https://flethy.com/favicon.png" alt="@flethy/connectors" width="200"></a>
+  <br>
+  @flethy/connectors
+  <br>
+</h1>
+
+<!-- check https://github.com/amitmerchant1990/electron-markdownify#readme -->
+
+<h4 align="center">Zero-dependency library to connect to over 250 APIs.</h4>
+
+<p align="center">
+  <a href="https://badge.fury.io/js/@flethy%2Fconnectors">
+    <img src="https://badge.fury.io/js/@flethy%2Fconnectors.svg"
+         alt="npm">
+  </a>
+  <a href="https://gitter.im/flethy/community"><img src="https://badges.gitter.im/flethy/community.svg"></a>
+</p>
+
+<p align="center">
+  <a href="#key-features">Key Features</a> •
+  <a href="#how-to-use">How To Use</a> •
+  <a href="#download">Download</a> •
+  <a href="#credits">Credits</a> •
+  <a href="#related">Related</a> •
+  <a href="#license">License</a>
+</p>
+
 # flethy connectors
 
 Supporting {{ apicount }} APIs. Find all APIs [here](https://github.com/flethy/flethy/tree/main/docs).
