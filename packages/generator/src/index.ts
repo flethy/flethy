@@ -248,6 +248,7 @@ import WonderPush from '@flethy/connectors/src/configs/wonderpush.config'
 import FireHydrant from '@flethy/connectors/src/configs/firehydrant.config'
 import Fleek from '@flethy/connectors/src/configs/fleek.config'
 import KnockApp from '@flethy/connectors/src/configs/knockapp.config'
+import BitIo from '@flethy/connectors/src/configs/bitio.config'
 
 async function main() {
   const requestConfigs: {
@@ -3373,8 +3374,14 @@ Here you find all the available integrations`,
         email: 'adam@flethy.com',
       },
     }),
+    bitioQuery: nao<BitIo.DatabaseQuery>({
+      kind: 'bitio.database.query',
+      'auth:Authorization': process.env.BITIO_API_KEY,
+      'body:database_name': process.env.BITIO_DB,
+      'body:query_string': 'SELECT * FROM flethy;',
+    }),
   }
-  const requestConfig = requestConfigs.knockIdentifyUser
+  const requestConfig = requestConfigs.bitioQuery
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

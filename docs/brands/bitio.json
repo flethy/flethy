@@ -1,0 +1,48 @@
+{
+  "name": "bit.io",
+  "domain": "bit.io",
+  "claimed": false,
+  "description": null,
+  "links": [
+    { "name": "twitter", "url": "https://twitter.com/bitdotioinc" },
+    { "name": "facebook", "url": "https://facebook.com/bitdotioinc" },
+    { "name": "linkedin", "url": "https://linkedin.com/company/bitdotioinc" }
+  ],
+  "logos": [
+    {
+      "type": "icon",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/iducc2LaKr/idLd3xO2YP.png",
+          "background": null,
+          "format": "png",
+          "height": 200,
+          "width": 200,
+          "size": 14327
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#3d456c", "type": "dark", "brightness": 70 },
+    { "hex": "#ffdc8b", "type": "light", "brightness": 222 },
+    { "hex": "#fdbd28", "type": "accent", "brightness": 192 }
+  ],
+  "fonts": [],
+  "images": [
+    {
+      "type": "banner",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/iducc2LaKr/ideOaPwNq8.png",
+          "background": null,
+          "format": "png",
+          "height": 1356,
+          "width": 3090,
+          "size": 802941
+        }
+      ]
+    }
+  ]
+}
