@@ -1,4 +1,4 @@
-import { paginate, write } from "worktop/kv";
+import { read, write } from "worktop/kv";
 import { FlethyProject, FlethyWorkspace } from "../types/general.type";
 import { ErrorType, FlethyError } from "../utils/error.utils";
 import { KVUtils } from "../utils/kv.utils";
@@ -28,7 +28,7 @@ export interface DeleteTokenRequest extends FlethyWorkspace, FlethyProject {
 // CONTROLLER
 
 export class TokenController {
-  public static async get(request: GetTokensRequest) {
+  public static async get(request: GetTokensRequest): Promise<TokenMetadata> {
     const validation = ValidationUtils.validateAll([
       {
         value: request.workspaceId,
@@ -53,22 +53,15 @@ export class TokenController {
       });
     }
 
-    const foundTokens = await paginate<TokenMetadata>(
+    const foundTokens = await read<TokenMetadata, TokenMetadata>(
       KVUtils.getKV().workspaces,
-      {
-        prefix: KVUtils.tokenKey(request.workspaceId, request.projectId),
-        limit: 1,
-        page: 1,
-        metadata: true,
-      }
+      KVUtils.tokenKey(request.workspaceId, request.projectId),
+      { metadata: true, type: "json" }
     );
-    const filteredTokens = foundTokens
-      .filter((data) => data.metadata !== undefined)
-      .map((data) => data.metadata);
-    if (filteredTokens.length === 0) {
-      return { tokens: [] };
+    if (foundTokens?.value && foundTokens?.metadata) {
+      return foundTokens.metadata;
     } else {
-      return filteredTokens[0];
+      return { tokens: [] };
     }
   }
 
@@ -116,7 +109,7 @@ export class TokenController {
     const success = await write<{}>(
       KVUtils.getKV().workspaces,
       KVUtils.tokenKey(request.workspaceId, request.projectId),
-      {},
+      { ...currentTokens },
       { metadata: { ...currentTokens } }
     );
 
@@ -164,7 +157,7 @@ export class TokenController {
     const success = await write<{}>(
       KVUtils.getKV().workspaces,
       KVUtils.tokenKey(request.workspaceId, request.projectId),
-      {},
+      { ...currentTokens },
       { metadata: { ...currentTokens } }
     );
 
