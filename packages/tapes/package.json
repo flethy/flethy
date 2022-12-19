@@ -5,7 +5,7 @@
   "keywords": [],
   "main": "index.ts",
   "scripts": {
-    "vhs-connectors": "ts-node ./src/connectors/connectors.tape"
+    "tapenow": "./tapenow.sh"
   },
   "author": "adam@flethy.com",
   "license": "ISC",

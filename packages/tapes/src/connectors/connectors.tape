@@ -53,7 +53,7 @@ Set Width 1200
 Set Height 600
 Set LoopOffset 50%
 
-Type "nano connect-to-websiteshot.ts" Sleep 500ms Enter
+Type "nano connect-to-webhooksite.ts" Sleep 500ms Enter
 
 Type "import { nao, WebhookSite } from '@flethy/connectors'" Enter
 Type "" Enter
@@ -70,6 +70,6 @@ Sleep 2s
 Ctrl+x
 Type "y" Enter
 
-Type "ts-node connect-to-websiteshot.ts" Enter
+Type "ts-node connect-to-webhooksite.ts" Enter
 
 Sleep 5s
