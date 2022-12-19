@@ -6,8 +6,6 @@
   <br>
 </h1>
 
-<!-- check https://github.com/amitmerchant1990/electron-markdownify#readme -->
-
 <h4 align="center">Zero-dependency library to connect to over 250 APIs.</h4>
 
 <p align="center">
@@ -15,7 +13,7 @@
     <img src="https://badge.fury.io/js/@flethy%2Fconnectors.svg"
          alt="npm">
   </a>
-  <a href="https://flethy.com/integrations"><img src="https://img.shields.io/badge/integrations-258-blue" alt="integrations" /></a>
+  <a href="https://flethy.com/integrations"><img src="https://img.shields.io/badge/integrations-259-blue" alt="integrations" /></a>
   <a href="https://gitter.im/flethy/community"><img src="https://badges.gitter.im/flethy/community.svg"></a>
 </p>
 

@@ -6,8 +6,6 @@
   <br>
 </h1>
 
-<!-- check https://github.com/amitmerchant1990/electron-markdownify#readme -->
-
 <h4 align="center">Zero-dependency library to connect to over 250 APIs.</h4>
 
 <p align="center">
