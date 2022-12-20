@@ -10,6 +10,7 @@ import AppLoading from './components/Loading'
 import events, { LogLevel } from './events/events'
 import './i18n/config'
 import './index.scss'
+import { BootupStatus } from './models/api/appState'
 import { Provider } from './models/provider'
 import { rootStore, useMst } from './models/root'
 import AppPage from './pages/app/page'
@@ -31,17 +32,20 @@ const App = observer(() => {
 
 	components.quickSearch.initialise()
 
-	let app
+	let app = <AppLoading />
 
 	if (auth.isAuthenticated === null) {
-		app = <AppLoading />
+		api.appState.updateStatus(BootupStatus.NOAUTH)
 	} else if (auth.isAuthenticated && auth.user) {
+		api.appState.updateStatus(BootupStatus.AUTH_AND_USER)
 		if (!initialized) {
+			api.appState.updateStatus(BootupStatus.ROUTER)
 			startRouter(routes, rootStore, {
 				notfound: () => rootStore.router.goTo(routes.notFound),
 			})
 			initialized = true
 		}
+		api.appState.updateStatus(BootupStatus.WORKSPACES)
 		api.workspaces.getMy({})
 		app = (
 			<>
@@ -54,7 +58,7 @@ const App = observer(() => {
 			</>
 		)
 	} else {
-		app = <AppLoading />
+		api.appState.updateStatus(BootupStatus.AUTH_NO_USER)
 		if (!auth.isAuthenticated) {
 			const path =
 				window.location.pathname?.length > 0
@@ -62,6 +66,7 @@ const App = observer(() => {
 					: ''
 			const query = window.location.search
 			setTimeout(() => {
+				api.appState.updateStatus(BootupStatus.LOGIN)
 				auth.loginWithRedirect({
 					appState: {
 						target: `${path}${query}`,
@@ -69,6 +74,7 @@ const App = observer(() => {
 				})
 			}, 500)
 		} else {
+			api.appState.updateStatus(BootupStatus.USER)
 			auth.fetchUser()
 		}
 	}

@@ -35,6 +35,18 @@
 			"error": "Sorry, something went wrong. Please try again later."
 		}
 	},
+	"appStatus": {
+		"bootup": {
+			"noAuth": "Authentication needed",
+			"authAndUser": "Authentication and user data loaded",
+			"router": "Starting router",
+			"workspaces": "Loading workspaces",
+			"done": "Done",
+			"authNoUser": "Authentication loaded, but user data missing",
+			"user": "Loading user",
+			"login": "Redirecting to login"
+		}
+	},
 	"modals": {
 		"secrets": {
 			"create": {

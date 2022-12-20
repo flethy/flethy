@@ -1,13 +1,25 @@
 import { Center, Spinner, Square, Text, VStack } from '@chakra-ui/react'
 import { observer } from 'mobx-react-lite'
+import { useMst } from '../models/root'
 
-export default observer((props: { message?: string }) => {
+export default observer((props: { message?: string; showBootup?: boolean }) => {
+	const {
+		root: { api },
+	} = useMst()
+
+	let message
+	if (props.showBootup && api.appState.bootupStatus?.length > 0) {
+		message = api.appState.bootupStatus
+	} else if (props.message) {
+		message = props.message
+	}
+
 	return (
 		<Center h="100vh">
 			<Square>
 				<VStack>
 					<Spinner size={'xl'} color={'flethy.orange'} />
-					{props.message && <Text>{props.message}</Text>}
+					{message && <Text>{message}</Text>}
 				</VStack>
 			</Square>
 		</Center>
