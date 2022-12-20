@@ -27,6 +27,8 @@
     "start:ep:dev": "pnpm --filter execution-platform dev",
     "start:ep": "pnpm --filter execution-platform local",
     "docs:openapi": "pnpm --filter execution-platform openapi",
+    "=============== D O C S =================": "===============",
+    "start:docs": "pnpm --filter docs start",
     "=============== M A R K E T I N G ===============": "===============",
     "marketing": "pnpm --filter generator marketing",
     "=============== O T H E R ===============": "===============",
