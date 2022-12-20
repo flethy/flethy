@@ -1,0 +1,529 @@
+{
+	"components": {
+		"examples": {},
+		"headers": {},
+		"parameters": {},
+		"requestBodies": {},
+		"responses": {},
+		"schemas": {
+			"FlethyWorkflowMetadata": {
+				"properties": {
+					"createdAt": {
+						"type": "number",
+						"format": "double"
+					},
+					"updatedAt": {
+						"type": "number",
+						"format": "double"
+					},
+					"createdBy": {
+						"type": "string"
+					},
+					"updatedBy": {
+						"type": "string"
+					},
+					"projectId": {
+						"type": "string"
+					},
+					"workflowId": {
+						"type": "string"
+					},
+					"name": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"createdAt",
+					"createdBy",
+					"projectId",
+					"workflowId",
+					"name"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"FlowNextNode": {
+				"properties": {
+					"id": {
+						"type": "string"
+					},
+					"condition": {
+						"properties": {
+							"toMatch": {
+								"anyOf": [
+									{
+										"type": "string"
+									},
+									{
+										"type": "number",
+										"format": "double"
+									}
+								]
+							},
+							"filter": {
+								"type": "string"
+							}
+						},
+						"required": [
+							"toMatch",
+							"filter"
+						],
+						"type": "object"
+					}
+				},
+				"required": [
+					"id"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"FlowNode": {
+				"properties": {
+					"kind": {
+						"type": "string"
+					},
+					"baseId": {
+						"type": "string"
+					},
+					"id": {
+						"type": "string"
+					},
+					"next": {
+						"items": {
+							"$ref": "#/components/schemas/FlowNextNode"
+						},
+						"type": "array"
+					},
+					"previous": {
+						"items": {
+							"type": "string"
+						},
+						"type": "array"
+					},
+					"config": {
+						"properties": {
+							"namespace": {
+								"type": "string"
+							},
+							"noUpdateContext": {
+								"type": "boolean"
+							}
+						},
+						"type": "object"
+					}
+				},
+				"required": [
+					"kind",
+					"id"
+				],
+				"type": "object",
+				"additionalProperties": {}
+			},
+			"FlethyWorkflow": {
+				"properties": {
+					"workflow": {
+						"items": {
+							"$ref": "#/components/schemas/FlowNode"
+						},
+						"type": "array"
+					},
+					"env": {
+						"properties": {},
+						"additionalProperties": {
+							"type": "string"
+						},
+						"type": "object"
+					}
+				},
+				"required": [
+					"workflow"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"StartWorkflowResponse": {
+				"properties": {
+					"success": {
+						"type": "boolean"
+					},
+					"errors": {
+						"items": {},
+						"type": "array"
+					},
+					"response": {}
+				},
+				"required": [
+					"success",
+					"response"
+				],
+				"type": "object",
+				"additionalProperties": false
+			}
+		},
+		"securitySchemes": {
+			"bearer": {
+				"type": "http",
+				"scheme": "bearer",
+				"bearerFormat": "JWT"
+			}
+		}
+	},
+	"info": {
+		"title": "@flethy/execution-platform",
+		"version": "1.0.0",
+		"description": "flethy execution platform",
+		"license": {
+			"name": "MIT"
+		},
+		"contact": {
+			"name": "adam@flethy.com"
+		}
+	},
+	"openapi": "3.0.0",
+	"paths": {
+		"/v1/w/{workspaceId}/p/{projectId}/wf": {
+			"put": {
+				"operationId": "Put",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"properties": {
+										"workflowMetadata": {
+											"$ref": "#/components/schemas/FlethyWorkflowMetadata"
+										},
+										"success": {
+											"type": "boolean"
+										}
+									},
+									"required": [
+										"workflowMetadata",
+										"success"
+									],
+									"type": "object"
+								}
+							}
+						}
+					},
+					"400": {
+						"description": "Bad Request"
+					},
+					"404": {
+						"description": "Workflow not found"
+					}
+				},
+				"description": "Add or update a workflow in a project",
+				"summary": "Add or update a workflow",
+				"tags": [
+					"Workflows"
+				],
+				"security": [
+					{
+						"bearer": []
+					}
+				],
+				"parameters": [
+					{
+						"description": "The ID of the workspace the workflow belongs to",
+						"in": "path",
+						"name": "workspaceId",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"description": "The ID of the project the workflow belongs to",
+						"in": "path",
+						"name": "projectId",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"properties": {
+									"env": {
+										"properties": {},
+										"additionalProperties": {
+											"type": "string"
+										},
+										"type": "object"
+									},
+									"workflowId": {
+										"type": "string"
+									},
+									"workflow": {},
+									"name": {
+										"type": "string"
+									}
+								},
+								"required": [
+									"workflow",
+									"name"
+								],
+								"type": "object"
+							}
+						}
+					}
+				}
+			},
+			"get": {
+				"operationId": "List",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"items": {},
+									"type": "array"
+								}
+							}
+						}
+					}
+				},
+				"description": "List workflows in a project",
+				"summary": "List Workflows",
+				"tags": [
+					"Workflows"
+				],
+				"security": [
+					{
+						"bearer": []
+					}
+				],
+				"parameters": [
+					{
+						"description": "The ID of the workspace the workflow belongs to",
+						"in": "path",
+						"name": "workspaceId",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"description": "The ID of the project the workflow belongs to",
+						"in": "path",
+						"name": "projectId",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			}
+		},
+		"/v1/w/{workspaceId}/p/{projectId}/wf/{workflowId}": {
+			"get": {
+				"operationId": "Get",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"properties": {
+										"metadata": {
+											"$ref": "#/components/schemas/FlethyWorkflowMetadata"
+										},
+										"workflow": {
+											"$ref": "#/components/schemas/FlethyWorkflow"
+										}
+									},
+									"required": [
+										"metadata",
+										"workflow"
+									],
+									"type": "object"
+								}
+							}
+						}
+					},
+					"404": {
+						"description": "Workflow not found"
+					}
+				},
+				"description": "Get a workflow in a project",
+				"summary": "Get Workflow",
+				"tags": [
+					"Workflows"
+				],
+				"security": [
+					{
+						"bearer": []
+					}
+				],
+				"parameters": [
+					{
+						"description": "The ID of the workspace the workflow belongs to",
+						"in": "path",
+						"name": "workspaceId",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"description": "The ID of the project the workflow belongs to",
+						"in": "path",
+						"name": "projectId",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"in": "path",
+						"name": "workflowId",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			},
+			"delete": {
+				"operationId": "Delete",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "boolean"
+								}
+							}
+						}
+					},
+					"404": {
+						"description": "Workflow not found"
+					}
+				},
+				"description": "Delete a workflow in a project",
+				"summary": "Delete Workflow",
+				"tags": [
+					"Workflows"
+				],
+				"security": [
+					{
+						"bearer": []
+					}
+				],
+				"parameters": [
+					{
+						"description": "The ID of the workspace the workflow belongs to",
+						"in": "path",
+						"name": "workspaceId",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"description": "The ID of the project the workflow belongs to",
+						"in": "path",
+						"name": "projectId",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"in": "path",
+						"name": "workflowId",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			}
+		},
+		"/v1/w/{workspaceId}/p/{projectId}/wf/{workflowId}/i": {
+			"post": {
+				"operationId": "Start",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/StartWorkflowResponse"
+								}
+							}
+						}
+					},
+					"404": {
+						"description": "Workflow not found"
+					}
+				},
+				"description": "Start instance for workflow",
+				"summary": "Start instance",
+				"tags": [
+					"Workflows"
+				],
+				"security": [
+					{
+						"bearer": []
+					}
+				],
+				"parameters": [
+					{
+						"description": "The ID of the workspace the workflow belongs to",
+						"in": "path",
+						"name": "workspaceId",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"description": "The ID of the project the workflow belongs to",
+						"in": "path",
+						"name": "projectId",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"in": "path",
+						"name": "workflowId",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"properties": {
+									"payload": {}
+								},
+								"type": "object"
+							}
+						}
+					}
+				}
+			}
+		}
+	},
+	"servers": [
+		{
+			"url": "https://api.flethy.com",
+			"description": "Flethy API"
+		}
+	]
+}

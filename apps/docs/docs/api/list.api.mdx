@@ -1,0 +1,34 @@
+---
+id: list
+title: "List Workflows"
+description: "List workflows in a project"
+sidebar_label: "List Workflows"
+hide_title: true
+hide_table_of_contents: true
+api: {"operationId":"List","responses":{"200":{"description":"Ok","content":{"application/json":{"schema":{"items":{},"type":"array"}}}}},"description":"List workflows in a project","tags":["Workflows"],"security":[{"bearer":[]}],"parameters":[{"description":"The ID of the workspace the workflow belongs to","in":"path","name":"workspaceId","required":true,"schema":{"type":"string"}},{"description":"The ID of the project the workflow belongs to","in":"path","name":"projectId","required":true,"schema":{"type":"string"}}],"method":"get","path":"/v1/w/{workspaceId}/p/{projectId}/wf","servers":[{"url":"https://api.flethy.com","description":"Flethy API"}],"securitySchemes":{"bearer":{"type":"http","scheme":"bearer","bearerFormat":"JWT"}},"info":{"title":"@flethy/execution-platform","version":"1.0.0","description":"flethy execution platform","license":{"name":"MIT"},"contact":{"name":"adam@flethy.com"}},"postman":{"name":"List Workflows","description":{"content":"List workflows in a project","type":"text/plain"},"url":{"path":["v1","w",":workspaceId","p",":projectId","wf"],"host":["{{baseUrl}}"],"query":[],"variable":[{"disabled":false,"description":{"content":"(Required) The ID of the workspace the workflow belongs to","type":"text/plain"},"type":"any","value":"","key":"workspaceId"},{"disabled":false,"description":{"content":"(Required) The ID of the project the workflow belongs to","type":"text/plain"},"type":"any","value":"","key":"projectId"}]},"header":[{"key":"Accept","value":"application/json"}],"method":"GET","auth":{"type":"bearer","bearer":[{"type":"any","value":"<Bearer Token>","key":"token"}]}}}
+sidebar_class_name: "get api-method"
+info_path: docs/api/flethy-execution-platform
+custom_edit_url: null
+---
+
+import ApiTabs from "@theme/ApiTabs";
+import MimeTabs from "@theme/MimeTabs";
+import ParamsItem from "@theme/ParamsItem";
+import ResponseSamples from "@theme/ResponseSamples";
+import SchemaItem from "@theme/SchemaItem";
+import SchemaTabs from "@theme/SchemaTabs";
+import DiscriminatorTabs from "@theme/DiscriminatorTabs";
+import TabItem from "@theme/TabItem";
+
+## List Workflows
+
+
+
+List workflows in a project
+
+<details style={{"marginBottom":"1rem"}} data-collapsed={false} open={true}><summary style={{}}><strong>Path Parameters</strong></summary><div><ul><ParamsItem className={"paramsItem"} param={{"description":"The ID of the workspace the workflow belongs to","in":"path","name":"workspaceId","required":true,"schema":{"type":"string"}}}></ParamsItem><ParamsItem className={"paramsItem"} param={{"description":"The ID of the project the workflow belongs to","in":"path","name":"projectId","required":true,"schema":{"type":"string"}}}></ParamsItem></ul></div></details><div><ApiTabs><TabItem label={"200"} value={"200"}><div>
+
+Ok
+
+</div><div><MimeTabs schemaType={"response"}><TabItem label={"application/json"} value={"application/json"}><SchemaTabs><TabItem label={"Schema"} value={"Schema"}><details style={{}} data-collapsed={false} open={true}><summary style={{"textAlign":"left"}}><strong>Schema</strong><span style={{"opacity":"0.6"}}> array</span></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}></div><ul style={{"marginLeft":"1rem"}}></ul></details></TabItem><TabItem label={"Example (from schema)"} value={"Example (from schema)"}><ResponseSamples responseExample={"[\n  null\n]"} language={"json"}></ResponseSamples></TabItem></SchemaTabs></TabItem></MimeTabs></div></TabItem></ApiTabs></div>
+      
