@@ -218,6 +218,7 @@ import { Stackby } from '../../../connectors/src/configs/stackby.config'
 import { Stackhawk } from '../../../connectors/src/configs/stackhawk.config'
 import { Statically } from '../../../connectors/src/configs/statically.config'
 import { Storyblok } from '../../../connectors/src/configs/storyblok.config'
+import { Stripe } from '../../../connectors/src/configs/stripe.config'
 import { Stytch } from '../../../connectors/src/configs/stytch.config'
 import { Supabase } from '../../../connectors/src/configs/supabase.config'
 import { Tenderly } from '../../../connectors/src/configs/tenderly.config'
@@ -735,6 +736,8 @@ configTypes.push({type: getType<Statically.StaticZapBitbucket>(), id: 'staticall
 configTypes.push({type: getType<Storyblok.GraphQLQuery>(), id: 'storyblok', name: 'Storyblok', interface: 'GraphQLQuery'})
 configTypes.push({type: getType<Storyblok.ListStories>(), id: 'storyblok', name: 'Storyblok', interface: 'ListStories'})
 configTypes.push({type: getType<Storyblok.GetStory>(), id: 'storyblok', name: 'Storyblok', interface: 'GetStory'})
+configTypes.push({type: getType<Stripe.ListProducts>(), id: 'stripe', name: 'Stripe', interface: 'ListProducts'})
+configTypes.push({type: getType<Stripe.ListPrices>(), id: 'stripe', name: 'Stripe', interface: 'ListPrices'})
 configTypes.push({type: getType<Stytch.SendMagicLink>(), id: 'stytch', name: 'Stytch', interface: 'SendMagicLink'})
 configTypes.push({type: getType<Stytch.CreateUser>(), id: 'stytch', name: 'Stytch', interface: 'CreateUser'})
 configTypes.push({type: getType<Supabase.InsertRows>(), id: 'supabase', name: 'Supabase', interface: 'InsertRows'})

@@ -234,6 +234,7 @@ The following Endpoints are currently supported.
 * [Stackhawk](./api/stackhawk.md)
 * [Statically](./api/statically.md)
 * [Storyblok](./api/storyblok.md)
+* [Stripe](./api/stripe.md)
 * [Stytch](./api/stytch.md)
 * [Supabase](./api/supabase.md)
 * [TheCompaniesApi](./api/thecompaniesapi.md)
