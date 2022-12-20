@@ -62,12 +62,13 @@ export const AuthStore = types
 				}
 			} else {
 				self.client.then(async (client) => {
-					if (await client.isAuthenticated()) {
-						Promise.all([client.getTokenSilently(), client.getUser()]).then(
-							([token, user]) => {
-								this.loginSuccessful(token, user)
-							},
-						)
+					const isAuthenticated = await client.isAuthenticated()
+					if (isAuthenticated) {
+						const [token, user] = await Promise.all([
+							client.getTokenSilently(),
+							client.getUser(),
+						])
+						this.loginSuccessful(token, user)
 					} else {
 						this.notLoggedIn()
 					}
@@ -137,21 +138,20 @@ export const AuthStore = types
 		},
 
 		handleRedirectCallback() {
-			self.client?.then((client: Auth0Client) => {
-				client.handleRedirectCallback().then((response: any) => {
-					const appStateTarget: string | undefined = response?.appState?.target
-					if (appStateTarget) {
-						const targetUrl = `${window.location.origin}/${appStateTarget}`
-						window.location.href = targetUrl
-					}
-				})
+			self.client?.then(async (client: Auth0Client) => {
+				const handleRedirectResponse = await client.handleRedirectCallback()
+				const appStateTarget: string | undefined =
+					handleRedirectResponse?.appState?.target
+				if (appStateTarget) {
+					const targetUrl = `${window.location.origin}/${appStateTarget}`
+					window.location.href = targetUrl
+				}
 
-				Promise.all([client.getTokenSilently(), client.getUser()]).then(
-					([token, user]) => {
-						this.loginSuccessful(token, user)
-					},
-				)
-
+				const [token, user] = await Promise.all([
+					client.getTokenSilently(),
+					client.getUser(),
+				])
+				this.loginSuccessful(token, user)
 				history.replaceState({}, '', '/')
 			})
 		},
