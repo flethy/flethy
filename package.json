@@ -29,6 +29,7 @@
     "docs:openapi": "pnpm --filter execution-platform openapi",
     "=============== D O C S =================": "===============",
     "start:docs": "pnpm --filter docs start",
+    "build:docs": "pnpm --filter docs build",
     "=============== M A R K E T I N G ===============": "===============",
     "marketing": "pnpm --filter generator marketing",
     "=============== O T H E R ===============": "===============",
