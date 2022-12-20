@@ -246,4 +246,13 @@ export const FLOWS = {
       'auth:Authorization': '==>secrets==>INCIDENTIO_API_KEY',
     },
   ],
+  'list-products-from-stripe': [
+    {
+      id: 'stripe',
+      kind: 'stripe.products.list',
+      'auth:Authorization': {
+        username: '==>secrets==>STRIPE_API_KEY',
+      },
+    },
+  ],
 }

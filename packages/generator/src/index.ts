@@ -167,6 +167,7 @@ import { nao } from '../../connectors/src/utils/Request.utils'
 import APIPoint from '@flethy/connectors/src/configs/apipoint.config'
 import BasementDev from '@flethy/connectors/src/configs/basementdev.config'
 import Beew from '@flethy/connectors/src/configs/beew.config'
+import BitIo from '@flethy/connectors/src/configs/bitio.config'
 import ButterCMS from '@flethy/connectors/src/configs/buttercms.config'
 import ButtondownEmail from '@flethy/connectors/src/configs/buttondownemail.config'
 import CarbEngage from '@flethy/connectors/src/configs/carbengage.config'
@@ -179,7 +180,9 @@ import Cuttly from '@flethy/connectors/src/configs/cuttly.config'
 import Dataddo from '@flethy/connectors/src/configs/dataddo.config'
 import Deepgram from '@flethy/connectors/src/configs/deepgram.config'
 import Festdays from '@flethy/connectors/src/configs/festdays.config'
+import FireHydrant from '@flethy/connectors/src/configs/firehydrant.config'
 import Flatfile from '@flethy/connectors/src/configs/flatfile.config'
+import Fleek from '@flethy/connectors/src/configs/fleek.config'
 import FootballPredictionAPI from '@flethy/connectors/src/configs/footballpredictionapi.config'
 import GitLab from '@flethy/connectors/src/configs/gitlab.config'
 import GoDaddy from '@flethy/connectors/src/configs/godaddy.config'
@@ -188,6 +191,7 @@ import Hasura from '@flethy/connectors/src/configs/hasura.config'
 import Here from '@flethy/connectors/src/configs/here.config'
 import Imglab from '@flethy/connectors/src/configs/imglab.config'
 import Keen from '@flethy/connectors/src/configs/keen.config'
+import KnockApp from '@flethy/connectors/src/configs/knockapp.config'
 import KontentAI from '@flethy/connectors/src/configs/kontentai.config'
 import Koyeb from '@flethy/connectors/src/configs/koyeb.config'
 import LanguageLayer from '@flethy/connectors/src/configs/languagelayer.config'
@@ -230,6 +234,7 @@ import SpeechTextAI from '@flethy/connectors/src/configs/speechtextai.config'
 import Splitbee from '@flethy/connectors/src/configs/splitbee.config'
 import Stackhawk from '@flethy/connectors/src/configs/stackhawk.config'
 import Storyblok from '@flethy/connectors/src/configs/storyblok.config'
+import Stripe from '@flethy/connectors/src/configs/stripe.config'
 import Stytch from '@flethy/connectors/src/configs/stytch.config'
 import TheNounProject from '@flethy/connectors/src/configs/thenounproject.config'
 import TinyURL from '@flethy/connectors/src/configs/tinyurl.config'
@@ -241,14 +246,10 @@ import Vimeo from '@flethy/connectors/src/configs/vimeo.config'
 import Vonage from '@flethy/connectors/src/configs/vonage.config'
 import WarrantDev from '@flethy/connectors/src/configs/warrantdev.config'
 import WebhookSite from '@flethy/connectors/src/configs/webhooksite.config'
+import WonderPush from '@flethy/connectors/src/configs/wonderpush.config'
 import WorkOS from '@flethy/connectors/src/configs/workos.config'
 import { HttpRequest } from './controllers/HttpRequest'
 import { logger } from './utils/Logger'
-import WonderPush from '@flethy/connectors/src/configs/wonderpush.config'
-import FireHydrant from '@flethy/connectors/src/configs/firehydrant.config'
-import Fleek from '@flethy/connectors/src/configs/fleek.config'
-import KnockApp from '@flethy/connectors/src/configs/knockapp.config'
-import BitIo from '@flethy/connectors/src/configs/bitio.config'
 
 async function main() {
   const requestConfigs: {
@@ -3380,8 +3381,20 @@ Here you find all the available integrations`,
       'body:database_name': process.env.BITIO_DB,
       'body:query_string': 'SELECT * FROM flethy;',
     }),
+    stripeListProducts: nao<Stripe.ListProducts>({
+      kind: 'stripe.products.list',
+      'auth:Authorization': {
+        username: process.env.STRIPE_API_KEY,
+      },
+    }),
+    stripeListPrices: nao<Stripe.ListPrices>({
+      kind: 'stripe.prices.list',
+      'auth:Authorization': {
+        username: process.env.STRIPE_API_KEY,
+      },
+    }),
   }
-  const requestConfig = requestConfigs.bitioQuery
+  const requestConfig = requestConfigs.stripeListPrices
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

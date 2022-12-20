@@ -1,0 +1,128 @@
+{
+  "name": "Stripe",
+  "domain": "stripe.com",
+  "claimed": true,
+  "description": "Online payment processing for internet businesses. Stripe is a suite of payment APIs that powers commerce for online businesses of all sizes, including fraud prevention, and subscription management. Use Stripe’s payment platform to accept and process payments online for easy-to-use commerce solutions.",
+  "links": [
+    {
+      "name": "crunchbase",
+      "url": "https://crunchbase.com/organization/stripe"
+    },
+    { "name": "github", "url": "https://github.com/stripe-samples" },
+    { "name": "twitter", "url": "https://twitter.com/stripe" },
+    { "name": "linkedin", "url": "https://linkedin.com/company/stripe" },
+    { "name": "facebook", "url": "https://facebook.com/StripeHQ" }
+  ],
+  "logos": [
+    {
+      "type": "logo",
+      "theme": "light",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idxAg10C0L/idQmWw7PLC.svg",
+          "background": "transparent",
+          "format": "svg",
+          "size": 1769
+        },
+        {
+          "src": "https://asset.brandfetch.io/idxAg10C0L/idXvvVN4yn.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 381,
+          "width": 800,
+          "size": 11314
+        }
+      ]
+    },
+    {
+      "type": "logo",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idxAg10C0L/idATb3amIw.svg",
+          "background": "transparent",
+          "format": "svg",
+          "size": 1769
+        },
+        {
+          "src": "https://asset.brandfetch.io/idxAg10C0L/idgqVKvRHS.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 381,
+          "width": 800,
+          "size": 14371
+        }
+      ]
+    },
+    {
+      "type": "icon",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idxAg10C0L/idTHPdqoDR.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 400,
+          "width": 400,
+          "size": 6528
+        }
+      ]
+    },
+    {
+      "type": "other",
+      "theme": null,
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idxAg10C0L/idK89eJl2Z.svg",
+          "background": "transparent",
+          "format": "svg",
+          "size": 1769
+        },
+        {
+          "src": "https://asset.brandfetch.io/idxAg10C0L/idyiUzQiWt.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 381,
+          "width": 800,
+          "size": 14718
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#0a2540", "type": "dark", "brightness": 33 },
+    { "hex": "#f6f9fc", "type": "light", "brightness": 249 },
+    { "hex": "#635bff", "type": "accent", "brightness": 105 }
+  ],
+  "fonts": [
+    {
+      "name": "sohne-var",
+      "type": "title",
+      "origin": "custom",
+      "originId": null,
+      "weights": []
+    },
+    {
+      "name": "sohne-var",
+      "type": "body",
+      "origin": "custom",
+      "originId": null,
+      "weights": []
+    }
+  ],
+  "images": [
+    {
+      "type": "banner",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idxAg10C0L/idyJBFNKEQ.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 500,
+          "width": 1500,
+          "size": 173991
+        }
+      ]
+    }
+  ]
+}

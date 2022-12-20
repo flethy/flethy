@@ -218,6 +218,7 @@ import { Stackby } from '../configs/stackby.config'
 import { Stackhawk } from '../configs/stackhawk.config'
 import { Statically } from '../configs/statically.config'
 import { Storyblok } from '../configs/storyblok.config'
+import { Stripe } from '../configs/stripe.config'
 import { Stytch } from '../configs/stytch.config'
 import { Supabase } from '../configs/supabase.config'
 import { Tenderly } from '../configs/tenderly.config'
@@ -479,6 +480,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['stackhawk', Stackhawk.API],
 ['statically', Statically.API],
 ['storyblok', Storyblok.API],
+['stripe', Stripe.API],
 ['stytch', Stytch.API],
 ['supabase', Supabase.API],
 ['tenderly', Tenderly.API],
