@@ -20,7 +20,7 @@
 		"@flethy/flow": "^0.0.264",
 		"@fontsource/open-sans": "^4.5.13",
 		"@fontsource/raleway": "^4.5.11",
-		"framer-motion": "^7.10.2",
+		"framer-motion": "^8.0.1",
 		"i18next": "^22.4.5",
 		"mobx": "6.7.0",
 		"mobx-react": "7.6.0",

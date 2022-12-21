@@ -18,7 +18,7 @@
 		"@emotion/styled": "^11.10.5",
 		"@flethy/connectors": "0.0.265",
 		"axios": "1.2.1",
-		"framer-motion": "^7.10.2",
+		"framer-motion": "^8.0.1",
 		"i18next": "^22.4.5",
 		"mobx": "6.7.0",
 		"mobx-react": "7.6.0",
