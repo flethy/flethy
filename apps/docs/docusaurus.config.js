@@ -7,7 +7,7 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: "flethy",
-  tagline: "time to speed up!",
+  tagline: "time to speed up! // under construction",
   url: "https://flethy.com",
   baseUrl: "/",
   onBrokenLinks: "throw",
