@@ -255,4 +255,15 @@ export const FLOWS = {
       },
     },
   ],
+  'create-new-contact-in-getresponse': [
+    {
+      id: 'getresponse',
+      kind: 'getresponse.contacts.create',
+      'auth:X-Auth-Token': '==>secrets==>GETRESPONSE_API_KEY',
+      'body:campaign': {
+        campaignId: '->context.input.campaignId->string',
+      },
+      'body:email': '->context.input.email->string',
+    },
+  ],
 }

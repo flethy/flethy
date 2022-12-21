@@ -109,6 +109,7 @@ The following Endpoints are currently supported.
 * [FootballPredictionAPI](./api/footballpredictionapi.md)
 * [Frankfurter](./api/frankfurter.md)
 * [Geekflare](./api/geekflare.md)
+* [GetResponse](./api/getresponse.md)
 * [Github](./api/github.md)
 * [GitLab](./api/gitlab.md)
 * [GoDaddy](./api/godaddy.md)

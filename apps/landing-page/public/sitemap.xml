@@ -373,6 +373,10 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://flethy.com/integrations/getresponse</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://flethy.com/integrations/github</loc>
     <priority>0.8</priority>
   </url>
@@ -1070,6 +1074,10 @@
   </url>
   <url>
     <loc>https://flethy.com/use-cases/create-incident-with-firehydrant</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://flethy.com/use-cases/create-new-contact-in-getresponse</loc>
     <priority>0.8</priority>
   </url>
   <url>
