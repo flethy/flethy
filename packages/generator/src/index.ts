@@ -184,6 +184,7 @@ import FireHydrant from '@flethy/connectors/src/configs/firehydrant.config'
 import Flatfile from '@flethy/connectors/src/configs/flatfile.config'
 import Fleek from '@flethy/connectors/src/configs/fleek.config'
 import FootballPredictionAPI from '@flethy/connectors/src/configs/footballpredictionapi.config'
+import GetResponse from '@flethy/connectors/src/configs/getresponse.config'
 import GitLab from '@flethy/connectors/src/configs/gitlab.config'
 import GoDaddy from '@flethy/connectors/src/configs/godaddy.config'
 import Gravatar from '@flethy/connectors/src/configs/gravatar.config'
@@ -3393,8 +3394,20 @@ Here you find all the available integrations`,
         username: process.env.STRIPE_API_KEY,
       },
     }),
+    getResponseContacts: nao<GetResponse.ListContacts>({
+      kind: 'getresponse.contacts.list',
+      'auth:X-Auth-Token': process.env.GETRESPONSE_API_KEY,
+    }),
+    getResponseCreate: nao<GetResponse.CreateContact>({
+      kind: 'getresponse.contacts.create',
+      'auth:X-Auth-Token': process.env.GETRESPONSE_API_KEY,
+      'body:campaign': {
+        campaignId: 'LN133',
+      },
+      'body:email': 'adam.urban@gmail.com',
+    }),
   }
-  const requestConfig = requestConfigs.stripeListPrices
+  const requestConfig = requestConfigs.getResponseCreate
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

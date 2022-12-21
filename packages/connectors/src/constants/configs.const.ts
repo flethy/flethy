@@ -87,6 +87,7 @@ import { Fleek } from '../configs/fleek.config'
 import { FootballPredictionAPI } from '../configs/footballpredictionapi.config'
 import { Frankfurter } from '../configs/frankfurter.config'
 import { Geekflare } from '../configs/geekflare.config'
+import { GetResponse } from '../configs/getresponse.config'
 import { Github } from '../configs/github.config'
 import { GitLab } from '../configs/gitlab.config'
 import { GoDaddy } from '../configs/godaddy.config'
@@ -349,6 +350,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['footballpredictionapi', FootballPredictionAPI.API],
 ['frankfurter', Frankfurter.API],
 ['geekflare', Geekflare.API],
+['getresponse', GetResponse.API],
 ['github', Github.API],
 ['gitlab', GitLab.API],
 ['godaddy', GoDaddy.API],

@@ -1,0 +1,133 @@
+{
+  "name": "GetResponse",
+  "domain": "getresponse.com",
+  "claimed": false,
+  "description": "We're an all-in-one marketing platform that caters to your strategic needs as online entrepreneurs and business owners.",
+  "links": [
+    { "name": "twitter", "url": "https://twitter.com/getresponse" },
+    { "name": "linkedin", "url": "https://linkedin.com/company/getresponse" },
+    { "name": "instagram", "url": "https://instagram.com/getresponse" },
+    { "name": "facebook", "url": "https://facebook.com/GetReponse" }
+  ],
+  "logos": [
+    {
+      "type": "icon",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idyx0Fk6PP/id61rYGux7.png",
+          "background": null,
+          "format": "png",
+          "height": 180,
+          "width": 180,
+          "size": 2283
+        }
+      ]
+    },
+    {
+      "type": "logo",
+      "theme": "light",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idyx0Fk6PP/id3EyXQ5fs.svg",
+          "background": "transparent",
+          "format": "svg",
+          "size": 4016
+        },
+        {
+          "src": "https://asset.brandfetch.io/idyx0Fk6PP/ids7nD7hbC.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 106,
+          "width": 800,
+          "size": 11761
+        },
+        {
+          "src": "https://asset.brandfetch.io/idyx0Fk6PP/idIsG69eYk.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 106,
+          "width": 800,
+          "size": 11761
+        }
+      ]
+    },
+    {
+      "type": "logo",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idyx0Fk6PP/id8zr0teYj.svg",
+          "background": "transparent",
+          "format": "svg",
+          "size": 4079
+        },
+        {
+          "src": "https://asset.brandfetch.io/idyx0Fk6PP/id2xEZOyz0.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 106,
+          "width": 800,
+          "size": 13023
+        }
+      ]
+    },
+    {
+      "type": "symbol",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idyx0Fk6PP/idu75C93Ha.svg",
+          "background": "transparent",
+          "format": "svg",
+          "size": 1026
+        },
+        {
+          "src": "https://asset.brandfetch.io/idyx0Fk6PP/idVrFMYKu3.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 509,
+          "width": 800,
+          "size": 19762
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#202730", "type": "dark", "brightness": 38 },
+    { "hex": "#FFFFFF", "type": "light", "brightness": 255 },
+    { "hex": "#00baff", "type": "accent", "brightness": 151 },
+    { "hex": "#FFEA00", "type": "brand", "brightness": 222 }
+  ],
+  "fonts": [
+    {
+      "name": "Source Sans 3",
+      "type": "title",
+      "origin": "google",
+      "originId": "Source+Sans+3",
+      "weights": []
+    },
+    {
+      "name": "RobotoFlex",
+      "type": "body",
+      "origin": "custom",
+      "originId": null,
+      "weights": []
+    }
+  ],
+  "images": [
+    {
+      "type": "banner",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idyx0Fk6PP/idUg3qZtPo.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 256,
+          "width": 1265,
+          "size": 49896
+        }
+      ]
+    }
+  ]
+}

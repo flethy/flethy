@@ -87,6 +87,7 @@ import { Fleek } from '../../../connectors/src/configs/fleek.config'
 import { FootballPredictionAPI } from '../../../connectors/src/configs/footballpredictionapi.config'
 import { Frankfurter } from '../../../connectors/src/configs/frankfurter.config'
 import { Geekflare } from '../../../connectors/src/configs/geekflare.config'
+import { GetResponse } from '../../../connectors/src/configs/getresponse.config'
 import { Github } from '../../../connectors/src/configs/github.config'
 import { GitLab } from '../../../connectors/src/configs/gitlab.config'
 import { GoDaddy } from '../../../connectors/src/configs/godaddy.config'
@@ -466,6 +467,8 @@ configTypes.push({type: getType<Geekflare.DNSRecords>(), id: 'geekflare', name: 
 configTypes.push({type: getType<Geekflare.Lighthouse>(), id: 'geekflare', name: 'Geekflare', interface: 'Lighthouse'})
 configTypes.push({type: getType<Geekflare.Screenshot>(), id: 'geekflare', name: 'Geekflare', interface: 'Screenshot'})
 configTypes.push({type: getType<Geekflare.UrlToPdf>(), id: 'geekflare', name: 'Geekflare', interface: 'UrlToPdf'})
+configTypes.push({type: getType<GetResponse.ListContacts>(), id: 'getresponse', name: 'GetResponse', interface: 'ListContacts'})
+configTypes.push({type: getType<GetResponse.CreateContact>(), id: 'getresponse', name: 'GetResponse', interface: 'CreateContact'})
 configTypes.push({type: getType<Github.ListRepositoryIssues>(), id: 'github', name: 'Github', interface: 'ListRepositoryIssues'})
 configTypes.push({type: getType<Github.RepositoriesGetContent>(), id: 'github', name: 'Github', interface: 'RepositoriesGetContent'})
 configTypes.push({type: getType<Github.GitDatabaseGetTree>(), id: 'github', name: 'Github', interface: 'GitDatabaseGetTree'})
