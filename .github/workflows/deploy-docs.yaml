@@ -1,0 +1,19 @@
+name: "Deploy Docs"
+
+# on: [push]
+on:
+  release:
+    types: [published]
+
+jobs:
+  publish-landing-page:
+    uses: ./.github/workflows/template-deploy-to-cloudflare.yaml
+    with:
+      buildTarget: build:docs
+      rootDir: ./apps/docs
+      distDir: ./build
+      branchName: main
+      cfPagesName: flethy-docs
+    secrets:
+      cf_account_id: ${{ secrets.CF_ACCOUNT_ID }}
+      cf_api_token: ${{ secrets.CF_API_TOKEN }}
