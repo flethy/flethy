@@ -14,6 +14,9 @@
          alt="npm">
   </a>
   <a href="https://flethy.com/integrations"><img src="https://img.shields.io/badge/integrations-{{ apicount }}-blue" alt="integrations" /></a>
+  <!-- <a href=""><img src="" alt="" /></a> -->
+  <img src="https://img.shields.io/github/languages/top/flethy/flethy" alt="languages" />
+  <img src="https://img.shields.io/bundlephobia/minzip/@flethy/connectors" alt="npm size" />
   <a href="https://gitter.im/flethy/community"><img src="https://badges.gitter.im/flethy/community.svg"></a>
 </p>
 
