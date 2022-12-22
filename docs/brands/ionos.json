@@ -1,0 +1,42 @@
+{
+  "name": "1&1 IONOS",
+  "domain": "ionos.com",
+  "claimed": false,
+  "description": "1&1 IONOS provides web hosting solutions for private users, as well as high-end products for small-and medium-sized businesses.",
+  "links": [
+    { "name": "twitter", "url": "https://twitter.com/ionos_com" },
+    { "name": "facebook", "url": "https://facebook.com/my.ionos" },
+    { "name": "linkedin", "url": "https://linkedin.com/company/ionos" }
+  ],
+  "logos": [
+    {
+      "type": "logo",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idu0JRNI4Q/idDUrfzUIn.png",
+          "background": null,
+          "format": "png",
+          "height": 180,
+          "width": 180,
+          "size": 7942
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#0b9dcc", "type": "dark", "brightness": 129 },
+    { "hex": "#ececec", "type": "light", "brightness": 236 },
+    { "hex": "#153e91", "type": "accent", "brightness": 59 }
+  ],
+  "fonts": [
+    {
+      "name": "Open Sans Regular",
+      "type": "body",
+      "origin": "custom",
+      "originId": null,
+      "weights": []
+    }
+  ],
+  "images": []
+}

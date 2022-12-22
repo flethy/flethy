@@ -109,6 +109,7 @@ import { Hybiscus } from '../configs/hybiscus.config'
 import { Hygraph } from '../configs/hygraph.config'
 import { Imglab } from '../configs/imglab.config'
 import { IncidentIo } from '../configs/incidentio.config'
+import { Ionos } from '../configs/ionos.config'
 import { Jira } from '../configs/jira.config'
 import { Keen } from '../configs/keen.config'
 import { Klaviyo } from '../configs/klaviyo.config'
@@ -372,6 +373,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['hygraph', Hygraph.API],
 ['imglab', Imglab.API],
 ['incidentio', IncidentIo.API],
+['ionos', Ionos.API],
 ['jira', Jira.API],
 ['keen', Keen.API],
 ['klaviyo', Klaviyo.API],
