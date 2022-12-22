@@ -109,6 +109,7 @@ import { Hybiscus } from '../../../connectors/src/configs/hybiscus.config'
 import { Hygraph } from '../../../connectors/src/configs/hygraph.config'
 import { Imglab } from '../../../connectors/src/configs/imglab.config'
 import { IncidentIo } from '../../../connectors/src/configs/incidentio.config'
+import { Ionos } from '../../../connectors/src/configs/ionos.config'
 import { Jira } from '../../../connectors/src/configs/jira.config'
 import { Keen } from '../../../connectors/src/configs/keen.config'
 import { Klaviyo } from '../../../connectors/src/configs/klaviyo.config'
@@ -512,6 +513,9 @@ configTypes.push({type: getType<Hybiscus.GetReport>(), id: 'hybiscus', name: 'Hy
 configTypes.push({type: getType<Hygraph.ContentApiGraphQl>(), id: 'hygraph', name: 'Hygraph', interface: 'ContentApiGraphQl'})
 configTypes.push({type: getType<Imglab.Api>(), id: 'imglab', name: 'Imglab', interface: 'Api'})
 configTypes.push({type: getType<IncidentIo.ListIncidents>(), id: 'incidentio', name: 'IncidentIo', interface: 'ListIncidents'})
+configTypes.push({type: getType<Ionos.ListDnsZones>(), id: 'ionos', name: 'Ionos', interface: 'ListDnsZones'})
+configTypes.push({type: getType<Ionos.ListDomains>(), id: 'ionos', name: 'Ionos', interface: 'ListDomains'})
+configTypes.push({type: getType<Ionos.ListSslCertificates>(), id: 'ionos', name: 'Ionos', interface: 'ListSslCertificates'})
 configTypes.push({type: getType<Jira.GetIssue>(), id: 'jira', name: 'Jira', interface: 'GetIssue'})
 configTypes.push({type: getType<Jira.SearchIssues>(), id: 'jira', name: 'Jira', interface: 'SearchIssues'})
 configTypes.push({type: getType<Jira.CreateIssue>(), id: 'jira', name: 'Jira', interface: 'CreateIssue'})

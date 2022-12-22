@@ -461,6 +461,10 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://flethy.com/integrations/ionos</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://flethy.com/integrations/jira</loc>
     <priority>0.8</priority>
   </url>

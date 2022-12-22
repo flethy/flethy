@@ -191,6 +191,7 @@ import Gravatar from '@flethy/connectors/src/configs/gravatar.config'
 import Hasura from '@flethy/connectors/src/configs/hasura.config'
 import Here from '@flethy/connectors/src/configs/here.config'
 import Imglab from '@flethy/connectors/src/configs/imglab.config'
+import Ionos from '@flethy/connectors/src/configs/ionos.config'
 import Keen from '@flethy/connectors/src/configs/keen.config'
 import KnockApp from '@flethy/connectors/src/configs/knockapp.config'
 import KontentAI from '@flethy/connectors/src/configs/kontentai.config'
@@ -3406,8 +3407,29 @@ Here you find all the available integrations`,
       },
       'body:email': 'adam.urban@gmail.com',
     }),
+    ionosListZones: nao<Ionos.ListDnsZones>({
+      kind: 'ionos.dns.listZones',
+      'auth:X-API-Key': {
+        prefix: process.env.IONOS_PREFIX,
+        secret: process.env.IONOS_SECRET,
+      },
+    }),
+    ionosListDomains: nao<Ionos.ListDomains>({
+      kind: 'ionos.domains.list',
+      'auth:X-API-Key': {
+        prefix: process.env.IONOS_PREFIX,
+        secret: process.env.IONOS_SECRET,
+      },
+    }),
+    ionosListCertificates: nao<Ionos.ListSslCertificates>({
+      kind: 'ionos.ssl.list',
+      'auth:X-API-Key': {
+        prefix: process.env.IONOS_PREFIX,
+        secret: process.env.IONOS_SECRET,
+      },
+    }),
   }
-  const requestConfig = requestConfigs.getResponseCreate
+  const requestConfig = requestConfigs.ionosListCertificates
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

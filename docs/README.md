@@ -131,6 +131,7 @@ The following Endpoints are currently supported.
 * [Hygraph](./api/hygraph.md)
 * [Imglab](./api/imglab.md)
 * [IncidentIo](./api/incidentio.md)
+* [Ionos](./api/ionos.md)
 * [Jira](./api/jira.md)
 * [Keen](./api/keen.md)
 * [Klaviyo](./api/klaviyo.md)
