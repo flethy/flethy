@@ -250,6 +250,7 @@ import WarrantDev from '@flethy/connectors/src/configs/warrantdev.config'
 import WebhookSite from '@flethy/connectors/src/configs/webhooksite.config'
 import WonderPush from '@flethy/connectors/src/configs/wonderpush.config'
 import WorkOS from '@flethy/connectors/src/configs/workos.config'
+import Yapily from '@flethy/connectors/src/configs/yapily.config'
 import { HttpRequest } from './controllers/HttpRequest'
 import { logger } from './utils/Logger'
 
@@ -3428,8 +3429,22 @@ Here you find all the available integrations`,
         secret: process.env.IONOS_SECRET,
       },
     }),
+    yapilyAppInfo: nao<Yapily.AppInfo>({
+      kind: 'yapily.app.info',
+      'auth:Authorization': {
+        username: process.env.YAPILY_APP_ID,
+        password: process.env.YAPILY_SECRET,
+      },
+    }),
+    yapilyListConsents: nao<Yapily.ListConsents>({
+      kind: 'yapily.consents.list',
+      'auth:Authorization': {
+        username: process.env.YAPILY_APP_ID,
+        password: process.env.YAPILY_SECRET,
+      },
+    }),
   }
-  const requestConfig = requestConfigs.ionosListCertificates
+  const requestConfig = requestConfigs.yapilyListConsents
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

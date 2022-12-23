@@ -1061,6 +1061,10 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://flethy.com/integrations/yapily</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://flethy.com/integrations/zerox</loc>
     <priority>0.8</priority>
   </url>

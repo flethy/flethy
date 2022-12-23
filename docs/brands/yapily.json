@@ -1,0 +1,89 @@
+{
+  "name": "Yapily",
+  "domain": "yapily.com",
+  "claimed": false,
+  "description": "Yapily makes connecting to banks easy. We take care of the technical barriers, while you enjoy all the benefits that Open Banking can offer.",
+  "links": [
+    { "name": "github", "url": "https://github.com/yapily" },
+    { "name": "twitter", "url": "https://twitter.com/YapilyLtd" },
+    { "name": "linkedin", "url": "https://linkedin.com/company/yapily" },
+    { "name": "facebook", "url": "https://facebook.com/YapilyLtd" }
+  ],
+  "logos": [
+    {
+      "type": "logo",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idvRgOogx0/idGdvANtE-.svg",
+          "background": "transparent",
+          "format": "svg",
+          "size": 3263
+        },
+        {
+          "src": "https://asset.brandfetch.io/idvRgOogx0/idlkYI2RCJ.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 136,
+          "width": 800,
+          "size": 7853
+        }
+      ]
+    },
+    {
+      "type": "symbol",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idvRgOogx0/iddJmS4fIt.svg",
+          "background": "transparent",
+          "format": "svg",
+          "size": 1247
+        },
+        {
+          "src": "https://asset.brandfetch.io/idvRgOogx0/idwJ_AFd2N.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 789,
+          "width": 800,
+          "size": 20492
+        }
+      ]
+    },
+    {
+      "type": "icon",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idvRgOogx0/idcWBmAHAB.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 400,
+          "width": 400,
+          "size": 6809
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#000000", "type": "dark", "brightness": 0 },
+    { "hex": "#ffffff", "type": "light", "brightness": 255 },
+    { "hex": "#10a553", "type": "accent", "brightness": 127 }
+  ],
+  "fonts": [],
+  "images": [
+    {
+      "type": "banner",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idvRgOogx0/id1G_Gf0Zr.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 500,
+          "width": 1500,
+          "size": 11626
+        }
+      ]
+    }
+  ]
+}

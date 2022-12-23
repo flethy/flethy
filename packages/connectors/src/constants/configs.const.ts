@@ -259,6 +259,7 @@ import { WordsAPI } from '../configs/wordsapi.config'
 import { WordSimi } from '../configs/wordsimi.config'
 import { WorkOS } from '../configs/workos.config'
 import { YahooFinance } from '../configs/yahoofinance.config'
+import { Yapily } from '../configs/yapily.config'
 import { ZeroX } from '../configs/zerox.config'
 import { Zora } from '../configs/zora.config'
 
@@ -523,6 +524,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['wordsimi', WordSimi.API],
 ['workos', WorkOS.API],
 ['yahoofinance', YahooFinance.API],
+['yapily', Yapily.API],
 ['0x', ZeroX.API],
 ['zora', Zora.API],
 ])

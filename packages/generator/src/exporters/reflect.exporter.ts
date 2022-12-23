@@ -259,6 +259,7 @@ import { WordsAPI } from '../../../connectors/src/configs/wordsapi.config'
 import { WordSimi } from '../../../connectors/src/configs/wordsimi.config'
 import { WorkOS } from '../../../connectors/src/configs/workos.config'
 import { YahooFinance } from '../../../connectors/src/configs/yahoofinance.config'
+import { Yapily } from '../../../connectors/src/configs/yapily.config'
 import { ZeroX } from '../../../connectors/src/configs/zerox.config'
 import { Zora } from '../../../connectors/src/configs/zora.config'
 export const configTypes: Array<{type: Type; id: string; name: string; interface: string}> = []
@@ -830,6 +831,7 @@ configTypes.push({type: getType<WorkOS.UpdateOrganization>(), id: 'workos', name
 configTypes.push({type: getType<YahooFinance.GetQuote>(), id: 'yahoofinance', name: 'YahooFinance', interface: 'GetQuote'})
 configTypes.push({type: getType<YahooFinance.GetRecommendations>(), id: 'yahoofinance', name: 'YahooFinance', interface: 'GetRecommendations'})
 configTypes.push({type: getType<YahooFinance.GetInsights>(), id: 'yahoofinance', name: 'YahooFinance', interface: 'GetInsights'})
+configTypes.push({type: getType<Yapily.AppInfo>(), id: 'yapily', name: 'Yapily', interface: 'AppInfo'})
 configTypes.push({type: getType<ZeroX.SwapQuote>(), id: '0x', name: 'ZeroX', interface: 'SwapQuote'})
 configTypes.push({type: getType<ZeroX.SwapPrice>(), id: '0x', name: 'ZeroX', interface: 'SwapPrice'})
 configTypes.push({type: getType<ZeroX.SwapSources>(), id: '0x', name: 'ZeroX', interface: 'SwapSources'})
