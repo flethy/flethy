@@ -13,7 +13,7 @@
     <img src="https://badge.fury.io/js/@flethy%2Fconnectors.svg"
          alt="npm">
   </a>
-  <a href="https://flethy.com/integrations"><img src="https://img.shields.io/badge/integrations-262-blue" alt="integrations" /></a>
+  <a href="https://flethy.com/integrations"><img src="https://img.shields.io/badge/integrations-263-blue" alt="integrations" /></a>
   <!-- <a href=""><img src="" alt="" /></a> -->
   <img src="https://img.shields.io/github/languages/top/flethy/flethy" alt="languages" />
   <img src="https://img.shields.io/bundlephobia/minzip/@flethy/connectors" alt="npm size" />

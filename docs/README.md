@@ -272,3 +272,4 @@ The following Endpoints are currently supported.
 * [WordSimi](./api/wordsimi.md)
 * [WorkOS](./api/workos.md)
 * [YahooFinance](./api/yahoofinance.md)
+* [Yapily](./api/yapily.md)
