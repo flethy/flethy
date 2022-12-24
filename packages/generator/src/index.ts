@@ -253,6 +253,7 @@ import WorkOS from '@flethy/connectors/src/configs/workos.config'
 import Yapily from '@flethy/connectors/src/configs/yapily.config'
 import { HttpRequest } from './controllers/HttpRequest'
 import { logger } from './utils/Logger'
+import Nordigen from '@flethy/connectors/src/configs/nordigen.config'
 
 async function main() {
   const requestConfigs: {
@@ -3443,8 +3444,17 @@ Here you find all the available integrations`,
         password: process.env.YAPILY_SECRET,
       },
     }),
+    nordigenAccessToken: nao<Nordigen.AuthNewToken>({
+      kind: 'nordigen.auth.new',
+      'auth:secret_id': process.env.NORDIGEN_SECRET_ID,
+      'auth:secret_key': process.env.NORDIGEN_SECRET_KEY,
+    }),
+    nordigenInstitutions: nao<Nordigen.ListInstitutions>({
+      kind: 'nordigen.institutions.list',
+      'auth:Authorization': process.env.NORDIGEN_JWT,
+    }),
   }
-  const requestConfig = requestConfigs.yapilyListConsents
+  const requestConfig = requestConfigs.nordigenInstitutions
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

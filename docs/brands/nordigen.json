@@ -1,0 +1,124 @@
+{
+  "name": "Nordigen",
+  "domain": "nordigen.com",
+  "claimed": false,
+  "description": "Nordigen is your one-stop solution open banking platform. We provide free access to bank data and premium access to data products for analysis and insights.",
+  "links": [
+    { "name": "twitter", "url": "https://twitter.com/nordigen" },
+    { "name": "facebook", "url": "https://facebook.com/NordigenSolutions" },
+    { "name": "linkedin", "url": "https://linkedin.com/company/nordigen" }
+  ],
+  "logos": [
+    {
+      "type": "icon",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idJfk8NOWr/idTMR70Y8p.png",
+          "background": null,
+          "format": "png",
+          "height": 360,
+          "width": 360,
+          "size": 4178
+        }
+      ]
+    },
+    {
+      "type": "logo",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idJfk8NOWr/idmXztYL-j.svg",
+          "background": "transparent",
+          "format": "svg",
+          "size": 4442
+        },
+        {
+          "src": "https://asset.brandfetch.io/idJfk8NOWr/idDGHOaQxn.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 215,
+          "width": 800,
+          "size": 14161
+        }
+      ]
+    },
+    {
+      "type": "symbol",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idJfk8NOWr/idzKlh8DSr.svg",
+          "background": "transparent",
+          "format": "svg",
+          "size": 987
+        },
+        {
+          "src": "https://asset.brandfetch.io/idJfk8NOWr/id8KcYf_-p.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 800,
+          "width": 800,
+          "size": 26588
+        }
+      ]
+    },
+    {
+      "type": "other",
+      "theme": null,
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idJfk8NOWr/id7-l2Whuu.svg",
+          "background": "transparent",
+          "format": "svg",
+          "size": 4442
+        },
+        {
+          "src": "https://asset.brandfetch.io/idJfk8NOWr/idEp-0WcJj.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 215,
+          "width": 800,
+          "size": 12528
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#171B1C", "type": "dark", "brightness": 26 },
+    { "hex": "#ffffff", "type": "light", "brightness": 255 },
+    { "hex": "#4BD56E", "type": "accent", "brightness": 176 },
+    { "hex": "#3A53EE", "type": "brand", "brightness": 89 }
+  ],
+  "fonts": [
+    {
+      "name": "HKGP",
+      "type": "body",
+      "origin": "custom",
+      "originId": null,
+      "weights": []
+    },
+    {
+      "name": "HKGP",
+      "type": "title",
+      "origin": "custom",
+      "originId": null,
+      "weights": []
+    }
+  ],
+  "images": [
+    {
+      "type": "banner",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idJfk8NOWr/idHggeZavH.png",
+          "background": null,
+          "format": "png",
+          "height": 500,
+          "width": 1500,
+          "size": 12840
+        }
+      ]
+    }
+  ]
+}

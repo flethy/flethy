@@ -150,6 +150,7 @@ import { Neon } from '../../../connectors/src/configs/neon.config'
 import { Netlify } from '../../../connectors/src/configs/netlify.config'
 import { NewRelic } from '../../../connectors/src/configs/newrelic.config'
 import { NewsApi } from '../../../connectors/src/configs/newsapi.config'
+import { Nordigen } from '../../../connectors/src/configs/nordigen.config'
 import { Notion } from '../../../connectors/src/configs/notion.config'
 import { Npoint } from '../../../connectors/src/configs/npoint.config'
 import { Ntfy } from '../../../connectors/src/configs/ntfy.config'
@@ -600,6 +601,9 @@ configTypes.push({type: getType<Netlify.ListSites>(), id: 'netlify', name: 'Netl
 configTypes.push({type: getType<Netlify.GetEnvironmentVariables>(), id: 'netlify', name: 'Netlify', interface: 'GetEnvironmentVariables'})
 configTypes.push({type: getType<NewRelic.InsightsEvents>(), id: 'newrelic', name: 'NewRelic', interface: 'InsightsEvents'})
 configTypes.push({type: getType<NewsApi.SearchEverything>(), id: 'newsapi', name: 'NewsApi', interface: 'SearchEverything'})
+configTypes.push({type: getType<Nordigen.AuthNewToken>(), id: 'nordigen', name: 'Nordigen', interface: 'AuthNewToken'})
+configTypes.push({type: getType<Nordigen.AuthRefresh>(), id: 'nordigen', name: 'Nordigen', interface: 'AuthRefresh'})
+configTypes.push({type: getType<Nordigen.ListInstitutions>(), id: 'nordigen', name: 'Nordigen', interface: 'ListInstitutions'})
 configTypes.push({type: getType<Notion.CreateDatabase>(), id: 'notion', name: 'Notion', interface: 'CreateDatabase'})
 configTypes.push({type: getType<Npoint.GetBin>(), id: 'npoint', name: 'Npoint', interface: 'GetBin'})
 configTypes.push({type: getType<Ntfy.PublishMessageAsJson>(), id: 'ntfy', name: 'Ntfy', interface: 'PublishMessageAsJson'})
@@ -832,6 +836,7 @@ configTypes.push({type: getType<YahooFinance.GetQuote>(), id: 'yahoofinance', na
 configTypes.push({type: getType<YahooFinance.GetRecommendations>(), id: 'yahoofinance', name: 'YahooFinance', interface: 'GetRecommendations'})
 configTypes.push({type: getType<YahooFinance.GetInsights>(), id: 'yahoofinance', name: 'YahooFinance', interface: 'GetInsights'})
 configTypes.push({type: getType<Yapily.AppInfo>(), id: 'yapily', name: 'Yapily', interface: 'AppInfo'})
+configTypes.push({type: getType<Yapily.ListConsents>(), id: 'yapily', name: 'Yapily', interface: 'ListConsents'})
 configTypes.push({type: getType<ZeroX.SwapQuote>(), id: '0x', name: 'ZeroX', interface: 'SwapQuote'})
 configTypes.push({type: getType<ZeroX.SwapPrice>(), id: '0x', name: 'ZeroX', interface: 'SwapPrice'})
 configTypes.push({type: getType<ZeroX.SwapSources>(), id: '0x', name: 'ZeroX', interface: 'SwapSources'})
