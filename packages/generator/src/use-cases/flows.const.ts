@@ -266,4 +266,25 @@ export const FLOWS = {
       'body:email': '->context.input.email->string',
     },
   ],
+  'list-institutions-with-nordigen': [
+    {
+      id: 'nordigen-access-token',
+      config: {
+        namespace: 'token',
+      },
+      next: [
+        {
+          id: 'nordigen-list-insitiutions',
+        },
+      ],
+      kind: 'nordigen.auth.new',
+      'auth:secret_id': '==>secrets==>NORDIGEN_SECRET_ID',
+      'auth:secret_key': '==>secrets==>NORDIGEN_SECRET_KEY',
+    },
+    {
+      id: 'nordigen-list-insitiutions',
+      kind: 'nordigen.institutions.list',
+      'auth:Authorization': '->context.token.access_token->string',
+    },
+  ],
 }
