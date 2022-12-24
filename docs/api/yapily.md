@@ -22,3 +22,12 @@
 
 * Description: Get Application Self
 * Docs: [https://docs.yapily.com/api/reference/#operation/getApplicationMe](https://docs.yapily.com/api/reference/#operation/getApplicationMe)
+
+### consents
+
+#### list
+
+##### Get Consents
+
+* Description: Get Consents
+* Docs: [https://docs.yapily.com/api/reference/#operation/getConsents](https://docs.yapily.com/api/reference/#operation/getConsents)

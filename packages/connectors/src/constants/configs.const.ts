@@ -150,6 +150,7 @@ import { Neon } from '../configs/neon.config'
 import { Netlify } from '../configs/netlify.config'
 import { NewRelic } from '../configs/newrelic.config'
 import { NewsApi } from '../configs/newsapi.config'
+import { Nordigen } from '../configs/nordigen.config'
 import { Notion } from '../configs/notion.config'
 import { Npoint } from '../configs/npoint.config'
 import { Ntfy } from '../configs/ntfy.config'
@@ -415,6 +416,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['netlify', Netlify.API],
 ['newrelic', NewRelic.API],
 ['newsapi', NewsApi.API],
+['nordigen', Nordigen.API],
 ['notion', Notion.API],
 ['npoint', Npoint.API],
 ['ntfy', Ntfy.API],
