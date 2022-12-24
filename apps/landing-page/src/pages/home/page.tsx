@@ -1,17 +1,25 @@
+import { ChevronDownIcon, CopyIcon } from '@chakra-ui/icons'
 import {
 	Box,
 	Button,
+	Code,
 	Container,
 	Flex,
 	Heading,
 	HStack,
+	IconButton,
 	Image,
 	Stack,
+	Tab,
+	TabList,
+	TabPanel,
+	TabPanels,
+	Tabs,
 	Text,
+	useClipboard,
 	useColorModeValue,
 	VStack,
 } from '@chakra-ui/react'
-import { ChevronDownIcon } from '@chakra-ui/icons'
 import { observer } from 'mobx-react-lite'
 import { useTranslation } from 'react-i18next'
 import EmailSubscription from '../../components/email-subscription/EmailSubscription'
@@ -22,6 +30,7 @@ import routes from '../../routes'
 
 export default observer(() => {
 	const { t } = useTranslation('app')
+	const { onCopy, setValue, hasCopied } = useClipboard('')
 	const {
 		router,
 		root: {
@@ -97,6 +106,33 @@ export default observer(() => {
 								Early Access to Cloud
 							</Button>
 						</Stack>
+
+						<Tabs>
+							<TabList>
+								{page.installScripts().map((script) => (
+									<Tab key={script.manager}>{script.manager}</Tab>
+								))}
+							</TabList>
+
+							<TabPanels>
+								{page.installScripts().map((script) => (
+									<TabPanel key={script.manager}>
+										<Code p={3}>{script.script}</Code>
+										<IconButton
+											mx={1}
+											aria-label="Copy to Clipboard"
+											icon={<CopyIcon />}
+											disabled={hasCopied}
+											size={'xs'}
+											onClick={() => {
+												setValue(script.script)
+												onCopy()
+											}}
+										/>
+									</TabPanel>
+								))}
+							</TabPanels>
+						</Tabs>
 
 						<Image
 							src={useColorModeValue('home-light.png', 'home-dark.png')}
