@@ -30,4 +30,24 @@ export const HomePage = types
 			self.showMore = !self.showMore
 		},
 	}))
-	.views((self) => ({}))
+	.views((self) => {
+		const installScripts = () => {
+			const packageName = '@flethy/connectors'
+			return [
+				{
+					manager: 'npm',
+					script: `npm install ${packageName}`,
+				},
+				{
+					manager: 'yarn',
+					script: `yarn add ${packageName}`,
+				},
+				{
+					manager: 'pnpm',
+					script: `pnpm add ${packageName}`,
+				},
+			]
+		}
+
+		return { installScripts }
+	})
