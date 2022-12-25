@@ -287,4 +287,15 @@ export const FLOWS = {
       'auth:Authorization': '->context.token.access_token->string',
     },
   ],
+  'list-tasks-from-bugherd': [
+    {
+      id: 'bugherd',
+      kind: 'bugherd.tasks.list',
+      'param:projectId': '==>env==>BUGHERD_PROJECT_ID',
+      'auth:Authorization': {
+        username: '==>secrets==>BUGHERD_API_KEY',
+        password: 'x',
+      },
+    },
+  ],
 }
