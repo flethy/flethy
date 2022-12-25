@@ -26,6 +26,7 @@ import { BooAPI } from '../../../connectors/src/configs/booapi.config'
 import { Brandfetch } from '../../../connectors/src/configs/brandfetch.config'
 import { BrowsersFyi } from '../../../connectors/src/configs/browsersfyi.config'
 import { Bruzu } from '../../../connectors/src/configs/bruzu.config'
+import { BugHerd } from '../../../connectors/src/configs/bugherd.config'
 import { ButterCMS } from '../../../connectors/src/configs/buttercms.config'
 import { ButtondownEmail } from '../../../connectors/src/configs/buttondownemail.config'
 import { CalCom } from '../../../connectors/src/configs/calcom.config'
@@ -319,6 +320,8 @@ configTypes.push({type: getType<BooAPI.TaskResults>(), id: 'booapi', name: 'BooA
 configTypes.push({type: getType<Brandfetch.BrandByDomainOrId>(), id: 'brandfetch', name: 'Brandfetch', interface: 'BrandByDomainOrId'})
 configTypes.push({type: getType<BrowsersFyi.Get>(), id: 'browsersfyi', name: 'BrowsersFyi', interface: 'Get'})
 configTypes.push({type: getType<Bruzu.CreateImage>(), id: 'bruzu', name: 'Bruzu', interface: 'CreateImage'})
+configTypes.push({type: getType<BugHerd.ListProjects>(), id: 'bugherd', name: 'BugHerd', interface: 'ListProjects'})
+configTypes.push({type: getType<BugHerd.ListTasks>(), id: 'bugherd', name: 'BugHerd', interface: 'ListTasks'})
 configTypes.push({type: getType<ButterCMS.GetMultiplePages>(), id: 'buttercms', name: 'ButterCMS', interface: 'GetMultiplePages'})
 configTypes.push({type: getType<ButtondownEmail.ListSubscribers>(), id: 'buttondownemail', name: 'ButtondownEmail', interface: 'ListSubscribers'})
 configTypes.push({type: getType<ButtondownEmail.CreateSubscriber>(), id: 'buttondownemail', name: 'ButtondownEmail', interface: 'CreateSubscriber'})
