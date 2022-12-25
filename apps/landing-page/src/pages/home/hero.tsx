@@ -46,12 +46,12 @@ export default observer(() => {
 				>
 					<VStack>
 						<HStack>
-							<Text>Meet</Text>
+							<Text>{t('home.hero.headline1')}</Text>
 							<Text> </Text>
-							<Text color={'flethy.purple'}>flethy</Text>
+							<Text color={'flethy.purple'}>{t('home.hero.headline2')}</Text>
 						</HStack>
 						<HStack>
-							<Text textAlign={'center'}>Your access to hundreds of APIs</Text>
+							<Text textAlign={'center'}>{t('home.hero.subheadline')}</Text>
 						</HStack>
 					</VStack>
 				</Heading>
@@ -60,8 +60,7 @@ export default observer(() => {
 						fontSize={{ base: 'xl', sm: '2xl', lg: '3xl' }}
 						textAlign={'center'}
 					>
-						A framework to integrate with lots of popular APIs, connect them as
-						flows and execute them in the Cloud.
+						{t('home.hero.subsubheadline')}
 					</Text>
 				</VStack>
 				<Stack direction={{ base: 'column', md: 'row' }}>
@@ -83,7 +82,7 @@ export default observer(() => {
 							)
 						}
 					>
-						Get started
+						{t('home.hero.cta.getStarted')}
 					</Button>
 					<Button
 						rounded={'full'}
@@ -95,7 +94,7 @@ export default observer(() => {
 						_hover={{ bg: 'flethy.purple' }}
 						onClick={() => page.initialisePage({ emailSubscription: true })}
 					>
-						Early Access to Cloud
+						{t('home.hero.cta.earlyAccess')}
 					</Button>
 				</Stack>
 
