@@ -10,7 +10,17 @@
 	},
 	"home": {
 		"stayTuned": "Subscribe for updates!",
-		"integrations": "Integrations!"
+		"integrations": "Integrations!",
+		"hero": {
+			"headline1": "Meet",
+			"headline2": "flethy",
+			"subheadline": "Your access to hundreds of APIs",
+			"subsubheadline": "A framework to integrate with lots of popular APIs, connect them as flows and execute them in the Cloud.",
+			"cta": {
+				"getStarted": "Get started",
+				"earlyAccess": "Early Access to Cloud"
+			}
+		}
 	},
 	"general": {
 		"email": "Email",
