@@ -39,13 +39,12 @@
   },
   "devDependencies": {
     "eslint-config-custom": "workspace:*",
-    "prettier": "latest",
-    "turbo": "latest"
+    "prettier": "^2.8.1",
+    "turbo": "^1.6.3"
   },
   "engines": {
     "npm": ">=7.0.0",
     "node": ">=16.0.0"
   },
-  "dependencies": {},
   "packageManager": "pnpm@7.3.0"
 }
