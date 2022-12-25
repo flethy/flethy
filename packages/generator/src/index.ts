@@ -254,6 +254,7 @@ import Yapily from '@flethy/connectors/src/configs/yapily.config'
 import { HttpRequest } from './controllers/HttpRequest'
 import { logger } from './utils/Logger'
 import Nordigen from '@flethy/connectors/src/configs/nordigen.config'
+import BugHerd from '@flethy/connectors/src/configs/bugherd.config'
 
 async function main() {
   const requestConfigs: {
@@ -3453,8 +3454,23 @@ Here you find all the available integrations`,
       kind: 'nordigen.institutions.list',
       'auth:Authorization': process.env.NORDIGEN_JWT,
     }),
+    bugherdListProjects: nao<BugHerd.ListProjects>({
+      kind: 'bugherd.projects.list',
+      'auth:Authorization': {
+        username: process.env.BUGHERD_API_KEY,
+        password: 'x',
+      },
+    }),
+    bugherdListTasks: nao<BugHerd.ListTasks>({
+      kind: 'bugherd.tasks.list',
+      'param:projectId': process.env.BUGHERD_PROJECT_ID,
+      'auth:Authorization': {
+        username: process.env.BUGHERD_API_KEY,
+        password: 'x',
+      },
+    }),
   }
-  const requestConfig = requestConfigs.nordigenInstitutions
+  const requestConfig = requestConfigs.bugherdListTasks
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

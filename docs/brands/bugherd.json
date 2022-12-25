@@ -1,0 +1,62 @@
+{
+  "name": "BugHerd",
+  "domain": "bugherd.com",
+  "claimed": false,
+  "description": "The visual feedback tool for websites. It’s like using sticky-notes to capture and pin client feedback directly onto a page.",
+  "links": [
+    { "name": "twitter", "url": "https://twitter.com/bugherd" },
+    { "name": "linkedin", "url": "https://linkedin.com/company/bugherd" }
+  ],
+  "logos": [
+    {
+      "type": "icon",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idwE9dXaIx/idWOqSmVTp.png",
+          "background": null,
+          "format": "png",
+          "height": 364,
+          "width": 364,
+          "size": 33255
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#4f537c", "type": "dark", "brightness": 85 },
+    { "hex": "#acb2cf", "type": "light", "brightness": 179 },
+    { "hex": "#feda86", "type": "accent", "brightness": 220 }
+  ],
+  "fonts": [
+    {
+      "name": "Avenir",
+      "type": "title",
+      "origin": "custom",
+      "originId": null,
+      "weights": []
+    },
+    {
+      "name": "Arial",
+      "type": "body",
+      "origin": "custom",
+      "originId": null,
+      "weights": []
+    }
+  ],
+  "images": [
+    {
+      "type": "banner",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idwE9dXaIx/idXyuQ89Fi.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 500,
+          "width": 1500,
+          "size": 123233
+        }
+      ]
+    }
+  ]
+}

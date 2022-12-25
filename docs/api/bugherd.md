@@ -1,0 +1,33 @@
+# BugHerd
+
+## Links
+
+* URL: [https://bugherd.com/](https://bugherd.com/)
+* Documentation: [https://www.bugherd.com/api_v2](https://www.bugherd.com/api_v2)
+* Tags: web2
+* Category: utils
+* Type: bug-tracking
+
+## API
+
+### Authentication
+
+* Authorization: header:basic
+
+### projects
+
+#### list
+
+##### List Projects
+
+* Description: List Projects
+* Docs: [https://www.bugherd.com/api_v2#api_proj_list](https://www.bugherd.com/api_v2#api_proj_list)
+
+### tasks
+
+#### list
+
+##### List Tasks
+
+* Description: List Tasks
+* Docs: [https://www.bugherd.com/api_v2#api_task_list](https://www.bugherd.com/api_v2#api_task_list)

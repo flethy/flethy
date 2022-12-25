@@ -114,6 +114,7 @@ export type UTILS_TYPE =
   | 'json'
   | 'app-security'
   | 'documentation'
+  | 'bug-tracking'
 export type DEFI_TYPE = 'liquidity'
 export type BOOKS_TYPE = 'index'
 export type FINANCE_TYPE =
