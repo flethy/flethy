@@ -168,6 +168,7 @@ import APIPoint from '@flethy/connectors/src/configs/apipoint.config'
 import BasementDev from '@flethy/connectors/src/configs/basementdev.config'
 import Beew from '@flethy/connectors/src/configs/beew.config'
 import BitIo from '@flethy/connectors/src/configs/bitio.config'
+import BugHerd from '@flethy/connectors/src/configs/bugherd.config'
 import ButterCMS from '@flethy/connectors/src/configs/buttercms.config'
 import ButtondownEmail from '@flethy/connectors/src/configs/buttondownemail.config'
 import CarbEngage from '@flethy/connectors/src/configs/carbengage.config'
@@ -179,6 +180,7 @@ import Cumul from '@flethy/connectors/src/configs/cumul.config'
 import Cuttly from '@flethy/connectors/src/configs/cuttly.config'
 import Dataddo from '@flethy/connectors/src/configs/dataddo.config'
 import Deepgram from '@flethy/connectors/src/configs/deepgram.config'
+import Duply from '@flethy/connectors/src/configs/duply.config'
 import Festdays from '@flethy/connectors/src/configs/festdays.config'
 import FireHydrant from '@flethy/connectors/src/configs/firehydrant.config'
 import Flatfile from '@flethy/connectors/src/configs/flatfile.config'
@@ -207,6 +209,7 @@ import MailTM from '@flethy/connectors/src/configs/mailtm.config'
 import Mastodon from '@flethy/connectors/src/configs/mastodon.config'
 import MetalpriceAPI from '@flethy/connectors/src/configs/metalpriceapi.config'
 import Neon from '@flethy/connectors/src/configs/neon.config'
+import Nordigen from '@flethy/connectors/src/configs/nordigen.config'
 import Npoint from '@flethy/connectors/src/configs/npoint.config'
 import Ntfy from '@flethy/connectors/src/configs/ntfy.config'
 import Omnisend from '@flethy/connectors/src/configs/omnisend.config'
@@ -253,8 +256,6 @@ import WorkOS from '@flethy/connectors/src/configs/workos.config'
 import Yapily from '@flethy/connectors/src/configs/yapily.config'
 import { HttpRequest } from './controllers/HttpRequest'
 import { logger } from './utils/Logger'
-import Nordigen from '@flethy/connectors/src/configs/nordigen.config'
-import BugHerd from '@flethy/connectors/src/configs/bugherd.config'
 
 async function main() {
   const requestConfigs: {
@@ -3469,8 +3470,41 @@ Here you find all the available integrations`,
         password: 'x',
       },
     }),
+    duplyGetUsage: nao<Duply.GetUsage>({
+      kind: 'duply.account.usage',
+      'auth:Authorization': {
+        username: process.env.DUPLY_API_KEY,
+        password: process.env.DUPLY_API_SECRET,
+      },
+    }),
+    duplyListTemplates: nao<Duply.ListTemplates>({
+      kind: 'duply.templates.list',
+      'auth:Authorization': {
+        username: process.env.DUPLY_API_KEY,
+        password: process.env.DUPLY_API_SECRET,
+      },
+    }),
+    duplyGenerate: nao<Duply.GenerateImage>({
+      kind: 'duply.images.generate',
+      'auth:Authorization': {
+        username: process.env.DUPLY_API_KEY,
+        password: process.env.DUPLY_API_SECRET,
+      },
+      'body:templateId': process.env.DUPLY_TEMPLATE_ID,
+      'body:transparent': false,
+      'body:requestName': 'test',
+      'body:formats': ['jpg'],
+      'body:fill:': {},
+    }),
+    duplyListGeneratedImages: nao<Duply.ListGeneratedImages>({
+      kind: 'duply.images.list',
+      'auth:Authorization': {
+        username: process.env.DUPLY_API_KEY,
+        password: process.env.DUPLY_API_SECRET,
+      },
+    }),
   }
-  const requestConfig = requestConfigs.bugherdListTasks
+  const requestConfig = requestConfigs.duplyGenerate
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

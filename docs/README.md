@@ -97,6 +97,7 @@ The following Endpoints are currently supported.
 * [Directus](./api/directus.md)
 * [Disify](./api/disify.md)
 * [Doppler](./api/doppler.md)
+* [Duply](./api/duply.md)
 * [DynaPictures](./api/dynapictures.md)
 * [EasyDb](./api/easydb.md)
 * [EmailOctopus](./api/emailoctopus.md)

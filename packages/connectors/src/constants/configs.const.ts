@@ -73,6 +73,7 @@ import { Dhl } from '../configs/dhl.config'
 import { Directus } from '../configs/directus.config'
 import { Disify } from '../configs/disify.config'
 import { Doppler } from '../configs/doppler.config'
+import { Duply } from '../configs/duply.config'
 import { DynaPictures } from '../configs/dynapictures.config'
 import { EasyDb } from '../configs/easydb.config'
 import { EmailOctopus } from '../configs/emailoctopus.config'
@@ -340,6 +341,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['directus', Directus.API],
 ['disify', Disify.API],
 ['doppler', Doppler.API],
+['duply', Duply.API],
 ['dynapictures', DynaPictures.API],
 ['easydb', EasyDb.API],
 ['emailoctopus', EmailOctopus.API],
