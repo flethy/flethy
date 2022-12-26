@@ -298,4 +298,19 @@ export const FLOWS = {
       },
     },
   ],
+  'generate-image-with-duply': [
+    {
+      id: 'duply',
+      kind: 'duply.images.generate',
+      'auth:Authorization': {
+        username: '==>secrets==>DUPLY_API_KEY',
+        password: '==>secrets==>DUPLY_API_SECRET',
+      },
+      'body:templateId': '->context.input.templateId->string',
+      'body:transparent': false,
+      'body:requestName': 'awesome-image',
+      'body:formats': ['jpg'],
+      'body:fill:': {},
+    },
+  ],
 }
