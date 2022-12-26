@@ -1,0 +1,38 @@
+{
+  "name": null,
+  "domain": "duply.co",
+  "claimed": false,
+  "description": "An easy and powerful image editor with automation feature to make image generation faster.\nDesign Once and Generate More. Edit, Scale and Manage Images and Videos Smarter & Faster",
+  "links": [],
+  "logos": [
+    {
+      "type": "logo",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idjTctJxXg/id-8CTnWyT.png",
+          "background": null,
+          "format": "png",
+          "height": 256,
+          "width": 256,
+          "size": 16709
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#ff348d", "type": "accent", "brightness": 102 },
+    { "hex": "#000000", "type": "dark", "brightness": 0 },
+    { "hex": "#ff5e20", "type": "light", "brightness": 124 }
+  ],
+  "fonts": [
+    {
+      "name": "sans-serif",
+      "type": "body",
+      "origin": "custom",
+      "originId": null,
+      "weights": []
+    }
+  ],
+  "images": []
+}

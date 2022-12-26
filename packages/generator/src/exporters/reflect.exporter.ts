@@ -73,6 +73,7 @@ import { Dhl } from '../../../connectors/src/configs/dhl.config'
 import { Directus } from '../../../connectors/src/configs/directus.config'
 import { Disify } from '../../../connectors/src/configs/disify.config'
 import { Doppler } from '../../../connectors/src/configs/doppler.config'
+import { Duply } from '../../../connectors/src/configs/duply.config'
 import { DynaPictures } from '../../../connectors/src/configs/dynapictures.config'
 import { EasyDb } from '../../../connectors/src/configs/easydb.config'
 import { EmailOctopus } from '../../../connectors/src/configs/emailoctopus.config'
@@ -438,6 +439,10 @@ configTypes.push({type: getType<Disify.CheckMassDomain>(), id: 'disify', name: '
 configTypes.push({type: getType<Disify.CheckSingleEmail>(), id: 'disify', name: 'Disify', interface: 'CheckSingleEmail'})
 configTypes.push({type: getType<Disify.CheckMassEmail>(), id: 'disify', name: 'Disify', interface: 'CheckMassEmail'})
 configTypes.push({type: getType<Doppler.DownloadSecrets>(), id: 'doppler', name: 'Doppler', interface: 'DownloadSecrets'})
+configTypes.push({type: getType<Duply.GetUsage>(), id: 'duply', name: 'Duply', interface: 'GetUsage'})
+configTypes.push({type: getType<Duply.ListTemplates>(), id: 'duply', name: 'Duply', interface: 'ListTemplates'})
+configTypes.push({type: getType<Duply.GenerateImage>(), id: 'duply', name: 'Duply', interface: 'GenerateImage'})
+configTypes.push({type: getType<Duply.ListGeneratedImages>(), id: 'duply', name: 'Duply', interface: 'ListGeneratedImages'})
 configTypes.push({type: getType<DynaPictures.GenerateImage>(), id: 'dynapictures', name: 'DynaPictures', interface: 'GenerateImage'})
 configTypes.push({type: getType<EasyDb.Get>(), id: 'easydb', name: 'EasyDb', interface: 'Get'})
 configTypes.push({type: getType<EasyDb.Put>(), id: 'easydb', name: 'EasyDb', interface: 'Put'})
