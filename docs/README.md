@@ -39,6 +39,7 @@ The following Endpoints are currently supported.
 * [Apify](./api/apify.md)
 * [APIPoint](./api/apipoint.md)
 * [APITemplateIo](./api/apitemplateio.md)
+* [Asana](./api/asana.md)
 * [AssemblyAI](./api/assemblyai.md)
 * [Auth0](./api/auth0.md)
 * [Ayrshare](./api/ayrshare.md)

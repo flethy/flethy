@@ -165,6 +165,7 @@ import { FetchParams } from '../../connectors/src/types/FetchParams.type'
 import { nao } from '../../connectors/src/utils/Request.utils'
 // import { nao } from '@flethy/connectors'
 import APIPoint from '@flethy/connectors/src/configs/apipoint.config'
+import Asana from '@flethy/connectors/src/configs/asana.config'
 import BasementDev from '@flethy/connectors/src/configs/basementdev.config'
 import Beew from '@flethy/connectors/src/configs/beew.config'
 import BitIo from '@flethy/connectors/src/configs/bitio.config'
@@ -3503,8 +3504,16 @@ Here you find all the available integrations`,
         password: process.env.DUPLY_API_SECRET,
       },
     }),
+    asanaMe: nao<Asana.GetMe>({
+      kind: 'asana.users.me',
+      'auth:Authorization': process.env.ASANA_TOKEN,
+    }),
+    asanaWorkspaces: nao<Asana.ListWorkspaces>({
+      kind: 'asana.workspaces.list',
+      'auth:Authorization': process.env.ASANA_TOKEN,
+    }),
   }
-  const requestConfig = requestConfigs.duplyGenerate
+  const requestConfig = requestConfigs.asanaWorkspaces
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

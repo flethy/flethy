@@ -1,0 +1,87 @@
+{
+  "name": "Asana",
+  "domain": "asana.com",
+  "claimed": false,
+  "description": "Easily organize and plan workflows, projects, and more, so you can keep your team's work on schedule. Start using Asana as your work management tool today.",
+  "links": [
+    { "name": "twitter", "url": "https://twitter.com/@asana" },
+    { "name": "facebook", "url": "https://facebook.com/asana" }
+  ],
+  "logos": [
+    {
+      "type": "logo",
+      "theme": "light",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idxPi2Evsk/idLEa26ptR.svg",
+          "background": "transparent",
+          "format": "svg",
+          "size": 3504
+        },
+        {
+          "src": "https://asset.brandfetch.io/idxPi2Evsk/idYq0GVm1I.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 161,
+          "width": 800,
+          "size": 11246
+        }
+      ]
+    },
+    {
+      "type": "logo",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idxPi2Evsk/idXp3_6g45.svg",
+          "background": "transparent",
+          "format": "svg",
+          "size": 3815
+        },
+        {
+          "src": "https://asset.brandfetch.io/idxPi2Evsk/idSkta5T5S.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 161,
+          "width": 800,
+          "size": 23702
+        }
+      ]
+    },
+    {
+      "type": "icon",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idxPi2Evsk/idxxtwI5Gl.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 400,
+          "width": 400,
+          "size": 7782
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#008ce3", "type": "dark", "brightness": 117 },
+    { "hex": "#796eff", "type": "light", "brightness": 123 },
+    { "hex": "#ff6d92", "type": "accent", "brightness": 143 }
+  ],
+  "fonts": [],
+  "images": [
+    {
+      "type": "banner",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idxPi2Evsk/idRnAPWBkc.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 500,
+          "width": 1500,
+          "size": 111910
+        }
+      ]
+    }
+  ]
+}
