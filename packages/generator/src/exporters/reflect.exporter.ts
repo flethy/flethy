@@ -792,6 +792,7 @@ configTypes.push({type: getType<Twitter.AuthBearer>(), id: 'twitter', name: 'Twi
 configTypes.push({type: getType<Twitter.AuthOAuth2AuthorizationCode>(), id: 'twitter', name: 'Twitter', interface: 'AuthOAuth2AuthorizationCode'})
 configTypes.push({type: getType<Twitter.PostTweets>(), id: 'twitter', name: 'Twitter', interface: 'PostTweets'})
 configTypes.push({type: getType<Twitter.StatusUpdate>(), id: 'twitter', name: 'Twitter', interface: 'StatusUpdate'})
+configTypes.push({type: getType<Twitter.UploadMedia>(), id: 'twitter', name: 'Twitter', interface: 'UploadMedia'})
 configTypes.push({type: getType<Typeform.CreateApiCreateForm>(), id: 'typeform', name: 'Typeform', interface: 'CreateApiCreateForm'})
 configTypes.push({type: getType<Uber.ServerToken>(), id: 'uber', name: 'Uber', interface: 'ServerToken'})
 configTypes.push({type: getType<Uber.RidePriceEstimates>(), id: 'uber', name: 'Uber', interface: 'RidePriceEstimates'})

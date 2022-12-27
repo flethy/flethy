@@ -235,11 +235,20 @@ export class HttpRequestConfig {
                   secret: options.params[paramKey].consumerSecret,
                 },
               })
+              let data: any = {}
+              if (authConfig.options?.oauth1data) {
+                for (const dataKey of Object.keys(
+                  authConfig.options.oauth1data,
+                )) {
+                  const currentDataKey = authConfig.options?.oauth1data[dataKey]
+                  data[currentDataKey] = options.params[dataKey]
+                }
+              }
               const oauthInfo = oauthhelper.authorize(
                 {
                   url: config.url,
                   method: options.endpoint.method,
-                  data: {},
+                  data,
                 },
                 {
                   key: options.params[paramKey].accessKey,

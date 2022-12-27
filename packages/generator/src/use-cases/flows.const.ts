@@ -321,4 +321,39 @@ export const FLOWS = {
       'body:data': '->context.input.taskData->any',
     },
   ],
+  'post-tweet-with-image': [
+    {
+      id: 'uploadimage',
+      config: {
+        namespace: 'media',
+      },
+      next: [
+        {
+          id: 'tweet',
+        },
+      ],
+      kind: 'twitter.v1media.upload',
+      'auth:Authorization': {
+        consumerKey: '==>secrets==>CONSUMER_KEY',
+        consumerSecret: '==>secrets==>CONSUMER_SECRET',
+        accessKey: '==>secrets==>ACCESS_TOKEN',
+        accessSecret: '==>secrets==>ACCESS_TOKEN_SECRET',
+      },
+      'query:media_data': '->context.input.base64image->string',
+    },
+    {
+      id: 'tweet',
+      kind: 'twitter.manage.postTweets',
+      'auth:Authorization': {
+        consumerKey: '==>secrets==>CONSUMER_KEY',
+        consumerSecret: '==>secrets==>CONSUMER_SECRET',
+        accessKey: '==>secrets==>ACCESS_TOKEN',
+        accessSecret: '==>secrets==>ACCESS_TOKEN_SECRET',
+      },
+      'body:text': '->context.input.tweet->string',
+      'body:media': {
+        media_ids: '->$append([], context.media.media_id_string)',
+      },
+    },
+  ],
 }

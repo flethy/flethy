@@ -63,3 +63,16 @@
 
 * Description: Updates the authenticating user's current status, also known as Tweeting.
 * Docs: [https://developer.twitter.com/en/docs/twitter-api/v1/tweets/post-and-engage/api-reference/post-statuses-update](https://developer.twitter.com/en/docs/twitter-api/v1/tweets/post-and-engage/api-reference/post-statuses-update)
+
+### v1media
+
+#### upload
+
+##### Authentication
+
+* Authorization: header:oauth1a
+
+##### Upload media
+
+* Description: Upload media
+* Docs: [https://developer.twitter.com/en/docs/twitter-api/v1/media/upload-media/api-reference/post-media-upload](https://developer.twitter.com/en/docs/twitter-api/v1/media/upload-media/api-reference/post-media-upload)

@@ -96,6 +96,9 @@ export interface ApiDescriptionAuth {
   }
   options?: {
     oauth1SignatureMethod?: 'HMAC-SHA1' | 'HMAC-SHA256'
+    oauth1data?: {
+      [key: string]: string // params value from request : params value to be sent
+    }
   }
 }
 

@@ -1177,6 +1177,10 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://flethy.com/use-cases/post-tweet-with-image</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://flethy.com/use-cases/publish-status-to-mastodon</loc>
     <priority>0.8</priority>
   </url>
