@@ -1097,6 +1097,10 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://flethy.com/use-cases/create-a-task-with-asana</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://flethy.com/use-cases/create-incident-with-firehydrant</loc>
     <priority>0.8</priority>
   </url>
