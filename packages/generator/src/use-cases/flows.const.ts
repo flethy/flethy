@@ -313,4 +313,12 @@ export const FLOWS = {
       'body:fill:': {},
     },
   ],
+  'create-a-task-with-asana': [
+    {
+      id: 'asana',
+      kind: 'asana.tasks.create',
+      'auth:Authorization': '==>secrets==>ASANA_TOKEN',
+      'body:data': '->context.input.taskData->any',
+    },
+  ],
 }
