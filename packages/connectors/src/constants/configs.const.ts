@@ -9,6 +9,7 @@ import { APIFlash } from '../configs/apiflash.config'
 import { Apify } from '../configs/apify.config'
 import { APIPoint } from '../configs/apipoint.config'
 import { APITemplateIo } from '../configs/apitemplateio.config'
+import { Asana } from '../configs/asana.config'
 import { AssemblyAI } from '../configs/assemblyai.config'
 import { Auth0 } from '../configs/auth0.config'
 import { Ayrshare } from '../configs/ayrshare.config'
@@ -277,6 +278,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['apify', Apify.API],
 ['apipoint', APIPoint.API],
 ['apitemplateio', APITemplateIo.API],
+['asana', Asana.API],
 ['assemblyai', AssemblyAI.API],
 ['auth0', Auth0.API],
 ['ayrshare', Ayrshare.API],
