@@ -5,7 +5,7 @@ import {
 import { RequestParams } from '../types/Request.types'
 
 export namespace Twitter {
-  export type Entity = { auth: any; manage: any; v1status: any }
+  export type Entity = { auth: any; manage: any; v1status: any; v1media: any }
   export type Endpoint =
     | {
         bearer: ApiDescriptionEndpoint
@@ -13,9 +13,9 @@ export namespace Twitter {
       }
     | { postTweets: ApiDescriptionEndpoint }
     | { update: ApiDescriptionEndpoint }
+    | { upload: ApiDescriptionEndpoint }
 
   export interface TwitterBase {
-    // 'auth:Authorization': string
     'auth:Authorization': {
       username: string
       password: string
@@ -52,11 +52,25 @@ export namespace Twitter {
   export interface PostTweets extends TwitterBaseOAuth1a, RequestParams {
     kind: 'twitter.manage.postTweets'
     'body:text'?: string
+    'body:media'?: {
+      media_ids: string[]
+    }
   }
 
   export interface StatusUpdate extends TwitterBaseOAuth1a, RequestParams {
     kind: 'twitter.v1status.update'
     'query:status': string
+  }
+
+  export interface UploadMedia extends TwitterBaseOAuth1a, RequestParams {
+    kind: 'twitter.v1media.upload'
+    'query:media_data': string // base64 encoded
+    'query:media_category'?:
+      | 'tweet_image'
+      | 'tweet_video'
+      | 'tweet_gif'
+      | 'amplify_video'
+    'query:additional_owners'?: string // comma separated list of user ids
   }
 
   export const API: ApiDescription<Entity, Endpoint> = {
@@ -190,6 +204,42 @@ export namespace Twitter {
             },
             {
               name: 'update.json',
+              type: 'static',
+            },
+          ],
+        },
+      },
+      v1media: {
+        upload: {
+          interface: 'UploadMedia',
+          meta: {
+            title: 'Upload media',
+            description: `Upload media`,
+            docs: 'https://developer.twitter.com/en/docs/twitter-api/v1/media/upload-media/api-reference/post-media-upload',
+          },
+          method: 'POST',
+          auth: {
+            Authorization: {
+              type: 'header:oauth1a',
+              options: {
+                oauth1data: {
+                  'query:media_data': 'media_data',
+                },
+              },
+            },
+          },
+          base: 'https://upload.twitter.com',
+          paths: [
+            {
+              name: '1.1',
+              type: 'static',
+            },
+            {
+              name: 'media',
+              type: 'static',
+            },
+            {
+              name: 'upload.json',
               type: 'static',
             },
           ],
