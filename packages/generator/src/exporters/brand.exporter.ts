@@ -124,6 +124,7 @@ export class BrandExporter {
       'cuttly',
       'codedetection',
       'coinlayer',
+      'cosmicjs',
       'courier',
       'covalent',
       'dataddo',
