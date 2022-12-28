@@ -7,6 +7,11 @@ export interface FlowNode extends RequestParams {
   config?: {
     noUpdateContext?: boolean
     namespace?: string
+    postAssignments?: Array<{
+      namespace: string
+      key: string
+      valueToEvaluate: string
+    }>
   }
   [key: string]: any
 }
@@ -15,7 +20,8 @@ export interface FlowNextNode {
   id: string
   condition?: {
     filter: string
-    toMatch: string | number
+    toMatchFilter?: string
+    toMatch?: string | number
   }
 }
 

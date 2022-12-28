@@ -1,4 +1,4 @@
-import { JQ_TYPE_SEPARATOR, INTERNAL_EXCHANGE } from '../constants/flow.const'
+import { INTERNAL_EXCHANGE, JQ_TYPE_SEPARATOR } from '../constants/flow.const'
 import {
   EngineOptions,
   FlowContext,
@@ -149,6 +149,32 @@ export class FlowUtils {
     )
   }
 
+  public async executePostAssignments(node: FlowNode) {
+    if (
+      !node.config?.postAssignments ||
+      node.config?.postAssignments.length === 0
+    ) {
+      return
+    }
+
+    for (const assignment of node.config.postAssignments) {
+      const value = await EvaluationUtils.evaluate(
+        assignment.valueToEvaluate,
+        this.instanceContext.context,
+      )
+      console.log(assignment)
+      console.log(value)
+      if (this.instanceContext.context[assignment.namespace]) {
+        this.instanceContext.context[assignment.namespace][assignment.key] =
+          value
+      } else {
+        this.instanceContext.context[assignment.namespace] = {}
+        this.instanceContext.context[assignment.namespace][assignment.key] =
+          value
+      }
+    }
+  }
+
   public addLog(options: { id: string; type: FlowNodeLogType }) {
     this.instanceContext.log.push({
       id: options.id,
@@ -239,11 +265,24 @@ export class FlowUtils {
     if (!next.condition) {
       return true
     }
-    const evaluated = EvaluationUtils.evaluate(
+    const evaluated = await EvaluationUtils.evaluate(
       next.condition.filter,
       this.instanceContext.context,
     )
-    return evaluated === next.condition.toMatch
+    if (next.condition.toMatchFilter) {
+      const toMatchEvaluated = await EvaluationUtils.evaluate(
+        next.condition.toMatchFilter,
+        this.instanceContext.context,
+      )
+      return evaluated === toMatchEvaluated
+    }
+    if (next.condition.toMatch) {
+      return evaluated === next.condition.toMatch
+    }
+    if (typeof evaluated === 'boolean') {
+      return evaluated
+    }
+    return false
   }
 
   public waitForIncoming(node: FlowNode) {
@@ -274,7 +313,7 @@ export class FlowUtils {
         const stringValue: string = object[key]
         if (stringValue.startsWith(JQ_TYPE_SEPARATOR)) {
           const splitted = stringValue.split(JQ_TYPE_SEPARATOR)
-          const evaluated = EvaluationUtils.evaluate(
+          const evaluated = await EvaluationUtils.evaluate(
             splitted[1],
             this.instanceContext.context,
           )

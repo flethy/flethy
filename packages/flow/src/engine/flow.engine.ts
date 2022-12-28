@@ -90,6 +90,7 @@ export class FlowEngine {
         return
       }
       this.utils.updateContext(node, response.data)
+      await this.utils.executePostAssignments(node)
     }
     // post cleanup (1) remove current node from next, (2) update incoming nodes
     this.utils.removeNodeIdFromNext(node.id)

@@ -2,8 +2,11 @@ import jsonata from 'jsonata'
 import { FlowEnvironment } from '../types/flow.types'
 
 export class EvaluationUtils {
-  public static evaluate(filter: string, context: any): string | number {
-    const evaluated = jsonata(filter).evaluate({ context })
+  public static async evaluate(
+    filter: string,
+    context: any,
+  ): Promise<string | number> {
+    const evaluated = await jsonata(filter).evaluate({ context })
     return evaluated
   }
 
