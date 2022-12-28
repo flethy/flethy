@@ -241,6 +241,10 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://flethy.com/integrations/cosmicjs</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://flethy.com/integrations/countapi</loc>
     <priority>0.8</priority>
   </url>

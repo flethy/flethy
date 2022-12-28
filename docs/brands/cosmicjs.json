@@ -1,0 +1,87 @@
+{
+  "name": "Cosmic",
+  "domain": "cosmicjs.com",
+  "claimed": false,
+  "description": "Headless CMS and API toolkit",
+  "links": [
+    {
+      "name": "youtube",
+      "url": "https://youtube.com/channel/UCDzCWWJLVWLpoHB5oGH0H-A"
+    },
+    { "name": "github", "url": "https://github.com/cosmicjs" },
+    { "name": "twitter", "url": "https://twitter.com/cosmicjs" },
+    { "name": "instagram", "url": "https://instagram.com/cosmic_js_" },
+    { "name": "linkedin", "url": "https://linkedin.com/company/cosmic-js" },
+    { "name": "facebook", "url": "https://facebook.com/cosmicjs" }
+  ],
+  "logos": [
+    {
+      "type": "icon",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/id-se3GPpw/idNyWVOVls.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 400,
+          "width": 400,
+          "size": 15853
+        }
+      ]
+    },
+    {
+      "type": "logo",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/id-se3GPpw/ideJMRX6FG.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 228,
+          "width": 820,
+          "size": 29653
+        },
+        {
+          "src": "https://asset.brandfetch.io/id-se3GPpw/idu8QsOk7U.svg",
+          "background": "transparent",
+          "format": "svg",
+          "height": null,
+          "width": null,
+          "size": 7995
+        }
+      ]
+    }
+  ],
+  "colors": [{ "hex": "#29abe2", "type": "accent", "brightness": 147 }],
+  "fonts": [
+    {
+      "name": "Montserrat",
+      "type": "title",
+      "origin": "google",
+      "originId": "Montserrat",
+      "weights": []
+    },
+    {
+      "name": "Open Sans",
+      "type": "body",
+      "origin": "google",
+      "originId": "Open+Sans",
+      "weights": []
+    }
+  ],
+  "images": [
+    {
+      "type": "banner",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/id-se3GPpw/idT5f4Sug8.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 500,
+          "width": 1500,
+          "size": 97794
+        }
+      ]
+    }
+  ]
+}
