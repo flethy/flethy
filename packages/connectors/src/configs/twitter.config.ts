@@ -54,7 +54,23 @@ export namespace Twitter {
     'body:text'?: string
     'body:media'?: {
       media_ids: string[]
+      tagged_user_ids?: string[]
     }
+    'body:reply'?: {
+      exclude_reply_user_ids?: string[]
+      in_reply_to_tweet_id?: string
+    }
+    'body:reply_settings'?: 'mentionedUsers' | 'everyone' | 'following'
+    'body:direct_message_deep_link'?: string
+    'body:for_super_followers_only'?: boolean
+    'body:geo'?: {
+      place_id?: string
+    }
+    'body:poll'?: {
+      duration_minutes?: number
+      options?: string[]
+    }
+    'body:quote_tweet_id'?: string
   }
 
   export interface StatusUpdate extends TwitterBaseOAuth1a, RequestParams {
