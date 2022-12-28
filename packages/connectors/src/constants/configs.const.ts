@@ -54,6 +54,7 @@ import { CongressGov } from '../configs/congressgov.config'
 import { Contentchef } from '../configs/contentchef.config'
 import { ContentFul } from '../configs/contentful.config'
 import { ConvertKit } from '../configs/convertkit.config'
+import { CosmicJS } from '../configs/cosmicjs.config'
 import { CountApi } from '../configs/countapi.config'
 import { Courier } from '../configs/courier.config'
 import { Covalent } from '../configs/covalent.config'
@@ -323,6 +324,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['contentchef', Contentchef.API],
 ['contentful', ContentFul.API],
 ['convertkit', ConvertKit.API],
+['cosmicjs', CosmicJS.API],
 ['countapi', CountApi.API],
 ['courier', Courier.API],
 ['covalent', Covalent.API],

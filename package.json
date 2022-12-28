@@ -13,6 +13,7 @@
     "=============== C O N N E C T O R S ===============": "===============",
     "export": "turbo run export --no-cache",
     "play": "turbo run start --filter=@flethy/generator --no-cache",
+    "config:create": "pnpm --filter generator config:create",
     "=============== F L O W   D E S I G N E R ===============": "===============",
     "start:flowdesigner": "pnpm --filter flow-designer start",
     "=============== L A N D I N G   P A G E =================": "===============",

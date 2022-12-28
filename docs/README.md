@@ -79,6 +79,7 @@ The following Endpoints are currently supported.
 * [Contentchef](./api/contentchef.md)
 * [ContentFul](./api/contentful.md)
 * [ConvertKit](./api/convertkit.md)
+* [CosmicJS](./api/cosmicjs.md)
 * [CountApi](./api/countapi.md)
 * [Courier](./api/courier.md)
 * [Cronhooks](./api/cronhooks.md)

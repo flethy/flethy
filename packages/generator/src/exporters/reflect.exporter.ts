@@ -54,6 +54,7 @@ import { CongressGov } from '../../../connectors/src/configs/congressgov.config'
 import { Contentchef } from '../../../connectors/src/configs/contentchef.config'
 import { ContentFul } from '../../../connectors/src/configs/contentful.config'
 import { ConvertKit } from '../../../connectors/src/configs/convertkit.config'
+import { CosmicJS } from '../../../connectors/src/configs/cosmicjs.config'
 import { CountApi } from '../../../connectors/src/configs/countapi.config'
 import { Courier } from '../../../connectors/src/configs/courier.config'
 import { Covalent } from '../../../connectors/src/configs/covalent.config'
@@ -395,6 +396,9 @@ configTypes.push({type: getType<ContentFul.GraphQLbySpace>(), id: 'contentful', 
 configTypes.push({type: getType<ContentFul.GraphQLbySpaceAndEnvironment>(), id: 'contentful', name: 'ContentFul', interface: 'GraphQLbySpaceAndEnvironment'})
 configTypes.push({type: getType<ConvertKit.GetAccount>(), id: 'convertkit', name: 'ConvertKit', interface: 'GetAccount'})
 configTypes.push({type: getType<ConvertKit.ListSubscribers>(), id: 'convertkit', name: 'ConvertKit', interface: 'ListSubscribers'})
+configTypes.push({type: getType<CosmicJS.Authenticate>(), id: 'cosmicjs', name: 'CosmicJS', interface: 'Authenticate'})
+configTypes.push({type: getType<CosmicJS.GraphQLQuery>(), id: 'cosmicjs', name: 'CosmicJS', interface: 'GraphQLQuery'})
+configTypes.push({type: getType<CosmicJS.GetProductsByMetadataValue>(), id: 'cosmicjs', name: 'CosmicJS', interface: 'GetProductsByMetadataValue'})
 configTypes.push({type: getType<CountApi.Get>(), id: 'countapi', name: 'CountApi', interface: 'Get'})
 configTypes.push({type: getType<CountApi.Set>(), id: 'countapi', name: 'CountApi', interface: 'Set'})
 configTypes.push({type: getType<CountApi.Update>(), id: 'countapi', name: 'CountApi', interface: 'Update'})
