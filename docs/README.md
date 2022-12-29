@@ -221,6 +221,7 @@ The following Endpoints are currently supported.
 * [Revue](./api/revue.md)
 * [Robolly](./api/robolly.md)
 * [Rye](./api/rye.md)
+* [SanityIo](./api/sanityio.md)
 * [Savepage](./api/savepage.md)
 * [Semrush](./api/semrush.md)
 * [SendGrid](./api/sendgrid.md)

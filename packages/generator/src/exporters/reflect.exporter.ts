@@ -205,6 +205,7 @@ import { RestZeebe } from '../../../connectors/src/configs/restzeebe.config'
 import { Revue } from '../../../connectors/src/configs/revue.config'
 import { Robolly } from '../../../connectors/src/configs/robolly.config'
 import { Rye } from '../../../connectors/src/configs/rye.config'
+import { SanityIo } from '../../../connectors/src/configs/sanityio.config'
 import { Savepage } from '../../../connectors/src/configs/savepage.config'
 import { Semrush } from '../../../connectors/src/configs/semrush.config'
 import { SendGrid } from '../../../connectors/src/configs/sendgrid.config'
@@ -720,6 +721,7 @@ configTypes.push({type: getType<Revue.GetSubscribers>(), id: 'revue', name: 'Rev
 configTypes.push({type: getType<Revue.AddSubscriber>(), id: 'revue', name: 'Revue', interface: 'AddSubscriber'})
 configTypes.push({type: getType<Robolly.Render>(), id: 'robolly', name: 'Robolly', interface: 'Render'})
 configTypes.push({type: getType<Rye.GraphQLQuery>(), id: 'rye', name: 'Rye', interface: 'GraphQLQuery'})
+configTypes.push({type: getType<SanityIo.ContentQuery>(), id: 'sanityio', name: 'SanityIo', interface: 'ContentQuery'})
 configTypes.push({type: getType<Savepage.Screenshot>(), id: 'savepage', name: 'Savepage', interface: 'Screenshot'})
 configTypes.push({type: getType<Semrush.GetBacklinksOverview>(), id: 'semrush', name: 'Semrush', interface: 'GetBacklinksOverview'})
 configTypes.push({type: getType<SendGrid.SendMail>(), id: 'sendgrid', name: 'SendGrid', interface: 'SendMail'})

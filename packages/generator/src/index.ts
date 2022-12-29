@@ -175,6 +175,7 @@ import ButtondownEmail from '@flethy/connectors/src/configs/buttondownemail.conf
 import CarbEngage from '@flethy/connectors/src/configs/carbengage.config'
 import Codat from '@flethy/connectors/src/configs/codat.config'
 import Contentchef from '@flethy/connectors/src/configs/contentchef.config'
+import CosmicJS from '@flethy/connectors/src/configs/cosmicjs.config'
 import Cronhub from '@flethy/connectors/src/configs/cronhub.config'
 import CSVBox from '@flethy/connectors/src/configs/csvbox.config'
 import Cumul from '@flethy/connectors/src/configs/cumul.config'
@@ -231,6 +232,7 @@ import Rebrandly from '@flethy/connectors/src/configs/rebrandly.config'
 import ReducedTo from '@flethy/connectors/src/configs/reducedto.config'
 import Robolly from '@flethy/connectors/src/configs/robolly.config'
 import Rye from '@flethy/connectors/src/configs/rye.config'
+import SanityIo from '@flethy/connectors/src/configs/sanityio.config'
 import Savepage from '@flethy/connectors/src/configs/savepage.config'
 import Sendinblue from '@flethy/connectors/src/configs/sendinblue.config'
 import Sheetson from '@flethy/connectors/src/configs/sheetson.config'
@@ -257,7 +259,6 @@ import WorkOS from '@flethy/connectors/src/configs/workos.config'
 import Yapily from '@flethy/connectors/src/configs/yapily.config'
 import { HttpRequest } from './controllers/HttpRequest'
 import { logger } from './utils/Logger'
-import CosmicJS from '@flethy/connectors/src/configs/cosmicjs.config'
 
 async function main() {
   const requestConfigs: {
@@ -3533,8 +3534,15 @@ Here you find all the available integrations`,
       'query:query': `{"type":"products","metadata.category":"Electronics"}`,
       'query:props': 'slug,title',
     }),
+    sanityQuery: nao<SanityIo.ContentQuery>({
+      kind: 'sanityio.content.query',
+      'auth:Authorization': process.env.SANITYIO_TOKEN,
+      'param:dataset': 'production',
+      'subdomain:projectid': process.env.SANITYIO_PROJECT_ID,
+      'query:query': `*[_type == "pet"]`,
+    }),
   }
-  const requestConfig = requestConfigs.cosmicjsProducts
+  const requestConfig = requestConfigs.sanityQuery
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

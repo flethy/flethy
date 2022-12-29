@@ -1,0 +1,83 @@
+{
+  "name": "Sanity",
+  "domain": "sanity.io",
+  "claimed": false,
+  "description": "The fastest, most flexible platform for delivering structured content to products and devices",
+  "links": [
+    {
+      "name": "youtube",
+      "url": "https://youtube.com/channel/UCGz69JwGRptteFAaX8hSKCQ"
+    },
+    { "name": "github", "url": "https://github.com/sanity-io" },
+    { "name": "twitter", "url": "https://twitter.com/sanity_io" },
+    { "name": "linkedin", "url": "https://linkedin.com/company/sanity-io" },
+    { "name": "facebook", "url": "https://facebook.com/sanityapi" }
+  ],
+  "logos": [
+    {
+      "type": "icon",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/id9jKycKu7/idBdbt2lT-.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 400,
+          "width": 400,
+          "size": 7707
+        }
+      ]
+    },
+    {
+      "type": "logo",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/id9jKycKu7/idtLSClPIc.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 172,
+          "width": 820,
+          "size": 13415
+        },
+        {
+          "src": "https://asset.brandfetch.io/id9jKycKu7/id447RiGAd.svg",
+          "background": "transparent",
+          "format": "svg",
+          "height": null,
+          "width": null,
+          "size": 2592
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#121723", "type": "dark", "brightness": 23 },
+    { "hex": "#fda19b", "type": "light", "brightness": 180 },
+    { "hex": "#fa1607", "type": "accent", "brightness": 69 }
+  ],
+  "fonts": [
+    {
+      "name": "Calibre",
+      "type": "body",
+      "origin": "custom",
+      "originId": null,
+      "weights": []
+    }
+  ],
+  "images": [
+    {
+      "type": "banner",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/id9jKycKu7/idGAhORNCf.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 500,
+          "width": 1500,
+          "size": 29019
+        }
+      ]
+    }
+  ]
+}
