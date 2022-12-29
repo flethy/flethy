@@ -58,8 +58,7 @@ export const TWITTERTHREAD_FLOW: FlowNode[] = [
       accessKey: '==>secrets==>ACCESS_TOKEN',
       accessSecret: '==>secrets==>ACCESS_TOKEN_SECRET',
     },
-    'body:text':
-      '->context.input.thread[$number(context.thread.counter)]->string',
+    'body:text': '->context.input.thread[$$.context.thread.counter]->string',
     'body:reply': {
       in_reply_to_tweet_id: '->context.tweet.data.id->string',
     },
