@@ -54,7 +54,9 @@ export class FlowEngine {
     return this.utils.getInstanceContext().context._flethyresponse ?? {}
   }
 
-  private async execute(node: FlowNode) {
+  private async execute(originalNode: FlowNode) {
+    // clone node to avoid side effects
+    const node: FlowNode = JSON.parse(JSON.stringify(originalNode))
     if (this.utils.waitForIncoming(node)) {
       // need to wait for all incoming nodes
       return
@@ -90,6 +92,7 @@ export class FlowEngine {
         return
       }
       this.utils.updateContext(node, response.data)
+      await this.utils.executePostAssignments(node)
     }
     // post cleanup (1) remove current node from next, (2) update incoming nodes
     this.utils.removeNodeIdFromNext(node.id)
