@@ -845,6 +845,10 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://flethy.com/integrations/sanityio</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://flethy.com/integrations/savepage</loc>
     <priority>0.8</priority>
   </url>
