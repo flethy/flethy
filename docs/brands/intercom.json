@@ -1,0 +1,169 @@
+{
+  "name": "Intercom",
+  "domain": "intercom.com",
+  "claimed": false,
+  "description": "Intercom, the Engagement OS, enables businesses to build stronger customer relationships that drive growth and scale.",
+  "links": [
+    { "name": "twitter", "url": "https://twitter.com/intercom" },
+    { "name": "linkedin", "url": "https://linkedin.com/company/intercom" }
+  ],
+  "logos": [
+    {
+      "type": "icon",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idYJNDWF1m/idfjLlvWOs.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 400,
+          "width": 400,
+          "size": 3583
+        }
+      ]
+    },
+    {
+      "type": "logo",
+      "theme": "light",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idYJNDWF1m/idOxxgl_lu.svg",
+          "background": "transparent",
+          "format": "svg",
+          "size": 7907
+        },
+        {
+          "src": "https://asset.brandfetch.io/idYJNDWF1m/idEAiEQK5o.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 183,
+          "width": 800,
+          "size": 11595
+        }
+      ]
+    },
+    {
+      "type": "logo",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idYJNDWF1m/idHuIgTzoA.svg",
+          "background": "transparent",
+          "format": "svg",
+          "height": null,
+          "width": null,
+          "size": 7925
+        },
+        {
+          "src": "https://asset.brandfetch.io/idYJNDWF1m/idmkqqlaj6.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 183,
+          "width": 800,
+          "size": 14433
+        }
+      ]
+    },
+    {
+      "type": "symbol",
+      "theme": "light",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idYJNDWF1m/idE5AeGRWG.svg",
+          "background": "transparent",
+          "format": "svg",
+          "size": 3784
+        },
+        {
+          "src": "https://asset.brandfetch.io/idYJNDWF1m/id6SJlymA-.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 786,
+          "width": 800,
+          "size": 18357
+        }
+      ]
+    },
+    {
+      "type": "symbol",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idYJNDWF1m/idl44_KPXc.svg",
+          "background": "transparent",
+          "format": "svg",
+          "size": 3786
+        },
+        {
+          "src": "https://asset.brandfetch.io/idYJNDWF1m/idbtFm88z_.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 786,
+          "width": 800,
+          "size": 31476
+        }
+      ]
+    },
+    {
+      "type": "other",
+      "theme": null,
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idYJNDWF1m/idrUTm1V3h.svg",
+          "background": "transparent",
+          "format": "svg",
+          "size": 14679
+        },
+        {
+          "src": "https://asset.brandfetch.io/idYJNDWF1m/idqpEnPcZm.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 183,
+          "width": 800,
+          "size": 20868
+        }
+      ]
+    },
+    {
+      "type": "other",
+      "theme": null,
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idYJNDWF1m/ideMXgqmc3.svg",
+          "background": "transparent",
+          "format": "svg",
+          "size": 14631
+        },
+        {
+          "src": "https://asset.brandfetch.io/idYJNDWF1m/idPrGXUT6I.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 183,
+          "width": 800,
+          "size": 17009
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#FFFFFF", "type": "accent", "brightness": 255 },
+    { "hex": "#000000", "type": "dark", "brightness": 0 },
+    { "hex": "#F1F1F1", "type": "brand", "brightness": 241 }
+  ],
+  "fonts": [],
+  "images": [
+    {
+      "type": "banner",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idYJNDWF1m/idJPwnxOX8.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 500,
+          "width": 1500,
+          "size": 26290
+        }
+      ]
+    }
+  ]
+}

@@ -113,6 +113,7 @@ import { Hybiscus } from '../../../connectors/src/configs/hybiscus.config'
 import { Hygraph } from '../../../connectors/src/configs/hygraph.config'
 import { Imglab } from '../../../connectors/src/configs/imglab.config'
 import { IncidentIo } from '../../../connectors/src/configs/incidentio.config'
+import { Intercom } from '../../../connectors/src/configs/intercom.config'
 import { Ionos } from '../../../connectors/src/configs/ionos.config'
 import { Jira } from '../../../connectors/src/configs/jira.config'
 import { Keen } from '../../../connectors/src/configs/keen.config'
@@ -532,6 +533,9 @@ configTypes.push({type: getType<Hybiscus.GetReport>(), id: 'hybiscus', name: 'Hy
 configTypes.push({type: getType<Hygraph.ContentApiGraphQl>(), id: 'hygraph', name: 'Hygraph', interface: 'ContentApiGraphQl'})
 configTypes.push({type: getType<Imglab.Api>(), id: 'imglab', name: 'Imglab', interface: 'Api'})
 configTypes.push({type: getType<IncidentIo.ListIncidents>(), id: 'incidentio', name: 'IncidentIo', interface: 'ListIncidents'})
+configTypes.push({type: getType<Intercom.CreateContact>(), id: 'intercom', name: 'Intercom', interface: 'CreateContact'})
+configTypes.push({type: getType<Intercom.SubmitDataEvent>(), id: 'intercom', name: 'Intercom', interface: 'SubmitDataEvent'})
+configTypes.push({type: getType<Intercom.ListArticles>(), id: 'intercom', name: 'Intercom', interface: 'ListArticles'})
 configTypes.push({type: getType<Ionos.ListDnsZones>(), id: 'ionos', name: 'Ionos', interface: 'ListDnsZones'})
 configTypes.push({type: getType<Ionos.ListDomains>(), id: 'ionos', name: 'Ionos', interface: 'ListDomains'})
 configTypes.push({type: getType<Ionos.ListSslCertificates>(), id: 'ionos', name: 'Ionos', interface: 'ListSslCertificates'})
