@@ -130,6 +130,7 @@ export class BrandExporter {
       'dataddo',
       'directus',
       'fleek',
+      'intercom',
       'mezmo',
       'onesignal',
       'ory',

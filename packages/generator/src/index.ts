@@ -195,6 +195,7 @@ import Gravatar from '@flethy/connectors/src/configs/gravatar.config'
 import Hasura from '@flethy/connectors/src/configs/hasura.config'
 import Here from '@flethy/connectors/src/configs/here.config'
 import Imglab from '@flethy/connectors/src/configs/imglab.config'
+import Intercom from '@flethy/connectors/src/configs/intercom.config'
 import Ionos from '@flethy/connectors/src/configs/ionos.config'
 import Keen from '@flethy/connectors/src/configs/keen.config'
 import KnockApp from '@flethy/connectors/src/configs/knockapp.config'
@@ -3541,8 +3542,18 @@ Here you find all the available integrations`,
       'subdomain:projectid': process.env.SANITYIO_PROJECT_ID,
       'query:query': `*[_type == "pet"]`,
     }),
+    intercomCreateContact: nao<Intercom.CreateContact>({
+      kind: 'intercom.contacts.create',
+      'auth:Authorization': process.env.INTERCOM_TOKEN,
+      'body:role': 'lead',
+      'body:email': 'adam@flethy.com',
+    }),
+    intercomListArticles: nao<Intercom.ListArticles>({
+      kind: 'intercom.articles.list',
+      'auth:Authorization': process.env.INTERCOM_TOKEN,
+    }),
   }
-  const requestConfig = requestConfigs.sanityQuery
+  const requestConfig = requestConfigs.intercomListArticles
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)
