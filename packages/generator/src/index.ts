@@ -3552,6 +3552,11 @@ Here you find all the available integrations`,
       kind: 'intercom.articles.list',
       'auth:Authorization': process.env.INTERCOM_TOKEN,
     }),
+    intercomSendEvent: nao<Intercom.SubmitDataEvent>({
+      kind: 'intercom.dataevent.submit',
+      'auth:Authorization': process.env.INTERCOM_TOKEN,
+      'body:event_name': 'test-event',
+    }),
   }
   const requestConfig = requestConfigs.intercomListArticles
 

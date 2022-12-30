@@ -430,4 +430,12 @@ export const FLOWS = {
       },
     },
   ],
+  'send-event-to-intercom': [
+    {
+      id: 'intercom',
+      kind: 'intercom.dataevent.submit',
+      'auth:Authorization': '==>secrets==>INTERCOM_TOKEN',
+      'body:event_name': '->context.input.event_name->string',
+    },
+  ],
 }

@@ -1205,6 +1205,10 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://flethy.com/use-cases/send-event-to-intercom</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://flethy.com/use-cases/update-openapi-spec-to-readme</loc>
     <priority>0.8</priority>
   </url>
