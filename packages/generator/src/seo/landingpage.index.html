@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/webp" href="/favicon.webp" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ titletag }}</title>
+
+    <!-- 
+        ==========================
+         META TAGS
+        ==========================
+        -->
+    <meta name="robots" content="index, follow" />
+    <meta name="title" content="{{ title }}" />
+    <meta name="keywords" content="{{ keywords }}" />
+    <meta name="author" content="{{ author }}" />
+    <meta name="publisher" content="{{ author }}" />
+    <meta name="copyright" content="{{ author }}" />
+    <meta name="audience" content="{{ audience }}" />
+    <meta name="description" content="{{ title }}" />
+    <meta name="color-scheme" content="{{ colorScheme }}" />
+
+    <!-- OPEN GRAPH -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{{{ url }}}" />
+    <meta property="og:title" content="{{ title }}" />
+    <meta property="og:description" content="{{ title }}" />
+    <meta property="og:image" content="{{{ og }}}" />
+
+    <!-- TWITTER -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="{{{ url }}}" />
+    <meta property="twitter:title" content="{{ title }}" />
+    <meta property="twitter:description" content="{{ title }}" />
+    <meta property="twitter:image" content="{{{ og }}}" />
+    <meta name="twitter:site" content="{{ twitter.site }}" />
+    <meta name="twitter:creator" content="{{ twitter.creator }}" />
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@type": "type",
+        "name": "{{ titletag }}",
+        "image": "{{{ favicon }}}",
+        "description": "{{ title }}",
+        "url": "{{{ url }}}",
+        "sameAs": ["{{{ twitter.url }}}"]
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/index.tsx"></script>
+  </body>
+</html>

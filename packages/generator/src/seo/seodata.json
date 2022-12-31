@@ -1,0 +1,16 @@
+{
+  "titletag": "flethy | Integrate with over 270 services without further dependencies for free",
+  "title": "Integrate with over 270 services without further dependencies for free",
+  "keywords": "flow, services, orchestration, connect, free, integrations, workflows, flows, api, developer tool, developer library, serverless, zero-dependency, low-code",
+  "author": "adam@flethy.com",
+  "audience": "Everyone",
+  "colorScheme": "dark light",
+  "url": "https://flethy.com",
+  "og": "https://flethy.com/og.png",
+  "twitter": {
+    "site": "@flethycom",
+    "url": "https://twitter.com/flethycom",
+    "creator": "@urbanisierung"
+  },
+  "favicon": "https://flethy.com/favicon.png"
+}
