@@ -1,4 +1,4 @@
-import { Button, Center, Stack, VStack } from '@chakra-ui/react'
+import { Button, Center, Grid, GridItem, Stack } from '@chakra-ui/react'
 import { observer } from 'mobx-react-lite'
 import { useTranslation } from 'react-i18next'
 import FancyHeading from '../../components/molecules/fancy-heading/FancyHeading'
@@ -13,13 +13,17 @@ export default observer(() => {
 	const content = (
 		<>
 			{USECASES.map((useCase) => (
-				<Button
-					key={useCase.id}
-					variant="link"
-					onClick={() => router.goTo(routes.useCase, { id: useCase.id })}
-				>
-					{useCase.title}
-				</Button>
+				<GridItem w="100%" h="20" key={useCase.id}>
+					<Button
+						key={useCase.id}
+						variant="outline"
+						w="100%"
+						h="100%"
+						onClick={() => router.goTo(routes.useCase, { id: useCase.id })}
+					>
+						{useCase.title}
+					</Button>
+				</GridItem>
 			))}
 		</>
 	)
@@ -31,9 +35,18 @@ export default observer(() => {
 					textA={t('pages.useCases.title')}
 					textB={t('pages.useCases.subtitle')}
 				/>
-				<Center py={5}>
-					<VStack gap={5}>{content}</VStack>
-				</Center>
+				<Grid
+					py={5}
+					templateColumns={{
+						base: '1fr',
+						md: 'repeat(2, 1fr)',
+						lg: 'repeat(3, 1fr)',
+						xl: 'repeat(4, 1fr)',
+					}}
+					gap={6}
+				>
+					{content}
+				</Grid>
 			</Stack>
 		</Center>
 	)
