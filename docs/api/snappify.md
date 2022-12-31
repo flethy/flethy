@@ -10,6 +10,10 @@
 
 ## API
 
+### Authentication
+
+* Authorization: header
+
 ### snap
 
 #### simple

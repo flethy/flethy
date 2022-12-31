@@ -162,6 +162,11 @@ export namespace Snappify {
       },
     },
     base: 'https://api.snappify.com',
+    auth: {
+      Authorization: {
+        type: 'header',
+      },
+    },
     api: {
       snap: {
         simple: {

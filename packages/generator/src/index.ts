@@ -260,6 +260,7 @@ import WorkOS from '@flethy/connectors/src/configs/workos.config'
 import Yapily from '@flethy/connectors/src/configs/yapily.config'
 import { HttpRequest } from './controllers/HttpRequest'
 import { logger } from './utils/Logger'
+import Snappify from '@flethy/connectors/src/configs/snappify.config'
 
 async function main() {
   const requestConfigs: {
@@ -3556,6 +3557,11 @@ Here you find all the available integrations`,
       kind: 'intercom.dataevent.submit',
       'auth:Authorization': process.env.INTERCOM_TOKEN,
       'body:event_name': 'test-event',
+    }),
+    snappify: nao<Snappify.SimpleSnap>({
+      kind: 'snappify.snap.simple',
+      'auth:Authorization': process.env.SNAPPIFY_API_KEY,
+      'body:code': `console.log('hello world')`,
     }),
   }
   const requestConfig = requestConfigs.intercomListArticles

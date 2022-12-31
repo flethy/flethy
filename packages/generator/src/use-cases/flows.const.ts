@@ -438,4 +438,12 @@ export const FLOWS = {
       'body:event_name': '->context.input.event_name->string',
     },
   ],
+  'automate-code-snaps-with-snappify': [
+    {
+      id: 'snappify',
+      kind: 'snappify.snap.simple',
+      'auth:Authorization': '==>secrets==>SNAPPIFY_API_KEY',
+      'body:code': `console.log('hello world')`,
+    },
+  ],
 }
