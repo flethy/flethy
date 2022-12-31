@@ -14,37 +14,37 @@
     <meta name="robots" content="index, follow" />
     <meta name="title" content="{{ title }}" />
     <meta name="keywords" content="{{ keywords }}" />
-    <meta name="author" content="adam@flethy.com" />
-    <meta name="publisher" content="adam@flethy.com" />
-    <meta name="copyright" content="adam@flethy.com" />
-    <meta name="audience" content="Everyone" />
+    <meta name="author" content="{{ author }}" />
+    <meta name="publisher" content="{{ author }}" />
+    <meta name="copyright" content="{{ author }}" />
+    <meta name="audience" content="{{ audience }}" />
     <meta name="description" content="{{ title }}" />
-    <meta name="color-scheme" content="dark light" />
+    <meta name="color-scheme" content="{{ colorScheme }}" />
 
     <!-- OPEN GRAPH -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://flethy.com" />
+    <meta property="og:url" content="{{{ url }}}" />
     <meta property="og:title" content="{{ title }}" />
     <meta property="og:description" content="{{ title }}" />
-    <meta property="og:image" content="https://flethy.com/og.png" />
+    <meta property="og:image" content="{{{ og }}}" />
 
     <!-- TWITTER -->
     <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://flethy.com" />
+    <meta property="twitter:url" content="{{{ url }}}" />
     <meta property="twitter:title" content="{{ title }}" />
     <meta property="twitter:description" content="{{ title }}" />
-    <meta property="twitter:image" content="https://flethy.com/og.png" />
-    <meta name="twitter:site" content="@flethycom" />
-    <meta name="twitter:creator" content="@urbanisierung" />
+    <meta property="twitter:image" content="{{{ og }}}" />
+    <meta name="twitter:site" content="{{ twitter.site }}" />
+    <meta name="twitter:creator" content="{{ twitter.creator }}" />
     <script type="application/ld+json">
       {
         "@context": "http://schema.org",
         "@type": "type",
         "name": "{{ titletag }}",
-        "image": "https://flethy.com/favicon.png",
+        "image": "{{{ favicon }}}",
         "description": "{{ title }}",
-        "url": "https://flethy.com",
-        "sameAs": ["https://twitter.com/flethycom"]
+        "url": "{{{ url }}}",
+        "sameAs": ["{{{ twitter.url }}}"]
       }
     </script>
   </head>
