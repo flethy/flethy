@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/webp" href="/favicon.webp" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ titletag }}</title>
+
+    <!-- 
+        ==========================
+         META TAGS
+        ==========================
+        -->
+    <meta name="robots" content="index, follow" />
+    <meta name="title" content="{{ title }}" />
+    <meta name="keywords" content="{{ keywords }}" />
+    <meta name="author" content="adam@flethy.com" />
+    <meta name="publisher" content="adam@flethy.com" />
+    <meta name="copyright" content="adam@flethy.com" />
+    <meta name="audience" content="Everyone" />
+    <meta name="description" content="{{ title }}" />
+    <meta name="color-scheme" content="dark light" />
+
+    <!-- OPEN GRAPH -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://flethy.com" />
+    <meta property="og:title" content="{{ title }}" />
+    <meta property="og:description" content="{{ title }}" />
+    <meta property="og:image" content="https://flethy.com/og.png" />
+
+    <!-- TWITTER -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://flethy.com" />
+    <meta property="twitter:title" content="{{ title }}" />
+    <meta property="twitter:description" content="{{ title }}" />
+    <meta property="twitter:image" content="https://flethy.com/og.png" />
+    <meta name="twitter:site" content="@flethycom" />
+    <meta name="twitter:creator" content="@urbanisierung" />
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@type": "type",
+        "name": "{{ titletag }}",
+        "image": "https://flethy.com/favicon.png",
+        "description": "{{ title }}",
+        "url": "https://flethy.com",
+        "sameAs": ["https://twitter.com/flethycom"]
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/index.tsx"></script>
+  </body>
+</html>

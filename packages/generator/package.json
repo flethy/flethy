@@ -7,10 +7,12 @@
   "scripts": {
     "start": "NODE_ENV=local ts-node ./src/index.ts",
     "marketing": "NODE_ENV=local ts-node ./src/controllers/NavigateToWebsites.ts",
-    "export": "npm run exportexec && npm run reflectgen && npm run updateapicount",
+    "export": "npm run exportexec && npm run reflectgen && npm run updateapicount && npm run seo",
     "exportexec": "NODE_ENV=local ts-node ./src/export.ts",
     "reflectgen": "NODE_ENV=local ts-node -P tsconfig-tt.json ./src/exporters/reflect.generator.ts",
     "updateapicount": "mustache data.json ./src/docs/connectors.README.md > ../connectors/README.md",
+    "seo:landingpage": "mustache ./src/seo/seodata.json ./src/seo/landingpage.index.html > ../../apps/landing-page/index.html",
+    "seo": "npm run seo:landingpage",
     "config:create": "ts-node ./src/utils/Template.utils.ts"
   },
   "author": "adam@flethy.com",
