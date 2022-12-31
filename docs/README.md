@@ -237,6 +237,7 @@ The following Endpoints are currently supported.
 * [SideKick](./api/sidekick.md)
 * [Sidemail](./api/sidemail.md)
 * [Slack](./api/slack.md)
+* [Snappify](./api/snappify.md)
 * [SpeechTextAI](./api/speechtextai.md)
 * [Splitbee](./api/splitbee.md)
 * [Stackby](./api/stackby.md)

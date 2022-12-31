@@ -909,6 +909,10 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://flethy.com/integrations/snappify</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://flethy.com/integrations/speechtextai</loc>
     <priority>0.8</priority>
   </url>
