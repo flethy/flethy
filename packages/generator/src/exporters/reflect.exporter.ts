@@ -216,6 +216,7 @@ import { SerpApi } from '../../../connectors/src/configs/serpapi.config'
 import { SerpStack } from '../../../connectors/src/configs/serpstack.config'
 import { Sheetson } from '../../../connectors/src/configs/sheetson.config'
 import { Sheety } from '../../../connectors/src/configs/sheety.config'
+import { Shopify } from '../../../connectors/src/configs/shopify.config'
 import { Shortcut } from '../../../connectors/src/configs/shortcut.config'
 import { Shrtcode } from '../../../connectors/src/configs/shrtcode.config'
 import { SideKick } from '../../../connectors/src/configs/sidekick.config'
@@ -744,6 +745,8 @@ configTypes.push({type: getType<Sheety.Get>(), id: 'sheety', name: 'Sheety', int
 configTypes.push({type: getType<Sheety.Post>(), id: 'sheety', name: 'Sheety', interface: 'Post'})
 configTypes.push({type: getType<Sheety.Put>(), id: 'sheety', name: 'Sheety', interface: 'Put'})
 configTypes.push({type: getType<Sheety.Delete>(), id: 'sheety', name: 'Sheety', interface: 'Delete'})
+configTypes.push({type: getType<Shopify.GraphQLQuery>(), id: 'shopify', name: 'Shopify', interface: 'GraphQLQuery'})
+configTypes.push({type: getType<Shopify.ListProducts>(), id: 'shopify', name: 'Shopify', interface: 'ListProducts'})
 configTypes.push({type: getType<Shortcut.ListCategories>(), id: 'shortcut', name: 'Shortcut', interface: 'ListCategories'})
 configTypes.push({type: getType<Shortcut.CreateCategory>(), id: 'shortcut', name: 'Shortcut', interface: 'CreateCategory'})
 configTypes.push({type: getType<Shortcut.Search>(), id: 'shortcut', name: 'Shortcut', interface: 'Search'})

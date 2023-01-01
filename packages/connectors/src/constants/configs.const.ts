@@ -216,6 +216,7 @@ import { SerpApi } from '../configs/serpapi.config'
 import { SerpStack } from '../configs/serpstack.config'
 import { Sheetson } from '../configs/sheetson.config'
 import { Sheety } from '../configs/sheety.config'
+import { Shopify } from '../configs/shopify.config'
 import { Shortcut } from '../configs/shortcut.config'
 import { Shrtcode } from '../configs/shrtcode.config'
 import { SideKick } from '../configs/sidekick.config'
@@ -489,6 +490,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['serpstack', SerpStack.API],
 ['sheetson', Sheetson.API],
 ['sheety', Sheety.API],
+['shopify', Shopify.API],
 ['shortcut', Shortcut.API],
 ['shrtcode', Shrtcode.API],
 ['sidekick', SideKick.API],
