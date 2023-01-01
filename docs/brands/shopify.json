@@ -1,0 +1,209 @@
+{
+  "name": "Shopify",
+  "domain": "shopify.com",
+  "claimed": true,
+  "description": "Millions of the world's most successful brands trust Shopify to sell, ship and process payments anywhere.",
+  "links": [
+    {
+      "name": "crunchbase",
+      "url": "https://crunchbase.com/organization/shopify"
+    },
+    { "name": "youtube", "url": "https://youtube.com/shopify" },
+    { "name": "twitter", "url": "https://twitter.com/shopify" },
+    { "name": "instagram", "url": "https://instagram.com/shopify" },
+    { "name": "linkedin", "url": "https://linkedin.com/company/shopify" },
+    { "name": "facebook", "url": "https://facebook.com/shopify" }
+  ],
+  "logos": [
+    {
+      "type": "logo",
+      "theme": "light",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idAgPm7IvG/ida7RCV4EQ.svg",
+          "background": "transparent",
+          "format": "svg",
+          "size": 3856
+        },
+        {
+          "src": "https://asset.brandfetch.io/idAgPm7IvG/idYDnhuljK.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 229,
+          "width": 800,
+          "size": 20663
+        }
+      ]
+    },
+    {
+      "type": "logo",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idAgPm7IvG/id1qbV3Drs.svg",
+          "background": "transparent",
+          "format": "svg",
+          "size": 5908
+        },
+        {
+          "src": "https://asset.brandfetch.io/idAgPm7IvG/id6vhOcKCb.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 227,
+          "width": 800,
+          "size": 19993
+        }
+      ]
+    },
+    {
+      "type": "symbol",
+      "theme": "light",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idAgPm7IvG/idSeokTRcw.svg",
+          "background": "transparent",
+          "format": "svg",
+          "size": 1474
+        },
+        {
+          "src": "https://asset.brandfetch.io/idAgPm7IvG/idGkDEW_PW.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 909,
+          "width": 800,
+          "size": 27765
+        }
+      ]
+    },
+    {
+      "type": "symbol",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idAgPm7IvG/idGSgB0CVt.svg",
+          "background": "transparent",
+          "format": "svg",
+          "size": 1486
+        },
+        {
+          "src": "https://asset.brandfetch.io/idAgPm7IvG/id-LIl29j4.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 903,
+          "width": 800,
+          "size": 78592
+        }
+      ]
+    },
+    {
+      "type": "icon",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idAgPm7IvG/idJEWMeIxh.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 400,
+          "width": 400,
+          "size": 12252
+        }
+      ]
+    },
+    {
+      "type": "other",
+      "theme": null,
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idAgPm7IvG/id6osu3wqG.svg",
+          "background": "transparent",
+          "format": "svg",
+          "size": 3428
+        },
+        {
+          "src": "https://asset.brandfetch.io/idAgPm7IvG/idQUHUAn1y.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 230,
+          "width": 800,
+          "size": 16631
+        }
+      ]
+    },
+    {
+      "type": "logo",
+      "theme": "light",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idAgPm7IvG/id8DvifZpo.svg",
+          "background": "transparent",
+          "format": "svg",
+          "size": 3613
+        },
+        {
+          "src": "https://asset.brandfetch.io/idAgPm7IvG/idtK8FKNp6.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 230,
+          "width": 800,
+          "size": 17196
+        }
+      ]
+    },
+    {
+      "type": "other",
+      "theme": null,
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idAgPm7IvG/idymC8blhm.svg",
+          "background": "transparent",
+          "format": "svg",
+          "size": 1364
+        },
+        {
+          "src": "https://asset.brandfetch.io/idAgPm7IvG/idwKb649Ik.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 909,
+          "width": 800,
+          "size": 33594
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#008060", "type": "accent", "brightness": 98 },
+    { "hex": "#FBF7ED", "type": "light", "brightness": 247 },
+    { "hex": "#002E25", "type": "dark", "brightness": 36 }
+  ],
+  "fonts": [
+    {
+      "name": "Shopify Sans",
+      "type": "title",
+      "origin": "custom",
+      "originId": null,
+      "weights": []
+    },
+    {
+      "name": "Shopify Sans",
+      "type": "body",
+      "origin": "custom",
+      "originId": null,
+      "weights": []
+    }
+  ],
+  "images": [
+    {
+      "type": "banner",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idAgPm7IvG/idmwj0ypVZ.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 500,
+          "width": 1500,
+          "size": 103370
+        }
+      ]
+    }
+  ]
+}

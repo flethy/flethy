@@ -232,6 +232,7 @@ The following Endpoints are currently supported.
 * [SerpStack](./api/serpstack.md)
 * [Sheetson](./api/sheetson.md)
 * [Sheety](./api/sheety.md)
+* [Shopify](./api/shopify.md)
 * [Shortcut](./api/shortcut.md)
 * [Shrtcode](./api/shrtcode.md)
 * [SideKick](./api/sidekick.md)

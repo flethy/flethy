@@ -889,6 +889,10 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://flethy.com/integrations/shopify</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://flethy.com/integrations/shortcut</loc>
     <priority>0.8</priority>
   </url>
