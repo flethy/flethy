@@ -1,0 +1,40 @@
+# Close
+
+## Links
+
+* URL: [https://www.close.com/](https://www.close.com/)
+* Documentation: [https://developer.close.com/](https://developer.close.com/)
+* Tags: web2
+* Category: marketing
+* Type: crm
+
+## API
+
+### Authentication
+
+* Authorization: header:basic
+
+### account
+
+#### me
+
+##### Account: Me
+
+* Description: Account: Me
+* Docs: [https://developer.close.com/topics/authentication/](https://developer.close.com/topics/authentication/)
+
+### leads
+
+#### list
+
+##### List Leads
+
+* Description: List Leads
+* Docs: [https://developer.close.com/resources/leads/](https://developer.close.com/resources/leads/)
+
+#### create
+
+##### Create Lead
+
+* Description: Create Lead
+* Docs: [https://developer.close.com/resources/leads/](https://developer.close.com/resources/leads/)

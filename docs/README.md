@@ -71,6 +71,7 @@ The following Endpoints are currently supported.
 * [ClickSend](./api/clicksend.md)
 * [ClickUp](./api/clickup.md)
 * [Clockify](./api/clockify.md)
+* [Close](./api/close.md)
 * [CloudFlare](./api/cloudflare.md)
 * [Codat](./api/codat.md)
 * [CodeDetection](./api/codedetection.md)

@@ -26,8 +26,12 @@ export class ConfigUtils {
     const entity = splittedKind[1]
     const entityEndpoint = splittedKind[2]
 
-    const api = ConfigUtils.getConfigById(service)
-    const endpoint = api.api[entity][entityEndpoint]
-    return { api, endpoint }
+    try {
+      const api = ConfigUtils.getConfigById(service)
+      const endpoint = api.api[entity][entityEndpoint]
+      return { api, endpoint }
+    } catch (error) {
+      throw new Error(`Failed to get config by kind: ${kind}`)
+    }
   }
 }

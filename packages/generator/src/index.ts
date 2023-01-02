@@ -173,6 +173,7 @@ import BugHerd from '@flethy/connectors/src/configs/bugherd.config'
 import ButterCMS from '@flethy/connectors/src/configs/buttercms.config'
 import ButtondownEmail from '@flethy/connectors/src/configs/buttondownemail.config'
 import CarbEngage from '@flethy/connectors/src/configs/carbengage.config'
+import Close from '@flethy/connectors/src/configs/close.config'
 import Codat from '@flethy/connectors/src/configs/codat.config'
 import Contentchef from '@flethy/connectors/src/configs/contentchef.config'
 import CosmicJS from '@flethy/connectors/src/configs/cosmicjs.config'
@@ -239,6 +240,7 @@ import Sendinblue from '@flethy/connectors/src/configs/sendinblue.config'
 import Sheetson from '@flethy/connectors/src/configs/sheetson.config'
 import Sheety from '@flethy/connectors/src/configs/sheety.config'
 import Sidemail from '@flethy/connectors/src/configs/sidemail.config'
+import Snappify from '@flethy/connectors/src/configs/snappify.config'
 import SpeechTextAI from '@flethy/connectors/src/configs/speechtextai.config'
 import Splitbee from '@flethy/connectors/src/configs/splitbee.config'
 import Stackhawk from '@flethy/connectors/src/configs/stackhawk.config'
@@ -260,7 +262,6 @@ import WorkOS from '@flethy/connectors/src/configs/workos.config'
 import Yapily from '@flethy/connectors/src/configs/yapily.config'
 import { HttpRequest } from './controllers/HttpRequest'
 import { logger } from './utils/Logger'
-import Snappify from '@flethy/connectors/src/configs/snappify.config'
 
 async function main() {
   const requestConfigs: {
@@ -3554,7 +3555,7 @@ Here you find all the available integrations`,
       'auth:Authorization': process.env.INTERCOM_TOKEN,
     }),
     intercomSendEvent: nao<Intercom.SubmitDataEvent>({
-      kind: 'intercom.dataevent.submit',
+      kind: 'intercom.dataevents.submit',
       'auth:Authorization': process.env.INTERCOM_TOKEN,
       'body:event_name': 'test-event',
     }),
@@ -3563,8 +3564,23 @@ Here you find all the available integrations`,
       'auth:Authorization': process.env.SNAPPIFY_API_KEY,
       'body:code': `console.log('hello world')`,
     }),
+    closeMe: nao<Close.GetMe>({
+      kind: 'close.account.me',
+      'auth:Authorization': {
+        username: process.env.CLOSE_API_KEY,
+      },
+    }),
+    closeCreateLead: nao<Close.CreateLead>({
+      kind: 'close.leads.create',
+      'auth:Authorization': {
+        username: process.env.CLOSE_API_KEY,
+      },
+      'body:body': {
+        name: 'Flethy',
+      },
+    }),
   }
-  const requestConfig = requestConfigs.intercomListArticles
+  const requestConfig = requestConfigs.closeCreateLead
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)
