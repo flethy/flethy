@@ -42,6 +42,7 @@ import { Clearbit } from '../configs/clearbit.config'
 import { ClickSend } from '../configs/clicksend.config'
 import { ClickUp } from '../configs/clickup.config'
 import { Clockify } from '../configs/clockify.config'
+import { Close } from '../configs/close.config'
 import { CloudFlare } from '../configs/cloudflare.config'
 import { Codat } from '../configs/codat.config'
 import { CodeDetection } from '../configs/codedetection.config'
@@ -316,6 +317,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['clicksend', ClickSend.API],
 ['clickup', ClickUp.API],
 ['clockify', Clockify.API],
+['close', Close.API],
 ['cloudflare', CloudFlare.API],
 ['codat', Codat.API],
 ['codedetection', CodeDetection.API],

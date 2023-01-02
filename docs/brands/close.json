@@ -1,0 +1,71 @@
+{
+  "name": "Close",
+  "domain": "close.com",
+  "claimed": true,
+  "description": "Close is the inside sales CRM of choice for startups and SMBs.",
+  "links": [
+    { "name": "youtube", "url": "https://youtube.com/user/closeio" },
+    { "name": "twitter", "url": "https://twitter.com/closeio" },
+    { "name": "linkedin", "url": "https://linkedin.com/company/2597204" },
+    { "name": "facebook", "url": "https://facebook.com/close.io" }
+  ],
+  "logos": [
+    {
+      "type": "icon",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/id2K-M_V2y/idN9aR00un.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 400,
+          "width": 400,
+          "size": 116351
+        }
+      ]
+    },
+    {
+      "type": "logo",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/id2K-M_V2y/idouK0__MM.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 255,
+          "width": 256,
+          "size": 23502
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#333e4d", "type": "dark", "brightness": 61 },
+    { "hex": "#ffffff", "type": "light", "brightness": 255 },
+    { "hex": "#57b7df", "type": "accent", "brightness": 165 }
+  ],
+  "fonts": [
+    {
+      "name": "Metropolis",
+      "type": "body",
+      "origin": "custom",
+      "originId": null,
+      "weights": []
+    }
+  ],
+  "images": [
+    {
+      "type": "banner",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/id2K-M_V2y/idFNtiKUmD.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 500,
+          "width": 1500,
+          "size": 25179
+        }
+      ]
+    }
+  ]
+}

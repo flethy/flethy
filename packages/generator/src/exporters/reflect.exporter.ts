@@ -42,6 +42,7 @@ import { Clearbit } from '../../../connectors/src/configs/clearbit.config'
 import { ClickSend } from '../../../connectors/src/configs/clicksend.config'
 import { ClickUp } from '../../../connectors/src/configs/clickup.config'
 import { Clockify } from '../../../connectors/src/configs/clockify.config'
+import { Close } from '../../../connectors/src/configs/close.config'
 import { CloudFlare } from '../../../connectors/src/configs/cloudflare.config'
 import { Codat } from '../../../connectors/src/configs/codat.config'
 import { CodeDetection } from '../../../connectors/src/configs/codedetection.config'
@@ -367,6 +368,9 @@ configTypes.push({type: getType<ClickUp.SpacesGetAll>(), id: 'clickup', name: 'C
 configTypes.push({type: getType<ClickUp.ListsGetAllFolderless>(), id: 'clickup', name: 'ClickUp', interface: 'ListsGetAllFolderless'})
 configTypes.push({type: getType<ClickUp.TasksGetAll>(), id: 'clickup', name: 'ClickUp', interface: 'TasksGetAll'})
 configTypes.push({type: getType<Clockify.ProjectsGetAll>(), id: 'clockify', name: 'Clockify', interface: 'ProjectsGetAll'})
+configTypes.push({type: getType<Close.GetMe>(), id: 'close', name: 'Close', interface: 'GetMe'})
+configTypes.push({type: getType<Close.ListLeads>(), id: 'close', name: 'Close', interface: 'ListLeads'})
+configTypes.push({type: getType<Close.CreateLead>(), id: 'close', name: 'Close', interface: 'CreateLead'})
 configTypes.push({type: getType<CloudFlare.ListZones>(), id: 'cloudflare', name: 'CloudFlare', interface: 'ListZones'})
 configTypes.push({type: getType<Codat.GetCategories>(), id: 'codat', name: 'Codat', interface: 'GetCategories'})
 configTypes.push({type: getType<CodeDetection.CodeDetectionBase>(), id: 'codedetection', name: 'CodeDetection', interface: 'CodeDetectionBase'})

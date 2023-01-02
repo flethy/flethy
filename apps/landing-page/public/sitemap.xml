@@ -193,6 +193,10 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://flethy.com/integrations/close</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://flethy.com/integrations/cloudflare</loc>
     <priority>0.8</priority>
   </url>
@@ -1114,6 +1118,10 @@
   </url>
   <url>
     <loc>https://flethy.com/use-cases/automate-code-snaps-with-snappify</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://flethy.com/use-cases/create-a-lead-with-close</loc>
     <priority>0.8</priority>
   </url>
   <url>

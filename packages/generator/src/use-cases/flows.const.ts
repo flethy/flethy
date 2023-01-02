@@ -433,7 +433,7 @@ export const FLOWS = {
   'send-event-to-intercom': [
     {
       id: 'intercom',
-      kind: 'intercom.dataevent.submit',
+      kind: 'intercom.dataevents.submit',
       'auth:Authorization': '==>secrets==>INTERCOM_TOKEN',
       'body:event_name': '->context.input.event_name->string',
     },
@@ -444,6 +444,16 @@ export const FLOWS = {
       kind: 'snappify.snap.simple',
       'auth:Authorization': '==>secrets==>SNAPPIFY_API_KEY',
       'body:code': `console.log('hello world')`,
+    },
+  ],
+  'create-a-lead-with-close': [
+    {
+      id: 'close',
+      kind: 'close.leads.create',
+      'auth:Authorization': {
+        username: '==>secrets==>CLOSE_API_KEY',
+      },
+      'body:body': '->context.input.lead->any',
     },
   ],
 }

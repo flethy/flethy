@@ -33,7 +33,7 @@ export namespace Intercom {
   }
 
   export interface SubmitDataEvent extends IntercomBase, RequestParams {
-    kind: 'intercom.dataevent.submit'
+    kind: 'intercom.dataevents.submit'
     'body:event_name': string
     'body:created_at'?: number
     'body:user_id'?: string
