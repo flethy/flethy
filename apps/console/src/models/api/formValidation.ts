@@ -3,6 +3,7 @@ import { Instance, types } from 'mobx-state-tree'
 const InputForm = types.model({
 	name: types.string,
 	unique: types.maybeNull(types.array(types.string)),
+	isJson: types.maybeNull(types.boolean),
 	minLength: types.maybeNull(types.number),
 	value: types.optional(types.union(types.string, types.number), ''),
 	valid: types.optional(types.boolean, true),
@@ -48,6 +49,21 @@ export const FormValidationModel = types
 					self.valid = false
 					input.valid = false
 					input.errorMessage = `This value must be at least ${input.minLength} characters`
+					return false
+				}
+			}
+			if (
+				input.isJson === true &&
+				input.value &&
+				typeof input.value === 'string' &&
+				input.value.length > 0
+			) {
+				try {
+					JSON.parse(input.value)
+				} catch (error) {
+					self.valid = false
+					input.valid = false
+					input.errorMessage = `This value must be a valid JSON`
 					return false
 				}
 			}
