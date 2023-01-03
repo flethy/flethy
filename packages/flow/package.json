@@ -26,7 +26,7 @@
   ],
   "dependencies": {
     "@flethy/connectors": "0.0.284",
-    "axios": "1.1.2",
+    "axios": "1.2.2",
     "jsonata": "^2.0.0"
   },
   "devDependencies": {
