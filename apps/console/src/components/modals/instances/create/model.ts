@@ -1,21 +1,21 @@
-import { cast, flow, types } from 'mobx-state-tree'
+import { flow, types } from 'mobx-state-tree'
+import events from '../../../../events/events'
 import { FormValidationModel } from '../../../../models/api/formValidation'
 import { getRootStore } from '../../../../models/helpers'
 
-export const CreateSecretsModal = types
-	.model('CreateSecretsModal', {
+export const CreateInstanceModal = types
+	.model('CreateTokenModal', {
 		context: types.optional(
 			types.model({
 				workspaceId: types.optional(types.string, ''),
+				workflowId: types.optional(types.string, ''),
 				projectId: types.optional(types.string, ''),
 			}),
 			{},
 		),
 		form: types.optional(
 			types.model({
-				key: types.optional(types.string, ''),
-				keyError: types.optional(types.string, ''),
-				value: types.optional(types.string, ''),
+				payload: types.optional(types.string, ''),
 			}),
 			{},
 		),
@@ -26,51 +26,37 @@ export const CreateSecretsModal = types
 	})
 	.actions((self) => {
 		// INITIALIZATION
-		const open = (params: { workspaceId: string; projectId: string }) => {
-			self.isSubmitting = false
+		const open = (params: {
+			workspaceId: string
+			projectId: string
+			workflowId: string
+		}) => {
 			self.context.workspaceId = params.workspaceId
 			self.context.projectId = params.projectId
-			self.form.key = ''
-			self.form.keyError = ''
-			self.form.value = ''
+			self.context.workflowId = params.workflowId
+			self.form.payload = ''
 
 			const { api } = getRootStore(self)
-			const currentSecrets = api.secrets.getFromStore({
-				projectId: self.context.projectId,
-			})
-			const currentKeys: string[] = currentSecrets?.keys ?? []
 			self.formValidation.clear()
-			self.formValidation.add('key', {
-				name: 'Secrets Key',
-				value: '',
-				unique: cast(currentKeys.slice()),
-				isJson: null,
-				minLength: 1,
-				valid: true,
-				errorMessage: '',
-			})
-			self.formValidation.add('value', {
-				name: 'Secrets Value',
+			self.formValidation.add('payload', {
+				name: 'Payload',
 				value: '',
 				unique: null,
-				isJson: null,
-				minLength: 1,
+				isJson: true,
+				minLength: 0,
 				valid: true,
 				errorMessage: '',
 			})
 			self.isOpen = true
+			self.isSubmitting = false
 			self.valid = true
 		}
 
-		const update = (form: Partial<{ key: string; value: string }>) => {
+		const update = (form: Partial<{ payload: string }>) => {
 			self.form = { ...self.form, ...form }
-			if (form.key) {
-				self.formValidation.update('key', form.key)
-				self.formValidation.validate('key')
-			}
-			if (form.value) {
-				self.formValidation.update('value', form.value)
-				self.formValidation.validate('value')
+			if (form.payload) {
+				self.formValidation.update('payload', form.payload)
+				self.formValidation.validate('payload')
 			}
 		}
 
@@ -81,19 +67,27 @@ export const CreateSecretsModal = types
 		const submit = flow(function* () {
 			self.formValidation.validateAll()
 			if (!self.formValidation.valid) {
+				console.log('not valid')
 				return
 			}
 			self.isSubmitting = true
 			const { api } = getRootStore(self)
 			try {
-				yield api.secrets.put({
+				const response = yield api.workflows.start({
 					workspaceId: self.context.workspaceId,
 					projectId: self.context.projectId,
-					key: self.form.key,
-					value: self.form.value,
+					workflowId: self.context.workflowId,
+					payload:
+						self.form.payload.length > 0 ? JSON.parse(self.form.payload) : {},
 				})
-				self.isOpen = false
+				events.send({
+					id: 'console.instance.create',
+					level: 'debug',
+					message: 'Instance created',
+					meta: response,
+				})
 				self.isSubmitting = false
+				self.isOpen = false
 			} catch (error) {
 				self.isSubmitting = false
 				console.log(error)
@@ -102,4 +96,6 @@ export const CreateSecretsModal = types
 
 		return { open, update, close, submit }
 	})
-	.views((self) => ({}))
+	.views((self) => {
+		return {}
+	})

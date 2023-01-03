@@ -2,6 +2,7 @@ import { RouterStore } from 'mobx-router'
 import { Instance, types } from 'mobx-state-tree'
 import { useContext } from 'react'
 import { MenuComponent } from '../components/menu/model'
+import { CreateInstanceModal } from '../components/modals/instances/create/model'
 import { CreateSecretsModal } from '../components/modals/secrets/create/model'
 import { DeleteSecretsModal } from '../components/modals/secrets/delete/model'
 import { CreateTokenModal } from '../components/modals/tokens/create/model'
@@ -55,6 +56,9 @@ const ModalsStore = types.model('Modals', {
 	),
 	tokensDelete: types.optional(DeleteTokenModal, () =>
 		DeleteTokenModal.create(),
+	),
+	instancesCreate: types.optional(CreateInstanceModal, () =>
+		CreateInstanceModal.create(),
 	),
 })
 

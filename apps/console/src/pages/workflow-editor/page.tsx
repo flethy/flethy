@@ -24,6 +24,7 @@ export default observer(() => {
 		root: {
 			api,
 			pages: { workflowEditor: page },
+			modals: { instancesCreate },
 		},
 	} = useMst()
 	const { colorMode } = useColorMode()
@@ -33,7 +34,20 @@ export default observer(() => {
 			title={i18n.t('app:pages.workflowEditor.title')}
 			subtitle={page.name}
 		>
-			<Button onClick={() => page.save()}>Save</Button>
+			<HStack>
+				<Button onClick={() => page.save()}>Save</Button>
+				<Button
+					onClick={() =>
+						instancesCreate.open({
+							projectId: page.context.projectId,
+							workspaceId: page.context.workspaceId,
+							workflowId: page.workflowId,
+						})
+					}
+				>
+					Start
+				</Button>
+			</HStack>
 			<Stack>
 				<Text>Name:</Text>
 				<Input

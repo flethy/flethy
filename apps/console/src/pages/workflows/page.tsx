@@ -16,7 +16,7 @@ export default observer(() => {
 		root: {
 			api,
 			pages: { workflows: page },
-			modals: { secretsCreate, secretsDelete },
+			modals: { instancesCreate },
 		},
 	} = useMst()
 	const { colorMode } = useColorMode()
@@ -95,11 +95,10 @@ export default observer(() => {
 						value: 'play-workflow',
 						type: 'MenuPlay',
 						onClick: () => {
-							api.workflows.start({
+							instancesCreate.open({
 								workspaceId: page.context.workspaceId,
 								projectId: page.context.projectId,
 								workflowId: workflow.workflowId,
-								payload: {},
 							})
 						},
 					},
