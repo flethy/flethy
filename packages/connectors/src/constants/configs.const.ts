@@ -175,6 +175,7 @@ import { Ory } from '../configs/ory.config'
 import { Parsiq } from '../configs/parsiq.config'
 import { PayPal } from '../configs/paypal.config'
 import { Peekalink } from '../configs/peekalink.config'
+import { Pendo } from '../configs/pendo.config'
 import { PeopleDataLabs } from '../configs/peopledatalabs.config'
 import { Permitio } from '../configs/permitio.config'
 import { Personio } from '../configs/personio.config'
@@ -450,6 +451,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['parsiq', Parsiq.API],
 ['paypal', PayPal.API],
 ['peekalink', Peekalink.API],
+['pendo', Pendo.API],
 ['peopledatalabs', PeopleDataLabs.API],
 ['permitio', Permitio.API],
 ['personio', Personio.API],

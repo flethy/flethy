@@ -221,6 +221,7 @@ import OneSignal from '@flethy/connectors/src/configs/onesignal.config'
 import OpenAI from '@flethy/connectors/src/configs/openai.config'
 import Openflow from '@flethy/connectors/src/configs/openflow.config'
 import ORBIntelligence from '@flethy/connectors/src/configs/orbintelligence.config'
+import Pendo from '@flethy/connectors/src/configs/pendo.config'
 import Permitio from '@flethy/connectors/src/configs/permitio.config'
 import Phyllo from '@flethy/connectors/src/configs/phyllo.config'
 import Pirsch from '@flethy/connectors/src/configs/pirsch.config'
@@ -3578,6 +3579,14 @@ Here you find all the available integrations`,
       'body:body': {
         name: 'Flethy',
       },
+    }),
+    pendoTrack: nao<Pendo.TrackEvents>({
+      kind: 'pendo.events.track',
+      'auth:x-pendo-integration-key': process.env.PENDO_INTEGRATION_KEY,
+      'body:type': 'track',
+      'body:event': 'test-event',
+      'body:visitorId': 'test-visitor',
+      'body:timestamp': Date.now(),
     }),
   }
   const requestConfig = requestConfigs.closeCreateLead

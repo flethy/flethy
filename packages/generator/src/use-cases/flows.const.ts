@@ -456,4 +456,15 @@ export const FLOWS = {
       'body:body': '->context.input.lead->any',
     },
   ],
+  'add-analytics-event-with-pendo': [
+    {
+      id: 'pendo',
+      kind: 'pendo.events.track',
+      'auth:x-pendo-integration-key': '==>secrets==>PENDO_INTEGRATION_KEY',
+      'body:type': 'track',
+      'body:event': '->context.input.event->string',
+      'body:visitorId': '->context.input.visitorId->string',
+      'body:timestamp': '->$millis()',
+    },
+  ],
 }
