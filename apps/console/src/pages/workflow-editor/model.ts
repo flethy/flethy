@@ -1,26 +1,13 @@
 import { flow, Instance, types } from 'mobx-state-tree'
-import { WORKFLOW_TUTORIALS } from '../../constants/tutorials.const'
+import {
+	WorkflowTutorial,
+	WORKFLOW_STARTER,
+	WORKFLOW_TUTORIALS,
+} from '../../constants/tutorials.const'
 import { WorkflowDataModel } from '../../models/api/workflows'
 import { FlethyContext } from '../../models/flethy.types'
 import { getRootStore, getRouter } from '../../models/helpers'
 import routes from '../../routes'
-
-const WORKFLOW_EXAMPLE = `{
-	"name": "test",
-	"workflow": [
-		{
-			"id": "slackNotification",
-			"config": {
-				"namespace": "slack"
-			},
-			"kind": "slack.incomingWebhooks.message",
-			"auth:webhookid": "==>secrets==>SLACK_WEBHOOK_ID",
-			"body:text": "works!",
-			"body:blocks": []
-		}
-	]
-}
-`
 
 export const WorkflowEditorPage = types
 	.model('WorkflowEditorPage', {
@@ -47,6 +34,7 @@ export const WorkflowEditorPage = types
 			workflowId?: string
 			workspaceId: string
 			projectId: string
+			tutorial?: string
 		}) {
 			self.state = 'loading'
 			self.context.projectId = options.projectId
@@ -73,8 +61,8 @@ export const WorkflowEditorPage = types
 						addEnv({ key: envKey, value: workflow.envs.get(envKey) ?? '' })
 					}
 				}
-			} else {
-				const tutorial = WORKFLOW_TUTORIALS.WebhookSite
+			} else if (options.tutorial) {
+				const tutorial = WORKFLOW_TUTORIALS[options.tutorial]
 				self.name = tutorial.name
 				if (tutorial.env) {
 					for (const envKey of Object.keys(tutorial.env)) {
@@ -82,6 +70,8 @@ export const WorkflowEditorPage = types
 					}
 				}
 				self.workflow = JSON.stringify(tutorial.workflow, null, 2)
+			} else {
+				self.workflow = JSON.stringify(WORKFLOW_STARTER, null, 2)
 			}
 			self.state = 'idle'
 		})

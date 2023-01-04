@@ -1,6 +1,7 @@
 import { Button, Grid, GridItem, Heading, VStack } from '@chakra-ui/react'
 import { observer } from 'mobx-react-lite'
 import { useTranslation } from 'react-i18next'
+import { WORKFLOW_TUTORIALS } from '../../constants/tutorials.const'
 import { useMst } from '../../models/root'
 import routes from '../../routes'
 
@@ -46,12 +47,21 @@ export default observer(() => {
 				}}
 				gap={6}
 			>
-				<Action
-					title="WebhookSite"
-					onClick={() =>
-						router.goTo(routes.workflowNew, api.workspaces.getContext())
-					}
-				/>
+				{Object.keys(WORKFLOW_TUTORIALS).map((key) => {
+					const tutorial = WORKFLOW_TUTORIALS[key]
+					return (
+						<Action
+							title={tutorial.name}
+							key={key}
+							onClick={() =>
+								router.goTo(routes.workflowNew, {
+									...api.workspaces.getContext(),
+									tutorial: key,
+								})
+							}
+						/>
+					)
+				})}
 			</Grid>
 		</VStack>
 	)

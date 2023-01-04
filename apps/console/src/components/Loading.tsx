@@ -15,7 +15,7 @@ export default observer((props: { message?: string; showBootup?: boolean }) => {
 	}
 
 	return (
-		<Center h="100vh">
+		<Center h="100vh" w="100vw" pos="absolute" top={0} left={0}>
 			<Square>
 				<VStack>
 					<Spinner size={'xl'} color={'flethy.orange'} />

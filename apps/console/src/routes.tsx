@@ -112,8 +112,8 @@ export default {
 		path: new RouterPathUtils().w().p().wf().custom('new').gen(),
 		component: <WorkflowEditorPage />,
 		onEnter(_route, parameters, { root: { pages } }) {
-			const { projectId, workspaceId } = parameters as any
-			pages.workflowEditor.initialisePage({ projectId, workspaceId })
+			const { projectId, workspaceId, tutorial } = parameters as any
+			pages.workflowEditor.initialisePage({ projectId, workspaceId, tutorial })
 		},
 	}),
 

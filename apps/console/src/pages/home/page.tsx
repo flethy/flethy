@@ -1,6 +1,7 @@
 import { Container, Heading, VStack } from '@chakra-ui/react'
 import { observer } from 'mobx-react-lite'
 import { useTranslation } from 'react-i18next'
+import Loading from '../../components/Loading'
 import { useMst } from '../../models/root'
 import HomeSections from './HomeSections'
 import HomeTemplates from './HomeTemplates'
@@ -18,15 +19,19 @@ export default observer(() => {
 
 	let content = <></>
 
-	if (!api.workspaces.isOnboarded()) {
-		content = <Onboarding />
+	if (page.isLoading()) {
+		content = <Loading />
 	} else {
-		content = (
-			<>
-				<HomeSections />
-				<HomeTemplates />
-			</>
-		)
+		if (!page.isOnboarded()) {
+			content = <Onboarding />
+		} else {
+			content = (
+				<>
+					<HomeSections />
+					<HomeTemplates />
+				</>
+			)
+		}
 	}
 
 	return (
