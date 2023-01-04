@@ -1,8 +1,9 @@
-import { Button, Container, Stack } from '@chakra-ui/react'
+import { Container, Heading, VStack } from '@chakra-ui/react'
 import { observer } from 'mobx-react-lite'
 import { useTranslation } from 'react-i18next'
 import { useMst } from '../../models/root'
-import routes from '../../routes'
+import HomeSections from './HomeSections'
+import HomeTemplates from './HomeTemplates'
 import Onboarding from './Onboarding'
 
 export default observer(() => {
@@ -21,33 +22,23 @@ export default observer(() => {
 		content = <Onboarding />
 	} else {
 		content = (
-			<Stack
-				align={'center'}
-				spacing={{ base: 8, md: 10 }}
-				py={{ base: 15, md: 20 }}
-				direction={{ base: 'column', md: 'row' }}
-			>
-				<Button
-					onClick={() =>
-						router.goTo(routes.secrets, api.workspaces.getContext())
-					}
-				>
-					Secrets
-				</Button>
-				<Button
-					onClick={() =>
-						router.goTo(routes.workflows, api.workspaces.getContext())
-					}
-				>
-					Workflows
-				</Button>
-			</Stack>
+			<>
+				<HomeSections />
+				<HomeTemplates />
+			</>
 		)
 	}
 
 	return (
 		<>
-			<Container maxW={'7xl'}>{content}</Container>
+			<Container maxW={'7xl'}>
+				<VStack gap={6}>
+					<Heading as={'h1'} size="4xl">
+						Welcome to the Console
+					</Heading>
+					{content}
+				</VStack>
+			</Container>
 		</>
 	)
 })
