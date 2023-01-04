@@ -46,5 +46,20 @@ export const HomePage = types
 		return { initialisePage, toggleShowMore, updateOnboarding }
 	})
 	.views((self) => {
-		return {}
+		const isLoading = () => {
+			const { api } = getRootStore(self)
+			return api.stateAndCache.somePending([
+				{
+					api: 'workspaces',
+					operation: 'getMy',
+				},
+			])
+		}
+
+		const isOnboarded = () => {
+			const { api } = getRootStore(self)
+			return !isLoading() && api.workspaces.isOnboarded()
+		}
+
+		return { isLoading, isOnboarded }
 	})
