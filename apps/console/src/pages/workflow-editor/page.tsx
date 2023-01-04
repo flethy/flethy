@@ -1,7 +1,9 @@
+import { DeleteIcon } from '@chakra-ui/icons'
 import {
 	Box,
 	Button,
 	HStack,
+	IconButton,
 	Input,
 	Stack,
 	Text,
@@ -73,6 +75,11 @@ export default observer(() => {
 							onChange={(event) =>
 								page.updateEnv({ id: env.id, value: event.target.value })
 							}
+						/>
+						<IconButton
+							aria-label="Remove Env Var"
+							icon={<DeleteIcon />}
+							onClick={() => page.removeEnv({ id: env.id })}
 						/>
 					</HStack>
 				))}
