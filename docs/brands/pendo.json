@@ -1,0 +1,85 @@
+{
+  "name": "Pendo",
+  "domain": "pendo.io",
+  "claimed": true,
+  "description": "Pendo is a product cloud creator for digital products and data-driven product teams.",
+  "links": [
+    { "name": "twitter", "url": "https://twitter.com/pendoio" },
+    { "name": "facebook", "url": "https://facebook.com/Pendoio" },
+    { "name": "linkedin", "url": "https://linkedin.com/company/pendo-io" }
+  ],
+  "logos": [
+    {
+      "type": "icon",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idGDHFYdgm/idIxf1J9v9.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 233,
+          "width": 233,
+          "size": 1279
+        }
+      ]
+    },
+    {
+      "type": "logo",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idGDHFYdgm/idj4bpl-B-.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 183,
+          "width": 800,
+          "size": 16626
+        },
+        {
+          "src": "https://asset.brandfetch.io/idGDHFYdgm/idEdhd5d5j.svg",
+          "background": "transparent",
+          "format": "svg",
+          "height": null,
+          "width": null,
+          "size": 5507
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#3a3c45", "type": "dark", "brightness": 60 },
+    { "hex": "#fefefe", "type": "light", "brightness": 254 },
+    { "hex": "#ec2059", "type": "accent", "brightness": 79 }
+  ],
+  "fonts": [
+    {
+      "name": "Proxima Nova",
+      "type": "title",
+      "origin": "custom",
+      "originId": null,
+      "weights": []
+    },
+    {
+      "name": "Proxima Nova",
+      "type": "body",
+      "origin": "custom",
+      "originId": null,
+      "weights": []
+    }
+  ],
+  "images": [
+    {
+      "type": "banner",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idGDHFYdgm/idlwLXeXT-.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 500,
+          "width": 1500,
+          "size": 32052
+        }
+      ]
+    }
+  ]
+}

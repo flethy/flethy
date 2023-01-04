@@ -1,0 +1,33 @@
+# Pendo
+
+## Links
+
+* URL: [https://www.pendo.io/](https://www.pendo.io/)
+* Documentation: [https://developers.pendo.io/docs](https://developers.pendo.io/docs)
+* Tags: web2
+* Category: analytics
+* Type: webinsights
+
+## API
+
+### Authentication
+
+* x-pendo-integration-key: header
+
+### events
+
+#### track
+
+##### Track
+
+* Description: Track
+* Docs: [https://developers.pendo.io/docs/?bash#track](https://developers.pendo.io/docs/?bash#track)
+
+### reports
+
+#### list
+
+##### Return a list of public reports
+
+* Description: Return a list of public reports
+* Docs: [https://developers.pendo.io/docs/?bash#return-a-list-of-public-reports](https://developers.pendo.io/docs/?bash#return-a-list-of-public-reports)

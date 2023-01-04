@@ -192,6 +192,7 @@ The following Endpoints are currently supported.
 * [Ory](./api/ory.md)
 * [PayPal](./api/paypal.md)
 * [Peekalink](./api/peekalink.md)
+* [Pendo](./api/pendo.md)
 * [PeopleDataLabs](./api/peopledatalabs.md)
 * [Permitio](./api/permitio.md)
 * [Personio](./api/personio.md)

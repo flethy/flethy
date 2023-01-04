@@ -725,6 +725,10 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://flethy.com/integrations/pendo</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://flethy.com/integrations/peopledatalabs</loc>
     <priority>0.8</priority>
   </url>
@@ -1114,6 +1118,10 @@
   </url>
   <url>
     <loc>https://flethy.com/use-cases/add-analytics-event-with-mixpanel</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://flethy.com/use-cases/add-analytics-event-with-pendo</loc>
     <priority>0.8</priority>
   </url>
   <url>

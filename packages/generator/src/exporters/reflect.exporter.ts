@@ -175,6 +175,7 @@ import { Ory } from '../../../connectors/src/configs/ory.config'
 import { Parsiq } from '../../../connectors/src/configs/parsiq.config'
 import { PayPal } from '../../../connectors/src/configs/paypal.config'
 import { Peekalink } from '../../../connectors/src/configs/peekalink.config'
+import { Pendo } from '../../../connectors/src/configs/pendo.config'
 import { PeopleDataLabs } from '../../../connectors/src/configs/peopledatalabs.config'
 import { Permitio } from '../../../connectors/src/configs/permitio.config'
 import { Personio } from '../../../connectors/src/configs/personio.config'
@@ -665,6 +666,8 @@ configTypes.push({type: getType<Parsiq.GetSingleBlock>(), id: 'parsiq', name: 'P
 configTypes.push({type: getType<PayPal.AuthRequest>(), id: 'paypal', name: 'PayPal', interface: 'AuthRequest'})
 configTypes.push({type: getType<Peekalink.Preview>(), id: 'peekalink', name: 'Peekalink', interface: 'Preview'})
 configTypes.push({type: getType<Peekalink.IsAvailable>(), id: 'peekalink', name: 'Peekalink', interface: 'IsAvailable'})
+configTypes.push({type: getType<Pendo.TrackEvents>(), id: 'pendo', name: 'Pendo', interface: 'TrackEvents'})
+configTypes.push({type: getType<Pendo.ListReports>(), id: 'pendo', name: 'Pendo', interface: 'ListReports'})
 configTypes.push({type: getType<PeopleDataLabs.CompanyEnrichment>(), id: 'peopledatalabs', name: 'PeopleDataLabs', interface: 'CompanyEnrichment'})
 configTypes.push({type: getType<Permitio.ListOrganizations>(), id: 'permitio', name: 'Permitio', interface: 'ListOrganizations'})
 configTypes.push({type: getType<Permitio.ListResources>(), id: 'permitio', name: 'Permitio', interface: 'ListResources'})
