@@ -92,16 +92,22 @@ const config = {
         items: [
           {
             type: "doc",
-            docId: "intro",
+            docId: "guides/intro",
             position: "left",
-            label: "Tutorial",
+            label: "Guides",
           },
-          { to: "/blog", label: "Blog", position: "left" },
+          // { to: "/blog", label: "Blog", position: "left" },
           {
             type: "doc",
             label: "API",
             position: "left",
             docId: "api/flethy-execution-platform",
+          },
+          {
+            type: "doc",
+            label: "Integrations",
+            position: "left",
+            docId: "integrations/start",
           },
           {
             href: "https://github.com/flethy/flethy",
