@@ -16,7 +16,7 @@
 
 ##### Items
 
-* Description: Stories, comments, jobs, Ask HNs and even polls are just items. They're identified by their ids, which are unique integers, and live under /v0/item/<id>.
+* Description: Stories, comments, jobs, Ask HNs and even polls are just items. They're identified by their ids, which are unique integers, and live under /v0/item/:id.
 * Docs: [https://github.com/HackerNews/API#items](https://github.com/HackerNews/API#items)
 
 #### user

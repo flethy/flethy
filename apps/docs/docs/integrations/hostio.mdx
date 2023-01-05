@@ -1,0 +1,59 @@
+---
+id: hostio
+title: HostIo
+sidebar_label: HostIo
+description: HostIo
+---
+
+# HostIo
+
+## Links
+
+* URL: [https://host.io](https://host.io)
+* Documentation: [https://host.io/docs](https://host.io/docs)
+* Tags: web2
+* Category: utils
+* Type: indexer
+
+## API
+
+### Authentication
+
+* Authorization: header:bearer
+
+### core
+
+#### web
+
+##### GetDomain
+
+* Description: Metadata scraped from a domain homepage.
+* Docs: [https://host.io/docs](https://host.io/docs)
+
+#### dns
+
+##### GetDns
+
+* Description: Get all the DNS records stored for a domain.
+* Docs: [https://host.io/docs](https://host.io/docs)
+
+#### related
+
+##### GetRelated
+
+* Description: Get a count of the number of related domains for all supported lookups we offer.
+* Docs: [https://host.io/docs](https://host.io/docs)
+
+#### full
+
+##### GetFull
+
+* Description: A single endpoint that includes the data from /api/web, /api/dns, /api/related and IPinfo.
+* Docs: [https://host.io/docs](https://host.io/docs)
+
+#### byFieldValue
+
+##### GetByFieldValue
+
+* Description: Get all domains associated with :field, and a count of the total. The :value should be according to the :field and not necessarily a domain.
+* Docs: [https://host.io/docs](https://host.io/docs)

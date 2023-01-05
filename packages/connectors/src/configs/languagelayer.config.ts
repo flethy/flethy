@@ -57,7 +57,7 @@ export namespace LanguageLayer {
           meta: {
             title: 'Standard Detection',
             description: `Standard Detection`,
-            docs: '',
+            docs: 'https://languagelayer.com/documentation',
           },
           method: 'GET',
           paths: [

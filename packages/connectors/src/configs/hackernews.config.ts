@@ -56,7 +56,7 @@ export namespace HackerNews {
           interface: 'GetItem',
           meta: {
             title: 'Items',
-            description: `Stories, comments, jobs, Ask HNs and even polls are just items. They're identified by their ids, which are unique integers, and live under /v0/item/<id>.`,
+            description: `Stories, comments, jobs, Ask HNs and even polls are just items. They're identified by their ids, which are unique integers, and live under /v0/item/:id.`,
             docs: 'https://github.com/HackerNews/API#items',
           },
           method: 'GET',

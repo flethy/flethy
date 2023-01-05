@@ -17,8 +17,25 @@ const CONFIGS_DIR = path.join(
 
 export const DOCS_BASE = path.join(__dirname, '..', '..', '..', '..', 'docs')
 const API_FOLDER = 'api'
+export const DOCUSAURUS_BASE = path.join(
+  __dirname,
+  '..',
+  '..',
+  '..',
+  '..',
+  'apps',
+  'docs',
+  'docs',
+  'integrations'
+)
 
 interface Documentation {
+  meta: {
+    id: string
+    title: string
+    description: string
+    sidebar_label: string
+  }
   filename: string
   markdown: string[]
 }
@@ -32,6 +49,12 @@ export class DocsExporter {
   public static async export() {
     const docs: Documentation[] = []
     const readme: Readme = {
+      meta: {
+        id: 'readme',
+        title: 'README',
+        description: 'README',
+        sidebar_label: 'README',
+      },
       filename: 'README.md',
       markdown: [
         `# @flethy/connectors`,
@@ -114,6 +137,12 @@ export class DocsExporter {
         })
 
         docs.push({
+          meta: {
+            id: api.meta.id,
+            title: api.meta.name,
+            description: api.meta.name,
+            sidebar_label: api.meta.name,
+          },
           filename: `${api.meta.id}.md`,
           markdown,
         })
@@ -123,12 +152,30 @@ export class DocsExporter {
     }
     logger.info(`Writing output...`)
 
+    const sidebarsArray: Array<{ type: string; id: string }> = [
+      { type: 'doc', id: 'integrations/start' },
+    ]
+
     for (const doc of docs) {
       logger.info(`Writing ${doc.filename}`)
       fs.writeFileSync(
         `${DOCS_BASE}/${API_FOLDER}/${doc.filename}`,
         doc.markdown.join('\n')
       )
+      logger.info(`Writing Docusaurus Docs for ${doc.meta.id}`)
+      const docusaurusDoc = `---
+id: ${doc.meta.id}
+title: ${doc.meta.title}
+sidebar_label: ${doc.meta.sidebar_label}
+description: ${doc.meta.description}
+---
+`
+      fs.writeFileSync(
+        `${DOCUSAURUS_BASE}/${doc.meta.id}.mdx`,
+        [docusaurusDoc, ...doc.markdown].join('\n')
+      )
+
+      sidebarsArray.push({ type: 'doc', id: `integrations/${doc.meta.id}` })
     }
 
     logger.info(`Writing ${readme.filename}`)
@@ -137,6 +184,12 @@ export class DocsExporter {
       `${readme.markdown.join('\n')}${readme.web3.join(
         '\n'
       )}\n${readme.web2.join('\n')}`
+    )
+
+    logger.info(`Writing sidebars`)
+    fs.writeFileSync(
+      `${DOCUSAURUS_BASE}/sidebar.js`,
+      `module.exports = ${JSON.stringify(sidebarsArray)};`
     )
   }
 }

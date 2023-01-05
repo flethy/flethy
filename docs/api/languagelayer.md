@@ -21,4 +21,4 @@
 ##### Standard Detection
 
 * Description: Standard Detection
-* Docs: []()
+* Docs: [https://languagelayer.com/documentation](https://languagelayer.com/documentation)
