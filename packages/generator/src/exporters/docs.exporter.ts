@@ -163,19 +163,23 @@ export class DocsExporter {
         doc.markdown.join('\n')
       )
       logger.info(`Writing Docusaurus Docs for ${doc.meta.id}`)
+
+      const id = doc.meta.id === 'readme' ? 'readmecom' : doc.meta.id
+
       const docusaurusDoc = `---
-id: ${doc.meta.id}
+id: ${id}
 title: ${doc.meta.title}
 sidebar_label: ${doc.meta.sidebar_label}
 description: ${doc.meta.description}
 ---
 `
+
       fs.writeFileSync(
-        `${DOCUSAURUS_BASE}/${doc.meta.id}.mdx`,
+        `${DOCUSAURUS_BASE}/${id}.mdx`,
         [docusaurusDoc, ...doc.markdown].join('\n')
       )
 
-      sidebarsArray.push({ type: 'doc', id: `integrations/${doc.meta.id}` })
+      sidebarsArray.push({ type: 'doc', id: `integrations/${id}` })
     }
 
     logger.info(`Writing ${readme.filename}`)
