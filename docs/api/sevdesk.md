@@ -1,0 +1,33 @@
+# SevDesk
+
+## Links
+
+* URL: [https://sevdesk.com/](https://sevdesk.com/)
+* Documentation: [https://api.sevdesk.de/](https://api.sevdesk.de/)
+* Tags: web2
+* Category: finance
+* Type: accounting
+
+## API
+
+### Authentication
+
+* Authorization: header
+
+### contacts
+
+#### list
+
+##### Retrieve contacts
+
+* Description: Retrieve contacts
+* Docs: [https://api.sevdesk.de/#tag/Contact/operation/getContacts](https://api.sevdesk.de/#tag/Contact/operation/getContacts)
+
+### invoices
+
+#### list
+
+##### Retrieve invoices
+
+* Description: Retrieve invoices
+* Docs: [https://api.sevdesk.de/#tag/Invoice/operation/getInvoices](https://api.sevdesk.de/#tag/Invoice/operation/getInvoices)

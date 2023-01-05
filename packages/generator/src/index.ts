@@ -238,6 +238,7 @@ import Rye from '@flethy/connectors/src/configs/rye.config'
 import SanityIo from '@flethy/connectors/src/configs/sanityio.config'
 import Savepage from '@flethy/connectors/src/configs/savepage.config'
 import Sendinblue from '@flethy/connectors/src/configs/sendinblue.config'
+import SevDesk from '@flethy/connectors/src/configs/sevdesk.config'
 import Sheetson from '@flethy/connectors/src/configs/sheetson.config'
 import Sheety from '@flethy/connectors/src/configs/sheety.config'
 import Sidemail from '@flethy/connectors/src/configs/sidemail.config'
@@ -3588,8 +3589,16 @@ Here you find all the available integrations`,
       'body:visitorId': 'test-visitor',
       'body:timestamp': Date.now(),
     }),
+    sevDeskContacts: nao<SevDesk.ListContacts>({
+      kind: 'sevdesk.contacts.list',
+      'auth:Authorization': process.env.SEVDESK_API_TOKEN,
+    }),
+    sevDeskInvoices: nao<SevDesk.ListInvoices>({
+      kind: 'sevdesk.invoices.list',
+      'auth:Authorization': process.env.SEVDESK_API_TOKEN,
+    }),
   }
-  const requestConfig = requestConfigs.closeCreateLead
+  const requestConfig = requestConfigs.sevDeskInvoices
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

@@ -889,6 +889,10 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://flethy.com/integrations/sevdesk</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://flethy.com/integrations/sheetson</loc>
     <priority>0.8</priority>
   </url>
@@ -1210,6 +1214,10 @@
   </url>
   <url>
     <loc>https://flethy.com/use-cases/list-institutions-with-nordigen</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://flethy.com/use-cases/list-invoices-from-sevdesk</loc>
     <priority>0.8</priority>
   </url>
   <url>

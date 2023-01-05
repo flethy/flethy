@@ -467,4 +467,11 @@ export const FLOWS = {
       'body:timestamp': '->$millis()',
     },
   ],
+  'list-invoices-from-sevdesk': [
+    {
+      id: 'sevdesk',
+      kind: 'sevdesk.invoices.list',
+      'auth:Authorization': '==>secrets==>SEVDESK_API_TOKEN',
+    },
+  ],
 }

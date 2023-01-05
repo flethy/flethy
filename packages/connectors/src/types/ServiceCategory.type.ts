@@ -124,6 +124,7 @@ export type FINANCE_TYPE =
   | 'stocks'
   | 'metal-prices'
   | 'openbanking'
+  | 'accounting'
 export type DATA_TYPE =
   | 'validation'
   | 'resolution'
