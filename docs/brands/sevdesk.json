@@ -1,0 +1,77 @@
+{
+  "name": "sevDesk",
+  "domain": "sevdesk.com",
+  "claimed": false,
+  "description": "The sevDesk invoice program is an online office software that reduces office work many times over.",
+  "links": [
+    { "name": "twitter", "url": "https://twitter.com/sevdeskoffice" },
+    { "name": "facebook", "url": "https://facebook.com/sevdesk" },
+    { "name": "linkedin", "url": "https://linkedin.com/company/10129777" }
+  ],
+  "logos": [
+    {
+      "type": "icon",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idcvVlvzrq/idY_-MKlT0.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 400,
+          "width": 400,
+          "size": 29424
+        }
+      ]
+    },
+    {
+      "type": "logo",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idcvVlvzrq/id1Cj1QLBc.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 180,
+          "width": 180,
+          "size": 795
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#1a1919", "type": "dark", "brightness": 25 },
+    { "hex": "#ffffff", "type": "light", "brightness": 255 },
+    { "hex": "#cc0000", "type": "accent", "brightness": 43 }
+  ],
+  "fonts": [
+    {
+      "name": "open sans",
+      "type": "title",
+      "origin": "google",
+      "originId": "Open+Sans",
+      "weights": []
+    },
+    {
+      "name": "open sans",
+      "type": "body",
+      "origin": "google",
+      "originId": "Open+Sans",
+      "weights": []
+    }
+  ],
+  "images": [
+    {
+      "type": "banner",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idcvVlvzrq/idxW3axq1R.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 500,
+          "width": 1500,
+          "size": 39851
+        }
+      ]
+    }
+  ]
+}

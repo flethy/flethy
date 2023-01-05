@@ -232,6 +232,7 @@ The following Endpoints are currently supported.
 * [Sentry](./api/sentry.md)
 * [SerpApi](./api/serpapi.md)
 * [SerpStack](./api/serpstack.md)
+* [SevDesk](./api/sevdesk.md)
 * [Sheetson](./api/sheetson.md)
 * [Sheety](./api/sheety.md)
 * [Shopify](./api/shopify.md)

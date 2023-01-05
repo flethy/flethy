@@ -216,6 +216,7 @@ import { Sendinblue } from '../configs/sendinblue.config'
 import { Sentry } from '../configs/sentry.config'
 import { SerpApi } from '../configs/serpapi.config'
 import { SerpStack } from '../configs/serpstack.config'
+import { SevDesk } from '../configs/sevdesk.config'
 import { Sheetson } from '../configs/sheetson.config'
 import { Sheety } from '../configs/sheety.config'
 import { Shopify } from '../configs/shopify.config'
@@ -492,6 +493,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['sentry', Sentry.API],
 ['serpapi', SerpApi.API],
 ['serpstack', SerpStack.API],
+['sevdesk', SevDesk.API],
 ['sheetson', Sheetson.API],
 ['sheety', Sheety.API],
 ['shopify', Shopify.API],
