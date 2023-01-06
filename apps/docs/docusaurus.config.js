@@ -7,7 +7,8 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: "flethy",
-  tagline: "time to speed up! // under construction",
+  tagline:
+    "Integrate with over 270 services without further dependencies for free",
   url: "https://flethy.com",
   baseUrl: "/",
   onBrokenLinks: "throw",
@@ -121,7 +122,7 @@ const config = {
             title: "Docs",
             items: [
               {
-                label: "Tutorial",
+                label: "Introduction",
                 to: "/docs/guides/intro",
               },
             ],
