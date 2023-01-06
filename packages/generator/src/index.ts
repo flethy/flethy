@@ -250,6 +250,7 @@ import Storyblok from '@flethy/connectors/src/configs/storyblok.config'
 import Stripe from '@flethy/connectors/src/configs/stripe.config'
 import Stytch from '@flethy/connectors/src/configs/stytch.config'
 import TheNounProject from '@flethy/connectors/src/configs/thenounproject.config'
+import Tinybird from '@flethy/connectors/src/configs/tinybird.config'
 import TinyURL from '@flethy/connectors/src/configs/tinyurl.config'
 import Twitter from '@flethy/connectors/src/configs/twitter.config'
 import UrlBae from '@flethy/connectors/src/configs/urlbae.config'
@@ -3597,8 +3598,21 @@ Here you find all the available integrations`,
       kind: 'sevdesk.invoices.list',
       'auth:Authorization': process.env.SEVDESK_API_TOKEN,
     }),
+    tinybirdPostEvent: nao<Tinybird.PostEvent>({
+      kind: 'tinybird.events.post',
+      'auth:Authorization': process.env.TINYBIRD_API_TOKEN,
+      'query:name': 'test-event2',
+      'body:body': {
+        test: 'hello world',
+      },
+    }),
+    tinybirdQuerySql: nao<Tinybird.QuerySQL>({
+      kind: 'tinybird.query.sql',
+      'auth:Authorization': process.env.TINYBIRD_API_TOKEN,
+      'query:q': 'SELECT * FROM "test-event2" LIMIT 10',
+    }),
   }
-  const requestConfig = requestConfigs.sevDeskInvoices
+  const requestConfig = requestConfigs.tinybirdQuerySql
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

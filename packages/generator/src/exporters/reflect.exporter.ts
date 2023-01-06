@@ -241,6 +241,7 @@ import { TheGraph } from '../../../connectors/src/configs/thegraph.config'
 import { TheNounProject } from '../../../connectors/src/configs/thenounproject.config'
 import { TheStarWarsApi } from '../../../connectors/src/configs/thestarwarsapi.config'
 import { Tinify } from '../../../connectors/src/configs/tinify.config'
+import { Tinybird } from '../../../connectors/src/configs/tinybird.config'
 import { TinyURL } from '../../../connectors/src/configs/tinyurl.config'
 import { TMDB } from '../../../connectors/src/configs/tmdb.config'
 import { Trello } from '../../../connectors/src/configs/trello.config'
@@ -806,6 +807,8 @@ configTypes.push({type: getType<TheNounProject.ListCollections>(), id: 'thenounp
 configTypes.push({type: getType<TheStarWarsApi.GetEntities>(), id: 'thestarwarsapi', name: 'TheStarWarsApi', interface: 'GetEntities'})
 configTypes.push({type: getType<TheStarWarsApi.GetEntity>(), id: 'thestarwarsapi', name: 'TheStarWarsApi', interface: 'GetEntity'})
 configTypes.push({type: getType<Tinify.Shrink>(), id: 'tinify', name: 'Tinify', interface: 'Shrink'})
+configTypes.push({type: getType<Tinybird.PostEvent>(), id: 'tinybird', name: 'Tinybird', interface: 'PostEvent'})
+configTypes.push({type: getType<Tinybird.QuerySQL>(), id: 'tinybird', name: 'Tinybird', interface: 'QuerySQL'})
 configTypes.push({type: getType<TinyURL.CreateLink>(), id: 'tinyurl', name: 'TinyURL', interface: 'CreateLink'})
 configTypes.push({type: getType<TinyURL.TimelineAnalytics>(), id: 'tinyurl', name: 'TinyURL', interface: 'TimelineAnalytics'})
 configTypes.push({type: getType<TMDB.Trending>(), id: 'tmdb', name: 'TMDB', interface: 'Trending'})

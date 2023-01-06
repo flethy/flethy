@@ -1,0 +1,33 @@
+# Tinybird
+
+## Links
+
+* URL: [https://www.tinybird.co/](https://www.tinybird.co/)
+* Documentation: [https://www.tinybird.co/docs](https://www.tinybird.co/docs)
+* Tags: web2
+* Category: infra
+* Type: serverless
+
+## API
+
+### Authentication
+
+* Authorization: header:bearer
+
+### events
+
+#### post
+
+##### POST /v0/events
+
+* Description: POST /v0/events
+* Docs: [https://www.tinybird.co/docs/api-reference/events-api.html](https://www.tinybird.co/docs/api-reference/events-api.html)
+
+### query
+
+#### sql
+
+##### GET /v0/sql
+
+* Description: GET /v0/sql
+* Docs: [https://www.tinybird.co/docs/api-reference/query-api.html](https://www.tinybird.co/docs/api-reference/query-api.html)
