@@ -5,6 +5,10 @@ id: connectors
 # Getting started with Connectors
 
 import CodeBlock from "@theme/CodeBlock";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+## Installation
 
 ```mdx-code-block
 <Tabs>
@@ -36,4 +40,18 @@ pnpm add @flethy/connectors
 ```mdx-code-block
 </TabItem>
 </Tabs>
+```
+
+## Usage
+
+```ts
+import { nao, WebhookSite } from "@flethy/connectors";
+
+const config = nao<WebhookSite.CoreGet>({
+  kind: "webhooksite.core.get",
+  "param:uuid": process.env.WEBHOOKSITE_UUID,
+  "header:x-test-header": "flethy",
+});
+
+console.log(config);
 ```
