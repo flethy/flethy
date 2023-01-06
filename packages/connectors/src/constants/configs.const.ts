@@ -241,6 +241,7 @@ import { TheGraph } from '../configs/thegraph.config'
 import { TheNounProject } from '../configs/thenounproject.config'
 import { TheStarWarsApi } from '../configs/thestarwarsapi.config'
 import { Tinify } from '../configs/tinify.config'
+import { Tinybird } from '../configs/tinybird.config'
 import { TinyURL } from '../configs/tinyurl.config'
 import { TMDB } from '../configs/tmdb.config'
 import { Trello } from '../configs/trello.config'
@@ -518,6 +519,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['thenounproject', TheNounProject.API],
 ['thestarwarsapi', TheStarWarsApi.API],
 ['tinify', Tinify.API],
+['tinybird', Tinybird.API],
 ['tinyurl', TinyURL.API],
 ['tmdb', TMDB.API],
 ['trello', Trello.API],

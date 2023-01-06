@@ -255,6 +255,7 @@ The following Endpoints are currently supported.
 * [TheNounProject](./api/thenounproject.md)
 * [TheStarWarsApi](./api/thestarwarsapi.md)
 * [Tinify](./api/tinify.md)
+* [Tinybird](./api/tinybird.md)
 * [TinyURL](./api/tinyurl.md)
 * [TMDB](./api/tmdb.md)
 * [Trello](./api/trello.md)

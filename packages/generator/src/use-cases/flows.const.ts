@@ -474,4 +474,12 @@ export const FLOWS = {
       'auth:Authorization': '==>secrets==>SEVDESK_API_TOKEN',
     },
   ],
+  'add-analytics-event-with-tinybird': [
+    {
+      id: 'tinybird',
+      kind: 'tinybird.query.sql',
+      'auth:Authorization': '==>secrets==>TINYBIRD_API_TOKEN',
+      'query:q': 'SELECT * FROM "pipe" LIMIT 10',
+    },
+  ],
 }

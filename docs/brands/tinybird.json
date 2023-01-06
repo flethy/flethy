@@ -1,0 +1,81 @@
+{
+  "name": "Tinybird Co.",
+  "domain": "tinybird.co",
+  "claimed": false,
+  "description": "Don't spend time setting up complex infrastructure and ETLs: we enable real-time APIs over your existing data with minimal integration.",
+  "links": [{ "name": "twitter", "url": "https://twitter.com/tinybirdco" }],
+  "logos": [
+    {
+      "type": "icon",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idjWF6DWir/idWXeeaKWV.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 400,
+          "width": 400,
+          "size": 4910
+        }
+      ]
+    },
+    {
+      "type": "logo",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idjWF6DWir/idgHrmzT59.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 820,
+          "width": 820,
+          "size": 82525
+        },
+        {
+          "src": "https://asset.brandfetch.io/idjWF6DWir/idVcEQ4ZJs.svg",
+          "background": "transparent",
+          "format": "svg",
+          "height": null,
+          "width": null,
+          "size": 414
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#25283d", "type": "dark", "brightness": 41 },
+    { "hex": "#ffffff", "type": "light", "brightness": 255 },
+    { "hex": "#1ecc84", "type": "accent", "brightness": 162 }
+  ],
+  "fonts": [
+    {
+      "name": "Inter",
+      "type": "title",
+      "origin": "google",
+      "originId": "Inter",
+      "weights": []
+    },
+    {
+      "name": "Inter",
+      "type": "body",
+      "origin": "google",
+      "originId": "Inter",
+      "weights": []
+    }
+  ],
+  "images": [
+    {
+      "type": "banner",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idjWF6DWir/id6-BAlHyz.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 500,
+          "width": 1500,
+          "size": 51562
+        }
+      ]
+    }
+  ]
+}
