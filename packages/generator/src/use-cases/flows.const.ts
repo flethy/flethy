@@ -482,4 +482,15 @@ export const FLOWS = {
       'query:q': 'SELECT * FROM "pipe" LIMIT 10',
     },
   ],
+  'get-article-ideas-with-writesonic': [
+    {
+      id: 'writesonic',
+      kind: 'writesonic.aiArticleWriters.ideas',
+      'auth:X-API-KEY': '==>secrets==>WRITESONIC_API_KEY',
+      'query:engine': 'economy',
+      'query:language': 'en',
+      'query:num_copies': 1,
+      'body:topic': '->context.input.topic->string',
+    },
+  ],
 }

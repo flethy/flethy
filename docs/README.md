@@ -284,5 +284,6 @@ The following Endpoints are currently supported.
 * [WordsAPI](./api/wordsapi.md)
 * [WordSimi](./api/wordsimi.md)
 * [WorkOS](./api/workos.md)
+* [WriteSonic](./api/writesonic.md)
 * [YahooFinance](./api/yahoofinance.md)
 * [Yapily](./api/yapily.md)

@@ -265,6 +265,7 @@ import WorkOS from '@flethy/connectors/src/configs/workos.config'
 import Yapily from '@flethy/connectors/src/configs/yapily.config'
 import { HttpRequest } from './controllers/HttpRequest'
 import { logger } from './utils/Logger'
+import WriteSonic from '@flethy/connectors/src/configs/writesonic.config'
 
 async function main() {
   const requestConfigs: {
@@ -3611,8 +3612,17 @@ Here you find all the available integrations`,
       'auth:Authorization': process.env.TINYBIRD_API_TOKEN,
       'query:q': 'SELECT * FROM "test-event2" LIMIT 10',
     }),
+    writesonicArticleIdeas: nao<WriteSonic.AIArticleIdeas>({
+      kind: 'writesonic.aiArticleWriters.ideas',
+      'auth:X-API-KEY': process.env.WRITESONIC_API_KEY,
+      'query:engine': 'economy',
+      'query:language': 'en',
+      'query:num_copies': 1,
+      'body:topic': 'Engineering integrating new APIs',
+      'body:primary_keyword': 'API',
+    }),
   }
-  const requestConfig = requestConfigs.tinybirdQuerySql
+  const requestConfig = requestConfigs.writesonicArticleIdeas
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

@@ -28,6 +28,7 @@ export type CATEGORY =
   | 'science'
   | 'design'
   | 'ecommerce'
+  | 'ai'
 export type TYPE =
   | COMM_TYPE
   | STORAGE_TYPE
@@ -57,7 +58,9 @@ export type TYPE =
   | SCIENCE_TYPE
   | DESIGN_TYPE
   | ECOMMERCE_TYPE
+  | AI_TYPE
 
+export type AI_TYPE = 'text'
 export type COMM_TYPE = 'email' | 'messenger' | 'multichannel'
 export type STORAGE_TYPE = 'ipfs' | 'database'
 export type AGGREGATION_TYPE =
