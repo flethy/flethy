@@ -1,0 +1,75 @@
+---
+id: flow
+---
+
+# Getting started with Flow
+
+import CodeBlock from "@theme/CodeBlock";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+## Installation
+
+```mdx-code-block
+<Tabs>
+<TabItem value="npm">
+```
+
+```bash npm2yarn
+npm install @flethy/flow
+```
+
+```mdx-code-block
+</TabItem>
+<TabItem value="yarn">
+```
+
+```bash npm2yarn
+yarn add @flethy/flow
+```
+
+```mdx-code-block
+</TabItem>
+<TabItem value="pnpm">
+```
+
+```bash npm2yarn
+pnpm add @flethy/flow
+```
+
+```mdx-code-block
+</TabItem>
+</Tabs>
+```
+
+## Usage
+
+```ts
+import { FlowEngine, FlowNode } from "@flethy/flow";
+
+const flow: FlowNode[] = [
+  {
+    id: "webhooksite",
+    kind: "webhooksite.core.get",
+    "param:uuid": "==>env==>WEBHOOKSITE_UUID",
+    "header:x-test-header": "flethy",
+  },
+];
+
+const engine = new FlowEngine({
+  flow,
+  input: {}, // input to the flow
+  env: {
+    env: {
+      WEBHOOKSITE_UUID: "uuid...",
+    },
+    secrets: {},
+  },
+});
+
+async function main() {
+  await engine.start();
+}
+
+main();
+```
