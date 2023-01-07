@@ -1,0 +1,31 @@
+# WriteSonic
+
+## Links
+
+* URL: [https://writesonic.com/](https://writesonic.com/)
+* Documentation: [https://docs.writesonic.com](https://docs.writesonic.com)
+* Tags: web2
+* Category: ai
+* Type: text
+
+## API
+
+### Authentication
+
+* X-API-KEY: header
+
+### aiArticleWriters
+
+#### ideas
+
+##### AI Article Ideas
+
+* Description: AI Article Ideas
+* Docs: [https://docs.writesonic.com/reference/blog-ideas_v2businesscontentblog-ideas_post](https://docs.writesonic.com/reference/blog-ideas_v2businesscontentblog-ideas_post)
+
+#### intros
+
+##### AI Article Intros
+
+* Description: AI Article Intros
+* Docs: [https://docs.writesonic.com/reference/blog-intros_v2businesscontentblog-intros_post](https://docs.writesonic.com/reference/blog-intros_v2businesscontentblog-intros_post)

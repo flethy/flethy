@@ -1,0 +1,58 @@
+{
+  "name": "Writesonic",
+  "domain": "writesonic.com",
+  "claimed": false,
+  "description": "Use the world's most advanced AI copywriter to generate your marketing copy in seconds! Create high-performing Blogs, Product Descriptions, Ads, and landing pages.",
+  "links": [
+    { "name": "twitter", "url": "https://twitter.com/Writesonic" },
+    { "name": "facebook", "url": "https://facebook.com/GetWritesonic" },
+    { "name": "linkedin", "url": "https://linkedin.com/company/Writesonic" }
+  ],
+  "logos": [
+    {
+      "type": "icon",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idPxzG81Z2/id_ieppboB.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 400,
+          "width": 400,
+          "size": 11194
+        }
+      ]
+    },
+    {
+      "type": "logo",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idPxzG81Z2/idB8_0NqUu.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 1000,
+          "width": 3904,
+          "size": 85254
+        }
+      ]
+    }
+  ],
+  "colors": [],
+  "fonts": [],
+  "images": [
+    {
+      "type": "banner",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idPxzG81Z2/idGVBvUCtP.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 500,
+          "width": 1500,
+          "size": 52942
+        }
+      ]
+    }
+  ]
+}
