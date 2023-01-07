@@ -13,6 +13,10 @@ module.exports = [
         type: "doc",
         id: "guides/components/connectors",
       },
+      {
+        type: "doc",
+        id: "guides/components/flow",
+      },
     ],
   },
 ];
