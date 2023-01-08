@@ -266,6 +266,7 @@ import Yapily from '@flethy/connectors/src/configs/yapily.config'
 import { HttpRequest } from './controllers/HttpRequest'
 import { logger } from './utils/Logger'
 import WriteSonic from '@flethy/connectors/src/configs/writesonic.config'
+import TLDRtech from '@flethy/connectors/src/configs/tldrtech.config'
 
 async function main() {
   const requestConfigs: {
@@ -3621,8 +3622,11 @@ Here you find all the available integrations`,
       'body:topic': 'Engineering integrating new APIs',
       'body:primary_keyword': 'API',
     }),
+    tldrJobs: nao<TLDRtech.ListJobs>({
+      kind: 'tldrtech.jobboard.list',
+    }),
   }
-  const requestConfig = requestConfigs.writesonicArticleIdeas
+  const requestConfig = requestConfigs.tldrJobs
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)
