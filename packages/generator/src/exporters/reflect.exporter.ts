@@ -243,6 +243,7 @@ import { TheStarWarsApi } from '../../../connectors/src/configs/thestarwarsapi.c
 import { Tinify } from '../../../connectors/src/configs/tinify.config'
 import { Tinybird } from '../../../connectors/src/configs/tinybird.config'
 import { TinyURL } from '../../../connectors/src/configs/tinyurl.config'
+import { TLDRtech } from '../../../connectors/src/configs/tldrtech.config'
 import { TMDB } from '../../../connectors/src/configs/tmdb.config'
 import { Trello } from '../../../connectors/src/configs/trello.config'
 import { Tribe } from '../../../connectors/src/configs/tribe.config'
@@ -812,6 +813,7 @@ configTypes.push({type: getType<Tinybird.PostEvent>(), id: 'tinybird', name: 'Ti
 configTypes.push({type: getType<Tinybird.QuerySQL>(), id: 'tinybird', name: 'Tinybird', interface: 'QuerySQL'})
 configTypes.push({type: getType<TinyURL.CreateLink>(), id: 'tinyurl', name: 'TinyURL', interface: 'CreateLink'})
 configTypes.push({type: getType<TinyURL.TimelineAnalytics>(), id: 'tinyurl', name: 'TinyURL', interface: 'TimelineAnalytics'})
+configTypes.push({type: getType<TLDRtech.ListJobs>(), id: 'tldrtech', name: 'TLDRtech', interface: 'ListJobs'})
 configTypes.push({type: getType<TMDB.Trending>(), id: 'tmdb', name: 'TMDB', interface: 'Trending'})
 configTypes.push({type: getType<Trello.BoardGetLists>(), id: 'trello', name: 'Trello', interface: 'BoardGetLists'})
 configTypes.push({type: getType<Trello.CardsCreate>(), id: 'trello', name: 'Trello', interface: 'CardsCreate'})

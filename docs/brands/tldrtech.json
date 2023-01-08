@@ -1,0 +1,23 @@
+{
+  "name": "Tldr",
+  "domain": "tldr.tech",
+  "claimed": false,
+  "description": "TLDR is a daily newsletter with links and TLDRs of the most interesting stories in tech, science, and coding!",
+  "links": [],
+  "logos": [],
+  "colors": [
+    { "hex": "#e8c060", "type": "accent", "brightness": 194 },
+    { "hex": "#353a40", "type": "dark", "brightness": 57 },
+    { "hex": "#65c3ad", "type": "light", "brightness": 173 }
+  ],
+  "fonts": [
+    {
+      "name": "Nunito",
+      "type": "body",
+      "origin": "google",
+      "originId": "Nunito",
+      "weights": []
+    }
+  ],
+  "images": []
+}

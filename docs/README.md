@@ -257,6 +257,7 @@ The following Endpoints are currently supported.
 * [Tinify](./api/tinify.md)
 * [Tinybird](./api/tinybird.md)
 * [TinyURL](./api/tinyurl.md)
+* [TLDRtech](./api/tldrtech.md)
 * [TMDB](./api/tmdb.md)
 * [Trello](./api/trello.md)
 * [Tribe](./api/tribe.md)

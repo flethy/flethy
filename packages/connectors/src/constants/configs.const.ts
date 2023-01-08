@@ -243,6 +243,7 @@ import { TheStarWarsApi } from '../configs/thestarwarsapi.config'
 import { Tinify } from '../configs/tinify.config'
 import { Tinybird } from '../configs/tinybird.config'
 import { TinyURL } from '../configs/tinyurl.config'
+import { TLDRtech } from '../configs/tldrtech.config'
 import { TMDB } from '../configs/tmdb.config'
 import { Trello } from '../configs/trello.config'
 import { Tribe } from '../configs/tribe.config'
@@ -522,6 +523,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['tinify', Tinify.API],
 ['tinybird', Tinybird.API],
 ['tinyurl', TinyURL.API],
+['tldrtech', TLDRtech.API],
 ['tmdb', TMDB.API],
 ['trello', Trello.API],
 ['tribe', Tribe.API],
