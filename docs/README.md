@@ -205,6 +205,7 @@ The following Endpoints are currently supported.
 * [Prepr](./api/prepr.md)
 * [Prerender](./api/prerender.md)
 * [Prismic](./api/prismic.md)
+* [PrivacyCom](./api/privacycom.md)
 * [ProductHunt](./api/producthunt.md)
 * [PurgoMalum](./api/purgomalum.md)
 * [PurpleAir](./api/purpleair.md)

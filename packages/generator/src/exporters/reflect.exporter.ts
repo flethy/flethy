@@ -189,6 +189,7 @@ import { PostHog } from '../../../connectors/src/configs/posthog.config'
 import { Prepr } from '../../../connectors/src/configs/prepr.config'
 import { Prerender } from '../../../connectors/src/configs/prerender.config'
 import { Prismic } from '../../../connectors/src/configs/prismic.config'
+import { PrivacyCom } from '../../../connectors/src/configs/privacycom.config'
 import { ProductHunt } from '../../../connectors/src/configs/producthunt.config'
 import { PurgoMalum } from '../../../connectors/src/configs/purgomalum.config'
 import { PurpleAir } from '../../../connectors/src/configs/purpleair.config'
@@ -703,6 +704,8 @@ configTypes.push({type: getType<Prerender.Sitemap>(), id: 'prerender', name: 'Pr
 configTypes.push({type: getType<Prerender.ClearCache>(), id: 'prerender', name: 'Prerender', interface: 'ClearCache'})
 configTypes.push({type: getType<Prismic.ListEntries>(), id: 'prismic', name: 'Prismic', interface: 'ListEntries'})
 configTypes.push({type: getType<Prismic.GraphQLQuery>(), id: 'prismic', name: 'Prismic', interface: 'GraphQLQuery'})
+configTypes.push({type: getType<PrivacyCom.ListCards>(), id: 'privacycom', name: 'PrivacyCom', interface: 'ListCards'})
+configTypes.push({type: getType<PrivacyCom.ListTransactions>(), id: 'privacycom', name: 'PrivacyCom', interface: 'ListTransactions'})
 configTypes.push({type: getType<ProductHunt.GetCollections>(), id: 'producthunt', name: 'ProductHunt', interface: 'GetCollections'})
 configTypes.push({type: getType<PurgoMalum.Profanity>(), id: 'purgomalum', name: 'PurgoMalum', interface: 'Profanity'})
 configTypes.push({type: getType<PurpleAir.GetSensorsData>(), id: 'purpleair', name: 'PurpleAir', interface: 'GetSensorsData'})

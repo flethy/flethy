@@ -228,6 +228,7 @@ import Pirsch from '@flethy/connectors/src/configs/pirsch.config'
 import Prepr from '@flethy/connectors/src/configs/prepr.config'
 import Prerender from '@flethy/connectors/src/configs/prerender.config'
 import Prismic from '@flethy/connectors/src/configs/prismic.config'
+import PrivacyCom from '@flethy/connectors/src/configs/privacycom.config'
 import PurpleAir from '@flethy/connectors/src/configs/purpleair.config'
 import QuoteGarden from '@flethy/connectors/src/configs/quotegarden.config'
 import ReadMe from '@flethy/connectors/src/configs/readme.config'
@@ -252,6 +253,7 @@ import Stytch from '@flethy/connectors/src/configs/stytch.config'
 import TheNounProject from '@flethy/connectors/src/configs/thenounproject.config'
 import Tinybird from '@flethy/connectors/src/configs/tinybird.config'
 import TinyURL from '@flethy/connectors/src/configs/tinyurl.config'
+import TLDRtech from '@flethy/connectors/src/configs/tldrtech.config'
 import Twitter from '@flethy/connectors/src/configs/twitter.config'
 import UrlBae from '@flethy/connectors/src/configs/urlbae.config'
 import Userfront from '@flethy/connectors/src/configs/userfront.config'
@@ -262,11 +264,10 @@ import WarrantDev from '@flethy/connectors/src/configs/warrantdev.config'
 import WebhookSite from '@flethy/connectors/src/configs/webhooksite.config'
 import WonderPush from '@flethy/connectors/src/configs/wonderpush.config'
 import WorkOS from '@flethy/connectors/src/configs/workos.config'
+import WriteSonic from '@flethy/connectors/src/configs/writesonic.config'
 import Yapily from '@flethy/connectors/src/configs/yapily.config'
 import { HttpRequest } from './controllers/HttpRequest'
 import { logger } from './utils/Logger'
-import WriteSonic from '@flethy/connectors/src/configs/writesonic.config'
-import TLDRtech from '@flethy/connectors/src/configs/tldrtech.config'
 
 async function main() {
   const requestConfigs: {
@@ -3625,8 +3626,16 @@ Here you find all the available integrations`,
     tldrJobs: nao<TLDRtech.ListJobs>({
       kind: 'tldrtech.jobboard.list',
     }),
+    privacyComCards: nao<PrivacyCom.ListCards>({
+      kind: 'privacycom.cards.list',
+      'auth:Authorization': process.env.PRIVACYCOM_API_KEY,
+    }),
+    privacyComTransactions: nao<PrivacyCom.ListTransactions>({
+      kind: 'privacycom.transactions.list',
+      'auth:Authorization': process.env.PRIVACYCOM_API_KEY,
+    }),
   }
-  const requestConfig = requestConfigs.tldrJobs
+  const requestConfig = requestConfigs.privacyComTransactions
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)
