@@ -39,6 +39,7 @@
 		"react-icons": "4.7.1",
 		"react-slick": "^0.29.0",
 		"react-syntax-highlighter": "^15.5.0",
+		"reaflow": "^5.1.2",
 		"shared-types": "workspace:*"
 	},
 	"devDependencies": {

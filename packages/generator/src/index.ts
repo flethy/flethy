@@ -3635,7 +3635,7 @@ Here you find all the available integrations`,
       'auth:Authorization': process.env.PRIVACYCOM_API_KEY,
     }),
   }
-  const requestConfig = requestConfigs.privacyComTransactions
+  const requestConfig = requestConfigs.webhooksiteGET
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

@@ -1,6 +1,5 @@
 import { flow, Instance, types } from 'mobx-state-tree'
 import {
-	WorkflowTutorial,
 	WORKFLOW_STARTER,
 	WORKFLOW_TUTORIALS,
 } from '../../constants/tutorials.const'
@@ -8,6 +7,17 @@ import { WorkflowDataModel } from '../../models/api/workflows'
 import { FlethyContext } from '../../models/flethy.types'
 import { getRootStore, getRouter } from '../../models/helpers'
 import routes from '../../routes'
+
+interface RNode {
+	id: string
+	text: string
+}
+
+interface REdge {
+	id: string
+	from: string
+	to: string
+}
 
 export const WorkflowEditorPage = types
 	.model('WorkflowEditorPage', {
@@ -155,4 +165,49 @@ export const WorkflowEditorPage = types
 			removeEnv,
 		}
 	})
-	.views((self) => ({}))
+	.views((self) => {
+		const getNodes = (): RNode[] => {
+			const nodes: RNode[] = []
+
+			try {
+				const workflow = JSON.parse(self.workflow)
+				for (const node of workflow) {
+					nodes.push({
+						id: node.id,
+						text: node.id,
+					})
+				}
+			} catch (error) {}
+
+			return nodes
+		}
+
+		const getEdges = (): REdge[] => {
+			const edges: REdge[] = []
+
+			try {
+				const workflow = JSON.parse(self.workflow)
+				const nodes = workflow.map((node: any) => node.id)
+				for (const node of workflow) {
+					if (node.next?.length > 0) {
+						node.next.forEach((next: any) => {
+							if (!nodes.includes(next.id)) {
+								throw new Error(`Node ${next.id} not found`)
+							}
+							edges.push({
+								id: `${node.id}-${next.id}`,
+								from: node.id,
+								to: next.id,
+							})
+						})
+					}
+				}
+			} catch (error) {
+				edges.slice()
+			}
+
+			return edges
+		}
+
+		return { getNodes, getEdges }
+	})
