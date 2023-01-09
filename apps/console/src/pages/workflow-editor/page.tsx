@@ -2,6 +2,7 @@ import { DeleteIcon } from '@chakra-ui/icons'
 import {
 	Box,
 	Button,
+	Heading,
 	HStack,
 	IconButton,
 	Input,
@@ -12,6 +13,7 @@ import {
 import Editor from '@monaco-editor/react'
 import { observer } from 'mobx-react-lite'
 import { useTranslation } from 'react-i18next'
+import { Canvas } from 'reaflow'
 import i18n from '../../i18n/config'
 import PageWithTitle from '../../layouts/PageWithTitle'
 import { useMst } from '../../models/root'
@@ -97,6 +99,16 @@ export default observer(() => {
 					/>
 				</Box>
 			)}
+			<Heading as="h3" size={'lg'}>
+				Visualization
+			</Heading>
+			<Box w={'full'} h={'3xl'} borderColor={'flethy.orange'} border={'2px'}>
+				{page.getNodes().length > 0 ? (
+					<Canvas nodes={page.getNodes()} edges={page.getEdges()} />
+				) : (
+					<Text>Invalid Workflow</Text>
+				)}
+			</Box>
 		</PageWithTitle>
 	)
 

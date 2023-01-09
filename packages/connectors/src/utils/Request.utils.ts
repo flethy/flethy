@@ -297,6 +297,8 @@ export class HttpRequestConfig {
       config.url += `?${queryParameters}`
     }
 
+    config.responseType = options.endpoint.responseType ?? 'json'
+
     return config
   }
 }
