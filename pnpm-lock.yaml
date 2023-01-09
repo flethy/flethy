@@ -193,7 +193,7 @@ importers:
       '@chakra-ui/system': ^2.3.7
       '@emotion/react': ^11.10.5
       '@emotion/styled': ^11.10.5
-      '@flethy/connectors': 0.0.285
+      '@flethy/connectors': 0.0.294
       '@types/node': 18.11.18
       '@types/react': 18.0.26
       '@types/react-dom': 18.0.10
@@ -230,7 +230,7 @@ importers:
       '@chakra-ui/system': 2.3.7_dovxhg2tvkkxkdnqyoum6wzcxm
       '@emotion/react': 11.10.5_3grbeiqrb6djg67fiejiqngkdi
       '@emotion/styled': 11.10.5_pwtpayi7py7ecifctvjbac33ee
-      '@flethy/connectors': 0.0.285
+      '@flethy/connectors': 0.0.294
       axios: 1.2.2
       framer-motion: 8.1.5_biqbaboplfbrettd7655fr4n2y
       i18next: 22.4.8
@@ -425,7 +425,7 @@ importers:
 
   packages/flow:
     specifiers:
-      '@flethy/connectors': 0.0.285
+      '@flethy/connectors': 0.0.294
       '@types/node': 18.11.18
       '@typescript-eslint/eslint-plugin': ^5.48.0
       '@typescript-eslint/parser': ^5.48.0
@@ -441,7 +441,7 @@ importers:
       tsconfig: workspace:*
       typescript: ^4.9.4
     dependencies:
-      '@flethy/connectors': 0.0.285
+      '@flethy/connectors': 0.0.294
       axios: 1.1.2
       jsonata: 2.0.0
     devDependencies:
@@ -4338,8 +4338,8 @@ packages:
     resolution: {integrity: sha512-io/J9jVF7UQeQjHGXAV2yApzbqcrJ9HX4/NiAd7FvuJvLGTABApsWzYoNdvup72EV/1fK4EwrPSjK4+3VdTzWw==}
     dev: false
 
-  /@flethy/connectors/0.0.285:
-    resolution: {integrity: sha512-QEfo4v7wsop7ums84bASEiliTvzj+XDCwJT3WPgMPNZ3w105fkBYlisTfi/lCCBoqOr0IfTQW5CCGricuViR4A==}
+  /@flethy/connectors/0.0.294:
+    resolution: {integrity: sha512-VEKJ66f7hQLcy/X+5QLEHuQ/Q3NHzX01QbJ09bRWoqqEiQ+tyH1VPXgLS2sPGcTj2bKYzdN/2pKHP3FlphDCWg==}
     dev: false
 
   /@flethy/flow/0.0.285:
