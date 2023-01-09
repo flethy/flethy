@@ -43,7 +43,7 @@
 		"autoprefixer": "^10.4.13",
 		"eslint-config-custom": "workspace:*",
 		"postcss": "8.4.20",
-		"prettier": "2.8.1",
+		"prettier": "2.8.2",
 		"rollup-plugin-analyzer": "4.0.0",
 		"sass": "1.57.1",
 		"tailwindcss": "^3.2.4",
