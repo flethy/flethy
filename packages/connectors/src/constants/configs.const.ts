@@ -189,6 +189,7 @@ import { PostHog } from '../configs/posthog.config'
 import { Prepr } from '../configs/prepr.config'
 import { Prerender } from '../configs/prerender.config'
 import { Prismic } from '../configs/prismic.config'
+import { PrivacyCom } from '../configs/privacycom.config'
 import { ProductHunt } from '../configs/producthunt.config'
 import { PurgoMalum } from '../configs/purgomalum.config'
 import { PurpleAir } from '../configs/purpleair.config'
@@ -469,6 +470,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['prepr', Prepr.API],
 ['prerender', Prerender.API],
 ['prismic', Prismic.API],
+['privacycom', PrivacyCom.API],
 ['producthunt', ProductHunt.API],
 ['purgomalum', PurgoMalum.API],
 ['purpleair', PurpleAir.API],

@@ -1,0 +1,76 @@
+{
+  "name": "Privacy.com",
+  "domain": "privacy.com",
+  "claimed": false,
+  "description": "Privacy.com is a virtual card platform that provides secure payments for businesses and consumers.",
+  "links": [
+    { "name": "twitter", "url": "https://twitter.com/privacyhq" },
+    { "name": "linkedin", "url": "https://linkedin.com/company/privacy-com" }
+  ],
+  "logos": [
+    {
+      "type": "icon",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idQ4v3y_8o/idjyfRXWiS.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 320,
+          "width": 320,
+          "size": 10171
+        }
+      ]
+    },
+    {
+      "type": "logo",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idQ4v3y_8o/idoN52eleO.png",
+          "background": null,
+          "format": "png",
+          "height": 57,
+          "width": 57,
+          "size": 1003
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#202d4a", "type": "dark", "brightness": 44 },
+    { "hex": "#3399ff", "type": "light", "brightness": 139 },
+    { "hex": "#ff2d36", "type": "accent", "brightness": 90 }
+  ],
+  "fonts": [
+    {
+      "name": "wes-fy",
+      "type": "title",
+      "origin": "custom",
+      "originId": null,
+      "weights": []
+    },
+    {
+      "name": "wes-fy",
+      "type": "body",
+      "origin": "custom",
+      "originId": null,
+      "weights": []
+    }
+  ],
+  "images": [
+    {
+      "type": "banner",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idQ4v3y_8o/idVb6qeyh7.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 500,
+          "width": 1500,
+          "size": 85816
+        }
+      ]
+    }
+  ]
+}

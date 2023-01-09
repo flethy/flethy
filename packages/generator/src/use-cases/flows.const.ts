@@ -493,4 +493,11 @@ export const FLOWS = {
       'body:topic': '->context.input.topic->string',
     },
   ],
+  'list-cards-from-privacycom': [
+    {
+      id: 'privacycom',
+      kind: 'privacycom.cards.list',
+      'auth:Authorization': '==>secrets==>PRIVACYCOM_API_KEY',
+    },
+  ],
 }
