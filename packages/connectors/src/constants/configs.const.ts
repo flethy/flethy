@@ -37,6 +37,7 @@ import { Canny } from '../configs/canny.config'
 import { CarbEngage } from '../configs/carbengage.config'
 import { Chargebee } from '../configs/chargebee.config'
 import { ChartMogul } from '../configs/chartmogul.config'
+import { Checkly } from '../configs/checkly.config'
 import { Carifai } from '../configs/clarifai.config'
 import { Clearbit } from '../configs/clearbit.config'
 import { ClickSend } from '../configs/clicksend.config'
@@ -318,6 +319,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['carbengage', CarbEngage.API],
 ['chargebee', Chargebee.API],
 ['chartmogul', ChartMogul.API],
+['checkly', Checkly.API],
 ['clarifai', Carifai.API],
 ['clearbit', Clearbit.API],
 ['clicksend', ClickSend.API],

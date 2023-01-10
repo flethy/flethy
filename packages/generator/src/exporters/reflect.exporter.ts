@@ -37,6 +37,7 @@ import { Canny } from '../../../connectors/src/configs/canny.config'
 import { CarbEngage } from '../../../connectors/src/configs/carbengage.config'
 import { Chargebee } from '../../../connectors/src/configs/chargebee.config'
 import { ChartMogul } from '../../../connectors/src/configs/chartmogul.config'
+import { Checkly } from '../../../connectors/src/configs/checkly.config'
 import { Carifai } from '../../../connectors/src/configs/clarifai.config'
 import { Clearbit } from '../../../connectors/src/configs/clearbit.config'
 import { ClickSend } from '../../../connectors/src/configs/clicksend.config'
@@ -366,6 +367,8 @@ configTypes.push({type: getType<Canny.ListPosts>(), id: 'canny', name: 'Canny', 
 configTypes.push({type: getType<CarbEngage.Info>(), id: 'carbengage', name: 'CarbEngage', interface: 'Info'})
 configTypes.push({type: getType<Chargebee.ListSubscriptions>(), id: 'chargebee', name: 'Chargebee', interface: 'ListSubscriptions'})
 configTypes.push({type: getType<ChartMogul.TrackLeadAndFreeTrial>(), id: 'chartmogul', name: 'ChartMogul', interface: 'TrackLeadAndFreeTrial'})
+configTypes.push({type: getType<Checkly.ListChecks>(), id: 'checkly', name: 'Checkly', interface: 'ListChecks'})
+configTypes.push({type: getType<Checkly.ListDashboards>(), id: 'checkly', name: 'Checkly', interface: 'ListDashboards'})
 configTypes.push({type: getType<Carifai.MakePredictions>(), id: 'clarifai', name: 'Carifai', interface: 'MakePredictions'})
 configTypes.push({type: getType<Carifai.MakePredictionsWithVersion>(), id: 'clarifai', name: 'Carifai', interface: 'MakePredictionsWithVersion'})
 configTypes.push({type: getType<Clearbit.LogoGet>(), id: 'clearbit', name: 'Clearbit', interface: 'LogoGet'})

@@ -500,4 +500,12 @@ export const FLOWS = {
       'auth:Authorization': '==>secrets==>PRIVACYCOM_API_KEY',
     },
   ],
+  'list-checks-from-checkly': [
+    {
+      id: 'checkly',
+      kind: 'checkly.checks.list',
+      'auth:Authorization': '==>secrets==>CHECKLY_API_KEY',
+      'header:X-Checkly-Account': '==>secrets==>CHECKLY_ACCOUNT_ID',
+    },
+  ],
 }

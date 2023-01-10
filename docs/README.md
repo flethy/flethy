@@ -66,6 +66,7 @@ The following Endpoints are currently supported.
 * [CarbEngage](./api/carbengage.md)
 * [Chargebee](./api/chargebee.md)
 * [ChartMogul](./api/chartmogul.md)
+* [Checkly](./api/checkly.md)
 * [Carifai](./api/clarifai.md)
 * [Clearbit](./api/clearbit.md)
 * [ClickSend](./api/clicksend.md)

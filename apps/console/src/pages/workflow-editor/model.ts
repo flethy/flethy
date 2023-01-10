@@ -1,4 +1,6 @@
+import { FlowNode } from '@flethy/flow'
 import { flow, Instance, types } from 'mobx-state-tree'
+import { EdgeData, NodeData } from 'reaflow'
 import {
 	WORKFLOW_STARTER,
 	WORKFLOW_TUTORIALS,
@@ -7,17 +9,6 @@ import { WorkflowDataModel } from '../../models/api/workflows'
 import { FlethyContext } from '../../models/flethy.types'
 import { getRootStore, getRouter } from '../../models/helpers'
 import routes from '../../routes'
-
-interface RNode {
-	id: string
-	text: string
-}
-
-interface REdge {
-	id: string
-	from: string
-	to: string
-}
 
 export const WorkflowEditorPage = types
 	.model('WorkflowEditorPage', {
@@ -166,11 +157,11 @@ export const WorkflowEditorPage = types
 		}
 	})
 	.views((self) => {
-		const getNodes = (): RNode[] => {
-			const nodes: RNode[] = []
+		const getNodes = (): NodeData[] => {
+			const nodes: NodeData[] = []
 
 			try {
-				const workflow = JSON.parse(self.workflow)
+				const workflow: FlowNode[] = JSON.parse(self.workflow)
 				for (const node of workflow) {
 					nodes.push({
 						id: node.id,
@@ -182,14 +173,14 @@ export const WorkflowEditorPage = types
 			return nodes
 		}
 
-		const getEdges = (): REdge[] => {
-			const edges: REdge[] = []
+		const getEdges = (): EdgeData[] => {
+			const edges: EdgeData[] = []
 
 			try {
-				const workflow = JSON.parse(self.workflow)
+				const workflow: FlowNode[] = JSON.parse(self.workflow)
 				const nodes = workflow.map((node: any) => node.id)
 				for (const node of workflow) {
-					if (node.next?.length > 0) {
+					if (node.next && node.next.length > 0) {
 						node.next.forEach((next: any) => {
 							if (!nodes.includes(next.id)) {
 								throw new Error(`Node ${next.id} not found`)

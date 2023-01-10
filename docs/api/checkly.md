@@ -1,0 +1,33 @@
+# Checkly
+
+## Links
+
+* URL: [https://www.checklyhq.com/](https://www.checklyhq.com/)
+* Documentation: [https://www.checklyhq.com/docs/](https://www.checklyhq.com/docs/)
+* Tags: web2
+* Category: infra
+* Type: monitoring
+
+## API
+
+### Authentication
+
+* Authorization: header:bearer
+
+### checks
+
+#### list
+
+##### List all checks
+
+* Description: List all checks
+* Docs: [https://www.postman.com/api-evangelist/workspace/checkly](https://www.postman.com/api-evangelist/workspace/checkly)
+
+### dashboards
+
+#### list
+
+##### List all dashboards
+
+* Description: List all dashboards
+* Docs: [https://www.postman.com/api-evangelist/workspace/checkly](https://www.postman.com/api-evangelist/workspace/checkly)
