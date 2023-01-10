@@ -1,0 +1,85 @@
+{
+  "name": "Checkly",
+  "domain": "checklyhq.com",
+  "claimed": false,
+  "description": "Active Reliability for Modern DevOps Teams",
+  "links": [
+    { "name": "github", "url": "https://github.com/checkly" },
+    { "name": "twitter", "url": "https://twitter.com/checklyhq" },
+    { "name": "linkedin", "url": "https://linkedin.com/company/checkly" }
+  ],
+  "logos": [
+    {
+      "type": "icon",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idcmT1ndVE/idVnKwsOTN.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 400,
+          "width": 400,
+          "size": 18077
+        }
+      ]
+    },
+    {
+      "type": "logo",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idcmT1ndVE/id_gU07k6n.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 219,
+          "width": 820,
+          "size": 48244
+        },
+        {
+          "src": "https://asset.brandfetch.io/idcmT1ndVE/idCLUDaCiy.svg",
+          "background": "transparent",
+          "format": "svg",
+          "height": null,
+          "width": null,
+          "size": 35736
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#3c4858", "type": "dark", "brightness": 71 },
+    { "hex": "#ff4949", "type": "light", "brightness": 112 },
+    { "hex": "#45c8f1", "type": "accent", "brightness": 175 }
+  ],
+  "fonts": [
+    {
+      "name": "fakt-soft",
+      "type": "title",
+      "origin": "custom",
+      "originId": null,
+      "weights": []
+    },
+    {
+      "name": "fakt-soft",
+      "type": "body",
+      "origin": "custom",
+      "originId": null,
+      "weights": []
+    }
+  ],
+  "images": [
+    {
+      "type": "banner",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idcmT1ndVE/id5QTWIgMV.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 500,
+          "width": 1500,
+          "size": 67777
+        }
+      ]
+    }
+  ]
+}

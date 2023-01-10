@@ -268,6 +268,7 @@ import WriteSonic from '@flethy/connectors/src/configs/writesonic.config'
 import Yapily from '@flethy/connectors/src/configs/yapily.config'
 import { HttpRequest } from './controllers/HttpRequest'
 import { logger } from './utils/Logger'
+import Checkly from '@flethy/connectors/src/configs/checkly.config'
 
 async function main() {
   const requestConfigs: {
@@ -3634,8 +3635,18 @@ Here you find all the available integrations`,
       kind: 'privacycom.transactions.list',
       'auth:Authorization': process.env.PRIVACYCOM_API_KEY,
     }),
+    checklyListChecks: nao<Checkly.ListChecks>({
+      kind: 'checkly.checks.list',
+      'auth:Authorization': process.env.CHECKLY_API_KEY,
+      'header:X-Checkly-Account': process.env.CHECKLY_ACCOUNT_ID,
+    }),
+    checklyListDashboards: nao<Checkly.ListDashboards>({
+      kind: 'checkly.dashboards.list',
+      'auth:Authorization': process.env.CHECKLY_API_KEY,
+      'header:X-Checkly-Account': process.env.CHECKLY_ACCOUNT_ID,
+    }),
   }
-  const requestConfig = requestConfigs.webhooksiteGET
+  const requestConfig = requestConfigs.checklyListDashboards
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

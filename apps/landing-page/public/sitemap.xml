@@ -173,6 +173,10 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://flethy.com/integrations/checkly</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://flethy.com/integrations/clarifai</loc>
     <priority>0.8</priority>
   </url>
@@ -1234,6 +1238,10 @@
   </url>
   <url>
     <loc>https://flethy.com/use-cases/list-cards-from-privacycom</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://flethy.com/use-cases/list-checks-from-checkly</loc>
     <priority>0.8</priority>
   </url>
   <url>
