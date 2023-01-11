@@ -505,7 +505,16 @@ export const FLOWS = {
       id: 'checkly',
       kind: 'checkly.checks.list',
       'auth:Authorization': '==>secrets==>CHECKLY_API_KEY',
-      'header:X-Checkly-Account': '==>secrets==>CHECKLY_ACCOUNT_ID',
+      'header:X-Checkly-Account': '==>env==>CHECKLY_ACCOUNT_ID',
+    },
+  ],
+  'list-resources-from-bigml': [
+    {
+      id: 'bigml',
+      kind: 'bigml.resources.list',
+      'auth:username': '==>env==>BIGML_USERNAME',
+      'auth:api_key': '==>secrets==>BIGML_API_KEY',
+      'param:resource': '->context.input.resource->string',
     },
   ],
 }
