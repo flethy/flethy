@@ -20,6 +20,7 @@ import { BaseRow } from '../configs/baserow.config'
 import { Beehiiv } from '../configs/beehiiv.config'
 import { Beew } from '../configs/beew.config'
 import { BigDataCloud } from '../configs/bigdatacloud.config'
+import { BigML } from '../configs/bigml.config'
 import { Bing } from '../configs/bing.config'
 import { BitIo } from '../configs/bitio.config'
 import { Bitly } from '../configs/bitly.config'
@@ -302,6 +303,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['beehiiv', Beehiiv.API],
 ['beew', Beew.API],
 ['bigdatacloud', BigDataCloud.API],
+['bigml', BigML.API],
 ['bing', Bing.API],
 ['bitio', BitIo.API],
 ['bitly', Bitly.API],

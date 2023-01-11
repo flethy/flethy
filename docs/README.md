@@ -49,6 +49,7 @@ The following Endpoints are currently supported.
 * [Beehiiv](./api/beehiiv.md)
 * [Beew](./api/beew.md)
 * [BigDataCloud](./api/bigdatacloud.md)
+* [BigML](./api/bigml.md)
 * [Bing](./api/bing.md)
 * [BitIo](./api/bitio.md)
 * [Bitly](./api/bitly.md)

@@ -269,6 +269,7 @@ import Yapily from '@flethy/connectors/src/configs/yapily.config'
 import { HttpRequest } from './controllers/HttpRequest'
 import { logger } from './utils/Logger'
 import Checkly from '@flethy/connectors/src/configs/checkly.config'
+import BigML from '@flethy/connectors/src/configs/bigml.config'
 
 async function main() {
   const requestConfigs: {
@@ -3645,8 +3646,14 @@ Here you find all the available integrations`,
       'auth:Authorization': process.env.CHECKLY_API_KEY,
       'header:X-Checkly-Account': process.env.CHECKLY_ACCOUNT_ID,
     }),
+    bigmlListresources: nao<BigML.ListResources>({
+      kind: 'bigml.resources.list',
+      'auth:username': process.env.BIGML_USERNAME,
+      'auth:api_key': process.env.BIGML_API_KEY,
+      'param:resource': 'project',
+    }),
   }
-  const requestConfig = requestConfigs.checklyListDashboards
+  const requestConfig = requestConfigs.bigmlListresources
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

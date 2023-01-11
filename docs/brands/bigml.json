@@ -1,0 +1,64 @@
+{
+  "name": "BigML",
+  "domain": "bigml.com",
+  "claimed": false,
+  "description": "BigML is Machine Learning made beautifully simple for everyone",
+  "links": [
+    { "name": "youtube", "url": "https://youtube.com/user/bigmlcom" },
+    { "name": "twitter", "url": "https://twitter.com/bigmlcom" },
+    { "name": "linkedin", "url": "https://linkedin.com/company/bigml-inc" },
+    { "name": "facebook", "url": "https://facebook.com/BigML-132819120114893" }
+  ],
+  "logos": [
+    {
+      "type": "logo",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idKE1e2qz3/idJMX5g3H_.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 100,
+          "width": 196,
+          "size": 6378
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#46556a", "type": "dark", "brightness": 83 },
+    { "hex": "#ffffff", "type": "light", "brightness": 255 },
+    { "hex": "#9cbf27", "type": "accent", "brightness": 173 }
+  ],
+  "fonts": [
+    {
+      "name": "Helvetica Neue-light",
+      "type": "title",
+      "origin": "custom",
+      "originId": null,
+      "weights": []
+    },
+    {
+      "name": "HelveticaNeue-Light",
+      "type": "body",
+      "origin": "custom",
+      "originId": null,
+      "weights": []
+    }
+  ],
+  "images": [
+    {
+      "type": "banner",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idKE1e2qz3/idoYJyAx2G.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 500,
+          "width": 1500,
+          "size": 49996
+        }
+      ]
+    }
+  ]
+}

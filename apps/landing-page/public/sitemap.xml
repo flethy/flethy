@@ -105,6 +105,10 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://flethy.com/integrations/bigml</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://flethy.com/integrations/bing</loc>
     <priority>0.8</priority>
   </url>
@@ -1258,6 +1262,10 @@
   </url>
   <url>
     <loc>https://flethy.com/use-cases/list-products-from-stripe</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://flethy.com/use-cases/list-resources-from-bigml</loc>
     <priority>0.8</priority>
   </url>
   <url>

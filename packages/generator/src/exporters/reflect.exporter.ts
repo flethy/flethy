@@ -20,6 +20,7 @@ import { BaseRow } from '../../../connectors/src/configs/baserow.config'
 import { Beehiiv } from '../../../connectors/src/configs/beehiiv.config'
 import { Beew } from '../../../connectors/src/configs/beew.config'
 import { BigDataCloud } from '../../../connectors/src/configs/bigdatacloud.config'
+import { BigML } from '../../../connectors/src/configs/bigml.config'
 import { Bing } from '../../../connectors/src/configs/bing.config'
 import { BitIo } from '../../../connectors/src/configs/bitio.config'
 import { Bitly } from '../../../connectors/src/configs/bitly.config'
@@ -328,6 +329,7 @@ configTypes.push({type: getType<Beehiiv.GetPublications>(), id: 'beehiiv', name:
 configTypes.push({type: getType<Beew.CreateSchedule>(), id: 'beew', name: 'Beew', interface: 'CreateSchedule'})
 configTypes.push({type: getType<Beew.UpdateSchedule>(), id: 'beew', name: 'Beew', interface: 'UpdateSchedule'})
 configTypes.push({type: getType<BigDataCloud.ReverseGeoCodeClient>(), id: 'bigdatacloud', name: 'BigDataCloud', interface: 'ReverseGeoCodeClient'})
+configTypes.push({type: getType<BigML.ListResources>(), id: 'bigml', name: 'BigML', interface: 'ListResources'})
 configTypes.push({type: getType<Bing.IndexNow>(), id: 'bing', name: 'Bing', interface: 'IndexNow'})
 configTypes.push({type: getType<BitIo.DatabaseQuery>(), id: 'bitio', name: 'BitIo', interface: 'DatabaseQuery'})
 configTypes.push({type: getType<Bitly.CreateShortLink>(), id: 'bitly', name: 'Bitly', interface: 'CreateShortLink'})
