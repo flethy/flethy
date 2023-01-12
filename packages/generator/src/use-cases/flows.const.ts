@@ -517,4 +517,13 @@ export const FLOWS = {
       'param:resource': '->context.input.resource->string',
     },
   ],
+  'create-room-with-liveblocks': [
+    {
+      id: 'liveblocks',
+      kind: 'liveblocks.rooms.create',
+      'auth:Authorization': '==>secrets==>LIVEBLOCKS_SECRET_KEY',
+      'body:id': '->context.input.roomId->string',
+      'body:defaultAccesses': '->context.input.defaultAccesses->any',
+    },
+  ],
 }

@@ -1,0 +1,70 @@
+{
+  "name": "Liveblocks",
+  "domain": "liveblocks.io",
+  "claimed": false,
+  "description": "Liveblocks is a set of APIs and tools that helps you create performant and reliable collaborative experiences.",
+  "links": [
+    { "name": "github", "url": "https://github.com/liveblocks" },
+    { "name": "twitter", "url": "https://twitter.com/liveblocks" },
+    { "name": "linkedin", "url": "https://linkedin.com/company/liveblocks" }
+  ],
+  "logos": [
+    {
+      "type": "icon",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idl1ZNiGkm/idI8taAm6C.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 400,
+          "width": 400,
+          "size": 9449
+        }
+      ]
+    },
+    {
+      "type": "logo",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idl1ZNiGkm/id4Bv3GBZ1.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 256,
+          "width": 256,
+          "size": 58728
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#000000", "type": "dark", "brightness": 0 },
+    { "hex": "#ff3358", "type": "light", "brightness": 97 },
+    { "hex": "#ff764d", "type": "accent", "brightness": 144 }
+  ],
+  "fonts": [
+    {
+      "name": "Inter var",
+      "type": "body",
+      "origin": "custom",
+      "originId": null,
+      "weights": []
+    }
+  ],
+  "images": [
+    {
+      "type": "banner",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idl1ZNiGkm/idZGoFUjmu.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 500,
+          "width": 1500,
+          "size": 21963
+        }
+      ]
+    }
+  ]
+}

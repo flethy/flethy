@@ -541,6 +541,10 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://flethy.com/integrations/liveblocks</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://flethy.com/integrations/logsnag</loc>
     <priority>0.8</priority>
   </url>
@@ -1186,6 +1190,10 @@
   </url>
   <url>
     <loc>https://flethy.com/use-cases/create-new-contact-in-sendinblue</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://flethy.com/use-cases/create-room-with-liveblocks</loc>
     <priority>0.8</priority>
   </url>
   <url>
