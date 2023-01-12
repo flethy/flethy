@@ -42,6 +42,7 @@ export default observer(() => {
 					</FormHelperText>
 				)}
 			</FormControl>
+			{modal.response && <Textarea value={modal.response} disabled />}
 		</VStack>
 	)
 

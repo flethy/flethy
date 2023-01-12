@@ -1,0 +1,31 @@
+# Liveblocks
+
+## Links
+
+* URL: [https://liveblocks.io/](https://liveblocks.io/)
+* Documentation: [https://liveblocks.io/docs/api-reference/rest-api-endpoints](https://liveblocks.io/docs/api-reference/rest-api-endpoints)
+* Tags: web2
+* Category: infra
+* Type: other
+
+## API
+
+### Authentication
+
+* Authorization: header:bearer
+
+### rooms
+
+#### list
+
+##### Get rooms
+
+* Description: Get rooms
+* Docs: [https://liveblocks.io/docs/api-reference/rest-api-endpoints#get-rooms](https://liveblocks.io/docs/api-reference/rest-api-endpoints#get-rooms)
+
+#### create
+
+##### Create room
+
+* Description: Create room
+* Docs: [https://liveblocks.io/docs/api-reference/rest-api-endpoints#post-rooms](https://liveblocks.io/docs/api-reference/rest-api-endpoints#post-rooms)

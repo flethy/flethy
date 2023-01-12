@@ -270,6 +270,7 @@ import { HttpRequest } from './controllers/HttpRequest'
 import { logger } from './utils/Logger'
 import Checkly from '@flethy/connectors/src/configs/checkly.config'
 import BigML from '@flethy/connectors/src/configs/bigml.config'
+import Liveblocks from '@flethy/connectors/src/configs/liveblocks.config'
 
 async function main() {
   const requestConfigs: {
@@ -3652,8 +3653,18 @@ Here you find all the available integrations`,
       'auth:api_key': process.env.BIGML_API_KEY,
       'param:resource': 'project',
     }),
+    liveblocksListRooms: nao<Liveblocks.ListRooms>({
+      kind: 'liveblocks.rooms.list',
+      'auth:Authorization': process.env.LIVEBLOCKS_SECRET_KEY,
+    }),
+    liveblocksCreateRoom: nao<Liveblocks.CreateRoom>({
+      kind: 'liveblocks.rooms.create',
+      'auth:Authorization': process.env.LIVEBLOCKS_SECRET_KEY,
+      'body:id': 'flethy-room',
+      'body:defaultAccesses': ['room:write'],
+    }),
   }
-  const requestConfig = requestConfigs.bigmlListresources
+  const requestConfig = requestConfigs.liveblocksListRooms
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

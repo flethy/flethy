@@ -129,6 +129,7 @@ import { Lecto } from '../../../connectors/src/configs/lecto.config'
 import { Linear } from '../../../connectors/src/configs/linear.config'
 import { LinkedIn } from '../../../connectors/src/configs/linkedin.config'
 import { LinkPreview } from '../../../connectors/src/configs/linkpreview.config'
+import { Liveblocks } from '../../../connectors/src/configs/liveblocks.config'
 import { LogSnag } from '../../../connectors/src/configs/logsnag.config'
 import { Logz } from '../../../connectors/src/configs/logz.config'
 import { Lokalise } from '../../../connectors/src/configs/lokalise.config'
@@ -576,6 +577,8 @@ configTypes.push({type: getType<Lecto.TranslateJson>(), id: 'lecto', name: 'Lect
 configTypes.push({type: getType<Linear.GraphQLQuery>(), id: 'linear', name: 'Linear', interface: 'GraphQLQuery'})
 configTypes.push({type: getType<LinkedIn.SharePost>(), id: 'linkedin', name: 'LinkedIn', interface: 'SharePost'})
 configTypes.push({type: getType<LinkPreview.LinkPreview>(), id: 'linkpreview', name: 'LinkPreview', interface: 'LinkPreview'})
+configTypes.push({type: getType<Liveblocks.ListRooms>(), id: 'liveblocks', name: 'Liveblocks', interface: 'ListRooms'})
+configTypes.push({type: getType<Liveblocks.CreateRoom>(), id: 'liveblocks', name: 'Liveblocks', interface: 'CreateRoom'})
 configTypes.push({type: getType<LogSnag.PublishEvent>(), id: 'logsnag', name: 'LogSnag', interface: 'PublishEvent'})
 configTypes.push({type: getType<LogSnag.PublishInsight>(), id: 'logsnag', name: 'LogSnag', interface: 'PublishInsight'})
 configTypes.push({type: getType<Logz.SearchLogs>(), id: 'logz', name: 'Logz', interface: 'SearchLogs'})

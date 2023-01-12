@@ -197,7 +197,7 @@ export const WorkflowsModel = types
 			workflowId: string
 			payload?: any
 		}) {
-			yield request({
+			const response = yield request({
 				base: 'flethy',
 				method: 'post',
 				auth: true,
@@ -209,6 +209,7 @@ export const WorkflowsModel = types
 					.gen(),
 				body: { payload: options.payload },
 			})
+			return response
 		})
 
 		const del = flow(function* (options: {

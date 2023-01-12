@@ -19,6 +19,7 @@ export const CreateInstanceModal = types
 			}),
 			{},
 		),
+		response: types.maybe(types.string),
 		formValidation: types.optional(FormValidationModel, {}),
 		isOpen: types.optional(types.boolean, false),
 		isSubmitting: types.optional(types.boolean, false),
@@ -47,6 +48,7 @@ export const CreateInstanceModal = types
 				valid: true,
 				errorMessage: '',
 			})
+			self.response = undefined
 			self.isOpen = true
 			self.isSubmitting = false
 			self.valid = true
@@ -86,8 +88,9 @@ export const CreateInstanceModal = types
 					message: 'Instance created',
 					meta: response,
 				})
+				self.response = JSON.stringify(response, null, 2)
 				self.isSubmitting = false
-				self.isOpen = false
+				// self.isOpen = false
 			} catch (error) {
 				self.isSubmitting = false
 				console.log(error)
