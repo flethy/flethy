@@ -526,4 +526,32 @@ export const FLOWS = {
       'body:defaultAccesses': '->context.input.defaultAccesses->any',
     },
   ],
+  'users-lookup-at-twitter': [
+    {
+      id: 'twitter',
+      kind: 'twitter.users.lookup',
+      config: {
+        namespace: 'user',
+      },
+      'auth:Authorization': {
+        consumerKey: '==>secrets==>CONSUMER_KEY',
+        consumerSecret: '==>secrets==>CONSUMER_SECRET',
+        accessKey: '==>secrets==>ACCESS_TOKEN',
+        accessSecret: '==>secrets==>ACCESS_TOKEN_SECRET',
+      },
+      'param:username': '->context.input.username->string',
+    },
+  ],
+  'track-events-with-vero': [
+    {
+      id: 'vero',
+      kind: 'vero.events.track',
+      'auth:auth_token': '==>secrets==>VERO_TOKEN',
+      'body:identity': {
+        id: '->context.input.id->string',
+        email: '->context.input.email->string',
+      },
+      'body:event_name': '->context.input.event->string',
+    },
+  ],
 }

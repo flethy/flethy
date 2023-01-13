@@ -5,7 +5,13 @@ import {
 import { RequestParams } from '../types/Request.types'
 
 export namespace Twitter {
-  export type Entity = { auth: any; manage: any; v1status: any; v1media: any }
+  export type Entity = {
+    auth: any
+    manage: any
+    users: any
+    v1status: any
+    v1media: any
+  }
   export type Endpoint =
     | {
         bearer: ApiDescriptionEndpoint
@@ -14,6 +20,7 @@ export namespace Twitter {
     | { postTweets: ApiDescriptionEndpoint }
     | { update: ApiDescriptionEndpoint }
     | { upload: ApiDescriptionEndpoint }
+    | { lookup: ApiDescriptionEndpoint }
 
   export interface TwitterBase {
     'auth:Authorization': {
@@ -71,6 +78,11 @@ export namespace Twitter {
       options?: string[]
     }
     'body:quote_tweet_id'?: string
+  }
+
+  export interface UsersLookup extends TwitterBaseOAuth1a, RequestParams {
+    kind: 'twitter.users.lookup'
+    'param:username': string
   }
 
   export interface StatusUpdate extends TwitterBaseOAuth1a, RequestParams {
@@ -191,6 +203,44 @@ export namespace Twitter {
             {
               name: 'tweets',
               type: 'static',
+            },
+          ],
+        },
+      },
+      users: {
+        lookup: {
+          interface: 'UsersLookup',
+          meta: {
+            title: 'Users lookup',
+            description: `Returns a variety of information about one or more users specified by their usernames.`,
+            docs: 'https://developer.twitter.com/en/docs/twitter-api/users/lookup/api-reference/get-users-by-username-username',
+          },
+          method: 'GET',
+          auth: {
+            Authorization: {
+              type: 'header:oauth1a',
+            },
+          },
+          paths: [
+            {
+              name: '2',
+              type: 'static',
+            },
+            {
+              name: 'users',
+              type: 'static',
+            },
+            {
+              name: 'by',
+              type: 'static',
+            },
+            {
+              name: 'username',
+              type: 'static',
+            },
+            {
+              name: 'username',
+              type: 'param',
             },
           ],
         },

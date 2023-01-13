@@ -168,11 +168,13 @@ import APIPoint from '@flethy/connectors/src/configs/apipoint.config'
 import Asana from '@flethy/connectors/src/configs/asana.config'
 import BasementDev from '@flethy/connectors/src/configs/basementdev.config'
 import Beew from '@flethy/connectors/src/configs/beew.config'
+import BigML from '@flethy/connectors/src/configs/bigml.config'
 import BitIo from '@flethy/connectors/src/configs/bitio.config'
 import BugHerd from '@flethy/connectors/src/configs/bugherd.config'
 import ButterCMS from '@flethy/connectors/src/configs/buttercms.config'
 import ButtondownEmail from '@flethy/connectors/src/configs/buttondownemail.config'
 import CarbEngage from '@flethy/connectors/src/configs/carbengage.config'
+import Checkly from '@flethy/connectors/src/configs/checkly.config'
 import Close from '@flethy/connectors/src/configs/close.config'
 import Codat from '@flethy/connectors/src/configs/codat.config'
 import Contentchef from '@flethy/connectors/src/configs/contentchef.config'
@@ -204,6 +206,7 @@ import KontentAI from '@flethy/connectors/src/configs/kontentai.config'
 import Koyeb from '@flethy/connectors/src/configs/koyeb.config'
 import LanguageLayer from '@flethy/connectors/src/configs/languagelayer.config'
 import LinkPreview from '@flethy/connectors/src/configs/linkpreview.config'
+import Liveblocks from '@flethy/connectors/src/configs/liveblocks.config'
 import LogSnag from '@flethy/connectors/src/configs/logsnag.config'
 import Logz from '@flethy/connectors/src/configs/logz.config'
 import Lolo from '@flethy/connectors/src/configs/lolo.config'
@@ -258,6 +261,7 @@ import Twitter from '@flethy/connectors/src/configs/twitter.config'
 import UrlBae from '@flethy/connectors/src/configs/urlbae.config'
 import Userfront from '@flethy/connectors/src/configs/userfront.config'
 import Vantevo from '@flethy/connectors/src/configs/vantevo.config'
+import Vero from '@flethy/connectors/src/configs/vero.config'
 import Vimeo from '@flethy/connectors/src/configs/vimeo.config'
 import Vonage from '@flethy/connectors/src/configs/vonage.config'
 import WarrantDev from '@flethy/connectors/src/configs/warrantdev.config'
@@ -268,9 +272,6 @@ import WriteSonic from '@flethy/connectors/src/configs/writesonic.config'
 import Yapily from '@flethy/connectors/src/configs/yapily.config'
 import { HttpRequest } from './controllers/HttpRequest'
 import { logger } from './utils/Logger'
-import Checkly from '@flethy/connectors/src/configs/checkly.config'
-import BigML from '@flethy/connectors/src/configs/bigml.config'
-import Liveblocks from '@flethy/connectors/src/configs/liveblocks.config'
 
 async function main() {
   const requestConfigs: {
@@ -3663,8 +3664,33 @@ Here you find all the available integrations`,
       'body:id': 'flethy-room',
       'body:defaultAccesses': ['room:write'],
     }),
+    twitterUsersLookup: nao<Twitter.UsersLookup>({
+      kind: 'twitter.users.lookup',
+      'auth:Authorization': {
+        consumerKey: process.env.CONSUMER_KEY,
+        consumerSecret: process.env.CONSUMER_SECRET,
+        accessKey: process.env.ACCESS_TOKEN,
+        accessSecret: process.env.ACCESS_TOKEN_SECRET,
+      },
+      'param:username': 'flethycom',
+    }),
+    veroTrackEvent: nao<Vero.TrackEvent>({
+      kind: 'vero.events.track',
+      'auth:auth_token': process.env.VERO_TOKEN,
+      'body:identity': {
+        id: 'adam@flethy.com',
+        email: 'adam@flethy.com',
+      },
+      'body:event_name': 'onboarding',
+    }),
+    veroIdentifyUser: nao<Vero.IdentifyUser>({
+      kind: 'vero.users.identify',
+      'auth:auth_token': process.env.VERO_TOKEN,
+      'body:id': 'test-user',
+      'body:email': 'adam.urban@gmail.com',
+    }),
   }
-  const requestConfig = requestConfigs.liveblocksListRooms
+  const requestConfig = requestConfigs.veroIdentifyUser
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

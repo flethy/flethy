@@ -266,6 +266,7 @@ import { UrlScan } from '../../../connectors/src/configs/urlscan.config'
 import { UsePlunk } from '../../../connectors/src/configs/useplunk.config'
 import { Userfront } from '../../../connectors/src/configs/userfront.config'
 import { Vantevo } from '../../../connectors/src/configs/vantevo.config'
+import { Vero } from '../../../connectors/src/configs/vero.config'
 import { Vimeo } from '../../../connectors/src/configs/vimeo.config'
 import { Vonage } from '../../../connectors/src/configs/vonage.config'
 import { WarrantDev } from '../../../connectors/src/configs/warrantdev.config'
@@ -833,6 +834,7 @@ configTypes.push({type: getType<Twilio.SendSms>(), id: 'twilio', name: 'Twilio',
 configTypes.push({type: getType<Twitter.AuthBearer>(), id: 'twitter', name: 'Twitter', interface: 'AuthBearer'})
 configTypes.push({type: getType<Twitter.AuthOAuth2AuthorizationCode>(), id: 'twitter', name: 'Twitter', interface: 'AuthOAuth2AuthorizationCode'})
 configTypes.push({type: getType<Twitter.PostTweets>(), id: 'twitter', name: 'Twitter', interface: 'PostTweets'})
+configTypes.push({type: getType<Twitter.UsersLookup>(), id: 'twitter', name: 'Twitter', interface: 'UsersLookup'})
 configTypes.push({type: getType<Twitter.StatusUpdate>(), id: 'twitter', name: 'Twitter', interface: 'StatusUpdate'})
 configTypes.push({type: getType<Twitter.UploadMedia>(), id: 'twitter', name: 'Twitter', interface: 'UploadMedia'})
 configTypes.push({type: getType<Typeform.CreateApiCreateForm>(), id: 'typeform', name: 'Typeform', interface: 'CreateApiCreateForm'})
@@ -862,6 +864,8 @@ configTypes.push({type: getType<Userfront.ListRoles>(), id: 'userfront', name: '
 configTypes.push({type: getType<Vantevo.SendEvent>(), id: 'vantevo', name: 'Vantevo', interface: 'SendEvent'})
 configTypes.push({type: getType<Vantevo.GetStatistics>(), id: 'vantevo', name: 'Vantevo', interface: 'GetStatistics'})
 configTypes.push({type: getType<Vantevo.GetEventStatistics>(), id: 'vantevo', name: 'Vantevo', interface: 'GetEventStatistics'})
+configTypes.push({type: getType<Vero.TrackEvent>(), id: 'vero', name: 'Vero', interface: 'TrackEvent'})
+configTypes.push({type: getType<Vero.IdentifyUser>(), id: 'vero', name: 'Vero', interface: 'IdentifyUser'})
 configTypes.push({type: getType<Vimeo.GetUser>(), id: 'vimeo', name: 'Vimeo', interface: 'GetUser'})
 configTypes.push({type: getType<Vimeo.GetMyAppearances>(), id: 'vimeo', name: 'Vimeo', interface: 'GetMyAppearances'})
 configTypes.push({type: getType<Vimeo.GetAppearances>(), id: 'vimeo', name: 'Vimeo', interface: 'GetAppearances'})

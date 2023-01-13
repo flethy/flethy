@@ -280,6 +280,7 @@ The following Endpoints are currently supported.
 * [UsePlunk](./api/useplunk.md)
 * [Userfront](./api/userfront.md)
 * [Vantevo](./api/vantevo.md)
+* [Vero](./api/vero.md)
 * [Vimeo](./api/vimeo.md)
 * [Vonage](./api/vonage.md)
 * [WarrantDev](./api/warrantdev.md)
