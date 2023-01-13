@@ -25,20 +25,20 @@
     "flow"
   ],
   "dependencies": {
-    "@flethy/connectors": "0.0.294",
+    "@flethy/connectors": "0.0.300",
     "axios": "1.1.2",
-    "jsonata": "^2.0.0"
+    "jsonata": "^2.0.1"
   },
   "devDependencies": {
     "@types/node": "18.11.18",
-    "@typescript-eslint/eslint-plugin": "^5.48.0",
-    "@typescript-eslint/parser": "^5.48.0",
+    "@typescript-eslint/eslint-plugin": "^5.48.1",
+    "@typescript-eslint/parser": "^5.48.1",
     "eslint": "^8.31.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-prettier": "^8.6.0",
-    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-import": "^2.27.4",
     "eslint-plugin-prettier": "^4.2.1",
-    "prettier": "2.8.1",
+    "prettier": "2.8.2",
     "ts-node": "^10.9.1",
     "tsconfig": "workspace:*",
     "typescript": "^4.9.4"
