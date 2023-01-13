@@ -1,0 +1,90 @@
+{
+  "name": "Vero",
+  "domain": "getvero.com",
+  "claimed": false,
+  "description": "Email marketing for the modern data stack.",
+  "links": [
+    { "name": "twitter", "url": "https://twitter.com/getvero" },
+    { "name": "linkedin", "url": "https://linkedin.com/company/vero-messaging" }
+  ],
+  "logos": [
+    {
+      "type": "icon",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idhG_GAn-g/idFQM0SoXO.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 192,
+          "width": 192,
+          "size": 8205
+        }
+      ]
+    },
+    {
+      "type": "logo",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idhG_GAn-g/idpqQnqTw2.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 417,
+          "width": 1980,
+          "size": 32571
+        }
+      ]
+    },
+    {
+      "type": "symbol",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idhG_GAn-g/idzIKAjn5g.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 418,
+          "width": 619,
+          "size": 11909
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#16184B", "type": "dark", "brightness": 27 },
+    { "hex": "#ffffff", "type": "light", "brightness": 255 },
+    { "hex": "#17DA88", "type": "accent", "brightness": 171 }
+  ],
+  "fonts": [
+    {
+      "name": "Avenir Next W01",
+      "type": "body",
+      "origin": "custom",
+      "originId": null,
+      "weights": []
+    },
+    {
+      "name": "ClashGrotesk",
+      "type": "title",
+      "origin": "custom",
+      "originId": null,
+      "weights": []
+    }
+  ],
+  "images": [
+    {
+      "type": "banner",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idhG_GAn-g/idtejPoSfq.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 500,
+          "width": 1500,
+          "size": 51255
+        }
+      ]
+    }
+  ]
+}
