@@ -134,6 +134,7 @@ export class BrandExporter {
       'mezmo',
       'onesignal',
       'ory',
+      'pirateweather',
       'purpleair',
       'restdb',
       'savepage',
