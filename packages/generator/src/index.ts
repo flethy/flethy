@@ -272,6 +272,7 @@ import WriteSonic from '@flethy/connectors/src/configs/writesonic.config'
 import Yapily from '@flethy/connectors/src/configs/yapily.config'
 import { HttpRequest } from './controllers/HttpRequest'
 import { logger } from './utils/Logger'
+import PirateWeather from '@flethy/connectors/src/configs/pirateweather.config'
 
 async function main() {
   const requestConfigs: {
@@ -3689,8 +3690,13 @@ Here you find all the available integrations`,
       'body:id': 'test-user',
       'body:email': 'adam.urban@gmail.com',
     }),
+    pirateWeatherForecast: nao<PirateWeather.Forecast>({
+      kind: 'pirateweather.core.forecast',
+      'auth:api-key': process.env.PIRATEWEATHER_API_KEY,
+      'param:location': '52.520008,13.404954',
+    }),
   }
-  const requestConfig = requestConfigs.veroIdentifyUser
+  const requestConfig = requestConfigs.pirateWeatherForecast
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

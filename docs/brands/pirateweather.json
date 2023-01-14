@@ -1,0 +1,30 @@
+{
+  "name": null,
+  "domain": "pirateweather.net",
+  "claimed": false,
+  "description": null,
+  "links": [],
+  "logos": [],
+  "colors": [
+    { "hex": "#21ba45", "type": "accent", "brightness": 145 },
+    { "hex": "#1b1c1d", "type": "dark", "brightness": 28 },
+    { "hex": "#ffffff", "type": "light", "brightness": 255 }
+  ],
+  "fonts": [
+    {
+      "name": "Lato",
+      "type": "title",
+      "origin": "google",
+      "originId": "Lato",
+      "weights": []
+    },
+    {
+      "name": "Lato",
+      "type": "body",
+      "origin": "google",
+      "originId": "Lato",
+      "weights": []
+    }
+  ],
+  "images": []
+}

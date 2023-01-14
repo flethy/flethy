@@ -554,4 +554,12 @@ export const FLOWS = {
       'body:event_name': '->context.input.event->string',
     },
   ],
+  'get-weather-forcast-from-pirateweather': [
+    {
+      id: 'pirateweather',
+      kind: 'pirateweather.core.forecast',
+      'auth:api-key': '==>secrets==>PIRATEWEATHER_API_KEY',
+      'param:location': '->context.input.location->string',
+    },
+  ],
 }

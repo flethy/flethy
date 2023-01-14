@@ -201,6 +201,7 @@ The following Endpoints are currently supported.
 * [Personio](./api/personio.md)
 * [Phyllo](./api/phyllo.md)
 * [Pipedream](./api/pipedream.md)
+* [PirateWeather](./api/pirateweather.md)
 * [Pirsch](./api/pirsch.md)
 * [Pixela](./api/pixela.md)
 * [PolyScale](./api/polyscale.md)

@@ -185,6 +185,7 @@ import { Personio } from '../../../connectors/src/configs/personio.config'
 import { Phyllo } from '../../../connectors/src/configs/phyllo.config'
 import { Pinata } from '../../../connectors/src/configs/pinata.config'
 import { Pipedream } from '../../../connectors/src/configs/pipedream.config'
+import { PirateWeather } from '../../../connectors/src/configs/pirateweather.config'
 import { Pirsch } from '../../../connectors/src/configs/pirsch.config'
 import { Pixela } from '../../../connectors/src/configs/pixela.config'
 import { PolyScale } from '../../../connectors/src/configs/polyscale.config'
@@ -695,6 +696,8 @@ configTypes.push({type: getType<Phyllo.CreateSDKToken>(), id: 'phyllo', name: 'P
 configTypes.push({type: getType<Pinata.PinningPinJsonToIPFS>(), id: 'pinata', name: 'Pinata', interface: 'PinningPinJsonToIPFS'})
 configTypes.push({type: getType<Pipedream.GetWorkflowEmits>(), id: 'pipedream', name: 'Pipedream', interface: 'GetWorkflowEmits'})
 configTypes.push({type: getType<Pipedream.ListCurrentUserSources>(), id: 'pipedream', name: 'Pipedream', interface: 'ListCurrentUserSources'})
+configTypes.push({type: getType<PirateWeather.Forecast>(), id: 'pirateweather', name: 'PirateWeather', interface: 'Forecast'})
+configTypes.push({type: getType<PirateWeather.TimeMachine>(), id: 'pirateweather', name: 'PirateWeather', interface: 'TimeMachine'})
 configTypes.push({type: getType<Pirsch.GetAccessToken>(), id: 'pirsch', name: 'Pirsch', interface: 'GetAccessToken'})
 configTypes.push({type: getType<Pirsch.SendPageHit>(), id: 'pirsch', name: 'Pirsch', interface: 'SendPageHit'})
 configTypes.push({type: getType<Pirsch.SendEvent>(), id: 'pirsch', name: 'Pirsch', interface: 'SendEvent'})

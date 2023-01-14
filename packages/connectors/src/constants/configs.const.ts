@@ -185,6 +185,7 @@ import { Personio } from '../configs/personio.config'
 import { Phyllo } from '../configs/phyllo.config'
 import { Pinata } from '../configs/pinata.config'
 import { Pipedream } from '../configs/pipedream.config'
+import { PirateWeather } from '../configs/pirateweather.config'
 import { Pirsch } from '../configs/pirsch.config'
 import { Pixela } from '../configs/pixela.config'
 import { PolyScale } from '../configs/polyscale.config'
@@ -470,6 +471,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['phyllo', Phyllo.API],
 ['pinata', Pinata.API],
 ['pipedream', Pipedream.API],
+['pirateweather', PirateWeather.API],
 ['pirsch', Pirsch.API],
 ['pixela', Pixela.API],
 ['polyscale', PolyScale.API],
