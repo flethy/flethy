@@ -562,4 +562,16 @@ export const FLOWS = {
       'param:location': '->context.input.location->string',
     },
   ],
+  'list-people-profiles-with-crisp': [
+    {
+      id: 'crisp',
+      kind: 'crisp.people.list',
+      'auth:Authorization': {
+        username: '==>secrets==>CRISP_ID',
+        password: '==>secrets==>CRISP_KEY',
+      },
+      'param:website_id': '->context.input.websiteId->string',
+      'param:page_number': '->context.input.pageNumber->string',
+    },
+  ],
 }

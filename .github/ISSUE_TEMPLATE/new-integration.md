@@ -6,6 +6,8 @@ labels: connectors
 assignees: urbanisierung
 ---
 
+for inspiration: https://superface.ai/catalog or producthunt
+
 - URL:
 - Docs:
 - Pricing:

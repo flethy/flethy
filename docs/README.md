@@ -85,6 +85,7 @@ The following Endpoints are currently supported.
 * [CosmicJS](./api/cosmicjs.md)
 * [CountApi](./api/countapi.md)
 * [Courier](./api/courier.md)
+* [Crisp](./api/crisp.md)
 * [Cronhooks](./api/cronhooks.md)
 * [Cronhub](./api/cronhub.md)
 * [CSVBox](./api/csvbox.md)
