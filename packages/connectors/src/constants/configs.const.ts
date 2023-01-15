@@ -61,6 +61,7 @@ import { CosmicJS } from '../configs/cosmicjs.config'
 import { CountApi } from '../configs/countapi.config'
 import { Courier } from '../configs/courier.config'
 import { Covalent } from '../configs/covalent.config'
+import { Crisp } from '../configs/crisp.config'
 import { Cronhooks } from '../configs/cronhooks.config'
 import { Cronhub } from '../configs/cronhub.config'
 import { CSVBox } from '../configs/csvbox.config'
@@ -347,6 +348,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['countapi', CountApi.API],
 ['courier', Courier.API],
 ['covalent', Covalent.API],
+['crisp', Crisp.API],
 ['cronhooks', Cronhooks.API],
 ['cronhub', Cronhub.API],
 ['csvbox', CSVBox.API],

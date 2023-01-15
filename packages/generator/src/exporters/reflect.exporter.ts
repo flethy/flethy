@@ -61,6 +61,7 @@ import { CosmicJS } from '../../../connectors/src/configs/cosmicjs.config'
 import { CountApi } from '../../../connectors/src/configs/countapi.config'
 import { Courier } from '../../../connectors/src/configs/courier.config'
 import { Covalent } from '../../../connectors/src/configs/covalent.config'
+import { Crisp } from '../../../connectors/src/configs/crisp.config'
 import { Cronhooks } from '../../../connectors/src/configs/cronhooks.config'
 import { Cronhub } from '../../../connectors/src/configs/cronhub.config'
 import { CSVBox } from '../../../connectors/src/configs/csvbox.config'
@@ -431,6 +432,9 @@ configTypes.push({type: getType<Courier.Send>(), id: 'courier', name: 'Courier',
 configTypes.push({type: getType<Covalent.ClassAGetTransactionsForAddress>(), id: 'covalent', name: 'Covalent', interface: 'ClassAGetTransactionsForAddress'})
 configTypes.push({type: getType<Covalent.ClassBGetUniswapV3Pools>(), id: 'covalent', name: 'Covalent', interface: 'ClassBGetUniswapV3Pools'})
 configTypes.push({type: getType<Covalent.PricingGetHistoricalTokenPrices>(), id: 'covalent', name: 'Covalent', interface: 'PricingGetHistoricalTokenPrices'})
+configTypes.push({type: getType<Crisp.CheckIfWebsiteExists>(), id: 'crisp', name: 'Crisp', interface: 'CheckIfWebsiteExists'})
+configTypes.push({type: getType<Crisp.CreateWebsite>(), id: 'crisp', name: 'Crisp', interface: 'CreateWebsite'})
+configTypes.push({type: getType<Crisp.ListPeopleProfiles>(), id: 'crisp', name: 'Crisp', interface: 'ListPeopleProfiles'})
 configTypes.push({type: getType<Cronhooks.ScheduleNewWebhool>(), id: 'cronhooks', name: 'Cronhooks', interface: 'ScheduleNewWebhool'})
 configTypes.push({type: getType<Cronhub.ListSchedulers>(), id: 'cronhub', name: 'Cronhub', interface: 'ListSchedulers'})
 configTypes.push({type: getType<Cronhub.GetScheduler>(), id: 'cronhub', name: 'Cronhub', interface: 'GetScheduler'})

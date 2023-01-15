@@ -1,0 +1,74 @@
+{
+  "name": "Crisp IM",
+  "domain": "crisp.chat",
+  "claimed": false,
+  "description": "Crisp is the best way to chat with your website visitors.",
+  "links": [
+    {
+      "name": "youtube",
+      "url": "https://youtube.com/channel/UCBgCqEfwt_454jVG7qpi_KQ"
+    },
+    { "name": "twitter", "url": "https://twitter.com/crisp_im" },
+    { "name": "linkedin", "url": "https://linkedin.com/company/10945591" },
+    { "name": "facebook", "url": "https://facebook.com/crispchat" }
+  ],
+  "logos": [
+    {
+      "type": "icon",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idCzlMzIQx/idnoMA7S9U.png",
+          "background": null,
+          "format": "png",
+          "height": 400,
+          "width": 400,
+          "size": 21035
+        }
+      ]
+    },
+    {
+      "type": "logo",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idCzlMzIQx/id8zMIjOoD.png",
+          "background": null,
+          "format": "png",
+          "height": 144,
+          "width": 144,
+          "size": 4971
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#1e2e3e", "type": "dark", "brightness": 44 },
+    { "hex": "#f2f4f6", "type": "light", "brightness": 244 },
+    { "hex": "#226ef2", "type": "accent", "brightness": 103 }
+  ],
+  "fonts": [
+    {
+      "name": "Crisp Graphik Regular",
+      "type": "body",
+      "origin": "custom",
+      "originId": null,
+      "weights": []
+    }
+  ],
+  "images": [
+    {
+      "type": "banner",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idCzlMzIQx/id8dzjdv_0.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 500,
+          "width": 1500,
+          "size": 86370
+        }
+      ]
+    }
+  ]
+}

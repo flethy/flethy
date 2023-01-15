@@ -273,6 +273,7 @@ import Yapily from '@flethy/connectors/src/configs/yapily.config'
 import { HttpRequest } from './controllers/HttpRequest'
 import { logger } from './utils/Logger'
 import PirateWeather from '@flethy/connectors/src/configs/pirateweather.config'
+import Crisp from '@flethy/connectors/src/configs/crisp.config'
 
 async function main() {
   const requestConfigs: {
@@ -3695,8 +3696,34 @@ Here you find all the available integrations`,
       'auth:api-key': process.env.PIRATEWEATHER_API_KEY,
       'param:location': '52.520008,13.404954',
     }),
+    crispWebsiteCheck: nao<Crisp.CheckIfWebsiteExists>({
+      kind: 'crisp.base.websiteCheck',
+      'auth:Authorization': {
+        username: process.env.CRISP_ID,
+        password: process.env.CRISP_KEY,
+      },
+      'query:domain': 'flethy.com',
+    }),
+    crispCreateWebsite: nao<Crisp.CreateWebsite>({
+      kind: 'crisp.base.createWebsite',
+      'auth:Authorization': {
+        username: process.env.CRISP_ID,
+        password: process.env.CRISP_KEY,
+      },
+      'body:name': 'flethy',
+      'body:domain': 'flethy.com',
+    }),
+    crispListPeople: nao<Crisp.ListPeopleProfiles>({
+      kind: 'crisp.people.list',
+      'auth:Authorization': {
+        username: process.env.CRISP_ID,
+        password: process.env.CRISP_KEY,
+      },
+      'param:website_id': '',
+      'param:page_number': '1',
+    }),
   }
-  const requestConfig = requestConfigs.pirateWeatherForecast
+  const requestConfig = requestConfigs.crispCreateWebsite
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)
