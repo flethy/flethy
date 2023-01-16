@@ -1,0 +1,24 @@
+# DebugBear
+
+## Links
+
+* URL: [https://www.debugbear.com/](https://www.debugbear.com/)
+* Documentation: [https://www.debugbear.com/docs/api](https://www.debugbear.com/docs/api)
+* Tags: web2
+* Category: infra
+* Type: other
+
+## API
+
+### Authentication
+
+* x-api-key: header
+
+### tests
+
+#### trigger
+
+##### Trigger Tests
+
+* Description: Trigger Tests
+* Docs: [https://www.debugbear.com/docs/api#using-the-http-api-directly](https://www.debugbear.com/docs/api#using-the-http-api-directly)

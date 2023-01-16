@@ -19,7 +19,6 @@
   "license": "ISC",
   "dependencies": {
     "@flethy/connectors": "workspace:*",
-    "axios": "1.1.3",
     "dotenv": "^16.0.3",
     "markdown-json": "^1.6.1",
     "node-fetch": "^3.3.0",

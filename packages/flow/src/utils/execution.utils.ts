@@ -1,6 +1,5 @@
 import { nao } from '@flethy/connectors'
 import { FetchParams } from '@flethy/connectors/dist/types/FetchParams.type'
-import axios from 'axios'
 import { FlowNode, FlowNodeResponse } from '../types/flow.types'
 
 export class ExecutionUtils {
@@ -11,13 +10,6 @@ export class ExecutionUtils {
   }
 
   private static async request(params: FetchParams): Promise<FlowNodeResponse> {
-    const axiosConfig = {
-      method: params.method,
-      url: params.url,
-      headers: params.headers,
-      data: params.body,
-    }
-
     const nodeResponse: FlowNodeResponse = {
       data: {},
       ts: 0,
@@ -26,19 +18,14 @@ export class ExecutionUtils {
     }
 
     try {
-      if (typeof fetch === 'function') {
-        const response = await fetch(params.url, {
-          method: params.method,
-          headers: params.headers,
-          body: JSON.stringify(params.body),
-        })
+      const response = await fetch(params.url, {
+        method: params.method,
+        headers: params.headers,
+        body: JSON.stringify(params.body),
+      })
 
-        if (!params.responseType || params.responseType === 'json') {
-          nodeResponse.data = await response.json()
-        }
-      } else {
-        const response = await axios(axiosConfig)
-        nodeResponse.data = response.data
+      if (!params.responseType || params.responseType === 'json') {
+        nodeResponse.data = await response.json()
       }
     } catch (error: any) {
       nodeResponse.error = error

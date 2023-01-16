@@ -95,6 +95,7 @@ The following Endpoints are currently supported.
 * [Dataddo](./api/dataddo.md)
 * [DataDog](./api/datadog.md)
 * [DatoCMS](./api/datocms.md)
+* [DebugBear](./api/debugbear.md)
 * [Deepgram](./api/deepgram.md)
 * [DeepL](./api/deepl.md)
 * [DevCycle](./api/devcycle.md)

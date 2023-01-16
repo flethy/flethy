@@ -1,4 +1,3 @@
-import axios from 'axios'
 import {
   InputData,
   jsonInputForTargetLanguage,
@@ -9,19 +8,21 @@ import { logger } from '../utils/Logger'
 
 export class HttpRequest {
   public static async request(params: FetchParams) {
-    const axiosConfig = {
-      method: params.method,
-      url: params.url,
-      headers: params.headers,
-      data: params.body,
-      responseType: params.responseType,
-    }
-
     try {
-      const response = await axios(axiosConfig)
+      const response = await fetch(params.url, {
+        method: params.method,
+        headers: params.headers,
+        body: JSON.stringify(params.body),
+      })
 
-      const data = response.data
-      return data
+      let nodeResponse: any = {}
+
+      if (!params.responseType || params.responseType === 'json') {
+        nodeResponse = await response.json()
+      }
+      // const response = await axios(axiosConfig)
+
+      return nodeResponse
     } catch (error) {
       logger.error(error.message)
       logger.error(error.response.data)

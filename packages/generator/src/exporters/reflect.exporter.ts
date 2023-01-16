@@ -71,6 +71,7 @@ import { Cuttly } from '../../../connectors/src/configs/cuttly.config'
 import { Dataddo } from '../../../connectors/src/configs/dataddo.config'
 import { DataDog } from '../../../connectors/src/configs/datadog.config'
 import { DatoCMS } from '../../../connectors/src/configs/datocms.config'
+import { DebugBear } from '../../../connectors/src/configs/debugbear.config'
 import { Deepgram } from '../../../connectors/src/configs/deepgram.config'
 import { DeepL } from '../../../connectors/src/configs/deepl.config'
 import { DevCycle } from '../../../connectors/src/configs/devcycle.config'
@@ -458,6 +459,7 @@ configTypes.push({type: getType<DataDog.ValidateApiKey>(), id: 'datadog', name: 
 configTypes.push({type: getType<DataDog.PostEvent>(), id: 'datadog', name: 'DataDog', interface: 'PostEvent'})
 configTypes.push({type: getType<DataDog.ListEvents>(), id: 'datadog', name: 'DataDog', interface: 'ListEvents'})
 configTypes.push({type: getType<DatoCMS.Query>(), id: 'datocms', name: 'DatoCMS', interface: 'Query'})
+configTypes.push({type: getType<DebugBear.TriggerTests>(), id: 'debugbear', name: 'DebugBear', interface: 'TriggerTests'})
 configTypes.push({type: getType<Deepgram.TranscribePrerecordedAudio>(), id: 'deepgram', name: 'Deepgram', interface: 'TranscribePrerecordedAudio'})
 configTypes.push({type: getType<DeepL.TranslatingRequest>(), id: 'deepl', name: 'DeepL', interface: 'TranslatingRequest'})
 configTypes.push({type: getType<DeepL.GlossaryListLanguagePairs>(), id: 'deepl', name: 'DeepL', interface: 'GlossaryListLanguagePairs'})
