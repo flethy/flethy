@@ -108,6 +108,7 @@ export class ConfigsExporter {
     )
     exports.push(`export type { ConfigType } from './types/ConfigType.type'`)
     exports.push(`export { ConfigUtils } from './utils/Config.utils'`)
+    exports.push(`export { FetchParams } from './types/FetchParams.type'`)
     const constantContent: string[] = [...imports, '']
     constantContent.push(
       `export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, ApiDescription<any, any>>([`

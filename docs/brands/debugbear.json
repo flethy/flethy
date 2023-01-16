@@ -1,0 +1,44 @@
+{
+  "name": null,
+  "domain": "debugbear.com",
+  "claimed": false,
+  "description": null,
+  "links": [],
+  "logos": [
+    {
+      "type": "icon",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idT9l079jA/id_-9WknnT.png",
+          "background": null,
+          "format": "png",
+          "height": 400,
+          "width": 400,
+          "size": 50503
+        }
+      ]
+    },
+    {
+      "type": "logo",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idT9l079jA/idI-eSN5oE.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 73,
+          "width": 70,
+          "size": 6648
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#044161", "type": "dark", "brightness": 54 },
+    { "hex": "#b3d7ff", "type": "light", "brightness": 210 },
+    { "hex": "#bb803a", "type": "accent", "brightness": 135 }
+  ],
+  "fonts": [],
+  "images": []
+}

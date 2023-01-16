@@ -71,6 +71,7 @@ import { Cuttly } from '../configs/cuttly.config'
 import { Dataddo } from '../configs/dataddo.config'
 import { DataDog } from '../configs/datadog.config'
 import { DatoCMS } from '../configs/datocms.config'
+import { DebugBear } from '../configs/debugbear.config'
 import { Deepgram } from '../configs/deepgram.config'
 import { DeepL } from '../configs/deepl.config'
 import { DevCycle } from '../configs/devcycle.config'
@@ -358,6 +359,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['dataddo', Dataddo.API],
 ['datadog', DataDog.API],
 ['datocms', DatoCMS.API],
+['debugbear', DebugBear.API],
 ['deepgram', Deepgram.API],
 ['deepl', DeepL.API],
 ['devcycle', DevCycle.API],

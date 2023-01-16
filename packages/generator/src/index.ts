@@ -274,6 +274,7 @@ import { HttpRequest } from './controllers/HttpRequest'
 import { logger } from './utils/Logger'
 import PirateWeather from '@flethy/connectors/src/configs/pirateweather.config'
 import Crisp from '@flethy/connectors/src/configs/crisp.config'
+import DebugBear from '@flethy/connectors/src/configs/debugbear.config'
 
 async function main() {
   const requestConfigs: {
@@ -3722,8 +3723,15 @@ Here you find all the available integrations`,
       'param:website_id': '',
       'param:page_number': '1',
     }),
+    debugbearTriggerTests: nao<DebugBear.TriggerTests>({
+      kind: 'debugbear.tests.trigger',
+      'auth:x-api-key': process.env.DEBUGBEAR_API_KEY,
+      'param:pageId': process.env.DEBUGBEAR_PAGE_ID,
+      'body:buildTitle': 'Test build',
+      'body:url': 'https://flethy.com',
+    }),
   }
-  const requestConfig = requestConfigs.crispCreateWebsite
+  const requestConfig = requestConfigs.debugbearTriggerTests
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

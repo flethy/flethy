@@ -574,4 +574,14 @@ export const FLOWS = {
       'param:page_number': '->context.input.pageNumber->string',
     },
   ],
+  'trigger-tests-with-debugbear': [
+    {
+      id: 'debugbear',
+      kind: 'debugbear.tests.trigger',
+      'auth:x-api-key': '==>secrets==>DEBUGBEAR_API_KEY',
+      'param:pageId': '->context.input.pageId->string',
+      'body:buildTitle': '->context.input.buildTitle->string',
+      'body:url': '->context.input.url->string',
+    },
+  ],
 }
