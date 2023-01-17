@@ -275,6 +275,7 @@ import { logger } from './utils/Logger'
 import PirateWeather from '@flethy/connectors/src/configs/pirateweather.config'
 import Crisp from '@flethy/connectors/src/configs/crisp.config'
 import DebugBear from '@flethy/connectors/src/configs/debugbear.config'
+import Upstash from '@flethy/connectors/src/configs/upstash.config'
 
 async function main() {
   const requestConfigs: {
@@ -3730,8 +3731,31 @@ Here you find all the available integrations`,
       'body:buildTitle': 'Test build',
       'body:url': 'https://flethy.com',
     }),
+    upstashCreateRedis: nao<Upstash.CreateRedisDatabase>({
+      kind: 'upstash.redis.create',
+      'auth:Authorization': {
+        username: process.env.UPSTASH_EMAIL,
+        password: process.env.UPSTASH_API_KEY,
+      },
+      'body:name': 'flethy',
+      'body:region': 'eu-west-1',
+      'body:tls': true,
+    }),
+    upstashListRedis: nao<Upstash.ListRedisDatabases>({
+      kind: 'upstash.redis.list',
+      'auth:Authorization': {
+        username: process.env.UPSTASH_EMAIL,
+        password: process.env.UPSTASH_API_KEY,
+      },
+    }),
+    upstashPostRedisCommand: nao<Upstash.PostCommandToRedisDatabases>({
+      kind: 'upstash.redis.postCommand',
+      'auth:Authorization': process.env.UPSTASH_REDIS_KEY,
+      'subdomain:redisId': process.env.UPSTASH_REDIS_ENDPOINT,
+      'body:body': ['SET', 'foo', 'bar', 'EX', 100],
+    }),
   }
-  const requestConfig = requestConfigs.debugbearTriggerTests
+  const requestConfig = requestConfigs.upstashPostRedisCommand
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

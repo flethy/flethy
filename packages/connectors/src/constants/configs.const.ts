@@ -263,6 +263,7 @@ import { Unavatar } from '../configs/unavatar.config'
 import { Unlayer } from '../configs/unlayer.config'
 import { Unsplash } from '../configs/unsplash.config'
 import { Up42 } from '../configs/up42.config'
+import { Upstash } from '../configs/upstash.config'
 import { UptimeRobot } from '../configs/uptimerobot.config'
 import { UrlBae } from '../configs/urlbae.config'
 import { UrlScan } from '../configs/urlscan.config'
@@ -551,6 +552,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['unlayer', Unlayer.API],
 ['unsplash', Unsplash.API],
 ['up42', Up42.API],
+['upstash', Upstash.API],
 ['uptimerobot', UptimeRobot.API],
 ['urlbae', UrlBae.API],
 ['urlscan', UrlScan.API],

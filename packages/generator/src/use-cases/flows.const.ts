@@ -584,4 +584,13 @@ export const FLOWS = {
       'body:url': '->context.input.url->string',
     },
   ],
+  'post-command-to-redis-with-upstash': [
+    {
+      id: 'upstash',
+      kind: 'upstash.redis.postCommand',
+      'auth:Authorization': '==>secrets==>UPSTASH_REDIS_TOKEN',
+      'subdomain:redisId': '==>env==>UPSTASH_REDIS_ENDPOINT',
+      'body:body': '->context.input.commands->any',
+    },
+  ],
 }

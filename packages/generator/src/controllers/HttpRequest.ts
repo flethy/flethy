@@ -18,15 +18,21 @@ export class HttpRequest {
       let nodeResponse: any = {}
 
       if (!params.responseType || params.responseType === 'json') {
-        nodeResponse = await response.json()
+        try {
+          nodeResponse = await response.json()
+        } catch (error) {
+          logger.info(nodeResponse)
+          logger.error(error)
+          throw error
+        }
       }
       // const response = await axios(axiosConfig)
 
       return nodeResponse
     } catch (error) {
-      logger.error(error.message)
-      logger.error(error.response.data)
-      logger.error(error.response.config.headers)
+      logger.error(error)
+      // logger.error(error.response.data)
+      // logger.error(error.response.config.headers)
       // logger.error(error.response.data.errors)
       // logger.error(Object.keys(error))
     }

@@ -1077,6 +1077,10 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://flethy.com/integrations/upstash</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://flethy.com/integrations/uptimerobot</loc>
     <priority>0.8</priority>
   </url>
@@ -1302,6 +1306,10 @@
   </url>
   <url>
     <loc>https://flethy.com/use-cases/list-tasks-from-bugherd</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://flethy.com/use-cases/post-command-to-redis-with-upstash</loc>
     <priority>0.8</priority>
   </url>
   <url>

@@ -277,6 +277,7 @@ The following Endpoints are currently supported.
 * [Unlayer](./api/unlayer.md)
 * [Unsplash](./api/unsplash.md)
 * [Up42](./api/up42.md)
+* [Upstash](./api/upstash.md)
 * [UptimeRobot](./api/uptimerobot.md)
 * [UrlBae](./api/urlbae.md)
 * [UrlScan](./api/urlscan.md)
