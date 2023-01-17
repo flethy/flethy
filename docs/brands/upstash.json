@@ -1,0 +1,66 @@
+{
+  "name": "Upstash",
+  "domain": "upstash.com",
+  "claimed": false,
+  "description": "Designed for the serverless with per-request pricing and Redis API on durable storage.",
+  "links": [{ "name": "twitter", "url": "https://twitter.com/upstash" }],
+  "logos": [
+    {
+      "type": "icon",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idJMUEUCM4/ididPfClat.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 400,
+          "width": 400,
+          "size": 11422
+        }
+      ]
+    },
+    {
+      "type": "logo",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idJMUEUCM4/idbrrOTyDN.png",
+          "background": null,
+          "format": "png",
+          "height": 180,
+          "width": 180,
+          "size": 4107
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#050505", "type": "dark", "brightness": 5 },
+    { "hex": "#fc8181", "type": "light", "brightness": 155 },
+    { "hex": "#00e9a3", "type": "accent", "brightness": 178 }
+  ],
+  "fonts": [
+    {
+      "name": "var(--chakra-fonts-body)",
+      "type": "body",
+      "origin": "custom",
+      "originId": null,
+      "weights": []
+    }
+  ],
+  "images": [
+    {
+      "type": "banner",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idJMUEUCM4/idMy8S5nGq.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 500,
+          "width": 1500,
+          "size": 40338
+        }
+      ]
+    }
+  ]
+}
