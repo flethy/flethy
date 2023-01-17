@@ -1273,6 +1273,10 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://flethy.com/use-cases/list-articles-from-devto</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://flethy.com/use-cases/list-cards-from-privacycom</loc>
     <priority>0.8</priority>
   </url>

@@ -276,6 +276,7 @@ import PirateWeather from '@flethy/connectors/src/configs/pirateweather.config'
 import Crisp from '@flethy/connectors/src/configs/crisp.config'
 import DebugBear from '@flethy/connectors/src/configs/debugbear.config'
 import Upstash from '@flethy/connectors/src/configs/upstash.config'
+import DevTo from '@flethy/connectors/src/configs/devto.config'
 
 async function main() {
   const requestConfigs: {
@@ -3754,8 +3755,12 @@ Here you find all the available integrations`,
       'subdomain:redisId': process.env.UPSTASH_REDIS_ENDPOINT,
       'body:body': ['SET', 'foo', 'bar', 'EX', 100],
     }),
+    devtoListArticles: nao<DevTo.ListArticle>({
+      kind: 'devto.articles.list',
+      'query:username': 'urbanisierung',
+    }),
   }
-  const requestConfig = requestConfigs.upstashPostRedisCommand
+  const requestConfig = requestConfigs.devtoListArticles
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

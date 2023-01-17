@@ -593,4 +593,11 @@ export const FLOWS = {
       'body:body': '->context.input.commands->any',
     },
   ],
+  'list-articles-from-devto': [
+    {
+      id: 'devto',
+      kind: 'devto.articles.list',
+      'query:username': '->context.input.username->string',
+    },
+  ],
 }
