@@ -467,6 +467,7 @@ configTypes.push({type: getType<DeepL.GlossaryListLanguagePairs>(), id: 'deepl',
 configTypes.push({type: getType<DevCycle.Token>(), id: 'devcycle', name: 'DevCycle', interface: 'Token'})
 configTypes.push({type: getType<DevCycle.ListFeatures>(), id: 'devcycle', name: 'DevCycle', interface: 'ListFeatures'})
 configTypes.push({type: getType<DevTo.PostArticle>(), id: 'devto', name: 'DevTo', interface: 'PostArticle'})
+configTypes.push({type: getType<DevTo.ListArticle>(), id: 'devto', name: 'DevTo', interface: 'ListArticle'})
 configTypes.push({type: getType<Dhl.TrackingUnified>(), id: 'dhl', name: 'Dhl', interface: 'TrackingUnified'})
 configTypes.push({type: getType<Directus.Login>(), id: 'directus', name: 'Directus', interface: 'Login'})
 configTypes.push({type: getType<Directus.CreateCollection>(), id: 'directus', name: 'Directus', interface: 'CreateCollection'})

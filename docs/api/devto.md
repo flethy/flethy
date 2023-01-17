@@ -22,3 +22,10 @@
 
 * Description: This endpoint allows the client to create a new article.
 * Docs: [https://developers.forem.com/api#operation/createArticle](https://developers.forem.com/api#operation/createArticle)
+
+#### list
+
+##### Published articles
+
+* Description: This endpoint allows the client to retrieve a list of articles.
+* Docs: [https://developers.forem.com/api/v1#tag/articles/operation/getArticles](https://developers.forem.com/api/v1#tag/articles/operation/getArticles)
