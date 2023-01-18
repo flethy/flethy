@@ -12,7 +12,7 @@ export class HttpRequest {
       const response = await fetch(params.url, {
         method: params.method,
         headers: params.headers,
-        body: JSON.stringify(params.body),
+        body: params.body ? JSON.stringify(params.body) : undefined,
       })
 
       let nodeResponse: any = {}
@@ -21,6 +21,8 @@ export class HttpRequest {
         try {
           nodeResponse = await response.json()
         } catch (error) {
+          const textResponse = await response.text()
+          logger.info(textResponse)
           logger.info(nodeResponse)
           logger.error(error)
           throw error

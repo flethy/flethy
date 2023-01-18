@@ -1,0 +1,46 @@
+# FlareNetwork
+
+## Links
+
+* URL: [https://flare.network/](https://flare.network/)
+* Documentation: [https://api-portal.flare.network/apis](https://api-portal.flare.network/apis)
+* Tags: web3
+* Category: aggregation
+* Type: other
+
+## API
+
+### ethereum
+
+#### prysmValidatorBalances
+
+##### Authentication
+
+* x-apikey: header
+
+##### Get validator balances
+
+* Description: Get validator balances
+* Docs: [https://api-portal.flare.network/api/23/1/overview](https://api-portal.flare.network/api/23/1/overview)
+
+#### prysmBlockHeaders
+
+##### Authentication
+
+* x-apikey: header
+
+##### Get block headers
+
+* Description: Get block headers
+* Docs: [https://api-portal.flare.network/api/23/1/overview](https://api-portal.flare.network/api/23/1/overview)
+
+#### geth
+
+##### Authentication
+
+* x-apikey: header
+
+##### Geth
+
+* Description: Geth
+* Docs: [https://api-portal.flare.network/api/23/1/overview](https://api-portal.flare.network/api/23/1/overview)

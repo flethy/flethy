@@ -179,15 +179,19 @@ import Close from '@flethy/connectors/src/configs/close.config'
 import Codat from '@flethy/connectors/src/configs/codat.config'
 import Contentchef from '@flethy/connectors/src/configs/contentchef.config'
 import CosmicJS from '@flethy/connectors/src/configs/cosmicjs.config'
+import Crisp from '@flethy/connectors/src/configs/crisp.config'
 import Cronhub from '@flethy/connectors/src/configs/cronhub.config'
 import CSVBox from '@flethy/connectors/src/configs/csvbox.config'
 import Cumul from '@flethy/connectors/src/configs/cumul.config'
 import Cuttly from '@flethy/connectors/src/configs/cuttly.config'
 import Dataddo from '@flethy/connectors/src/configs/dataddo.config'
+import DebugBear from '@flethy/connectors/src/configs/debugbear.config'
 import Deepgram from '@flethy/connectors/src/configs/deepgram.config'
+import DevTo from '@flethy/connectors/src/configs/devto.config'
 import Duply from '@flethy/connectors/src/configs/duply.config'
 import Festdays from '@flethy/connectors/src/configs/festdays.config'
 import FireHydrant from '@flethy/connectors/src/configs/firehydrant.config'
+import FlareNetwork from '@flethy/connectors/src/configs/flarenetwork.config'
 import Flatfile from '@flethy/connectors/src/configs/flatfile.config'
 import Fleek from '@flethy/connectors/src/configs/fleek.config'
 import FootballPredictionAPI from '@flethy/connectors/src/configs/footballpredictionapi.config'
@@ -227,6 +231,7 @@ import ORBIntelligence from '@flethy/connectors/src/configs/orbintelligence.conf
 import Pendo from '@flethy/connectors/src/configs/pendo.config'
 import Permitio from '@flethy/connectors/src/configs/permitio.config'
 import Phyllo from '@flethy/connectors/src/configs/phyllo.config'
+import PirateWeather from '@flethy/connectors/src/configs/pirateweather.config'
 import Pirsch from '@flethy/connectors/src/configs/pirsch.config'
 import Prepr from '@flethy/connectors/src/configs/prepr.config'
 import Prerender from '@flethy/connectors/src/configs/prerender.config'
@@ -258,6 +263,7 @@ import Tinybird from '@flethy/connectors/src/configs/tinybird.config'
 import TinyURL from '@flethy/connectors/src/configs/tinyurl.config'
 import TLDRtech from '@flethy/connectors/src/configs/tldrtech.config'
 import Twitter from '@flethy/connectors/src/configs/twitter.config'
+import Upstash from '@flethy/connectors/src/configs/upstash.config'
 import UrlBae from '@flethy/connectors/src/configs/urlbae.config'
 import Userfront from '@flethy/connectors/src/configs/userfront.config'
 import Vantevo from '@flethy/connectors/src/configs/vantevo.config'
@@ -272,11 +278,6 @@ import WriteSonic from '@flethy/connectors/src/configs/writesonic.config'
 import Yapily from '@flethy/connectors/src/configs/yapily.config'
 import { HttpRequest } from './controllers/HttpRequest'
 import { logger } from './utils/Logger'
-import PirateWeather from '@flethy/connectors/src/configs/pirateweather.config'
-import Crisp from '@flethy/connectors/src/configs/crisp.config'
-import DebugBear from '@flethy/connectors/src/configs/debugbear.config'
-import Upstash from '@flethy/connectors/src/configs/upstash.config'
-import DevTo from '@flethy/connectors/src/configs/devto.config'
 
 async function main() {
   const requestConfigs: {
@@ -3759,8 +3760,24 @@ Here you find all the available integrations`,
       kind: 'devto.articles.list',
       'query:username': 'urbanisierung',
     }),
+    flareEthPrysmBalances: nao<FlareNetwork.EthereumPrysmGetValidatorBalances>({
+      kind: 'flarenetwork.ethereum.prysmValidatorBalances',
+      'auth:x-apikey': process.env.FLARE_KEY,
+    }),
+    flareEthPrysmBlockHeaders: nao<FlareNetwork.EthereumPrysmGetBlockHeaders>({
+      kind: 'flarenetwork.ethereum.prysmBlockHeaders',
+      'auth:x-apikey': process.env.FLARE_KEY,
+    }),
+    flareEthGeth: nao<FlareNetwork.EthereumPrysmGeth>({
+      kind: 'flarenetwork.ethereum.geth',
+      'auth:x-apikey': process.env.FLARE_KEY,
+      'body:jsonrpc': '2.0',
+      'body:method': 'eth_getBalance',
+      'body:params': ['0x1Cab270555A15320fAc9326ce7ff05F5D8ddD4cA', 'latest'],
+      'body:id': 0,
+    }),
   }
-  const requestConfig = requestConfigs.devtoListArticles
+  const requestConfig = requestConfigs.flareEthPrysmBlockHeaders
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

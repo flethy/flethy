@@ -600,4 +600,15 @@ export const FLOWS = {
       'query:username': '->context.input.username->string',
     },
   ],
+  'get-balance-of-wallet-with-flare-network': [
+    {
+      id: 'flarenetwork',
+      kind: 'flarenetwork.ethereum.geth',
+      'auth:x-apikey': '==>secrets==>FLARE_KEY',
+      'body:jsonrpc': '2.0',
+      'body:method': 'eth_getBalance',
+      'body:params': '->context.input.params->any',
+      'body:id': 0,
+    },
+  ],
 }

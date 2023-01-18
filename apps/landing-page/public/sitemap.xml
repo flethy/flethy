@@ -389,6 +389,10 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://flethy.com/integrations/flarenetwork</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://flethy.com/integrations/flatfile</loc>
     <priority>0.8</priority>
   </url>
@@ -1233,6 +1237,10 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://flethy.com/use-cases/get-balance-of-wallet-with-flare-network</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://flethy.com/use-cases/get-content-from-buttercms</loc>
     <priority>0.8</priority>
   </url>
@@ -1258,10 +1266,6 @@
   </url>
   <url>
     <loc>https://flethy.com/use-cases/get-feature-flags-with-devcycle</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://flethy.com/use-cases/get-feature-flags-with-permitio</loc>
     <priority>0.8</priority>
   </url>
   <url>

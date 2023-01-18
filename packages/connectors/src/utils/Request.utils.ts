@@ -291,6 +291,10 @@ export class HttpRequestConfig {
         .join('&')
     }
 
+    if (options.endpoint.options?.emptyBody === true) {
+      delete config.body
+    }
+
     // REQUEST
     const queryParameters = queryParams.toString()
     if (queryParameters?.length > 0) {

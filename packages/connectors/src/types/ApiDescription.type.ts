@@ -59,6 +59,7 @@ export interface ApiDescriptionEndpoint {
 
 export interface ApiDescriptionEndpointOptions {
   pathTailingSlash?: boolean
+  emptyBody?: boolean
 }
 
 export interface ApiDescriptionEndpointParam {

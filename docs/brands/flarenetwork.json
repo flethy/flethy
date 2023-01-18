@@ -1,0 +1,77 @@
+{
+  "name": "Flare Network",
+  "domain": "flare.network",
+  "claimed": false,
+  "description": "Flare Network is a new blockchain network based on the Flare Consensus Protocol.",
+  "links": [
+    { "name": "github", "url": "https://github.com/flare-eng" },
+    { "name": "twitter", "url": "https://twitter.com/FlareNetworks" },
+    { "name": "linkedin", "url": "https://linkedin.com/company/flarenetwork" }
+  ],
+  "logos": [
+    {
+      "type": "icon",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idlB91Luc6/idiuCKljDL.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 400,
+          "width": 400,
+          "size": 9170
+        }
+      ]
+    },
+    {
+      "type": "logo",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idlB91Luc6/ide9B6V2wI.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 414,
+          "width": 820,
+          "size": 13459
+        },
+        {
+          "src": "https://asset.brandfetch.io/idlB91Luc6/idZQ3QEhpW.svg",
+          "background": "transparent",
+          "format": "svg",
+          "height": null,
+          "width": null,
+          "size": 2055
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#363a69", "type": "dark", "brightness": 61 },
+    { "hex": "#ffffff", "type": "light", "brightness": 255 }
+  ],
+  "fonts": [
+    {
+      "name": "Comfortaa",
+      "type": "body",
+      "origin": "google",
+      "originId": "Comfortaa",
+      "weights": []
+    }
+  ],
+  "images": [
+    {
+      "type": "banner",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idlB91Luc6/idOipNXmRE.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 500,
+          "width": 1500,
+          "size": 159851
+        }
+      ]
+    }
+  ]
+}
