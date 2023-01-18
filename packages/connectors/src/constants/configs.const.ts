@@ -91,6 +91,7 @@ import { Festdays } from '../configs/festdays.config'
 import { Fibery } from '../configs/fibery.config'
 import { Figma } from '../configs/figma.config'
 import { FireHydrant } from '../configs/firehydrant.config'
+import { FlareNetwork } from '../configs/flarenetwork.config'
 import { Flatfile } from '../configs/flatfile.config'
 import { Fleek } from '../configs/fleek.config'
 import { FootballPredictionAPI } from '../configs/footballpredictionapi.config'
@@ -380,6 +381,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['fibery', Fibery.API],
 ['figma', Figma.API],
 ['firehydrant', FireHydrant.API],
+['flarenetwork', FlareNetwork.API],
 ['flatfile', Flatfile.API],
 ['fleek', Fleek.API],
 ['footballpredictionapi', FootballPredictionAPI.API],

@@ -91,6 +91,7 @@ import { Festdays } from '../../../connectors/src/configs/festdays.config'
 import { Fibery } from '../../../connectors/src/configs/fibery.config'
 import { Figma } from '../../../connectors/src/configs/figma.config'
 import { FireHydrant } from '../../../connectors/src/configs/firehydrant.config'
+import { FlareNetwork } from '../../../connectors/src/configs/flarenetwork.config'
 import { Flatfile } from '../../../connectors/src/configs/flatfile.config'
 import { Fleek } from '../../../connectors/src/configs/fleek.config'
 import { FootballPredictionAPI } from '../../../connectors/src/configs/footballpredictionapi.config'
@@ -501,6 +502,9 @@ configTypes.push({type: getType<Figma.GetImages>(), id: 'figma', name: 'Figma', 
 configTypes.push({type: getType<Figma.GetImageFills>(), id: 'figma', name: 'Figma', interface: 'GetImageFills'})
 configTypes.push({type: getType<FireHydrant.ListIncidents>(), id: 'firehydrant', name: 'FireHydrant', interface: 'ListIncidents'})
 configTypes.push({type: getType<FireHydrant.CreateIncident>(), id: 'firehydrant', name: 'FireHydrant', interface: 'CreateIncident'})
+configTypes.push({type: getType<FlareNetwork.EthereumPrysmGetValidatorBalances>(), id: 'flarenetwork', name: 'FlareNetwork', interface: 'EthereumPrysmGetValidatorBalances'})
+configTypes.push({type: getType<FlareNetwork.EthereumPrysmGetBlockHeaders>(), id: 'flarenetwork', name: 'FlareNetwork', interface: 'EthereumPrysmGetBlockHeaders'})
+configTypes.push({type: getType<FlareNetwork.EthereumPrysmGeth>(), id: 'flarenetwork', name: 'FlareNetwork', interface: 'EthereumPrysmGeth'})
 configTypes.push({type: getType<Flatfile.ExchangeAccessKey>(), id: 'flatfile', name: 'Flatfile', interface: 'ExchangeAccessKey'})
 configTypes.push({type: getType<Flatfile.ListWorkspaces>(), id: 'flatfile', name: 'Flatfile', interface: 'ListWorkspaces'})
 configTypes.push({type: getType<Flatfile.DownloadUpload>(), id: 'flatfile', name: 'Flatfile', interface: 'DownloadUpload'})
