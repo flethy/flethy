@@ -286,9 +286,9 @@ export class HttpRequestConfig {
     }
 
     if (formData.length > 0) {
-      config.body = formData
-        .map((item) => `${item.key}=${item.value}`)
-        .join('&')
+      const updatedFormData = new URLSearchParams()
+      formData.forEach((item) => updatedFormData.append(item.key, item.value))
+      config.body = updatedFormData.toString()
     }
 
     if (options.endpoint.options?.emptyBody === true) {

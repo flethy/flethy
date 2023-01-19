@@ -178,6 +178,7 @@ import { OpenWeatherMap } from '../configs/openweathermap.config'
 import { ORBIntelligence } from '../configs/orbintelligence.config'
 import { Ortto } from '../configs/ortto.config'
 import { Ory } from '../configs/ory.config'
+import { Pangea } from '../configs/pangea.config'
 import { Parsiq } from '../configs/parsiq.config'
 import { PayPal } from '../configs/paypal.config'
 import { Peekalink } from '../configs/peekalink.config'
@@ -279,6 +280,7 @@ import { Web3Storage } from '../configs/web3storage.config'
 import { WebhookSite } from '../configs/webhooksite.config'
 import { WhoIsXMLApi } from '../configs/whoisxmlapi.config'
 import { WonderPush } from '../configs/wonderpush.config'
+import { WordPressCom } from '../configs/wordpresscom.config'
 import { WordsAPI } from '../configs/wordsapi.config'
 import { WordSimi } from '../configs/wordsimi.config'
 import { WorkOS } from '../configs/workos.config'
@@ -468,6 +470,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['orbintelligence', ORBIntelligence.API],
 ['ortto', Ortto.API],
 ['ory', Ory.API],
+['pangea', Pangea.API],
 ['parsiq', Parsiq.API],
 ['paypal', PayPal.API],
 ['peekalink', Peekalink.API],
@@ -569,6 +572,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['webhooksite', WebhookSite.API],
 ['whoisxmlapi', WhoIsXMLApi.API],
 ['wonderpush', WonderPush.API],
+['wordpresscom', WordPressCom.API],
 ['wordsapi', WordsAPI.API],
 ['wordsimi', WordSimi.API],
 ['workos', WorkOS.API],

@@ -1,0 +1,40 @@
+# Pangea
+
+## Links
+
+* URL: [https://pangea.cloud/](https://pangea.cloud/)
+* Documentation: [https://pangea.cloud/docs/api/](https://pangea.cloud/docs/api/)
+* Tags: web2
+* Category: infra
+* Type: other
+
+## API
+
+### Authentication
+
+* Authorization: header:bearer
+
+### embargo
+
+#### checkIp
+
+##### Check IP
+
+* Description: Check IP
+* Docs: [https://pangea.cloud/docs/api/embargo#check-ip](https://pangea.cloud/docs/api/embargo#check-ip)
+
+#### isoCheck
+
+##### ISO Code Check
+
+* Description: ISO Code Check
+* Docs: [https://pangea.cloud/docs/api/embargo#iso-code-check](https://pangea.cloud/docs/api/embargo#iso-code-check)
+
+### url
+
+#### lookup
+
+##### Look up a URL
+
+* Description: Look up a URL
+* Docs: [https://pangea.cloud/docs/api/url-intel#look-up-a-url](https://pangea.cloud/docs/api/url-intel#look-up-a-url)

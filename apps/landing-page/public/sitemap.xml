@@ -737,6 +737,10 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://flethy.com/integrations/pangea</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://flethy.com/integrations/parsiq</loc>
     <priority>0.8</priority>
   </url>
@@ -1141,6 +1145,10 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://flethy.com/integrations/wordpresscom</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://flethy.com/integrations/wordsapi</loc>
     <priority>0.8</priority>
   </url>
@@ -1189,6 +1197,10 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://flethy.com/use-cases/check-digital-export-restrictions-with-pangea</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://flethy.com/use-cases/create-a-lead-with-close</loc>
     <priority>0.8</priority>
   </url>
@@ -1214,6 +1226,10 @@
   </url>
   <url>
     <loc>https://flethy.com/use-cases/create-new-contact-in-sendinblue</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://flethy.com/use-cases/create-new-post-with-wordpresscom</loc>
     <priority>0.8</priority>
   </url>
   <url>
@@ -1278,6 +1294,10 @@
   </url>
   <url>
     <loc>https://flethy.com/use-cases/list-articles-from-devto</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://flethy.com/use-cases/list-articles-from-wordpresscom</loc>
     <priority>0.8</priority>
   </url>
   <url>

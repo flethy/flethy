@@ -278,6 +278,8 @@ import WriteSonic from '@flethy/connectors/src/configs/writesonic.config'
 import Yapily from '@flethy/connectors/src/configs/yapily.config'
 import { HttpRequest } from './controllers/HttpRequest'
 import { logger } from './utils/Logger'
+import Pangea from '@flethy/connectors/src/configs/pangea.config'
+import WordPressCom from '@flethy/connectors/src/configs/wordpresscom.config'
 
 async function main() {
   const requestConfigs: {
@@ -3776,8 +3778,50 @@ Here you find all the available integrations`,
       'body:params': ['0x1Cab270555A15320fAc9326ce7ff05F5D8ddD4cA', 'latest'],
       'body:id': 0,
     }),
+    pangeaCheckIp: nao<Pangea.CheckIP>({
+      kind: 'pangea.embargo.checkIp',
+      'auth:Authorization': process.env.PANGEA_TOKEN,
+      'body:ip': process.env.PANGEA_IP,
+      'subdomain:csp': 'aws',
+      'subdomain:region': 'eu',
+    }),
+    pangeaIsoCheck: nao<Pangea.IsoCheck>({
+      kind: 'pangea.embargo.isoCheck',
+      'auth:Authorization': process.env.PANGEA_TOKEN,
+      'body:iso_code': 'de',
+      'subdomain:csp': 'aws',
+      'subdomain:region': 'eu',
+    }),
+    pangeaLookupUrl: nao<Pangea.LookupUrl>({
+      kind: 'pangea.url.lookup',
+      'auth:Authorization': process.env.PANGEA_TOKEN,
+      'body:url': 'https://flethy.com',
+      'subdomain:csp': 'aws',
+      'subdomain:region': 'eu',
+      'body:provider': 'crowdstrike',
+    }),
+    wordpressComAuth: nao<WordPressCom.TokenWithPasswordGrantType>({
+      kind: 'wordpresscom.auth.passwordGrant',
+      'header:Content-Type': 'application/x-www-form-urlencoded',
+      'bodyform:client_id': process.env.WPCOM_CLIENT_ID,
+      'bodyform:client_secret': process.env.WPCOM_CLIENT_SECRET,
+      'bodyform:grant_type': 'password',
+      'bodyform:username': process.env.WPCOM_USERNAME,
+      'bodyform:password': process.env.WPCOM_PASSWORD,
+    }),
+    wordpressComListPosts: nao<WordPressCom.ListPosts>({
+      kind: 'wordpresscom.posts.list',
+      'param:siteId': process.env.WPCOM_SITE,
+    }),
+    wordpressComCreatePost: nao<WordPressCom.CreatePost>({
+      kind: 'wordpresscom.posts.create',
+      'auth:Authorization': process.env.WPCOM_TOKEN,
+      'param:siteId': process.env.WPCOM_SITE,
+      'body:title': 'Aaaaawsooome!',
+      'body:content': 'This is a post from flethy!',
+    }),
   }
-  const requestConfig = requestConfigs.flareEthPrysmBlockHeaders
+  const requestConfig = requestConfigs.wordpressComCreatePost
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)
