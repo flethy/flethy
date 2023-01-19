@@ -178,6 +178,7 @@ import { OpenWeatherMap } from '../../../connectors/src/configs/openweathermap.c
 import { ORBIntelligence } from '../../../connectors/src/configs/orbintelligence.config'
 import { Ortto } from '../../../connectors/src/configs/ortto.config'
 import { Ory } from '../../../connectors/src/configs/ory.config'
+import { Pangea } from '../../../connectors/src/configs/pangea.config'
 import { Parsiq } from '../../../connectors/src/configs/parsiq.config'
 import { PayPal } from '../../../connectors/src/configs/paypal.config'
 import { Peekalink } from '../../../connectors/src/configs/peekalink.config'
@@ -279,6 +280,7 @@ import { Web3Storage } from '../../../connectors/src/configs/web3storage.config'
 import { WebhookSite } from '../../../connectors/src/configs/webhooksite.config'
 import { WhoIsXMLApi } from '../../../connectors/src/configs/whoisxmlapi.config'
 import { WonderPush } from '../../../connectors/src/configs/wonderpush.config'
+import { WordPressCom } from '../../../connectors/src/configs/wordpresscom.config'
 import { WordsAPI } from '../../../connectors/src/configs/wordsapi.config'
 import { WordSimi } from '../../../connectors/src/configs/wordsimi.config'
 import { WorkOS } from '../../../connectors/src/configs/workos.config'
@@ -688,6 +690,9 @@ configTypes.push({type: getType<ORBIntelligence.CorpTree>(), id: 'orbintelligenc
 configTypes.push({type: getType<ORBIntelligence.Dictionaries>(), id: 'orbintelligence', name: 'ORBIntelligence', interface: 'Dictionaries'})
 configTypes.push({type: getType<Ortto.RetrieveOneOrMorePeople>(), id: 'ortto', name: 'Ortto', interface: 'RetrieveOneOrMorePeople'})
 configTypes.push({type: getType<Ory.ListOAuth2Clients>(), id: 'ory', name: 'Ory', interface: 'ListOAuth2Clients'})
+configTypes.push({type: getType<Pangea.CheckIP>(), id: 'pangea', name: 'Pangea', interface: 'CheckIP'})
+configTypes.push({type: getType<Pangea.IsoCheck>(), id: 'pangea', name: 'Pangea', interface: 'IsoCheck'})
+configTypes.push({type: getType<Pangea.LookupUrl>(), id: 'pangea', name: 'Pangea', interface: 'LookupUrl'})
 configTypes.push({type: getType<Parsiq.GetEvents>(), id: 'parsiq', name: 'Parsiq', interface: 'GetEvents'})
 configTypes.push({type: getType<Parsiq.GetSingleBlock>(), id: 'parsiq', name: 'Parsiq', interface: 'GetSingleBlock'})
 configTypes.push({type: getType<PayPal.AuthRequest>(), id: 'paypal', name: 'PayPal', interface: 'AuthRequest'})
@@ -900,6 +905,9 @@ configTypes.push({type: getType<WebhookSite.CoreDelete>(), id: 'webhooksite', na
 configTypes.push({type: getType<WhoIsXMLApi.DomainAvailability>(), id: 'whoisxmlapi', name: 'WhoIsXMLApi', interface: 'DomainAvailability'})
 configTypes.push({type: getType<WonderPush.ListUsers>(), id: 'wonderpush', name: 'WonderPush', interface: 'ListUsers'})
 configTypes.push({type: getType<WonderPush.ListNotifications>(), id: 'wonderpush', name: 'WonderPush', interface: 'ListNotifications'})
+configTypes.push({type: getType<WordPressCom.TokenWithPasswordGrantType>(), id: 'wordpresscom', name: 'WordPressCom', interface: 'TokenWithPasswordGrantType'})
+configTypes.push({type: getType<WordPressCom.ListPosts>(), id: 'wordpresscom', name: 'WordPressCom', interface: 'ListPosts'})
+configTypes.push({type: getType<WordPressCom.CreatePost>(), id: 'wordpresscom', name: 'WordPressCom', interface: 'CreatePost'})
 configTypes.push({type: getType<WordsAPI.GetAWord>(), id: 'wordsapi', name: 'WordsAPI', interface: 'GetAWord'})
 configTypes.push({type: getType<WordsAPI.GetWordDetails>(), id: 'wordsapi', name: 'WordsAPI', interface: 'GetWordDetails'})
 configTypes.push({type: getType<WordSimi.MostSimilarWords>(), id: 'wordsimi', name: 'WordSimi', interface: 'MostSimilarWords'})

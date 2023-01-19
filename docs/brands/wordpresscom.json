@@ -1,0 +1,102 @@
+{
+  "name": "WordPress.com",
+  "domain": "wordpress.com",
+  "claimed": false,
+  "description": "Easily create your website using our stunning templates & get your ideas online.",
+  "links": [
+    { "name": "twitter", "url": "https://twitter.com/wordpressdotcom" },
+    { "name": "instagram", "url": "https://instagram.com/wordpressdotcom" }
+  ],
+  "logos": [
+    {
+      "type": "logo",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idbnlnCBDY/idVOB5r3Nv.svg",
+          "background": "transparent",
+          "format": "svg",
+          "size": 3501
+        },
+        {
+          "src": "https://asset.brandfetch.io/idbnlnCBDY/idUDc9PAPI.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 169,
+          "width": 800,
+          "size": 12758
+        }
+      ]
+    },
+    {
+      "type": "symbol",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idbnlnCBDY/idj84BTSDt.svg",
+          "background": "transparent",
+          "format": "svg",
+          "size": 2233
+        },
+        {
+          "src": "https://asset.brandfetch.io/idbnlnCBDY/iddLy5Y5ZJ.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 800,
+          "width": 800,
+          "size": 35726
+        }
+      ]
+    },
+    {
+      "type": "icon",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idbnlnCBDY/idRx8p4PaU.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 400,
+          "width": 400,
+          "size": 13541
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#003c56", "type": "dark", "brightness": 49 },
+    { "hex": "#ffffff", "type": "light", "brightness": 255 },
+    { "hex": "#117ac9", "type": "accent", "brightness": 105 }
+  ],
+  "fonts": [
+    {
+      "name": "Recoleta",
+      "type": "title",
+      "origin": "custom",
+      "originId": null,
+      "weights": []
+    },
+    {
+      "name": "Noto Sans",
+      "type": "body",
+      "origin": "google",
+      "originId": "Noto+Sans",
+      "weights": []
+    }
+  ],
+  "images": [
+    {
+      "type": "banner",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idbnlnCBDY/idW4-gRaZo.png",
+          "background": null,
+          "format": "png",
+          "height": 500,
+          "width": 1500,
+          "size": 97233
+        }
+      ]
+    }
+  ]
+}

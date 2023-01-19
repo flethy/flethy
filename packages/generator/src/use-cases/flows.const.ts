@@ -611,4 +611,31 @@ export const FLOWS = {
       'body:id': 0,
     },
   ],
+  'check-digital-export-restrictions-with-pangea': [
+    {
+      id: 'pangea',
+      kind: 'pangea.embargo.checkIp',
+      'auth:Authorization': '==>secrets==>PANGEA_TOKEN',
+      'body:ip': '->context.input.ip->string',
+      'subdomain:csp': '==>env==>CSP',
+      'subdomain:region': '==>env==>REGION',
+    },
+  ],
+  'list-articles-from-wordpresscom': [
+    {
+      id: 'wordpresscom',
+      kind: 'wordpresscom.posts.list',
+      'param:siteId': '->context.input.site->string',
+    },
+  ],
+  'create-new-post-with-wordpresscom': [
+    {
+      id: 'wordpresscom',
+      kind: 'wordpresscom.posts.create',
+      'auth:Authorization': '==>secrets==>WPCOM_TOKEN',
+      'param:siteId': '->context.input.site->string',
+      'body:title': '->context.input.title->string',
+      'body:content': '->context.input.content->string',
+    },
+  ],
 }

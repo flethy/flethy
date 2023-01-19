@@ -1,0 +1,14 @@
+{
+  "name": "Pangea",
+  "domain": "pangea.cloud",
+  "claimed": false,
+  "description": "Pangea - Security APIs for Builders",
+  "links": [],
+  "logos": [],
+  "colors": [
+    { "hex": "#1d0b31", "type": "dark", "brightness": 18 },
+    { "hex": "#eae6ff", "type": "light", "brightness": 233 }
+  ],
+  "fonts": [],
+  "images": []
+}
