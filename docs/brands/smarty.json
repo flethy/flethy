@@ -1,0 +1,71 @@
+{
+  "name": "Smarty",
+  "domain": "smarty.com",
+  "claimed": false,
+  "description": "Address Verification for USPS & International Addresses. Try our easy-to-use APIs, list processing tools and more.",
+  "links": [
+    { "name": "twitter", "url": "https://twitter.com/smartystreets" },
+    { "name": "github", "url": "https://github.com/smartystreets" },
+    { "name": "linkedin", "url": "https://linkedin.com/company/smartystreets" },
+    { "name": "facebook", "url": "https://facebook.com/SmartyCompany" }
+  ],
+  "logos": [
+    {
+      "type": "logo",
+      "theme": "light",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idYiFyPfWO/idO-WSo6zm.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 230,
+          "width": 820,
+          "size": 24831
+        },
+        {
+          "src": "https://asset.brandfetch.io/idYiFyPfWO/idSJp5y1CS.svg",
+          "background": "transparent",
+          "format": "svg",
+          "height": 35,
+          "width": 125,
+          "size": 2140
+        }
+      ]
+    },
+    {
+      "type": "icon",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idYiFyPfWO/idhcQKaaYG.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 400,
+          "width": 400,
+          "size": 7892
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#6a80fa", "type": "accent", "brightness": 132 },
+    { "hex": "#242d4e", "type": "dark", "brightness": 45 },
+    { "hex": "#ffae4d", "type": "light", "brightness": 184 }
+  ],
+  "fonts": [],
+  "images": [
+    {
+      "type": "banner",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idYiFyPfWO/idNSecWTvy.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 500,
+          "width": 1500,
+          "size": 19971
+        }
+      ]
+    }
+  ]
+}

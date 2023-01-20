@@ -91,6 +91,7 @@ export type MARKETING_TYPE =
 export type AUTOMATION_TYPE = 'workflows' | 'decisions'
 export type UTILS_TYPE =
   | 'emailverification'
+  | 'address-verification'
   | 'documentsigning'
   | 'other'
   | 'calendar'

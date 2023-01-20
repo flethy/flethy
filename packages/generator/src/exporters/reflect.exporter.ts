@@ -234,6 +234,7 @@ import { Shrtcode } from '../../../connectors/src/configs/shrtcode.config'
 import { SideKick } from '../../../connectors/src/configs/sidekick.config'
 import { Sidemail } from '../../../connectors/src/configs/sidemail.config'
 import { Slack } from '../../../connectors/src/configs/slack.config'
+import { Smarty } from '../../../connectors/src/configs/smarty.config'
 import { Snappify } from '../../../connectors/src/configs/snappify.config'
 import { SpeechTextAI } from '../../../connectors/src/configs/speechtextai.config'
 import { Splitbee } from '../../../connectors/src/configs/splitbee.config'
@@ -805,6 +806,7 @@ configTypes.push({type: getType<Sidemail.SendEmail>(), id: 'sidemail', name: 'Si
 configTypes.push({type: getType<Slack.IncomingWebhooksMessage>(), id: 'slack', name: 'Slack', interface: 'IncomingWebhooksMessage'})
 configTypes.push({type: getType<Slack.ChatPostMessage>(), id: 'slack', name: 'Slack', interface: 'ChatPostMessage'})
 configTypes.push({type: getType<Slack.ConversationsList>(), id: 'slack', name: 'Slack', interface: 'ConversationsList'})
+configTypes.push({type: getType<Smarty.USStreetAddressAPI>(), id: 'smarty', name: 'Smarty', interface: 'USStreetAddressAPI'})
 configTypes.push({type: getType<Snappify.SimpleSnap>(), id: 'snappify', name: 'Snappify', interface: 'SimpleSnap'})
 configTypes.push({type: getType<SpeechTextAI.Recognize>(), id: 'speechtextai', name: 'SpeechTextAI', interface: 'Recognize'})
 configTypes.push({type: getType<SpeechTextAI.Results>(), id: 'speechtextai', name: 'SpeechTextAI', interface: 'Results'})

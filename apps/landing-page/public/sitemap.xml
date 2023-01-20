@@ -961,6 +961,10 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://flethy.com/integrations/smarty</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://flethy.com/integrations/snappify</loc>
     <priority>0.8</priority>
   </url>
@@ -1198,6 +1202,10 @@
   </url>
   <url>
     <loc>https://flethy.com/use-cases/check-digital-export-restrictions-with-pangea</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://flethy.com/use-cases/check-us-address-with-smarty</loc>
     <priority>0.8</priority>
   </url>
   <url>

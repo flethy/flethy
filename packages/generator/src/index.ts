@@ -280,6 +280,7 @@ import { HttpRequest } from './controllers/HttpRequest'
 import { logger } from './utils/Logger'
 import Pangea from '@flethy/connectors/src/configs/pangea.config'
 import WordPressCom from '@flethy/connectors/src/configs/wordpresscom.config'
+import Smarty from '@flethy/connectors/src/configs/smarty.config'
 
 async function main() {
   const requestConfigs: {
@@ -3820,8 +3821,29 @@ Here you find all the available integrations`,
       'body:title': 'Aaaaawsooome!',
       'body:content': 'This is a post from flethy!',
     }),
+    smartyUsAddress: nao<Smarty.USStreetAddressAPI>({
+      kind: 'smarty.cloud.usStreetAddress',
+      'auth:auth-id': process.env.SMARTY_AUTH_ID,
+      'auth:auth-token': process.env.SMARTY_AUTH_TOKEN,
+      'body:body': [
+        {
+          street: '1 Santa Claus',
+          city: 'North Pole',
+          state: 'AK',
+          candidates: 10,
+        },
+        {
+          addressee: 'Apple Inc',
+          street: '1 infinite loop',
+          city: 'cupertino',
+          state: 'CA',
+          zipcode: '95014',
+          candidates: 10,
+        },
+      ],
+    }),
   }
-  const requestConfig = requestConfigs.wordpressComCreatePost
+  const requestConfig = requestConfigs.smartyUsAddress
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)
