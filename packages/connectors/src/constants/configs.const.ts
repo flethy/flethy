@@ -234,6 +234,7 @@ import { Shrtcode } from '../configs/shrtcode.config'
 import { SideKick } from '../configs/sidekick.config'
 import { Sidemail } from '../configs/sidemail.config'
 import { Slack } from '../configs/slack.config'
+import { Smarty } from '../configs/smarty.config'
 import { Snappify } from '../configs/snappify.config'
 import { SpeechTextAI } from '../configs/speechtextai.config'
 import { Splitbee } from '../configs/splitbee.config'
@@ -526,6 +527,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['sidekick', SideKick.API],
 ['sidemail', Sidemail.API],
 ['slack', Slack.API],
+['smarty', Smarty.API],
 ['snappify', Snappify.API],
 ['speechtextai', SpeechTextAI.API],
 ['splitbee', Splitbee.API],

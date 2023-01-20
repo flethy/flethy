@@ -638,4 +638,13 @@ export const FLOWS = {
       'body:content': '->context.input.content->string',
     },
   ],
+  'check-us-address-with-smarty': [
+    {
+      id: 'smarty',
+      kind: 'smarty.cloud.usStreetAddress',
+      'auth:auth-id': '==>secrets==>SMARTY_AUTH_ID',
+      'auth:auth-token': '==>secrets==>SMARTY_AUTH_TOKEN',
+      'body:body': '->context.input.addresses->any',
+    },
+  ],
 }
