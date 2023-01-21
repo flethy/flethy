@@ -78,6 +78,7 @@ import { DevCycle } from '../configs/devcycle.config'
 import { DevTo } from '../configs/devto.config'
 import { Dhl } from '../configs/dhl.config'
 import { Directus } from '../configs/directus.config'
+import { Discord } from '../configs/discord.config'
 import { Disify } from '../configs/disify.config'
 import { Doppler } from '../configs/doppler.config'
 import { Duply } from '../configs/duply.config'
@@ -371,6 +372,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['devto', DevTo.API],
 ['dhl', Dhl.API],
 ['directus', Directus.API],
+['discord', Discord.API],
 ['disify', Disify.API],
 ['doppler', Doppler.API],
 ['duply', Duply.API],

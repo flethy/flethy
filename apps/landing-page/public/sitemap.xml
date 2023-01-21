@@ -337,6 +337,10 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://flethy.com/integrations/discord</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://flethy.com/integrations/disify</loc>
     <priority>0.8</priority>
   </url>
@@ -1362,6 +1366,10 @@
   </url>
   <url>
     <loc>https://flethy.com/use-cases/send-event-to-intercom</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://flethy.com/use-cases/send-message-to-discord-channel-with-webhook</loc>
     <priority>0.8</priority>
   </url>
   <url>

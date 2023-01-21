@@ -78,6 +78,7 @@ import { DevCycle } from '../../../connectors/src/configs/devcycle.config'
 import { DevTo } from '../../../connectors/src/configs/devto.config'
 import { Dhl } from '../../../connectors/src/configs/dhl.config'
 import { Directus } from '../../../connectors/src/configs/directus.config'
+import { Discord } from '../../../connectors/src/configs/discord.config'
 import { Disify } from '../../../connectors/src/configs/disify.config'
 import { Doppler } from '../../../connectors/src/configs/doppler.config'
 import { Duply } from '../../../connectors/src/configs/duply.config'
@@ -476,6 +477,7 @@ configTypes.push({type: getType<Dhl.TrackingUnified>(), id: 'dhl', name: 'Dhl', 
 configTypes.push({type: getType<Directus.Login>(), id: 'directus', name: 'Directus', interface: 'Login'})
 configTypes.push({type: getType<Directus.CreateCollection>(), id: 'directus', name: 'Directus', interface: 'CreateCollection'})
 configTypes.push({type: getType<Directus.ListCollections>(), id: 'directus', name: 'Directus', interface: 'ListCollections'})
+configTypes.push({type: getType<Discord.ExecuteWebhook>(), id: 'discord', name: 'Discord', interface: 'ExecuteWebhook'})
 configTypes.push({type: getType<Disify.CheckSingleDomain>(), id: 'disify', name: 'Disify', interface: 'CheckSingleDomain'})
 configTypes.push({type: getType<Disify.CheckMassDomain>(), id: 'disify', name: 'Disify', interface: 'CheckMassDomain'})
 configTypes.push({type: getType<Disify.CheckSingleEmail>(), id: 'disify', name: 'Disify', interface: 'CheckSingleEmail'})

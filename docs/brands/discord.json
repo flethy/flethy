@@ -1,0 +1,188 @@
+{
+  "name": "Discord",
+  "domain": "discord.com",
+  "claimed": false,
+  "description": "Discord is the easiest way to talk over voice, video, and text. Talk, hang out, and create a place to belong with your friends and communities.",
+  "links": [
+    {
+      "name": "crunchbase",
+      "url": "https://crunchbase.com/organization/discord"
+    },
+    { "name": "twitter", "url": "https://twitter.com/discord" },
+    { "name": "instagram", "url": "https://instagram.com/discord" },
+    { "name": "linkedin", "url": "https://linkedin.com/company/discord" },
+    { "name": "facebook", "url": "https://facebook.com/discord" }
+  ],
+  "logos": [
+    {
+      "type": "icon",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idM8Hlme1a/idXcKu1zLb.png",
+          "background": null,
+          "format": "png",
+          "height": 400,
+          "width": 400,
+          "size": 38004
+        }
+      ]
+    },
+    {
+      "type": "logo",
+      "theme": "light",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idM8Hlme1a/idVf1tTmb9.svg",
+          "background": "transparent",
+          "format": "svg",
+          "size": 7090
+        },
+        {
+          "src": "https://asset.brandfetch.io/idM8Hlme1a/idrHbT60tR.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 219,
+          "width": 800,
+          "size": 10882
+        }
+      ]
+    },
+    {
+      "type": "logo",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idM8Hlme1a/idiS999ELe.svg",
+          "background": "transparent",
+          "format": "svg",
+          "size": 7108
+        },
+        {
+          "src": "https://asset.brandfetch.io/idM8Hlme1a/idBotFR99a.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 219,
+          "width": 800,
+          "size": 14115
+        }
+      ]
+    },
+    {
+      "type": "symbol",
+      "theme": "light",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idM8Hlme1a/idyxkTGPf-.svg",
+          "background": "transparent",
+          "format": "svg",
+          "size": 2168
+        },
+        {
+          "src": "https://asset.brandfetch.io/idM8Hlme1a/idmSNx7MSm.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 620,
+          "width": 800,
+          "size": 17578
+        }
+      ]
+    },
+    {
+      "type": "symbol",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idM8Hlme1a/idHdpdABAN.svg",
+          "background": "transparent",
+          "format": "svg",
+          "size": 2168
+        },
+        {
+          "src": "https://asset.brandfetch.io/idM8Hlme1a/id4VvOUHbQ.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 620,
+          "width": 800,
+          "size": 27495
+        }
+      ]
+    },
+    {
+      "type": "other",
+      "theme": null,
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idM8Hlme1a/idVHYRa9Al.svg",
+          "background": "transparent",
+          "format": "svg",
+          "size": 6919
+        },
+        {
+          "src": "https://asset.brandfetch.io/idM8Hlme1a/idtDuRWSF6.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 219,
+          "width": 800,
+          "size": 13862
+        }
+      ]
+    },
+    {
+      "type": "other",
+      "theme": null,
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idM8Hlme1a/idsSGQF31V.svg",
+          "background": "transparent",
+          "format": "svg",
+          "size": 2168
+        },
+        {
+          "src": "https://asset.brandfetch.io/idM8Hlme1a/idHGBt1DbM.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 620,
+          "width": 800,
+          "size": 27087
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#23272a", "type": "dark", "brightness": 38 },
+    { "hex": "#ffffff", "type": "light", "brightness": 255 },
+    { "hex": "#5865f2", "type": "accent", "brightness": 108 }
+  ],
+  "fonts": [
+    {
+      "name": "Ginto Nord",
+      "type": "title",
+      "origin": "custom",
+      "originId": null,
+      "weights": []
+    },
+    {
+      "name": "Whitney",
+      "type": "body",
+      "origin": "custom",
+      "originId": null,
+      "weights": []
+    }
+  ],
+  "images": [
+    {
+      "type": "banner",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idM8Hlme1a/idKk2qxGDk.png",
+          "background": null,
+          "format": "png",
+          "height": 500,
+          "width": 1500,
+          "size": 448414
+        }
+      ]
+    }
+  ]
+}
