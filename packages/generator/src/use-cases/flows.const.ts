@@ -647,4 +647,13 @@ export const FLOWS = {
       'body:body': '->context.input.addresses->any',
     },
   ],
+  'send-message-to-discord-channel-with-webhook': [
+    {
+      id: 'discord',
+      kind: 'discord.webhooks.execute',
+      'auth:webhookId': '==>secrets==>DISCORD_WEBHOOK_ID',
+      'auth:webhookToken': '==>secrets==>DISCORD_WEBHOOK_TOKEN',
+      'body:content': '->context.input.content->string',
+    },
+  ],
 }

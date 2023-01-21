@@ -103,6 +103,7 @@ The following Endpoints are currently supported.
 * [DevTo](./api/devto.md)
 * [Dhl](./api/dhl.md)
 * [Directus](./api/directus.md)
+* [Discord](./api/discord.md)
 * [Disify](./api/disify.md)
 * [Doppler](./api/doppler.md)
 * [Duply](./api/duply.md)

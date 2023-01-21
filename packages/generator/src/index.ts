@@ -188,6 +188,7 @@ import Dataddo from '@flethy/connectors/src/configs/dataddo.config'
 import DebugBear from '@flethy/connectors/src/configs/debugbear.config'
 import Deepgram from '@flethy/connectors/src/configs/deepgram.config'
 import DevTo from '@flethy/connectors/src/configs/devto.config'
+import Discord from '@flethy/connectors/src/configs/discord.config'
 import Duply from '@flethy/connectors/src/configs/duply.config'
 import Festdays from '@flethy/connectors/src/configs/festdays.config'
 import FireHydrant from '@flethy/connectors/src/configs/firehydrant.config'
@@ -228,6 +229,7 @@ import OneSignal from '@flethy/connectors/src/configs/onesignal.config'
 import OpenAI from '@flethy/connectors/src/configs/openai.config'
 import Openflow from '@flethy/connectors/src/configs/openflow.config'
 import ORBIntelligence from '@flethy/connectors/src/configs/orbintelligence.config'
+import Pangea from '@flethy/connectors/src/configs/pangea.config'
 import Pendo from '@flethy/connectors/src/configs/pendo.config'
 import Permitio from '@flethy/connectors/src/configs/permitio.config'
 import Phyllo from '@flethy/connectors/src/configs/phyllo.config'
@@ -251,6 +253,7 @@ import SevDesk from '@flethy/connectors/src/configs/sevdesk.config'
 import Sheetson from '@flethy/connectors/src/configs/sheetson.config'
 import Sheety from '@flethy/connectors/src/configs/sheety.config'
 import Sidemail from '@flethy/connectors/src/configs/sidemail.config'
+import Smarty from '@flethy/connectors/src/configs/smarty.config'
 import Snappify from '@flethy/connectors/src/configs/snappify.config'
 import SpeechTextAI from '@flethy/connectors/src/configs/speechtextai.config'
 import Splitbee from '@flethy/connectors/src/configs/splitbee.config'
@@ -273,14 +276,12 @@ import Vonage from '@flethy/connectors/src/configs/vonage.config'
 import WarrantDev from '@flethy/connectors/src/configs/warrantdev.config'
 import WebhookSite from '@flethy/connectors/src/configs/webhooksite.config'
 import WonderPush from '@flethy/connectors/src/configs/wonderpush.config'
+import WordPressCom from '@flethy/connectors/src/configs/wordpresscom.config'
 import WorkOS from '@flethy/connectors/src/configs/workos.config'
 import WriteSonic from '@flethy/connectors/src/configs/writesonic.config'
 import Yapily from '@flethy/connectors/src/configs/yapily.config'
 import { HttpRequest } from './controllers/HttpRequest'
 import { logger } from './utils/Logger'
-import Pangea from '@flethy/connectors/src/configs/pangea.config'
-import WordPressCom from '@flethy/connectors/src/configs/wordpresscom.config'
-import Smarty from '@flethy/connectors/src/configs/smarty.config'
 
 async function main() {
   const requestConfigs: {
@@ -3842,8 +3843,15 @@ Here you find all the available integrations`,
         },
       ],
     }),
+    discordWebhook: nao<Discord.ExecuteWebhook>({
+      kind: 'discord.webhooks.execute',
+      'auth:webhookId': process.env.DISCORD_WEBHOOK_ID,
+      'auth:webhookToken': process.env.DISCORD_WEBHOOK_TOKEN,
+      'body:content': 'Hello from flethy!',
+      'body:username': 'flethy',
+    }),
   }
-  const requestConfig = requestConfigs.smartyUsAddress
+  const requestConfig = requestConfigs.discordWebhook
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)
