@@ -1,0 +1,25 @@
+# Storedat
+
+## Links
+
+* URL: [https://www.storedat.io/](https://www.storedat.io/)
+* Documentation: [https://docs.storedat.io/](https://docs.storedat.io/)
+* Tags: web3
+* Category: aggregation
+* Type: indexer
+
+## API
+
+### Authentication
+
+* client-id: header
+* Authorization: header
+
+### graphql
+
+#### query
+
+##### GraphQL Query
+
+* Description: GraphQL Query
+* Docs: [https://docs.storedat.io/reference/api-reference/query](https://docs.storedat.io/reference/api-reference/query)

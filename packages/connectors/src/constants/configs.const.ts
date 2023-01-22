@@ -242,6 +242,7 @@ import { Splitbee } from '../configs/splitbee.config'
 import { Stackby } from '../configs/stackby.config'
 import { Stackhawk } from '../configs/stackhawk.config'
 import { Statically } from '../configs/statically.config'
+import { Storedat } from '../configs/storedat.config'
 import { Storyblok } from '../configs/storyblok.config'
 import { Stripe } from '../configs/stripe.config'
 import { Stytch } from '../configs/stytch.config'
@@ -536,6 +537,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['stackby', Stackby.API],
 ['stackhawk', Stackhawk.API],
 ['statically', Statically.API],
+['storedat', Storedat.API],
 ['storyblok', Storyblok.API],
 ['stripe', Stripe.API],
 ['stytch', Stytch.API],

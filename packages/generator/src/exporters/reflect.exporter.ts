@@ -242,6 +242,7 @@ import { Splitbee } from '../../../connectors/src/configs/splitbee.config'
 import { Stackby } from '../../../connectors/src/configs/stackby.config'
 import { Stackhawk } from '../../../connectors/src/configs/stackhawk.config'
 import { Statically } from '../../../connectors/src/configs/statically.config'
+import { Storedat } from '../../../connectors/src/configs/storedat.config'
 import { Storyblok } from '../../../connectors/src/configs/storyblok.config'
 import { Stripe } from '../../../connectors/src/configs/stripe.config'
 import { Stytch } from '../../../connectors/src/configs/stytch.config'
@@ -821,6 +822,7 @@ configTypes.push({type: getType<Stackhawk.GetUser>(), id: 'stackhawk', name: 'St
 configTypes.push({type: getType<Statically.StaticZapGithub>(), id: 'statically', name: 'Statically', interface: 'StaticZapGithub'})
 configTypes.push({type: getType<Statically.StaticZapGitlab>(), id: 'statically', name: 'Statically', interface: 'StaticZapGitlab'})
 configTypes.push({type: getType<Statically.StaticZapBitbucket>(), id: 'statically', name: 'Statically', interface: 'StaticZapBitbucket'})
+configTypes.push({type: getType<Storedat.GraphQLQuery>(), id: 'storedat', name: 'Storedat', interface: 'GraphQLQuery'})
 configTypes.push({type: getType<Storyblok.GraphQLQuery>(), id: 'storyblok', name: 'Storyblok', interface: 'GraphQLQuery'})
 configTypes.push({type: getType<Storyblok.ListStories>(), id: 'storyblok', name: 'Storyblok', interface: 'ListStories'})
 configTypes.push({type: getType<Storyblok.GetStory>(), id: 'storyblok', name: 'Storyblok', interface: 'GetStory'})

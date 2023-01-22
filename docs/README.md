@@ -23,6 +23,7 @@ The following Endpoints are currently supported.
 * [OpenSea](./api/opensea.md)
 * [Parsiq](./api/parsiq.md)
 * [Pinata](./api/pinata.md)
+* [Storedat](./api/storedat.md)
 * [Tenderly](./api/tenderly.md)
 * [TheGraph](./api/thegraph.md)
 * [Web3Storage](./api/web3storage.md)

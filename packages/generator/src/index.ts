@@ -282,6 +282,7 @@ import WriteSonic from '@flethy/connectors/src/configs/writesonic.config'
 import Yapily from '@flethy/connectors/src/configs/yapily.config'
 import { HttpRequest } from './controllers/HttpRequest'
 import { logger } from './utils/Logger'
+import Storedat from '@flethy/connectors/src/configs/storedat.config'
 
 async function main() {
   const requestConfigs: {
@@ -3850,8 +3851,44 @@ Here you find all the available integrations`,
       'body:content': 'Hello from flethy!',
       'body:username': 'flethy',
     }),
+    storedatTerm: nao<Storedat.GraphQLQuery>({
+      kind: 'storedat.graphql.query',
+      'auth:client-id': process.env.STOREDAT_CLIENT_ID,
+      'auth:Authorization': process.env.STOREDAT_API_KEY,
+      'body:query': `query {
+        GetGlossaryTerm(term: "web3", locale: EN) {
+          definition
+          category
+          term
+          providerId
+        }
+      }`,
+    }),
+    storedatArweave: nao<Storedat.GraphQLQuery>({
+      kind: 'storedat.graphql.query',
+      'auth:client-id': process.env.STOREDAT_CLIENT_ID,
+      'auth:Authorization': process.env.STOREDAT_API_KEY,
+      'body:query': `query {
+        GetDataFromArweave(
+          targetWalletAddress: "5zbMobc_npUw4n7GmSvjB_61mI558Rpm0yJ-YDXNQws"
+          metadata: [{ name: "category", value: "general" }]
+          sort: ASC
+          limit: 3
+        ) {
+          providerId
+          provider
+          data
+          url
+          metadata {
+            name
+            value
+          }
+          creationTimestamp
+        }
+      }`,
+    }),
   }
-  const requestConfig = requestConfigs.discordWebhook
+  const requestConfig = requestConfigs.storedatArweave
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)
