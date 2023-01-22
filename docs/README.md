@@ -7,6 +7,7 @@ The following Endpoints are currently supported.
 ### Web3
 
 * [Alchemy](./api/alchemy.md)
+* [Arweave](./api/arweave.md)
 * [BasementDev](./api/basementdev.md)
 * [CoinCap](./api/coincap.md)
 * [CoinGecko](./api/coingecko.md)

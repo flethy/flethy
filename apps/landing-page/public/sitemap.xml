@@ -61,6 +61,10 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://flethy.com/integrations/arweave</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://flethy.com/integrations/asana</loc>
     <priority>0.8</priority>
   </url>
@@ -1290,6 +1294,10 @@
   </url>
   <url>
     <loc>https://flethy.com/use-cases/get-content-from-sanityio</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://flethy.com/use-cases/get-data-from-arweave-for-mirrorxyz-digest</loc>
     <priority>0.8</priority>
   </url>
   <url>
