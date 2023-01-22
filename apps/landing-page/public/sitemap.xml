@@ -993,6 +993,10 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://flethy.com/integrations/storedat</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://flethy.com/integrations/storyblok</loc>
     <priority>0.8</priority>
   </url>
@@ -1286,6 +1290,10 @@
   </url>
   <url>
     <loc>https://flethy.com/use-cases/get-content-from-sanityio</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://flethy.com/use-cases/get-data-from-arweave-with-storedat</loc>
     <priority>0.8</priority>
   </url>
   <url>

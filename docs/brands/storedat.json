@@ -1,0 +1,14 @@
+{
+  "name": "Storedat",
+  "domain": "storedat.io",
+  "claimed": false,
+  "description": "Unleash the power of Web3 storage with a single API. Storedat is a GraphQL API built on top of Web3 storage providers like Arweave and Filecoin.",
+  "links": [
+    { "name": "github", "url": "https://github.com/glosseta" },
+    { "name": "twitter", "url": "https://twitter.com/storedat_io" }
+  ],
+  "logos": [],
+  "colors": [],
+  "fonts": [],
+  "images": []
+}

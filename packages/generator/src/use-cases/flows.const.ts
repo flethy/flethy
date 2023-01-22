@@ -656,4 +656,13 @@ export const FLOWS = {
       'body:content': '->context.input.content->string',
     },
   ],
+  'get-data-from-arweave-with-storedat': [
+    {
+      id: 'storedat',
+      kind: 'storedat.graphql.query',
+      'auth:client-id': '==>secrets==>STOREDAT_CLIENT_ID',
+      'auth:Authorization': '==>secrets==>STOREDAT_API_KEY',
+      'body:query': '->context.input.query->string',
+    },
+  ],
 }
