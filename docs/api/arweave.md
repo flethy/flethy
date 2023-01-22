@@ -1,0 +1,29 @@
+# Arweave
+
+## Links
+
+* URL: [https://www.arweave.org/](https://www.arweave.org/)
+* Documentation: [https://www.arweave.org/](https://www.arweave.org/)
+* Tags: web3
+* Category: infra
+* Type: storage
+
+## API
+
+### graphql
+
+#### query
+
+##### GraphQL Query
+
+* Description: GraphQL Query
+* Docs: [https://arweave.net/graphql](https://arweave.net/graphql)
+
+### data
+
+#### get
+
+##### Get Data
+
+* Description: Get Data
+* Docs: [https://arweave.net](https://arweave.net)

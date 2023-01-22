@@ -665,4 +665,45 @@ export const FLOWS = {
       'body:query': '->context.input.query->string',
     },
   ],
+  'get-data-from-arweave-for-mirrorxyz-digest': [
+    {
+      id: 'arweave-get-node',
+      config: {
+        namespace: 'arweave',
+      },
+      next: [
+        {
+          id: 'arweave-get-data',
+        },
+      ],
+      kind: 'arweave.graphql.query',
+      'body:query': `query GetMirrorTransactions($digest: String!) {
+        transactions(tags:[
+          {
+            name:"App-Name",
+            values:["MirrorXYZ"],
+          },
+          {
+            name:"Original-Content-Digest",
+            values:[$digest]
+          }
+        ], sort:HEIGHT_DESC, first: 1){
+          edges {
+            node {
+              id
+            }
+          }
+        }
+      }`,
+      'body:variables': {
+        digest: '->context.input.digest->string',
+      },
+    },
+    {
+      id: 'arweave-get-data',
+      kind: 'arweave.data.get',
+      'param:transactionId':
+        '->context.arweave.transactions.edges[0].node.id->string',
+    },
+  ],
 }

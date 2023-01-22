@@ -1,0 +1,78 @@
+{
+  "name": "Arweave",
+  "domain": "arweave.org",
+  "claimed": false,
+  "description": "Arweave is an information technology company that specializes in data storage, blockchain, and serverless web.",
+  "links": [
+    { "name": "twitter", "url": "https://twitter.com/ArweaveTeam" },
+    { "name": "facebook", "url": "https://facebook.com/ArweaveTeam" },
+    { "name": "linkedin", "url": "https://linkedin.com/company/arweave" }
+  ],
+  "logos": [
+    {
+      "type": "icon",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idEqU0REiz/id_KshZm7i.png",
+          "background": null,
+          "format": "png",
+          "height": 200,
+          "width": 200,
+          "size": 13344
+        }
+      ]
+    },
+    {
+      "type": "logo",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idEqU0REiz/id6rEY9TuQ.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 143,
+          "width": 820,
+          "size": 20553
+        },
+        {
+          "src": "https://asset.brandfetch.io/idEqU0REiz/idJXS1-iLY.svg",
+          "background": "transparent",
+          "format": "svg",
+          "height": null,
+          "width": null,
+          "size": 14633
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#222327", "type": "dark", "brightness": 35 },
+    { "hex": "#ffffff", "type": "light", "brightness": 255 },
+    { "hex": "#c67d6e", "type": "accent", "brightness": 139 }
+  ],
+  "fonts": [
+    {
+      "name": "Roboto Mono",
+      "type": "body",
+      "origin": "google",
+      "originId": "Roboto+Mono",
+      "weights": []
+    }
+  ],
+  "images": [
+    {
+      "type": "banner",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idEqU0REiz/idrs0O3zS-.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 768,
+          "width": 1536,
+          "size": 303255
+        }
+      ]
+    }
+  ]
+}

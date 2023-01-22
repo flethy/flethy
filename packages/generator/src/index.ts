@@ -283,6 +283,7 @@ import Yapily from '@flethy/connectors/src/configs/yapily.config'
 import { HttpRequest } from './controllers/HttpRequest'
 import { logger } from './utils/Logger'
 import Storedat from '@flethy/connectors/src/configs/storedat.config'
+import Arweave from '@flethy/connectors/src/configs/arweave.config'
 
 async function main() {
   const requestConfigs: {
@@ -3887,8 +3888,36 @@ Here you find all the available integrations`,
         }
       }`,
     }),
+    arweaveQuery: nao<Arweave.GraphQLQuery>({
+      kind: 'arweave.graphql.query',
+      'body:query': `query GetMirrorTransactions($digest: String!) {
+        transactions(tags:[
+          {
+            name:"App-Name",
+            values:["MirrorXYZ"],
+          },
+          {
+            name:"Original-Content-Digest",
+            values:[$digest]
+          }
+        ], sort:HEIGHT_DESC, first: 1){
+          edges {
+            node {
+              id
+            }
+          }
+        }
+      }`,
+      'body:variables': {
+        digest: '5zbMobc_npUw4n7GmSvjB_61mI558Rpm0yJ-YDXNQws',
+      },
+    }),
+    arweaveGetData: nao<Arweave.GetData>({
+      kind: 'arweave.data.get',
+      'param:transactionId': 'UlONphPheEDB9haq4-p1rqDyesa4AEzwUeSxVJ89lFU',
+    }),
   }
-  const requestConfig = requestConfigs.storedatArweave
+  const requestConfig = requestConfigs.arweaveQuery
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

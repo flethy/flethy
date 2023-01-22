@@ -9,6 +9,7 @@ import { APIFlash } from '../../../connectors/src/configs/apiflash.config'
 import { Apify } from '../../../connectors/src/configs/apify.config'
 import { APIPoint } from '../../../connectors/src/configs/apipoint.config'
 import { APITemplateIo } from '../../../connectors/src/configs/apitemplateio.config'
+import { Arweave } from '../../../connectors/src/configs/arweave.config'
 import { Asana } from '../../../connectors/src/configs/asana.config'
 import { AssemblyAI } from '../../../connectors/src/configs/assemblyai.config'
 import { Auth0 } from '../../../connectors/src/configs/auth0.config'
@@ -313,6 +314,8 @@ configTypes.push({type: getType<APIPoint.QRCode>(), id: 'apipoint', name: 'APIPo
 configTypes.push({type: getType<APIPoint.IPDetails>(), id: 'apipoint', name: 'APIPoint', interface: 'IPDetails'})
 configTypes.push({type: getType<APIPoint.URLShot>(), id: 'apipoint', name: 'APIPoint', interface: 'URLShot'})
 configTypes.push({type: getType<APITemplateIo.CreateImage>(), id: 'apitemplateio', name: 'APITemplateIo', interface: 'CreateImage'})
+configTypes.push({type: getType<Arweave.GraphQLQuery>(), id: 'arweave', name: 'Arweave', interface: 'GraphQLQuery'})
+configTypes.push({type: getType<Arweave.GetData>(), id: 'arweave', name: 'Arweave', interface: 'GetData'})
 configTypes.push({type: getType<Asana.GetMe>(), id: 'asana', name: 'Asana', interface: 'GetMe'})
 configTypes.push({type: getType<Asana.ListWorkspaces>(), id: 'asana', name: 'Asana', interface: 'ListWorkspaces'})
 configTypes.push({type: getType<Asana.CreateTask>(), id: 'asana', name: 'Asana', interface: 'CreateTask'})
