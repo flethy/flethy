@@ -545,6 +545,10 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://flethy.com/integrations/launchdarkly</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://flethy.com/integrations/lecto</loc>
     <priority>0.8</priority>
   </url>
@@ -858,6 +862,10 @@
   </url>
   <url>
     <loc>https://flethy.com/integrations/rediscloud</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://flethy.com/integrations/redstonefinance</loc>
     <priority>0.8</priority>
   </url>
   <url>
@@ -1310,6 +1318,10 @@
   </url>
   <url>
     <loc>https://flethy.com/use-cases/get-feature-flags-with-devcycle</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://flethy.com/use-cases/get-feature-flags-with-launchdarkly</loc>
     <priority>0.8</priority>
   </url>
   <url>

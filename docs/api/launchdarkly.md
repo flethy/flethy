@@ -1,0 +1,33 @@
+# LaunchDarkly
+
+## Links
+
+* URL: [https://launchdarkly.com/](https://launchdarkly.com/)
+* Documentation: [https://docs.launchdarkly.com](https://docs.launchdarkly.com)
+* Tags: web2
+* Category: utils
+* Type: featureflags
+
+## API
+
+### Authentication
+
+* Authorization: header
+
+### featureflags
+
+#### list
+
+##### ListFeatureFlags
+
+* Description: ListFeatureFlags
+* Docs: [https://apidocs.launchdarkly.com/tag/Feature-flags#operation/getFeatureFlags](https://apidocs.launchdarkly.com/tag/Feature-flags#operation/getFeatureFlags)
+
+### projects
+
+#### list
+
+##### List projects
+
+* Description: List projects
+* Docs: [https://apidocs.launchdarkly.com/tag/Projects#operation/getProjects](https://apidocs.launchdarkly.com/tag/Projects#operation/getProjects)

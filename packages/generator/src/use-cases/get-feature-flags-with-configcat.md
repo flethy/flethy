@@ -1,5 +1,5 @@
 ---
-section: CMS
+section: Utils
 title: Get feature flags with ConfigCat
 services:
   - configcat

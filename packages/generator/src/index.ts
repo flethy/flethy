@@ -165,6 +165,7 @@ import { FetchParams } from '../../connectors/src/types/FetchParams.type'
 import { nao } from '../../connectors/src/utils/Request.utils'
 // import { nao } from '@flethy/connectors'
 import APIPoint from '@flethy/connectors/src/configs/apipoint.config'
+import Arweave from '@flethy/connectors/src/configs/arweave.config'
 import Asana from '@flethy/connectors/src/configs/asana.config'
 import BasementDev from '@flethy/connectors/src/configs/basementdev.config'
 import Beew from '@flethy/connectors/src/configs/beew.config'
@@ -210,6 +211,7 @@ import KnockApp from '@flethy/connectors/src/configs/knockapp.config'
 import KontentAI from '@flethy/connectors/src/configs/kontentai.config'
 import Koyeb from '@flethy/connectors/src/configs/koyeb.config'
 import LanguageLayer from '@flethy/connectors/src/configs/languagelayer.config'
+import LaunchDarkly from '@flethy/connectors/src/configs/launchdarkly.config'
 import LinkPreview from '@flethy/connectors/src/configs/linkpreview.config'
 import Liveblocks from '@flethy/connectors/src/configs/liveblocks.config'
 import LogSnag from '@flethy/connectors/src/configs/logsnag.config'
@@ -243,6 +245,7 @@ import PurpleAir from '@flethy/connectors/src/configs/purpleair.config'
 import QuoteGarden from '@flethy/connectors/src/configs/quotegarden.config'
 import ReadMe from '@flethy/connectors/src/configs/readme.config'
 import Rebrandly from '@flethy/connectors/src/configs/rebrandly.config'
+import RedStoneFinance from '@flethy/connectors/src/configs/redstonefinance.config'
 import ReducedTo from '@flethy/connectors/src/configs/reducedto.config'
 import Robolly from '@flethy/connectors/src/configs/robolly.config'
 import Rye from '@flethy/connectors/src/configs/rye.config'
@@ -258,6 +261,7 @@ import Snappify from '@flethy/connectors/src/configs/snappify.config'
 import SpeechTextAI from '@flethy/connectors/src/configs/speechtextai.config'
 import Splitbee from '@flethy/connectors/src/configs/splitbee.config'
 import Stackhawk from '@flethy/connectors/src/configs/stackhawk.config'
+import Storedat from '@flethy/connectors/src/configs/storedat.config'
 import Storyblok from '@flethy/connectors/src/configs/storyblok.config'
 import Stripe from '@flethy/connectors/src/configs/stripe.config'
 import Stytch from '@flethy/connectors/src/configs/stytch.config'
@@ -282,8 +286,6 @@ import WriteSonic from '@flethy/connectors/src/configs/writesonic.config'
 import Yapily from '@flethy/connectors/src/configs/yapily.config'
 import { HttpRequest } from './controllers/HttpRequest'
 import { logger } from './utils/Logger'
-import Storedat from '@flethy/connectors/src/configs/storedat.config'
-import Arweave from '@flethy/connectors/src/configs/arweave.config'
 
 async function main() {
   const requestConfigs: {
@@ -3916,8 +3918,22 @@ Here you find all the available integrations`,
       kind: 'arweave.data.get',
       'param:transactionId': 'UlONphPheEDB9haq4-p1rqDyesa4AEzwUeSxVJ89lFU',
     }),
+    launchDarklyListFeatureFlags: nao<LaunchDarkly.ListFeatureFlags>({
+      kind: 'launchdarkly.featureflags.list',
+      'auth:Authorization': process.env.LAUNCHDARKLY_API_KEY,
+      'param:projectKey': 'default',
+    }),
+    launchDarklyListProjects: nao<LaunchDarkly.ListProjects>({
+      kind: 'launchdarkly.projects.list',
+      'auth:Authorization': process.env.LAUNCHDARKLY_API_KEY,
+    }),
+    redstoneGetPriceForEth: nao<RedStoneFinance.GetPriceForSingleToken>({
+      kind: 'redstonefinance.prices.getForSingleToken',
+      'query:symbol': 'ETH',
+      'query:provider': 'redstone',
+    }),
   }
-  const requestConfig = requestConfigs.arweaveQuery
+  const requestConfig = requestConfigs.redstoneGetPriceForEth
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(requestConfig)

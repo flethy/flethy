@@ -1,0 +1,27 @@
+# RedStoneFinance
+
+## Links
+
+* URL: [https://redstone.finance/](https://redstone.finance/)
+* Documentation: [https://docs.redstone.finance/](https://docs.redstone.finance/)
+* Tags: web3
+* Category: defi
+* Type: prices
+
+## API
+
+### prices
+
+#### getForSingleToken
+
+##### Get the latest price(s) for a single token
+
+* Description: Get the latest price(s) for a single token
+* Docs: [https://api.docs.redstone.finance/http-api/prices/get-price-for-a-single-token](https://api.docs.redstone.finance/http-api/prices/get-price-for-a-single-token)
+
+#### getForSeveralTokens
+
+##### Get the latest price for several tokens
+
+* Description: Get the latest price for several tokens
+* Docs: [https://api.docs.redstone.finance/http-api/prices/get-price-for-several-tokens](https://api.docs.redstone.finance/http-api/prices/get-price-for-several-tokens)

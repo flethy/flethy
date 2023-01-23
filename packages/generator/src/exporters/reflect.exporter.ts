@@ -130,6 +130,7 @@ import { KnockApp } from '../../../connectors/src/configs/knockapp.config'
 import { KontentAI } from '../../../connectors/src/configs/kontentai.config'
 import { Koyeb } from '../../../connectors/src/configs/koyeb.config'
 import { LanguageLayer } from '../../../connectors/src/configs/languagelayer.config'
+import { LaunchDarkly } from '../../../connectors/src/configs/launchdarkly.config'
 import { Lecto } from '../../../connectors/src/configs/lecto.config'
 import { Linear } from '../../../connectors/src/configs/linear.config'
 import { LinkedIn } from '../../../connectors/src/configs/linkedin.config'
@@ -209,6 +210,7 @@ import { RapidApi } from '../../../connectors/src/configs/rapidapi.config'
 import { ReadMe } from '../../../connectors/src/configs/readme.config'
 import { Rebrandly } from '../../../connectors/src/configs/rebrandly.config'
 import { RedisCloud } from '../../../connectors/src/configs/rediscloud.config'
+import { RedStoneFinance } from '../../../connectors/src/configs/redstonefinance.config'
 import { ReducedTo } from '../../../connectors/src/configs/reducedto.config'
 import { RemoteOk } from '../../../connectors/src/configs/remoteok.config'
 import { RemoveBg } from '../../../connectors/src/configs/removebg.config'
@@ -595,6 +597,8 @@ configTypes.push({type: getType<KontentAI.GraphQLQuery>(), id: 'kontentai', name
 configTypes.push({type: getType<Koyeb.GetCurrentUser>(), id: 'koyeb', name: 'Koyeb', interface: 'GetCurrentUser'})
 configTypes.push({type: getType<Koyeb.ListApps>(), id: 'koyeb', name: 'Koyeb', interface: 'ListApps'})
 configTypes.push({type: getType<LanguageLayer.Detect>(), id: 'languagelayer', name: 'LanguageLayer', interface: 'Detect'})
+configTypes.push({type: getType<LaunchDarkly.ListFeatureFlags>(), id: 'launchdarkly', name: 'LaunchDarkly', interface: 'ListFeatureFlags'})
+configTypes.push({type: getType<LaunchDarkly.ListProjects>(), id: 'launchdarkly', name: 'LaunchDarkly', interface: 'ListProjects'})
 configTypes.push({type: getType<Lecto.TranslateText>(), id: 'lecto', name: 'Lecto', interface: 'TranslateText'})
 configTypes.push({type: getType<Lecto.TranslateJson>(), id: 'lecto', name: 'Lecto', interface: 'TranslateJson'})
 configTypes.push({type: getType<Linear.GraphQLQuery>(), id: 'linear', name: 'Linear', interface: 'GraphQLQuery'})
@@ -760,6 +764,8 @@ configTypes.push({type: getType<ReadMe.CreateDoc>(), id: 'readme', name: 'ReadMe
 configTypes.push({type: getType<ReadMe.ListCategories>(), id: 'readme', name: 'ReadMe', interface: 'ListCategories'})
 configTypes.push({type: getType<Rebrandly.CreateLink>(), id: 'rebrandly', name: 'Rebrandly', interface: 'CreateLink'})
 configTypes.push({type: getType<RedisCloud.GetCurrentAccount>(), id: 'rediscloud', name: 'RedisCloud', interface: 'GetCurrentAccount'})
+configTypes.push({type: getType<RedStoneFinance.GetPriceForSingleToken>(), id: 'redstonefinance', name: 'RedStoneFinance', interface: 'GetPriceForSingleToken'})
+configTypes.push({type: getType<RedStoneFinance.GetPriceForSeveralToken>(), id: 'redstonefinance', name: 'RedStoneFinance', interface: 'GetPriceForSeveralToken'})
 configTypes.push({type: getType<ReducedTo.ShortenURL>(), id: 'reducedto', name: 'ReducedTo', interface: 'ShortenURL'})
 configTypes.push({type: getType<RemoteOk.GetListings>(), id: 'remoteok', name: 'RemoteOk', interface: 'GetListings'})
 configTypes.push({type: getType<RemoveBg.Remove>(), id: 'removebg', name: 'RemoveBg', interface: 'Remove'})
