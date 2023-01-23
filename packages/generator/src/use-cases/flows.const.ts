@@ -706,4 +706,12 @@ export const FLOWS = {
         '->context.arweave.transactions.edges[0].node.id->string',
     },
   ],
+  'get-feature-flags-with-launchdarkly': [
+    {
+      id: 'launchdarkly',
+      kind: 'launchdarkly.featureflags.list',
+      'auth:Authorization': '==>secrets==>LAUNCHDARKLY_API_KEY',
+      'param:projectKey': '->context.input.projectKey->string',
+    },
+  ],
 }

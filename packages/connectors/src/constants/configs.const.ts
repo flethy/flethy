@@ -130,6 +130,7 @@ import { KnockApp } from '../configs/knockapp.config'
 import { KontentAI } from '../configs/kontentai.config'
 import { Koyeb } from '../configs/koyeb.config'
 import { LanguageLayer } from '../configs/languagelayer.config'
+import { LaunchDarkly } from '../configs/launchdarkly.config'
 import { Lecto } from '../configs/lecto.config'
 import { Linear } from '../configs/linear.config'
 import { LinkedIn } from '../configs/linkedin.config'
@@ -209,6 +210,7 @@ import { RapidApi } from '../configs/rapidapi.config'
 import { ReadMe } from '../configs/readme.config'
 import { Rebrandly } from '../configs/rebrandly.config'
 import { RedisCloud } from '../configs/rediscloud.config'
+import { RedStoneFinance } from '../configs/redstonefinance.config'
 import { ReducedTo } from '../configs/reducedto.config'
 import { RemoteOk } from '../configs/remoteok.config'
 import { RemoveBg } from '../configs/removebg.config'
@@ -426,6 +428,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['kontentai', KontentAI.API],
 ['koyeb', Koyeb.API],
 ['languagelayer', LanguageLayer.API],
+['launchdarkly', LaunchDarkly.API],
 ['lecto', Lecto.API],
 ['linear', Linear.API],
 ['linkedin', LinkedIn.API],
@@ -505,6 +508,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['readme', ReadMe.API],
 ['rebrandly', Rebrandly.API],
 ['rediscloud', RedisCloud.API],
+['redstonefinance', RedStoneFinance.API],
 ['reducedto', ReducedTo.API],
 ['remoteok', RemoteOk.API],
 ['removebg', RemoveBg.API],

@@ -1,0 +1,219 @@
+{
+  "name": "LaunchDarkly",
+  "domain": "launchdarkly.com",
+  "claimed": false,
+  "description": "Feature Flag & Toggle Management",
+  "links": [{ "name": "twitter", "url": "https://twitter.com/launchdarkly" }],
+  "logos": [
+    {
+      "type": "logo",
+      "theme": "light",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/id_dPHt38G/idquwfnt5R.svg",
+          "background": "transparent",
+          "format": "svg",
+          "size": 4222
+        },
+        {
+          "src": "https://asset.brandfetch.io/id_dPHt38G/id2kZYhu2T.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 124,
+          "width": 800,
+          "size": 10496
+        }
+      ]
+    },
+    {
+      "type": "logo",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/id_dPHt38G/idWcI5iVLA.svg",
+          "background": "transparent",
+          "format": "svg",
+          "size": 4131
+        },
+        {
+          "src": "https://asset.brandfetch.io/id_dPHt38G/idWDxPw1Ts.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 124,
+          "width": 800,
+          "size": 8950
+        }
+      ]
+    },
+    {
+      "type": "symbol",
+      "theme": "light",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/id_dPHt38G/iduhOfgnhN.svg",
+          "background": "transparent",
+          "format": "svg",
+          "size": 711
+        },
+        {
+          "src": "https://asset.brandfetch.io/id_dPHt38G/idER8_cV-p.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 796,
+          "width": 800,
+          "size": 19824
+        }
+      ]
+    },
+    {
+      "type": "symbol",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/id_dPHt38G/idRgiBR0O-.svg",
+          "background": "transparent",
+          "format": "svg",
+          "size": 634
+        },
+        {
+          "src": "https://asset.brandfetch.io/id_dPHt38G/idmSd_KeAc.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 796,
+          "width": 800,
+          "size": 16932
+        }
+      ]
+    },
+    {
+      "type": "icon",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/id_dPHt38G/idrdBKfD_D.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 400,
+          "width": 400,
+          "size": 8478
+        }
+      ]
+    },
+    {
+      "type": "other",
+      "theme": null,
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/id_dPHt38G/idAemwCBlo.svg",
+          "background": "transparent",
+          "format": "svg",
+          "size": 4222
+        },
+        {
+          "src": "https://asset.brandfetch.io/id_dPHt38G/idHC83SrbR.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 124,
+          "width": 800,
+          "size": 10486
+        }
+      ]
+    },
+    {
+      "type": "other",
+      "theme": null,
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/id_dPHt38G/idMkSfWGv6.svg",
+          "background": "transparent",
+          "format": "svg",
+          "size": 711
+        },
+        {
+          "src": "https://asset.brandfetch.io/id_dPHt38G/id-pTnpJU0.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 796,
+          "width": 800,
+          "size": 19733
+        }
+      ]
+    },
+    {
+      "type": "other",
+      "theme": null,
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/id_dPHt38G/idMNKN7Ca4.svg",
+          "background": "transparent",
+          "format": "svg",
+          "size": 4219
+        },
+        {
+          "src": "https://asset.brandfetch.io/id_dPHt38G/ida-4VJ0LM.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 124,
+          "width": 800,
+          "size": 9306
+        }
+      ]
+    },
+    {
+      "type": "other",
+      "theme": null,
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/id_dPHt38G/iddcJcNz_x.svg",
+          "background": "transparent",
+          "format": "svg",
+          "size": 708
+        },
+        {
+          "src": "https://asset.brandfetch.io/id_dPHt38G/id_guFAEKh.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 796,
+          "width": 800,
+          "size": 14981
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#405BFF", "type": "accent", "brightness": 97 },
+    { "hex": "#FFFFFF", "type": "light", "brightness": 255 },
+    { "hex": "#191919", "type": "dark", "brightness": 25 }
+  ],
+  "fonts": [
+    {
+      "name": "Audimat 3000 Regulier",
+      "type": "title",
+      "origin": "custom",
+      "originId": null,
+      "weights": []
+    },
+    {
+      "name": "Sohne",
+      "type": "body",
+      "origin": "custom",
+      "originId": null,
+      "weights": []
+    }
+  ],
+  "images": [
+    {
+      "type": "banner",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/id_dPHt38G/idulZ9XKOG.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 500,
+          "width": 1500,
+          "size": 88138
+        }
+      ]
+    }
+  ]
+}

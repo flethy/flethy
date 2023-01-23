@@ -1,0 +1,87 @@
+{
+  "name": "redstone.finance",
+  "domain": "redstone.finance",
+  "claimed": false,
+  "description": "Highly customizable DeFi data streams delivered quickly, reliably and cost-efficiently.",
+  "links": [
+    { "name": "twitter", "url": "https://twitter.com/redstone_defi" },
+    { "name": "github", "url": "https://github.com/redstone-finance" },
+    {
+      "name": "linkedin",
+      "url": "https://linkedin.com/company/redstone-finance"
+    },
+    { "name": "medium", "url": "https://medium.com/@RedStone_Finance" }
+  ],
+  "logos": [
+    {
+      "type": "logo",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idR4JE9RiG/idpmcQwR-b.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 232,
+          "width": 820,
+          "size": 16421
+        },
+        {
+          "src": "https://asset.brandfetch.io/idR4JE9RiG/idv6YoBa3t.svg",
+          "background": "transparent",
+          "format": "svg",
+          "size": 12657
+        }
+      ]
+    },
+    {
+      "type": "icon",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idR4JE9RiG/idGgiSPaQy.png",
+          "background": null,
+          "format": "png",
+          "height": 400,
+          "width": 400,
+          "size": 6820
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#fd627a", "type": "accent", "brightness": 133 },
+    { "hex": "#404f70", "type": "dark", "brightness": 78 },
+    { "hex": "#ffffff", "type": "light", "brightness": 255 }
+  ],
+  "fonts": [
+    {
+      "name": "Poppins",
+      "type": "title",
+      "origin": "google",
+      "originId": "Poppins",
+      "weights": []
+    },
+    {
+      "name": "Open Sans",
+      "type": "body",
+      "origin": "google",
+      "originId": "Open+Sans",
+      "weights": []
+    }
+  ],
+  "images": [
+    {
+      "type": "banner",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idR4JE9RiG/idZSv2nSte.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 500,
+          "width": 1500,
+          "size": 46991
+        }
+      ]
+    }
+  ]
+}
