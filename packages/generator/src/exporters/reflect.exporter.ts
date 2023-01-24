@@ -132,6 +132,7 @@ import { Koyeb } from '../../../connectors/src/configs/koyeb.config'
 import { LanguageLayer } from '../../../connectors/src/configs/languagelayer.config'
 import { LaunchDarkly } from '../../../connectors/src/configs/launchdarkly.config'
 import { Lecto } from '../../../connectors/src/configs/lecto.config'
+import { LemonSqueezy } from '../../../connectors/src/configs/lemonsqueezy.config'
 import { Linear } from '../../../connectors/src/configs/linear.config'
 import { LinkedIn } from '../../../connectors/src/configs/linkedin.config'
 import { LinkPreview } from '../../../connectors/src/configs/linkpreview.config'
@@ -209,6 +210,7 @@ import { QuoteGarden } from '../../../connectors/src/configs/quotegarden.config'
 import { RapidApi } from '../../../connectors/src/configs/rapidapi.config'
 import { ReadMe } from '../../../connectors/src/configs/readme.config'
 import { Rebrandly } from '../../../connectors/src/configs/rebrandly.config'
+import { Reddit } from '../../../connectors/src/configs/reddit.config'
 import { RedisCloud } from '../../../connectors/src/configs/rediscloud.config'
 import { RedStoneFinance } from '../../../connectors/src/configs/redstonefinance.config'
 import { ReducedTo } from '../../../connectors/src/configs/reducedto.config'
@@ -601,6 +603,9 @@ configTypes.push({type: getType<LaunchDarkly.ListFeatureFlags>(), id: 'launchdar
 configTypes.push({type: getType<LaunchDarkly.ListProjects>(), id: 'launchdarkly', name: 'LaunchDarkly', interface: 'ListProjects'})
 configTypes.push({type: getType<Lecto.TranslateText>(), id: 'lecto', name: 'Lecto', interface: 'TranslateText'})
 configTypes.push({type: getType<Lecto.TranslateJson>(), id: 'lecto', name: 'Lecto', interface: 'TranslateJson'})
+configTypes.push({type: getType<LemonSqueezy.RetrieveUser>(), id: 'lemonsqueezy', name: 'LemonSqueezy', interface: 'RetrieveUser'})
+configTypes.push({type: getType<LemonSqueezy.ListProducts>(), id: 'lemonsqueezy', name: 'LemonSqueezy', interface: 'ListProducts'})
+configTypes.push({type: getType<LemonSqueezy.ListSubscriptions>(), id: 'lemonsqueezy', name: 'LemonSqueezy', interface: 'ListSubscriptions'})
 configTypes.push({type: getType<Linear.GraphQLQuery>(), id: 'linear', name: 'Linear', interface: 'GraphQLQuery'})
 configTypes.push({type: getType<LinkedIn.SharePost>(), id: 'linkedin', name: 'LinkedIn', interface: 'SharePost'})
 configTypes.push({type: getType<LinkPreview.LinkPreview>(), id: 'linkpreview', name: 'LinkPreview', interface: 'LinkPreview'})
@@ -763,6 +768,7 @@ configTypes.push({type: getType<ReadMe.APISpecUpdate>(), id: 'readme', name: 'Re
 configTypes.push({type: getType<ReadMe.CreateDoc>(), id: 'readme', name: 'ReadMe', interface: 'CreateDoc'})
 configTypes.push({type: getType<ReadMe.ListCategories>(), id: 'readme', name: 'ReadMe', interface: 'ListCategories'})
 configTypes.push({type: getType<Rebrandly.CreateLink>(), id: 'rebrandly', name: 'Rebrandly', interface: 'CreateLink'})
+configTypes.push({type: getType<Reddit.ListTopPosts>(), id: 'reddit', name: 'Reddit', interface: 'ListTopPosts'})
 configTypes.push({type: getType<RedisCloud.GetCurrentAccount>(), id: 'rediscloud', name: 'RedisCloud', interface: 'GetCurrentAccount'})
 configTypes.push({type: getType<RedStoneFinance.GetPriceForSingleToken>(), id: 'redstonefinance', name: 'RedStoneFinance', interface: 'GetPriceForSingleToken'})
 configTypes.push({type: getType<RedStoneFinance.GetPriceForSeveralToken>(), id: 'redstonefinance', name: 'RedStoneFinance', interface: 'GetPriceForSeveralToken'})

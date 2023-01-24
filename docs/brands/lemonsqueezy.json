@@ -1,0 +1,45 @@
+{
+  "name": "Lemon Squeezy",
+  "domain": "lemonsqueezy.com",
+  "claimed": false,
+  "description": "Selling digital downloads, subscriptions, and software licenses has never been easier, faster, or more secure.",
+  "links": [{ "name": "twitter", "url": "https://twitter.com/lmsqueezy" }],
+  "logos": [
+    {
+      "type": "logo",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/id7_CYvwMY/idbc3fEbZh.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 64,
+          "width": 64,
+          "size": 1540
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#ffc233", "type": "accent", "brightness": 197 },
+    { "hex": "#c65a00", "type": "dark", "brightness": 106 },
+    { "hex": "#af8dd9", "type": "light", "brightness": 154 }
+  ],
+  "fonts": [
+    {
+      "name": "Circular",
+      "type": "title",
+      "origin": "custom",
+      "originId": "Circular",
+      "weights": []
+    },
+    {
+      "name": "system-ui",
+      "type": "body",
+      "origin": "system",
+      "originId": "system-ui",
+      "weights": []
+    }
+  ],
+  "images": []
+}

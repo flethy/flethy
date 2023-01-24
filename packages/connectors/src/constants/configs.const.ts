@@ -132,6 +132,7 @@ import { Koyeb } from '../configs/koyeb.config'
 import { LanguageLayer } from '../configs/languagelayer.config'
 import { LaunchDarkly } from '../configs/launchdarkly.config'
 import { Lecto } from '../configs/lecto.config'
+import { LemonSqueezy } from '../configs/lemonsqueezy.config'
 import { Linear } from '../configs/linear.config'
 import { LinkedIn } from '../configs/linkedin.config'
 import { LinkPreview } from '../configs/linkpreview.config'
@@ -209,6 +210,7 @@ import { QuoteGarden } from '../configs/quotegarden.config'
 import { RapidApi } from '../configs/rapidapi.config'
 import { ReadMe } from '../configs/readme.config'
 import { Rebrandly } from '../configs/rebrandly.config'
+import { Reddit } from '../configs/reddit.config'
 import { RedisCloud } from '../configs/rediscloud.config'
 import { RedStoneFinance } from '../configs/redstonefinance.config'
 import { ReducedTo } from '../configs/reducedto.config'
@@ -430,6 +432,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['languagelayer', LanguageLayer.API],
 ['launchdarkly', LaunchDarkly.API],
 ['lecto', Lecto.API],
+['lemonsqueezy', LemonSqueezy.API],
 ['linear', Linear.API],
 ['linkedin', LinkedIn.API],
 ['linkpreview', LinkPreview.API],
@@ -507,6 +510,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['rapidapi', RapidApi.API],
 ['readme', ReadMe.API],
 ['rebrandly', Rebrandly.API],
+['reddit', Reddit.API],
 ['rediscloud', RedisCloud.API],
 ['redstonefinance', RedStoneFinance.API],
 ['reducedto', ReducedTo.API],
