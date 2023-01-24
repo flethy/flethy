@@ -1,0 +1,20 @@
+# Reddit
+
+## Links
+
+* URL: [https://www.reddit.com/](https://www.reddit.com/)
+* Documentation: [https://www.reddit.com/dev/api/](https://www.reddit.com/dev/api/)
+* Tags: web2
+* Category: collaboration
+* Type: forum
+
+## API
+
+### posts
+
+#### listTop
+
+##### List Top Posts
+
+* Description: List Top Posts
+* Docs: [https://www.reddit.com/dev/api/](https://www.reddit.com/dev/api/)

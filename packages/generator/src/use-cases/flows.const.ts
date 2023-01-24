@@ -714,4 +714,13 @@ export const FLOWS = {
       'param:projectKey': '->context.input.projectKey->string',
     },
   ],
+  'list-subscriptions-from-lemonsqueezy': [
+    {
+      id: 'lemonsqueezy',
+      kind: 'lemonsqueezy.subscriptions.list',
+      'content-type': 'application/vnd.api+json',
+      accept: 'application/vnd.api+json',
+      'auth:Authorization': '==>secrets==>LEMONSQUEEZY_API_KEY',
+    },
+  ],
 }

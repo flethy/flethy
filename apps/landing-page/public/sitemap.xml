@@ -553,6 +553,10 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://flethy.com/integrations/lemonsqueezy</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://flethy.com/integrations/linear</loc>
     <priority>0.8</priority>
   </url>
@@ -858,6 +862,10 @@
   </url>
   <url>
     <loc>https://flethy.com/integrations/rebrandly</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://flethy.com/integrations/reddit</loc>
     <priority>0.8</priority>
   </url>
   <url>
@@ -1370,6 +1378,10 @@
   </url>
   <url>
     <loc>https://flethy.com/use-cases/list-resources-from-bigml</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://flethy.com/use-cases/list-subscriptions-from-lemonsqueezy</loc>
     <priority>0.8</priority>
   </url>
   <url>

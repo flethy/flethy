@@ -1,0 +1,168 @@
+{
+  "name": "Reddit",
+  "domain": "reddit.com",
+  "claimed": false,
+  "description": "Reddit is a network of communities where people can dive into their interests, hobbies and passions. There's a community for whatever you're interested in on Reddit.",
+  "links": [
+    {
+      "name": "crunchbase",
+      "url": "https://crunchbase.com/organization/reddit"
+    },
+    { "name": "twitter", "url": "https://twitter.com/reddit" },
+    { "name": "instagram", "url": "https://instagram.com/reddit" },
+    { "name": "linkedin", "url": "https://linkedin.com/company/reddit-com" },
+    { "name": "facebook", "url": "https://facebook.com/reddit" }
+  ],
+  "logos": [
+    {
+      "type": "logo",
+      "theme": "light",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idkKwm0IT0/idm8TyIZid.svg",
+          "background": "transparent",
+          "format": "svg",
+          "size": 2970
+        },
+        {
+          "src": "https://asset.brandfetch.io/idkKwm0IT0/idxwNp-zDC.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 259,
+          "width": 800,
+          "size": 19678
+        }
+      ]
+    },
+    {
+      "type": "logo",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idkKwm0IT0/idwptcZyXk.svg",
+          "background": "transparent",
+          "format": "svg",
+          "size": 4048
+        },
+        {
+          "src": "https://asset.brandfetch.io/idkKwm0IT0/idHLB22Mer.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 374,
+          "width": 800,
+          "size": 17489
+        }
+      ]
+    },
+    {
+      "type": "symbol",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idkKwm0IT0/idB2rjk9PL.svg",
+          "background": "transparent",
+          "format": "svg",
+          "size": 1848
+        },
+        {
+          "src": "https://asset.brandfetch.io/idkKwm0IT0/idcv9w6-Jz.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 800,
+          "width": 800,
+          "size": 36356
+        }
+      ]
+    },
+    {
+      "type": "icon",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idkKwm0IT0/idjMKDId2l.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 400,
+          "width": 400,
+          "size": 10401
+        }
+      ]
+    },
+    {
+      "type": "other",
+      "theme": null,
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idkKwm0IT0/idMaVOT30b.svg",
+          "background": "transparent",
+          "format": "svg",
+          "size": 3881
+        },
+        {
+          "src": "https://asset.brandfetch.io/idkKwm0IT0/idDrlLM9RB.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 374,
+          "width": 800,
+          "size": 17694
+        }
+      ]
+    },
+    {
+      "type": "other",
+      "theme": null,
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idkKwm0IT0/idwaF0KyUw.svg",
+          "background": "transparent",
+          "format": "svg",
+          "size": 3929
+        },
+        {
+          "src": "https://asset.brandfetch.io/idkKwm0IT0/id-XbTb2of.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 374,
+          "width": 800,
+          "size": 16160
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#0079d3", "type": "dark", "brightness": 102 },
+    { "hex": "#ffffff", "type": "light", "brightness": 255 },
+    { "hex": "#ff5700", "type": "accent", "brightness": 116 }
+  ],
+  "fonts": [
+    {
+      "name": "IBM Plex Sans",
+      "type": "title",
+      "origin": "google",
+      "originId": "IBM+Plex+Sans",
+      "weights": []
+    },
+    {
+      "name": "Noto Sans",
+      "type": "body",
+      "origin": "google",
+      "originId": "Noto+Sans",
+      "weights": []
+    }
+  ],
+  "images": [
+    {
+      "type": "banner",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idkKwm0IT0/idhYohy5vc.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 500,
+          "width": 1500,
+          "size": 70214
+        }
+      ]
+    }
+  ]
+}
