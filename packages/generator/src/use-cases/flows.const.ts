@@ -723,4 +723,15 @@ export const FLOWS = {
       'auth:Authorization': '==>secrets==>LEMONSQUEEZY_API_KEY',
     },
   ],
+  'track-single-event-with-customerio': [
+    {
+      id: 'customerid',
+      kind: 'customerio.track.single',
+      'auth:Authorization': {
+        username: '==>secrets==>CUSTOMERIO_SITE_ID',
+        password: '==>secrets==>CUSTOMERIO_API_KEY',
+      },
+      'body:body': '->context.input.entity->any',
+    },
+  ],
 }

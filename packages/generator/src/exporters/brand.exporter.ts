@@ -121,6 +121,7 @@ export class BrandExporter {
       'bigdatacloud',
       'calendarific',
       'camunda',
+      'customerio',
       'cuttly',
       'codedetection',
       'coinlayer',
