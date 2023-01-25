@@ -285,10 +285,8 @@ import WorkOS from '@flethy/connectors/src/configs/workos.config'
 import WriteSonic from '@flethy/connectors/src/configs/writesonic.config'
 import Yapily from '@flethy/connectors/src/configs/yapily.config'
 import { HttpRequest } from './controllers/HttpRequest'
+import customerio from './examples/customerio'
 import { logger } from './utils/Logger'
-import Reddit from '@flethy/connectors/src/configs/reddit.config'
-import reddit from './examples/reddit'
-import lemonsqueezy from './examples/lemonsqueezy'
 
 async function main() {
   const requestConfigs: {
@@ -3936,7 +3934,7 @@ Here you find all the available integrations`,
       'query:provider': 'redstone',
     }),
   }
-  const requestConfig = lemonsqueezy.configs.subscriptionsList
+  const requestConfig = customerio.configs.trackSingleEvent
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(nao(requestConfig))

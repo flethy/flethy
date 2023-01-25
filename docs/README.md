@@ -95,6 +95,7 @@ The following Endpoints are currently supported.
 * [CSVBox](./api/csvbox.md)
 * [Cumul](./api/cumul.md)
 * [CurrencyScoop](./api/currencyscoop.md)
+* [CustomerIo](./api/customerio.md)
 * [Cuttly](./api/cuttly.md)
 * [Dataddo](./api/dataddo.md)
 * [DataDog](./api/datadog.md)

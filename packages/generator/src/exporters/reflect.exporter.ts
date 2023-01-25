@@ -68,6 +68,7 @@ import { Cronhub } from '../../../connectors/src/configs/cronhub.config'
 import { CSVBox } from '../../../connectors/src/configs/csvbox.config'
 import { Cumul } from '../../../connectors/src/configs/cumul.config'
 import { CurrencyScoop } from '../../../connectors/src/configs/currencyscoop.config'
+import { CustomerIo } from '../../../connectors/src/configs/customerio.config'
 import { Cuttly } from '../../../connectors/src/configs/cuttly.config'
 import { Dataddo } from '../../../connectors/src/configs/dataddo.config'
 import { DataDog } from '../../../connectors/src/configs/datadog.config'
@@ -464,6 +465,8 @@ configTypes.push({type: getType<CurrencyScoop.Historical>(), id: 'currencyscoop'
 configTypes.push({type: getType<CurrencyScoop.Timeseries>(), id: 'currencyscoop', name: 'CurrencyScoop', interface: 'Timeseries'})
 configTypes.push({type: getType<CurrencyScoop.Currencies>(), id: 'currencyscoop', name: 'CurrencyScoop', interface: 'Currencies'})
 configTypes.push({type: getType<CurrencyScoop.Convert>(), id: 'currencyscoop', name: 'CurrencyScoop', interface: 'Convert'})
+configTypes.push({type: getType<CustomerIo.TrackSingleEntity>(), id: 'customerio', name: 'CustomerIo', interface: 'TrackSingleEntity'})
+configTypes.push({type: getType<CustomerIo.TrackMultipleEntities>(), id: 'customerio', name: 'CustomerIo', interface: 'TrackMultipleEntities'})
 configTypes.push({type: getType<Cuttly.ShortenLink>(), id: 'cuttly', name: 'Cuttly', interface: 'ShortenLink'})
 configTypes.push({type: getType<Dataddo.GetServices>(), id: 'dataddo', name: 'Dataddo', interface: 'GetServices'})
 configTypes.push({type: getType<Dataddo.CreateService>(), id: 'dataddo', name: 'Dataddo', interface: 'CreateService'})

@@ -1,0 +1,285 @@
+{
+  "name": "Customer.io",
+  "domain": "customer.io",
+  "claimed": false,
+  "description": "Customer.io is a messaging platform that allows marketers to take an idea and turn it into a powerful automated message campaign.",
+  "links": [
+    { "name": "twitter", "url": "https://twitter.com/CustomerIO" },
+    { "name": "facebook", "url": "https://facebook.com/customer.io" },
+    { "name": "linkedin", "url": "https://linkedin.com/company/customer-io" }
+  ],
+  "logos": [
+    {
+      "type": "icon",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idJpwyLCiO/idYDQxUv8P.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 400,
+          "width": 400,
+          "size": 8715
+        }
+      ]
+    },
+    {
+      "type": "logo",
+      "theme": "light",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idJpwyLCiO/idvIvUpE2m.svg",
+          "background": "transparent",
+          "format": "svg",
+          "size": 9543
+        },
+        {
+          "src": "https://asset.brandfetch.io/idJpwyLCiO/idjuIbEkl4.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 143,
+          "width": 800,
+          "size": 10739
+        }
+      ]
+    },
+    {
+      "type": "logo",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idJpwyLCiO/idpK5olKVJ.svg",
+          "background": "transparent",
+          "format": "svg",
+          "size": 9077
+        },
+        {
+          "src": "https://asset.brandfetch.io/idJpwyLCiO/idCB4aCD1M.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 147,
+          "width": 800,
+          "size": 13993
+        }
+      ]
+    },
+    {
+      "type": "symbol",
+      "theme": "light",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idJpwyLCiO/idT97D2Wm-.svg",
+          "background": "transparent",
+          "format": "svg",
+          "size": 1078
+        },
+        {
+          "src": "https://asset.brandfetch.io/idJpwyLCiO/id6sYWa4Ud.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 561,
+          "width": 800,
+          "size": 15628
+        },
+        {
+          "src": "https://asset.brandfetch.io/idJpwyLCiO/id1BFUlFIV.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 561,
+          "width": 800,
+          "size": 15628
+        }
+      ]
+    },
+    {
+      "type": "symbol",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idJpwyLCiO/id710ZRokQ.svg",
+          "background": "transparent",
+          "format": "svg",
+          "size": 1214
+        },
+        {
+          "src": "https://asset.brandfetch.io/idJpwyLCiO/idpl64NYEH.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 563,
+          "width": 800,
+          "size": 59476
+        }
+      ]
+    },
+    {
+      "type": "other",
+      "theme": null,
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idJpwyLCiO/idNO9sc2db.svg",
+          "background": "transparent",
+          "format": "svg",
+          "size": 9075
+        },
+        {
+          "src": "https://asset.brandfetch.io/idJpwyLCiO/id5j-YP6-5.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 147,
+          "width": 800,
+          "size": 12278
+        }
+      ]
+    },
+    {
+      "type": "other",
+      "theme": null,
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idJpwyLCiO/ideCCmq1cT.svg",
+          "background": "transparent",
+          "format": "svg",
+          "size": 5984
+        },
+        {
+          "src": "https://asset.brandfetch.io/idJpwyLCiO/idvxQLOD67.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 143,
+          "width": 800,
+          "size": 12225
+        }
+      ]
+    },
+    {
+      "type": "other",
+      "theme": null,
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idJpwyLCiO/idt3Wugc-9.svg",
+          "background": "transparent",
+          "format": "svg",
+          "size": 5628
+        },
+        {
+          "src": "https://asset.brandfetch.io/idJpwyLCiO/idppMd4VM2.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 388,
+          "width": 800,
+          "size": 22584
+        }
+      ]
+    },
+    {
+      "type": "other",
+      "theme": null,
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idJpwyLCiO/idWFRsf-Xd.svg",
+          "background": "transparent",
+          "format": "svg",
+          "size": 5284
+        },
+        {
+          "src": "https://asset.brandfetch.io/idJpwyLCiO/idIBfL3IvS.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 387,
+          "width": 800,
+          "size": 20343
+        }
+      ]
+    },
+    {
+      "type": "other",
+      "theme": null,
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idJpwyLCiO/idzsIm5BiN.svg",
+          "background": "transparent",
+          "format": "svg",
+          "size": 5123
+        },
+        {
+          "src": "https://asset.brandfetch.io/idJpwyLCiO/idNQ6_ZjPI.svg",
+          "background": "transparent",
+          "format": "svg",
+          "size": 5123
+        },
+        {
+          "src": "https://asset.brandfetch.io/idJpwyLCiO/idVgh89Oo_.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 391,
+          "width": 800,
+          "size": 20946
+        }
+      ]
+    },
+    {
+      "type": "other",
+      "theme": null,
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idJpwyLCiO/idasMU42H4.svg",
+          "background": "transparent",
+          "format": "svg",
+          "size": 5123
+        },
+        {
+          "src": "https://asset.brandfetch.io/idJpwyLCiO/idAy3WkIHs.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 391,
+          "width": 800,
+          "size": 16542
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#2f326a", "type": "dark", "brightness": 53 },
+    { "hex": "#ffffff", "type": "light", "brightness": 255 },
+    { "hex": "#5721CC", "type": "accent", "brightness": 57 }
+  ],
+  "fonts": [
+    {
+      "name": "Poppins",
+      "type": "title",
+      "origin": "google",
+      "originId": "Poppins",
+      "weights": []
+    },
+    {
+      "name": "Roboto",
+      "type": "body",
+      "origin": "google",
+      "originId": "Roboto",
+      "weights": []
+    }
+  ],
+  "images": [
+    {
+      "type": "banner",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idJpwyLCiO/idn4eMYIv7.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 256,
+          "width": 1265,
+          "size": 29878
+        },
+        {
+          "src": "https://asset.brandfetch.io/idJpwyLCiO/idUZNJmvz_.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 256,
+          "width": 1265,
+          "size": 29878
+        }
+      ]
+    }
+  ]
+}

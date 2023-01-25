@@ -297,6 +297,10 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://flethy.com/integrations/customerio</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://flethy.com/integrations/cuttly</loc>
     <priority>0.8</priority>
   </url>
@@ -1414,6 +1418,10 @@
   </url>
   <url>
     <loc>https://flethy.com/use-cases/track-events-with-vero</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://flethy.com/use-cases/track-single-event-with-customerio</loc>
     <priority>0.8</priority>
   </url>
   <url>
