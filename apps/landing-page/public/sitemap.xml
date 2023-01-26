@@ -693,6 +693,10 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://flethy.com/integrations/nominatim</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://flethy.com/integrations/nordigen</loc>
     <priority>0.8</priority>
   </url>

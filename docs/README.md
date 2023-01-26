@@ -190,6 +190,7 @@ The following Endpoints are currently supported.
 * [Netlify](./api/netlify.md)
 * [NewRelic](./api/newrelic.md)
 * [NewsApi](./api/newsapi.md)
+* [Nominatim](./api/nominatim.md)
 * [Nordigen](./api/nordigen.md)
 * [Notion](./api/notion.md)
 * [Npoint](./api/npoint.md)

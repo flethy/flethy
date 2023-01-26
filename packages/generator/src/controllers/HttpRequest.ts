@@ -8,6 +8,7 @@ import { logger } from '../utils/Logger'
 
 export class HttpRequest {
   public static async request(params: FetchParams) {
+    console.log(params)
     try {
       const response = await fetch(params.url, {
         method: params.method,

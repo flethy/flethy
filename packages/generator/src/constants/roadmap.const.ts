@@ -96,7 +96,16 @@ const FUTURE_MILESTONES: RoadmapEntry[] = [
     date: '2022-10-26',
     description:
       "That's a major milestone since an integration of enough services gives us the ability to build a lot of interesting use cases.",
-    delivered: false,
+    delivered: true,
+    milestone: true,
+    tags: [ROADMAP_TAGS.CONNECTORS],
+  },
+  {
+    title: '🚀 Integrate 300 services 🚀',
+    date: '2023-01-26',
+    description:
+      "That's a major milestone since an integration of enough services gives us the ability to build a lot of interesting use cases.",
+    delivered: true,
     milestone: true,
     tags: [ROADMAP_TAGS.CONNECTORS],
   },
