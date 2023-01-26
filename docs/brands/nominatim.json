@@ -1,0 +1,15 @@
+{
+  "name": "Nominatim",
+  "domain": "nominatim.org",
+  "claimed": false,
+  "description": "Open source geocoding with OpenStreetMap data",
+  "links": [{ "name": "github", "url": "https://github.com/osm-search" }],
+  "logos": [],
+  "colors": [
+    { "hex": "#2a7ae2", "type": "accent", "brightness": 113 },
+    { "hex": "#111111", "type": "dark", "brightness": 17 },
+    { "hex": "#fdfdfd", "type": "light", "brightness": 253 }
+  ],
+  "fonts": [],
+  "images": []
+}

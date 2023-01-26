@@ -167,6 +167,7 @@ import { Neon } from '../../../connectors/src/configs/neon.config'
 import { Netlify } from '../../../connectors/src/configs/netlify.config'
 import { NewRelic } from '../../../connectors/src/configs/newrelic.config'
 import { NewsApi } from '../../../connectors/src/configs/newsapi.config'
+import { Nominatim } from '../../../connectors/src/configs/nominatim.config'
 import { Nordigen } from '../../../connectors/src/configs/nordigen.config'
 import { Notion } from '../../../connectors/src/configs/notion.config'
 import { Npoint } from '../../../connectors/src/configs/npoint.config'
@@ -677,6 +678,7 @@ configTypes.push({type: getType<Netlify.ListSites>(), id: 'netlify', name: 'Netl
 configTypes.push({type: getType<Netlify.GetEnvironmentVariables>(), id: 'netlify', name: 'Netlify', interface: 'GetEnvironmentVariables'})
 configTypes.push({type: getType<NewRelic.InsightsEvents>(), id: 'newrelic', name: 'NewRelic', interface: 'InsightsEvents'})
 configTypes.push({type: getType<NewsApi.SearchEverything>(), id: 'newsapi', name: 'NewsApi', interface: 'SearchEverything'})
+configTypes.push({type: getType<Nominatim.Search>(), id: 'nominatim', name: 'Nominatim', interface: 'Search'})
 configTypes.push({type: getType<Nordigen.AuthNewToken>(), id: 'nordigen', name: 'Nordigen', interface: 'AuthNewToken'})
 configTypes.push({type: getType<Nordigen.AuthRefresh>(), id: 'nordigen', name: 'Nordigen', interface: 'AuthRefresh'})
 configTypes.push({type: getType<Nordigen.ListInstitutions>(), id: 'nordigen', name: 'Nordigen', interface: 'ListInstitutions'})

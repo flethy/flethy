@@ -287,6 +287,7 @@ import Yapily from '@flethy/connectors/src/configs/yapily.config'
 import { HttpRequest } from './controllers/HttpRequest'
 import customerio from './examples/customerio'
 import { logger } from './utils/Logger'
+import nominatim from './examples/nominatim'
 
 async function main() {
   const requestConfigs: {
@@ -3934,7 +3935,7 @@ Here you find all the available integrations`,
       'query:provider': 'redstone',
     }),
   }
-  const requestConfig = customerio.configs.trackSingleEvent
+  const requestConfig = nominatim.configs.search
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(nao(requestConfig))
