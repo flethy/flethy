@@ -25,7 +25,6 @@ import ApicAgent from '../../connectors/src/configs/apicagent.config'
 import APIFlash from '../../connectors/src/configs/apiflash.config'
 import Apify from '../../connectors/src/configs/apify.config'
 import APITemplateIo from '../../connectors/src/configs/apitemplateio.config'
-import Auth0 from '../../connectors/src/configs/auth0.config'
 import BambooHR from '../../connectors/src/configs/bamboohr.config'
 import BannerBear from '../../connectors/src/configs/bannerbear.config'
 import BaseRow from '../../connectors/src/configs/baserow.config'
@@ -285,9 +284,9 @@ import WorkOS from '@flethy/connectors/src/configs/workos.config'
 import WriteSonic from '@flethy/connectors/src/configs/writesonic.config'
 import Yapily from '@flethy/connectors/src/configs/yapily.config'
 import { HttpRequest } from './controllers/HttpRequest'
-import customerio from './examples/customerio'
-import { logger } from './utils/Logger'
 import nominatim from './examples/nominatim'
+import { logger } from './utils/Logger'
+import auth0 from './examples/auth0'
 
 async function main() {
   const requestConfigs: {
@@ -801,61 +800,6 @@ async function main() {
           }
         }
       }`,
-    }),
-    auth0Token: nao<Auth0.GetAuthAccessToken>({
-      kind: 'auth0.auth.accesstoken',
-      'body:audience': process.env.AUTH0_AUDIENCE,
-      'body:grant_type': 'client_credentials',
-      'body:client_id': process.env.AUTH0_CLIENT_ID,
-      'body:client_secret': process.env.AUTH0_CLIENT_SECRET,
-      'subdomain:tenant': process.env.AUTH0_TENANT,
-    }),
-    auth0UpdateUser: nao<Auth0.UpdateUser>({
-      kind: 'auth0.users.update',
-      'auth:Authorization': process.env.AUTH0_JWT,
-      'param:id': process.env.AUTH0_USER_ID,
-      'subdomain:tenant': process.env.AUTH0_TENANT,
-      'body:app_metadata': {
-        ws: [
-          {
-            id: '123',
-            r: ['o'],
-            p: [
-              {
-                id: '456',
-                r: ['o'],
-              },
-            ],
-          },
-        ],
-      },
-    }),
-    auth0CreateUser: nao<Auth0.CreateUser>({
-      kind: 'auth0.users.create',
-      'auth:Authorization': process.env.AUTH0_JWT,
-      'subdomain:tenant': process.env.AUTH0_TENANT,
-      'body:email': '',
-      'body:family_name': '',
-      'body:given_name': '',
-    }),
-    auth0SearchUsers: nao<Auth0.ListOrSearchUsers>({
-      kind: 'auth0.users.listOrSearch',
-      'auth:Authorization': process.env.AUTH0_JWT,
-      'query:search_engine': 'v3',
-      'query:q': 'email:web3nao@gmail.com',
-      'subdomain:tenant': process.env.AUTH0_TENANT,
-    }),
-    auth0GetUser: nao<Auth0.GetUser>({
-      kind: 'auth0.users.get',
-      'auth:Authorization': process.env.AUTH0_JWT,
-      'subdomain:tenant': process.env.AUTH0_TENANT,
-      'param:id': process.env.AUTH0_USER_ID,
-    }),
-    auth0GetUsersByEmail: nao<Auth0.GetUsersByEmail>({
-      kind: 'auth0.usersByEmail.get',
-      'auth:Authorization': process.env.AUTH0_JWT,
-      'subdomain:tenant': process.env.AUTH0_TENANT,
-      'query:email': 'adam@flethy.com',
     }),
     redisCloudGetAccount: nao<RedisCloud.GetCurrentAccount>({
       kind: 'rediscloud.account.get',
@@ -3935,7 +3879,7 @@ Here you find all the available integrations`,
       'query:provider': 'redstone',
     }),
   }
-  const requestConfig = nominatim.configs.search
+  const requestConfig = auth0.configs.configureCustomDomains
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(nao(requestConfig))

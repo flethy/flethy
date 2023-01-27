@@ -114,3 +114,16 @@
 
 * Description: Retrieve filtered list of roles that can be assigned to users.
 * Docs: [https://auth0.com/docs/api/management/v2#!/Roles/get_roles](https://auth0.com/docs/api/management/v2#!/Roles/get_roles)
+
+### domains
+
+#### configureNew
+
+##### Authentication
+
+* Authorization: header:bearer
+
+##### Configure a new custom domain
+
+* Description: Create a new custom domain.
+* Docs: [https://auth0.com/docs/api/management/v2#!/Custom_Domains/post_custom_domains](https://auth0.com/docs/api/management/v2#!/Custom_Domains/post_custom_domains)

@@ -12,6 +12,7 @@ export namespace Auth0 {
     usersByEmail: any
     connections: any
     roles: any
+    domains: any
   }
   export type Endpoint =
     | { accesstoken: ApiDescriptionEndpoint }
@@ -23,6 +24,7 @@ export namespace Auth0 {
         delete: ApiDescriptionEndpoint
       }
     | { get: ApiDescriptionEndpoint }
+    | { configureNew: ApiDescriptionEndpoint }
 
   export interface GetAuthAccessToken extends RequestParams {
     kind: 'auth0.auth.accesstoken'
@@ -130,6 +132,17 @@ export namespace Auth0 {
     'param:page'?: number
     'param:include_totals'?: boolean
     'param:name_filter'?: string
+  }
+
+  export interface ConfigureNewCustomDomains
+    extends ManagementApiBase,
+      RequestParams {
+    kind: 'auth0.domains.configureNew'
+    'body:domain': string
+    'body:type': 'auth0_managed_certs' | 'self_managed_certs'
+    'body:verification_method'?: 'txt'
+    'body:tls_policy'?: string
+    'body:custom_client_ip_header'?: string
   }
 
   const ManagementApiAuth: { [key: string]: ApiDescriptionAuth } = {
@@ -390,6 +403,32 @@ export namespace Auth0 {
             },
             {
               name: 'roles',
+              type: 'static',
+            },
+          ],
+        },
+      },
+      domains: {
+        configureNew: {
+          interface: 'ConfigureNewCustomDomains',
+          meta: {
+            title: 'Configure a new custom domain',
+            description: 'Create a new custom domain.',
+            docs: 'https://auth0.com/docs/api/management/v2#!/Custom_Domains/post_custom_domains',
+          },
+          auth: ManagementApiAuth,
+          method: 'POST',
+          paths: [
+            {
+              name: 'api',
+              type: 'static',
+            },
+            {
+              name: 'v2',
+              type: 'static',
+            },
+            {
+              name: 'custom-domains',
               type: 'static',
             },
           ],
