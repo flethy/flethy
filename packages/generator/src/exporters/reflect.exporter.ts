@@ -336,6 +336,7 @@ configTypes.push({type: getType<Auth0.UpdateUser>(), id: 'auth0', name: 'Auth0',
 configTypes.push({type: getType<Auth0.DeleteUser>(), id: 'auth0', name: 'Auth0', interface: 'DeleteUser'})
 configTypes.push({type: getType<Auth0.GetConnections>(), id: 'auth0', name: 'Auth0', interface: 'GetConnections'})
 configTypes.push({type: getType<Auth0.GetRoles>(), id: 'auth0', name: 'Auth0', interface: 'GetRoles'})
+configTypes.push({type: getType<Auth0.ConfigureNewCustomDomains>(), id: 'auth0', name: 'Auth0', interface: 'ConfigureNewCustomDomains'})
 configTypes.push({type: getType<Ayrshare.AnalyticsOnAShortenedLink>(), id: 'ayrshare', name: 'Ayrshare', interface: 'AnalyticsOnAShortenedLink'})
 configTypes.push({type: getType<Ayrshare.Post>(), id: 'ayrshare', name: 'Ayrshare', interface: 'Post'})
 configTypes.push({type: getType<BambooHR.EmployeesDirectory>(), id: 'bamboohr', name: 'BambooHR', interface: 'EmployeesDirectory'})
