@@ -18,6 +18,7 @@ ENV_TEST_USER_PROJECTID = "a49b0737-b74e-46fe-9d06-66d9653670f7"
 # INTEGRATION
 
 [env.int]
+name = "flethy-int"
 route = { pattern = "https://int.api.flethy.com", custom_domain = true, zone_name = "flethy.com" }
 
 [env.int.vars]
@@ -26,6 +27,7 @@ ENV_STAGE = "int"
 # PRODUCTION
 
 [env.production]
+name = "flethy-prod"
 route = { pattern = "https://api.flethy.com", custom_domain = true, zone_name = "flethy.com" }
 
 [env.production.vars]

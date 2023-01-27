@@ -26,3 +26,19 @@ Secrets need to be created/updated first for an environment before publishing wo
 ```bash
 wrangler secret:bulk flethy.secrets.dev.json
 ```
+
+### Runbook new environment
+
+- Auth0: Setup
+  - Add API with audience `https://[stage].flethy.com`
+    - Name `flethy-backend`
+  - Add Application (SPA)
+    - Name `flethy-console`
+    - Get values for `CLIENT_ID` and `CLIENT_SECRET`
+  -
+- Workers: create new service - name needs to be the same as in `wrangler.toml`
+  - Add env vars
+    - SECRET_AUTH_AUDIENCE = "`AUDIENCE`" - use auth0 audience
+    - SECRET_AUTH_CLIENT_ID = "`CLIENT_ID`"
+    - SECRET_AUTH_CLIENT_SECRET = "`CLIENT_SECRET`"
+    - SECRET_AUTH_TENANT = "`TENANT`" - use tenant subdomain
