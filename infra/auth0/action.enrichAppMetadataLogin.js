@@ -19,7 +19,8 @@ exports.onExecutePostLogin = async (event, api) => {
   }
 
   if (event.authorization) {
-    api.idToken.setCustomClaim("ws", workspaces);
+    api.idToken.setCustomClaim("https://flethy.com/ws", workspaces);
+    api.accessToken.setCustomClaim("https://flethy.com/ws", workspaces);
   }
 };
 

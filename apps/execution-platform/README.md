@@ -35,6 +35,22 @@ wrangler secret:bulk flethy.secrets.dev.json
   - Add Application (SPA)
     - Name `flethy-console`
     - Get values for `CLIENT_ID` and `CLIENT_SECRET`
+    - Login URI: `https://dev.console.flethy.com`
+    - Callback URLS:
+    - `http://localhost:4200, https://flethy-console-dev.pages.dev, https://*.flethy-console-dev.pages.dev, https://dev.console.flethy.com`
+  - Branding
+    - Colors
+      - Widget
+        - Logo: https://flethy.com/favicon.png
+        - Logo Height: 75px
+      - Page background: `#A33792`
+    - Texts
+  - Authentication
+    - Social:
+      - Google: https://marketplace.auth0.com/integrations/google-social-connection
+      - Github: https://marketplace.auth0.com/integrations/github-social-connection
+  - Auth Action (Flow)
+    - Login, name: `Enrich App Metadata Login`
 - Console: Setup
   - `.env`
 - Workers: create new service - name needs to be the same as in `wrangler.toml`
@@ -49,3 +65,4 @@ wrangler secret:bulk flethy.secrets.dev.json
     - Update `wrangler.toml`
   - Publish
 - Pages: create new project - direct upload
+  - Add custom domain
