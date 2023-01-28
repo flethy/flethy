@@ -1,4 +1,4 @@
-name: "[DEV] Deploy Workers"
+name: "[INT] Deploy Workers"
 
 on:
   push:
