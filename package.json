@@ -23,6 +23,8 @@
     "start:console": "pnpm --filter console start",
     "start:console:local": "pnpm --filter console start:local",
     "build:console:dev": "pnpm --filter console build:dev",
+    "build:console:int": "pnpm --filter console build:int",
+    "build:console:prod": "pnpm --filter console build:prod",
     "build:console": "pnpm --filter console build:prod",
     "=============== E X E C U T I O N   P L A T F O R M =================": "===============",
     "start:ep:dev": "pnpm --filter execution-platform dev",
