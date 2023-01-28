@@ -34,10 +34,13 @@ wrangler secret:bulk flethy.secrets.dev.json
     - Name `flethy-backend`
   - Add Application (SPA)
     - Name `flethy-console`
-    - Get values for `CLIENT_ID` and `CLIENT_SECRET`
+    - Get values for `CLIENT_ID` and update Frontend ENV VARS
     - Login URI: `https://dev.console.flethy.com`
     - Callback URLS:
     - `http://localhost:4200, https://flethy-console-dev.pages.dev, https://*.flethy-console-dev.pages.dev, https://dev.console.flethy.com`
+  - M2M application `flethy-backend`
+    - Add API access to management API with permission `update:user`
+    - Get values for `CLIENT_ID` and `CLIENT_SECRET`
   - Update `JWK` in EP
   - Branding
     - Colors
