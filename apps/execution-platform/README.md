@@ -35,10 +35,16 @@ wrangler secret:bulk flethy.secrets.dev.json
   - Add Application (SPA)
     - Name `flethy-console`
     - Get values for `CLIENT_ID` and `CLIENT_SECRET`
-  -
+- Console: Setup
+  - `.env`
 - Workers: create new service - name needs to be the same as in `wrangler.toml`
   - Add env vars
+    - Bulk command: `wrangler secret:bulk SECRETS.json --env ENV`
     - SECRET_AUTH_AUDIENCE = "`AUDIENCE`" - use auth0 audience
     - SECRET_AUTH_CLIENT_ID = "`CLIENT_ID`"
     - SECRET_AUTH_CLIENT_SECRET = "`CLIENT_SECRET`"
     - SECRET_AUTH_TENANT = "`TENANT`" - use tenant subdomain
+    - SECRET_SECRET
+  - Add KV Namespaces
+    - Update `wrangler.toml`
+  - Publish

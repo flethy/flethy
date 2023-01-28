@@ -2,8 +2,6 @@
 declare var SECRET_AUTH_AUDIENCE: string;
 declare var SECRET_AUTH_TENANT: string;
 declare var ENV_STAGE: string;
-declare var ENV_TEST_USERID: string;
-declare var ENV_TEST_USER_PROJECTID: string;
 
 // SECRETS
 declare var SECRET_SECRET: string;
@@ -15,8 +13,6 @@ declare var SECRET_AUTH_CLIENT_SECRET: string;
 export const ENVVARS = {
   config: {
     stage: ENV_STAGE,
-    testUserId: ENV_TEST_USERID,
-    testUserProjectId: ENV_TEST_USER_PROJECTID,
   },
   auth0: {
     audience: SECRET_AUTH_AUDIENCE,
