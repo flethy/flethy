@@ -48,3 +48,4 @@ wrangler secret:bulk flethy.secrets.dev.json
   - Add KV Namespaces
     - Update `wrangler.toml`
   - Publish
+- Pages: create new project - direct upload

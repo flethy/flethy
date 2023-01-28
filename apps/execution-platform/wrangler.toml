@@ -24,9 +24,9 @@ ENV_STAGE = "int"
 
 # PRODUCTION
 
-[env.production]
+[env.prod]
 name = "flethy-prod"
 route = { pattern = "api.flethy.com", custom_domain = true, zone_name = "flethy.com" }
 
-[env.production.vars]
+[env.prod.vars]
 ENV_STAGE = "prod"

@@ -1,9 +1,9 @@
-name: "Publish Config Types"
+name: "[PROD] Publish Config Types"
 
-# on: [push]
 on:
-  release:
-    types: [published]
+  push:
+    tags:
+      - "[0-9]+.[0-9]+.[0-9]+"
 
 jobs:
   publish-connectors:
