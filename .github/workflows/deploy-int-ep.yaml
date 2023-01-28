@@ -1,15 +1,16 @@
-name: "Deploy Workers DEV"
+name: "[DEV] Deploy Workers"
 
-# on: [push]
 on:
-  release:
-    types: [published]
+  push:
+    tags:
+      - "[0-9]+.[0-9]+.[0-9]+-console-int-*"
 
 jobs:
   publish-workers-dev:
     uses: ./.github/workflows/template-deploy-workers-to-cloudflare.yaml
     with:
       rootDir: ./apps/execution-platform
+      stage: int
     secrets:
       cf_account_id: ${{ secrets.CF_ACCOUNT_ID }}
       cf_api_token: ${{ secrets.CF_API_TOKEN_WORKERS }}

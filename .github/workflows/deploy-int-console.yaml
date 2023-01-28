@@ -1,0 +1,19 @@
+name: "[DEV] Deploy Console"
+
+on:
+  push:
+    tags:
+      - "[0-9]+.[0-9]+.[0-9]+-console-int-*"
+
+jobs:
+  publish-console-dev:
+    uses: ./.github/workflows/template-deploy-to-cloudflare.yaml
+    with:
+      buildTarget: build:console:int
+      rootDir: ./apps/console
+      distDir: ./dist
+      branchName: main
+      cfPagesName: flethy-console-int
+    secrets:
+      cf_account_id: ${{ secrets.CF_ACCOUNT_ID }}
+      cf_api_token: ${{ secrets.CF_API_TOKEN }}

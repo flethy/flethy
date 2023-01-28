@@ -6,6 +6,9 @@ on:
       rootDir:
         required: true
         type: string
+      stage:
+        required: true
+        type: string
     secrets:
       cf_account_id:
         required: true
@@ -52,7 +55,7 @@ jobs:
         run: |
           npm i -g wrangler
           cd ${{ env.ROOT_DIRECTORY }}
-          wrangler publish
+          [[ "${{ inputs.stage }}" = "dev" ]] && wrangler publish || wrangler publish --env ${{ inputs.stage }}
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.cf_api_token }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.cf_account_id }}
