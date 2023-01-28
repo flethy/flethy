@@ -38,6 +38,7 @@ wrangler secret:bulk flethy.secrets.dev.json
     - Login URI: `https://dev.console.flethy.com`
     - Callback URLS:
     - `http://localhost:4200, https://flethy-console-dev.pages.dev, https://*.flethy-console-dev.pages.dev, https://dev.console.flethy.com`
+  - Update `JWK` in EP
   - Branding
     - Colors
       - Widget
@@ -53,6 +54,7 @@ wrangler secret:bulk flethy.secrets.dev.json
     - Login, name: `Enrich App Metadata Login`
 - Console: Setup
   - `.env`
+  - Update `_headers`
 - Workers: create new service - name needs to be the same as in `wrangler.toml`
   - Add env vars
     - Bulk command: `wrangler secret:bulk SECRETS.json --env ENV`
