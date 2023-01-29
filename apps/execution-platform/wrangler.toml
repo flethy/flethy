@@ -33,6 +33,12 @@ ENV_STAGE = "int"
 [env.prod]
 name = "flethy-prod"
 route = { pattern = "api.flethy.com", custom_domain = true, zone_name = "flethy.com" }
+kv_namespaces = [
+    { binding = "DATA", id = "163b24ae03244099bbc80d37a0d88495", preview_id = "9769202c523e4bed9c0c9842ba6be4f9" },
+    { binding = "SECRETS", id = "c654eaef6b7a4b6a9d28d31d24aed0fd", preview_id = "e867a7ccbd5d4ad882ed30843d02a52f" },
+    { binding = "WORKFLOWS", id = "5af4b59173a74f578cdb592b23c30bee", preview_id = "f0c498bc1ede4d159478c2fb083cd110" },
+    { binding = "WORKSPACES", id = "d5664e5fbd984db8b27ff01133efd209", preview_id = "9f5fa104251844e1bc963938dbbaef68" },
+]
 
 [env.prod.vars]
 ENV_STAGE = "prod"
