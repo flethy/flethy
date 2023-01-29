@@ -7,6 +7,7 @@ declare var ENV_STAGE: string;
 declare var SECRET_SECRET: string;
 declare var SECRET_AUTH_CLIENT_ID: string;
 declare var SECRET_AUTH_CLIENT_SECRET: string;
+declare var SECRET_SLACK_WEBHOOK_ID: string;
 
 // MAPPINGS
 
@@ -27,5 +28,8 @@ export const SECRETS = {
   auth0: {
     clientId: SECRET_AUTH_CLIENT_ID,
     clientSecret: SECRET_AUTH_CLIENT_SECRET,
+  },
+  slack: {
+    webhookId: SECRET_SLACK_WEBHOOK_ID,
   },
 };

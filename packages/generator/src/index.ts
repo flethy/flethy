@@ -305,30 +305,6 @@ async function main() {
       'body:pinataContent': { test: 'test' },
       'body:pinataMetadata': { name: 'asd', keyvalues: { key1: 'value1' } },
     }),
-    slack: nao<Slack.IncomingWebhooksMessage>({
-      kind: 'slack.incomingWebhooks.message',
-      'auth:webhookid': process.env.SLACK_WEBHOOK_ID,
-      'body:text': 'Hello, world!',
-      'body:blocks': [
-        {
-          type: 'section',
-          text: {
-            type: 'mrkdwn',
-            text: 'Hello, *world*!',
-          },
-        },
-      ],
-    }),
-    slackPublishMessage: nao<Slack.ChatPostMessage>({
-      kind: 'slack.chat.postMessage',
-      'auth:Authorization': process.env.SLACK_BOT_TOKEN,
-      'body:text': 'Hello, world!',
-      'body:channel': process.env.SLACK_CHANNEL_ID,
-    }),
-    slackListConversations: nao<Slack.ConversationsList>({
-      kind: 'slack.conversations.list',
-      'auth:Authorization': process.env.SLACK_BOT_TOKEN,
-    }),
     mailersend: nao<MailerSend.EmailSend>({
       kind: 'mailersend.email.send',
       'body:from': {

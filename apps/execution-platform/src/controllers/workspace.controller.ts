@@ -113,6 +113,9 @@ export class WorkspaceController {
         userId: request.userId,
         workspace,
       });
+      await FlethyFlowController.externalNotification({
+        message: `Onboarding ${request.userId}: Workspace ${request.name}, project ${request.project.name}`,
+      });
     }
 
     return { success, workspaceMetadata };

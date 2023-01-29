@@ -8,7 +8,39 @@ export interface OnboardUserRequest {
   workspace: Workspace;
 }
 
+export interface ExternalNotificationRequest {
+  message: string;
+}
+
 export class FlethyFlowController {
+  public static async externalNotification(
+    request: ExternalNotificationRequest
+  ) {
+    const flow: FlowNode[] = [
+      {
+        id: "slack",
+        kind: "slack.incomingWebhooks.message",
+        "auth:webhookid": "==>secrets==>WEBHOOK_ID",
+        "body:text": "->context.message->string",
+      },
+    ];
+
+    const engine = new FlowEngine({
+      flow,
+      input: {
+        message: request.message,
+      },
+      env: {
+        env: {},
+        secrets: {
+          WEBHOOK_ID: SECRETS.slack.webhookId,
+        },
+      },
+    });
+
+    await engine.start();
+  }
+
   public static async onboardUser(request: OnboardUserRequest) {
     const flow: FlowNode[] = [
       {
