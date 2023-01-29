@@ -1,4 +1,4 @@
-import { KV, read, write } from "worktop/kv";
+import { read, write } from "worktop/kv";
 import { FlethyMetaDates, FlethyMetaUser } from "../types/general.type";
 import { ErrorType, FlethyError } from "../utils/error.utils";
 import { KVUtils } from "../utils/kv.utils";
@@ -113,6 +113,17 @@ export class WorkspaceController {
         userId: request.userId,
         workspace,
       });
+      await Promise.allSettled([
+        FlethyFlowController.externalNotification({
+          message: `Onboarding ${request.userId}: Workspace ${request.name}, project ${request.project.name}`,
+        }),
+        FlethyFlowController.analytics({
+          event: "onboard:user",
+          userId: request.userId,
+          workspaceId: request.workspaceId,
+          projectId,
+        }),
+      ]);
     }
 
     return { success, workspaceMetadata };

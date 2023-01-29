@@ -7,6 +7,9 @@ declare var ENV_STAGE: string;
 declare var SECRET_SECRET: string;
 declare var SECRET_AUTH_CLIENT_ID: string;
 declare var SECRET_AUTH_CLIENT_SECRET: string;
+declare var SECRET_SLACK_WEBHOOK_ID: string;
+declare var SECRET_MIXPANEL_PROJECT_TOKEN: string;
+declare var SECRET_MIXPANEL_API_SECRET: string;
 
 // MAPPINGS
 
@@ -27,5 +30,12 @@ export const SECRETS = {
   auth0: {
     clientId: SECRET_AUTH_CLIENT_ID,
     clientSecret: SECRET_AUTH_CLIENT_SECRET,
+  },
+  slack: {
+    webhookId: SECRET_SLACK_WEBHOOK_ID,
+  },
+  mixpanel: {
+    projectToken: SECRET_MIXPANEL_PROJECT_TOKEN,
+    apiSecret: SECRET_MIXPANEL_API_SECRET,
   },
 };
