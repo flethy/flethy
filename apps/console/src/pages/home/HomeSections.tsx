@@ -1,8 +1,9 @@
-import { Button, Grid, GridItem, Heading, VStack } from '@chakra-ui/react'
+import { Grid, Heading, VStack } from '@chakra-ui/react'
 import { observer } from 'mobx-react-lite'
 import { useTranslation } from 'react-i18next'
 import { useMst } from '../../models/root'
 import routes from '../../routes'
+import ActionCard from '../../components/ActionCard'
 
 export default observer(() => {
 	const { t } = useTranslation('app')
@@ -13,25 +14,6 @@ export default observer(() => {
 			pages: { home: page },
 		},
 	} = useMst()
-
-	const Action = ({
-		title,
-		onClick,
-	}: {
-		title: string
-		onClick: () => void
-	}) => (
-		<GridItem>
-			<Button
-				variant="outline"
-				w="100%"
-				h={{ base: 30, md: 50, lg: 100 }}
-				onClick={() => onClick()}
-			>
-				{title}
-			</Button>
-		</GridItem>
-	)
 
 	const content = (
 		<VStack w="full">
@@ -46,23 +28,33 @@ export default observer(() => {
 				}}
 				gap={6}
 			>
-				<Action
-					title="Manage Workflows"
-					onClick={() =>
+				<ActionCard
+					avatar={{ name: 'Workflows', src: 'icons/workflows' }}
+					title={'Manage Workflows'}
+					subtitle={'config'}
+					description={'Manage all your Workflows now.'}
+					gridItem
+					action={() =>
 						router.goTo(routes.workflows, api.workspaces.getContext())
 					}
 				/>
-				<Action
-					title="Manage Secrets"
-					onClick={() =>
+				<ActionCard
+					avatar={{ name: 'Secrets', src: 'icons/secrets' }}
+					title={'Manage Secrets'}
+					subtitle={'config'}
+					description={'Manage all your Workflow Secrets now.'}
+					gridItem
+					action={() =>
 						router.goTo(routes.secrets, api.workspaces.getContext())
 					}
 				/>
-				<Action
-					title="Manage Access Tokens"
-					onClick={() =>
-						router.goTo(routes.tokens, api.workspaces.getContext())
-					}
+				<ActionCard
+					avatar={{ name: 'Access Tokens', src: 'icons/accesstokens' }}
+					title={'Manage Access Tokens'}
+					subtitle={'config'}
+					description={'Manage all your Access Tokens now.'}
+					gridItem
+					action={() => router.goTo(routes.tokens, api.workspaces.getContext())}
 				/>
 			</Grid>
 		</VStack>

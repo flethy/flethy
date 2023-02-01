@@ -1,6 +1,7 @@
 import { Button, Grid, GridItem, Heading, VStack } from '@chakra-ui/react'
 import { observer } from 'mobx-react-lite'
 import { useTranslation } from 'react-i18next'
+import ActionCard from '../../components/ActionCard'
 import { WORKFLOW_TUTORIALS } from '../../constants/tutorials.const'
 import { useMst } from '../../models/root'
 import routes from '../../routes'
@@ -50,10 +51,14 @@ export default observer(() => {
 				{Object.keys(WORKFLOW_TUTORIALS).map((key) => {
 					const tutorial = WORKFLOW_TUTORIALS[key]
 					return (
-						<Action
-							title={tutorial.name}
+						<ActionCard
 							key={key}
-							onClick={() =>
+							avatar={{ name: tutorial.name }}
+							title={tutorial.name}
+							subtitle={'template'}
+							description={tutorial.description}
+							gridItem
+							action={() =>
 								router.goTo(routes.workflowNew, {
 									...api.workspaces.getContext(),
 									tutorial: key,
@@ -62,6 +67,14 @@ export default observer(() => {
 						/>
 					)
 				})}
+				<ActionCard
+					avatar={{ name: 'Explore Use Cases' }}
+					title={'Explore Use Cases'}
+					subtitle={'explore'}
+					description={'Explore all available use cases'}
+					gridItem
+					action={() => router.goTo(routes.explore)}
+				/>
 			</Grid>
 		</VStack>
 	)

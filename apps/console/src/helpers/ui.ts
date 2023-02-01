@@ -28,3 +28,7 @@ export const formatMonth = (date: Date) => {
 		month: 'short',
 	}).format(date)
 }
+
+export const splitCamelCase = (value: string) => {
+	return value.replace(/([a-z])([A-Z])/g, '$1 $2')
+}
