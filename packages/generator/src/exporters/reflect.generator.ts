@@ -37,18 +37,37 @@ export class ConfigTypeGenerator {
         }
         configTypes.push(foundConfigType)
       }
+      const foundInterfaceProperties = [
+        ...exportedConfigType.type.getProperties().map((property) => {
+          return ConfigTypeGenerator.generateProperties(property)
+        }),
+        ...exportedConfigType.type.baseType.getProperties().map((property) => {
+          return ConfigTypeGenerator.generateProperties(property)
+        }),
+      ]
+      const foundInterfacePropertiesWithoutDuplicates = []
+      for (const foundInterfaceProperty of foundInterfaceProperties) {
+        if (
+          !foundInterfacePropertiesWithoutDuplicates.find(
+            (property) => property.name === foundInterfaceProperty.name
+          )
+        ) {
+          foundInterfacePropertiesWithoutDuplicates.push(foundInterfaceProperty)
+        }
+      }
       foundConfigType.interfaces.push({
         name: exportedConfigType.interface,
-        properties: [
-          ...exportedConfigType.type.getProperties().map((property) => {
-            return ConfigTypeGenerator.generateProperties(property)
-          }),
-          ...exportedConfigType.type.baseType
-            .getProperties()
-            .map((property) => {
-              return ConfigTypeGenerator.generateProperties(property)
-            }),
-        ],
+        properties: foundInterfacePropertiesWithoutDuplicates,
+        // properties: [
+        //   ...exportedConfigType.type.getProperties().map((property) => {
+        //     return ConfigTypeGenerator.generateProperties(property)
+        //   }),
+        //   ...exportedConfigType.type.baseType
+        //     .getProperties()
+        //     .map((property) => {
+        //       return ConfigTypeGenerator.generateProperties(property)
+        //     }),
+        // ],
       })
     }
     fs.writeFileSync(

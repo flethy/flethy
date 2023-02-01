@@ -22,8 +22,9 @@ importers:
       '@cloudflare/workers-types': 4.20230115.0
       '@emotion/react': ^11.10.5
       '@emotion/styled': ^11.10.5
-      '@flethy/connectors': workspace:*
-      '@flethy/flow': ^0.0.317
+      '@flethy/configtypes': 0.0.318
+      '@flethy/connectors': 0.0.318
+      '@flethy/flow': 0.0.318
       '@fontsource/open-sans': ^4.5.14
       '@fontsource/raleway': ^4.5.12
       '@monaco-editor/react': ^4.4.6
@@ -69,8 +70,9 @@ importers:
       '@chakra-ui/system': 2.3.8_dovxhg2tvkkxkdnqyoum6wzcxm
       '@emotion/react': 11.10.5_yxdp3dl3eazy3vwpbmv4fq727a
       '@emotion/styled': 11.10.5_4erqsq3n444jecyuvaxwc5b3vi
-      '@flethy/connectors': link:../../packages/connectors
-      '@flethy/flow': 0.0.317
+      '@flethy/configtypes': 0.0.318
+      '@flethy/connectors': 0.0.318
+      '@flethy/flow': 0.0.318
       '@fontsource/open-sans': 4.5.14
       '@fontsource/raleway': 4.5.12
       '@monaco-editor/react': 4.4.6_6vrjaj6ridxbohi43n7zt4gn7q
@@ -4467,6 +4469,10 @@ packages:
     resolution: {integrity: sha512-dGGHpb61hLwifAu7sotuHFDBw6GTdpG8aKC0fsK17EuTzMRvUrH7lEAr6LTJ+sx3AZYed9yZ77rltVDHyg2hRg==}
     dev: false
 
+  /@flethy/configtypes/0.0.318:
+    resolution: {integrity: sha512-E16whZ3By1G5/jwWLb2r4YOA/5EOMIrBdSc86rWx8fl1p1VUy3xrZ2jCw1BNc43ervruY9hPNv/QoolU5X5nug==}
+    dev: false
+
   /@flethy/connectors/0.0.300:
     resolution: {integrity: sha512-ZejQV1RfALXfrJKFDLFFJKdNv3PQ8wHOIHrrO2SsdjLeQQjFsLNQwwMYF/OvbdokuduCaJvrSAl5+dN8KKJFxQ==}
     dev: false
@@ -4475,10 +4481,21 @@ packages:
     resolution: {integrity: sha512-bq9NAvDJX0EPvQv4Jrfb0FbfItVKqe7JOpXLV+XkDgWcGevD4GkHb9r7csSYV0QTM0dvMkvmDQUH+tjlKQj6gw==}
     dev: false
 
+  /@flethy/connectors/0.0.318:
+    resolution: {integrity: sha512-8urF/LrjiopdyJ6ef4JsuojBV/GA12Xr+1TYBpqgalBQirsVY51zXRLUtmz0osk5VXM9x2DiEG1Lvz9BbOb54g==}
+    dev: false
+
   /@flethy/flow/0.0.317:
     resolution: {integrity: sha512-dMLBHRxjLthshdSjOTRpmh1Ltf3jcEAdZqxovSIDRBkKKs4h1IYcsYKkW9bsM/7sTwTV8wBmXXD6cBJeAypj6A==}
     dependencies:
       '@flethy/connectors': 0.0.300
+      jsonata: 2.0.1
+    dev: false
+
+  /@flethy/flow/0.0.318:
+    resolution: {integrity: sha512-crbcQoE4AsleJHrBL0EuwIeltNp1EkDKzghv8SuiJFk+J1pMGgtdCYZiK/dh0Am9NyrE7uP/q00O5r3+9xg7Ig==}
+    dependencies:
+      '@flethy/connectors': 0.0.317
       jsonata: 2.0.1
     dev: false
 

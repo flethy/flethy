@@ -1,6 +1,7 @@
 import { Instance, types } from 'mobx-state-tree'
 import { AppStateModel } from './appState'
 import { HelmetModel } from './helmet'
+import { IntegrationsModel } from './integrations'
 import { SecretsModel } from './secrets'
 import { StateAndCache } from './stateAndCache'
 import { TokensModel } from './tokens'
@@ -17,6 +18,9 @@ export default types.model('API', {
 	workflows: types.optional(WorkflowsModel, () => WorkflowsModel.create()),
 	workspaces: types.optional(WorkspacesModel, () => WorkspacesModel.create()),
 	appState: types.optional(AppStateModel, () => AppStateModel.create()),
+	integrations: types.optional(IntegrationsModel, () =>
+		IntegrationsModel.create(),
+	),
 })
 
 export type APIType = Instance<{
@@ -28,4 +32,5 @@ export type APIType = Instance<{
 	workflows: Instance<typeof WorkflowsModel>
 	workspaces: Instance<typeof WorkspacesModel>
 	appState: Instance<typeof AppStateModel>
+	integrations: Instance<typeof IntegrationsModel>
 }>

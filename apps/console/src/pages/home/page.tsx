@@ -29,6 +29,7 @@ export default observer(() => {
 				<>
 					<HomeSections />
 					<HomeTemplates />
+					{/* <HomeUseCases /> */}
 				</>
 			)
 		}

@@ -20,6 +20,19 @@ export const LANDINGPAGE_PUBLIC = `${LANDINGPAGE_BASE}/public`
 export const LANDINGPAGE_INTEGRATIONS = `${LANDINGPAGE_PUBLIC}/integrations`
 export const LANDINGPAGE_CONSTANTS = `${LANDINGPAGE_BASE}/src/constants`
 
+const CONSOLE_BASE = path.join(
+  __dirname,
+  '..',
+  '..',
+  '..',
+  '..',
+  'apps',
+  'console'
+)
+export const CONSOLE_PUBLIC = `${CONSOLE_BASE}/public`
+export const CONSOLE_INTEGRATIONS = `${CONSOLE_PUBLIC}/integrations`
+export const CONSOLE_CONSTANTS = `${CONSOLE_BASE}/src/constants`
+
 export class BrandExporter {
   private files: string[] = []
 
@@ -173,6 +186,17 @@ export class BrandExporter {
       fs.copyFileSync(
         `${BRAND_LOGOS}/${logo.file}`,
         `${LANDINGPAGE_INTEGRATIONS}/${logo.file}`
+      )
+    }
+
+    fs.writeFileSync(
+      `${CONSOLE_CONSTANTS}/integrations.const.ts`,
+      integrationConstants
+    )
+    for (const logo of logoArray) {
+      fs.copyFileSync(
+        `${BRAND_LOGOS}/${logo.file}`,
+        `${CONSOLE_INTEGRATIONS}/${logo.file}`
       )
     }
   }

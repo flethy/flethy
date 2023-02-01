@@ -2,6 +2,7 @@ import { Route } from 'mobx-router'
 import { RootStore } from './models/root'
 import UnsufficientPermissionsPage from './pages/403/page'
 import NotFoundPage from './pages/404/page'
+import ExplorePage from './pages/explore/page'
 import HomePage from './pages/home/page'
 import SecretsPage from './pages/secrets/page'
 import TokensPage from './pages/tokens/page'
@@ -69,6 +70,14 @@ export default {
 		component: <HomePage />,
 		onEnter(_route, _parameters, { root: { pages } }) {
 			pages.home.initialisePage()
+		},
+	}),
+
+	explore: new Route<RootStore>({
+		path: '/explore',
+		component: <ExplorePage />,
+		onEnter(_route, _parameters, { root: { api, pages } }) {
+			api.integrations.init()
 		},
 	}),
 
