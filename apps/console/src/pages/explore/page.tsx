@@ -4,7 +4,6 @@ import {
 	Container,
 	Grid,
 	Heading,
-	useColorModeValue,
 	VStack,
 } from '@chakra-ui/react'
 import { observer } from 'mobx-react-lite'
@@ -24,13 +23,12 @@ export default observer(() => {
 	} = useMst()
 
 	const UseCaseCard = ({
-		integrationId,
+		integration,
 		currentInterface,
 	}: {
-		integrationId: string
+		integration: any
 		currentInterface: any
 	}) => {
-		const integration = api.integrations.getIntegrationById(integrationId)
 		return (
 			<ActionCard
 				avatar={{
@@ -38,14 +36,14 @@ export default observer(() => {
 					name: integration.configType.name,
 				}}
 				title={currentInterface.name}
-				subtitle={integrationId}
+				subtitle={integration.id}
 				description={integration.integration.description}
 				tags={[integration.config.meta.category, integration.config.meta.type]}
 				gridItem
 				action={() => {
 					router.goTo(routes.workflowNew, {
 						...api.workspaces.getContext(),
-						useCaseIntegrationId: integrationId,
+						useCaseIntegrationId: integration.id,
 						useCaseInterface: currentInterface.name,
 					})
 				}}
@@ -89,22 +87,23 @@ export default observer(() => {
 					gap={6}
 				>
 					{api.integrations
-						.getIntegrationIds({ categories: page.selectedTags })
-						.map((integrationId) => {
-							if (!api.integrations.configTypes) {
+						.getIntegrationsByIds({ categories: page.selectedTags })
+						.slice(0, 20)
+						.map((integration) => {
+							if (!integration.configType) {
 								return null
 							}
-							return api.integrations.configTypes
-								.get(integrationId)
-								.interfaces.map((currentInterface: any, index: any) => {
+							return integration.configType.interfaces.map(
+								(currentInterface: any, index: any) => {
 									return (
 										<UseCaseCard
-											integrationId={integrationId}
+											integration={integration}
 											currentInterface={currentInterface}
-											key={`${integrationId}-${index}`}
+											key={`${integration.id}-${index}`}
 										/>
 									)
-								})
+								},
+							)
 						})}
 				</Grid>
 			</VStack>
