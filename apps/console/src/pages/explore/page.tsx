@@ -25,9 +25,11 @@ export default observer(() => {
 	const UseCaseCard = ({
 		integration,
 		currentInterface,
+		isLast,
 	}: {
 		integration: any
 		currentInterface: any
+		isLast: boolean
 	}) => {
 		return (
 			<ActionCard
@@ -40,6 +42,9 @@ export default observer(() => {
 				description={integration.integration.description}
 				tags={[integration.config.meta.category, integration.config.meta.type]}
 				gridItem
+				infiniteScroll={
+					isLast ? { loadMore: page.increaseLoadedIndex } : undefined
+				}
 				action={() => {
 					router.goTo(routes.workflowNew, {
 						...api.workspaces.getContext(),
@@ -88,18 +93,22 @@ export default observer(() => {
 				>
 					{api.integrations
 						.getIntegrationsByIds({ categories: page.selectedTags })
-						.slice(0, 20)
-						.map((integration) => {
+						.slice(0, page.loadedIndex)
+						.map((integration, integrationIndex) => {
+							const isLast = integrationIndex === page.loadedIndex - 1
 							if (!integration.configType) {
 								return null
 							}
+							const interfaceCount = integration.configType.interfaces.length
 							return integration.configType.interfaces.map(
 								(currentInterface: any, index: any) => {
+									const isLastInterface = isLast && index === interfaceCount - 1
 									return (
 										<UseCaseCard
 											integration={integration}
 											currentInterface={currentInterface}
 											key={`${integration.id}-${index}`}
+											isLast={isLastInterface}
 										/>
 									)
 								},
