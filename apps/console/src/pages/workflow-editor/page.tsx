@@ -41,6 +41,7 @@ export default observer(() => {
 			<HStack>
 				<Button onClick={() => page.save()}>Save</Button>
 				<Button
+					isDisabled={!page.isSaved()}
 					onClick={() =>
 						instancesCreate.open({
 							projectId: page.context.projectId,

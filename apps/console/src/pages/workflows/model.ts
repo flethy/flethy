@@ -1,4 +1,5 @@
 import { Instance, types } from 'mobx-state-tree'
+import { PAGE_CONTEXT } from '../../models/api/context'
 import { WorkflowDataModel } from '../../models/api/workflows'
 import { FlethyContext } from '../../models/flethy.types'
 import { getRootStore } from '../../models/helpers'
@@ -13,6 +14,7 @@ export const WorkflowsPage = types
 			self.context.projectId = options.projectId
 			self.context.workspaceId = options.workspaceId
 			const { api } = getRootStore(self)
+			api.context.setPage(PAGE_CONTEXT.WORKFLOWS)
 			api.workflows.list({
 				workspaceId: self.context.workspaceId,
 				projectId: self.context.projectId,

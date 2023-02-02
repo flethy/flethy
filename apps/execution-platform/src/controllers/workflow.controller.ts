@@ -304,7 +304,7 @@ export class WorkflowController {
     } catch (error: any) {
       throw new FlethyError({
         message: `Failed to execute workflow ${request.workflowId} for project ${request.projectId}: ${error.message}`,
-        type: ErrorType.Internal,
+        type: ErrorType.BadRequest,
         log: {
           message: `Failed to execute workflow ${request.workflowId} for project ${request.projectId}: ${error.message}`,
           context: { method: "start", origin: "workflow.controller.ts" },

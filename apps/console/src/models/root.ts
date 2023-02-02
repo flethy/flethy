@@ -1,6 +1,7 @@
 import { RouterStore } from 'mobx-router'
 import { Instance, types } from 'mobx-state-tree'
 import { useContext } from 'react'
+import { DocsBarComponent } from '../components/docs-bar/model'
 import { MenuComponent } from '../components/menu/model'
 import { CreateInstanceModal } from '../components/modals/instances/create/model'
 import { CreateSecretsModal } from '../components/modals/secrets/create/model'
@@ -10,6 +11,7 @@ import { DeleteTokenModal } from '../components/modals/tokens/delete/model'
 import { QuickSearchComponent } from '../components/quicksearch/model'
 import { UnsufficientPermissionsPage } from '../pages/403/model'
 import { NotFoundPage } from '../pages/404/model'
+import { ExplorePage } from '../pages/explore/model'
 import { HomePage } from '../pages/home/model'
 import { SecretsPage } from '../pages/secrets/model'
 import { TokensPage } from '../pages/tokens/model'
@@ -35,6 +37,7 @@ const PagesStore = types.model('Pages', {
 	secrets: types.optional(SecretsPage, () => SecretsPage.create()),
 	tokens: types.optional(TokensPage, () => TokensPage.create()),
 	workflows: types.optional(WorkflowsPage, () => WorkflowsPage.create()),
+	exploreUseCases: types.optional(ExplorePage, () => ExplorePage.create()),
 })
 
 const ComponentsStore = types.model('Components', {
@@ -42,6 +45,7 @@ const ComponentsStore = types.model('Components', {
 	quickSearch: types.optional(QuickSearchComponent, () =>
 		QuickSearchComponent.create(),
 	),
+	docsBar: types.optional(DocsBarComponent, () => DocsBarComponent.create()),
 })
 
 const ModalsStore = types.model('Modals', {

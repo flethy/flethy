@@ -1,4 +1,5 @@
 import { Instance, types } from 'mobx-state-tree'
+import { PAGE_CONTEXT } from '../../models/api/context'
 import { TokenDataModel } from '../../models/api/tokens'
 import { FlethyContext } from '../../models/flethy.types'
 import { getRootStore } from '../../models/helpers'
@@ -13,6 +14,7 @@ export const TokensPage = types
 			self.context.projectId = options.projectId
 			self.context.workspaceId = options.workspaceId
 			const { api } = getRootStore(self)
+			api.context.setPage(PAGE_CONTEXT.TOKENS)
 			api.tokens.list({
 				workspaceId: self.context.workspaceId,
 				projectId: self.context.projectId,

@@ -5,6 +5,7 @@ import {
 	WORKFLOW_STARTER,
 	WORKFLOW_TUTORIALS,
 } from '../../constants/tutorials.const'
+import { PAGE_CONTEXT } from '../../models/api/context'
 import { WorkflowDataModel } from '../../models/api/workflows'
 import { FlethyContext } from '../../models/flethy.types'
 import { getRootStore, getRouter } from '../../models/helpers'
@@ -36,6 +37,10 @@ export const WorkflowEditorPage = types
 			workspaceId: string
 			projectId: string
 			tutorial?: string
+			useCase?: {
+				id: string
+				interfaceName: string
+			}
 		}) {
 			self.state = 'loading'
 			self.context.projectId = options.projectId
@@ -46,9 +51,11 @@ export const WorkflowEditorPage = types
 			self.workflow = ''
 			self.envs.clear()
 
+			const { api } = getRootStore(self)
+			api.context.setPage(PAGE_CONTEXT.EDITOR)
+
 			if (options.workflowId) {
 				self.workflowId = options.workflowId
-				const { api } = getRootStore(self)
 				const workflow: Instance<typeof WorkflowDataModel> =
 					yield api.workflows.get({
 						workspaceId: options.workspaceId,
@@ -71,6 +78,21 @@ export const WorkflowEditorPage = types
 					}
 				}
 				self.workflow = JSON.stringify(tutorial.workflow, null, 2)
+			} else if (options.useCase) {
+				const useCase = api.integrations.getExampleConfigByInterface(
+					options.useCase.id,
+					options.useCase.interfaceName,
+				)
+				if (useCase) {
+					self.name = options.useCase.interfaceName
+					const useCaseWorkflow = [
+						{
+							id: options.useCase.interfaceName,
+							...useCase,
+						},
+					]
+					self.workflow = JSON.stringify(useCaseWorkflow, null, 2)
+				}
 			} else {
 				self.workflow = JSON.stringify(WORKFLOW_STARTER, null, 2)
 			}
@@ -200,5 +222,11 @@ export const WorkflowEditorPage = types
 			return edges
 		}
 
-		return { getNodes, getEdges }
+		const isSaved = (): boolean => {
+			const isSaved = self.workflowId?.length > 0
+			console.log(`isSaved: ${isSaved}`)
+			return isSaved
+		}
+
+		return { getNodes, getEdges, isSaved }
 	})
