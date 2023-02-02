@@ -5,6 +5,7 @@ import {
 	WORKFLOW_STARTER,
 	WORKFLOW_TUTORIALS,
 } from '../../constants/tutorials.const'
+import { PAGE_CONTEXT } from '../../models/api/context'
 import { WorkflowDataModel } from '../../models/api/workflows'
 import { FlethyContext } from '../../models/flethy.types'
 import { getRootStore, getRouter } from '../../models/helpers'
@@ -50,9 +51,11 @@ export const WorkflowEditorPage = types
 			self.workflow = ''
 			self.envs.clear()
 
+			const { api } = getRootStore(self)
+			api.context.setPage(PAGE_CONTEXT.EDITOR)
+
 			if (options.workflowId) {
 				self.workflowId = options.workflowId
-				const { api } = getRootStore(self)
 				const workflow: Instance<typeof WorkflowDataModel> =
 					yield api.workflows.get({
 						workspaceId: options.workspaceId,
@@ -76,7 +79,6 @@ export const WorkflowEditorPage = types
 				}
 				self.workflow = JSON.stringify(tutorial.workflow, null, 2)
 			} else if (options.useCase) {
-				const { api } = getRootStore(self)
 				const useCase = api.integrations.getExampleConfigByInterface(
 					options.useCase.id,
 					options.useCase.interfaceName,

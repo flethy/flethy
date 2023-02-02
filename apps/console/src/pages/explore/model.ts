@@ -1,4 +1,5 @@
 import { types } from 'mobx-state-tree'
+import { PAGE_CONTEXT } from '../../models/api/context'
 import { getRootStore, getRouter } from '../../models/helpers'
 import routes from '../../routes'
 
@@ -12,6 +13,7 @@ export const ExplorePage = types
 			self.selectedTags.clear()
 			const { api } = getRootStore(self)
 			api.integrations.init()
+			api.context.setPage(PAGE_CONTEXT.EXPLORE)
 		}
 
 		const toggleTag = (tag: string) => {

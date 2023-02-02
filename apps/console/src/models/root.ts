@@ -1,6 +1,7 @@
 import { RouterStore } from 'mobx-router'
 import { Instance, types } from 'mobx-state-tree'
 import { useContext } from 'react'
+import { DocsBarComponent } from '../components/docs-bar/model'
 import { MenuComponent } from '../components/menu/model'
 import { CreateInstanceModal } from '../components/modals/instances/create/model'
 import { CreateSecretsModal } from '../components/modals/secrets/create/model'
@@ -44,6 +45,7 @@ const ComponentsStore = types.model('Components', {
 	quickSearch: types.optional(QuickSearchComponent, () =>
 		QuickSearchComponent.create(),
 	),
+	docsBar: types.optional(DocsBarComponent, () => DocsBarComponent.create()),
 })
 
 const ModalsStore = types.model('Modals', {

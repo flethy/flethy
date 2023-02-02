@@ -1,6 +1,7 @@
 import { Box } from '@chakra-ui/react'
 import { observer } from 'mobx-react-lite'
 import { MobxRouter } from 'mobx-router'
+import DocsBar from '../../components/docs-bar/page'
 import Footer from '../../components/footer'
 import Menu from '../../components/menu/page'
 import Modals from '../../components/modals/Modals'
@@ -15,6 +16,7 @@ export default observer(() => {
 			<Navbar />
 			<Menu />
 			<Box p={4} minHeight={{ md: 'calc(100vh - 130px)' }}>
+				<DocsBar />
 				<MobxRouter store={rootStore} />
 			</Box>
 			<Modals />

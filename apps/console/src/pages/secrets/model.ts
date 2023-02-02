@@ -1,4 +1,5 @@
 import { Instance, types } from 'mobx-state-tree'
+import { PAGE_CONTEXT } from '../../models/api/context'
 import { SecretsDataModel } from '../../models/api/secrets'
 import { FlethyContext } from '../../models/flethy.types'
 import { getRootStore } from '../../models/helpers'
@@ -13,6 +14,7 @@ export const SecretsPage = types
 			self.context.projectId = options.projectId
 			self.context.workspaceId = options.workspaceId
 			const { api } = getRootStore(self)
+			api.context.setPage(PAGE_CONTEXT.SECRETS)
 			api.secrets.get({
 				workspaceId: self.context.workspaceId,
 				projectId: self.context.projectId,
