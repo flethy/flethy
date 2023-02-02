@@ -1,8 +1,17 @@
-import { Container, Grid, Heading, VStack } from '@chakra-ui/react'
+import {
+	Button,
+	Center,
+	Container,
+	Grid,
+	Heading,
+	useColorModeValue,
+	VStack,
+} from '@chakra-ui/react'
 import { observer } from 'mobx-react-lite'
 import { useTranslation } from 'react-i18next'
 import ActionCard from '../../components/ActionCard'
 import { useMst } from '../../models/root'
+import routes from '../../routes'
 
 export default observer(() => {
 	const { t } = useTranslation('app')
@@ -10,7 +19,7 @@ export default observer(() => {
 		router,
 		root: {
 			api,
-			pages: { home: page },
+			pages: { exploreUseCases: page },
 		},
 	} = useMst()
 
@@ -34,11 +43,11 @@ export default observer(() => {
 				tags={[integration.config.meta.category, integration.config.meta.type]}
 				gridItem
 				action={() => {
-					const properties = api.integrations.getExampleConfigByInterface(
-						integrationId,
-						currentInterface.name,
-					)
-					console.log(properties)
+					router.goTo(routes.workflowNew, {
+						...api.workspaces.getContext(),
+						useCaseIntegrationId: integrationId,
+						useCaseInterface: currentInterface.name,
+					})
 				}}
 			/>
 		)
@@ -46,33 +55,59 @@ export default observer(() => {
 
 	const content = (
 		<Container maxW={'7xl'}>
-			{/* <VStack w="full"> */}
-			<Heading as={'h2'}>Explore Use Cases</Heading>
-			<Grid
-				py={5}
-				w="full"
-				templateColumns={{
-					base: '1fr',
-					sm: 'repeat(2, 1fr)',
-					md: 'repeat(3, 1fr)',
-				}}
-				gap={6}
-			>
-				{api.integrations.ids.map((integrationId) => {
-					return api.integrations.configTypes
-						.get(integrationId)
-						.interfaces.map((currentInterface: any, index: any) => {
+			<VStack w="full">
+				<Heading as={'h2'}>Explore Use Cases</Heading>
+				<Center>
+					<div>
+						{api.integrations.categories.map((category) => {
 							return (
-								<UseCaseCard
-									integrationId={integrationId}
-									currentInterface={currentInterface}
-									key={`${integrationId}-${index}`}
-								/>
+								<Button
+									key={category}
+									px={2}
+									py={1}
+									m={1}
+									colorScheme={
+										page.selectedTags.includes(category) ? 'purple' : 'gray'
+									}
+									fontWeight={'400'}
+									onClick={() => page.toggleTag(category)}
+								>
+									#{category}
+								</Button>
 							)
-						})
-				})}
-			</Grid>
-			{/* </VStack> */}
+						})}
+					</div>
+				</Center>
+				<Grid
+					py={5}
+					w="full"
+					templateColumns={{
+						base: '1fr',
+						sm: 'repeat(2, 1fr)',
+						md: 'repeat(3, 1fr)',
+					}}
+					gap={6}
+				>
+					{api.integrations
+						.getIntegrationIds({ categories: page.selectedTags })
+						.map((integrationId) => {
+							if (!api.integrations.configTypes) {
+								return null
+							}
+							return api.integrations.configTypes
+								.get(integrationId)
+								.interfaces.map((currentInterface: any, index: any) => {
+									return (
+										<UseCaseCard
+											integrationId={integrationId}
+											currentInterface={currentInterface}
+											key={`${integrationId}-${index}`}
+										/>
+									)
+								})
+						})}
+				</Grid>
+			</VStack>
 		</Container>
 	)
 

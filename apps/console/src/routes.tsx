@@ -76,8 +76,8 @@ export default {
 	explore: new Route<RootStore>({
 		path: '/explore',
 		component: <ExplorePage />,
-		onEnter(_route, _parameters, { root: { api, pages } }) {
-			api.integrations.init()
+		onEnter(_route, _parameters, { root: { pages } }) {
+			pages.exploreUseCases.init()
 		},
 	}),
 
@@ -121,8 +121,24 @@ export default {
 		path: new RouterPathUtils().w().p().wf().custom('new').gen(),
 		component: <WorkflowEditorPage />,
 		onEnter(_route, parameters, { root: { pages } }) {
-			const { projectId, workspaceId, tutorial } = parameters as any
-			pages.workflowEditor.initialisePage({ projectId, workspaceId, tutorial })
+			const {
+				projectId,
+				workspaceId,
+				tutorial,
+				useCaseIntegrationId,
+				useCaseInterface,
+			} = parameters as any
+			let payload: any = { projectId, workspaceId }
+			if (useCaseIntegrationId && useCaseInterface) {
+				payload.useCase = {
+					id: useCaseIntegrationId,
+					interfaceName: useCaseInterface,
+				}
+			}
+			if (tutorial) {
+				payload.tutorial = tutorial
+			}
+			pages.workflowEditor.initialisePage(payload)
 		},
 	}),
 

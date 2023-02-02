@@ -7,6 +7,8 @@ export const IntegrationsModel = types
 	.model('IntegrationsModel', {
 		ids: types.array(types.string),
 		integrations: types.frozen<Map<string, any>>(),
+		categories: types.frozen<string[]>(),
+		categoriesMap: types.frozen<Map<string, string[]>>(),
 		configs: types.frozen<Map<string, any>>(),
 		configTypes: types.frozen<Map<string, any>>(),
 		loaded: types.optional(types.boolean, false),
@@ -19,16 +21,34 @@ export const IntegrationsModel = types
 			const integrations = new Map<string, any>()
 			const configs = new Map<string, any>()
 			const configTypes = new Map<string, any>()
+			const categories = new Set<string>()
+			const categoriesMap = new Map<string, Set<string>>()
 			INTEGRATIONS.forEach((integration) => {
 				const id = integration.id
 				self.ids.push(id)
 				integrations.set(id, integration)
 				const config = ConfigUtils.getConfigById(integration.id)
 				configs.set(id, config)
+				categories.add(config.meta.category)
+				let categorySet = categoriesMap.get(config.meta.category)
+				if (!categorySet) {
+					categorySet = new Set<string>()
+				}
+				categorySet.add(id)
+				categoriesMap.set(config.meta.category, categorySet)
 			})
 			CONFIG_TYPES.forEach((configType) => {
 				configTypes.set(configType.id, configType)
 			})
+			self.categories = Array.from(categories)
+			const categoriesMapWithoutDuplicates = new Map<string, string[]>()
+			self.categories.forEach((category) => {
+				categoriesMapWithoutDuplicates.set(
+					category,
+					Array.from(categoriesMap.get(category)!),
+				)
+			})
+			self.categoriesMap = categoriesMapWithoutDuplicates
 			self.integrations = integrations
 			self.configs = configs
 			self.configTypes = configTypes
@@ -38,6 +58,23 @@ export const IntegrationsModel = types
 		return { init }
 	})
 	.views((self) => {
+		const getIntegrationIds = (filter: { categories: string[] }): string[] => {
+			let integrationIds: string[] = []
+			if (filter.categories.length > 0) {
+				const ids = new Set<string>()
+				filter.categories.forEach((category) => {
+					const categoryIds = self.categoriesMap.get(category)
+					if (categoryIds) {
+						categoryIds.forEach((id) => ids.add(id))
+					}
+				})
+				integrationIds = Array.from(ids)
+			} else {
+				integrationIds = self.ids.slice()
+			}
+			return integrationIds
+		}
+
 		const getIntegrationById = (
 			id: string,
 		): { integration: any; config: any; configType: any } => {
@@ -58,7 +95,6 @@ export const IntegrationsModel = types
 				for (const property of foundInterface.properties) {
 					if (!property.optional) {
 						let value: any
-						console.log(property)
 						if (!Array.isArray(property.types)) {
 							value = property.types
 						} else if (property.types.length > 0) {
@@ -75,5 +111,14 @@ export const IntegrationsModel = types
 			return properties
 		}
 
-		return { getIntegrationById, getExampleConfigByInterface }
+		const getCategories = () => {
+			return self.categories.slice().sort((a, b) => a.localeCompare(b))
+		}
+
+		return {
+			getIntegrationById,
+			getExampleConfigByInterface,
+			getCategories,
+			getIntegrationIds,
+		}
 	})
