@@ -18,9 +18,9 @@ const DOC_ITEMS: { [key: string]: DocItem } = {
 	},
 	api: {
 		id: 'api',
-		title: 'API',
+		title: 'Learn about the API',
 		description:
-			'Learn all about the flethy API to manage all your workflows. Or to start a new instance.',
+			'The flethy API is the easiest way to use workflows. Via the API you can create and update workflows, list existing ones and delete workflows. The most important part is, of course, starting a workflow.',
 		href: 'https://docs.flethy.com/docs/api/flethy-execution-platform',
 	},
 	flows: {

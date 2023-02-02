@@ -54,7 +54,7 @@ export const ContextModel = types
 						title: 'Design your Workflow',
 						concatenateAppname: true,
 					})
-					components.docsBar.setDocItems([])
+					components.docsBar.setDocItems(['api'])
 					break
 				case PAGE_CONTEXT.SECRETS:
 					api.helmet.updateTitle({

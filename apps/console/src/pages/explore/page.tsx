@@ -4,7 +4,6 @@ import {
 	Container,
 	Grid,
 	Heading,
-	useColorModeValue,
 	VStack,
 } from '@chakra-ui/react'
 import { observer } from 'mobx-react-lite'
@@ -24,13 +23,14 @@ export default observer(() => {
 	} = useMst()
 
 	const UseCaseCard = ({
-		integrationId,
+		integration,
 		currentInterface,
+		isLast,
 	}: {
-		integrationId: string
+		integration: any
 		currentInterface: any
+		isLast: boolean
 	}) => {
-		const integration = api.integrations.getIntegrationById(integrationId)
 		return (
 			<ActionCard
 				avatar={{
@@ -38,14 +38,17 @@ export default observer(() => {
 					name: integration.configType.name,
 				}}
 				title={currentInterface.name}
-				subtitle={integrationId}
+				subtitle={integration.id}
 				description={integration.integration.description}
 				tags={[integration.config.meta.category, integration.config.meta.type]}
 				gridItem
+				infiniteScroll={
+					isLast ? { loadMore: page.increaseLoadedIndex } : undefined
+				}
 				action={() => {
 					router.goTo(routes.workflowNew, {
 						...api.workspaces.getContext(),
-						useCaseIntegrationId: integrationId,
+						useCaseIntegrationId: integration.id,
 						useCaseInterface: currentInterface.name,
 					})
 				}}
@@ -89,22 +92,27 @@ export default observer(() => {
 					gap={6}
 				>
 					{api.integrations
-						.getIntegrationIds({ categories: page.selectedTags })
-						.map((integrationId) => {
-							if (!api.integrations.configTypes) {
+						.getIntegrationsByIds({ categories: page.selectedTags })
+						.slice(0, page.loadedIndex)
+						.map((integration, integrationIndex) => {
+							const isLast = integrationIndex === page.loadedIndex - 1
+							if (!integration.configType) {
 								return null
 							}
-							return api.integrations.configTypes
-								.get(integrationId)
-								.interfaces.map((currentInterface: any, index: any) => {
+							const interfaceCount = integration.configType.interfaces.length
+							return integration.configType.interfaces.map(
+								(currentInterface: any, index: any) => {
+									const isLastInterface = isLast && index === interfaceCount - 1
 									return (
 										<UseCaseCard
-											integrationId={integrationId}
+											integration={integration}
 											currentInterface={currentInterface}
-											key={`${integrationId}-${index}`}
+											key={`${integration.id}-${index}`}
+											isLast={isLastInterface}
 										/>
 									)
-								})
+								},
+							)
 						})}
 				</Grid>
 			</VStack>

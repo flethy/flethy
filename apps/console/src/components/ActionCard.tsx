@@ -14,6 +14,7 @@ import { observer } from 'mobx-react-lite'
 import { useTranslation } from 'react-i18next'
 import { splitCamelCase } from '../helpers/ui'
 import { useMst } from '../models/root'
+import { InView } from 'react-intersection-observer'
 
 export default observer(
 	(props: {
@@ -26,6 +27,9 @@ export default observer(
 			src?: string
 		}
 		gridItem?: boolean
+		infiniteScroll?: {
+			loadMore: () => void
+		}
 		action: () => void
 	}) => {
 		const { t } = useTranslation('app')
@@ -103,6 +107,39 @@ export default observer(
 			</Center>
 		)
 
-		return props.gridItem === true ? <GridItem>{content}</GridItem> : content
+		let component = content
+		if (props.infiniteScroll && props.gridItem) {
+			component = (
+				<InView
+					as="div"
+					triggerOnce
+					onChange={(inView, entry) => {
+						if (inView) {
+							props.infiniteScroll!.loadMore()
+						}
+					}}
+				>
+					<GridItem>{content}</GridItem>
+				</InView>
+			)
+		} else if (props.infiniteScroll) {
+			component = (
+				<InView
+					as="div"
+					triggerOnce
+					onChange={(inView, entry) => {
+						if (inView) {
+							props.infiniteScroll!.loadMore()
+						}
+					}}
+				>
+					{content}
+				</InView>
+			)
+		} else if (props.gridItem) {
+			component = <GridItem>{content}</GridItem>
+		}
+
+		return component
 	},
 )

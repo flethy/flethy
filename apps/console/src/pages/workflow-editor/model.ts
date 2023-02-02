@@ -224,7 +224,6 @@ export const WorkflowEditorPage = types
 
 		const isSaved = (): boolean => {
 			const isSaved = self.workflowId?.length > 0
-			console.log(`isSaved: ${isSaved}`)
 			return isSaved
 		}
 

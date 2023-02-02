@@ -7,6 +7,7 @@ export const IntegrationsModel = types
 	.model('IntegrationsModel', {
 		ids: types.array(types.string),
 		integrations: types.frozen<Map<string, any>>(),
+		integrationsArray: types.frozen<any[]>(),
 		categories: types.frozen<string[]>(),
 		categoriesMap: types.frozen<Map<string, string[]>>(),
 		configs: types.frozen<Map<string, any>>(),
@@ -23,6 +24,12 @@ export const IntegrationsModel = types
 			const configTypes = new Map<string, any>()
 			const categories = new Set<string>()
 			const categoriesMap = new Map<string, Set<string>>()
+			const integrationArray: Array<{
+				id: string
+				integration: any
+				config: any
+				configType: any
+			}> = []
 			INTEGRATIONS.forEach((integration) => {
 				const id = integration.id
 				self.ids.push(id)
@@ -36,10 +43,23 @@ export const IntegrationsModel = types
 				}
 				categorySet.add(id)
 				categoriesMap.set(config.meta.category, categorySet)
+				integrationArray.push({
+					id,
+					integration,
+					config,
+					configType: {},
+				})
 			})
 			CONFIG_TYPES.forEach((configType) => {
 				configTypes.set(configType.id, configType)
+				const foundIntegration = integrationArray.find(
+					(item) => item.id === configType.id,
+				)
+				if (foundIntegration) {
+					foundIntegration.configType = configType
+				}
 			})
+			self.integrationsArray = integrationArray
 			self.categories = Array.from(categories)
 			const categoriesMapWithoutDuplicates = new Map<string, string[]>()
 			self.categories.forEach((category) => {
@@ -73,6 +93,18 @@ export const IntegrationsModel = types
 				integrationIds = self.ids.slice()
 			}
 			return integrationIds
+		}
+
+		const getIntegrationsByIds = (filter: { categories: string[] }) => {
+			let integrations = []
+			if (filter.categories.length > 0) {
+				integrations = self.integrationsArray.filter((item) =>
+					filter.categories.includes(item.config.meta.category),
+				)
+			} else {
+				integrations = self.integrationsArray
+			}
+			return integrations
 		}
 
 		const getIntegrationById = (
@@ -120,5 +152,6 @@ export const IntegrationsModel = types
 			getExampleConfigByInterface,
 			getCategories,
 			getIntegrationIds,
+			getIntegrationsByIds,
 		}
 	})

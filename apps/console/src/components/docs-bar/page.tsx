@@ -1,4 +1,6 @@
+import { ExternalLinkIcon } from '@chakra-ui/icons'
 import {
+	Text,
 	Accordion,
 	AccordionButton,
 	AccordionIcon,
@@ -6,6 +8,8 @@ import {
 	AccordionPanel,
 	Box,
 	Container,
+	Stack,
+	Link,
 } from '@chakra-ui/react'
 import { observer } from 'mobx-react-lite'
 import { useTranslation } from 'react-i18next'
@@ -36,7 +40,15 @@ export default observer(() => {
 										<AccordionIcon />
 									</AccordionButton>
 								</h2>
-								<AccordionPanel pb={4}>{item.description}</AccordionPanel>
+								<AccordionPanel pb={4}>
+									<Stack>
+										<Text>{item.description}</Text>
+										<Link href={item.href} isExternal mx={2}>
+											Go to Docs
+											<ExternalLinkIcon mx="2px" />
+										</Link>
+									</Stack>
+								</AccordionPanel>
 							</AccordionItem>
 						)
 					})}
