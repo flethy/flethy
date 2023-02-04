@@ -1,7 +1,7 @@
 {
-  "name": "@flethy/execution-platform",
+  "name": "@flethy/execution-platform-cron-trigger",
   "version": "1.0.0",
-  "description": "flethy execution platform",
+  "description": "flethy execution platform cron trigger",
   "keywords": [],
   "main": "index.ts",
   "scripts": {
