@@ -136,7 +136,6 @@ import SerpStack from '../../connectors/src/configs/serpstack.config'
 import Shortcut from '../../connectors/src/configs/shortcut.config'
 import Shrtcode from '../../connectors/src/configs/shrtcode.config'
 import SideKick from '../../connectors/src/configs/sidekick.config'
-import { Slack } from '../../connectors/src/configs/slack.config'
 import Stackby from '../../connectors/src/configs/stackby.config'
 import Statically from '../../connectors/src/configs/statically.config'
 import Supabase from '../../connectors/src/configs/supabase.config'
@@ -284,9 +283,8 @@ import WorkOS from '@flethy/connectors/src/configs/workos.config'
 import WriteSonic from '@flethy/connectors/src/configs/writesonic.config'
 import Yapily from '@flethy/connectors/src/configs/yapily.config'
 import { HttpRequest } from './controllers/HttpRequest'
-import nominatim from './examples/nominatim'
+import mailtrap from './examples/mailtrap'
 import { logger } from './utils/Logger'
-import auth0 from './examples/auth0'
 
 async function main() {
   const requestConfigs: {
@@ -3855,7 +3853,7 @@ Here you find all the available integrations`,
       'query:provider': 'redstone',
     }),
   }
-  const requestConfig = auth0.configs.configureCustomDomains
+  const requestConfig = mailtrap.configs.sendTestEmail
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(nao(requestConfig))

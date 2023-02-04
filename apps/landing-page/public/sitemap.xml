@@ -629,6 +629,10 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://flethy.com/integrations/mailtrap</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://flethy.com/integrations/mastodon</loc>
     <priority>0.8</priority>
   </url>
@@ -1418,6 +1422,10 @@
   </url>
   <url>
     <loc>https://flethy.com/use-cases/send-message-to-discord-channel-with-webhook</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://flethy.com/use-cases/send-test-email-with-mailtrap</loc>
     <priority>0.8</priority>
   </url>
   <url>

@@ -151,6 +151,7 @@ import { MailerSend } from '../configs/mailersend.config'
 import { MailJet } from '../configs/mailjet.config'
 import { MailPace } from '../configs/mailpace.config'
 import { MailTM } from '../configs/mailtm.config'
+import { Mailtrap } from '../configs/mailtrap.config'
 import { Mastodon } from '../configs/mastodon.config'
 import { Medium } from '../configs/medium.config'
 import { MergeApi } from '../configs/mergeapi.config'
@@ -453,6 +454,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['mailjet', MailJet.API],
 ['mailpace', MailPace.API],
 ['mailtm', MailTM.API],
+['mailtrap', Mailtrap.API],
 ['mastodon', Mastodon.API],
 ['medium', Medium.API],
 ['mergeapi', MergeApi.API],
