@@ -189,6 +189,44 @@ importers:
       worktop: 0.7.3
       wrangler: 2.8.1
 
+  apps/execution-platform-cron-trigger:
+    specifiers:
+      '@cloudflare/workers-types': 4.20230115.0
+      '@tsndr/cloudflare-worker-jwt': ^2.1.4
+      '@types/node': 18.11.18
+      '@typescript-eslint/eslint-plugin': ^5.49.0
+      '@typescript-eslint/parser': ^5.49.0
+      eslint: ^8.33.0
+      eslint-config-airbnb-base: ^15.0.0
+      eslint-config-prettier: ^8.6.0
+      eslint-plugin-import: ^2.27.5
+      eslint-plugin-prettier: ^4.2.1
+      pino-pretty: ^9.1.1
+      prettier: 2.8.3
+      ts-node: ^10.9.1
+      tsoa: ^5.0.0
+      typescript: ^4.9.4
+      worktop: ^0.7.3
+      wrangler: 2.8.1
+    devDependencies:
+      '@cloudflare/workers-types': 4.20230115.0
+      '@tsndr/cloudflare-worker-jwt': 2.1.4
+      '@types/node': 18.11.18
+      '@typescript-eslint/eslint-plugin': 5.49.0_rsaczafy73x3xqauzesvzbsgzy
+      '@typescript-eslint/parser': 5.49.0_zkdaqh7it7uc4cvz2haft7rc6u
+      eslint: 8.33.0
+      eslint-config-airbnb-base: 15.0.0_ohdts44xlqyeyrlje4qnefqeay
+      eslint-config-prettier: 8.6.0_eslint@8.33.0
+      eslint-plugin-import: 2.27.5_kf2q37rsxgsj6p2nz45hjttose
+      eslint-plugin-prettier: 4.2.1_jqplj6qf3uqpxpu4gdyhwwasnq
+      pino-pretty: 9.1.1
+      prettier: 2.8.3
+      ts-node: 10.9.1_awa2wsr5thmg3i7jqycphctjfq
+      tsoa: 5.0.0
+      typescript: 4.9.4
+      worktop: 0.7.3
+      wrangler: 2.8.1
+
   apps/flow-designer:
     specifiers:
       '@babel/core': 7.20.12
@@ -13045,7 +13083,7 @@ packages:
   /pino-abstract-transport/1.0.0:
     resolution: {integrity: sha512-c7vo5OpW4wIS42hUVcT5REsL8ZljsUfBjqV/e2sFxmFEFZiq1XLUp5EYLtuDH6PEHq9W1egWqRbnLUP5FuZmOA==}
     dependencies:
-      readable-stream: 4.2.0
+      readable-stream: 4.3.0
       split2: 4.1.0
 
   /pino-pretty/9.1.1:
@@ -14442,6 +14480,7 @@ packages:
       buffer: 6.0.3
       events: 3.3.0
       process: 0.11.10
+    dev: true
 
   /readable-stream/4.3.0:
     resolution: {integrity: sha512-MuEnA0lbSi7JS8XM+WNJlWZkHAAdm7gETHdFK//Q/mChGyj2akEFtdLZh32jSdkWGbRwCW9pn6g3LWDdDeZnBQ==}
@@ -14451,7 +14490,6 @@ packages:
       buffer: 6.0.3
       events: 3.3.0
       process: 0.11.10
-    dev: false
 
   /readdirp/3.6.0:
     resolution: {integrity: sha512-hOS089on8RduqdbhvQ5Z37A0ESjsqz6qnRcffsMU3495FuTdqSm+7bhJ29JvIOsBDEEnan5DPu9t3To9VRlMzA==}

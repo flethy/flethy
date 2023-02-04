@@ -1,0 +1,50 @@
+name = "flethy-cron-dev"
+main = "src/index.ts"
+compatibility_date = "2022-10-27"
+# workers_dev = true
+# node_compat = true
+# route = { pattern = "dev.api.flethy.com", custom_domain = true, zone_name = "flethy.com" }
+# kv_namespaces = [
+#     { binding = "DATA", id = "e546ebf13b344824af4abc3a632988f5", preview_id = "f8a16c5c33aa4266a47089059ee45204" },
+#     { binding = "SECRETS", id = "d2c89f1e92234fa1acaba4b26dc2b97c", preview_id = "2999180112d743f798984b1a25f8afda" },
+#     { binding = "WORKFLOWS", id = "bf07de1d15824dce961dca2a5e659508", preview_id = "5e8d33044ed64dbb85dbbabb4491c160" },
+#     { binding = "WORKSPACES", id = "f2b65963ac5c4c33a6d15ed9ae51cdd5", preview_id = "9e8e08dd6f5c4edaa49c97b5af8d95bc" },
+# ]
+
+services = [{ binding = "flethyep", service = "flethy" }]
+
+[vars]
+ENV_STAGE = "dev"
+
+[triggers]
+crons = ["* * * * *"]
+
+# INTEGRATION
+
+[env.int]
+name = "flethy-cron-int"
+# route = { pattern = "int.api.flethy.com", custom_domain = true, zone_name = "flethy.com" }
+# kv_namespaces = [
+#     { binding = "DATA", id = "e546ebf13b344824af4abc3a632988f5", preview_id = "f8a16c5c33aa4266a47089059ee45204" },
+#     { binding = "SECRETS", id = "d2c89f1e92234fa1acaba4b26dc2b97c", preview_id = "2999180112d743f798984b1a25f8afda" },
+#     { binding = "WORKFLOWS", id = "bf07de1d15824dce961dca2a5e659508", preview_id = "5e8d33044ed64dbb85dbbabb4491c160" },
+#     { binding = "WORKSPACES", id = "f2b65963ac5c4c33a6d15ed9ae51cdd5", preview_id = "9e8e08dd6f5c4edaa49c97b5af8d95bc" },
+# ]
+
+[env.int.vars]
+ENV_STAGE = "int"
+
+# PRODUCTION
+
+[env.prod]
+name = "flethy-cron"
+# route = { pattern = "api.flethy.com", custom_domain = true, zone_name = "flethy.com" }
+# kv_namespaces = [
+#     { binding = "DATA", id = "163b24ae03244099bbc80d37a0d88495", preview_id = "9769202c523e4bed9c0c9842ba6be4f9" },
+#     { binding = "SECRETS", id = "c654eaef6b7a4b6a9d28d31d24aed0fd", preview_id = "e867a7ccbd5d4ad882ed30843d02a52f" },
+#     { binding = "WORKFLOWS", id = "5af4b59173a74f578cdb592b23c30bee", preview_id = "f0c498bc1ede4d159478c2fb083cd110" },
+#     { binding = "WORKSPACES", id = "d5664e5fbd984db8b27ff01133efd209", preview_id = "9f5fa104251844e1bc963938dbbaef68" },
+# ]
+
+[env.prod.vars]
+ENV_STAGE = "prod"
