@@ -6,14 +6,14 @@
   <br>
 </h1>
 
-<h4 align="center">Zero-dependency library to connect to over 250 APIs.</h4>
+<h4 align="center">Zero-dependency library to connect to over 300 APIs.</h4>
 
 <p align="center">
   <a href="https://badge.fury.io/js/@flethy%2Fconnectors">
     <img src="https://badge.fury.io/js/@flethy%2Fconnectors.svg"
          alt="npm">
   </a>
-  <a href="https://flethy.com/integrations"><img src="https://img.shields.io/badge/integrations-300-blue" alt="integrations" /></a>
+  <a href="https://flethy.com/integrations"><img src="https://img.shields.io/badge/integrations-301-blue" alt="integrations" /></a>
   <!-- <a href=""><img src="" alt="" /></a> -->
   <img src="https://img.shields.io/github/languages/top/flethy/flethy" alt="languages" />
   <img src="https://img.shields.io/bundlephobia/minzip/@flethy/connectors" alt="npm size" />
@@ -33,7 +33,7 @@
 
 - Zero dependency library
 - Fully typed
-- Over 250 APIs integrated
+- Over 300 APIs integrated
 
 ## How to use
 

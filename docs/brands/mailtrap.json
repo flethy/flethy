@@ -1,0 +1,77 @@
+{
+  "name": "Mailtrap",
+  "domain": "mailtrap.io",
+  "claimed": false,
+  "description": "Mailtrap is a fake SMTP server for development teams to test, view and share emails sent from the development and staging environments without spamming real customers",
+  "links": [
+    { "name": "twitter", "url": "https://twitter.com/mailtrap" },
+    { "name": "facebook", "url": "https://facebook.com/Mailtrap" }
+  ],
+  "logos": [
+    {
+      "type": "icon",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idC4TpGQFR/idgvc8eoL9.png",
+          "background": null,
+          "format": "png",
+          "height": 200,
+          "width": 200,
+          "size": 9637
+        }
+      ]
+    },
+    {
+      "type": "logo",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idC4TpGQFR/id6NvdbZwc.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 174,
+          "width": 820,
+          "size": 23218
+        },
+        {
+          "src": "https://asset.brandfetch.io/idC4TpGQFR/idi8GD1NB7.svg",
+          "background": "transparent",
+          "format": "svg",
+          "height": null,
+          "width": null,
+          "size": 4330
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#4a4a4a", "type": "dark", "brightness": 74 },
+    { "hex": "#fee54b", "type": "light", "brightness": 223 },
+    { "hex": "#5affdf", "type": "accent", "brightness": 218 }
+  ],
+  "fonts": [
+    {
+      "name": "Roboto",
+      "type": "body",
+      "origin": "google",
+      "originId": "Roboto",
+      "weights": []
+    }
+  ],
+  "images": [
+    {
+      "type": "banner",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idC4TpGQFR/idY89DuP1a.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 500,
+          "width": 1500,
+          "size": 80123
+        }
+      ]
+    }
+  ]
+}

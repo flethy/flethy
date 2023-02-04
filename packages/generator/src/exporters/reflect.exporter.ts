@@ -151,6 +151,7 @@ import { MailerSend } from '../../../connectors/src/configs/mailersend.config'
 import { MailJet } from '../../../connectors/src/configs/mailjet.config'
 import { MailPace } from '../../../connectors/src/configs/mailpace.config'
 import { MailTM } from '../../../connectors/src/configs/mailtm.config'
+import { Mailtrap } from '../../../connectors/src/configs/mailtrap.config'
 import { Mastodon } from '../../../connectors/src/configs/mastodon.config'
 import { Medium } from '../../../connectors/src/configs/medium.config'
 import { MergeApi } from '../../../connectors/src/configs/mergeapi.config'
@@ -639,6 +640,8 @@ configTypes.push({type: getType<MailPace.Send>(), id: 'mailpace', name: 'MailPac
 configTypes.push({type: getType<MailTM.GetToken>(), id: 'mailtm', name: 'MailTM', interface: 'GetToken'})
 configTypes.push({type: getType<MailTM.GetDomains>(), id: 'mailtm', name: 'MailTM', interface: 'GetDomains'})
 configTypes.push({type: getType<MailTM.GetDomainbyId>(), id: 'mailtm', name: 'MailTM', interface: 'GetDomainbyId'})
+configTypes.push({type: getType<Mailtrap.SendEmail>(), id: 'mailtrap', name: 'Mailtrap', interface: 'SendEmail'})
+configTypes.push({type: getType<Mailtrap.SendTestEmail>(), id: 'mailtrap', name: 'Mailtrap', interface: 'SendTestEmail'})
 configTypes.push({type: getType<Mastodon.PublishStatus>(), id: 'mastodon', name: 'Mastodon', interface: 'PublishStatus'})
 configTypes.push({type: getType<Medium.Me>(), id: 'medium', name: 'Medium', interface: 'Me'})
 configTypes.push({type: getType<Medium.GetPublications>(), id: 'medium', name: 'Medium', interface: 'GetPublications'})

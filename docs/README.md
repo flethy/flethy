@@ -174,6 +174,7 @@ The following Endpoints are currently supported.
 * [MailJet](./api/mailjet.md)
 * [MailPace](./api/mailpace.md)
 * [MailTM](./api/mailtm.md)
+* [Mailtrap](./api/mailtrap.md)
 * [Mastodon](./api/mastodon.md)
 * [Medium](./api/medium.md)
 * [MergeApi](./api/mergeapi.md)

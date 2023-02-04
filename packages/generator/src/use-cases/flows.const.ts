@@ -734,4 +734,24 @@ export const FLOWS = {
       'body:body': '->context.input.entity->any',
     },
   ],
+  'send-test-email-with-mailtrap': [
+    {
+      id: 'mailtrap',
+      kind: 'mailtrap.emails.test',
+      'auth:Authorization': '==>secrets==>MAILTRAP_API_TOKEN',
+      'param:inboxId': '->context.input.inboxId->number',
+      'body:from': {
+        name: '->context.input.from.name->string',
+        email: '->context.input.from.email->string',
+      },
+      'body:to': [
+        {
+          name: '->context.input.to.name->string',
+          email: '->context.input.to.email->string',
+        },
+      ],
+      'body:subject': '->context.input.subject->string',
+      'body:text': '->context.input.text->string',
+    },
+  ],
 }

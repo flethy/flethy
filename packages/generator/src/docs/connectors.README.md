@@ -6,7 +6,7 @@
   <br>
 </h1>
 
-<h4 align="center">Zero-dependency library to connect to over 250 APIs.</h4>
+<h4 align="center">Zero-dependency library to connect to over 300 APIs.</h4>
 
 <p align="center">
   <a href="https://badge.fury.io/js/@flethy%2Fconnectors">
@@ -33,7 +33,7 @@
 
 - Zero dependency library
 - Fully typed
-- Over 250 APIs integrated
+- Over 300 APIs integrated
 
 ## How to use
 
