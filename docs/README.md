@@ -92,6 +92,7 @@ The following Endpoints are currently supported.
 * [Crisp](./api/crisp.md)
 * [Cronhooks](./api/cronhooks.md)
 * [Cronhub](./api/cronhub.md)
+* [Cronitor](./api/cronitor.md)
 * [CSVBox](./api/csvbox.md)
 * [Cumul](./api/cumul.md)
 * [CurrencyScoop](./api/currencyscoop.md)

@@ -1,0 +1,30 @@
+{
+  "name": "Cronitor",
+  "domain": "cronitor.io",
+  "claimed": false,
+  "description": "Cronitor is a web-based monitoring service for cron jobs, daemons and almost anything else.",
+  "links": [{ "name": "twitter", "url": "https://twitter.com/cronitorio" }],
+  "logos": [],
+  "colors": [
+    { "hex": "#222222", "type": "dark", "brightness": 34 },
+    { "hex": "#ffffff", "type": "light", "brightness": 255 },
+    { "hex": "#f5745e", "type": "accent", "brightness": 142 }
+  ],
+  "fonts": [
+    {
+      "name": "Lato",
+      "type": "title",
+      "origin": "google",
+      "originId": "Lato",
+      "weights": []
+    },
+    {
+      "name": "Helvetica Neue",
+      "type": "body",
+      "origin": "custom",
+      "originId": null,
+      "weights": []
+    }
+  ],
+  "images": []
+}

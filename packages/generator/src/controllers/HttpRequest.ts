@@ -9,12 +9,15 @@ import { logger } from '../utils/Logger'
 export class HttpRequest {
   public static async request(params: FetchParams) {
     console.log(params)
+    const payload = params.body
+      ? {
+          method: params.method,
+          headers: params.headers,
+          body: JSON.stringify(params.body),
+        }
+      : { method: params.method, headers: params.headers }
     try {
-      const response = await fetch(params.url, {
-        method: params.method,
-        headers: params.headers,
-        body: params.body ? JSON.stringify(params.body) : undefined,
-      })
+      const response = await fetch(params.url, payload)
 
       let nodeResponse: any = {}
 

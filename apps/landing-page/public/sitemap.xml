@@ -285,6 +285,10 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://flethy.com/integrations/cronitor</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://flethy.com/integrations/csvbox</loc>
     <priority>0.8</priority>
   </url>
@@ -1414,6 +1418,10 @@
   </url>
   <url>
     <loc>https://flethy.com/use-cases/publish-status-to-mastodon</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://flethy.com/use-cases/send-event-to-cronitor</loc>
     <priority>0.8</priority>
   </url>
   <url>

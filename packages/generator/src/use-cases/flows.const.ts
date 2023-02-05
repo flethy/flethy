@@ -754,4 +754,12 @@ export const FLOWS = {
       'body:text': '->context.input.text->string',
     },
   ],
+  'send-event-to-cronitor': [
+    {
+      id: 'cronitor',
+      kind: 'cronitor.telemetry.sendEvent',
+      'auth:apikey': '==>secrets==>CRONITOR_API_KEY',
+      'param:monitorKey': '==>env==>MONITOR_KEY',
+    },
+  ],
 }

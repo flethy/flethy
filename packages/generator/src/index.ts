@@ -285,6 +285,7 @@ import Yapily from '@flethy/connectors/src/configs/yapily.config'
 import { HttpRequest } from './controllers/HttpRequest'
 import mailtrap from './examples/mailtrap'
 import { logger } from './utils/Logger'
+import cronitor from './examples/cronitor'
 
 async function main() {
   const requestConfigs: {
@@ -3853,7 +3854,7 @@ Here you find all the available integrations`,
       'query:provider': 'redstone',
     }),
   }
-  const requestConfig = mailtrap.configs.sendTestEmail
+  const requestConfig = cronitor.configs.sendEvent
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(nao(requestConfig))

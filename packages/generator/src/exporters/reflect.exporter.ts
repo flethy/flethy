@@ -65,6 +65,7 @@ import { Covalent } from '../../../connectors/src/configs/covalent.config'
 import { Crisp } from '../../../connectors/src/configs/crisp.config'
 import { Cronhooks } from '../../../connectors/src/configs/cronhooks.config'
 import { Cronhub } from '../../../connectors/src/configs/cronhub.config'
+import { Cronitor } from '../../../connectors/src/configs/cronitor.config'
 import { CSVBox } from '../../../connectors/src/configs/csvbox.config'
 import { Cumul } from '../../../connectors/src/configs/cumul.config'
 import { CurrencyScoop } from '../../../connectors/src/configs/currencyscoop.config'
@@ -461,6 +462,7 @@ configTypes.push({type: getType<Cronhub.CreateScheduler>(), id: 'cronhub', name:
 configTypes.push({type: getType<Cronhub.UpdateScheduler>(), id: 'cronhub', name: 'Cronhub', interface: 'UpdateScheduler'})
 configTypes.push({type: getType<Cronhub.DeleteScheduler>(), id: 'cronhub', name: 'Cronhub', interface: 'DeleteScheduler'})
 configTypes.push({type: getType<Cronhub.ChangeStatusOfScheduler>(), id: 'cronhub', name: 'Cronhub', interface: 'ChangeStatusOfScheduler'})
+configTypes.push({type: getType<Cronitor.SendEvent>(), id: 'cronitor', name: 'Cronitor', interface: 'SendEvent'})
 configTypes.push({type: getType<CSVBox.ImportFile>(), id: 'csvbox', name: 'CSVBox', interface: 'ImportFile'})
 configTypes.push({type: getType<Cumul.Create>(), id: 'cumul', name: 'Cumul', interface: 'Create'})
 configTypes.push({type: getType<CurrencyScoop.Latest>(), id: 'currencyscoop', name: 'CurrencyScoop', interface: 'Latest'})
