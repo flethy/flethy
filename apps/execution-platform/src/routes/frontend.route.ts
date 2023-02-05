@@ -1,6 +1,7 @@
 import { Router } from "worktop";
 import { TokenScope } from "../controllers/auth.controller";
 import { RouterPathUtils, RouterUtils } from "../utils/router.utils";
+import { CronsRoute } from "./crons.route";
 import { SecretsRoute } from "./secrets.route";
 import { TokensRoute } from "./tokens.route";
 import { WorkflowsRoute } from "./workflows.route";
@@ -99,6 +100,41 @@ export class FrontendRoute {
       scopes: [TokenScope.TOKEN_DELETE],
       handler: async (req, res, userId) => {
         await TokensRoute.del(req, res, userId);
+      },
+    });
+
+    // CRONS
+
+    RouterUtils.createRoute({
+      API,
+      method: "POST",
+      route: new RouterPathUtils().w().p().c().gen(),
+      isUserToken: true,
+      scopes: [TokenScope.CRON_CREATE],
+      handler: async (req, res, userId) => {
+        await CronsRoute.create(req, res, userId);
+      },
+    });
+
+    RouterUtils.createRoute({
+      API,
+      method: "GET",
+      route: new RouterPathUtils().w().p().t().gen(),
+      isUserToken: true,
+      scopes: [TokenScope.CRON_READ],
+      handler: async (req, res, userId) => {
+        await CronsRoute.get(req, res, userId);
+      },
+    });
+
+    RouterUtils.createRoute({
+      API,
+      method: "DELETE",
+      route: new RouterPathUtils().w().p().c(true).gen(),
+      isUserToken: true,
+      scopes: [TokenScope.CRON_DELETE],
+      handler: async (req, res, userId) => {
+        await CronsRoute.del(req, res, userId);
       },
     });
 

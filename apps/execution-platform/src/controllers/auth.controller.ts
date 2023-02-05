@@ -40,6 +40,10 @@ export enum TokenScope {
   TOKEN_CREATE = "token:create",
   TOKEN_READ = "token:read",
   TOKEN_DELETE = "token:delete",
+  CRON_CREATE = "cron:create",
+  CRON_READ = "cron:read",
+  CRON_UPDATE = "cron:update",
+  CRON_DELETE = "cron:delete",
 }
 
 export interface TokenRequest {
@@ -311,9 +315,13 @@ export class AuthController {
           scopes.add(TokenScope.TOKEN_CREATE);
           scopes.add(TokenScope.TOKEN_READ);
           scopes.add(TokenScope.TOKEN_DELETE);
+          scopes.add(TokenScope.CRON_CREATE);
+          scopes.add(TokenScope.CRON_READ);
+          scopes.add(TokenScope.CRON_DELETE);
         }
         if (foundProject.r.includes(ProjectRole.MEMBER)) {
           scopes.add(TokenScope.PROJECT_READ);
+          scopes.add(TokenScope.CRON_READ);
           scopes.add(TokenScope.WORKFLOW_CREATE);
           scopes.add(TokenScope.WORKFLOW_READ);
           scopes.add(TokenScope.WORKFLOW_UPDATE);

@@ -1,5 +1,6 @@
 import { getFutureMatches } from "@datasert/cronjs-matcher";
 import { read, write } from "worktop/kv";
+import { FlethyProject, FlethyWorkspace } from "../types/general.type";
 import { ErrorType, FlethyError } from "../utils/error.utils";
 import { KVUtils } from "../utils/kv.utils";
 import { ValidationUtils } from "../utils/validation.utils";
@@ -10,21 +11,21 @@ export interface PutCronsRequest {
   crons: CronEntry[];
 }
 
-export interface RemoveCronRequest {
-  projectId: string;
-  workflowId: string;
+export interface RemoveCronRequest extends FlethyWorkspace, FlethyProject {
+  cronId: string;
 }
 
-export interface AddCronRequest {
+export interface GetCronRequest extends FlethyWorkspace, FlethyProject {}
+
+export interface AddCronRequest extends FlethyWorkspace, FlethyProject {
   name: string;
-  projectId: string;
   workflowId: string;
   expression: string;
 }
 
-export interface CronEntry {
+export interface CronEntry extends FlethyWorkspace, FlethyProject {
+  cronId: string;
   name: string;
-  projectId: string;
   workflowId: string;
   expression: string;
   nextRun: number;
@@ -47,7 +48,15 @@ export interface Crons {
 // CONTROLLER
 
 export class CronsController {
-  public static async get(): Promise<CronResponse> {
+  public static async get(request: GetCronRequest): Promise<CronEntry[]> {
+    const allCrons = await CronsController.getAll();
+    const projectCrons = allCrons.value.filter(
+      (cron) => cron.projectId === request.projectId
+    );
+    return projectCrons;
+  }
+
+  public static async getAll(): Promise<CronResponse> {
     const foundCrons = await read<CronEntry[], CronMetadata>(
       KVUtils.getKV().data,
       KVUtils.getCronKey(),
@@ -61,7 +70,7 @@ export class CronsController {
   }
 
   public static async getNextWorkflowsToExecute(): Promise<Crons> {
-    const foundCrons = await CronsController.get();
+    const foundCrons = await CronsController.getAll();
     const crons: Crons = { workflowIds: [] };
     const now = Date.now();
     if (foundCrons.metadata.count > 0 && foundCrons.metadata.nextRun < now) {
@@ -125,14 +134,16 @@ export class CronsController {
       });
     }
 
-    let currentCrons = await CronsController.get();
+    let currentCrons = await CronsController.getAll();
     if (!currentCrons) {
       currentCrons = { value: [], metadata: { count: 0, nextRun: 0 } };
     }
     currentCrons.value.push({
+      cronId: crypto.randomUUID(),
       name: request.name,
       workflowId: request.workflowId,
       projectId: request.projectId,
+      workspaceId: request.workspaceId,
       expression: request.expression,
       nextRun: 0,
     });
@@ -145,13 +156,8 @@ export class CronsController {
   public static async remove(request: RemoveCronRequest) {
     const validation = ValidationUtils.validateAll([
       {
-        value: request.projectId,
-        parameter: "projectId",
-        checks: { required: true, minStringLength: 1 },
-      },
-      {
-        value: request.workflowId,
-        parameter: "workflowId",
+        value: request.cronId,
+        parameter: "cronId",
         checks: { required: true, minStringLength: 1 },
       },
     ]);
@@ -167,14 +173,12 @@ export class CronsController {
       });
     }
 
-    let currentCrons = await CronsController.get();
+    let currentCrons = await CronsController.getAll();
     if (!currentCrons) {
       currentCrons = { value: [], metadata: { count: 0, nextRun: 0 } };
     }
     currentCrons.value = currentCrons.value.filter(
-      (currentCron) =>
-        currentCron.projectId !== request.projectId &&
-        currentCron.workflowId !== request.workflowId
+      (currentCron) => currentCron.cronId !== request.cronId
     );
 
     const response = await CronsController.put({ crons: currentCrons.value });
