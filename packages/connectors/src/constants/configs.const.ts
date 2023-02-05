@@ -65,6 +65,7 @@ import { Covalent } from '../configs/covalent.config'
 import { Crisp } from '../configs/crisp.config'
 import { Cronhooks } from '../configs/cronhooks.config'
 import { Cronhub } from '../configs/cronhub.config'
+import { Cronitor } from '../configs/cronitor.config'
 import { CSVBox } from '../configs/csvbox.config'
 import { Cumul } from '../configs/cumul.config'
 import { CurrencyScoop } from '../configs/currencyscoop.config'
@@ -368,6 +369,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['crisp', Crisp.API],
 ['cronhooks', Cronhooks.API],
 ['cronhub', Cronhub.API],
+['cronitor', Cronitor.API],
 ['csvbox', CSVBox.API],
 ['cumul', Cumul.API],
 ['currencyscoop', CurrencyScoop.API],
