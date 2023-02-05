@@ -1,3 +1,5 @@
+import { parse } from "@datasert/cronjs-parser";
+
 export interface ValidationOptions {
   value: any;
   parameter: string;
@@ -8,6 +10,7 @@ export interface ValidationOptions {
     arrayMinLength?: number;
     arrayValuesInArrayValues?: any[];
     stringEquals?: string;
+    isCronExpression?: boolean;
   };
 }
 
@@ -103,6 +106,16 @@ export class ValidationUtils {
         ) {
           result.valid = false;
           result.message = `${options.parameter} must be equal to ${options.checks.stringEquals}`;
+          return result;
+        }
+      }
+
+      if (ValidationUtils.existisValue(options.checks.isCronExpression)) {
+        try {
+          parse(options.value, { hasSeconds: false });
+        } catch (error) {
+          result.valid = false;
+          result.message = `${options.parameter} must be a valid cron expression`;
           return result;
         }
       }

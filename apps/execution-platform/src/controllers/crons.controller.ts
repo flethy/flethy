@@ -1,3 +1,4 @@
+import { getFutureMatches } from "@datasert/cronjs-matcher";
 import { read, write } from "worktop/kv";
 import { ErrorType, FlethyError } from "../utils/error.utils";
 import { KVUtils } from "../utils/kv.utils";
@@ -12,6 +13,13 @@ export interface PutCronsRequest {
 export interface RemoveCronRequest {
   projectId: string;
   workflowId: string;
+}
+
+export interface AddCronRequest {
+  name: string;
+  projectId: string;
+  workflowId: string;
+  expression: string;
 }
 
 export interface CronEntry {
@@ -65,20 +73,73 @@ export class CronsController {
   }
 
   public static async put(request: PutCronsRequest) {
+    const value: CronEntry[] = request.crons.map((cron) => {
+      return {
+        ...cron,
+        nextRun: CronsController.calculateNextRun(cron.expression),
+      };
+    });
     const metadata: CronMetadata = {
-      count: request.crons.length,
-      nextRun: request.crons.reduce((min, cron) => {
+      count: value.length,
+      nextRun: value.reduce((min, cron) => {
         return cron.nextRun < min || min === 0 ? cron.nextRun : min;
       }, 0),
     };
     const success = await write<CronEntry[], CronMetadata>(
       KVUtils.getKV().data,
       KVUtils.getCronKey(),
-      request.crons,
+      value,
       { metadata }
     );
 
-    return { success, metadata, value: request.crons };
+    return { success, metadata, value };
+  }
+
+  public static async add(request: AddCronRequest) {
+    const validation = ValidationUtils.validateAll([
+      {
+        value: request.projectId,
+        parameter: "projectId",
+        checks: { required: true, minStringLength: 1 },
+      },
+      {
+        value: request.workflowId,
+        parameter: "workflowId",
+        checks: { required: true, minStringLength: 1 },
+      },
+      {
+        value: request.expression,
+        parameter: "expression",
+        checks: { required: true, minStringLength: 1, isCronExpression: true },
+      },
+    ]);
+    if (!validation.valid) {
+      throw new FlethyError({
+        message: validation.message,
+        type: ErrorType.BadRequest,
+        log: {
+          message: validation.message,
+          context: { method: "add", origin: "crons.controller.ts" },
+          data: { request },
+        },
+      });
+    }
+
+    let currentCrons = await CronsController.get();
+    if (!currentCrons) {
+      currentCrons = { value: [], metadata: { count: 0, nextRun: 0 } };
+    }
+    currentCrons.value.push({
+      name: request.name,
+      workflowId: request.workflowId,
+      projectId: request.projectId,
+      expression: request.expression,
+      nextRun: 0,
+    });
+
+    const response = await CronsController.put({ crons: currentCrons.value });
+
+    return response;
   }
 
   public static async remove(request: RemoveCronRequest) {
@@ -122,6 +183,13 @@ export class CronsController {
   }
 
   public static calculateNextRun(expression: string): number {
-    return 0;
+    const startAt = new Date().toISOString();
+    const matchCount = 1;
+    const nextRun = getFutureMatches(expression, { startAt, matchCount });
+    if (nextRun.length === 0) {
+      return 0;
+    } else {
+      return new Date(nextRun[0]).getTime();
+    }
   }
 }
