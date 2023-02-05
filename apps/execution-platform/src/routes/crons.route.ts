@@ -17,6 +17,16 @@ export class CronsRoute {
     res.send(StatusCodeSuccess.OK, { ...data });
   }
 
+  public static async getAll(
+    req: ServerRequest,
+    res: ServerResponse,
+    _userId: string = ""
+  ) {
+    const data = await CronsController.getAll();
+
+    res.send(StatusCodeSuccess.OK, { ...data });
+  }
+
   public static async del(
     req: ServerRequest,
     res: ServerResponse,

@@ -14,14 +14,35 @@ export class PermissionUtils {
   public static async permissions(
     req: ServerRequest,
     _res: ServerResponse,
-    options: { scopes?: TokenScope[]; isUserToken?: boolean }
+    options: {
+      scopes?: TokenScope[];
+      isUserToken?: boolean;
+      isInterServiceToken?: boolean;
+    }
   ) {
-    const { scopes, isUserToken } = options;
+    const { scopes, isUserToken, isInterServiceToken } = options;
     let response: PermissionsResponse = {
       valid: false,
       userId: "",
     };
-    if (scopes || isUserToken === true) {
+    if (isInterServiceToken === true) {
+      const Authorization = req.headers.get("Authorization");
+      if (!Authorization || Authorization !== SECRETS.config.interServiceAuth) {
+        throw new FlethyError({
+          type: ErrorType.Unauthorized,
+          message: `Missing or invalid Authorization header`,
+          log: {
+            context: {
+              origin: "permission.utils.ts",
+              method: "permissions",
+            },
+            message: `Missing or invalid Authorization header`,
+          },
+        });
+      }
+      response.userId = "s2s";
+      response.valid = true;
+    } else if (scopes || isUserToken === true) {
       const Authorization = req.headers.get("Authorization");
       const { projectId, workspaceId } = req.params;
       if (!Authorization) {

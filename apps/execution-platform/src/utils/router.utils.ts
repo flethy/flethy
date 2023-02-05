@@ -17,6 +17,7 @@ export interface RouterOptions {
   route: string;
   scopes?: TokenScope[];
   isUserToken?: boolean;
+  isInterServiceToken?: boolean;
   handler: (
     req: ServerRequest,
     res: ServerResponse,
@@ -33,6 +34,7 @@ export class RouterUtils {
         const response = await PermissionUtils.permissions(req, res, {
           scopes: options.scopes,
           isUserToken: options.isUserToken,
+          isInterServiceToken: options.isInterServiceToken,
         });
         await options.handler(req, res, response.userId, response);
       } catch (error) {
@@ -90,6 +92,11 @@ export class RouterPathUtils {
 
   public s() {
     this.path.push("s");
+    return this;
+  }
+
+  public s2s() {
+    this.path.push("s2s");
     return this;
   }
 
