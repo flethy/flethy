@@ -5,6 +5,7 @@ declare var ENV_STAGE: string;
 
 // SECRETS
 declare var SECRET_SECRET: string;
+declare var SECRET_INTER_SERVICE_AUTH: string;
 declare var SECRET_AUTH_CLIENT_ID: string;
 declare var SECRET_AUTH_CLIENT_SECRET: string;
 declare var SECRET_SLACK_WEBHOOK_ID: string;
@@ -26,6 +27,7 @@ export const ENVVARS = {
 export const SECRETS = {
   config: {
     secret: SECRET_SECRET,
+    interServiceAuth: SECRET_INTER_SERVICE_AUTH,
   },
   auth0: {
     clientId: SECRET_AUTH_CLIENT_ID,

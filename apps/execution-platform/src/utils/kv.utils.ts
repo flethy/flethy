@@ -1,10 +1,12 @@
 import { KV } from "worktop/kv";
 
+declare var DATA: KV.Namespace;
 declare var WORKSPACES: KV.Namespace;
 declare var SECRETS: KV.Namespace;
 declare var WORKFLOWS: KV.Namespace;
 
 export interface KVNamespaces {
+  data: KV.Namespace;
   workspaces: KV.Namespace;
   secrets: KV.Namespace;
   workflows: KV.Namespace;
@@ -32,6 +34,15 @@ export class KVUtils {
   }
 
   public static getKV(): KVNamespaces {
-    return { workspaces: WORKSPACES, secrets: SECRETS, workflows: WORKFLOWS };
+    return {
+      workspaces: WORKSPACES,
+      secrets: SECRETS,
+      workflows: WORKFLOWS,
+      data: DATA,
+    };
+  }
+
+  public static getCronKey(): string {
+    return "crons";
   }
 }

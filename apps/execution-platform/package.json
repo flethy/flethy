@@ -35,6 +35,8 @@
     "wrangler": "2.9.0"
   },
   "dependencies": {
+    "@datasert/cronjs-matcher": "^1.2.0",
+    "@datasert/cronjs-parser": "^1.2.0",
     "@flethy/flow": "^0.0.321"
   }
 }

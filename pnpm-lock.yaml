@@ -151,6 +151,8 @@ importers:
   apps/execution-platform:
     specifiers:
       '@cloudflare/workers-types': 4.20230115.0
+      '@datasert/cronjs-matcher': ^1.2.0
+      '@datasert/cronjs-parser': ^1.2.0
       '@flethy/flow': ^0.0.321
       '@tsndr/cloudflare-worker-jwt': ^2.2.1
       '@types/node': 18.11.18
@@ -169,6 +171,8 @@ importers:
       worktop: ^0.7.3
       wrangler: 2.9.0
     dependencies:
+      '@datasert/cronjs-matcher': 1.2.0
+      '@datasert/cronjs-parser': 1.2.0
       '@flethy/flow': 0.0.321
     devDependencies:
       '@cloudflare/workers-types': 4.20230115.0
@@ -3374,6 +3378,17 @@ packages:
     dependencies:
       '@jridgewell/trace-mapping': 0.3.9
     dev: true
+
+  /@datasert/cronjs-matcher/1.2.0:
+    resolution: {integrity: sha512-ht6Vwwa3qssMn/9bphypjG/U8w0DV3GtTS2C6kbAy39rerQFTRzmml9xZNlot1K13gm9K/EEq3DLPEOsH++ICw==}
+    dependencies:
+      '@datasert/cronjs-parser': 1.2.0
+      luxon: 2.5.2
+    dev: false
+
+  /@datasert/cronjs-parser/1.2.0:
+    resolution: {integrity: sha512-7kzYh7F5V3ElX+k3W9w6SKS6WdjqJQ2gIY1y0evldnjAwZxnFzR/Yu9Mv9OeDaCQX+mGAq2MvEnJbwu9oj3CXQ==}
+    dev: false
 
   /@docsearch/css/3.3.0:
     resolution: {integrity: sha512-rODCdDtGyudLj+Va8b6w6Y85KE85bXRsps/R4Yjwt5vueXKXZQKYw0aA9knxLBT6a/bI/GMrAcmCR75KYOM6hg==}
@@ -12195,6 +12210,11 @@ packages:
     engines: {node: '>=10'}
     dependencies:
       yallist: 4.0.0
+
+  /luxon/2.5.2:
+    resolution: {integrity: sha512-Yg7/RDp4nedqmLgyH0LwgGRvMEKVzKbUdkBYyCosbHgJ+kaOUx0qzSiSatVc3DFygnirTPYnMM2P5dg2uH1WvA==}
+    engines: {node: '>=12'}
+    dev: false
 
   /magic-string/0.25.9:
     resolution: {integrity: sha512-RmF0AsMzgt25qzqqLc1+MbHmhdx0ojF2Fvs4XnOqz2ZOBXzzkEwc/dJQZCYHAn7v1jbVOjAZfK8msRn4BxO4VQ==}
