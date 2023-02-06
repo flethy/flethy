@@ -38,7 +38,7 @@ export class CronsRoute {
       cronId: req.params.cronId,
     });
 
-    res.send(StatusCodeSuccess.OK, { ...data });
+    res.send(StatusCodeSuccess.OK, {});
   }
 
   public static async create(

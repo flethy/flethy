@@ -3,6 +3,8 @@ import { Instance, types } from 'mobx-state-tree'
 import { useContext } from 'react'
 import { DocsBarComponent } from '../components/docs-bar/model'
 import { MenuComponent } from '../components/menu/model'
+import { CreateCronModal } from '../components/modals/crons/create/model'
+import { DeleteCronModal } from '../components/modals/crons/delete/model'
 import { CreateInstanceModal } from '../components/modals/instances/create/model'
 import { CreateSecretsModal } from '../components/modals/secrets/create/model'
 import { DeleteSecretsModal } from '../components/modals/secrets/delete/model'
@@ -64,6 +66,8 @@ const ModalsStore = types.model('Modals', {
 	instancesCreate: types.optional(CreateInstanceModal, () =>
 		CreateInstanceModal.create(),
 	),
+	cronsCreate: types.optional(CreateCronModal, () => CreateCronModal.create()),
+	cronsDelete: types.optional(DeleteCronModal, () => DeleteCronModal.create()),
 })
 
 export const RealRootModel = types.model('Root', {
