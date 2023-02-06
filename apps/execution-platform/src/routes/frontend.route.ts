@@ -108,7 +108,7 @@ export class FrontendRoute {
     RouterUtils.createRoute({
       API,
       method: "POST",
-      route: new RouterPathUtils().w().p().c().gen(),
+      route: new RouterPathUtils().w().p().c(false).gen(),
       isUserToken: true,
       scopes: [TokenScope.CRON_CREATE],
       handler: async (req, res, userId) => {
@@ -119,7 +119,7 @@ export class FrontendRoute {
     RouterUtils.createRoute({
       API,
       method: "GET",
-      route: new RouterPathUtils().w().p().t().gen(),
+      route: new RouterPathUtils().w().p().c(false).gen(),
       isUserToken: true,
       scopes: [TokenScope.CRON_READ],
       handler: async (req, res, userId) => {
