@@ -148,6 +148,7 @@ import { MailboxLayer } from '../configs/mailboxlayer.config'
 import { MailboxValidator } from '../configs/mailboxvalidator.config'
 import { MailCheckAi } from '../configs/mailcheckai.config'
 import { Mailchimp } from '../configs/mailchimp.config'
+import { MailerLite } from '../configs/mailerlite.config'
 import { MailerSend } from '../configs/mailersend.config'
 import { MailJet } from '../configs/mailjet.config'
 import { MailPace } from '../configs/mailpace.config'
@@ -452,6 +453,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['mailboxvalidator', MailboxValidator.API],
 ['mailcheckai', MailCheckAi.API],
 ['mailchimp', Mailchimp.API],
+['mailerlite', MailerLite.API],
 ['mailersend', MailerSend.API],
 ['mailjet', MailJet.API],
 ['mailpace', MailPace.API],

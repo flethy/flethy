@@ -617,6 +617,10 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://flethy.com/integrations/mailerlite</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://flethy.com/integrations/mailersend</loc>
     <priority>0.8</priority>
   </url>
@@ -1286,6 +1290,10 @@
   </url>
   <url>
     <loc>https://flethy.com/use-cases/create-room-with-liveblocks</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://flethy.com/use-cases/create-subscriber-with-mailerlite</loc>
     <priority>0.8</priority>
   </url>
   <url>

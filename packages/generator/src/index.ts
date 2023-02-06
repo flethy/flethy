@@ -286,6 +286,7 @@ import { HttpRequest } from './controllers/HttpRequest'
 import mailtrap from './examples/mailtrap'
 import { logger } from './utils/Logger'
 import cronitor from './examples/cronitor'
+import mailerlite from './examples/mailerlite'
 
 async function main() {
   const requestConfigs: {
@@ -3854,7 +3855,7 @@ Here you find all the available integrations`,
       'query:provider': 'redstone',
     }),
   }
-  const requestConfig = cronitor.configs.sendEvent
+  const requestConfig = mailerlite.configs.createSubscriber
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(nao(requestConfig))

@@ -1,0 +1,147 @@
+{
+  "name": "MailerLite",
+  "domain": "mailerlite.com",
+  "claimed": false,
+  "description": "Digital marketing tools to grow your audience faster and drive revenue smarter.",
+  "links": [
+    { "name": "twitter", "url": "https://twitter.com/mailerlite" },
+    {
+      "name": "linkedin",
+      "url": "https://linkedin.com/company/mailerlite-international"
+    },
+    { "name": "instagram", "url": "https://instagram.com/mailerlite" },
+    { "name": "facebook", "url": "https://facebook.com/mailerlite" }
+  ],
+  "logos": [
+    {
+      "type": "icon",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idB-3CfF_3/idlSGKtyrk.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 400,
+          "width": 400,
+          "size": 11990
+        }
+      ]
+    },
+    {
+      "type": "logo",
+      "theme": "light",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idB-3CfF_3/idz0xptU-Y.svg",
+          "background": "transparent",
+          "format": "svg",
+          "size": 3669
+        },
+        {
+          "src": "https://asset.brandfetch.io/idB-3CfF_3/idEzrsPFAL.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 201,
+          "width": 800,
+          "size": 13245
+        }
+      ]
+    },
+    {
+      "type": "logo",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idB-3CfF_3/idwWONTv1t.svg",
+          "background": "transparent",
+          "format": "svg",
+          "size": 3657
+        },
+        {
+          "src": "https://asset.brandfetch.io/idB-3CfF_3/idumTbY8eY.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 201,
+          "width": 800,
+          "size": 13058
+        }
+      ]
+    },
+    {
+      "type": "symbol",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idB-3CfF_3/idmH76Uz8W.svg",
+          "background": "transparent",
+          "format": "svg",
+          "size": 1923
+        },
+        {
+          "src": "https://asset.brandfetch.io/idB-3CfF_3/idcrfpzUPP.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 640,
+          "width": 800,
+          "size": 25147
+        }
+      ]
+    },
+    {
+      "type": "other",
+      "theme": "light",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idB-3CfF_3/idj4427uPD.svg",
+          "background": "transparent",
+          "format": "svg",
+          "size": 3551
+        },
+        {
+          "src": "https://asset.brandfetch.io/idB-3CfF_3/idpYYt5NBZ.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 201,
+          "width": 800,
+          "size": 11152
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#171717", "type": "dark", "brightness": 23 },
+    { "hex": "#ffffff", "type": "light", "brightness": 255 },
+    { "hex": "#09c269", "type": "accent", "brightness": 148 }
+  ],
+  "fonts": [
+    {
+      "name": "Inter",
+      "type": "title",
+      "origin": "google",
+      "originId": "Inter",
+      "weights": []
+    },
+    {
+      "name": "Inter",
+      "type": "body",
+      "origin": "google",
+      "originId": "Inter",
+      "weights": []
+    }
+  ],
+  "images": [
+    {
+      "type": "banner",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idB-3CfF_3/idsGIYvkm3.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 500,
+          "width": 1500,
+          "size": 130265
+        }
+      ]
+    }
+  ]
+}

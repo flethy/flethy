@@ -171,6 +171,7 @@ The following Endpoints are currently supported.
 * [MailboxValidator](./api/mailboxvalidator.md)
 * [MailCheckAi](./api/mailcheckai.md)
 * [Mailchimp](./api/mailchimp.md)
+* [MailerLite](./api/mailerlite.md)
 * [MailerSend](./api/mailersend.md)
 * [MailJet](./api/mailjet.md)
 * [MailPace](./api/mailpace.md)
