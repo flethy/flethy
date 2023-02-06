@@ -16,7 +16,7 @@ export default observer(() => {
 		root: {
 			api,
 			pages: { workflows: page },
-			modals: { instancesCreate },
+			modals: { instancesCreate, cronsCreate },
 		},
 	} = useMst()
 	const { colorMode } = useColorMode()
@@ -58,6 +58,10 @@ export default observer(() => {
 					id: 'play',
 					value: '',
 				},
+				{
+					id: 'cron',
+					value: '',
+				},
 			],
 			content: workflows.map((workflow) => {
 				const cells: DataTableCell[] = [
@@ -96,6 +100,18 @@ export default observer(() => {
 						type: 'MenuPlay',
 						onClick: () => {
 							instancesCreate.open({
+								workspaceId: page.context.workspaceId,
+								projectId: page.context.projectId,
+								workflowId: workflow.workflowId,
+							})
+						},
+					},
+					{
+						id: 'cron',
+						value: 'create-cron',
+						type: 'RepeatClockIcon',
+						onClick: () => {
+							cronsCreate.open({
 								workspaceId: page.context.workspaceId,
 								projectId: page.context.projectId,
 								workflowId: workflow.workflowId,

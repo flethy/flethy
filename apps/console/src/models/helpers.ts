@@ -49,6 +49,18 @@ export class RouterPathUtils {
 		return this
 	}
 
+	public c(cronId?: string | boolean) {
+		this.path.push('c')
+		if (typeof cronId === 'boolean') {
+			if (cronId === true) {
+				this.path.push(':cronId')
+			}
+		} else {
+			this.path.push(cronId ?? ':cronId')
+		}
+		return this
+	}
+
 	public s() {
 		this.path.push('s')
 		return this

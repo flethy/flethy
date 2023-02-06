@@ -1,4 +1,9 @@
-import { CopyIcon, DeleteIcon, ArrowForwardIcon } from '@chakra-ui/icons'
+import {
+	ArrowForwardIcon,
+	CopyIcon,
+	DeleteIcon,
+	RepeatClockIcon,
+} from '@chakra-ui/icons'
 import {
 	IconButton,
 	Table,
@@ -13,7 +18,6 @@ import {
 } from '@chakra-ui/react'
 import { observer } from 'mobx-react-lite'
 import { Link } from 'mobx-router'
-import { getRouter } from '../models/helpers'
 import { useMst } from '../models/root'
 
 export interface DataTableCell {
@@ -25,7 +29,7 @@ export interface DataTableCell {
 	}
 	clipboard?: boolean
 	isNumeric?: boolean
-	type?: 'value' | 'MenuDelete' | 'MenuPlay'
+	type?: 'value' | 'MenuDelete' | 'MenuPlay' | 'RepeatClockIcon'
 	onClick?: () => void
 }
 
@@ -94,6 +98,15 @@ export default observer((props: DataTableProps) => {
 							aria-label="Play"
 							size="sm"
 							icon={<ArrowForwardIcon />}
+							onClick={currentCell.onClick}
+						/>
+					)
+				case 'RepeatClockIcon':
+					return (
+						<IconButton
+							aria-label="Cron"
+							size="sm"
+							icon={<RepeatClockIcon />}
 							onClick={currentCell.onClick}
 						/>
 					)

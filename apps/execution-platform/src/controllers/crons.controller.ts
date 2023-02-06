@@ -138,7 +138,8 @@ export class CronsController {
     if (!currentCrons) {
       currentCrons = { value: [], metadata: { count: 0, nextRun: 0 } };
     }
-    currentCrons.value.push({
+
+    const newCron: CronEntry = {
       cronId: crypto.randomUUID(),
       name: request.name,
       workflowId: request.workflowId,
@@ -146,11 +147,24 @@ export class CronsController {
       workspaceId: request.workspaceId,
       expression: request.expression,
       nextRun: 0,
-    });
+    };
+
+    currentCrons.value.push(newCron);
 
     const response = await CronsController.put({ crons: currentCrons.value });
 
-    return response;
+    if (response.success) {
+      throw new FlethyError({
+        message: `Failed to add cron ${request.name} to project ${newCron.projectId}`,
+        type: ErrorType.Internal,
+        log: {
+          message: `Failed to add cron ${request.name} to project ${newCron.projectId}`,
+          context: { method: "add", origin: "crons.controller.ts" },
+          data: { request },
+        },
+      });
+    }
+    return newCron;
   }
 
   public static async remove(request: RemoveCronRequest) {

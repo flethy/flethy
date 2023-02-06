@@ -1,9 +1,11 @@
 import { observer } from 'mobx-react-lite'
+import CronsCreateModal from './crons/create/page'
+import CronsDeleteModal from './crons/delete/page'
+import InstancesCreateModal from './instances/create/page'
 import SecretsCreateModal from './secrets/create/page'
 import SecretsDeleteModal from './secrets/delete/page'
 import TokensCreateModal from './tokens/create/page'
 import TokensDeleteModal from './tokens/delete/page'
-import InstancesCreateModal from './instances/create/page'
 
 export default observer(() => {
 	const modals = (
@@ -13,6 +15,8 @@ export default observer(() => {
 			<TokensCreateModal />
 			<TokensDeleteModal />
 			<InstancesCreateModal />
+			<CronsCreateModal />
+			<CronsDeleteModal />
 		</>
 	)
 
