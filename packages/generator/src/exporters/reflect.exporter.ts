@@ -148,6 +148,7 @@ import { MailboxLayer } from '../../../connectors/src/configs/mailboxlayer.confi
 import { MailboxValidator } from '../../../connectors/src/configs/mailboxvalidator.config'
 import { MailCheckAi } from '../../../connectors/src/configs/mailcheckai.config'
 import { Mailchimp } from '../../../connectors/src/configs/mailchimp.config'
+import { MailerLite } from '../../../connectors/src/configs/mailerlite.config'
 import { MailerSend } from '../../../connectors/src/configs/mailersend.config'
 import { MailJet } from '../../../connectors/src/configs/mailjet.config'
 import { MailPace } from '../../../connectors/src/configs/mailpace.config'
@@ -636,6 +637,8 @@ configTypes.push({type: getType<MailboxValidator.FreeEmail>(), id: 'mailboxvalid
 configTypes.push({type: getType<MailCheckAi.CheckDomain>(), id: 'mailcheckai', name: 'MailCheckAi', interface: 'CheckDomain'})
 configTypes.push({type: getType<MailCheckAi.CheckEmail>(), id: 'mailcheckai', name: 'MailCheckAi', interface: 'CheckEmail'})
 configTypes.push({type: getType<Mailchimp.ListCampaigns>(), id: 'mailchimp', name: 'Mailchimp', interface: 'ListCampaigns'})
+configTypes.push({type: getType<MailerLite.ListSubscribers>(), id: 'mailerlite', name: 'MailerLite', interface: 'ListSubscribers'})
+configTypes.push({type: getType<MailerLite.CreateSubscriber>(), id: 'mailerlite', name: 'MailerLite', interface: 'CreateSubscriber'})
 configTypes.push({type: getType<MailerSend.EmailSend>(), id: 'mailersend', name: 'MailerSend', interface: 'EmailSend'})
 configTypes.push({type: getType<MailJet.SendBasicEmail>(), id: 'mailjet', name: 'MailJet', interface: 'SendBasicEmail'})
 configTypes.push({type: getType<MailPace.Send>(), id: 'mailpace', name: 'MailPace', interface: 'Send'})

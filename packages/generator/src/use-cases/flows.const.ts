@@ -762,4 +762,12 @@ export const FLOWS = {
       'param:monitorKey': '==>env==>MONITOR_KEY',
     },
   ],
+  'create-subscriber-with-mailerlite': [
+    {
+      id: 'mailerlite',
+      kind: 'mailerlite.subscribers.create',
+      'auth:Authorization': '==>secrets==>MAILERLITE_API_TOKEN',
+      'body:email': '->context.input.email->string',
+    },
+  ],
 }
