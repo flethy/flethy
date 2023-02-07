@@ -27,6 +27,18 @@ export default {
         promises.push(env.flethyep.fetch(url, options));
       });
       await Promise.allSettled(promises);
+      console.log(`Triggered ${crons.length} workflows`);
+
+      const route = new RouterPathUtils().s2s().c(false).custom("update").gen();
+      const url = `http://localhost${route}`;
+      const options = {
+        method: "POST",
+        headers: {
+          Authorization: auth,
+        },
+      };
+      await env.flethyep.fetch(url, options);
+      console.log(`Triggered next run times`);
     }
     return new Response("All done", { status: 200 });
   },
