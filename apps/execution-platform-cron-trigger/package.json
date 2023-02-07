@@ -17,7 +17,7 @@
   "license": "MIT",
   "devDependencies": {
     "@cloudflare/workers-types": "4.20230115.0",
-    "@types/node": "18.11.18",
+    "@types/node": "18.13.0",
     "@typescript-eslint/eslint-plugin": "^5.49.0",
     "@typescript-eslint/parser": "^5.49.0",
     "eslint": "^8.33.0",
