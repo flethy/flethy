@@ -143,7 +143,7 @@ export class FrontendRoute {
     RouterUtils.createRoute({
       API,
       method: "PUT",
-      route: new RouterPathUtils().w().p().wf().gen(),
+      route: new RouterPathUtils().w().p().wf(false).gen(),
       isUserToken: true,
       scopes: [TokenScope.WORKFLOW_CREATE],
       handler: async (req, res, userId) => {
@@ -176,7 +176,7 @@ export class FrontendRoute {
     RouterUtils.createRoute({
       API,
       method: "GET",
-      route: new RouterPathUtils().w().p().wf().gen(),
+      route: new RouterPathUtils().w().p().wf(false).gen(),
       isUserToken: true,
       scopes: [TokenScope.WORKFLOW_READ],
       handler: async (req, res, userId) => {

@@ -10,36 +10,36 @@ export default observer(() => {
 		router,
 		root: {
 			api,
-			modals: { tokensDelete },
+			modals: { cronsDelete },
 		},
 	} = useMst()
 
 	const form = (
 		<VStack>
-			<Text>{t('modals.tokens.delete.description')}</Text>
-			<Text>{tokensDelete.form.name}</Text>
+			<Text>{t('modals.crons.delete.description')}</Text>
+			<Text>{cronsDelete.form.name}</Text>
 		</VStack>
 	)
 
 	const component = (
 		<ModalWrapper
-			title={t('modals.tokens.delete.title')}
-			isOpen={tokensDelete.isOpen}
+			title={t('modals.crons.delete.title')}
+			isOpen={cronsDelete.isOpen}
 			children={form}
 			isSubmitting={{
-				loading: tokensDelete.isSubmitting,
-				loadingText: t('modals.tokens.delete.submitting'),
+				loading: cronsDelete.isSubmitting,
+				loadingText: t('modals.crons.delete.submitting'),
 			}}
 			close={{
-				label: t('modals.tokens.delete.cancel') ?? '',
+				label: t('modals.crons.delete.cancel') ?? '',
 				onClick: () => {
-					tokensDelete.close()
+					cronsDelete.close()
 				},
 			}}
 			submit={{
-				label: t('modals.tokens.delete.submit') ?? '',
+				label: t('modals.crons.delete.submit') ?? '',
 				onClick: () => {
-					tokensDelete.submit()
+					cronsDelete.submit()
 				},
 			}}
 		/>

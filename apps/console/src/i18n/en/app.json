@@ -228,6 +228,14 @@
 				"description": "You can add access tokens to your project here."
 			}
 		},
+		"crons": {
+			"title": "Project Cron Triggers",
+			"subtitle": "These Cron Triggers are available for your project.",
+			"emptyState": {
+				"heading": "No Cron Triggers yet",
+				"description": "You can add new Cron Triggers in your workflow overview."
+			}
+		},
 		"workflows": {
 			"title": "Your Workflows",
 			"subtitle": "These have been created.",

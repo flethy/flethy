@@ -1,6 +1,7 @@
 name = "flethy"
 main = "src/index.ts"
 compatibility_date = "2022-10-27"
+usage_model = "unbound"
 # workers_dev = true
 # node_compat = true
 route = { pattern = "dev.api.flethy.com", custom_domain = true, zone_name = "flethy.com" }

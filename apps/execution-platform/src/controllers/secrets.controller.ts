@@ -9,6 +9,7 @@ import {
 import { ErrorType, FlethyError } from "../utils/error.utils";
 import { KVUtils } from "../utils/kv.utils";
 import { ValidationUtils } from "../utils/validation.utils";
+import { LimitsController } from "./limits.controller";
 
 export interface FlethySecrets {
   secrets?: string;
@@ -82,6 +83,23 @@ export class SecretsController {
       projectId: request.projectId,
       userId: request.userId,
     });
+
+    if (
+      currentSecrets &&
+      Object.keys(currentSecrets.secrets.values).length >=
+        LimitsController.getLimits({ workspaceId: request.workspaceId })
+          .projects.secrets.max
+    ) {
+      throw new FlethyError({
+        message: `You have reached the maximum number of secrets for this project`,
+        type: ErrorType.Forbidden,
+        log: {
+          message: `You have reached the maximum number of secrets for this project`,
+          context: { method: "put", origin: "secrets.controller.ts" },
+          data: { request },
+        },
+      });
+    }
 
     const updatedSecrets: FlethySecrets = {};
     let updatedSecretsMetadata: FlethySecretsMetadata = {

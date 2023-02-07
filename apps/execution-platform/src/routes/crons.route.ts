@@ -14,7 +14,7 @@ export class CronsRoute {
       workspaceId: req.params.workspaceId,
     });
 
-    res.send(StatusCodeSuccess.OK, { ...data });
+    res.send(StatusCodeSuccess.OK, data);
   }
 
   public static async getAll(
