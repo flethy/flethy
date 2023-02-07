@@ -93,6 +93,7 @@ export const CreateCronModal = types
 					name: self.form.name,
 					expression: self.form.expression,
 				})
+				self.isOpen = false
 				self.isSubmitting = false
 			} catch (error) {
 				self.isSubmitting = false

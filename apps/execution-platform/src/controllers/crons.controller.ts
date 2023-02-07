@@ -4,6 +4,7 @@ import { FlethyProject, FlethyWorkspace } from "../types/general.type";
 import { ErrorType, FlethyError } from "../utils/error.utils";
 import { KVUtils } from "../utils/kv.utils";
 import { ValidationUtils } from "../utils/validation.utils";
+import { LimitsController } from "./limits.controller";
 
 // INTERFACES
 
@@ -41,8 +42,8 @@ export interface CronResponse {
   value: CronEntry[];
 }
 
-export interface Crons {
-  workflowIds: string[];
+export interface Crons extends FlethyWorkspace, FlethyProject {
+  workflowId: string;
 }
 
 // CONTROLLER
@@ -69,14 +70,20 @@ export class CronsController {
     }
   }
 
-  public static async getNextWorkflowsToExecute(): Promise<Crons> {
+  public static async getNextWorkflowsToExecute(): Promise<Crons[]> {
     const foundCrons = await CronsController.getAll();
-    const crons: Crons = { workflowIds: [] };
+    let crons: Crons[] = [];
     const now = Date.now();
     if (foundCrons.metadata.count > 0 && foundCrons.metadata.nextRun < now) {
-      crons.workflowIds = foundCrons.value
+      crons = foundCrons.value
         .filter((cron) => cron.nextRun < now)
-        .map((cron) => cron.workflowId);
+        .map((cron) => {
+          return {
+            workspaceId: cron.workspaceId,
+            projectId: cron.projectId,
+            workflowId: cron.workflowId,
+          };
+        });
     }
     return crons;
   }
@@ -139,6 +146,25 @@ export class CronsController {
       currentCrons = { value: [], metadata: { count: 0, nextRun: 0 } };
     }
 
+    const projectCrons = currentCrons.value.filter(
+      (cron) => cron.projectId === request.projectId
+    );
+    if (
+      projectCrons.length >=
+      LimitsController.getLimits({ workspaceId: request.workspaceId }).projects
+        .crons.max
+    ) {
+      throw new FlethyError({
+        message: `You have reached the maximum number of crons for this project`,
+        type: ErrorType.Forbidden,
+        log: {
+          message: `You have reached the maximum number of crons for this project`,
+          context: { method: "add", origin: "crons.controller.ts" },
+          data: { request },
+        },
+      });
+    }
+
     const newCron: CronEntry = {
       cronId: crypto.randomUUID(),
       name: request.name,
@@ -153,7 +179,7 @@ export class CronsController {
 
     const response = await CronsController.put({ crons: currentCrons.value });
 
-    if (response.success) {
+    if (!response.success) {
       throw new FlethyError({
         message: `Failed to add cron ${request.name} to project ${newCron.projectId}`,
         type: ErrorType.Internal,

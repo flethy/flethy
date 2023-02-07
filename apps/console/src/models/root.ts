@@ -13,6 +13,7 @@ import { DeleteTokenModal } from '../components/modals/tokens/delete/model'
 import { QuickSearchComponent } from '../components/quicksearch/model'
 import { UnsufficientPermissionsPage } from '../pages/403/model'
 import { NotFoundPage } from '../pages/404/model'
+import { CronsPage } from '../pages/crons/model'
 import { ExplorePage } from '../pages/explore/model'
 import { HomePage } from '../pages/home/model'
 import { SecretsPage } from '../pages/secrets/model'
@@ -39,6 +40,7 @@ const PagesStore = types.model('Pages', {
 	secrets: types.optional(SecretsPage, () => SecretsPage.create()),
 	tokens: types.optional(TokensPage, () => TokensPage.create()),
 	workflows: types.optional(WorkflowsPage, () => WorkflowsPage.create()),
+	crons: types.optional(CronsPage, () => CronsPage.create()),
 	exploreUseCases: types.optional(ExplorePage, () => ExplorePage.create()),
 })
 

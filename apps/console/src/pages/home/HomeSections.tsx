@@ -56,6 +56,14 @@ export default observer(() => {
 					gridItem
 					action={() => router.goTo(routes.tokens, api.workspaces.getContext())}
 				/>
+				<ActionCard
+					avatar={{ name: 'Cron Triggers', src: 'icons/accesstokens' }}
+					title={'Manage Cron Triggers'}
+					subtitle={'config'}
+					description={'Manage all your Cron Triggers now.'}
+					gridItem
+					action={() => router.goTo(routes.crons, api.workspaces.getContext())}
+				/>
 			</Grid>
 		</VStack>
 	)

@@ -3,6 +3,7 @@ import { FlethyProject, FlethyWorkspace } from "../types/general.type";
 import { ErrorType, FlethyError } from "../utils/error.utils";
 import { KVUtils } from "../utils/kv.utils";
 import { ValidationUtils } from "../utils/validation.utils";
+import { LimitsController } from "./limits.controller";
 
 // INTERFACES
 
@@ -104,6 +105,23 @@ export class TokenController {
     if (!currentTokens || currentTokens?.length === 0) {
       currentTokens = { tokens: [] };
     }
+
+    if (
+      currentTokens.tokens.length >=
+      LimitsController.getLimits({ workspaceId: request.workspaceId }).projects
+        .tokens.max
+    ) {
+      throw new FlethyError({
+        message: `You have reached the maximum number of tokens for this project`,
+        type: ErrorType.Forbidden,
+        log: {
+          message: `You have reached the maximum number of tokens for this project`,
+          context: { method: "put", origin: "token.controller.ts" },
+          data: { request },
+        },
+      });
+    }
+
     currentTokens.tokens.push(request.token);
 
     const success = await write<{}>(

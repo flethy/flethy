@@ -2,6 +2,7 @@ import { Route } from 'mobx-router'
 import { RootStore } from './models/root'
 import UnsufficientPermissionsPage from './pages/403/page'
 import NotFoundPage from './pages/404/page'
+import CronsPage from './pages/crons/page'
 import ExplorePage from './pages/explore/page'
 import HomePage from './pages/home/page'
 import SecretsPage from './pages/secrets/page'
@@ -48,7 +49,12 @@ export class RouterPathUtils {
 	}
 
 	public t() {
-		this.path.push('token')
+		this.path.push('tokens')
+		return this
+	}
+
+	public c() {
+		this.path.push('crons')
 		return this
 	}
 
@@ -105,6 +111,15 @@ export default {
 		onEnter(_route, parameters, { root: { pages } }) {
 			const { projectId, workspaceId } = parameters as any
 			pages.tokens.initialisePage({ projectId, workspaceId })
+		},
+	}),
+
+	crons: new Route<RootStore>({
+		path: new RouterPathUtils().w().p().c().gen(),
+		component: <CronsPage />,
+		onEnter(_route, parameters, { root: { pages } }) {
+			const { projectId, workspaceId } = parameters as any
+			pages.crons.initialisePage({ projectId, workspaceId })
 		},
 	}),
 

@@ -1,15 +1,33 @@
+import { CronsController } from "./controllers/crons.controller";
+import { RouterPathUtils } from "./utils/router.utils";
+
 export default {
-  async scheduled(event: any, env: any, ctx: any) {
-    console.log(`cron: trigger - ${event.cron}`);
-    try {
-      const response = await env.flethyep.fetch("http://localhost/alive");
-      if (!response.ok) {
-        console.log(`error: ${response.status}`);
-      }
-    } catch (error) {
-      console.log(`error: ${error}`);
+  async scheduled(_event: any, env: any, _ctx: any) {
+    const crons = await CronsController.getNextWorkflowsToExecute(env);
+    const auth = env.SECRET_INTER_SERVICE_AUTH;
+
+    if (crons.length > 0) {
+      const promises: any[] = [];
+      crons.forEach((cron) => {
+        const route = new RouterPathUtils()
+          .s2s()
+          .w(cron.workspaceId)
+          .p(cron.projectId)
+          .wf(cron.workflowId)
+          .i()
+          .gen();
+        const url = `http://localhost${route}`;
+        const options = {
+          method: "POST",
+          headers: {
+            Authorization: auth,
+          },
+          body: JSON.stringify({ payload: {} }),
+        };
+        promises.push(env.flethyep.fetch(url, options));
+      });
+      await Promise.allSettled(promises);
     }
-    console.log(`called other worker`);
     return new Response("All done", { status: 200 });
   },
 };

@@ -6,8 +6,8 @@ export class ServiceRoute {
   public static addRoutes(API: Router) {
     RouterUtils.createRoute({
       API,
-      method: "GET",
-      route: new RouterPathUtils().s2s().w().p().wf(true).i().gen(),
+      method: "POST",
+      route: new RouterPathUtils().s2s().w(true).p().wf(true).i().gen(),
       isInterServiceToken: true,
       handler: async (req, res, userId) => {
         await WorkflowsRoute.start(req, res, userId);

@@ -5,6 +5,7 @@ import { getRootStore } from '../helpers'
 export enum PAGE_CONTEXT {
 	EXPLORE = 'explore',
 	TOKENS = 'tokens',
+	CRONS = 'crons',
 	WORKFLOWS = 'workflows',
 	HOME = 'home',
 	EDITOR = 'editor',
@@ -38,6 +39,13 @@ export const ContextModel = types
 				case PAGE_CONTEXT.TOKENS:
 					api.helmet.updateTitle({
 						title: 'Your Tokens',
+						concatenateAppname: true,
+					})
+					components.docsBar.setDocItems([])
+					break
+				case PAGE_CONTEXT.CRONS:
+					api.helmet.updateTitle({
+						title: 'Your Cron Triggers',
 						concatenateAppname: true,
 					})
 					components.docsBar.setDocItems([])

@@ -15,7 +15,10 @@ export const CronsModel = types
 		crons: types.map(types.array(CronModel)),
 	})
 	.views((self) => {
-		return {}
+		const getCronsFromStore = (options: { projectId: string }) => {
+			return self.crons.get(options.projectId)
+		}
+		return { getCronsFromStore }
 	})
 	.actions((self) => {
 		const list = flow(function* (options: {
@@ -45,7 +48,7 @@ export const CronsModel = types
 					url: new RouterPathUtils()
 						.w(options.workspaceId)
 						.p(options.projectId)
-						.c()
+						.c(false)
 						.gen(),
 				})
 				self.crons.set(options.projectId, response ?? [])
