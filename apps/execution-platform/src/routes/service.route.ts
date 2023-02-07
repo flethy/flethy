@@ -13,5 +13,15 @@ export class ServiceRoute {
         await WorkflowsRoute.start(req, res, userId);
       },
     });
+
+    RouterUtils.createRoute({
+      API,
+      method: "POST",
+      route: new RouterPathUtils().s2s().c(false).custom("update").gen(),
+      isInterServiceToken: true,
+      handler: async (req, res, userId) => {
+        await WorkflowsRoute.start(req, res, userId);
+      },
+    });
   }
 }

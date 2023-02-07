@@ -111,6 +111,30 @@ export class CronsController {
     return { success, metadata, value };
   }
 
+  public static async updateNextRuns() {
+    const foundCrons = await CronsController.getAll();
+    const updatedCrons = foundCrons.value.map((cron) => {
+      return {
+        ...cron,
+        nextRun: CronsController.calculateNextRun(cron.expression),
+      };
+    });
+    const metadata: CronMetadata = {
+      count: updatedCrons.length,
+      nextRun: updatedCrons.reduce((min, cron) => {
+        return cron.nextRun < min || min === 0 ? cron.nextRun : min;
+      }, 0),
+    };
+    const success = await write<CronEntry[], CronMetadata>(
+      KVUtils.getKV().data,
+      KVUtils.getCronKey(),
+      updatedCrons,
+      { metadata }
+    );
+
+    return { success, metadata, value: updatedCrons };
+  }
+
   public static async add(request: AddCronRequest) {
     const validation = ValidationUtils.validateAll([
       {
