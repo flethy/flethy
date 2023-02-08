@@ -1,0 +1,55 @@
+{
+  "name": "Plausible",
+  "domain": "plausible.io",
+  "claimed": false,
+  "description": "Plausible is a lightweight and open-source web analytics tool. Your website data is 100% yours and the privacy of your visitors is respected.",
+  "links": [
+    { "name": "github", "url": "https://github.com/plausible" },
+    { "name": "twitter", "url": "https://twitter.com/PlausibleHQ" }
+  ],
+  "logos": [
+    {
+      "type": "icon",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/id2ceYC7ck/idkMMiHKhK.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 399,
+          "width": 399,
+          "size": 65605
+        }
+      ]
+    },
+    {
+      "type": "logo",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/id2ceYC7ck/idnzCDiuJm.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 80,
+          "width": 303,
+          "size": 2784
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#161d2d", "type": "dark", "brightness": 29 },
+    { "hex": "#f9fafc", "type": "light", "brightness": 250 },
+    { "hex": "#6574cd", "type": "accent", "brightness": 119 }
+  ],
+  "fonts": [
+    {
+      "name": "Roboto",
+      "type": "body",
+      "origin": "google",
+      "originId": "Roboto",
+      "weights": []
+    }
+  ],
+  "images": []
+}

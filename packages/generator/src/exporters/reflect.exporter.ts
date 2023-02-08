@@ -201,6 +201,7 @@ import { Pipedream } from '../../../connectors/src/configs/pipedream.config'
 import { PirateWeather } from '../../../connectors/src/configs/pirateweather.config'
 import { Pirsch } from '../../../connectors/src/configs/pirsch.config'
 import { Pixela } from '../../../connectors/src/configs/pixela.config'
+import { PlausibleAnalytics } from '../../../connectors/src/configs/plausibleanalytics.config'
 import { PolyScale } from '../../../connectors/src/configs/polyscale.config'
 import { PostHog } from '../../../connectors/src/configs/posthog.config'
 import { Prepr } from '../../../connectors/src/configs/prepr.config'
@@ -751,6 +752,7 @@ configTypes.push({type: getType<Pirsch.SendEvent>(), id: 'pirsch', name: 'Pirsch
 configTypes.push({type: getType<Pixela.CreateGraph>(), id: 'pixela', name: 'Pixela', interface: 'CreateGraph'})
 configTypes.push({type: getType<Pixela.GetGraph>(), id: 'pixela', name: 'Pixela', interface: 'GetGraph'})
 configTypes.push({type: getType<Pixela.PostValue>(), id: 'pixela', name: 'Pixela', interface: 'PostValue'})
+configTypes.push({type: getType<PlausibleAnalytics.SendEvent>(), id: 'plausibleanalytics', name: 'PlausibleAnalytics', interface: 'SendEvent'})
 configTypes.push({type: getType<PolyScale.GetCaches>(), id: 'polyscale', name: 'PolyScale', interface: 'GetCaches'})
 configTypes.push({type: getType<PolyScale.PurgeCache>(), id: 'polyscale', name: 'PolyScale', interface: 'PurgeCache'})
 configTypes.push({type: getType<PostHog.SendEvent>(), id: 'posthog', name: 'PostHog', interface: 'SendEvent'})

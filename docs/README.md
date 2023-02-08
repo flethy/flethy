@@ -219,6 +219,7 @@ The following Endpoints are currently supported.
 * [PirateWeather](./api/pirateweather.md)
 * [Pirsch](./api/pirsch.md)
 * [Pixela](./api/pixela.md)
+* [PlausibleAnalytics](./api/plausibleanalytics.md)
 * [PolyScale](./api/polyscale.md)
 * [PostHog](./api/posthog.md)
 * [Prepr](./api/prepr.md)
