@@ -32,6 +32,9 @@ export class HttpRequest {
           throw error
         }
       }
+      if (params.responseType === 'text') {
+        nodeResponse = await response.text()
+      }
       // const response = await axios(axiosConfig)
 
       return nodeResponse

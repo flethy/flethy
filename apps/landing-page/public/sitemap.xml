@@ -829,6 +829,10 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://flethy.com/integrations/plausibleanalytics</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://flethy.com/integrations/polyscale</loc>
     <priority>0.8</priority>
   </url>
@@ -1434,6 +1438,10 @@
   </url>
   <url>
     <loc>https://flethy.com/use-cases/send-event-to-intercom</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://flethy.com/use-cases/send-event-to-plausible</loc>
     <priority>0.8</priority>
   </url>
   <url>

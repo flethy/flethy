@@ -770,4 +770,15 @@ export const FLOWS = {
       'body:email': '->context.input.email->string',
     },
   ],
+  'send-event-to-plausible': [
+    {
+      id: 'plausible',
+      kind: 'plausibleanalytics.events.send',
+      'header:User-Agent': '->context.input.userAgent->string',
+      'header:X-Forwarded-For': '->context.input.ip->string',
+      'body:domain': '->context.input.domain->string',
+      'body:name': '->context.input.eventName->string',
+      'body:url': '->context.input.url->string',
+    },
+  ],
 }

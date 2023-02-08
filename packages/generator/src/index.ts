@@ -287,6 +287,7 @@ import mailtrap from './examples/mailtrap'
 import { logger } from './utils/Logger'
 import cronitor from './examples/cronitor'
 import mailerlite from './examples/mailerlite'
+import plausibleanalytics from './examples/plausibleanalytics'
 
 async function main() {
   const requestConfigs: {
@@ -3855,7 +3856,7 @@ Here you find all the available integrations`,
       'query:provider': 'redstone',
     }),
   }
-  const requestConfig = mailerlite.configs.createSubscriber
+  const requestConfig = plausibleanalytics.configs.sendEvent
 
   logger.info(requestConfig)
   const response = await HttpRequest.request(nao(requestConfig))
