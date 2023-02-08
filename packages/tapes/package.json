@@ -14,7 +14,7 @@
   },
   "devDependencies": {
     "@types/node": "18.11.18",
-    "prettier": "2.8.3",
+    "prettier": "2.8.4",
     "ts-node": "^10.9.1",
     "tsconfig": "workspace:*",
     "typescript": "^4.9.5"

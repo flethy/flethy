@@ -56,7 +56,7 @@
 		"autoprefixer": "^10.4.13",
 		"eslint-config-custom": "workspace:*",
 		"postcss": "8.4.21",
-		"prettier": "2.8.3",
+		"prettier": "2.8.4",
 		"rollup-plugin-analyzer": "4.0.0",
 		"sass": "1.58.0",
 		"tailwindcss": "^3.2.4",
