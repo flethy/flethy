@@ -58,6 +58,12 @@ export default observer(() => {
 			route: routes.tokens,
 			params: api.workspaces.getContext(),
 		},
+		{
+			id: 'crons',
+			label: t('menu.crons'),
+			route: routes.crons,
+			params: api.workspaces.getContext(),
+		},
 	]
 
 	const menu = (

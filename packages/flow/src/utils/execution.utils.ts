@@ -24,8 +24,16 @@ export class ExecutionUtils {
         body: JSON.stringify(params.body),
       })
 
-      if (!params.responseType || params.responseType === 'json') {
-        nodeResponse.data = await response.json()
+      if (!response.ok) {
+        nodeResponse.resolved = false
+        nodeResponse.error = response.statusText
+        nodeResponse.data = {
+          statusCode: response.status,
+        }
+      } else {
+        if (!params.responseType || params.responseType === 'json') {
+          nodeResponse.data = await response.json()
+        }
       }
     } catch (error: any) {
       nodeResponse.error = error

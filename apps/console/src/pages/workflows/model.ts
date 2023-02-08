@@ -19,6 +19,10 @@ export const WorkflowsPage = types
 				workspaceId: self.context.workspaceId,
 				projectId: self.context.projectId,
 			})
+			api.crons.list({
+				workspaceId: self.context.workspaceId,
+				projectId: self.context.projectId,
+			})
 		},
 	}))
 	.views((self) => ({
@@ -27,6 +31,11 @@ export const WorkflowsPage = types
 			return api.stateAndCache.somePending([
 				{
 					api: 'workflows',
+					operation: 'list',
+					id: self.context.projectId,
+				},
+				{
+					api: 'crons',
 					operation: 'list',
 					id: self.context.projectId,
 				},

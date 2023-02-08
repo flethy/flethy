@@ -12,7 +12,8 @@
 		"home": "Home",
 		"secrets": "Secrets",
 		"workflows": "Workflows",
-		"tokens": "Access Tokens"
+		"tokens": "Access Tokens",
+		"crons": "Cron Triggers"
 	},
 	"footer": {
 		"pitchdeck": "Pitch Deck",

@@ -31,6 +31,10 @@ export default observer(() => {
 					projectId: page.context.projectId,
 				})
 			}}
+			isDisabled={
+				(page.getWorkflows()?.length ?? 0) >=
+				api.workspaces.getLimits().projects.workflows.max
+			}
 		>
 			Add
 		</Button>
@@ -110,6 +114,9 @@ export default observer(() => {
 						id: 'cron',
 						value: 'create-cron',
 						type: 'RepeatClockIcon',
+						disabled:
+							api.crons.getCronCountForCurrentWorkspace() >=
+							api.workspaces.getLimits().projects.crons.max,
 						onClick: () => {
 							cronsCreate.open({
 								workspaceId: page.context.workspaceId,

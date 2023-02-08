@@ -10,11 +10,46 @@ export const ProjectModel = types.model('ProjectModel', {
 	r: types.array(types.string),
 })
 
+export interface Limits {
+	projects: {
+		max: number
+		workflows: {
+			max: number
+		}
+		tokens: {
+			max: number
+		}
+		secrets: {
+			max: number
+		}
+		crons: {
+			max: number
+		}
+	}
+}
+
 export const WorkspaceModel = types.model('WorkspaceModel', {
 	id: types.string,
 	name: types.string,
 	p: types.array(ProjectModel),
 	r: types.array(types.string),
+	limits: types.optional(types.frozen<Limits>(), {
+		projects: {
+			max: 1,
+			workflows: {
+				max: 10,
+			},
+			tokens: {
+				max: 3,
+			},
+			secrets: {
+				max: 10,
+			},
+			crons: {
+				max: 1,
+			},
+		},
+	}),
 })
 
 export const WorkspacesModel = types
@@ -110,6 +145,28 @@ export const WorkspacesModel = types
 			)
 		}
 
+		const getLimits = (): Limits => {
+			return (
+				self.workspaces.get(self.context.workspaceId)?.limits ?? {
+					projects: {
+						max: 1,
+						workflows: {
+							max: 10,
+						},
+						tokens: {
+							max: 3,
+						},
+						secrets: {
+							max: 10,
+						},
+						crons: {
+							max: 1,
+						},
+					},
+				}
+			)
+		}
+
 		const getEnrichedContext = () => {
 			const workspace = self.workspaces.get(self.context.workspaceId)
 			if (workspace) {
@@ -126,5 +183,11 @@ export const WorkspacesModel = types
 			return undefined
 		}
 
-		return { getFromStore, getContext, getEnrichedContext, isOnboarded }
+		return {
+			getFromStore,
+			getContext,
+			getEnrichedContext,
+			isOnboarded,
+			getLimits,
+		}
 	})

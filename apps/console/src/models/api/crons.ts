@@ -18,7 +18,17 @@ export const CronsModel = types
 		const getCronsFromStore = (options: { projectId: string }) => {
 			return self.crons.get(options.projectId)
 		}
-		return { getCronsFromStore }
+
+		const getCronCountForCurrentWorkspace = () => {
+			const { api } = getRootStore(self)
+			const currentWorkspace = api.workspaces.getContext()
+			const count =
+				getCronsFromStore({ projectId: currentWorkspace.projectId })?.length ??
+				0
+			return count
+		}
+
+		return { getCronsFromStore, getCronCountForCurrentWorkspace }
 	})
 	.actions((self) => {
 		const list = flow(function* (options: {

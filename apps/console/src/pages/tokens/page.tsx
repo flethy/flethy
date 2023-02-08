@@ -28,6 +28,10 @@ export default observer(() => {
 					projectId: page.context.projectId,
 				})
 			}
+			isDisabled={
+				(page.getTokens()?.length ?? 0) >=
+				api.workspaces.getLimits().projects.tokens.max
+			}
 		>
 			Add
 		</Button>
