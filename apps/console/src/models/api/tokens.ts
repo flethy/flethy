@@ -51,7 +51,14 @@ export const TokensModel = types
 			]
 		}
 
-		return { getTokensFormStore, availableScopes }
+		const getCountForCurrentProject = () => {
+			const { api } = getRootStore(self)
+			const context = api.workspaces.getContext()
+			const tokens = getTokensFormStore({ projectId: context.projectId })
+			return tokens?.length ?? 0
+		}
+
+		return { getTokensFormStore, availableScopes, getCountForCurrentProject }
 	})
 	.actions((self) => {
 		const list = flow(function* (options: {

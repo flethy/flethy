@@ -121,5 +121,12 @@ export const SecretsModel = types
 			return self.secrets.get(options.projectId)
 		}
 
-		return { getFromStore }
+		const getSecretsCountForCurrentProject = (): number => {
+			const { api } = getRootStore(self)
+			const currentContext = api.workspaces.getContext()
+			const currentSecrets = self.secrets.get(currentContext.projectId)
+			return currentSecrets?.keys?.length ?? 0
+		}
+
+		return { getFromStore, getSecretsCountForCurrentProject }
 	})

@@ -1,10 +1,12 @@
 import { read, write } from "worktop/kv";
+import { Limits } from "../constants/limits.const";
 import { FlethyMetaDates, FlethyMetaUser } from "../types/general.type";
 import { ErrorType, FlethyError } from "../utils/error.utils";
 import { KVUtils } from "../utils/kv.utils";
 import { ValidationUtils } from "../utils/validation.utils";
 import { ProjectRole, WorkspaceRole } from "./auth.controller";
 import { FlethyFlowController } from "./flethyflow.controller";
+import { LimitsController } from "./limits.controller";
 
 // INTERFACES
 
@@ -19,6 +21,7 @@ export interface Workspace {
   name?: string;
   r: WorkspaceRole[];
   p: Project[];
+  limits?: Limits;
 }
 
 export interface FlethyWorkspaceMetadata
@@ -173,6 +176,9 @@ export class WorkspaceController {
         workspace.p = workspace.p.filter((project) =>
           request.projectIds.includes(project.id)
         );
+        workspace.limits = LimitsController.getLimits({
+          workspaceId: workspace.id,
+        });
       }
     }
 

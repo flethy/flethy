@@ -1,5 +1,6 @@
 import { Router } from "worktop";
 import { RouterPathUtils, RouterUtils } from "../utils/router.utils";
+import { CronsRoute } from "./crons.route";
 import { WorkflowsRoute } from "./workflows.route";
 
 export class ServiceRoute {
@@ -20,7 +21,7 @@ export class ServiceRoute {
       route: new RouterPathUtils().s2s().c(false).custom("update").gen(),
       isInterServiceToken: true,
       handler: async (req, res, userId) => {
-        await WorkflowsRoute.start(req, res, userId);
+        await CronsRoute.updateNextRuns(req, res, userId);
       },
     });
   }

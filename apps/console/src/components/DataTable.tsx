@@ -30,6 +30,7 @@ export interface DataTableCell {
 	clipboard?: boolean
 	isNumeric?: boolean
 	type?: 'value' | 'MenuDelete' | 'MenuPlay' | 'RepeatClockIcon'
+	disabled?: boolean
 	onClick?: () => void
 }
 
@@ -90,6 +91,7 @@ export default observer((props: DataTableProps) => {
 							size="sm"
 							icon={<DeleteIcon />}
 							onClick={currentCell.onClick}
+							isDisabled={currentCell.disabled ?? false}
 						/>
 					)
 				case 'MenuPlay':
@@ -99,6 +101,7 @@ export default observer((props: DataTableProps) => {
 							size="sm"
 							icon={<ArrowForwardIcon />}
 							onClick={currentCell.onClick}
+							isDisabled={currentCell.disabled ?? false}
 						/>
 					)
 				case 'RepeatClockIcon':
@@ -108,6 +111,7 @@ export default observer((props: DataTableProps) => {
 							size="sm"
 							icon={<RepeatClockIcon />}
 							onClick={currentCell.onClick}
+							isDisabled={currentCell.disabled ?? false}
 						/>
 					)
 				default:

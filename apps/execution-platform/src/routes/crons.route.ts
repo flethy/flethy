@@ -61,4 +61,13 @@ export class CronsRoute {
 
     res.send(StatusCodeSuccess.OK, { ...data });
   }
+
+  public static async updateNextRuns(
+    _req: ServerRequest,
+    res: ServerResponse,
+    _userId: string = ""
+  ) {
+    const data = await CronsController.updateNextRuns();
+    res.send(StatusCodeSuccess.OK, { ...data });
+  }
 }

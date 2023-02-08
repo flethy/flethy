@@ -49,6 +49,10 @@ export default observer(() => {
 					projectId: page.context.projectId,
 				})
 			}
+			isDisabled={
+				(page.getSecrets()?.keys.length ?? 0) >=
+				api.workspaces.getLimits().projects.secrets.max
+			}
 		>
 			Add
 		</Button>
@@ -123,7 +127,7 @@ export default observer(() => {
 	const component = (
 		<PageWithTitle
 			title={t('app:pages.secrets.title')}
-			subtitle={t('app:pages.secrets.subtitle')}
+			subtitle={String(t('app:pages.secrets.subtitle'))}
 		>
 			<VStack>{content}</VStack>
 		</PageWithTitle>

@@ -23,6 +23,7 @@ name = "flethy-cron-int"
 kv_namespaces = [
   { binding = "DATA", id = "e546ebf13b344824af4abc3a632988f5", preview_id = "f8a16c5c33aa4266a47089059ee45204" },
 ]
+services = [{ binding = "flethyep", service = "flethy-int" }]
 
 [env.int.vars]
 ENV_STAGE = "int"
@@ -34,6 +35,7 @@ name = "flethy-cron"
 kv_namespaces = [
   { binding = "DATA", id = "163b24ae03244099bbc80d37a0d88495", preview_id = "9769202c523e4bed9c0c9842ba6be4f9" },
 ]
+services = [{ binding = "flethyep", service = "flethy-prod" }]
 
 [env.prod.vars]
 ENV_STAGE = "prod"
