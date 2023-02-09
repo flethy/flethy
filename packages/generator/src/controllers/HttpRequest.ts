@@ -7,8 +7,14 @@ import { FetchParams } from '../../../connectors/src/types/FetchParams.type'
 import { logger } from '../utils/Logger'
 
 export class HttpRequest {
-  public static async request(params: FetchParams) {
+  public static async request(
+    params: FetchParams,
+    options?: { dryRun?: boolean }
+  ) {
     console.log(params)
+    if (options?.dryRun) {
+      return
+    }
     const payload = params.body
       ? {
           method: params.method,

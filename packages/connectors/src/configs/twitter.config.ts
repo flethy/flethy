@@ -16,6 +16,9 @@ export namespace Twitter {
     | {
         bearer: ApiDescriptionEndpoint
         oAuth2AuthorizationCode: ApiDescriptionEndpoint
+        oAuth2Authorize: ApiDescriptionEndpoint
+        oAuth2Token: ApiDescriptionEndpoint
+        oAuth2RefreshToken: ApiDescriptionEndpoint
       }
     | { postTweets: ApiDescriptionEndpoint }
     | { update: ApiDescriptionEndpoint }
@@ -54,6 +57,41 @@ export namespace Twitter {
     'auth:client_secret': string
     'auth:refresh_token': string
     'header:Content-Type': 'application/x-www-form-urlencoded'
+  }
+
+  export interface AuthOAuth2Authorize extends RequestParams {
+    kind: 'twitter.auth.oAuth2Authorize'
+    'auth:client_id': string
+    'query:response_type': 'code'
+    'query:redirect_uri': string
+    'query:state': string
+    'query:scope': string
+    'query:code_challenge': string
+    'query:code_challenge_method': 'plain' | 'S256'
+  }
+
+  export interface AuthOAuth2Token extends RequestParams {
+    kind: 'twitter.auth.oAuth2Token'
+    'auth:Authorization': {
+      username: string
+      password: string
+    }
+    'header:Content-Type': 'application/x-www-form-urlencoded'
+    'query:grant_type': 'authorization_code'
+    'query:code': string
+    'query:redirect_uri': string
+    'query:code_verifier': string
+  }
+
+  export interface AuthOAuth2RefreshToken extends RequestParams {
+    kind: 'twitter.auth.oAuth2RefreshToken'
+    'auth:Authorization': {
+      username: string
+      password: string
+    }
+    'header:Content-Type': 'application/x-www-form-urlencoded'
+    'query:grant_type': 'refresh_token'
+    'query:refresh_token': string
   }
 
   export interface PostTweets extends TwitterBaseOAuth1a, RequestParams {
@@ -179,6 +217,96 @@ export namespace Twitter {
               type: 'static',
             },
           ],
+        },
+        oAuth2Authorize: {
+          interface: 'AuthOAuth2Authorize',
+          meta: {
+            title: 'OAuth2 Authorization Code Flow with PKCE',
+            description: `OAuth2 Authorization Code Flow with PKCE`,
+            docs: 'https://developer.twitter.com/en/docs/authentication/oauth-2-0/user-access-token',
+          },
+          method: 'GET',
+          auth: {
+            client_id: {
+              type: 'query',
+            },
+          },
+          base: 'https://twitter.com',
+          paths: [
+            {
+              name: 'i',
+              type: 'static',
+            },
+            {
+              name: 'oauth2',
+              type: 'static',
+            },
+            {
+              name: 'authorize',
+              type: 'static',
+            },
+          ],
+          responseType: 'text',
+        },
+        oAuth2Token: {
+          interface: 'AuthOAuth2Token',
+          meta: {
+            title: 'OAuth2 Authorization Code Flow with PKCE',
+            description: `OAuth2 Authorization Code Flow with PKCE`,
+            docs: 'https://developer.twitter.com/en/docs/authentication/oauth-2-0/user-access-token',
+          },
+          method: 'POST',
+          auth: {
+            Authorization: {
+              type: 'header:basic',
+            },
+          },
+          base: 'https://api.twitter.com',
+          paths: [
+            {
+              name: '2',
+              type: 'static',
+            },
+            {
+              name: 'oauth2',
+              type: 'static',
+            },
+            {
+              name: 'token',
+              type: 'static',
+            },
+          ],
+          responseType: 'json',
+        },
+        oAuth2RefreshToken: {
+          interface: 'AuthOAuth2RefreshToken',
+          meta: {
+            title: 'OAuth2 Authorization Code Flow with PKCE',
+            description: `OAuth2 Authorization Code Flow with PKCE`,
+            docs: 'https://developer.twitter.com/en/docs/authentication/oauth-2-0/user-access-token',
+          },
+          method: 'POST',
+          auth: {
+            Authorization: {
+              type: 'header:basic',
+            },
+          },
+          base: 'https://api.twitter.com',
+          paths: [
+            {
+              name: '2',
+              type: 'static',
+            },
+            {
+              name: 'oauth2',
+              type: 'static',
+            },
+            {
+              name: 'token',
+              type: 'static',
+            },
+          ],
+          responseType: 'json',
         },
       },
       manage: {
