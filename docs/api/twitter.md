@@ -38,6 +38,39 @@
 * Description: OAuth2 Authorization Code
 * Docs: [https://developer.twitter.com/en/docs/authentication/oauth-2-0/authorization-code](https://developer.twitter.com/en/docs/authentication/oauth-2-0/authorization-code)
 
+#### oAuth2Authorize
+
+##### Authentication
+
+* client_id: query
+
+##### OAuth2 Authorization Code Flow with PKCE
+
+* Description: OAuth2 Authorization Code Flow with PKCE
+* Docs: [https://developer.twitter.com/en/docs/authentication/oauth-2-0/user-access-token](https://developer.twitter.com/en/docs/authentication/oauth-2-0/user-access-token)
+
+#### oAuth2Token
+
+##### Authentication
+
+* Authorization: header:basic
+
+##### OAuth2 Authorization Code Flow with PKCE
+
+* Description: OAuth2 Authorization Code Flow with PKCE
+* Docs: [https://developer.twitter.com/en/docs/authentication/oauth-2-0/user-access-token](https://developer.twitter.com/en/docs/authentication/oauth-2-0/user-access-token)
+
+#### oAuth2RefreshToken
+
+##### Authentication
+
+* Authorization: header:basic
+
+##### OAuth2 Authorization Code Flow with PKCE
+
+* Description: OAuth2 Authorization Code Flow with PKCE
+* Docs: [https://developer.twitter.com/en/docs/authentication/oauth-2-0/user-access-token](https://developer.twitter.com/en/docs/authentication/oauth-2-0/user-access-token)
+
 ### manage
 
 #### postTweets

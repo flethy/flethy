@@ -288,6 +288,7 @@ import { logger } from './utils/Logger'
 import cronitor from './examples/cronitor'
 import mailerlite from './examples/mailerlite'
 import plausibleanalytics from './examples/plausibleanalytics'
+import twitter from './examples/twitter'
 
 async function main() {
   const requestConfigs: {
@@ -3856,10 +3857,13 @@ Here you find all the available integrations`,
       'query:provider': 'redstone',
     }),
   }
-  const requestConfig = plausibleanalytics.configs.sendEvent
+  // const requestConfig = twitter.configs.oauth2Authorize
+  // const dryRun = true
+  const requestConfig = twitter.configs.oauth2RefreshToken
+  const dryRun = false
 
   logger.info(requestConfig)
-  const response = await HttpRequest.request(nao(requestConfig))
+  const response = await HttpRequest.request(nao(requestConfig), { dryRun })
   logger.info(response)
 
   // const responseTypes = await HttpRequest.quicktypeJson(
