@@ -119,6 +119,7 @@ export type UTILS_TYPE =
   | 'app-security'
   | 'documentation'
   | 'bug-tracking'
+  | 'ip-lookup'
 export type DEFI_TYPE = 'liquidity'
 export type BOOKS_TYPE = 'index'
 export type FINANCE_TYPE =

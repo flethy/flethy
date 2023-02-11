@@ -1,0 +1,41 @@
+{
+  "name": "ipapi",
+  "domain": "ipapi.co",
+  "claimed": false,
+  "description": "IP Lookup Service, IP Address Location & IP Geolocation API - by Kloudend, Inc. : Trusted by fortune 500",
+  "links": [
+    { "name": "github", "url": "https://github.com/ipapi-co" },
+    { "name": "twitter", "url": "https://twitter.com/ipapi_co" }
+  ],
+  "logos": [
+    {
+      "type": "logo",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/id0gfjBN1b/id20XhUF4v.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 64,
+          "width": 64,
+          "size": 1504
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#666666", "type": "dark", "brightness": 102 },
+    { "hex": "#63a4ff", "type": "light", "brightness": 157 },
+    { "hex": "#00bcd4", "type": "accent", "brightness": 150 }
+  ],
+  "fonts": [
+    {
+      "name": "Helvetica Neue",
+      "type": "body",
+      "origin": "custom",
+      "originId": null,
+      "weights": []
+    }
+  ],
+  "images": []
+}

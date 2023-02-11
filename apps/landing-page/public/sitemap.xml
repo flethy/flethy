@@ -525,6 +525,10 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://flethy.com/integrations/ipapi</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://flethy.com/integrations/jira</loc>
     <priority>0.8</priority>
   </url>
@@ -1414,6 +1418,10 @@
   </url>
   <url>
     <loc>https://flethy.com/use-cases/list-tasks-from-bugherd</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://flethy.com/use-cases/lookup-ip-address-with-ipapi</loc>
     <priority>0.8</priority>
   </url>
   <url>

@@ -125,6 +125,7 @@ import { Imglab } from '../../../connectors/src/configs/imglab.config'
 import { IncidentIo } from '../../../connectors/src/configs/incidentio.config'
 import { Intercom } from '../../../connectors/src/configs/intercom.config'
 import { Ionos } from '../../../connectors/src/configs/ionos.config'
+import { IPApi } from '../../../connectors/src/configs/ipapi.config'
 import { Jira } from '../../../connectors/src/configs/jira.config'
 import { Keen } from '../../../connectors/src/configs/keen.config'
 import { Klaviyo } from '../../../connectors/src/configs/klaviyo.config'
@@ -594,6 +595,8 @@ configTypes.push({type: getType<Intercom.ListArticles>(), id: 'intercom', name: 
 configTypes.push({type: getType<Ionos.ListDnsZones>(), id: 'ionos', name: 'Ionos', interface: 'ListDnsZones'})
 configTypes.push({type: getType<Ionos.ListDomains>(), id: 'ionos', name: 'Ionos', interface: 'ListDomains'})
 configTypes.push({type: getType<Ionos.ListSslCertificates>(), id: 'ionos', name: 'Ionos', interface: 'ListSslCertificates'})
+configTypes.push({type: getType<IPApi.CompleteLocation>(), id: 'ipapi', name: 'IPApi', interface: 'CompleteLocation'})
+configTypes.push({type: getType<IPApi.CompleteLocationSpecificField>(), id: 'ipapi', name: 'IPApi', interface: 'CompleteLocationSpecificField'})
 configTypes.push({type: getType<Jira.GetIssue>(), id: 'jira', name: 'Jira', interface: 'GetIssue'})
 configTypes.push({type: getType<Jira.SearchIssues>(), id: 'jira', name: 'Jira', interface: 'SearchIssues'})
 configTypes.push({type: getType<Jira.CreateIssue>(), id: 'jira', name: 'Jira', interface: 'CreateIssue'})
