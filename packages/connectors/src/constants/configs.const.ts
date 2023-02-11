@@ -125,6 +125,7 @@ import { Imglab } from '../configs/imglab.config'
 import { IncidentIo } from '../configs/incidentio.config'
 import { Intercom } from '../configs/intercom.config'
 import { Ionos } from '../configs/ionos.config'
+import { IPApi } from '../configs/ipapi.config'
 import { Jira } from '../configs/jira.config'
 import { Keen } from '../configs/keen.config'
 import { Klaviyo } from '../configs/klaviyo.config'
@@ -431,6 +432,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['incidentio', IncidentIo.API],
 ['intercom', Intercom.API],
 ['ionos', Ionos.API],
+['ipapi', IPApi.API],
 ['jira', Jira.API],
 ['keen', Keen.API],
 ['klaviyo', Klaviyo.API],

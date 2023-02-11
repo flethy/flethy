@@ -781,4 +781,12 @@ export const FLOWS = {
       'body:url': '->context.input.url->string',
     },
   ],
+  'lookup-ip-address-with-ipapi': [
+    {
+      id: 'ipapi',
+      kind: 'ipapi.core.completeLocation',
+      'param:ip': '->context.input.ip->string',
+      'param:format': '==>env==>format',
+    },
+  ],
 }

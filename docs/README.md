@@ -149,6 +149,7 @@ The following Endpoints are currently supported.
 * [IncidentIo](./api/incidentio.md)
 * [Intercom](./api/intercom.md)
 * [Ionos](./api/ionos.md)
+* [IPApi](./api/ipapi.md)
 * [Jira](./api/jira.md)
 * [Keen](./api/keen.md)
 * [Klaviyo](./api/klaviyo.md)
