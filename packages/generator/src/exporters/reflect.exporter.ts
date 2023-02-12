@@ -84,6 +84,7 @@ import { Directus } from '../../../connectors/src/configs/directus.config'
 import { Discord } from '../../../connectors/src/configs/discord.config'
 import { Disify } from '../../../connectors/src/configs/disify.config'
 import { Doppler } from '../../../connectors/src/configs/doppler.config'
+import { Dune } from '../../../connectors/src/configs/dune.config'
 import { Duply } from '../../../connectors/src/configs/duply.config'
 import { DynaPictures } from '../../../connectors/src/configs/dynapictures.config'
 import { EasyDb } from '../../../connectors/src/configs/easydb.config'
@@ -502,6 +503,9 @@ configTypes.push({type: getType<Disify.CheckMassDomain>(), id: 'disify', name: '
 configTypes.push({type: getType<Disify.CheckSingleEmail>(), id: 'disify', name: 'Disify', interface: 'CheckSingleEmail'})
 configTypes.push({type: getType<Disify.CheckMassEmail>(), id: 'disify', name: 'Disify', interface: 'CheckMassEmail'})
 configTypes.push({type: getType<Doppler.DownloadSecrets>(), id: 'doppler', name: 'Doppler', interface: 'DownloadSecrets'})
+configTypes.push({type: getType<Dune.ExecuteQuery>(), id: 'dune', name: 'Dune', interface: 'ExecuteQuery'})
+configTypes.push({type: getType<Dune.ExecutionStatus>(), id: 'dune', name: 'Dune', interface: 'ExecutionStatus'})
+configTypes.push({type: getType<Dune.ExecutionResults>(), id: 'dune', name: 'Dune', interface: 'ExecutionResults'})
 configTypes.push({type: getType<Duply.GetUsage>(), id: 'duply', name: 'Duply', interface: 'GetUsage'})
 configTypes.push({type: getType<Duply.ListTemplates>(), id: 'duply', name: 'Duply', interface: 'ListTemplates'})
 configTypes.push({type: getType<Duply.GenerateImage>(), id: 'duply', name: 'Duply', interface: 'GenerateImage'})

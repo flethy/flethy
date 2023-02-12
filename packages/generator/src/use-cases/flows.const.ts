@@ -789,4 +789,12 @@ export const FLOWS = {
       'param:format': '==>env==>format',
     },
   ],
+  'execute-query-with-dune': [
+    {
+      id: 'dune',
+      kind: 'dune.query.execute',
+      'auth:x-dune-api-key': '==>secrets==>DUNE_API_KEY',
+      'param:queryId': '->context.input.queryId->string',
+    },
+  ],
 }
