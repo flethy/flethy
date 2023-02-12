@@ -14,6 +14,7 @@ The following Endpoints are currently supported.
 * [Coinlayer](./api/coinlayer.md)
 * [CoinMarketCap](./api/coinmarketcap.md)
 * [Covalent](./api/covalent.md)
+* [Dune](./api/dune.md)
 * [Etherscan](./api/etherscan.md)
 * [FlareNetwork](./api/flarenetwork.md)
 * [Fleek](./api/fleek.md)

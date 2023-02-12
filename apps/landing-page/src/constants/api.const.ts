@@ -1,2 +1,2 @@
-export const API_COUNT = 305
-export const API_ENDPOINT_COUNT = 666
+export const API_COUNT = 306
+export const API_ENDPOINT_COUNT = 669

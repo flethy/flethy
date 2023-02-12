@@ -361,6 +361,10 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://flethy.com/integrations/dune</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://flethy.com/integrations/duply</loc>
     <priority>0.8</priority>
   </url>
@@ -1302,6 +1306,10 @@
   </url>
   <url>
     <loc>https://flethy.com/use-cases/create-subscriber-with-mailerlite</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://flethy.com/use-cases/execute-query-with-dune</loc>
     <priority>0.8</priority>
   </url>
   <url>

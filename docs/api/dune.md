@@ -1,0 +1,40 @@
+# Dune
+
+## Links
+
+* URL: [https://dune.com](https://dune.com)
+* Documentation: [https://dune.com/docs/api/](https://dune.com/docs/api/)
+* Tags: web3
+* Category: analytics
+* Type: other
+
+## API
+
+### Authentication
+
+* x-dune-api-key: header
+
+### query
+
+#### execute
+
+##### Execute Query ID
+
+* Description: Execute Query ID
+* Docs: [https://dune.com/docs/api/api-reference/execute-query-id/](https://dune.com/docs/api/api-reference/execute-query-id/)
+
+### execution
+
+#### status
+
+##### Execution Status
+
+* Description: Execution Status
+* Docs: [https://dune.com/docs/api/api-reference/execution-status/](https://dune.com/docs/api/api-reference/execution-status/)
+
+#### results
+
+##### Execution Results
+
+* Description: Execution Results
+* Docs: [https://dune.com/docs/api/api-reference/execution-results/](https://dune.com/docs/api/api-reference/execution-results/)

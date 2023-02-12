@@ -1,0 +1,38 @@
+{
+  "name": null,
+  "domain": "dune.com",
+  "claimed": false,
+  "description": "Blockchain ecosystem analytics by and for the community. Explore and share data from Ethereum, xDai, Polygon, Optimism, BSC and Solana for free.",
+  "links": [],
+  "logos": [
+    {
+      "type": "logo",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idtfnAAwrG/idVdloH1-R.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 128,
+          "width": 128,
+          "size": 3809
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#f1603f", "type": "accent", "brightness": 124 },
+    { "hex": "#404040", "type": "dark", "brightness": 64 },
+    { "hex": "#ffffff", "type": "light", "brightness": 255 }
+  ],
+  "fonts": [
+    {
+      "name": "IBM Plex Sans",
+      "type": "body",
+      "origin": "google",
+      "originId": "IBM Plex Sans",
+      "weights": []
+    }
+  ],
+  "images": []
+}
