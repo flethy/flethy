@@ -1,7 +1,6 @@
-import { FlowNode } from '@flethy/flow'
+import { FlowEngine, FlowNode } from '@flethy/flow'
 import { flow, Instance, types } from 'mobx-state-tree'
 import { EdgeData, NodeData } from 'reaflow'
-import { FlowEngine } from '../../../../../packages/flow/src/engine/flow.engine'
 import {
 	WORKFLOW_STARTER,
 	WORKFLOW_TUTORIALS,
