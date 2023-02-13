@@ -170,6 +170,22 @@ export default {
 		},
 	}),
 
+	workflowExistingCallback: new Route<RootStore>({
+		path: new RouterPathUtils().w().p().wf(true).custom('callback').gen(),
+		component: <WorkflowEditorPage />,
+		onEnter(_route, parameters, { root: { pages } }, queryParams) {
+			const { projectId, workspaceId, workflowId } = parameters as any
+			pages.workflowEditor.initialisePage({
+				projectId,
+				workspaceId,
+				workflowId,
+				callback: {
+					code: (queryParams?.code as string | undefined) ?? '',
+				},
+			})
+		},
+	}),
+
 	unsufficientPermissions: new Route<RootStore>({
 		path: '/403',
 		component: <UnsufficientPermissionsPage />,

@@ -52,6 +52,14 @@ export default observer(() => {
 				>
 					Start
 				</Button>
+				{page.isOauth() && (
+					<Button
+						isDisabled={!page.isSaved()}
+						onClick={() => page.startAuthorize()}
+					>
+						Authorize
+					</Button>
+				)}
 			</HStack>
 			<Stack>
 				<Text>Name:</Text>

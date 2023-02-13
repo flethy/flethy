@@ -1,3 +1,4 @@
+import { FetchParams } from '@flethy/connectors'
 import {
   EngineOptions,
   FlowContext,
@@ -29,6 +30,15 @@ export class FlowEngine {
       )
     }
     this.debug(this.utils.getInstanceContext())
+  }
+
+  public async getFetchParamsForNodeId(id: string): Promise<FetchParams> {
+    const foundNode = this.utils.nodeById(id)
+    if (!foundNode) {
+      throw new Error(`Node with id ${id} not found`)
+    }
+    await this.utils.replaceReferencedVariables(foundNode)
+    return ExecutionUtils.getRequestParams(foundNode)
   }
 
   public hasErrors(): boolean {

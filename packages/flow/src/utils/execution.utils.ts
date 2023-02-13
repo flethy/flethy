@@ -9,6 +9,10 @@ export class ExecutionUtils {
     return response
   }
 
+  public static getRequestParams(node: FlowNode): FetchParams {
+    return nao(node)
+  }
+
   private static async request(params: FetchParams): Promise<FlowNodeResponse> {
     const nodeResponse: FlowNodeResponse = {
       data: {},
