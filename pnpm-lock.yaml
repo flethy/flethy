@@ -153,7 +153,7 @@ importers:
       '@cloudflare/workers-types': 4.20230115.0
       '@datasert/cronjs-matcher': ^1.2.0
       '@datasert/cronjs-parser': ^1.2.0
-      '@flethy/flow': ^0.0.325
+      '@flethy/flow': ^0.0.326
       '@tsndr/cloudflare-worker-jwt': ^2.2.1
       '@types/node': 18.13.0
       '@typescript-eslint/eslint-plugin': ^5.51.0
@@ -168,12 +168,12 @@ importers:
       ts-node: ^10.9.1
       tsoa: ^5.1.1
       typescript: ^4.9.5
-      worktop: 0.8.0-next.14
+      worktop: 0.7.3
       wrangler: 2.9.1
     dependencies:
       '@datasert/cronjs-matcher': 1.2.0
       '@datasert/cronjs-parser': 1.2.0
-      '@flethy/flow': 0.0.325
+      '@flethy/flow': 0.0.326
     devDependencies:
       '@cloudflare/workers-types': 4.20230115.0
       '@tsndr/cloudflare-worker-jwt': 2.2.1
@@ -190,7 +190,7 @@ importers:
       ts-node: 10.9.1_4bewfcp2iebiwuold25d6rgcsy
       tsoa: 5.1.1
       typescript: 4.9.5
-      worktop: 0.8.0-next.14
+      worktop: 0.7.3
       wrangler: 2.9.1
 
   apps/execution-platform-cron-trigger:
@@ -469,7 +469,7 @@ importers:
 
   packages/flow:
     specifiers:
-      '@flethy/connectors': 0.0.325
+      '@flethy/connectors': 0.0.326
       '@types/node': 18.13.0
       '@typescript-eslint/eslint-plugin': ^5.51.0
       '@typescript-eslint/parser': ^5.51.0
@@ -484,7 +484,7 @@ importers:
       tsconfig: workspace:*
       typescript: ^4.9.5
     dependencies:
-      '@flethy/connectors': 0.0.325
+      '@flethy/connectors': 0.0.326
       jsonata: 2.0.1
     devDependencies:
       '@types/node': 18.13.0
@@ -4718,10 +4718,21 @@ packages:
     resolution: {integrity: sha512-F2SFYJfjhFRiep3LEYREFk+qsi/ZeMUy2usv3GE2lZYggsS7pVT2qB52ObN0p+/cEAy36Zj3pMbtwLcUHNJA9Q==}
     dev: false
 
+  /@flethy/connectors/0.0.326:
+    resolution: {integrity: sha512-jptK7evsxglGtj1rLFas3RyH0d2oafzWESyrFu23Kkg/a3Db5HJXuWns/F4SspOkkT237JlX8tYbd92qDcTqRg==}
+    dev: false
+
   /@flethy/flow/0.0.325:
     resolution: {integrity: sha512-8Ifg876KYRz0ruHSh2ziXpTm9F1a2Upb1zHK6jpDxSRMFVAw+Tbes46GSW6UtbuYIkm3BEOEE2mvRcvvKr4H6g==}
     dependencies:
       '@flethy/connectors': 0.0.321
+      jsonata: 2.0.1
+    dev: false
+
+  /@flethy/flow/0.0.326:
+    resolution: {integrity: sha512-RToUup4/jDgDdwEnVQtyMx4cGEXDxjonXtVdly1gD7Uf7/z/1DtPIAj6mCiYxzvCcs+10pe4/Dt0ywytE3x0tw==}
+    dependencies:
+      '@flethy/connectors': 0.0.325
       jsonata: 2.0.1
     dev: false
 
@@ -12494,6 +12505,7 @@ packages:
   /mrmime/1.0.1:
     resolution: {integrity: sha512-hzzEagAgDyoU1Q6yg5uI+AorQgdvMCur3FcKf7NhMKWsaYg+RnbTyHRa/9IlLF9rf455MOCtcqqrQQ83pPP7Uw==}
     engines: {node: '>=10'}
+    dev: false
 
   /ms/2.0.0:
     resolution: {integrity: sha512-Tpp60P6IUJDTuOq/5Z8cdskzJujfwqfOTkrwIwj7IRISpnkJnT6SyJ4PCPnGMoFjC9ddhal5KVIYtAt97ix05A==}
@@ -16994,14 +17006,6 @@ packages:
     resolution: {integrity: sha512-WBHP1hk8pLP7ahAw13fugDWcO0SUAOiCD6DHT/bfLWoCIA/PL9u7GKdudT2nGZ8EGR1APbGCAI6ZzKG1+X+PnQ==}
     engines: {node: '>=12'}
     dependencies:
-      regexparam: 2.0.1
-    dev: true
-
-  /worktop/0.8.0-next.14:
-    resolution: {integrity: sha512-RZgqHu1w/JcUdWOE/BUEAzarrUUHh39eWkLdX8XpA6MfgLJF6X5Vl26CV7/wcm4O/UpZvHMGJUtB9eYTqDjc9g==}
-    engines: {node: '>=12'}
-    dependencies:
-      mrmime: 1.0.1
       regexparam: 2.0.1
     dev: true
 

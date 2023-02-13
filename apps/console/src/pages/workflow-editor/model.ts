@@ -1,6 +1,7 @@
 import { FlowNode } from '@flethy/flow'
 import { flow, Instance, types } from 'mobx-state-tree'
 import { EdgeData, NodeData } from 'reaflow'
+import { FlowEngine } from '../../../../../packages/flow/src/engine/flow.engine'
 import {
 	WORKFLOW_STARTER,
 	WORKFLOW_TUTORIALS,
@@ -29,6 +30,12 @@ export const WorkflowEditorPage = types
 			types.enumeration(['idle', 'loading', 'saving']),
 			'idle',
 		),
+		callback: types.maybe(
+			types.model({
+				code: types.optional(types.string, ''),
+			}),
+		),
+		tutorialType: types.maybe(types.string),
 	})
 	.actions((self) => {
 		// INITIALIZATION
@@ -41,6 +48,9 @@ export const WorkflowEditorPage = types
 				id: string
 				interfaceName: string
 			}
+			callback?: {
+				code: string
+			}
 		}) {
 			self.state = 'loading'
 			self.context.projectId = options.projectId
@@ -49,9 +59,26 @@ export const WorkflowEditorPage = types
 			self.envsIndex = 0
 			self.name = ''
 			self.workflow = ''
+			self.tutorialType = undefined
 			self.envs.clear()
+			self.callback = undefined
 
 			const { api } = getRootStore(self)
+
+			if (options.callback) {
+				self.callback = options.callback
+				api.workflows.start({
+					workspaceId: self.context.workspaceId,
+					projectId: self.context.projectId,
+					workflowId: self.workflowId,
+					payload: {
+						input: {
+							code: self.callback.code,
+						},
+					},
+				})
+			}
+
 			api.context.setPage(PAGE_CONTEXT.EDITOR)
 
 			if (options.workflowId) {
@@ -78,6 +105,7 @@ export const WorkflowEditorPage = types
 					}
 				}
 				self.workflow = JSON.stringify(tutorial.workflow, null, 2)
+				self.tutorialType = tutorial.type
 			} else if (options.useCase) {
 				const useCase = api.integrations.getExampleConfigByInterface(
 					options.useCase.id,
@@ -168,6 +196,23 @@ export const WorkflowEditorPage = types
 			}
 		})
 
+		const startAuthorize = async () => {
+			const envs: { [key: string]: string } = {}
+			for (const env of self.envs) {
+				envs[env.key] = env.value
+			}
+			const tutorial = WORKFLOW_TUTORIALS[envs.TUTORIAL]
+			const engine = new FlowEngine({
+				env: {
+					env: envs,
+					secrets: {},
+				},
+				flow: tutorial.prestep!,
+			})
+			const params = await engine.getFetchParamsForNodeId('authorize')
+			window.location.href = params.url
+		}
+
 		return {
 			initialisePage,
 			updateWorkflow,
@@ -176,6 +221,7 @@ export const WorkflowEditorPage = types
 			addEnv,
 			updateEnv,
 			removeEnv,
+			startAuthorize,
 		}
 	})
 	.views((self) => {
@@ -227,5 +273,9 @@ export const WorkflowEditorPage = types
 			return isSaved
 		}
 
-		return { getNodes, getEdges, isSaved }
+		const isOauth = (): boolean => {
+			return self.envs.some((env) => env.key === 'IS_OAUTH')
+		}
+
+		return { getNodes, getEdges, isSaved, isOauth }
 	})

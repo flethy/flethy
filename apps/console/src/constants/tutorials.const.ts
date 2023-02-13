@@ -11,6 +11,8 @@ export interface WorkflowTutorial {
 	description: string
 	prerequisites: string[]
 	level: TutorialLevel
+	type: 'oauth' | 'regular'
+	prestep?: FlowNode[]
 	workflow: FlowNode[]
 	env?: {
 		[key: string]: string
@@ -18,8 +20,58 @@ export interface WorkflowTutorial {
 }
 
 export const WORKFLOW_TUTORIALS: { [key: string]: WorkflowTutorial } = {
+	TwitterOAuth: {
+		name: 'Twitter OAuth Flow',
+		type: 'oauth',
+		description: 'Twitter OAuth Flow',
+		prerequisites: [
+			'Navigate to Twitter developer console and create an OAuth app',
+		],
+		level: TutorialLevel.Advanced,
+		prestep: [
+			{
+				id: 'authorize',
+				kind: 'twitter.auth.oAuth2Authorize',
+				'auth:client_id': '==>env==>TWOA_CLIENT_ID',
+				'query:code_challenge_method': 'plain',
+				'query:code_challenge': '==>env==>CODE_CHALLENGE',
+				'query:response_type': 'code',
+				'query:redirect_uri': '==>env==>REDIRECT_URL',
+				'query:state': '==>env==>STATE',
+				'query:scope':
+					'tweet.read users.read follows.read follows.write offline.access',
+			},
+		],
+		workflow: [
+			{
+				id: 'token',
+				config: {
+					namespace: '_flethyresponse',
+				},
+				kind: 'twitter.auth.oAuth2Token',
+				'auth:Authorization': {
+					username: '==>env==>TWOA_CLIENT_ID',
+					password: '==>secrets==>TWOA_CLIENT_SECRET',
+				},
+				'header:Content-Type': 'application/x-www-form-urlencoded',
+				'query:code': '->context.input.code->string',
+				'query:code_verifier': '==>env==>CODE_CHALLENGE',
+				'query:grant_type': 'authorization_code',
+				'query:redirect_uri': '==>env==>REDIRECT_URL',
+			},
+		],
+		env: {
+			TWOA_CLIENT_ID: 'clientId',
+			CODE_CHALLENGE: 'codeChallenge',
+			STATE: 'state',
+			REDIRECT_URL: 'http://localhost:4200/',
+			IS_OAUTH: 'true',
+			TUTORIAL: 'TwitterOAuth',
+		},
+	},
 	WebhookSite: {
 		name: 'First Http Request',
+		type: 'regular',
 		description: 'Send your first HTTP request with WebhookSite',
 		prerequisites: ['Navigate to webhook.site and copy the UUID'],
 		level: TutorialLevel.Beginner,
@@ -40,6 +92,7 @@ export const WORKFLOW_TUTORIALS: { [key: string]: WorkflowTutorial } = {
 	},
 	Auth0User: {
 		name: 'Create an Auth0 User',
+		type: 'regular',
 		description: 'Request a new Token and create a new Auth0 User',
 		prerequisites: [
 			'Auth0 Machine to Machine Application',
@@ -83,6 +136,7 @@ export const WORKFLOW_TUTORIALS: { [key: string]: WorkflowTutorial } = {
 	},
 	TwitterThread: {
 		name: 'Twitter Thread',
+		type: 'regular',
 		description: 'Automate your twitter thread posts',
 		prerequisites: ['Twitter Developer Accounts', 'OAuth Credentials'],
 		level: TutorialLevel.Advanced,

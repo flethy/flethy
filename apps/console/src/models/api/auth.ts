@@ -51,8 +51,13 @@ export const AuthStore = types
 		afterCreate() {
 			self.client = createAuth0Client(self.clientOptions)
 
+			const href = window.location.href
 			const query = window.location.search
-			if (query.includes('code=') && query.includes('state=')) {
+			if (
+				query.includes('code=') &&
+				query.includes('state=') &&
+				!href.includes('callback')
+			) {
 				this.handleRedirectCallback()
 			} else if (query.includes('error=')) {
 				const queryParams = new URLSearchParams(query)
