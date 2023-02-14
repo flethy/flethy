@@ -600,6 +600,39 @@ importers:
       typescript: 4.9.5
       vite: 4.1.1_gyrp4zacqcjjrmgvdzgac5epyy
 
+  packages/oauth:
+    specifiers:
+      '@flethy/connectors': workspace:*
+      '@flethy/flow': workspace:*
+      '@types/node': 18.13.0
+      '@typescript-eslint/eslint-plugin': ^5.51.0
+      '@typescript-eslint/parser': ^5.51.0
+      eslint: ^8.34.0
+      eslint-config-airbnb-base: ^15.0.0
+      eslint-config-prettier: ^8.6.0
+      eslint-plugin-import: ^2.27.5
+      eslint-plugin-prettier: ^4.2.1
+      prettier: 2.8.4
+      ts-node: ^10.9.1
+      tsconfig: workspace:*
+      typescript: ^4.9.5
+    dependencies:
+      '@flethy/connectors': link:../connectors
+      '@flethy/flow': link:../flow
+    devDependencies:
+      '@types/node': 18.13.0
+      '@typescript-eslint/eslint-plugin': 5.51.0_z4swst3wuuqk4hlme4ajzslgh4
+      '@typescript-eslint/parser': 5.51.0_7kw3g6rralp5ps6mg3uyzz6azm
+      eslint: 8.34.0
+      eslint-config-airbnb-base: 15.0.0_mvgyw3chnqkp6sgfmmtihyjpnm
+      eslint-config-prettier: 8.6.0_eslint@8.34.0
+      eslint-plugin-import: 2.27.5_62tsymtiqxebhmxuag4hg3gx2m
+      eslint-plugin-prettier: 4.2.1_u5wnrdwibbfomslmnramz52buy
+      prettier: 2.8.4
+      ts-node: 10.9.1_4bewfcp2iebiwuold25d6rgcsy
+      tsconfig: link:../tsconfig
+      typescript: 4.9.5
+
   packages/shared-types:
     specifiers:
       '@babel/core': 7.20.12
