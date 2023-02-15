@@ -8,6 +8,7 @@ export enum TutorialLevel {
 
 export interface WorkflowTutorial {
 	name: string
+	icon?: string
 	description: string
 	prerequisites: string[]
 	level: TutorialLevel
@@ -20,60 +21,64 @@ export interface WorkflowTutorial {
 }
 
 export const WORKFLOW_TUTORIALS: { [key: string]: WorkflowTutorial } = {
-	TwitterOAuth: {
-		name: 'Twitter OAuth Flow',
-		type: 'oauth',
-		description: 'Twitter OAuth Flow',
-		prerequisites: [
-			'Navigate to Twitter developer console and create an OAuth app',
-		],
-		level: TutorialLevel.Advanced,
-		prestep: [
-			{
-				id: 'authorize',
-				kind: 'twitter.auth.oAuth2Authorize',
-				'auth:client_id': '==>env==>TWOA_CLIENT_ID',
-				'query:code_challenge_method': 'plain',
-				'query:code_challenge': '==>env==>CODE_CHALLENGE',
-				'query:response_type': 'code',
-				'query:redirect_uri': '==>env==>REDIRECT_URL',
-				'query:state': '==>env==>STATE',
-				'query:scope':
-					'tweet.read users.read follows.read follows.write offline.access',
-			},
-		],
-		workflow: [
-			{
-				id: 'token',
-				config: {
-					namespace: '_flethyresponse',
-				},
-				kind: 'twitter.auth.oAuth2Token',
-				'auth:Authorization': {
-					username: '==>env==>TWOA_CLIENT_ID',
-					password: '==>secrets==>TWOA_CLIENT_SECRET',
-				},
-				'header:Content-Type': 'application/x-www-form-urlencoded',
-				'query:code': '->context.input.code->string',
-				'query:code_verifier': '==>env==>CODE_CHALLENGE',
-				'query:grant_type': 'authorization_code',
-				'query:redirect_uri': '==>env==>REDIRECT_URL',
-			},
-		],
-		env: {
-			TWOA_CLIENT_ID: 'clientId',
-			CODE_CHALLENGE: 'codeChallenge',
-			STATE: 'state',
-			REDIRECT_URL: 'http://localhost:4200/',
-			IS_OAUTH: 'true',
-			TUTORIAL: 'TwitterOAuth',
-		},
-	},
+	// TwitterOAuth: {
+	// 	name: 'Twitter OAuth Flow',
+	// 	type: 'oauth',
+	// 	description: 'Twitter OAuth Flow',
+	// 	prerequisites: [
+	// 		'Navigate to Twitter developer console and create an OAuth app',
+	// 	],
+	// 	level: TutorialLevel.Advanced,
+	// 	prestep: [
+	// 		{
+	// 			id: 'authorize',
+	// 			kind: 'twitter.auth.oAuth2Authorize',
+	// 			'auth:client_id': '==>env==>TWOA_CLIENT_ID',
+	// 			'query:code_challenge_method': 'plain',
+	// 			'query:code_challenge': '==>env==>CODE_CHALLENGE',
+	// 			'query:response_type': 'code',
+	// 			'query:redirect_uri': '==>env==>REDIRECT_URL',
+	// 			'query:state': '==>env==>STATE',
+	// 			'query:scope':
+	// 				'tweet.read users.read follows.read follows.write offline.access',
+	// 		},
+	// 	],
+	// 	workflow: [
+	// 		{
+	// 			id: 'token',
+	// 			config: {
+	// 				namespace: '_flethyresponse',
+	// 			},
+	// 			kind: 'twitter.auth.oAuth2Token',
+	// 			'auth:Authorization': {
+	// 				username: '==>env==>TWOA_CLIENT_ID',
+	// 				password: '==>secrets==>TWOA_CLIENT_SECRET',
+	// 			},
+	// 			'header:Content-Type': 'application/x-www-form-urlencoded',
+	// 			'query:code': '->context.input.code->string',
+	// 			'query:code_verifier': '==>env==>CODE_CHALLENGE',
+	// 			'query:grant_type': 'authorization_code',
+	// 			'query:redirect_uri': '==>env==>REDIRECT_URL',
+	// 		},
+	// 	],
+	// 	env: {
+	// 		TWOA_CLIENT_ID: 'clientId',
+	// 		CODE_CHALLENGE: 'codeChallenge',
+	// 		STATE: 'state',
+	// 		REDIRECT_URL: 'http://localhost:4200/',
+	// 		IS_OAUTH: 'true',
+	// 		TUTORIAL: 'TwitterOAuth',
+	// 	},
+	// },
 	WebhookSite: {
 		name: 'First Http Request',
+		icon: 'tutorials/webhooksite.png',
 		type: 'regular',
 		description: 'Send your first HTTP request with WebhookSite',
-		prerequisites: ['Navigate to webhook.site and copy the UUID'],
+		prerequisites: [
+			'Navigate to webhook.site and copy the UUID',
+			'Add the UUID to your environment variables',
+		],
 		level: TutorialLevel.Beginner,
 		workflow: [
 			{
@@ -88,15 +93,17 @@ export const WORKFLOW_TUTORIALS: { [key: string]: WorkflowTutorial } = {
 		],
 		env: {
 			WEBHOOKSITE_UUID: 'webhooksite_uuid',
+			TUTORIAL: 'WebhookSite',
 		},
 	},
 	Auth0User: {
 		name: 'Create an Auth0 User',
+		icon: 'tutorials/auth0.png',
 		type: 'regular',
 		description: 'Request a new Token and create a new Auth0 User',
 		prerequisites: [
-			'Auth0 Machine to Machine Application',
-			'Client Credentials',
+			'Create a Machine to Machine Application at Auth0',
+			'Use the Client ID and Client Secret to create new Secrets',
 		],
 		level: TutorialLevel.Intermediate,
 		workflow: [
@@ -132,13 +139,19 @@ export const WORKFLOW_TUTORIALS: { [key: string]: WorkflowTutorial } = {
 		],
 		env: {
 			AUTH0_AUDIENCE: 'audience',
+			TUTORIAL: 'Auth0User',
 		},
 	},
 	TwitterThread: {
 		name: 'Twitter Thread',
+		icon: 'tutorials/twitter.png',
 		type: 'regular',
 		description: 'Automate your twitter thread posts',
-		prerequisites: ['Twitter Developer Accounts', 'OAuth Credentials'],
+		prerequisites: [
+			'Create a Twitter Developer Account',
+			'Create a Twitter App and get the keys',
+			'Add all the keys to your secrets',
+		],
 		level: TutorialLevel.Advanced,
 		workflow: [
 			{
@@ -205,6 +218,9 @@ export const WORKFLOW_TUTORIALS: { [key: string]: WorkflowTutorial } = {
 				},
 			},
 		],
+		env: {
+			TUTORIAL: 'TwitterThread',
+		},
 	},
 }
 

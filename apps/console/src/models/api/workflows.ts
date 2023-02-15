@@ -245,5 +245,13 @@ export const WorkflowsModel = types
 			return self.workflows.get(options.projectId)
 		}
 
-		return { getFromStore }
+		const workflowsAvailableInCurrentWorkspace = () => {
+			const { api } = getRootStore(self)
+			const workflows = getFromStore({
+				projectId: api.workspaces.getContext().projectId,
+			})
+			return (workflows && workflows.length > 0) ?? false
+		}
+
+		return { getFromStore, workflowsAvailableInCurrentWorkspace }
 	})

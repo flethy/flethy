@@ -1,7 +1,8 @@
 import { types } from 'mobx-state-tree'
 import { PAGE_CONTEXT } from '../../models/api/context'
-import { getRootStore, getRouter } from '../../models/helpers'
-import routes from '../../routes'
+import { getRootStore } from '../../models/helpers'
+
+export type GettingStartedState = 'fresh' | 'workflows'
 
 export const HomePage = types
 	.model('HomePage', {
@@ -17,21 +18,9 @@ export const HomePage = types
 	})
 	.actions((self) => {
 		// INITIALIZATION
-		const initialisePage = (options?: { emailSubscription?: boolean }) => {
+		const initialisePage = (options?: {}) => {
 			const { api } = getRootStore(self)
 			api.context.setPage(PAGE_CONTEXT.HOME)
-			if (options?.emailSubscription === true) {
-				const router = getRouter()
-				router.goTo(routes.home)
-				setTimeout(() => {
-					const emailSubscription = document.querySelector(
-						'#email-subscription',
-					)
-					if (emailSubscription) {
-						emailSubscription.scrollIntoView({ behavior: 'smooth' })
-					}
-				}, 100)
-			}
 		}
 
 		const toggleShowMore = () => {
@@ -54,6 +43,11 @@ export const HomePage = types
 					api: 'workspaces',
 					operation: 'getMy',
 				},
+				{
+					api: 'workflows',
+					operation: 'list',
+					id: api.workspaces.getContext().projectId,
+				},
 			])
 		}
 
@@ -62,5 +56,17 @@ export const HomePage = types
 			return !isLoading() && api.workspaces.isOnboarded()
 		}
 
-		return { isLoading, isOnboarded }
+		const gettingStartedState = (state: GettingStartedState): boolean => {
+			const { api } = getRootStore(self)
+			switch (state) {
+				case 'fresh':
+					return !api.workflows.workflowsAvailableInCurrentWorkspace()
+				case 'workflows':
+					return api.workflows.workflowsAvailableInCurrentWorkspace()
+				default:
+					return false
+			}
+		}
+
+		return { isLoading, isOnboarded, gettingStartedState }
 	})

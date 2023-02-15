@@ -18,6 +18,7 @@ import { ExplorePage } from '../pages/explore/model'
 import { HomePage } from '../pages/home/model'
 import { SecretsPage } from '../pages/secrets/model'
 import { TokensPage } from '../pages/tokens/model'
+import { TutorialsPage } from '../pages/tutorials/model'
 import { WorkflowEditorPage } from '../pages/workflow-editor/model'
 import { WorkflowsPage } from '../pages/workflows/model'
 import ApiStore, { APIType } from './api'
@@ -42,6 +43,7 @@ const PagesStore = types.model('Pages', {
 	workflows: types.optional(WorkflowsPage, () => WorkflowsPage.create()),
 	crons: types.optional(CronsPage, () => CronsPage.create()),
 	exploreUseCases: types.optional(ExplorePage, () => ExplorePage.create()),
+	tutorials: types.optional(TutorialsPage, () => TutorialsPage.create()),
 })
 
 const ComponentsStore = types.model('Components', {
