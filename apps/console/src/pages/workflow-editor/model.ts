@@ -2,6 +2,7 @@ import { FlowEngine, FlowNode } from '@flethy/flow'
 import { flow, Instance, types } from 'mobx-state-tree'
 import { EdgeData, NodeData } from 'reaflow'
 import {
+	WorkflowTutorial,
 	WORKFLOW_STARTER,
 	WORKFLOW_TUTORIALS,
 } from '../../constants/tutorials.const'
@@ -276,5 +277,14 @@ export const WorkflowEditorPage = types
 			return self.envs.some((env) => env.key === 'IS_OAUTH')
 		}
 
-		return { getNodes, getEdges, isSaved, isOauth }
+		const checkAndReturnTutorial = (): WorkflowTutorial | undefined => {
+			const tutorial = self.envs.find((env) => env.key === 'TUTORIAL')
+			if (tutorial) {
+				const foundTutorial = WORKFLOW_TUTORIALS[tutorial.value]
+				return foundTutorial
+			}
+			return undefined
+		}
+
+		return { getNodes, getEdges, isSaved, isOauth, checkAndReturnTutorial }
 	})

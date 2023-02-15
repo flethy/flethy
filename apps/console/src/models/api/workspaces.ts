@@ -88,6 +88,7 @@ export const WorkspacesModel = types
 				}
 				self.context.workspaceId = api.user.workspaces[0].id
 				self.context.projectId = api.user.workspaces[0].projects[0].id
+				api.workflows.list(api.workspaces.getContext())
 				api.stateAndCache.updateToDone(stateAndCacheKey)
 			} catch (error) {
 				console.log(error)

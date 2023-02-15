@@ -7,6 +7,7 @@ import ExplorePage from './pages/explore/page'
 import HomePage from './pages/home/page'
 import SecretsPage from './pages/secrets/page'
 import TokensPage from './pages/tokens/page'
+import TutorialsPage from './pages/tutorials/page'
 import WorkflowEditorPage from './pages/workflow-editor/page'
 import WorkflowsPage from './pages/workflows/page'
 
@@ -84,6 +85,14 @@ export default {
 		component: <ExplorePage />,
 		onEnter(_route, _parameters, { root: { pages } }) {
 			pages.exploreUseCases.init()
+		},
+	}),
+
+	tutorials: new Route<RootStore>({
+		path: '/tutorials',
+		component: <TutorialsPage />,
+		onEnter(_route, _parameters, { root: { pages } }) {
+			pages.tutorials.init()
 		},
 	}),
 

@@ -7,8 +7,10 @@ import {
 	IconButton,
 	Input,
 	Stack,
+	Tag,
 	Text,
 	useColorMode,
+	VStack,
 } from '@chakra-ui/react'
 import Editor from '@monaco-editor/react'
 import { observer } from 'mobx-react-lite'
@@ -32,12 +34,24 @@ export default observer(() => {
 		},
 	} = useMst()
 	const { colorMode } = useColorMode()
+	const tutorial = page.checkAndReturnTutorial()
 
 	const component = (
 		<PageWithTitle
 			title={i18n.t('app:pages.workflowEditor.title')}
 			subtitle={page.name}
 		>
+			{tutorial && (
+				<Box>
+					<VStack>
+						<Tag>{tutorial.level}</Tag>
+						<Text>{tutorial.description}</Text>
+						{tutorial.prerequisites.map((prereq, index) => (
+							<Text key={String(index)}>{prereq}</Text>
+						))}
+					</VStack>
+				</Box>
+			)}
 			<HStack>
 				<Button onClick={() => page.save()}>Save</Button>
 				<Button
