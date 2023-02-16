@@ -10,13 +10,14 @@ import {
 	Kbd,
 	Link,
 	Stack,
+	Tag,
 	Text,
 	useColorMode,
 	useColorModeValue,
 } from '@chakra-ui/react'
-import { CgMenuGridR } from 'react-icons/cg'
 import { observer } from 'mobx-react-lite'
 import { useTranslation } from 'react-i18next'
+import { CgMenuGridR } from 'react-icons/cg'
 import { useMst } from '../models/root'
 import routes from '../routes'
 import Logo from './Logo'
@@ -39,6 +40,7 @@ export default observer(() => {
 			api,
 			pages: { home },
 			components: { quickSearch, menu },
+			modals: { apiConfigShow },
 		},
 	} = useMst()
 
@@ -77,6 +79,7 @@ export default observer(() => {
 							spacing={4}
 							display={{ base: 'none', md: 'flex' }}
 						>
+							<Button onClick={() => apiConfigShow.open({})}>API</Button>
 							{NavbarLinks.map((link) => (
 								<Link
 									key={link.id}

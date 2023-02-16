@@ -7,7 +7,7 @@ import { RequestParams } from '../types/Request.types'
 export namespace Github {
   export type Entity = { issues: any; repositories: any; gitDatabase: any }
   export type Endpoint =
-    | { listrepository: ApiDescriptionEndpoint }
+    | { listrepository: ApiDescriptionEndpoint; create: ApiDescriptionEndpoint }
     | { getContent: ApiDescriptionEndpoint }
     | { getTree: ApiDescriptionEndpoint }
 
@@ -27,6 +27,20 @@ export namespace Github {
     'query:since'?: string
     'query:page'?: number
     'query:per_page'?: number
+  }
+
+  export interface CreateIssues extends RequestParams {
+    kind: 'github.issues.create'
+    'header:accept': 'application/vnd.github+json'
+    'param:owner': string
+    'param:repo': string
+    'auth:Authorization'?: string
+    'body:title': string
+    'body:body'?: string
+    'body:assignees'?: string[]
+    'body:assignee'?: string
+    'body:milestone'?: string | number
+    'body:labels'?: string[]
   }
 
   export interface RepositoriesGetContent extends RequestParams {
@@ -77,7 +91,39 @@ export namespace Github {
           method: 'GET',
           auth: {
             Authorization: {
-              type: 'header:token',
+              type: 'header:bearer',
+            },
+          },
+          paths: [
+            {
+              name: 'repos',
+              type: 'static',
+            },
+            {
+              name: 'owner',
+              type: 'param',
+            },
+            {
+              name: 'repo',
+              type: 'param',
+            },
+            {
+              name: 'issues',
+              type: 'static',
+            },
+          ],
+        },
+        create: {
+          interface: 'CreateIssues',
+          meta: {
+            title: 'Create an issue',
+            description: 'Create an issue',
+            docs: 'https://docs.github.com/en/rest/issues/issues#create-an-issue',
+          },
+          method: 'POST',
+          auth: {
+            Authorization: {
+              type: 'header:bearer',
             },
           },
           paths: [
@@ -112,7 +158,7 @@ export namespace Github {
           method: 'GET',
           auth: {
             Authorization: {
-              type: 'header:token',
+              type: 'header:bearer',
             },
           },
           paths: [
@@ -151,7 +197,7 @@ export namespace Github {
           method: 'GET',
           auth: {
             Authorization: {
-              type: 'header:token',
+              type: 'header:bearer',
             },
           },
           paths: [

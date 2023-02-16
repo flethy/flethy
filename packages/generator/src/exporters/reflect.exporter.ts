@@ -551,6 +551,7 @@ configTypes.push({type: getType<Geekflare.UrlToPdf>(), id: 'geekflare', name: 'G
 configTypes.push({type: getType<GetResponse.ListContacts>(), id: 'getresponse', name: 'GetResponse', interface: 'ListContacts'})
 configTypes.push({type: getType<GetResponse.CreateContact>(), id: 'getresponse', name: 'GetResponse', interface: 'CreateContact'})
 configTypes.push({type: getType<Github.ListRepositoryIssues>(), id: 'github', name: 'Github', interface: 'ListRepositoryIssues'})
+configTypes.push({type: getType<Github.CreateIssues>(), id: 'github', name: 'Github', interface: 'CreateIssues'})
 configTypes.push({type: getType<Github.RepositoriesGetContent>(), id: 'github', name: 'Github', interface: 'RepositoriesGetContent'})
 configTypes.push({type: getType<Github.GitDatabaseGetTree>(), id: 'github', name: 'Github', interface: 'GitDatabaseGetTree'})
 configTypes.push({type: getType<GitLab.GraphQLQuery>(), id: 'gitlab', name: 'GitLab', interface: 'GraphQLQuery'})

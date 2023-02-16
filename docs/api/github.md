@@ -16,12 +16,23 @@
 
 ##### Authentication
 
-* Authorization: header:token
+* Authorization: header:bearer
 
 ##### List Repository Issues
 
 * Description: List issues in a repository.
 * Docs: [https://docs.github.com/en/rest/issues/issues#list-repository-issues](https://docs.github.com/en/rest/issues/issues#list-repository-issues)
+
+#### create
+
+##### Authentication
+
+* Authorization: header:bearer
+
+##### Create an issue
+
+* Description: Create an issue
+* Docs: [https://docs.github.com/en/rest/issues/issues#create-an-issue](https://docs.github.com/en/rest/issues/issues#create-an-issue)
 
 ### repositories
 
@@ -29,7 +40,7 @@
 
 ##### Authentication
 
-* Authorization: header:token
+* Authorization: header:bearer
 
 ##### Get repository content
 
@@ -42,7 +53,7 @@
 
 ##### Authentication
 
-* Authorization: header:token
+* Authorization: header:bearer
 
 ##### Get a tree
 

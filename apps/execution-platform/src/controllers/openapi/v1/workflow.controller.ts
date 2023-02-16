@@ -1,3 +1,4 @@
+import { FlowNode } from "@flethy/flow";
 import {
   Body,
   Delete,
@@ -38,7 +39,7 @@ export class WorkflowController {
     @Body()
     body: {
       name: string;
-      workflow: any;
+      workflow: FlowNode[];
       workflowId?: string;
       env?: { [key: string]: string };
     }

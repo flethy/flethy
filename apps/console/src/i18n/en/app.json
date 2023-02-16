@@ -154,6 +154,15 @@
 				}
 			}
 		},
+		"apiConfig": {
+			"show": {
+				"title": "Config needed for API interaction",
+				"submit": "Close",
+				"workspaceId": "Workspace ID",
+				"project": "Project ID",
+				"workflowId": "Workflow ID"
+			}
+		},
 		"onboarding": {
 			"firstLaunch": {
 				"title": "Setup your Workspace",

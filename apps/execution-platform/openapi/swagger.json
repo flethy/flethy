@@ -60,12 +60,14 @@
 									}
 								]
 							},
+							"toMatchFilter": {
+								"type": "string"
+							},
 							"filter": {
 								"type": "string"
 							}
 						},
 						"required": [
-							"toMatch",
 							"filter"
 						],
 						"type": "object"
@@ -102,6 +104,28 @@
 					},
 					"config": {
 						"properties": {
+							"postAssignments": {
+								"items": {
+									"properties": {
+										"valueToEvaluate": {
+											"type": "string"
+										},
+										"key": {
+											"type": "string"
+										},
+										"namespace": {
+											"type": "string"
+										}
+									},
+									"required": [
+										"valueToEvaluate",
+										"key",
+										"namespace"
+									],
+									"type": "object"
+								},
+								"type": "array"
+							},
 							"namespace": {
 								"type": "string"
 							},
@@ -183,7 +207,7 @@
 	"paths": {
 		"/v1/w/{workspaceId}/p/{projectId}/wf": {
 			"put": {
-				"operationId": "Put",
+				"operationId": "AddOrUpdateWorkflow",
 				"responses": {
 					"200": {
 						"description": "Ok",
@@ -260,7 +284,12 @@
 									"workflowId": {
 										"type": "string"
 									},
-									"workflow": {},
+									"workflow": {
+										"items": {
+											"$ref": "#/components/schemas/FlowNode"
+										},
+										"type": "array"
+									},
 									"name": {
 										"type": "string"
 									}
@@ -276,7 +305,7 @@
 				}
 			},
 			"get": {
-				"operationId": "List",
+				"operationId": "ListWorkflows",
 				"responses": {
 					"200": {
 						"description": "Ok",
@@ -324,7 +353,7 @@
 		},
 		"/v1/w/{workspaceId}/p/{projectId}/wf/{workflowId}": {
 			"get": {
-				"operationId": "Get",
+				"operationId": "GetWorkflow",
 				"responses": {
 					"200": {
 						"description": "Ok",
@@ -382,6 +411,7 @@
 						}
 					},
 					{
+						"description": "The ID of the workflow",
 						"in": "path",
 						"name": "workflowId",
 						"required": true,
@@ -392,7 +422,7 @@
 				]
 			},
 			"delete": {
-				"operationId": "Delete",
+				"operationId": "DeleteWorkflow",
 				"responses": {
 					"200": {
 						"description": "Ok",
@@ -438,6 +468,7 @@
 						}
 					},
 					{
+						"description": "The ID of the workflow",
 						"in": "path",
 						"name": "workflowId",
 						"required": true,
@@ -450,7 +481,7 @@
 		},
 		"/v1/w/{workspaceId}/p/{projectId}/wf/{workflowId}/i": {
 			"post": {
-				"operationId": "Start",
+				"operationId": "StartInstance",
 				"responses": {
 					"200": {
 						"description": "Ok",
@@ -496,6 +527,7 @@
 						}
 					},
 					{
+						"description": "The ID of the workflow",
 						"in": "path",
 						"name": "workflowId",
 						"required": true,

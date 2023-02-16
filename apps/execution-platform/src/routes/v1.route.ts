@@ -10,7 +10,7 @@ export class Version1 {
     RouterUtils.createRoute({
       API,
       method: "PUT",
-      route: new RouterPathUtils(1).w().p().wf().gen(),
+      route: new RouterPathUtils(1).w().p().wf(false).gen(),
       scopes: [TokenScope.WORKFLOW_CREATE],
       handler: async (req, res, userId) => {
         await WorkflowsRoute.put(req, res, userId);
