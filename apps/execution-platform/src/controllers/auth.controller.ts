@@ -98,9 +98,9 @@ export class AuthController {
         checks: { required: true, stringEquals: payload.workspaceId },
       },
       {
-        value: payload.scopes,
+        value: request.scopes,
         parameter: "scopes",
-        checks: { required: true, arrayValuesInArrayValues: request.scopes },
+        checks: { required: true, arrayValuesInArrayValues: payload.scopes },
       },
       {
         value: payload.expiration,
@@ -115,6 +115,10 @@ export class AuthController {
         log: {
           context: { origin: "auth.controller.ts", method: "verifyToken" },
           message: `Validation error: ${validation.message}`,
+          data: {
+            payload,
+            request,
+          },
         },
       });
     }

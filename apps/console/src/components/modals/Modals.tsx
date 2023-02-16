@@ -1,4 +1,5 @@
 import { observer } from 'mobx-react-lite'
+import ShowApiConfigModal from './api-config/show/page'
 import CronsCreateModal from './crons/create/page'
 import CronsDeleteModal from './crons/delete/page'
 import InstancesCreateModal from './instances/create/page'
@@ -17,6 +18,7 @@ export default observer(() => {
 			<InstancesCreateModal />
 			<CronsCreateModal />
 			<CronsDeleteModal />
+			<ShowApiConfigModal />
 		</>
 	)
 
