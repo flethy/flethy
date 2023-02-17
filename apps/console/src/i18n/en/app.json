@@ -13,7 +13,11 @@
 		"secrets": "Secrets",
 		"workflows": "Workflows",
 		"tokens": "Access Tokens",
-		"crons": "Cron Triggers"
+		"crons": "Cron Triggers",
+		"docs": "Docs",
+		"feedback": "Feedback/Questions",
+		"api": "API",
+		"star": "Star on GitHub"
 	},
 	"footer": {
 		"pitchdeck": "Pitch Deck",

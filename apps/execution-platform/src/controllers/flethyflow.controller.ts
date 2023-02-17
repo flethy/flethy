@@ -19,8 +19,26 @@ export interface AnalyticsRequest {
   event: string;
 }
 
+export enum AnalyticsEvent {
+  USER_ONBOARD = "user:onboard",
+  SECRET_CREATE = "secret:create",
+  SECRET_DELETE = "secret:delete",
+  TOKEN_CREATE = "token:create",
+  TOKEN_DELETE = "token:delete",
+  INSTANCE_CREATE = "instance:create",
+  WORKSPACE_CREATE = "workspace:create",
+  WORKSPACE_DELETE = "workspace:delete",
+  WORKFLOW_PUT = "workflow:put",
+  WORKFLOW_DELETE = "workflow:delete",
+  CRON_CREATE = "cron:create",
+  CRON_DELETE = "cron:delete",
+}
+
 export class FlethyFlowController {
   public static async analytics(request: AnalyticsRequest) {
+    if (ENVVARS.config.stage !== "prod") {
+      return;
+    }
     const flow: FlowNode[] = [
       {
         id: "mixpanel",

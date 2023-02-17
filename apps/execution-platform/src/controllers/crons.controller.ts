@@ -4,6 +4,7 @@ import { FlethyProject, FlethyWorkspace } from "../types/general.type";
 import { ErrorType, FlethyError } from "../utils/error.utils";
 import { KVUtils } from "../utils/kv.utils";
 import { ValidationUtils } from "../utils/validation.utils";
+import { AnalyticsEvent, FlethyFlowController } from "./flethyflow.controller";
 import { LimitsController } from "./limits.controller";
 
 // INTERFACES
@@ -189,6 +190,13 @@ export class CronsController {
       });
     }
 
+    await FlethyFlowController.analytics({
+      event: AnalyticsEvent.CRON_CREATE,
+      projectId: request.projectId,
+      workspaceId: request.workspaceId,
+      userId: "unset",
+    });
+
     const newCron: CronEntry = {
       cronId: crypto.randomUUID(),
       name: request.name,
@@ -246,6 +254,13 @@ export class CronsController {
     );
 
     const response = await CronsController.put({ crons: currentCrons.value });
+
+    await FlethyFlowController.analytics({
+      event: AnalyticsEvent.CRON_DELETE,
+      projectId: request.projectId,
+      workspaceId: request.workspaceId,
+      userId: "unset",
+    });
 
     return response;
   }

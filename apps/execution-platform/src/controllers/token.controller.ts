@@ -3,6 +3,7 @@ import { FlethyProject, FlethyWorkspace } from "../types/general.type";
 import { ErrorType, FlethyError } from "../utils/error.utils";
 import { KVUtils } from "../utils/kv.utils";
 import { ValidationUtils } from "../utils/validation.utils";
+import { AnalyticsEvent, FlethyFlowController } from "./flethyflow.controller";
 import { LimitsController } from "./limits.controller";
 
 // INTERFACES
@@ -131,6 +132,13 @@ export class TokenController {
       { metadata: { ...currentTokens } }
     );
 
+    await FlethyFlowController.analytics({
+      event: AnalyticsEvent.TOKEN_CREATE,
+      projectId: request.projectId,
+      workspaceId: request.workspaceId,
+      userId: "unset",
+    });
+
     return { success, tokens: currentTokens.tokens };
   }
 
@@ -178,6 +186,13 @@ export class TokenController {
       { ...currentTokens },
       { metadata: { ...currentTokens } }
     );
+
+    await FlethyFlowController.analytics({
+      event: AnalyticsEvent.TOKEN_DELETE,
+      projectId: request.projectId,
+      workspaceId: request.workspaceId,
+      userId: "unset",
+    });
 
     return { success, tokens: currentTokens.tokens };
   }
