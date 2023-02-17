@@ -9,6 +9,7 @@ import {
 import { ErrorType, FlethyError } from "../utils/error.utils";
 import { KVUtils } from "../utils/kv.utils";
 import { ValidationUtils } from "../utils/validation.utils";
+import { AnalyticsEvent, FlethyFlowController } from "./flethyflow.controller";
 import { LimitsController } from "./limits.controller";
 
 export interface FlethySecrets {
@@ -139,6 +140,14 @@ export class SecretsController {
       updatedSecrets,
       { metadata: updatedSecretsMetadata }
     );
+
+    await FlethyFlowController.analytics({
+      event: AnalyticsEvent.SECRET_CREATE,
+      projectId: request.projectId,
+      workspaceId: request.workspaceId,
+      userId: request.userId,
+    });
+
     return success;
   }
 
@@ -209,6 +218,14 @@ export class SecretsController {
           updatedSecrets,
           { metadata: updatedSecretsMetadata }
         );
+
+        await FlethyFlowController.analytics({
+          event: AnalyticsEvent.SECRET_DELETE,
+          projectId: request.projectId,
+          workspaceId: request.workspaceId,
+          userId: request.userId,
+        });
+
         return success;
       }
     }

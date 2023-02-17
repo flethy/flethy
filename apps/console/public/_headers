@@ -4,7 +4,7 @@
   X-Content-Type-Options: nosniff
   Referrer-Policy: no-referrer
   Permissions-Policy: document-domain=()
-  Content-Security-Policy: script-src 'self' 'unsafe-inline' static.cloudflareinsights.com cdn.jsdelivr.net; frame-ancestors 'none'; connect-src 'self' cloudflareinsights.com cdnjs.cloudflare.com flethy-dev.eu.auth0.com dev.api.flethy.com flethy-int.eu.auth0.com int.api.flethy.com flethy.eu.auth0.com login.flethy.com api.flethy.com;
+  Content-Security-Policy: script-src 'self' 'unsafe-inline' static.cloudflareinsights.com cdn.jsdelivr.net; frame-ancestors 'none'; connect-src 'self' cloudflareinsights.com cdnjs.cloudflare.com flethy-dev.eu.auth0.com dev.api.flethy.com flethy-int.eu.auth0.com int.api.flethy.com flethy.eu.auth0.com login.flethy.com dev.login.flethy.com int.login.flethy.com api.flethy.com;
 
 /api/*
   Access-Control-Allow-Origin: *

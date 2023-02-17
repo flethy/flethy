@@ -30,7 +30,7 @@ export const QuickSearchComponent = types
 	.actions((self) => ({
 		// INITIALIZATION
 		initialise() {
-			const { api } = getRootStore(self)
+			const { api, modals } = getRootStore(self)
 			self.isOpen = false
 			self.searchTerm = ''
 			self.selectedId = SEARCH_ID
@@ -75,6 +75,22 @@ export const QuickSearchComponent = types
 							...api.workspaces.getContext(),
 						}),
 				})
+				// this.addAction({
+				// 	id: 'createSecret',
+				// 	title: 'New Secret',
+				// 	subtitle: 'Create a new Secret',
+				// 	tags: ['secrets'],
+				// 	action: () => {
+				// 		const workspaceId = api.workspaces.getContext().workspaceId
+				// 		const projectId = api.workspaces.getContext().projectId
+				// 		console.log(api.workspaces.getContext())
+				// 		modals.secretsCreate.open({
+				// 			workspaceId,
+				// 			projectId,
+				// 		})
+				// 		return {}
+				// 	},
+				// })
 
 				self.initStatus = 'success'
 			}

@@ -1,5 +1,5 @@
 import { FlowEngine, FlowNode } from "@flethy/flow";
-import { KV, paginate, read, remove, write } from "worktop/kv";
+import { paginate, read, remove, write } from "worktop/kv";
 import {
   FlethyMetaDates,
   FlethyMetaUser,
@@ -9,6 +9,7 @@ import {
 import { ErrorType, FlethyError } from "../utils/error.utils";
 import { KVUtils } from "../utils/kv.utils";
 import { ValidationUtils } from "../utils/validation.utils";
+import { AnalyticsEvent, FlethyFlowController } from "./flethyflow.controller";
 import { SecretsController } from "./secrets.controller";
 
 // INTERFACES
@@ -131,6 +132,14 @@ export class WorkflowController {
       workflow,
       { metadata: { ...workflowMetadata } }
     );
+
+    await FlethyFlowController.analytics({
+      event: AnalyticsEvent.WORKFLOW_PUT,
+      projectId: request.projectId,
+      workspaceId: request.workspaceId,
+      userId: request.userId,
+    });
+
     return { success, workflowMetadata };
   }
 
@@ -248,6 +257,14 @@ export class WorkflowController {
       KVUtils.getKV().workflows,
       KVUtils.workflowKey(request.projectId, request.workflowId)
     );
+
+    await FlethyFlowController.analytics({
+      event: AnalyticsEvent.WORKFLOW_DELETE,
+      projectId: request.projectId,
+      workspaceId: request.workspaceId,
+      userId: request.userId,
+    });
+
     return success;
   }
 
@@ -312,6 +329,13 @@ export class WorkflowController {
         },
       });
     }
+
+    await FlethyFlowController.analytics({
+      event: AnalyticsEvent.INSTANCE_CREATE,
+      projectId: request.projectId,
+      workspaceId: request.workspaceId,
+      userId: request.userId,
+    });
 
     return response;
   }

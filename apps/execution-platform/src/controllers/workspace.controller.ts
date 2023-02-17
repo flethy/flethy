@@ -5,7 +5,7 @@ import { ErrorType, FlethyError } from "../utils/error.utils";
 import { KVUtils } from "../utils/kv.utils";
 import { ValidationUtils } from "../utils/validation.utils";
 import { ProjectRole, WorkspaceRole } from "./auth.controller";
-import { FlethyFlowController } from "./flethyflow.controller";
+import { AnalyticsEvent, FlethyFlowController } from "./flethyflow.controller";
 import { LimitsController } from "./limits.controller";
 
 // INTERFACES
@@ -121,7 +121,7 @@ export class WorkspaceController {
           message: `Onboarding ${request.userId}: Workspace ${request.name}, project ${request.project.name}`,
         }),
         FlethyFlowController.analytics({
-          event: "onboard:user",
+          event: AnalyticsEvent.USER_ONBOARD,
           userId: request.userId,
           workspaceId: request.workspaceId,
           projectId,
