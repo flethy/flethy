@@ -2,6 +2,7 @@ export const EXTERNAL_LINKS = {
 	FLETHY_CONNECTORS_NPM: 'https://www.npmjs.com/package/@flethy/connectors',
 	DOCS: 'https://docs.flethy.com',
 	GITHUB: `https://github.com/flethy/flethy`,
+	NEW_GITHUB_ISSUE: `https://github.com/flethy/flethy/issues/new/choose`,
 	FEEDBACK: 'https://github.com/flethy/flethy/discussions/new/choose',
 	FLETHY_FLOW_NPM: 'https://www.npmjs.com/package/@flethy/flow',
 	TWITTER: 'https://twitter.com/flethycom',

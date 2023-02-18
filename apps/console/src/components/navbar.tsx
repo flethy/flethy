@@ -9,6 +9,10 @@ import {
 	IconButton,
 	Kbd,
 	Link,
+	Menu,
+	MenuButton,
+	MenuItem,
+	MenuList,
 	Stack,
 	Tag,
 	Text,
@@ -113,12 +117,20 @@ export default observer(() => {
 								{colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
 							</Button>
 
-							<Avatar
-								size={'sm'}
-								src={api.user.picture ?? undefined}
-								onClick={() => auth.logout()}
-								cursor={'pointer'}
-							/>
+							<Menu>
+								<MenuButton>
+									<Avatar
+										size={'sm'}
+										src={api.user.picture ?? undefined}
+										cursor={'pointer'}
+									/>
+								</MenuButton>
+								<MenuList>
+									<MenuItem as="a" onClick={() => auth.logout()}>
+										Logout
+									</MenuItem>
+								</MenuList>
+							</Menu>
 						</Stack>
 					</Flex>
 				</Flex>

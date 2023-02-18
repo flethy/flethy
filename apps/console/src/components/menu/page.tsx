@@ -1,6 +1,7 @@
 import {
 	ChatIcon,
 	InfoOutlineIcon,
+	PlusSquareIcon,
 	SettingsIcon,
 	StarIcon,
 } from '@chakra-ui/icons'
@@ -114,6 +115,14 @@ export default observer(() => {
 				apiConfigShow.open({})
 			},
 			icon: <SettingsIcon />,
+		},
+		{
+			id: 'new',
+			label: t('menu.new'),
+			onClick: () => {
+				window.open(EXTERNAL_LINKS.NEW_GITHUB_ISSUE)
+			},
+			icon: <PlusSquareIcon />,
 		},
 		{
 			id: 'star',
