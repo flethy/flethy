@@ -75,22 +75,36 @@ export const QuickSearchComponent = types
 							...api.workspaces.getContext(),
 						}),
 				})
-				// this.addAction({
-				// 	id: 'createSecret',
-				// 	title: 'New Secret',
-				// 	subtitle: 'Create a new Secret',
-				// 	tags: ['secrets'],
-				// 	action: () => {
-				// 		const workspaceId = api.workspaces.getContext().workspaceId
-				// 		const projectId = api.workspaces.getContext().projectId
-				// 		console.log(api.workspaces.getContext())
-				// 		modals.secretsCreate.open({
-				// 			workspaceId,
-				// 			projectId,
-				// 		})
-				// 		return {}
-				// 	},
-				// })
+				this.addAction({
+					id: 'createSecret',
+					title: 'New Secret',
+					subtitle: 'Create a new Secret',
+					tags: ['secrets'],
+					action: () => {
+						const workspaceId = api.workspaces.getContext().workspaceId
+						const projectId = api.workspaces.getContext().projectId
+						modals.secretsCreate.open({
+							workspaceId,
+							projectId,
+						})
+						return {}
+					},
+				})
+				this.addAction({
+					id: 'createToken',
+					title: 'New Access Token',
+					subtitle: 'Create a new Access Token',
+					tags: ['tokens'],
+					action: () => {
+						const workspaceId = api.workspaces.getContext().workspaceId
+						const projectId = api.workspaces.getContext().projectId
+						modals.tokensCreate.open({
+							workspaceId,
+							projectId,
+						})
+						return {}
+					},
+				})
 
 				self.initStatus = 'success'
 			}
@@ -123,6 +137,7 @@ export const QuickSearchComponent = types
 				}
 			}
 			if (event.key === 'Enter') {
+				event.preventDefault()
 				this.performAction(self.selectedId)
 			}
 		},
