@@ -29,8 +29,8 @@ export namespace BrowsersFyi {
           interface: 'Get',
           meta: {
             title: 'Get',
-            description: 'Gets all NFTs currently owned by a given address.',
-            docs: 'https://docs.alchemy.com/alchemy/enhanced-apis/nft-api/getnfts',
+            description: 'Get Browser information',
+            docs: 'https://www.browsers.fyi',
           },
           method: 'GET',
         },

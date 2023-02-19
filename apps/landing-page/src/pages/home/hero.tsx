@@ -20,9 +20,8 @@ import {
 } from '@chakra-ui/react'
 import { observer } from 'mobx-react-lite'
 import { useTranslation } from 'react-i18next'
-import { EXTERNAL_LINKS } from '../../constants/externallinks.const'
-import { UTMUtils } from '../../helpers/utm'
 import { useMst } from '../../models/root'
+import routes from '../../routes'
 
 export default observer(() => {
 	const { t } = useTranslation('app')
@@ -72,17 +71,18 @@ export default observer(() => {
 						colorScheme={'orange'}
 						bg={'flethy.orange'}
 						_hover={{ bg: 'flethy.purple' }}
-						onClick={() =>
-							window.open(
-								UTMUtils.assign(EXTERNAL_LINKS.FLETHY_CONNECTORS_NPM, {
-									utm_source: 'flethy',
-									utm_medium: 'landingpage',
-									utm_content: 'buttonlink',
-								}),
-							)
-						}
+						onClick={() => router.goTo(routes.playground)}
+						// onClick={() =>
+						// 	window.open(
+						// 		UTMUtils.assign(EXTERNAL_LINKS.FLETHY_CONNECTORS_NPM, {
+						// 			utm_source: 'flethy',
+						// 			utm_medium: 'landingpage',
+						// 			utm_content: 'buttonlink',
+						// 		}),
+						// 	)
+						// }
 					>
-						{t('home.hero.cta.getStarted')}
+						{t('home.hero.cta.playground')}
 					</Button>
 					<Button
 						rounded={'full'}

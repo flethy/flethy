@@ -5,6 +5,7 @@ import HomePage from './pages/home/page'
 import IntegrationPage from './pages/integration/page'
 import IntegrationsPage from './pages/integrations/page'
 import PitchDeckPage from './pages/pitchdeck/page'
+import PlaygroundPage from './pages/playground/page'
 import RoadmapPage from './pages/roadmap/page'
 import UseCasePage from './pages/use-case/page'
 import UseCasesPage from './pages/use-cases/page'
@@ -27,6 +28,14 @@ export default {
 				title: 'Pitch Deck',
 				concatenateAppname: true,
 			})
+		},
+	}),
+
+	playground: new Route<RootStore>({
+		path: '/playground',
+		component: <PlaygroundPage />,
+		onEnter(_route, _parameters, { root: { pages } }) {
+			pages.playground.initialisePage()
 		},
 	}),
 

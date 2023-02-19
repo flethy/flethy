@@ -7,6 +7,7 @@ import { NotFoundPage } from '../pages/404/model'
 import { HomePage } from '../pages/home/model'
 import { IntegrationPage } from '../pages/integration/model'
 import { IntegrationsPage } from '../pages/integrations/model'
+import { PlaygroundPage } from '../pages/playground/model'
 import { UseCasePage } from '../pages/use-case/model'
 import { VerificationPage } from '../pages/verification/model'
 import ApiStore, { APIType } from './api'
@@ -23,6 +24,7 @@ const PagesStore = types.model('Pages', {
 	),
 	integration: types.optional(IntegrationPage, () => IntegrationPage.create()),
 	useCase: types.optional(UseCasePage, () => UseCasePage.create()),
+	playground: types.optional(PlaygroundPage, () => PlaygroundPage.create()),
 })
 
 const ComponentsStore = types.model('Components', {
