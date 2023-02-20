@@ -57,6 +57,10 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://flethy.com/integrations/apitable</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://flethy.com/integrations/apitemplateio</loc>
     <priority>0.8</priority>
   </url>
@@ -1374,6 +1378,10 @@
   </url>
   <url>
     <loc>https://flethy.com/use-cases/get-icons-of-a-collection-from-the-noun-project</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://flethy.com/use-cases/get-records-from-apitable</loc>
     <priority>0.8</priority>
   </url>
   <url>

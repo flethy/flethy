@@ -1,0 +1,24 @@
+# APITable
+
+## Links
+
+* URL: [https://apitable.com/](https://apitable.com/)
+* Documentation: [https://developers.apitable.com/](https://developers.apitable.com/)
+* Tags: web2
+* Category: collaboration
+* Type: spreadsheet
+
+## API
+
+### Authentication
+
+* Authorization: header:bearer
+
+### records
+
+#### get
+
+##### Get Records
+
+* Description: Get Records
+* Docs: [https://developers.apitable.com/api/get-records](https://developers.apitable.com/api/get-records)

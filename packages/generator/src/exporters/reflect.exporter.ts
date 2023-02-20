@@ -8,6 +8,7 @@ import { ApicAgent } from '../../../connectors/src/configs/apicagent.config'
 import { APIFlash } from '../../../connectors/src/configs/apiflash.config'
 import { Apify } from '../../../connectors/src/configs/apify.config'
 import { APIPoint } from '../../../connectors/src/configs/apipoint.config'
+import { APITable } from '../../../connectors/src/configs/apitable.config'
 import { APITemplateIo } from '../../../connectors/src/configs/apitemplateio.config'
 import { Arweave } from '../../../connectors/src/configs/arweave.config'
 import { Asana } from '../../../connectors/src/configs/asana.config'
@@ -325,6 +326,7 @@ configTypes.push({type: getType<APIPoint.FreeGifs>(), id: 'apipoint', name: 'API
 configTypes.push({type: getType<APIPoint.QRCode>(), id: 'apipoint', name: 'APIPoint', interface: 'QRCode'})
 configTypes.push({type: getType<APIPoint.IPDetails>(), id: 'apipoint', name: 'APIPoint', interface: 'IPDetails'})
 configTypes.push({type: getType<APIPoint.URLShot>(), id: 'apipoint', name: 'APIPoint', interface: 'URLShot'})
+configTypes.push({type: getType<APITable.GetRecords>(), id: 'apitable', name: 'APITable', interface: 'GetRecords'})
 configTypes.push({type: getType<APITemplateIo.CreateImage>(), id: 'apitemplateio', name: 'APITemplateIo', interface: 'CreateImage'})
 configTypes.push({type: getType<Arweave.GraphQLQuery>(), id: 'arweave', name: 'Arweave', interface: 'GraphQLQuery'})
 configTypes.push({type: getType<Arweave.GetData>(), id: 'arweave', name: 'Arweave', interface: 'GetData'})
