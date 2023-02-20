@@ -16,5 +16,5 @@
 
 ##### Get
 
-* Description: Gets all NFTs currently owned by a given address.
-* Docs: [https://docs.alchemy.com/alchemy/enhanced-apis/nft-api/getnfts](https://docs.alchemy.com/alchemy/enhanced-apis/nft-api/getnfts)
+* Description: Get Browser information
+* Docs: [https://www.browsers.fyi](https://www.browsers.fyi)

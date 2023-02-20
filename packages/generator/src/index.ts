@@ -290,6 +290,7 @@ import mailerlite from './examples/mailerlite'
 import plausibleanalytics from './examples/plausibleanalytics'
 import twitter from './examples/twitter'
 import ipapi from './examples/ipapi'
+import apitable from './examples/apitable'
 
 async function main() {
   const requestConfigs: {
@@ -3860,7 +3861,7 @@ Here you find all the available integrations`,
   }
   // const requestConfig = twitter.configs.oauth2Authorize
   // const dryRun = true
-  const requestConfig = ipapi.configs.completeLocation
+  const requestConfig = apitable.configs.getRecords
   const dryRun = false
 
   logger.info(requestConfig)

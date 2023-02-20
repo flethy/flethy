@@ -131,6 +131,7 @@ export class BrandExporter {
     const lightBrands: string[] = [
       '1inch',
       'apiflash',
+      'apitable',
       'bigdatacloud',
       'calendarific',
       'camunda',

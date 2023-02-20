@@ -1,0 +1,77 @@
+{
+  "name": "APITable",
+  "domain": "apitable.com",
+  "claimed": false,
+  "description": "APITable is an API-first, embed-friendly no-code database, the best Airtable open-source alternative. Get data, projects managed magically.",
+  "links": [
+    { "name": "twitter", "url": "https://twitter.com/apitable_com" },
+    { "name": "github", "url": "https://github.com/apitable" },
+    { "name": "linkedin", "url": "https://linkedin.com/company/apitable" }
+  ],
+  "logos": [
+    {
+      "type": "logo",
+      "theme": "light",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idirpx4I06/idX_77yUzJ.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 60,
+          "width": 290,
+          "size": 5078
+        }
+      ]
+    },
+    {
+      "type": "icon",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idirpx4I06/idzQjMXpmK.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 400,
+          "width": 400,
+          "size": 8288
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#8355ec", "type": "accent", "brightness": 106 },
+    { "hex": "#292e44", "type": "dark", "brightness": 47 },
+    { "hex": "#ffffff", "type": "light", "brightness": 255 }
+  ],
+  "fonts": [
+    {
+      "name": "-apple-system",
+      "type": "title",
+      "origin": "system",
+      "originId": null,
+      "weights": []
+    },
+    {
+      "name": "Lato",
+      "type": "body",
+      "origin": "google",
+      "originId": "Lato",
+      "weights": []
+    }
+  ],
+  "images": [
+    {
+      "type": "banner",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idirpx4I06/idlMmspLEx.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 500,
+          "width": 1500,
+          "size": 79923
+        }
+      ]
+    }
+  ]
+}

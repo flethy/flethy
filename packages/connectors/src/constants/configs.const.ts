@@ -8,6 +8,7 @@ import { ApicAgent } from '../configs/apicagent.config'
 import { APIFlash } from '../configs/apiflash.config'
 import { Apify } from '../configs/apify.config'
 import { APIPoint } from '../configs/apipoint.config'
+import { APITable } from '../configs/apitable.config'
 import { APITemplateIo } from '../configs/apitemplateio.config'
 import { Arweave } from '../configs/arweave.config'
 import { Asana } from '../configs/asana.config'
@@ -316,6 +317,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['apiflash', APIFlash.API],
 ['apify', Apify.API],
 ['apipoint', APIPoint.API],
+['apitable', APITable.API],
 ['apitemplateio', APITemplateIo.API],
 ['arweave', Arweave.API],
 ['asana', Asana.API],

@@ -797,4 +797,12 @@ export const FLOWS = {
       'param:queryId': '->context.input.queryId->string',
     },
   ],
+  'get-records-from-apitable': [
+    {
+      id: 'apitable',
+      kind: 'apitable.records.get',
+      'auth:Authorization': '==>secrets==>APITABLE_API_KEY',
+      'param:tableId': '==>env==>APITABLE_TABLE_ID',
+    },
+  ],
 }

@@ -43,6 +43,7 @@ The following Endpoints are currently supported.
 * [APIFlash](./api/apiflash.md)
 * [Apify](./api/apify.md)
 * [APIPoint](./api/apipoint.md)
+* [APITable](./api/apitable.md)
 * [APITemplateIo](./api/apitemplateio.md)
 * [Asana](./api/asana.md)
 * [AssemblyAI](./api/assemblyai.md)
