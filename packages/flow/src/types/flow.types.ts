@@ -68,6 +68,7 @@ export interface FlowInstanceStartConfig {
   instanceContext?: FlowContext
   env: FlowEnvironment
   options?: EngineOptions
+  decisions?: FlowDecisionTable
 }
 
 export interface FlowEnvironment {
@@ -77,4 +78,15 @@ export interface FlowEnvironment {
   secrets: {
     [key: string]: string
   }
+}
+
+export interface FlowDecisionTable {
+  id: string
+  decisionTable: Array<{
+    input: string | number
+    outputs: Array<{
+      key: string
+      value: boolean
+    }>
+  }>
 }
