@@ -302,6 +302,7 @@ import { WordsAPI } from '../configs/wordsapi.config'
 import { WordSimi } from '../configs/wordsimi.config'
 import { WorkOS } from '../configs/workos.config'
 import { WriteSonic } from '../configs/writesonic.config'
+import { Xkcd } from '../configs/xkcd.config'
 import { YahooFinance } from '../configs/yahoofinance.config'
 import { Yapily } from '../configs/yapily.config'
 import { ZeroX } from '../configs/zerox.config'
@@ -611,6 +612,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['wordsimi', WordSimi.API],
 ['workos', WorkOS.API],
 ['writesonic', WriteSonic.API],
+['xkcd', Xkcd.API],
 ['yahoofinance', YahooFinance.API],
 ['yapily', Yapily.API],
 ['0x', ZeroX.API],

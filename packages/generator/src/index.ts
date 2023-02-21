@@ -291,6 +291,7 @@ import plausibleanalytics from './examples/plausibleanalytics'
 import twitter from './examples/twitter'
 import ipapi from './examples/ipapi'
 import apitable from './examples/apitable'
+import xkcd from './examples/xkcd'
 
 async function main() {
   const requestConfigs: {
@@ -3861,7 +3862,7 @@ Here you find all the available integrations`,
   }
   // const requestConfig = twitter.configs.oauth2Authorize
   // const dryRun = true
-  const requestConfig = apitable.configs.getRecords
+  const requestConfig = xkcd.configs.current
   const dryRun = false
 
   logger.info(requestConfig)

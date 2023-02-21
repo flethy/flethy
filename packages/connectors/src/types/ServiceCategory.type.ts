@@ -29,6 +29,7 @@ export type CATEGORY =
   | 'design'
   | 'ecommerce'
   | 'ai'
+  | 'fun'
 export type TYPE =
   | COMM_TYPE
   | STORAGE_TYPE
@@ -59,6 +60,7 @@ export type TYPE =
   | DESIGN_TYPE
   | ECOMMERCE_TYPE
   | AI_TYPE
+  | FUN_TYPE
 
 export type AI_TYPE = 'text'
 export type COMM_TYPE = 'email' | 'messenger' | 'multichannel'
@@ -163,3 +165,4 @@ export type BUSINESS_TYPE = 'subscription-analytics'
 export type SCIENCE_TYPE = 'astronomy'
 export type DESIGN_TYPE = 'editor'
 export type ECOMMERCE_TYPE = 'aggregation' | 'shop'
+export type FUN_TYPE = 'comic'
