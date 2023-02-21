@@ -1,0 +1,27 @@
+# Xkcd
+
+## Links
+
+* URL: [https://xkcd.com/](https://xkcd.com/)
+* Documentation: [https://xkcd.com/json.html](https://xkcd.com/json.html)
+* Tags: web2
+* Category: fun
+* Type: comic
+
+## API
+
+### core
+
+#### current
+
+##### Current Comic
+
+* Description: Current Comic
+* Docs: [https://xkcd.com/json.html](https://xkcd.com/json.html)
+
+#### get
+
+##### Comic
+
+* Description: Comic
+* Docs: [https://xkcd.com/json.html](https://xkcd.com/json.html)

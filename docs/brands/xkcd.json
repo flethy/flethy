@@ -1,0 +1,22 @@
+{
+  "name": "xkcd",
+  "domain": "xkcd.com",
+  "claimed": false,
+  "description": null,
+  "links": [],
+  "logos": [],
+  "colors": [
+    { "hex": "#071419", "type": "dark", "brightness": 18 },
+    { "hex": "#ffffff", "type": "light", "brightness": 255 }
+  ],
+  "fonts": [
+    {
+      "name": "Lucida",
+      "type": "body",
+      "origin": "custom",
+      "originId": null,
+      "weights": []
+    }
+  ],
+  "images": []
+}

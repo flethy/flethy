@@ -805,4 +805,5 @@ export const FLOWS = {
       'param:tableId': '==>env==>APITABLE_TABLE_ID',
     },
   ],
+  'get-current-comic-from-xkcd': [{ id: 'xkcd', kind: 'xkcd.comic.current' }],
 }

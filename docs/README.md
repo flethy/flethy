@@ -315,5 +315,6 @@ The following Endpoints are currently supported.
 * [WordSimi](./api/wordsimi.md)
 * [WorkOS](./api/workos.md)
 * [WriteSonic](./api/writesonic.md)
+* [Xkcd](./api/xkcd.md)
 * [YahooFinance](./api/yahoofinance.md)
 * [Yapily](./api/yapily.md)

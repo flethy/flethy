@@ -302,6 +302,7 @@ import { WordsAPI } from '../../../connectors/src/configs/wordsapi.config'
 import { WordSimi } from '../../../connectors/src/configs/wordsimi.config'
 import { WorkOS } from '../../../connectors/src/configs/workos.config'
 import { WriteSonic } from '../../../connectors/src/configs/writesonic.config'
+import { Xkcd } from '../../../connectors/src/configs/xkcd.config'
 import { YahooFinance } from '../../../connectors/src/configs/yahoofinance.config'
 import { Yapily } from '../../../connectors/src/configs/yapily.config'
 import { ZeroX } from '../../../connectors/src/configs/zerox.config'
@@ -969,6 +970,8 @@ configTypes.push({type: getType<WorkOS.CreateOrganization>(), id: 'workos', name
 configTypes.push({type: getType<WorkOS.UpdateOrganization>(), id: 'workos', name: 'WorkOS', interface: 'UpdateOrganization'})
 configTypes.push({type: getType<WriteSonic.AIArticleIdeas>(), id: 'writesonic', name: 'WriteSonic', interface: 'AIArticleIdeas'})
 configTypes.push({type: getType<WriteSonic.AIArticleIntros>(), id: 'writesonic', name: 'WriteSonic', interface: 'AIArticleIntros'})
+configTypes.push({type: getType<Xkcd.GetCurrentComic>(), id: 'xkcd', name: 'Xkcd', interface: 'GetCurrentComic'})
+configTypes.push({type: getType<Xkcd.GetComic>(), id: 'xkcd', name: 'Xkcd', interface: 'GetComic'})
 configTypes.push({type: getType<YahooFinance.GetQuote>(), id: 'yahoofinance', name: 'YahooFinance', interface: 'GetQuote'})
 configTypes.push({type: getType<YahooFinance.GetRecommendations>(), id: 'yahoofinance', name: 'YahooFinance', interface: 'GetRecommendations'})
 configTypes.push({type: getType<YahooFinance.GetInsights>(), id: 'yahoofinance', name: 'YahooFinance', interface: 'GetInsights'})
