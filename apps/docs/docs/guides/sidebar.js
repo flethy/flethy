@@ -19,4 +19,23 @@ module.exports = [
       },
     ],
   },
+  {
+    type: "category",
+    label: "Flows",
+    link: {
+      type: "generated-index",
+      title: "Flows",
+      slug: "/category/guides/flows",
+    },
+    items: [
+      {
+        type: "doc",
+        id: "guides/flows/envvars-and-secrets",
+      },
+      {
+        type: "doc",
+        id: "guides/flows/next-node",
+      },
+    ],
+  },
 ];
