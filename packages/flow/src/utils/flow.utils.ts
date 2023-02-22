@@ -2,6 +2,7 @@ import { INTERNAL_EXCHANGE, JQ_TYPE_SEPARATOR } from '../constants/flow.const'
 import {
   EngineOptions,
   FlowContext,
+  FlowDecisionModel,
   FlowEnvironment,
   FlowInstanceStartConfig,
   FlowNextNode,
@@ -25,11 +26,13 @@ export class FlowUtils {
   private flow: FlowNode[]
   private env: FlowEnvironment
   private engineOptions: EngineOptions | undefined
+  private decisions: FlowDecisionModel[] | undefined
 
   constructor(config: FlowInstanceStartConfig) {
     this.flow = config.flow
     this.env = config.env
     this.engineOptions = config.options
+    this.decisions = config.decisions
     if (config.instanceContext) {
       this.instanceContext = config.instanceContext
     } else {
@@ -262,22 +265,46 @@ export class FlowUtils {
   }
 
   public async checkNextNodeCondition(next: FlowNextNode): Promise<boolean> {
-    if (!next.condition) {
+    const condition = next.condition
+    if (!condition) {
       return true
     }
     const evaluated = await EvaluationUtils.evaluate(
-      next.condition.filter,
+      condition.filter,
       this.instanceContext.context,
     )
-    if (next.condition.toMatchFilter) {
+    if (condition.toMatchFilter) {
       const toMatchEvaluated = await EvaluationUtils.evaluate(
-        next.condition.toMatchFilter,
+        condition.toMatchFilter,
         this.instanceContext.context,
       )
       return evaluated === toMatchEvaluated
     }
-    if (next.condition.toMatch) {
-      return evaluated === next.condition.toMatch
+    if (condition.toMatch) {
+      return evaluated === condition.toMatch
+    }
+    if (
+      condition.toDecisionModel &&
+      this.decisions &&
+      this.decisions.length > 0
+    ) {
+      // check decision model
+      const decisionModel = this.decisions.find(
+        (current) => current.id === condition.toDecisionModel!.id,
+      )
+      if (decisionModel) {
+        const foundModelEntry = decisionModel.model.find(
+          (current) => current.input === evaluated,
+        )
+        if (foundModelEntry) {
+          const foundTarget = foundModelEntry.outputs.find(
+            (current) => current.key === condition.toDecisionModel!.targetKey,
+          )
+          if (foundTarget) {
+            return foundTarget.value
+          }
+        }
+      }
     }
     if (typeof evaluated === 'boolean') {
       return evaluated

@@ -22,6 +22,10 @@ export interface FlowNextNode {
     filter: string
     toMatchFilter?: string
     toMatch?: string | number
+    toDecisionModel?: {
+      id: string
+      targetKey: string
+    }
   }
 }
 
@@ -68,7 +72,7 @@ export interface FlowInstanceStartConfig {
   instanceContext?: FlowContext
   env: FlowEnvironment
   options?: EngineOptions
-  decisions?: FlowDecisionTable
+  decisions?: FlowDecisionModel[]
 }
 
 export interface FlowEnvironment {
@@ -80,9 +84,9 @@ export interface FlowEnvironment {
   }
 }
 
-export interface FlowDecisionTable {
+export interface FlowDecisionModel {
   id: string
-  decisionTable: Array<{
+  model: Array<{
     input: string | number
     outputs: Array<{
       key: string

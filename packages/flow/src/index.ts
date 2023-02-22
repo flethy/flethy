@@ -2,7 +2,7 @@ export { FlowEngine } from './engine/flow.engine'
 export {
   EngineOptions,
   FlowContext,
-  FlowDecisionTable,
+  FlowDecisionModel as FlowDecisionTable,
   FlowEnvironment,
   FlowInstanceStartConfig,
   FlowNode,
