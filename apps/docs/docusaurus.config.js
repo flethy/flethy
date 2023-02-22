@@ -8,7 +8,7 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 const config = {
   title: "flethy",
   tagline:
-    "Integrate with over 270 services without further dependencies for free",
+    "Integrate with over 300 services without further dependencies for free",
   url: "https://flethy.com",
   baseUrl: "/",
   onBrokenLinks: "throw",
