@@ -292,6 +292,7 @@ import twitter from './examples/twitter'
 import ipapi from './examples/ipapi'
 import apitable from './examples/apitable'
 import xkcd from './examples/xkcd'
+import flethy from './examples/flethy'
 
 async function main() {
   const requestConfigs: {
@@ -3862,7 +3863,7 @@ Here you find all the available integrations`,
   }
   // const requestConfig = twitter.configs.oauth2Authorize
   // const dryRun = true
-  const requestConfig = xkcd.configs.current
+  const requestConfig = flethy.configs.listWorkflows
   const dryRun = false
 
   logger.info(requestConfig)
