@@ -36,6 +36,14 @@ module.exports = [
         type: "doc",
         id: "guides/flows/next-node",
       },
+      {
+        type: "doc",
+        id: "guides/flows/assignments",
+      },
+      {
+        type: "doc",
+        id: "guides/flows/examples",
+      },
     ],
   },
 ];

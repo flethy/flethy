@@ -1,0 +1,36 @@
+---
+id: assignments
+---
+
+# Assignments
+
+Nodes are executing http requests that could response with a value. This value can be assigned to a variable on the context so it can be used in the following flow.
+
+Add a field `config` to the node definition to assign the response to a variable.
+
+## Assigning the full response
+
+In the following example the response of the node is assigned to the variable `nodeResponse`.
+
+```json
+{
+  "namespace": "nodeResponse"
+}
+```
+
+## Computed assignments
+
+To assign a computed value to a variable, use the `postAssignments` field.
+
+```json
+{
+  "namespace": "nodeResponse",
+  "postAssignments": [
+    {
+      "namespace": "nodeResponse",
+      "key": "counter",
+      "valueToEvaluate": "$number(context.thread.counter) + 1"
+    }
+  ]
+}
+```

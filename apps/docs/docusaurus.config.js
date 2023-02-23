@@ -65,6 +65,7 @@ const config = {
             // Note: petstore key is treated as the <id> and can be used to specify an API doc instance when using CLI commands
             specPath: "openapi/swagger.json", // Path to designated spec file
             outputDir: "docs/api", // Output directory for generated .mdx docs
+            downloadUrl: "/openapi.json",
             sidebarOptions: {
               groupPathsBy: "tag",
             },
@@ -136,7 +137,7 @@ const config = {
               },
               {
                 label: "Twitter",
-                href: "https://twitter.com/flethy",
+                href: "https://twitter.com/flethycom",
               },
             ],
           },
@@ -144,8 +145,8 @@ const config = {
             title: "More",
             items: [
               {
-                label: "Blog",
-                to: "/blog",
+                label: "OpenAPI Spec",
+                href: "https://docs.flethy.com/openapi.json",
               },
               {
                 label: "GitHub",

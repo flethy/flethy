@@ -1,4 +1,5 @@
 import { types } from 'mobx-state-tree'
+import { EXTERNAL_LINKS } from '../../constants/externallinks.const'
 import { USECASES } from '../../constants/usecases.const'
 import { getRouter } from '../../models/helpers'
 import routes from '../../routes'
@@ -69,6 +70,15 @@ export const QuickSearchComponent = types
 					title: 'Roadmap',
 					subtitle: 'Always progress!',
 					action: () => getRouter().goTo(routes.roadmap),
+				})
+				this.addAction({
+					id: 'navigateDocs',
+					title: 'Docs',
+					subtitle: 'Documentation',
+					action: () => {
+						window.open(EXTERNAL_LINKS.DOCS)
+						return {}
+					},
 				})
 				USECASES.forEach((useCase) => {
 					this.addAction({
