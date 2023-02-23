@@ -4,4 +4,58 @@ id: next-node
 
 # Next node
 
-todo
+In order to model a sequence, it must be possible to define the subsequent nodes.
+The IDs of the subsequent nodes are added in the `next` field. For a sequential process, only add one further node.
+If more than one node is added, all subsequent nodes are executed in parallel.
+
+## Conditions
+
+It is possible to take certain paths only if certain conditions are met.
+For this purpose, an expression must be defined in the condition that can access the data of the current node.
+If the expression is true, the corresponding path is taken. If there is no more path, the process is terminated.
+
+### Example with two subsequent nodes
+
+In the following example both nodes will be executed in parallel: `nextId1` and `nextId2`.
+
+```json
+[
+  {
+    "id": "nextId1"
+  },
+  {
+    "id": "nextId2"
+  }
+]
+```
+
+### Example with one subsequent node and a condition
+
+In the following example, the node `nextId1` is executed if the condition is true. An array called `thread` is available on the context. If the arrays has more than one elements (`count() > 1`) the condition becomes true.
+
+```json
+[
+  {
+    "id": "nextId1",
+    "condition": {
+      "filter": "$count(context.input.thread) > 1"
+    }
+  }
+]
+```
+
+### Example with a match value
+
+You can add a match value to the condition. If the match value is not equal to the condition, the path will not be used.
+
+```json
+[
+  {
+    "id": "nextId1",
+    "condition": {
+      "filter": "$count(context.input.thread)",
+      "toMatch": 1
+    }
+  }
+]
+```

@@ -13,6 +13,7 @@ import {
 } from '@chakra-ui/react'
 import { observer } from 'mobx-react-lite'
 import { useTranslation } from 'react-i18next'
+import { EXTERNAL_LINKS } from '../constants/externallinks.const'
 import { useMst } from '../models/root'
 import routes from '../routes'
 import Logo from './Logo'
@@ -84,6 +85,18 @@ export default observer(() => {
 									{link.name}
 								</Link>
 							))}
+							<Link
+								px={2}
+								py={1}
+								rounded={'md'}
+								href={EXTERNAL_LINKS.DOCS}
+								_hover={{
+									textDecoration: 'none',
+									bg: bgLink,
+								}}
+							>
+								Docs
+							</Link>
 						</HStack>
 					</HStack>
 

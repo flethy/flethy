@@ -49,6 +49,21 @@
 					},
 					"condition": {
 						"properties": {
+							"toDecisionModel": {
+								"properties": {
+									"targetKey": {
+										"type": "string"
+									},
+									"id": {
+										"type": "string"
+									}
+								},
+								"required": [
+									"targetKey",
+									"id"
+								],
+								"type": "object"
+							},
 							"toMatch": {
 								"anyOf": [
 									{

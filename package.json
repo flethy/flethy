@@ -29,7 +29,7 @@
     "=============== E X E C U T I O N   P L A T F O R M =================": "===============",
     "start:ep:dev": "pnpm --filter execution-platform dev",
     "start:ep": "pnpm --filter execution-platform local",
-    "docs:openapi": "pnpm --filter execution-platform openapi",
+    "docs:openapi": "pnpm --filter execution-platform openapi && cp ./apps/execution-platform/openapi/swagger.json ./apps/docs/openapi/swagger.json && cp ./apps/execution-platform/openapi/swagger.json ./apps/docs/static/openapi.json",
     "=============== D O C S =================": "===============",
     "start:docs": "pnpm --filter docs start",
     "build:docs": "pnpm --filter docs build",
