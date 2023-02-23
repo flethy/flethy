@@ -25,7 +25,7 @@
     "flow"
   ],
   "dependencies": {
-    "@flethy/connectors": "0.0.334",
+    "@flethy/connectors": "0.0.338",
     "jsonata": "^2.0.1"
   },
   "devDependencies": {
