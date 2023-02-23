@@ -40,7 +40,7 @@ export class Version1 {
     RouterUtils.createRoute({
       API,
       method: "GET",
-      route: new RouterPathUtils(1).w().p().wf().gen(),
+      route: new RouterPathUtils(1).w().p().wf(false).gen(),
       scopes: [TokenScope.WORKFLOW_READ],
       handler: async (req, res, userId) => {
         await WorkflowsRoute.list(req, res, userId);

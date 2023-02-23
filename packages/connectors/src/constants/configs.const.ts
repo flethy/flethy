@@ -100,6 +100,7 @@ import { FireHydrant } from '../configs/firehydrant.config'
 import { FlareNetwork } from '../configs/flarenetwork.config'
 import { Flatfile } from '../configs/flatfile.config'
 import { Fleek } from '../configs/fleek.config'
+import { Flethy } from '../configs/flethy.config'
 import { FootballPredictionAPI } from '../configs/footballpredictionapi.config'
 import { Frankfurter } from '../configs/frankfurter.config'
 import { Geekflare } from '../configs/geekflare.config'
@@ -410,6 +411,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['flarenetwork', FlareNetwork.API],
 ['flatfile', Flatfile.API],
 ['fleek', Fleek.API],
+['flethy', Flethy.API],
 ['footballpredictionapi', FootballPredictionAPI.API],
 ['frankfurter', Frankfurter.API],
 ['geekflare', Geekflare.API],

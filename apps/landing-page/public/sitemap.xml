@@ -425,6 +425,10 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://flethy.com/integrations/flethy</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://flethy.com/integrations/footballpredictionapi</loc>
     <priority>0.8</priority>
   </url>
@@ -1442,6 +1446,10 @@
   </url>
   <url>
     <loc>https://flethy.com/use-cases/list-tasks-from-bugherd</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://flethy.com/use-cases/list-workflows-from-flethy</loc>
     <priority>0.8</priority>
   </url>
   <url>

@@ -124,6 +124,7 @@ The following Endpoints are currently supported.
 * [Figma](./api/figma.md)
 * [FireHydrant](./api/firehydrant.md)
 * [Flatfile](./api/flatfile.md)
+* [Flethy](./api/flethy.md)
 * [FootballPredictionAPI](./api/footballpredictionapi.md)
 * [Frankfurter](./api/frankfurter.md)
 * [Geekflare](./api/geekflare.md)

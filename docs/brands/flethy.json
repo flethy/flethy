@@ -1,0 +1,52 @@
+{
+  "name": "flethy",
+  "domain": "flethy.com",
+  "claimed": false,
+  "description": "Use connectors to easily interact with services - use flow to connect them together. No dependencies, no code, no limits.",
+  "links": [{ "name": "twitter", "url": "https://twitter.com/@flethycom" }],
+  "logos": [
+    {
+      "type": "icon",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/id82bs98VO/idGYkhFZ5i.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 400,
+          "width": 400,
+          "size": 16873
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#ee7524", "type": "accent", "brightness": 137 },
+    { "hex": "#a73594", "type": "dark", "brightness": 84 },
+    { "hex": "#e5e7eb", "type": "light", "brightness": 231 }
+  ],
+  "fonts": [
+    {
+      "name": "ui-sans-serif",
+      "type": "body",
+      "origin": "custom",
+      "originId": null,
+      "weights": []
+    }
+  ],
+  "images": [
+    {
+      "type": "banner",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/id82bs98VO/id52Iac5gg.jpeg",
+          "background": null,
+          "format": "jpeg",
+          "height": 500,
+          "width": 1500,
+          "size": 33498
+        }
+      ]
+    }
+  ]
+}

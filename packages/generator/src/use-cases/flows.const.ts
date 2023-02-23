@@ -806,4 +806,13 @@ export const FLOWS = {
     },
   ],
   'get-current-comic-from-xkcd': [{ id: 'xkcd', kind: 'xkcd.comic.current' }],
+  'list-workflows-from-flethy': [
+    {
+      id: 'flethy',
+      kind: 'flethy.workflows.list',
+      'auth:Authorization': '==>secrets==>FLETHY_API_TOKEN',
+      'param:workspaceId': '==>env==>FLETHY_WORKSPACE_ID',
+      'param:projectId': '==>env==>FLETHY_PROJECT_ID',
+    },
+  ],
 }
