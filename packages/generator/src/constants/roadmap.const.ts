@@ -88,6 +88,15 @@ const ITEMS_2022_Q4: RoadmapEntry[] = [
     milestone: false,
     tags: [ROADMAP_TAGS.CONNECTORS],
   },
+  {
+    title: 'Decision Models, Kind: none',
+    date: '2023-02-24',
+    description:
+      'Introduction of decision models for conditional flows. Furthermore: nodes do not require an http action anymore.',
+    delivered: true,
+    milestone: false,
+    tags: [ROADMAP_TAGS.EXECUTION, ROADMAP_TAGS.FLOW],
+  },
 ]
 
 const FUTURE_MILESTONES: RoadmapEntry[] = [
