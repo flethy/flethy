@@ -1,0 +1,28 @@
+---
+id: none-kind
+---
+
+# Kind: none
+
+If you want to design a node without any http request you can use the special `kind` `none`. This is useful if you want to create a start node that decides which path to take.
+
+## Example
+
+```json
+{
+  "id": "start",
+  "next": [
+    {
+      "id": "email",
+      "condition": {
+        "filter": "context.eventId",
+        "toDecisionModel": {
+          "id": "event-to-channel",
+          "targetKey": "email"
+        }
+      }
+    }
+  ],
+  "kind": "none"
+}
+```

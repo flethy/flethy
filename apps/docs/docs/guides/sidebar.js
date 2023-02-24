@@ -42,6 +42,10 @@ module.exports = [
       },
       {
         type: "doc",
+        id: "guides/flows/none-kind",
+      },
+      {
+        type: "doc",
         id: "guides/flows/examples",
       },
     ],

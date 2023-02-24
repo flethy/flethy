@@ -30,9 +30,7 @@ const engine = new FlowEngine({
           },
         },
       ],
-      kind: 'webhooksite.core.get',
-      'param:uuid': '80370a44-bf66-49f5-bdb8-195d4c0cdd10',
-      'header:x-test-header': 'flethy',
+      kind: 'none',
     },
     {
       id: 'next1',
