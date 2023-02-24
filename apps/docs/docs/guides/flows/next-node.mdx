@@ -59,3 +59,55 @@ You can add a match value to the condition. If the match value is not equal to t
   }
 ]
 ```
+
+### Example with a decision model
+
+You can add a decision model to the condition. If the decision model is not equal to the condition, the path will not be used.
+
+First, you have to create a decision model:
+
+```json
+[
+  {
+    "id": "event-to-channel",
+    "model": [
+      {
+        "input": "user-onboarding",
+        "outputs": [
+          {
+            "key": "email",
+            "value": true
+          },
+          {
+            "key": "chat",
+            "value": false
+          },
+          {
+            "key": "analytics",
+            "value": true
+          }
+        ]
+      }
+    ]
+  }
+]
+```
+
+Afterwards add a condition to the next node:
+
+```json
+[
+  {
+    "id": "email",
+    "condition": {
+      "filter": "context.eventId",
+      "toDecisionModel": {
+        "id": "event-to-channel",
+        "targetKey": "email"
+      }
+    }
+  }
+]
+```
+
+With this approch you can re-use your workflow for different use cases. Depending on the event, the workflow will take different paths.
