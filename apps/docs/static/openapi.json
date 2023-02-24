@@ -158,6 +158,60 @@
 				"type": "object",
 				"additionalProperties": {}
 			},
+			"FlowDecisionModel": {
+				"properties": {
+					"id": {
+						"type": "string"
+					},
+					"model": {
+						"items": {
+							"properties": {
+								"outputs": {
+									"items": {
+										"properties": {
+											"value": {
+												"type": "boolean"
+											},
+											"key": {
+												"type": "string"
+											}
+										},
+										"required": [
+											"value",
+											"key"
+										],
+										"type": "object"
+									},
+									"type": "array"
+								},
+								"input": {
+									"anyOf": [
+										{
+											"type": "string"
+										},
+										{
+											"type": "number",
+											"format": "double"
+										}
+									]
+								}
+							},
+							"required": [
+								"outputs",
+								"input"
+							],
+							"type": "object"
+						},
+						"type": "array"
+					}
+				},
+				"required": [
+					"id",
+					"model"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
 			"FlethyWorkflow": {
 				"properties": {
 					"workflow": {
@@ -172,6 +226,12 @@
 							"type": "string"
 						},
 						"type": "object"
+					},
+					"decisions": {
+						"items": {
+							"$ref": "#/components/schemas/FlowDecisionModel"
+						},
+						"type": "array"
 					}
 				},
 				"required": [

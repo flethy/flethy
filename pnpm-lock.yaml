@@ -153,7 +153,7 @@ importers:
       '@cloudflare/workers-types': 4.20230115.0
       '@datasert/cronjs-matcher': ^1.2.0
       '@datasert/cronjs-parser': ^1.2.0
-      '@flethy/flow': ^0.0.335
+      '@flethy/flow': ^0.0.341
       '@tsndr/cloudflare-worker-jwt': ^2.2.1
       '@types/node': 18.13.0
       '@typescript-eslint/eslint-plugin': ^5.51.0
@@ -173,7 +173,7 @@ importers:
     dependencies:
       '@datasert/cronjs-matcher': 1.2.0
       '@datasert/cronjs-parser': 1.2.0
-      '@flethy/flow': 0.0.335
+      '@flethy/flow': 0.0.341
     devDependencies:
       '@cloudflare/workers-types': 4.20230115.0
       '@tsndr/cloudflare-worker-jwt': 2.2.1
@@ -4757,10 +4757,6 @@ packages:
     resolution: {integrity: sha512-a9e4PkvxAmvWlW8HS5P62SnEDqpVDAFFqA0lSLGgORvidk/zuPXAySQ+Ap8rFv2NyIVqNDPsqv/h15OqyNYyQA==}
     dev: false
 
-  /@flethy/connectors/0.0.334:
-    resolution: {integrity: sha512-bwGPAttqQnKzSFSdago4G0sB1W0S4ARSjwVYQ+6mwq3sqW2OK6Bs89bnuDNGQu6oE2C3QDqGxUoXEvXu7T4qNA==}
-    dev: false
-
   /@flethy/connectors/0.0.338:
     resolution: {integrity: sha512-+5dRrdFA4riTLsKUsfWnB+g6b0JGPSWtvbq8HzD9n8tpvG1St7dbJcCAZ2bVfOLDZ/dPMgTDgO5EgXWmWP/OHQ==}
     dev: false
@@ -4779,10 +4775,10 @@ packages:
       jsonata: 2.0.1
     dev: false
 
-  /@flethy/flow/0.0.335:
-    resolution: {integrity: sha512-Jke9RvKAeJezzliYtYjuEHbXB/M1L3EpK0w9rzrhounY4XYk/PMDqdLppp+bBHmlj6yjyBr8Pgr2xEeR1IkxHg==}
+  /@flethy/flow/0.0.341:
+    resolution: {integrity: sha512-YjQ5Ypw6LrxKX9Z0agtUr8s7vYviyQOET0j8hdmOQO+fa4uTO0vRV6ewnr2cPnadK1E9pjhV4ihpDBcZQqeEjg==}
     dependencies:
-      '@flethy/connectors': 0.0.334
+      '@flethy/connectors': 0.0.338
       jsonata: 2.0.1
     dev: false
 

@@ -1,4 +1,4 @@
-import { FlowEngine, FlowNode } from "@flethy/flow";
+import { FlowDecisionModel, FlowEngine, FlowNode } from "@flethy/flow";
 import { paginate, read, remove, write } from "worktop/kv";
 import {
   FlethyMetaDates,
@@ -19,6 +19,7 @@ export interface FlethyWorkflow {
   env?: {
     [key: string]: string;
   };
+  decisions?: FlowDecisionModel[];
 }
 
 export interface FlethyWorkflowMetadata
@@ -34,6 +35,7 @@ export interface PutWorkflowRequest extends FlethyRequest {
   name: string;
   workflow: FlowNode[];
   env?: { [key: string]: string };
+  decisions?: FlowDecisionModel[];
 }
 
 export interface GetWorkflowRequest extends FlethyRequest {
@@ -91,6 +93,7 @@ export class WorkflowController {
     const workflow: FlethyWorkflow = {
       workflow: request.workflow,
       env: request.env,
+      decisions: request.decisions,
     };
     const isNewWorkflow = !request.workflowId;
     const workflowMetadata: FlethyWorkflowMetadata = {
@@ -310,6 +313,7 @@ export class WorkflowController {
           env: workflow.workflow.env ?? {},
           secrets: secrets?.secrets.values ?? {},
         },
+        decisions: workflow.workflow.decisions,
       });
       await engine.start();
 
