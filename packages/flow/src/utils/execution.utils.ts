@@ -2,8 +2,18 @@ import { nao } from '@flethy/connectors'
 import { FetchParams } from '@flethy/connectors/dist/types/FetchParams.type'
 import { FlowNode, FlowNodeResponse } from '../types/flow.types'
 
+const NONE_KIND = 'none'
+
 export class ExecutionUtils {
   public static async execute(node: FlowNode): Promise<FlowNodeResponse> {
+    if (node.kind === NONE_KIND) {
+      return {
+        data: {},
+        ts: Date.now(),
+        resolved: true,
+        type: 'none-kind',
+      }
+    }
     const request = nao(node)
     const response = await ExecutionUtils.request(request)
     return response

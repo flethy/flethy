@@ -29,7 +29,11 @@ export interface FlowNextNode {
   }
 }
 
-export type FlowNodeResponseType = 'prepare' | 'http' | 'postcondition'
+export type FlowNodeResponseType =
+  | 'prepare'
+  | 'http'
+  | 'postcondition'
+  | 'none-kind'
 
 export interface FlowNodeResponse {
   id?: string
