@@ -17,7 +17,7 @@
 		"@emotion/react": "^11.10.5",
 		"@emotion/styled": "^11.10.5",
 		"@flethy/connectors": "workspace:*",
-		"@flethy/flow": "^0.0.328",
+		"@flethy/flow": "^0.0.342",
 		"@fontsource/open-sans": "^4.5.14",
 		"@fontsource/raleway": "^4.5.12",
 		"@monaco-editor/react": "^4.4.6",
