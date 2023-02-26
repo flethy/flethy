@@ -116,17 +116,12 @@ export class WorkspaceController {
         userId: request.userId,
         workspace,
       });
-      await Promise.allSettled([
-        FlethyFlowController.externalNotification({
-          message: `Onboarding ${request.userId}: Workspace ${request.name}, project ${request.project.name}`,
-        }),
-        FlethyFlowController.analytics({
-          event: AnalyticsEvent.USER_ONBOARD,
-          userId: request.userId,
-          workspaceId: request.workspaceId,
-          projectId,
-        }),
-      ]);
+      await FlethyFlowController.sendEvent({
+        event: AnalyticsEvent.USER_ONBOARD,
+        userId: request.userId,
+        workspaceId: request.workspaceId,
+        projectId,
+      });
     }
 
     return { success, workspaceMetadata };

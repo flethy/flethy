@@ -141,7 +141,7 @@ export class SecretsController {
       { metadata: updatedSecretsMetadata }
     );
 
-    await FlethyFlowController.analytics({
+    await FlethyFlowController.sendEvent({
       event: AnalyticsEvent.SECRET_CREATE,
       projectId: request.projectId,
       workspaceId: request.workspaceId,
@@ -219,7 +219,7 @@ export class SecretsController {
           { metadata: updatedSecretsMetadata }
         );
 
-        await FlethyFlowController.analytics({
+        await FlethyFlowController.sendEvent({
           event: AnalyticsEvent.SECRET_DELETE,
           projectId: request.projectId,
           workspaceId: request.workspaceId,

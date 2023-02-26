@@ -132,7 +132,7 @@ export class TokenController {
       { metadata: { ...currentTokens } }
     );
 
-    await FlethyFlowController.analytics({
+    await FlethyFlowController.sendEvent({
       event: AnalyticsEvent.TOKEN_CREATE,
       projectId: request.projectId,
       workspaceId: request.workspaceId,
@@ -187,7 +187,7 @@ export class TokenController {
       { metadata: { ...currentTokens } }
     );
 
-    await FlethyFlowController.analytics({
+    await FlethyFlowController.sendEvent({
       event: AnalyticsEvent.TOKEN_DELETE,
       projectId: request.projectId,
       workspaceId: request.workspaceId,
