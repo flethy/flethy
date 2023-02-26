@@ -1,7 +1,7 @@
 {
   "extends": "tsconfig/connectors.json",
   "include": ["src/**/*.ts"],
-  "exclude": ["dist", "node_modules", "playground"],
+  "exclude": ["dist", "node_modules", "playground", "src/_tests"],
   "compilerOptions": {
     "outDir": "dist",
     "resolveJsonModule": true,

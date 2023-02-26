@@ -483,6 +483,7 @@ importers:
       jsonata: ^2.0.1
       prettier: 2.8.4
       ts-node: ^10.9.1
+      ts-node-test: ^0.3.0
       tsconfig: workspace:*
       typescript: ^4.9.5
     dependencies:
@@ -499,6 +500,7 @@ importers:
       eslint-plugin-prettier: 4.2.1_u5wnrdwibbfomslmnramz52buy
       prettier: 2.8.4
       ts-node: 10.9.1_4bewfcp2iebiwuold25d6rgcsy
+      ts-node-test: 0.3.0_4bewfcp2iebiwuold25d6rgcsy
       tsconfig: link:../tsconfig
       typescript: 4.9.5
 
@@ -15964,6 +15966,22 @@ packages:
   /ts-interface-checker/0.1.13:
     resolution: {integrity: sha512-Y/arvbn+rrz3JCKl9C4kVNfTfSm2/mEp5FSz5EsZSANGPSlQrpRI5M4PKF+mJnE52jOO90PnPSc3Ur3bTQw0gA==}
     dev: false
+
+  /ts-node-test/0.3.0_4bewfcp2iebiwuold25d6rgcsy:
+    resolution: {integrity: sha512-0zkYxKYVZ49VjWFYnx6ump0ortTbrEwOQqdXQA1UCr4ZxiUXvTHUKLwt0S3Joyix5+gGR8+8mtYWgzNvryIDhQ==}
+    engines: {node: '>=18.7.0'}
+    hasBin: true
+    peerDependencies:
+      typescript: ^4.0.0
+    dependencies:
+      ts-node: 10.9.1_4bewfcp2iebiwuold25d6rgcsy
+      typescript: 4.9.5
+      yargs: 17.6.2
+    transitivePeerDependencies:
+      - '@swc/core'
+      - '@swc/wasm'
+      - '@types/node'
+    dev: true
 
   /ts-node/10.9.1_4bewfcp2iebiwuold25d6rgcsy:
     resolution: {integrity: sha512-NtVysVPkxxrwFGUUxGYhfux8k78pQB3JqYBXlLRZgdGUqTO5wU/UyHop5p70iEbGhB7q5KmiZiU0Y3KlJrScEw==}

@@ -91,10 +91,11 @@ export interface FlowEnvironment {
 export interface FlowDecisionModel {
   id: string
   model: Array<{
-    input: string | number
+    input: string | number | string[] | number[]
     outputs: Array<{
       key: string
       value: boolean
     }>
+    default?: boolean
   }>
 }

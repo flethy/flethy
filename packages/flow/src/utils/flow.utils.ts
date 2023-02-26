@@ -293,15 +293,21 @@ export class FlowUtils {
         (current) => current.id === condition.toDecisionModel!.id,
       )
       if (decisionModel) {
-        const foundModelEntry = decisionModel.model.find(
-          (current) => current.input === evaluated,
-        )
+        const foundModelEntry = decisionModel.model.find((current) => {
+          if (Array.isArray(current.input)) {
+            return (current.input as any[]).includes(evaluated)
+          } else {
+            return current.input === evaluated
+          }
+        })
         if (foundModelEntry) {
           const foundTarget = foundModelEntry.outputs.find(
             (current) => current.key === condition.toDecisionModel!.targetKey,
           )
           if (foundTarget) {
             return foundTarget.value
+          } else if (foundModelEntry.default !== undefined) {
+            return foundModelEntry.default
           }
         }
       }
