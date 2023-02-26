@@ -1,5 +1,8 @@
 import { FlowEngine } from "@flethy/flow";
-import { FlowNode } from "@flethy/flow/dist/types/flow.types";
+import {
+  FlowDecisionModel,
+  FlowNode,
+} from "@flethy/flow/dist/types/flow.types";
 import { ENVVARS, SECRETS } from "../constants/envvar.const";
 import { Workspace } from "./workspace.controller";
 
@@ -34,7 +37,105 @@ export enum AnalyticsEvent {
   CRON_DELETE = "cron:delete",
 }
 
+export interface EventRequest {
+  userId: string;
+  email?: string;
+  workspaceId: string;
+  projectId: string;
+  event: string;
+}
+
 export class FlethyFlowController {
+  public static async sendEvent(request: EventRequest) {
+    if (ENVVARS.config.stage !== "prod") {
+      return;
+    }
+
+    const decisions: FlowDecisionModel[] = [
+      {
+        id: "event-to-channel",
+        model: [
+          {
+            input: "user:onboard",
+            outputs: [
+              {
+                key: "chat",
+                value: true,
+              },
+            ],
+          },
+        ],
+      },
+    ];
+
+    const flow: FlowNode[] = [
+      {
+        id: "start",
+        kind: "none",
+        next: [
+          {
+            id: "slack",
+            condition: {
+              filter: "context.event",
+              toDecisionModel: {
+                id: "event-to-channel",
+                targetKey: "chat",
+              },
+            },
+          },
+          {
+            id: "mixpanel",
+          },
+        ],
+      },
+      {
+        id: "mixpanel",
+        kind: "mixpanel.events.track",
+        "auth:token": "==>secrets==>MIXPANEL_TOKEN",
+        baseId: "api-eu",
+        "body:body": [
+          {
+            properties: {
+              distinct_id: "->context.userId->string",
+              time: Date.now(),
+              workspaceId: "->context.workspaceId->string",
+              projectId: "->context.projectId->string",
+            },
+            event: "->context.event->string",
+          },
+        ],
+      },
+      {
+        id: "slack",
+        kind: "slack.incomingWebhooks.message",
+        "auth:webhookid": "==>secrets==>WEBHOOK_ID",
+        "body:text": "->context.event & ' ' & context.userId->string",
+      },
+    ];
+
+    const engine = new FlowEngine({
+      flow,
+      input: {
+        userId: request.userId,
+        email: request.email,
+        event: request.event,
+        workspaceId: request.workspaceId,
+        projectId: request.projectId,
+      },
+      env: {
+        env: {},
+        secrets: {
+          MIXPANEL_TOKEN: SECRETS.mixpanel.projectToken,
+          WEBHOOK_ID: SECRETS.slack.webhookId,
+        },
+      },
+      decisions,
+    });
+
+    await engine.start();
+  }
+
+  // Deprecated: use sendEvent
   public static async analytics(request: AnalyticsRequest) {
     if (ENVVARS.config.stage !== "prod") {
       return;
@@ -78,6 +179,7 @@ export class FlethyFlowController {
     await engine.start();
   }
 
+  // Deprecated: use sendEvent
   public static async externalNotification(
     request: ExternalNotificationRequest
   ) {

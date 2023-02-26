@@ -136,7 +136,7 @@ export class WorkflowController {
       { metadata: { ...workflowMetadata } }
     );
 
-    await FlethyFlowController.analytics({
+    await FlethyFlowController.sendEvent({
       event: AnalyticsEvent.WORKFLOW_PUT,
       projectId: request.projectId,
       workspaceId: request.workspaceId,
@@ -261,7 +261,7 @@ export class WorkflowController {
       KVUtils.workflowKey(request.projectId, request.workflowId)
     );
 
-    await FlethyFlowController.analytics({
+    await FlethyFlowController.sendEvent({
       event: AnalyticsEvent.WORKFLOW_DELETE,
       projectId: request.projectId,
       workspaceId: request.workspaceId,
@@ -334,7 +334,7 @@ export class WorkflowController {
       });
     }
 
-    await FlethyFlowController.analytics({
+    await FlethyFlowController.sendEvent({
       event: AnalyticsEvent.INSTANCE_CREATE,
       projectId: request.projectId,
       workspaceId: request.workspaceId,

@@ -190,7 +190,7 @@ export class CronsController {
       });
     }
 
-    await FlethyFlowController.analytics({
+    await FlethyFlowController.sendEvent({
       event: AnalyticsEvent.CRON_CREATE,
       projectId: request.projectId,
       workspaceId: request.workspaceId,
@@ -255,7 +255,7 @@ export class CronsController {
 
     const response = await CronsController.put({ crons: currentCrons.value });
 
-    await FlethyFlowController.analytics({
+    await FlethyFlowController.sendEvent({
       event: AnalyticsEvent.CRON_DELETE,
       projectId: request.projectId,
       workspaceId: request.workspaceId,
