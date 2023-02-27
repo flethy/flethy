@@ -36,7 +36,7 @@ export const HomePage = types
 			return [
 				{
 					manager: 'npm',
-					script: `npm install ${packageName}`,
+					script: `npm i ${packageName}`,
 				},
 				{
 					manager: 'yarn',
