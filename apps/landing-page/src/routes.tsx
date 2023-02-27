@@ -1,4 +1,6 @@
 import { Route } from 'mobx-router'
+import { EXTERNAL_LINKS } from './constants/externallinks.const'
+import { UTMUtils } from './helpers/utm'
 import { RootStore } from './models/root'
 import NotFoundPage from './pages/404/page'
 import HomePage from './pages/home/page'
@@ -6,6 +8,7 @@ import IntegrationPage from './pages/integration/page'
 import IntegrationsPage from './pages/integrations/page'
 import PitchDeckPage from './pages/pitchdeck/page'
 import PlaygroundPage from './pages/playground/page'
+import RedirectPage from './pages/redirect/page'
 import RoadmapPage from './pages/roadmap/page'
 import UseCasePage from './pages/use-case/page'
 import UseCasesPage from './pages/use-cases/page'
@@ -36,6 +39,20 @@ export default {
 		component: <PlaygroundPage />,
 		onEnter(_route, _parameters, { root: { pages } }) {
 			pages.playground.initialisePage()
+		},
+	}),
+
+	signup: new Route<RootStore>({
+		path: '/signup',
+		component: (
+			<RedirectPage title="Signup" subtitle="Redirecting to signup now" />
+		),
+		onEnter(_route, _parameters, { root: { pages } }) {
+			window.location.href = UTMUtils.assign(EXTERNAL_LINKS.CONSOLE, {
+				utm_source: 'flethy',
+				utm_medium: 'landingpage',
+				utm_content: 'buttonlink',
+			})
 		},
 	}),
 

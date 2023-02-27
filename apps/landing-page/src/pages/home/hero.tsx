@@ -69,18 +69,10 @@ export default observer(() => {
 						fontWeight={'normal'}
 						px={6}
 						colorScheme={'orange'}
-						bg={'flethy.orange'}
+						variant={'outline'}
+						// bg={'flethy.orange'}
 						_hover={{ bg: 'flethy.purple' }}
 						onClick={() => router.goTo(routes.playground)}
-						// onClick={() =>
-						// 	window.open(
-						// 		UTMUtils.assign(EXTERNAL_LINKS.FLETHY_CONNECTORS_NPM, {
-						// 			utm_source: 'flethy',
-						// 			utm_medium: 'landingpage',
-						// 			utm_content: 'buttonlink',
-						// 		}),
-						// 	)
-						// }
 					>
 						{t('home.hero.cta.playground')}
 					</Button>
@@ -90,12 +82,24 @@ export default observer(() => {
 						fontWeight={'normal'}
 						px={6}
 						colorScheme={'orange'}
-						variant={'outline'}
+						bg={'flethy.orange'}
+						_hover={{ bg: 'flethy.purple' }}
+						onClick={() => router.goTo(routes.signup)}
+					>
+						{t('home.hero.cta.startFree')}
+					</Button>
+					{/* <Button
+						rounded={'full'}
+						size={'lg'}
+						fontWeight={'normal'}
+						px={6}
+						colorScheme={'orange'}
+						bg={'flethy.orange'}
 						_hover={{ bg: 'flethy.purple' }}
 						onClick={() => page.initialisePage({ emailSubscription: true })}
 					>
 						{t('home.hero.cta.earlyAccess')}
-					</Button>
+					</Button> */}
 				</Stack>
 
 				<Tabs>
