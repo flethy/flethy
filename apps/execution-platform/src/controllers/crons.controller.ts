@@ -195,6 +195,7 @@ export class CronsController {
       projectId: request.projectId,
       workspaceId: request.workspaceId,
       userId: "unset",
+      description: `Cron ${request.name} created`,
     });
 
     const newCron: CronEntry = {
@@ -260,6 +261,7 @@ export class CronsController {
       projectId: request.projectId,
       workspaceId: request.workspaceId,
       userId: "unset",
+      description: `Cron ${request.cronId} deleted`,
     });
 
     return response;

@@ -43,6 +43,7 @@ export interface EventRequest {
   workspaceId: string;
   projectId: string;
   event: string;
+  description: string;
 }
 
 export class FlethyFlowController {
@@ -109,7 +110,8 @@ export class FlethyFlowController {
         id: "slack",
         kind: "slack.incomingWebhooks.message",
         "auth:webhookid": "==>secrets==>WEBHOOK_ID",
-        "body:text": "->context.event & ' ' & context.userId->string",
+        "body:text":
+          "->context.event & ' ' & context.userId & ' - ' & context.description->string",
       },
     ];
 
@@ -121,6 +123,7 @@ export class FlethyFlowController {
         event: request.event,
         workspaceId: request.workspaceId,
         projectId: request.projectId,
+        description: request.description,
       },
       env: {
         env: {},

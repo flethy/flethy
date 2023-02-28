@@ -137,6 +137,7 @@ export class TokenController {
       projectId: request.projectId,
       workspaceId: request.workspaceId,
       userId: "unset",
+      description: `Token created`,
     });
 
     return { success, tokens: currentTokens.tokens };
@@ -192,6 +193,7 @@ export class TokenController {
       projectId: request.projectId,
       workspaceId: request.workspaceId,
       userId: "unset",
+      description: `Token deleted`,
     });
 
     return { success, tokens: currentTokens.tokens };

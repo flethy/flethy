@@ -146,6 +146,7 @@ export class SecretsController {
       projectId: request.projectId,
       workspaceId: request.workspaceId,
       userId: request.userId,
+      description: `Secret created`,
     });
 
     return success;
@@ -224,6 +225,7 @@ export class SecretsController {
           projectId: request.projectId,
           workspaceId: request.workspaceId,
           userId: request.userId,
+          description: `Secret deleted`,
         });
 
         return success;
