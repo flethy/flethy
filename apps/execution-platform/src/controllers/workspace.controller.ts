@@ -121,6 +121,7 @@ export class WorkspaceController {
         userId: request.userId,
         workspaceId: request.workspaceId,
         projectId,
+        description: `workspace: ${request.name}, project: ${request.project.name}`,
       });
     }
 

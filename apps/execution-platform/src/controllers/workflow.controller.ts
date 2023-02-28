@@ -141,6 +141,7 @@ export class WorkflowController {
       projectId: request.projectId,
       workspaceId: request.workspaceId,
       userId: request.userId,
+      description: `Workflow ${workflowMetadata.name}`,
     });
 
     return { success, workflowMetadata };
@@ -266,6 +267,7 @@ export class WorkflowController {
       projectId: request.projectId,
       workspaceId: request.workspaceId,
       userId: request.userId,
+      description: `Workflow deleted`,
     });
 
     return success;
@@ -339,6 +341,7 @@ export class WorkflowController {
       projectId: request.projectId,
       workspaceId: request.workspaceId,
       userId: request.userId,
+      description: `Instance created`,
     });
 
     return response;
