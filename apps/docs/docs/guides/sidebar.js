@@ -50,4 +50,19 @@ module.exports = [
       },
     ],
   },
+  {
+    type: "category",
+    label: "Tutorials",
+    link: {
+      type: "generated-index",
+      title: "Tutorials",
+      slug: "/category/guides/tutorials",
+    },
+    items: [
+      {
+        type: "doc",
+        id: "guides/tutorials/twitter-thread",
+      },
+    ],
+  },
 ];
