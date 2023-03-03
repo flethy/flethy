@@ -116,29 +116,31 @@ export const QuickSearchComponent = types
 				this.open()
 				return
 			}
-			if (event.key === 'ArrowDown') {
-				if (self.selectedId === SEARCH_ID && self.searchResults.length > 0) {
-					self.selectedId = self.searchResults[0]
-				} else {
-					const currentIndex = self.searchResults.indexOf(self.selectedId)
-					if (currentIndex < self.searchResults.length - 1) {
-						self.selectedId = self.searchResults[currentIndex + 1]
-					}
-				}
-			}
-			if (event.key === 'ArrowUp') {
-				if (self.selectedId !== SEARCH_ID) {
-					const currentIndex = self.searchResults.indexOf(self.selectedId)
-					if (currentIndex > 0) {
-						self.selectedId = self.searchResults[currentIndex - 1]
+			if (self.isOpen) {
+				if (event.key === 'ArrowDown') {
+					if (self.selectedId === SEARCH_ID && self.searchResults.length > 0) {
+						self.selectedId = self.searchResults[0]
 					} else {
-						self.selectedId = SEARCH_ID
+						const currentIndex = self.searchResults.indexOf(self.selectedId)
+						if (currentIndex < self.searchResults.length - 1) {
+							self.selectedId = self.searchResults[currentIndex + 1]
+						}
 					}
 				}
-			}
-			if (event.key === 'Enter') {
-				event.preventDefault()
-				this.performAction(self.selectedId)
+				if (event.key === 'ArrowUp') {
+					if (self.selectedId !== SEARCH_ID) {
+						const currentIndex = self.searchResults.indexOf(self.selectedId)
+						if (currentIndex > 0) {
+							self.selectedId = self.searchResults[currentIndex - 1]
+						} else {
+							self.selectedId = SEARCH_ID
+						}
+					}
+				}
+				if (event.key === 'Enter') {
+					event.preventDefault()
+					this.performAction(self.selectedId)
+				}
 			}
 		},
 
