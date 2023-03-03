@@ -54,11 +54,12 @@ export default observer(() => {
 							>
 								<Text>
 									{action.title}
-									{action.tag && (
-										<Tag size={'sm'} ml={2}>
-											{action.tag}
-										</Tag>
-									)}
+									{action.tags &&
+										action.tags.map((tag) => (
+											<Tag size={'sm'} ml={2} key={tag}>
+												{tag}
+											</Tag>
+										))}
 								</Text>
 								{action.subtitle && (
 									<Text fontSize={'xs'}>{action.subtitle}</Text>
