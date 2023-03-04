@@ -688,6 +688,39 @@ importers:
       tsconfig: link:../tsconfig
       typescript: 4.9.5
 
+  packages/templates:
+    specifiers:
+      '@flethy/connectors': workspace:*
+      '@flethy/flow': workspace:*
+      '@types/node': 18.14.1
+      '@typescript-eslint/eslint-plugin': ^5.53.0
+      '@typescript-eslint/parser': ^5.53.0
+      eslint: ^8.34.0
+      eslint-config-airbnb-base: ^15.0.0
+      eslint-config-prettier: ^8.6.0
+      eslint-plugin-import: ^2.27.5
+      eslint-plugin-prettier: ^4.2.1
+      prettier: 2.8.4
+      ts-node: ^10.9.1
+      tsconfig: workspace:*
+      typescript: ^4.9.5
+    dependencies:
+      '@flethy/connectors': link:../connectors
+      '@flethy/flow': link:../flow
+    devDependencies:
+      '@types/node': 18.14.1
+      '@typescript-eslint/eslint-plugin': 5.53.0_ny4s7qc6yg74faf3d6xty2ofzy
+      '@typescript-eslint/parser': 5.53.0_7kw3g6rralp5ps6mg3uyzz6azm
+      eslint: 8.34.0
+      eslint-config-airbnb-base: 15.0.0_mvgyw3chnqkp6sgfmmtihyjpnm
+      eslint-config-prettier: 8.6.0_eslint@8.34.0
+      eslint-plugin-import: 2.27.5_dbs2zxbe2aiqaiiio3svelvkai
+      eslint-plugin-prettier: 4.2.1_u5wnrdwibbfomslmnramz52buy
+      prettier: 2.8.4
+      ts-node: 10.9.1_uayvamxqnl5yeiojjysxwopmsy
+      tsconfig: link:../tsconfig
+      typescript: 4.9.5
+
   packages/tsconfig:
     specifiers: {}
 

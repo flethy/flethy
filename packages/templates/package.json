@@ -1,0 +1,40 @@
+{
+  "name": "@flethy/templates",
+  "version": "0.0.1",
+  "description": "@flethy/templates",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc --p tsconfig.json"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": "github:flethy/flethy",
+  "author": "adam@flethy.com",
+  "license": "MIT",
+  "keywords": [
+    "templates"
+  ],
+  "dependencies": {
+    "@flethy/flow": "workspace:*",
+    "@flethy/connectors": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/node": "18.14.1",
+    "@typescript-eslint/eslint-plugin": "^5.53.0",
+    "@typescript-eslint/parser": "^5.53.0",
+    "eslint": "^8.34.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-prettier": "^4.2.1",
+    "prettier": "2.8.4",
+    "ts-node": "^10.9.1",
+    "tsconfig": "workspace:*",
+    "typescript": "^4.9.5"
+  }
+}
