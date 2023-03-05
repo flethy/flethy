@@ -1,4 +1,4 @@
-name: "[PROD] Publish OAuth"
+name: "[PROD] Publish Templates"
 
 on:
   push:
@@ -6,10 +6,10 @@ on:
       - "[0-9]+.[0-9]+.[0-9]+"
 
 jobs:
-  publish-oauth:
+  publish-templates:
     uses: ./.github/workflows/template-publish-npm-package.yaml
     with:
-      packageDir: ./packages/oauth
-      packageScope: "@flethy/oauth"
+      packageDir: ./packages/templates
+      packageScope: "@flethy/templates"
     secrets:
       npm_token: ${{ secrets.NPM_TOKEN }}

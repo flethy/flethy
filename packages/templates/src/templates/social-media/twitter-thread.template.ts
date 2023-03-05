@@ -1,4 +1,4 @@
-import { Template } from '../types/template.types'
+import { Template } from '../../types/template.types'
 
 export const TwitterThread: Template = {
   id: 'twitter-thread',
@@ -21,10 +21,22 @@ export const TwitterThread: Template = {
           label: 'Twitter Developer',
         },
         secrets: [
-          'CONSUMER_KEY',
-          'CONSUMER_SECRET',
-          'ACCESS_TOKEN',
-          'ACCESS_TOKEN_SECRET',
+          {
+            key: 'CONSUMER_KEY',
+            description: 'The API key of your Twitter app',
+          },
+          {
+            key: 'CONSUMER_SECRET',
+            description: 'The API secret of your Twitter app',
+          },
+          {
+            key: 'ACCESS_TOKEN',
+            description: 'The Access Token of your Twitter app',
+          },
+          {
+            key: 'ACCESS_TOKEN_SECRET',
+            description: 'The Access Token Secret of your Twitter app',
+          },
         ],
       },
     ],
@@ -110,5 +122,14 @@ export const TwitterThread: Template = {
         },
       },
     ],
+  },
+  example: {
+    input: {
+      thread: [
+        'This is the first tweet in the thread',
+        'This is the second tweet in the thread',
+        'This is the third tweet in the thread',
+      ],
+    },
   },
 }
