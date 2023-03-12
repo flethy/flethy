@@ -16,14 +16,14 @@
   "author": "adam@flethy.com",
   "license": "MIT",
   "devDependencies": {
-    "@cloudflare/workers-types": "4.20230221.0",
+    "@cloudflare/workers-types": "4.20230307.0",
     "@tsndr/cloudflare-worker-jwt": "^2.2.1",
-    "@types/node": "18.14.1",
-    "@typescript-eslint/eslint-plugin": "^5.53.0",
-    "@typescript-eslint/parser": "^5.53.0",
-    "eslint": "^8.34.0",
+    "@types/node": "18.15.0",
+    "@typescript-eslint/eslint-plugin": "^5.54.1",
+    "@typescript-eslint/parser": "^5.54.1",
+    "eslint": "^8.36.0",
     "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-config-prettier": "^8.6.0",
+    "eslint-config-prettier": "^8.7.0",
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-prettier": "^4.2.1",
     "pino-pretty": "^9.4.0",
@@ -32,11 +32,11 @@
     "tsoa": "^5.1.1",
     "typescript": "^4.9.5",
     "worktop": "0.7.3",
-    "wrangler": "2.11.1"
+    "wrangler": "2.12.2"
   },
   "dependencies": {
     "@datasert/cronjs-matcher": "^1.2.0",
     "@datasert/cronjs-parser": "^1.2.0",
-    "@flethy/flow": "^0.0.344"
+    "@flethy/flow": "^0.0.349"
   }
 }

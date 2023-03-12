@@ -21,6 +21,18 @@ export enum ROADMAP_TAGS {
   USECASE = 'usecase',
 }
 
+const ITEMS_2023_Q1: RoadmapEntry[] = [
+  {
+    title: 'Workers Launchpad Demoday',
+    date: '2023-03-09',
+    description:
+      'Demo Day at Cloudflare Workers Launchpad! See https://cfl.re/demoday001 for more!',
+    delivered: true,
+    milestone: false,
+    tags: [ROADMAP_TAGS.EXECUTION],
+  },
+]
+
 const ITEMS_2022_Q4: RoadmapEntry[] = [
   {
     title: 'Integration Details',
@@ -137,4 +149,8 @@ const FUTURE_MILESTONES: RoadmapEntry[] = [
   },
 ]
 
-export const ROADMAP: RoadmapEntry[] = [...ITEMS_2022_Q4, ...FUTURE_MILESTONES]
+export const ROADMAP: RoadmapEntry[] = [
+  ...ITEMS_2022_Q4,
+  ...ITEMS_2023_Q1,
+  ...FUTURE_MILESTONES,
+]
