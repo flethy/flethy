@@ -1,0 +1,38 @@
+{
+  "name": null,
+  "domain": "driv.ly",
+  "claimed": false,
+  "description": null,
+  "links": [],
+  "logos": [
+    {
+      "type": "logo",
+      "theme": "dark",
+      "formats": [
+        {
+          "src": "https://asset.brandfetch.io/idIJ-B_uHJ/idVSQlbhCO.png",
+          "background": "transparent",
+          "format": "png",
+          "height": 412,
+          "width": 784,
+          "size": 33653
+        }
+      ]
+    }
+  ],
+  "colors": [
+    { "hex": "#660000", "type": "dark", "brightness": 22 },
+    { "hex": "#f9fbfd", "type": "light", "brightness": 251 },
+    { "hex": "#c42235", "type": "accent", "brightness": 70 }
+  ],
+  "fonts": [
+    {
+      "name": "HKGroteskPro",
+      "type": "body",
+      "origin": "custom",
+      "originId": null,
+      "weights": []
+    }
+  ],
+  "images": []
+}

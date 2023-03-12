@@ -113,6 +113,7 @@ The following Endpoints are currently supported.
 * [Discord](./api/discord.md)
 * [Disify](./api/disify.md)
 * [Doppler](./api/doppler.md)
+* [Drivly](./api/drivly.md)
 * [Duply](./api/duply.md)
 * [DynaPictures](./api/dynapictures.md)
 * [EasyDb](./api/easydb.md)
