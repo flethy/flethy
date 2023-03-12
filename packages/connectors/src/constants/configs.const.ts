@@ -85,6 +85,7 @@ import { Directus } from '../configs/directus.config'
 import { Discord } from '../configs/discord.config'
 import { Disify } from '../configs/disify.config'
 import { Doppler } from '../configs/doppler.config'
+import { Drivly } from '../configs/drivly.config'
 import { Dune } from '../configs/dune.config'
 import { Duply } from '../configs/duply.config'
 import { DynaPictures } from '../configs/dynapictures.config'
@@ -396,6 +397,7 @@ export const CONFIGS: Map<string, ApiDescription<any, any>> = new Map<string, Ap
 ['discord', Discord.API],
 ['disify', Disify.API],
 ['doppler', Doppler.API],
+['drivly', Drivly.API],
 ['dune', Dune.API],
 ['duply', Duply.API],
 ['dynapictures', DynaPictures.API],
