@@ -24,7 +24,7 @@ jobs:
 
       - name: Set output
         id: vars
-        run: echo ::set-output name=tag::${GITHUB_REF#refs/*/}
+        run: echo "tag=${GITHUB_REF#refs/*/}" >> "$GITHUB_OUTPUT"
 
       - name: "Update Version according to Tag"
         run: npm version "${{ env.RELEASE_VERSION }}" --prefix ${{ inputs.packageDir }}
