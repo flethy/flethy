@@ -116,7 +116,7 @@ export default observer(() => {
 								bg: useColorModeValue('gray.200', 'gray.700'),
 							}}
 						>
-							boringdevtools.com
+							boringdevtools.com -
 						</Link>
 						<Link
 							px={2}
