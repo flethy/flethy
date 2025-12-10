@@ -143,7 +143,7 @@ Analyzed the `@flethy/connectors` package which provides typed HTTP request conf
 ```json
 {
   "devDependencies": {
-    "openapi-typescript": "^6.7.0",
+    "openapi-typescript": "^7.4.0",
     "@apidevtools/swagger-parser": "^10.1.0",
     "tsx": "^4.0.0",
     "prettier": "^3.1.0"

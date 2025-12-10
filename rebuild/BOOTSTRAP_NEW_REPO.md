@@ -1,6 +1,6 @@
 # Bootstrap Guide: New Connectors Monorepo
 
-**Purpose:** Set up a new standalone monorepo for the @flethy/connectors v2 rebuild  
+**Purpose:** Set up a new standalone monorepo for the @flethy/connectors rebuild  
 **Tech Stack:** pnpm workspaces, Turborepo, Biome, TypeScript, ESM  
 **Date:** 2025-12-10
 
@@ -36,8 +36,8 @@ git --version
 
 ```bash
 # Create and navigate to new repository
-mkdir flethy-connectors-v2
-cd flethy-connectors-v2
+mkdir flethy-connectors
+cd flethy-connectors
 
 # Initialize git
 git init
@@ -97,7 +97,7 @@ Update the root `package.json`:
   "version": "0.0.0",
   "private": true,
   "type": "module",
-  "packageManager": "pnpm@8.15.0",
+  "packageManager": "pnpm@9.14.0",
   "engines": {
     "node": ">=18.0.0",
     "pnpm": ">=8.0.0"
@@ -116,9 +116,9 @@ Update the root `package.json`:
     "generate": "turbo run generate"
   },
   "devDependencies": {
-    "@biomejs/biome": "^1.4.1",
-    "turbo": "^1.11.0",
-    "typescript": "^5.3.0"
+    "@biomejs/biome": "^1.9.0",
+    "turbo": "^2.2.0",
+    "typescript": "^5.6.0"
   }
 }
 ```
@@ -381,7 +381,7 @@ cat > packages/runtime/package.json << 'EOF'
   "dependencies": {},
   "devDependencies": {
     "@flethy/tsconfig": "workspace:*",
-    "typescript": "^5.3.0"
+    "typescript": "^5.6.0"
   }
 }
 EOF
@@ -412,7 +412,7 @@ mkdir -p packages/connectors/src/generated
 cat > packages/connectors/package.json << 'EOF'
 {
   "name": "@flethy/connectors",
-  "version": "2.0.0-alpha.1",
+  "version": "0.1.0",
   "description": "Type-safe HTTP request builders for 300+ APIs (zero dependencies)",
   "type": "module",
   "exports": {
@@ -442,7 +442,7 @@ cat > packages/connectors/package.json << 'EOF'
   },
   "devDependencies": {
     "@flethy/tsconfig": "workspace:*",
-    "typescript": "^5.3.0"
+    "typescript": "^5.6.0"
   },
   "publishConfig": {
     "access": "public"
@@ -482,14 +482,14 @@ cat > tools/generators/package.json << 'EOF'
   },
   "dependencies": {
     "@apidevtools/swagger-parser": "^10.1.0",
-    "openapi-typescript": "^6.7.0",
-    "zod": "^3.22.0"
+    "openapi-typescript": "^7.4.0",
+    "zod": "^3.23.0"
   },
   "devDependencies": {
     "@flethy/tsconfig": "workspace:*",
     "@types/node": "^20.10.0",
     "tsx": "^4.7.0",
-    "typescript": "^5.3.0"
+    "typescript": "^5.6.0"
   }
 }
 EOF
@@ -534,7 +534,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       
-      - uses: pnpm/action-setup@v2
+      - uses: pnpm/action-setup@v4
         with:
           version: 8
       
@@ -561,7 +561,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       
-      - uses: pnpm/action-setup@v2
+      - uses: pnpm/action-setup@v4
         with:
           version: 8
       
@@ -588,7 +588,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       
-      - uses: pnpm/action-setup@v2
+      - uses: pnpm/action-setup@v4
         with:
           version: 8
       
@@ -609,7 +609,7 @@ EOF
 
 ```bash
 cat > README.md << 'EOF'
-# @flethy/connectors v2
+# @flethy/connectors
 
 > Type-safe HTTP request builders for 300+ APIs with zero runtime dependencies
 
@@ -742,7 +742,7 @@ Set up documentation in `apps/docs/` using:
 ## Repository Structure After Setup
 
 ```
-flethy-connectors-v2/
+flethy-connectors/
 ├── .github/
 │   └── workflows/
 │       └── ci.yml

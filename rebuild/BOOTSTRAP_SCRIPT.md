@@ -1,6 +1,6 @@
-# Detailed Prompt: Bootstrap flethy-connectors-v2 Monorepo
+# Detailed Prompt: Bootstrap flethy-connectors Monorepo
 
-**Goal:** Create a new standalone monorepo from scratch for the @flethy/connectors v2 rebuild  
+**Goal:** Create a new standalone monorepo from scratch for the @flethy/connectors rebuild  
 **Tech Stack:** pnpm workspaces, Turborepo, Biome (format/lint/check), TypeScript, ESM-only
 
 ---
@@ -13,11 +13,11 @@ Run these commands in order to bootstrap the entire monorepo:
 #!/bin/bash
 set -e
 
-echo "🚀 Bootstrapping flethy-connectors-v2 monorepo..."
+echo "🚀 Bootstrapping flethy-connectors monorepo..."
 
 # 1. Create project directory
-mkdir -p flethy-connectors-v2
-cd flethy-connectors-v2
+mkdir -p flethy-connectors
+cd flethy-connectors
 
 # 2. Initialize git
 git init
@@ -56,7 +56,7 @@ cat > package.json << 'EOF'
   "version": "0.0.0",
   "private": true,
   "type": "module",
-  "packageManager": "pnpm@8.15.0",
+  "packageManager": "pnpm@9.14.0",
   "engines": {
     "node": ">=18.0.0",
     "pnpm": ">=8.0.0"
@@ -78,10 +78,10 @@ cat > package.json << 'EOF'
     "generate:configs": "tsx tools/generators/src/generate-configs.ts"
   },
   "devDependencies": {
-    "@biomejs/biome": "1.4.1",
-    "turbo": "1.11.3",
-    "typescript": "5.3.3",
-    "tsx": "4.7.0"
+    "@biomejs/biome": "^1.9.0",
+    "turbo": "^2.2.0",
+    "typescript": "^5.6.0",
+    "tsx": "^4.19.0"
   }
 }
 EOF
@@ -338,9 +338,9 @@ cat > packages/runtime/package.json << 'EOF'
   "dependencies": {},
   "devDependencies": {
     "@flethy/tsconfig": "workspace:*",
-    "@biomejs/biome": "1.4.1",
-    "typescript": "5.3.3",
-    "vitest": "1.1.0"
+    "@biomejs/biome": "^1.9.0",
+    "typescript": "^5.6.0",
+    "vitest": "^2.1.0"
   }
 }
 EOF
@@ -480,7 +480,7 @@ EOF
 cat > packages/connectors/package.json << 'EOF'
 {
   "name": "@flethy/connectors",
-  "version": "2.0.0-alpha.1",
+  "version": "0.1.0",
   "description": "Type-safe HTTP request builders for 300+ APIs (zero dependencies)",
   "type": "module",
   "main": "./dist/index.js",
@@ -514,10 +514,10 @@ cat > packages/connectors/package.json << 'EOF'
   },
   "devDependencies": {
     "@flethy/tsconfig": "workspace:*",
-    "@biomejs/biome": "1.4.1",
-    "typescript": "5.3.3",
-    "tsx": "4.7.0",
-    "vitest": "1.1.0"
+    "@biomejs/biome": "^1.9.0",
+    "typescript": "^5.6.0",
+    "tsx": "^4.19.0",
+    "vitest": "^2.1.0"
   },
   "publishConfig": {
     "access": "public"
@@ -562,16 +562,16 @@ cat > tools/generators/package.json << 'EOF'
     "lint": "biome check src"
   },
   "dependencies": {
-    "@apidevtools/swagger-parser": "10.1.0",
-    "openapi-typescript": "6.7.3",
-    "zod": "3.22.4"
+    "@apidevtools/swagger-parser": "^10.1.0",
+    "openapi-typescript": "^7.4.0",
+    "zod": "^3.23.0"
   },
   "devDependencies": {
     "@flethy/tsconfig": "workspace:*",
-    "@biomejs/biome": "1.4.1",
-    "@types/node": "20.10.6",
-    "tsx": "4.7.0",
-    "typescript": "5.3.3"
+    "@biomejs/biome": "^1.9.0",
+    "@types/node": "^22.0.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.6.0"
   }
 }
 EOF
@@ -612,7 +612,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: pnpm/action-setup@v2
+      - uses: pnpm/action-setup@v4
         with:
           version: 8
       - uses: actions/setup-node@v4
@@ -628,7 +628,7 @@ jobs:
     needs: lint
     steps:
       - uses: actions/checkout@v4
-      - uses: pnpm/action-setup@v2
+      - uses: pnpm/action-setup@v4
         with:
           version: 8
       - uses: actions/setup-node@v4
@@ -644,7 +644,7 @@ jobs:
     needs: build
     steps:
       - uses: actions/checkout@v4
-      - uses: pnpm/action-setup@v2
+      - uses: pnpm/action-setup@v4
         with:
           version: 8
       - uses: actions/setup-node@v4
@@ -657,7 +657,7 @@ EOF
 
 # 18. Create README
 cat > README.md << 'EOF'
-# @flethy/connectors v2
+# @flethy/connectors
 
 Type-safe HTTP request builders for 300+ APIs with zero runtime dependencies.
 
@@ -705,7 +705,7 @@ git commit -m "chore: initial monorepo setup
 echo "✅ Monorepo bootstrap complete!"
 echo ""
 echo "Next steps:"
-echo "  cd flethy-connectors-v2"
+echo "  cd flethy-connectors"
 echo "  pnpm build"
 echo "  pnpm dev"
 ```
@@ -718,7 +718,7 @@ Run these commands to verify the setup:
 
 ```bash
 # Navigate to repo
-cd flethy-connectors-v2
+cd flethy-connectors
 
 # List all workspaces
 pnpm list --depth 0

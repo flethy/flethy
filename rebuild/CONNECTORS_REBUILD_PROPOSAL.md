@@ -483,9 +483,9 @@ export function listAllServices() {
 {
   "devDependencies": {
     "@apidevtools/swagger-parser": "^10.1.0",  // Parse/validate OpenAPI
-    "openapi-typescript": "^6.7.0",             // Generate TS types
+    "openapi-typescript": "^7.4.0",             // Generate TS types
     "@hey-api/openapi-ts": "^0.45.0",          // Alternative generator
-    "zod": "^3.22.0",                           // Runtime validation (build only)
+    "zod": "^3.23.0",                           // Runtime validation (build only)
     "mustache": "^4.2.0",                       // Template engine
     "prettier": "^3.1.0"                        // Format generated code
   }

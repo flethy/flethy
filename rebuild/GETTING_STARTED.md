@@ -1,6 +1,6 @@
 # Getting Started: New Monorepo Setup
 
-**Quick guide to bootstrap your new flethy-connectors-v2 monorepo**
+**Quick guide to bootstrap your new flethy-connectors monorepo**
 
 ---
 
@@ -35,7 +35,7 @@ chmod +x bootstrap.sh
 
 3. **Verify:**
 ```bash
-cd flethy-connectors-v2
+cd flethy-connectors
 pnpm build
 ```
 
@@ -85,7 +85,7 @@ pnpm typecheck
 ## ✅ What You'll Have After Bootstrap
 
 ```
-flethy-connectors-v2/
+flethy-connectors/
 ├── packages/
 │   ├── connectors/          # Main package
 │   ├── runtime/             # Zero-dep runtime

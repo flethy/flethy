@@ -1,13 +1,13 @@
 # Configuration Reference: New Monorepo
 
-Complete configuration files for the flethy-connectors-v2 monorepo.
+Complete configuration files for the flethy-connectors monorepo.
 
 ---
 
 ## Directory Structure
 
 ```
-flethy-connectors-v2/
+flethy-connectors/
 ├── .github/workflows/ci.yml
 ├── .gitignore
 ├── .npmrc
@@ -67,7 +67,7 @@ flethy-connectors-v2/
   "version": "0.0.0",
   "private": true,
   "type": "module",
-  "packageManager": "pnpm@8.15.0",
+  "packageManager": "pnpm@9.14.0",
   "engines": {
     "node": ">=18.0.0",
     "pnpm": ">=8.0.0"
@@ -94,12 +94,12 @@ flethy-connectors-v2/
     "release": "pnpm publish:check && changeset publish"
   },
   "devDependencies": {
-    "@biomejs/biome": "1.4.1",
-    "@changesets/cli": "2.27.1",
-    "turbo": "1.11.3",
-    "typescript": "5.3.3",
-    "tsx": "4.7.0",
-    "vitest": "1.1.0"
+    "@biomejs/biome": "^1.9.0",
+    "@changesets/cli": "^2.27.0",
+    "turbo": "^2.2.0",
+    "typescript": "^5.6.0",
+    "tsx": "^4.19.0",
+    "vitest": "^2.1.0"
   }
 }
 ```
@@ -438,9 +438,9 @@ temp/
   "dependencies": {},
   "devDependencies": {
     "@flethy/tsconfig": "workspace:*",
-    "@biomejs/biome": "1.4.1",
-    "typescript": "5.3.3",
-    "vitest": "1.1.0"
+    "@biomejs/biome": "^1.9.0",
+    "typescript": "^5.6.0",
+    "vitest": "^2.1.0"
   },
   "publishConfig": {
     "access": "public"
@@ -453,7 +453,7 @@ temp/
 ```json
 {
   "name": "@flethy/connectors",
-  "version": "2.0.0-alpha.1",
+  "version": "0.1.0",
   "description": "Type-safe HTTP request builders for 300+ APIs (zero dependencies)",
   "type": "module",
   "main": "./dist/index.js",
@@ -498,10 +498,10 @@ temp/
   },
   "devDependencies": {
     "@flethy/tsconfig": "workspace:*",
-    "@biomejs/biome": "1.4.1",
-    "typescript": "5.3.3",
-    "tsx": "4.7.0",
-    "vitest": "1.1.0"
+    "@biomejs/biome": "^1.9.0",
+    "typescript": "^5.6.0",
+    "tsx": "^4.19.0",
+    "vitest": "^2.1.0"
   },
   "publishConfig": {
     "access": "public"
@@ -526,16 +526,16 @@ temp/
     "lint": "biome check src"
   },
   "dependencies": {
-    "@apidevtools/swagger-parser": "10.1.0",
-    "openapi-typescript": "6.7.3",
-    "zod": "3.22.4"
+    "@apidevtools/swagger-parser": "^10.1.0",
+    "openapi-typescript": "^7.4.0",
+    "zod": "^3.23.0"
   },
   "devDependencies": {
     "@flethy/tsconfig": "workspace:*",
-    "@biomejs/biome": "1.4.1",
-    "@types/node": "20.10.6",
-    "tsx": "4.7.0",
-    "typescript": "5.3.3"
+    "@biomejs/biome": "^1.9.0",
+    "@types/node": "^22.0.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.6.0"
   }
 }
 ```
@@ -568,7 +568,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Setup pnpm
-        uses: pnpm/action-setup@v2
+        uses: pnpm/action-setup@v4
         with:
           version: 8
 
@@ -596,7 +596,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Setup pnpm
-        uses: pnpm/action-setup@v2
+        uses: pnpm/action-setup@v4
         with:
           version: 8
 
@@ -621,7 +621,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Setup pnpm
-        uses: pnpm/action-setup@v2
+        uses: pnpm/action-setup@v4
         with:
           version: 8
 
@@ -653,7 +653,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Setup pnpm
-        uses: pnpm/action-setup@v2
+        uses: pnpm/action-setup@v4
         with:
           version: 8
 

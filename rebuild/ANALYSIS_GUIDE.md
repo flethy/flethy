@@ -1,5 +1,7 @@
 # @flethy/connectors Rebuild Analysis - Document Guide
 
+> **Note:** This is a legacy navigation guide. For the complete index with all documents and recommended reading order, see **[INDEX.md](./INDEX.md)**.
+
 > **Status:** ✅ Analysis Complete - Ready for Review  
 > **Date:** December 10, 2025  
 > **Recommendation:** Proceed with Proof-of-Concept
@@ -8,7 +10,7 @@
 
 ## 📚 How to Navigate This Analysis
 
-This analysis includes 5 comprehensive documents. **Start here** to understand which document to read based on your role and needs.
+This analysis includes comprehensive documents. **See [INDEX.md](./INDEX.md) for the complete guide** or use the quick paths below.
 
 ---
 
